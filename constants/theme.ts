@@ -1,14 +1,15 @@
 export const COLORS = {
-  primary: '#065f46',
-  primaryLight: '#d1fae5',
-  primaryDark: '#064e3b',
-  accent: '#fbbf24',
+  primary: '#2563eb',
+  primaryLight: '#dbeafe',
+  primaryDark: '#1d4ed8',
+  accent: '#22c55e',
   white: '#ffffff',
-  background: '#f9fafb',
-  border: '#e5e7eb',
-  textPrimary: '#111827',
-  textSecondary: '#6b7280',
-  textMuted: '#9ca3af',
+  background: '#f8fafc',
+  card: '#ffffff',
+  border: '#e2e8f0',
+  textPrimary: '#0f172a',
+  textSecondary: '#475569',
+  textMuted: '#94a3b8',
 };
 
 export const FONT_SIZES = {
@@ -19,6 +20,13 @@ export const FONT_SIZES = {
   xl: 20,
   xxl: 24,
   xxxl: 32,
+};
+
+export const FONT_FAMILY = {
+  regular: 'System',
+  medium: 'System',
+  semibold: 'System',
+  bold: 'System',
 };
 
 export const SPACING = {

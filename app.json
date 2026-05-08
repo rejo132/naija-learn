@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "NaijaLearn",
+    "name": "Learnova",
     "slug": "naija-learn",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "naijalearnapp",
+    "scheme": "learnovaapp",
     "userInterfaceStyle": "automatic",
     "icon": "./assets/icon.png",
     "splash": {
@@ -14,14 +14,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yourname.naijalearnapp"
+      "bundleIdentifier": "com.yourname.learnovaapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#065f46"
       },
-      "package": "com.yourname.naijalearnapp"
+      "package": "com.yourname.learnovaapp"
     },
     "web": {
       "bundler": "metro",
