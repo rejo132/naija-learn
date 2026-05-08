@@ -1,10 +1,14 @@
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, useWindowDimensions } from 'react-native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { LANGUAGES, getUIText } from '@/constants/languages';
 import { NIGERIAN_GRADES } from '@/constants/subjects';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { Atmosphere } from '@/components/Atmosphere';
+import { GlassCard } from '@/components/GlassCard';
+import { PressableScale } from '@/components/PressableScale';
 
 const GRADES = [1, 2, 3, 4, 5, 6];
 
@@ -12,6 +16,9 @@ export default function GradeScreen() {
   const { selectedLanguage, setGrade } = useAppStore();
   const lang = LANGUAGES.find((l) => l.code === selectedLanguage)!;
   const ui = getUIText(selectedLanguage);
+  const { width } = useWindowDimensions();
+  const isCompact = width < 680;
+  const isWide = width > 1200;
 
   function handleSelectGrade(grade: number) {
     setGrade(grade);
@@ -20,6 +27,7 @@ export default function GradeScreen() {
 
   return (
     <SafeAreaView style={styles.safe}>
+      <Atmosphere />
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
           <Text style={styles.backArrow}>←</Text>
@@ -31,20 +39,27 @@ export default function GradeScreen() {
       </View>
 
       <ScrollView contentContainerStyle={styles.scroll}>
-        <View style={styles.content}>
-          <Text style={styles.title}>{ui.classQuestion}</Text>
-          <Text style={styles.subtitle}>{ui.classSubtitle}</Text>
+        <View style={[styles.content, isWide && styles.contentWide]}>
+          <GlassCard style={styles.heroCard}>
+            <Text style={styles.title}>{ui.classQuestion}</Text>
+            <Text style={styles.subtitle}>{ui.classSubtitle}</Text>
+          </GlassCard>
 
           <View style={styles.gradeGrid}>
-            {GRADES.map((g) => (
-              <TouchableOpacity key={g} style={styles.gradeCard} onPress={() => handleSelectGrade(g)} activeOpacity={0.8}>
-                <Text style={styles.gradeNumber}>{g}</Text>
-                <Text style={styles.gradeLabel}>{ui.primary} {g}</Text>
-              </TouchableOpacity>
+            {GRADES.map((g, index) => (
+              <Animated.View key={g} entering={FadeInDown.delay(90 + index * 45).duration(260)} style={isCompact ? styles.gradeWrapCompact : styles.gradeWrap}>
+                <PressableScale
+                  style={[styles.gradeCard, isCompact && styles.gradeCardCompact]}
+                  onPress={() => handleSelectGrade(g)}
+                >
+                  <Text style={styles.gradeNumber}>{g}</Text>
+                  <Text style={styles.gradeLabel}>{ui.primary} {g}</Text>
+                </PressableScale>
+              </Animated.View>
             ))}
           </View>
 
-          <View style={styles.gradingCard}>
+          <GlassCard style={styles.gradingCard}>
             <Text style={styles.gradingTitle}>Nigerian Grading System (NERDC)</Text>
             <View style={styles.gradingRows}>
               {NIGERIAN_GRADES.map((g) => (
@@ -53,9 +68,9 @@ export default function GradeScreen() {
                   <Text style={[styles.gradeChipRange, { color: g.color }]}>{g.min}–{g.max}%</Text>
                   <Text style={[styles.gradeChipRemark, { color: g.color }]}>{g.remark}</Text>
                 </View>
-              ))}
-            </View>
+            ))}
           </View>
+          </GlassCard>
         </View>
     </ScrollView>
     </SafeAreaView>
@@ -65,7 +80,7 @@ export default function GradeScreen() {
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: COLORS.background },
   header: {
-    backgroundColor: COLORS.card,
+    backgroundColor: 'rgba(255,255,255,0.72)',
     borderBottomWidth: 1,
     borderBottomColor: COLORS.border,
     flexDirection: 'row',
@@ -78,24 +93,35 @@ const styles = StyleSheet.create({
   backArrow: { fontSize: FONT_SIZES.xl, color: COLORS.primaryDark },
   headerTitle: { color: COLORS.textPrimary, fontWeight: '800', fontSize: FONT_SIZES.lg },
   headerSub: { color: COLORS.textSecondary, fontSize: FONT_SIZES.xs },
-  scroll: { padding: SPACING.xl, alignItems: 'center' },
-  content: { width: '100%', maxWidth: 900 },
-  title: { fontSize: FONT_SIZES.xxl, fontWeight: '800', color: COLORS.textPrimary, marginBottom: SPACING.xs },
-  subtitle: { fontSize: FONT_SIZES.md, color: COLORS.textSecondary, marginBottom: SPACING.xl },
+  scroll: { padding: SPACING.xl, alignItems: 'center', paddingBottom: SPACING.xxl },
+  content: { width: '100%', maxWidth: 980, zIndex: 2 },
+  contentWide: { maxWidth: 1120 },
+  heroCard: { borderRadius: RADIUS.xl, borderWidth: 1, borderColor: COLORS.border, padding: SPACING.lg, marginBottom: SPACING.xl },
+  title: { fontSize: FONT_SIZES.xxl, fontWeight: '800', color: COLORS.textPrimary, marginBottom: SPACING.xs, textAlign: 'center' },
+  subtitle: { fontSize: FONT_SIZES.md, color: COLORS.textSecondary, textAlign: 'center' },
   gradeGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.md, marginBottom: SPACING.xl },
+  gradeWrap: { width: '30%' },
+  gradeWrapCompact: { width: '48%' },
   gradeCard: {
-    backgroundColor: COLORS.card,
+    backgroundColor: 'rgba(255,255,255,0.75)',
     borderRadius: RADIUS.xl,
     padding: SPACING.lg,
     alignItems: 'center',
-    width: '30%',
+    width: '100%',
     borderWidth: 1,
     borderColor: COLORS.border,
+    shadowColor: COLORS.shadow,
+    shadowOpacity: 0.06,
+    shadowOffset: { width: 0, height: 10 },
+    shadowRadius: 18,
+    elevation: 3,
   },
-  gradeNumber: { fontSize: FONT_SIZES.xxxl, fontWeight: '900', color: COLORS.primaryDark },
+  gradeCardCompact: {
+    minWidth: 130,
+  },
+  gradeNumber: { fontSize: FONT_SIZES.xxxl, fontWeight: '900', color: COLORS.primaryDark, lineHeight: 40 },
   gradeLabel: { fontSize: FONT_SIZES.sm, color: COLORS.textSecondary, marginTop: 2 },
   gradingCard: {
-    backgroundColor: COLORS.card,
     borderRadius: RADIUS.lg,
     padding: SPACING.lg,
     borderWidth: 1,

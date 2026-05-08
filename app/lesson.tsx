@@ -1,12 +1,15 @@
 import { useState, useRef, useCallback } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
-import { router, useFocusEffect } from 'expo-router';
+import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, KeyboardAvoidingView, Platform, ActivityIndicator, useWindowDimensions } from 'react-native';
+import { Redirect, router, useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { LANGUAGES, getGreeting, getUIText } from '@/constants/languages';
 import { getNigerianGrade, getQuickPrompts } from '@/constants/subjects';
 import { buildSystemPrompt, sendAIMessage } from '@/services/aiService';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { Atmosphere } from '@/components/Atmosphere';
+import { GlassCard } from '@/components/GlassCard';
+import { PressableScale } from '@/components/PressableScale';
 
 export default function LessonScreen() {
   const { selectedLanguage, selectedGrade, selectedSubject, messages, isAILoading, addMessage, clearMessages, setAILoading } = useAppStore();
@@ -16,6 +19,12 @@ export default function LessonScreen() {
   const flatListRef = useRef<FlatList>(null);
   const lang = LANGUAGES.find((l) => l.code === selectedLanguage)!;
   const ui = getUIText(selectedLanguage);
+  const { width } = useWindowDimensions();
+  const isCompact = width < 760;
+  const isWide = width > 1200;
+
+  if (!selectedGrade) return <Redirect href="/grade" />;
+  if (!selectedSubject) return <Redirect href="/dashboard" />;
 
   useFocusEffect(
     useCallback(() => {
@@ -61,8 +70,9 @@ export default function LessonScreen() {
   return (
     <SafeAreaView style={styles.safe}>
       <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-        <View style={styles.content}>
-          <View style={styles.header}>
+        <Atmosphere />
+        <View style={[styles.content, isWide && styles.contentWide]}>
+          <GlassCard style={styles.header}>
             <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
               <Text style={styles.backArrow}>←</Text>
             </TouchableOpacity>
@@ -73,16 +83,16 @@ export default function LessonScreen() {
               <Text style={styles.headerTitle}>{selectedSubject?.label ?? ui.learn}</Text>
               <Text style={styles.headerSub}>{ui.primary} {selectedGrade} · {lang.nativeLabel}{isQuizMode ? ` · ${ui.quizMode}` : ''}</Text>
             </View>
-            <TouchableOpacity style={styles.quizBtn} onPress={handleStartQuiz}>
+            <PressableScale style={styles.quizBtn} onPress={handleStartQuiz} scaleTo={0.96}>
               <Text style={styles.quizBtnText}>🧠 {ui.quiz}</Text>
-            </TouchableOpacity>
-          </View>
+            </PressableScale>
+          </GlassCard>
 
           {gradeInfo && (
-            <View style={[styles.gradeBanner, { backgroundColor: gradeInfo.bgColor }]}>
+            <GlassCard style={[styles.gradeBanner, { backgroundColor: gradeInfo.bgColor }]}>
               <Text style={[styles.gradeLetter, { color: gradeInfo.color }]}>{gradeInfo.grade}</Text>
               <Text style={[styles.gradeDetail, { color: gradeInfo.color }]}>{quizScore}% · {gradeInfo.remark}</Text>
-            </View>
+            </GlassCard>
           )}
 
           <FlatList
@@ -121,10 +131,10 @@ export default function LessonScreen() {
           {showQuickPrompts && !isAILoading && selectedSubject && selectedGrade && (
             <View style={styles.quickCardsRow}>
               {quickActions.map((action) => (
-                <TouchableOpacity key={action.label} style={styles.quickCard} onPress={() => handleSend(action.prompt)}>
+                <PressableScale key={action.label} style={[styles.quickCard, isCompact && styles.quickCardCompact]} onPress={() => handleSend(action.prompt)} scaleTo={0.98}>
                   <Text style={styles.quickCardIcon}>{action.icon}</Text>
                   <Text style={styles.quickCardText}>{action.label}</Text>
-                </TouchableOpacity>
+                </PressableScale>
               ))}
             </View>
           )}
@@ -158,16 +168,20 @@ export default function LessonScreen() {
 
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: COLORS.background },
-  content: { flex: 1, width: '100%', maxWidth: 920, alignSelf: 'center' },
+  content: { flex: 1, width: '100%', maxWidth: 1000, alignSelf: 'center', zIndex: 2 },
+  contentWide: { maxWidth: 1180 },
   header: {
-    backgroundColor: COLORS.card,
-    borderBottomWidth: 1,
-    borderBottomColor: COLORS.border,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    borderRadius: RADIUS.xl,
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.sm,
     paddingHorizontal: SPACING.md,
     paddingVertical: SPACING.sm,
+    marginHorizontal: SPACING.lg,
+    marginTop: SPACING.sm,
+    backgroundColor: 'rgba(255,255,255,0.76)',
   },
   backBtn: { padding: SPACING.xs },
   backArrow: { fontSize: FONT_SIZES.xl, color: COLORS.primaryDark },
@@ -175,9 +189,9 @@ const styles = StyleSheet.create({
   subjectEmoji: { fontSize: 20 },
   headerTitle: { fontWeight: '800', fontSize: FONT_SIZES.lg, color: COLORS.textPrimary },
   headerSub: { fontSize: FONT_SIZES.xs, color: COLORS.textSecondary },
-  quizBtn: { backgroundColor: COLORS.primaryLight, borderRadius: RADIUS.full, paddingHorizontal: SPACING.md, paddingVertical: 6 },
+  quizBtn: { backgroundColor: COLORS.primaryLight, borderRadius: RADIUS.full, paddingHorizontal: SPACING.md, paddingVertical: 6, borderWidth: 1, borderColor: '#bde5cc' },
   quizBtnText: { color: COLORS.primaryDark, fontSize: FONT_SIZES.sm, fontWeight: '700' },
-  gradeBanner: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm, paddingHorizontal: SPACING.lg, paddingVertical: SPACING.sm },
+  gradeBanner: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm, paddingHorizontal: SPACING.lg, paddingVertical: SPACING.sm, marginHorizontal: SPACING.lg, marginTop: SPACING.sm, borderRadius: RADIUS.lg, borderWidth: 1, borderColor: COLORS.border },
   gradeLetter: { fontWeight: '800', fontSize: FONT_SIZES.xxl },
   gradeDetail: { fontWeight: '700', fontSize: FONT_SIZES.sm },
   chatContainer: { paddingHorizontal: SPACING.lg, paddingTop: SPACING.lg, paddingBottom: SPACING.md, gap: SPACING.md },
@@ -186,22 +200,23 @@ const styles = StyleSheet.create({
   bubbleWrapAI: { justifyContent: 'flex-start' },
   avatar: { width: 34, height: 34, borderRadius: 17, backgroundColor: COLORS.primaryLight, alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
   avatarEmoji: { fontSize: 18 },
-  bubble: { maxWidth: '78%', borderRadius: RADIUS.lg, padding: SPACING.md },
+  bubble: { maxWidth: '72%', borderRadius: RADIUS.lg, padding: SPACING.md },
   bubbleUser: { backgroundColor: COLORS.primary },
-  bubbleAI: { backgroundColor: COLORS.card, borderWidth: 1, borderColor: COLORS.border },
+  bubbleAI: { backgroundColor: 'rgba(255,255,255,0.78)', borderWidth: 1, borderColor: COLORS.border },
   bubbleText: { fontSize: FONT_SIZES.md, lineHeight: 22 },
   bubbleTextUser: { color: COLORS.white },
   bubbleTextAI: { color: COLORS.textPrimary },
   typingWrap: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm, padding: SPACING.md },
-  typingBubble: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm, backgroundColor: COLORS.card, borderRadius: RADIUS.lg, padding: SPACING.md, borderWidth: 1, borderColor: COLORS.border },
+  typingBubble: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm, backgroundColor: 'rgba(255,255,255,0.78)', borderRadius: RADIUS.lg, padding: SPACING.md, borderWidth: 1, borderColor: COLORS.border },
   typingText: { color: COLORS.textSecondary, fontSize: FONT_SIZES.sm },
-  quickCardsRow: { paddingHorizontal: SPACING.lg, paddingVertical: SPACING.sm, flexDirection: 'row', gap: SPACING.sm, justifyContent: 'space-between' },
-  quickCard: { flex: 1, minHeight: 56, backgroundColor: COLORS.card, borderRadius: RADIUS.lg, borderWidth: 1, borderColor: COLORS.border, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: 6 },
+  quickCardsRow: { paddingHorizontal: SPACING.lg, paddingVertical: SPACING.sm, flexDirection: 'row', gap: SPACING.sm, justifyContent: 'space-between', flexWrap: 'wrap' },
+  quickCard: { width: '48%', minHeight: 56, backgroundColor: 'rgba(255,255,255,0.78)', borderRadius: RADIUS.lg, borderWidth: 1, borderColor: COLORS.border, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: 6, shadowColor: COLORS.shadow, shadowOpacity: 0.04, shadowOffset: { width: 0, height: 6 }, shadowRadius: 10, elevation: 1 },
+  quickCardCompact: { width: '100%' },
   quickCardIcon: { fontSize: FONT_SIZES.md },
   quickCardText: { color: COLORS.textPrimary, fontWeight: '700', fontSize: FONT_SIZES.sm },
   inputWrap: { paddingHorizontal: SPACING.lg, paddingVertical: SPACING.md, backgroundColor: 'transparent' },
   inputBar: {
-    backgroundColor: COLORS.card,
+    backgroundColor: 'rgba(255,255,255,0.82)',
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.sm,
@@ -210,7 +225,7 @@ const styles = StyleSheet.create({
     borderRadius: RADIUS.full,
     borderWidth: 1,
     borderColor: COLORS.border,
-    shadowColor: '#0f172a',
+    shadowColor: COLORS.shadow,
     shadowOpacity: 0.08,
     shadowOffset: { width: 0, height: 8 },
     shadowRadius: 16,

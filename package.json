@@ -3,7 +3,10 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --offline",
+    "start:online": "expo start",
+    "start:offline": "expo start --offline",
+    "start:clear:offline": "expo start --clear --offline",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",

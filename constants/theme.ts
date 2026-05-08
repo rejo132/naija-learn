@@ -1,15 +1,18 @@
 export const COLORS = {
-  primary: '#2563eb',
-  primaryLight: '#dbeafe',
-  primaryDark: '#1d4ed8',
-  accent: '#22c55e',
+  primary: '#168a4b',
+  primaryLight: '#e8f8ee',
+  primaryDark: '#0f6639',
+  accent: '#f1bf4a',
   white: '#ffffff',
-  background: '#f8fafc',
+  background: '#f6faf7',
   card: '#ffffff',
-  border: '#e2e8f0',
-  textPrimary: '#0f172a',
-  textSecondary: '#475569',
-  textMuted: '#94a3b8',
+  border: '#dce9df',
+  textPrimary: '#153226',
+  textSecondary: '#537166',
+  textMuted: '#95a79f',
+  surfaceSoft: '#edf7f0',
+  surfaceWarm: '#fff8e8',
+  shadow: '#0f2a1d',
 };
 
 export const FONT_SIZES = {
