@@ -301,17 +301,17 @@ const styles = StyleSheet.create({
     color: COLORS.streakRed,
   },
   xpBadge: {
-    backgroundColor: '#FFF8E7',
+    backgroundColor: COLORS.goldLight,
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md,
     paddingVertical: 6,
     borderWidth: 1,
-    borderColor: 'rgba(245, 166, 35, 0.35)',
+    borderColor: 'rgba(234, 162, 33, 0.35)',
   },
   xpBadgeText: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.accentDark,
+    color: COLORS.goldDark,
   },
 
   navRow: {
@@ -402,17 +402,17 @@ const styles = StyleSheet.create({
     color: COLORS.textPrimary,
   },
   missionXpBadge: {
-    backgroundColor: COLORS.accentLight,
+    backgroundColor: COLORS.goldLight,
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.sm,
     paddingVertical: 4,
     borderWidth: 1,
-    borderColor: 'rgba(245, 166, 35, 0.3)',
+    borderColor: 'rgba(234, 162, 33, 0.3)',
   },
   missionXpText: {
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.accentDark,
+    color: COLORS.goldDark,
   },
   missionDesc: {
     fontSize: FONT_SIZES.md,

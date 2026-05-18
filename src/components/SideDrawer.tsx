@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.lg,
   },
   statBadge: {
-    backgroundColor: COLORS.accentLight,
+    backgroundColor: COLORS.goldLight,
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md,
     paddingVertical: 4,
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
   statBadgeText: {
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-SemiBold',
-    color: COLORS.accentDark,
+    color: COLORS.goldDark,
   },
   streakBadgeText: {
     color: '#DC2626',

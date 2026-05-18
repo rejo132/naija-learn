@@ -83,9 +83,9 @@ export default function ProgressScreen() {
 
         {/* Streak motivator */}
         <GlassCard style={[styles.streakCard,
-          streak >= 7 ? { backgroundColor: '#fef3c7' } :
+          streak >= 7 ? { backgroundColor: COLORS.goldLight } :
           streak >= 3 ? { backgroundColor: '#fee2e2' } :
-          { backgroundColor: '#f0fdf4' }
+          { backgroundColor: COLORS.primaryLight }
         ]}>
           <Text style={styles.streakEmoji}>
             {streak >= 7 ? '⚡' : streak >= 3 ? '🔥' : '🌱'}
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
   levelInfo: { flex: 1 },
   levelTitle: { fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold', color: COLORS.textPrimary },
   levelSubtitle: { fontSize: FONT_SIZES.sm, color: COLORS.textSecondary },
-  xpTotal: { fontSize: FONT_SIZES.md, fontWeight: '800', fontFamily: 'Poppins-Bold', color: '#B45309' },
+  xpTotal: { fontSize: FONT_SIZES.md, fontWeight: '800', fontFamily: 'Poppins-Bold', color: COLORS.goldDark },
   progressBarBg: {
     height: 12, backgroundColor: COLORS.primaryLight,
     borderRadius: 6, overflow: 'hidden',

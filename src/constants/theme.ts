@@ -4,57 +4,65 @@
  */
 
 export const COLORS = {
-  // Primary greens — Nigerian flag inspired
+  // ── Primary brand (Nigerian green) ──
   primary: '#008751',
   primaryDark: '#005C36',
+  primaryDeep: '#003D25',
   primaryLight: '#E8F5EE',
-  primaryGlow: 'rgba(0, 135, 81, 0.15)',
+  primaryGlow: 'rgba(0, 135, 81, 0.12)',
 
-  // Accent colors
-  accent: '#F5A623',
-  accentLight: '#FFF8E7',
-  accentDark: '#C17B00',
+  // ── Warm accent (Terracotta) ──
+  accent: '#C2502A',
+  accentLight: '#FDF0EB',
+  accentMid: '#E8835A',
+  accentDark: '#8B3518',
 
-  // Backgrounds — layered depth
-  background: '#F0FAF4',
-  backgroundDeep: '#E4F5EB',
-  backgroundCard: 'rgba(255, 255, 255, 0.82)',
-  backgroundGlass: 'rgba(255, 255, 255, 0.65)',
-  backgroundDark: 'rgba(0, 87, 51, 0.06)',
+  // ── Gold (XP / rewards only) ──
+  gold: '#EAA221',
+  goldLight: '#FEF6E4',
+  goldDark: '#B87B0A',
 
-  // Text hierarchy
-  textPrimary: '#0D2B1A',
-  textSecondary: '#3D6B52',
-  textMuted: '#8BAD98',
+  // ── Backgrounds ──
+  background: '#F9F6F0',
+  backgroundDeep: '#F2EDE4',
+  backgroundCard: '#FFFFFF',
+  backgroundGlass: 'rgba(255, 255, 255, 0.80)',
+  backgroundDark: 'rgba(26, 26, 26, 0.04)',
+
+  // ── Text ──
+  textPrimary: '#1A1A1A',
+  textSecondary: '#4A4A4A',
+  textMuted: '#9A9A9A',
   textInverse: '#FFFFFF',
+  textAccent: '#C2502A',
 
-  // Semantic colors
-  success: '#00A651',
-  successLight: '#E6F9EE',
-  warning: '#F5A623',
-  warningLight: '#FFF8E7',
-  error: '#E53935',
-  errorLight: '#FFEBEE',
+  // ── Borders & glass ──
+  border: 'rgba(0, 0, 0, 0.08)',
+  borderStrong: 'rgba(0, 0, 0, 0.15)',
+  glassBorder: 'rgba(255, 255, 255, 0.75)',
+  glassShadow: 'rgba(0, 0, 0, 0.06)',
 
-  // Glassmorphism
-  glassBorder: 'rgba(255, 255, 255, 0.7)',
-  glassShimmer: 'rgba(255, 255, 255, 0.4)',
-  glassShadow: 'rgba(0, 87, 51, 0.12)',
+  // ── Semantic ──
+  success: '#008751',
+  successLight: '#E8F5EE',
+  warning: '#EAA221',
+  warningLight: '#FEF6E4',
+  error: '#D93025',
+  errorLight: '#FDECEA',
 
-  // Nigerian flag
-  flagGreen: '#008751',
-  flagWhite: '#FFFFFF',
+  // ── Gamification ──
+  xpGold: '#EAA221',
+  streakRed: '#E53935',
+  levelPurple: '#6B3FA0',
 
-  // Gamification
-  xpGold: '#F5A623',
-  streakRed: '#FF4444',
-  levelPurple: '#7C3AED',
-
-  // Legacy (keep for compatibility)
+  // ── Legacy aliases (keep for compatibility) ──
   white: '#FFFFFF',
   card: '#FFFFFF',
-  border: 'rgba(0, 135, 81, 0.15)',
-  shadow: 'rgba(0, 87, 51, 0.12)',
+  shadow: 'rgba(0, 0, 0, 0.06)',
+
+  // ── Old names remapped (so nothing breaks) ──
+  flagGreen: '#008751',
+  flagWhite: '#FFFFFF',
 };
 
 export const FONTS = {
@@ -129,9 +137,12 @@ export const SHADOWS = {
 
 export const GRADIENTS = {
   primary: ['#008751', '#00A651'],
-  primaryDeep: ['#005C36', '#008751'],
-  warm: ['#F5A623', '#FFD166'],
-  background: ['#F0FAF4', '#E4F5EB'],
-  glass: ['rgba(255,255,255,0.9)', 'rgba(255,255,255,0.6)'],
-  hero: ['#E8F5EE', '#F0FAF4'],
+  primaryDeep: ['#003D25', '#008751'],
+  warm: ['#C2502A', '#E8835A'],
+  warmSoft: ['#FDF0EB', '#F9F6F0'],
+  gold: ['#EAA221', '#F5C842'],
+  background: ['#F9F6F0', '#F2EDE4'],
+  glass: ['rgba(255,255,255,0.95)', 'rgba(255,255,255,0.70)'],
+  hero: ['#E8F5EE', '#F9F6F0'],
+  sidebar: ['#1A2E20', '#0D1F14'],
 };

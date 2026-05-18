@@ -32,8 +32,8 @@ const QUICK_ACTIONS: QuickAction[] = [
     id: 'example',
     label: 'Example',
     emoji: '💡',
-    color: '#B45309',
-    bgColor: '#fef3c7',
+    color: COLORS.goldDark,
+    bgColor: COLORS.goldLight,
   },
   {
     id: 'harder',

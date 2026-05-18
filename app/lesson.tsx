@@ -624,15 +624,15 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
   },
   xpBadge: {
-    backgroundColor: '#FFF8E7',
+    backgroundColor: COLORS.goldLight,
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.sm,
     paddingVertical: 6,
     borderWidth: 1,
-    borderColor: 'rgba(245, 166, 35, 0.4)',
+    borderColor: 'rgba(234, 162, 33, 0.4)',
   },
   xpText: {
-    color: COLORS.accentDark,
+    color: COLORS.goldDark,
     fontFamily: 'Poppins-Bold',
     fontSize: FONT_SIZES.xs,
   },
