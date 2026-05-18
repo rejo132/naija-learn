@@ -68,7 +68,8 @@
             "deploymentTarget": "15.1"
           }
         }
-      ]
+      ],
+      "expo-web-browser"
     ],
     "scheme": "learnova",
     "newArchEnabled": true,

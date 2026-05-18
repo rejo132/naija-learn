@@ -13,7 +13,9 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
+  useWindowDimensions,
 } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/store/authStore';
@@ -22,7 +24,18 @@ import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import { TutorAvatar } from '@/components/TutorAvatar';
 
+const FEATURES = [
+  { emoji: '🧠', text: 'Claude AI Tutor' },
+  { emoji: '📚', text: 'NERDC Curriculum' },
+  { emoji: '🌍', text: '4 Nigerian Languages' },
+  { emoji: '📊', text: 'Works Offline' },
+  { emoji: '🏆', text: 'Gamified Learning' },
+];
+
 export default function SignUpScreen() {
+  const { width } = useWindowDimensions();
+  const isWide = width > 768;
+
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -91,139 +104,187 @@ export default function SignUpScreen() {
 
   return (
     <SafeAreaView style={styles.safe}>
-      <KeyboardAvoidingView
-        style={styles.keyboard}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      >
-        <ScrollView
-          contentContainerStyle={styles.scroll}
-          keyboardShouldPersistTaps="handled"
-          showsVerticalScrollIndicator={false}
-        >
-          <View style={styles.logoSection}>
-            <TutorAvatar size={64} />
-            <Text style={styles.appName}>Learnova</Text>
-            <Text style={styles.appTagline}>{ui.appTagline}</Text>
-          </View>
+      <View style={styles.container}>
+        {isWide && (
+          <View style={styles.leftPanel}>
+            <LinearGradient
+              colors={['#1A0A2E', '#0D1F14', '#003D25']}
+              style={StyleSheet.absoluteFill}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+            />
 
-          <View style={styles.card}>
-            <Text style={styles.welcomeTitle}>{ui.createAccount}</Text>
-            <Text style={styles.welcomeSub}>{ui.joinStudents}</Text>
+            <View style={styles.decorCircle1} />
+            <View style={styles.decorCircle2} />
+            <View style={styles.decorCircle3} />
 
-            {displayError ? (
-              <View style={styles.errorBanner}>
-                <Text style={styles.errorText}>⚠️ {displayError}</Text>
-              </View>
-            ) : null}
-
-            <View style={styles.inputGroup}>
-              <Text style={styles.inputIcon}>👤</Text>
-              <TextInput
-                style={styles.input}
-                placeholder={ui.fullName}
-                placeholderTextColor={COLORS.textMuted}
-                value={name}
-                onChangeText={setName}
-                autoCapitalize="words"
-                autoComplete="name"
-                editable={!isLoading}
-              />
+            <View style={styles.leftLogo}>
+              <TutorAvatar size={56} />
+              <Text style={styles.leftAppName}>Learnova</Text>
             </View>
 
-            <View style={styles.inputGroup}>
-              <Text style={styles.inputIcon}>📱</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="0803 000 0000"
-                placeholderTextColor={COLORS.textMuted}
-                value={phone}
-                onChangeText={setPhone}
-                keyboardType="phone-pad"
-                autoComplete="tel"
-                editable={!isLoading}
-              />
+            <View style={styles.featuresList}>
+              {FEATURES.map((f, i) => (
+                <View key={i} style={styles.featureItem}>
+                  <Text style={styles.featureEmoji}>{f.emoji}</Text>
+                  <Text style={styles.featureText}>{f.text}</Text>
+                </View>
+              ))}
             </View>
 
-            <View style={[styles.inputGroup, emailError ? styles.inputGroupError : null]}>
-              <Text style={styles.inputIcon}>📧</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="name@example.com"
-                placeholderTextColor={COLORS.textMuted}
-                value={email}
-                onChangeText={(v) => {
-                  setEmail(v);
-                  validateEmail(v);
-                }}
-                keyboardType="email-address"
-                autoCapitalize="none"
-                autoComplete="email"
-                editable={!isLoading}
-              />
-              {emailValid && <Text style={styles.inputValid}>✓</Text>}
-            </View>
-            {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
-
-            <View style={styles.inputGroup}>
-              <Text style={styles.inputIcon}>🔒</Text>
-              <TextInput
-                style={styles.input}
-                placeholder={t('password')}
-                placeholderTextColor={COLORS.textMuted}
-                value={password}
-                onChangeText={setPassword}
-                secureTextEntry={!showPassword}
-                autoComplete="new-password"
-                editable={!isLoading}
-              />
-              <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
-                <Text style={styles.eyeIcon}>{showPassword ? '🙈' : '👁️'}</Text>
-              </TouchableOpacity>
-            </View>
-
-            <View style={styles.inputGroup}>
-              <Text style={styles.inputIcon}>🔒</Text>
-              <TextInput
-                style={styles.input}
-                placeholder={ui.confirmPassword}
-                placeholderTextColor={COLORS.textMuted}
-                value={confirmPassword}
-                onChangeText={setConfirmPassword}
-                secureTextEntry={!showConfirmPassword}
-                autoComplete="new-password"
-                editable={!isLoading}
-              />
-              <TouchableOpacity onPress={() => setShowConfirmPassword(!showConfirmPassword)}>
-                <Text style={styles.eyeIcon}>{showConfirmPassword ? '🙈' : '👁️'}</Text>
-              </TouchableOpacity>
-            </View>
-
-            <TouchableOpacity
-              style={[styles.signUpBtn, (isLoading || !canSubmit) && styles.signUpBtnLoading]}
-              onPress={handleSignUp}
-              disabled={!canSubmit}
-            >
-              {isLoading ? (
-                <ActivityIndicator color="#FFFFFF" />
-              ) : (
-                <Text style={styles.signUpBtnText}>{ui.signUp}</Text>
-              )}
-            </TouchableOpacity>
-
-            <Text style={styles.privacyNote}>{ui.privacyNote}</Text>
-
-            <TouchableOpacity
-              style={styles.signInLink}
-              onPress={() => router.push('/auth/sign-in')}
-            >
-              <Text style={styles.signInLinkText}>
-                {ui.alreadyHaveAccount}{' '}
-                <Text style={styles.signInLinkBold}>{ui.signInLink}</Text>
+            <View style={styles.quoteBlock}>
+              <Text style={styles.quoteText}>
+                &quot;Education is the most powerful weapon&quot;
               </Text>
-            </TouchableOpacity>
+              <Text style={styles.quoteAuthor}>— Nelson Mandela</Text>
+            </View>
           </View>
-        </ScrollView>
-      </KeyboardAvoidingView>
+        )}
+
+        <KeyboardAvoidingView
+          style={styles.rightPanel}
+          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        >
+          <ScrollView
+            contentContainerStyle={styles.formScroll}
+            keyboardShouldPersistTaps="handled"
+            showsVerticalScrollIndicator={false}
+          >
+            {!isWide && (
+              <View style={styles.mobileLogo}>
+                <TutorAvatar size={48} />
+                <Text style={styles.mobileAppName}>Learnova</Text>
+              </View>
+            )}
+
+            <View style={styles.card}>
+              <Text style={styles.welcomeTitle}>{ui.createAccount}</Text>
+              <Text style={styles.welcomeSub}>{ui.joinStudents}</Text>
+
+              {displayError ? (
+                <View style={styles.errorBanner}>
+                  <Text style={styles.errorText}>⚠️ {displayError}</Text>
+                </View>
+              ) : null}
+
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputIcon}>👤</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder={ui.fullName}
+                  placeholderTextColor={COLORS.textMuted}
+                  value={name}
+                  onChangeText={setName}
+                  autoCapitalize="words"
+                  autoComplete="name"
+                  editable={!isLoading}
+                />
+              </View>
+
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputIcon}>📱</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder="0803 000 0000"
+                  placeholderTextColor={COLORS.textMuted}
+                  value={phone}
+                  onChangeText={setPhone}
+                  keyboardType="phone-pad"
+                  autoComplete="tel"
+                  editable={!isLoading}
+                />
+              </View>
+
+              <View
+                style={[
+                  styles.inputGroup,
+                  emailError
+                    ? styles.inputGroupError
+                    : emailValid
+                      ? styles.inputGroupValid
+                      : null,
+                ]}
+              >
+                <Text style={styles.inputIcon}>📧</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder="name@example.com"
+                  placeholderTextColor={COLORS.textMuted}
+                  value={email}
+                  onChangeText={(v) => {
+                    setEmail(v);
+                    validateEmail(v);
+                  }}
+                  keyboardType="email-address"
+                  autoCapitalize="none"
+                  autoComplete="email"
+                  editable={!isLoading}
+                />
+                {emailValid && <Text style={styles.inputValid}>✓</Text>}
+              </View>
+              {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
+
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputIcon}>🔒</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder={t('password')}
+                  placeholderTextColor={COLORS.textMuted}
+                  value={password}
+                  onChangeText={setPassword}
+                  secureTextEntry={!showPassword}
+                  autoComplete="new-password"
+                  editable={!isLoading}
+                />
+                <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                  <Text style={styles.eyeIcon}>{showPassword ? '🙈' : '👁️'}</Text>
+                </TouchableOpacity>
+              </View>
+
+              <View style={styles.inputGroup}>
+                <Text style={styles.inputIcon}>🔒</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder={ui.confirmPassword}
+                  placeholderTextColor={COLORS.textMuted}
+                  value={confirmPassword}
+                  onChangeText={setConfirmPassword}
+                  secureTextEntry={!showConfirmPassword}
+                  autoComplete="new-password"
+                  editable={!isLoading}
+                />
+                <TouchableOpacity onPress={() => setShowConfirmPassword(!showConfirmPassword)}>
+                  <Text style={styles.eyeIcon}>{showConfirmPassword ? '🙈' : '👁️'}</Text>
+                </TouchableOpacity>
+              </View>
+
+              <TouchableOpacity
+                style={[styles.signUpBtn, (isLoading || !canSubmit) && styles.signUpBtnLoading]}
+                onPress={handleSignUp}
+                disabled={!canSubmit}
+              >
+                {isLoading ? (
+                  <ActivityIndicator color="#FFFFFF" />
+                ) : (
+                  <Text style={styles.signUpBtnText}>{ui.signUp}</Text>
+                )}
+              </TouchableOpacity>
+
+              <Text style={styles.privacyNote}>{ui.privacyNote}</Text>
+
+              <TouchableOpacity
+                style={styles.signInLink}
+                onPress={() => router.push('/auth/sign-in')}
+              >
+                <Text style={styles.signInLinkText}>
+                  {ui.alreadyHaveAccount}{' '}
+                  <Text style={styles.signInLinkBold}>{ui.signInLink}</Text>
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </ScrollView>
+        </KeyboardAvoidingView>
+      </View>
     </SafeAreaView>
   );
 }
@@ -231,36 +292,114 @@ export default function SignUpScreen() {
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
-    backgroundColor: '#F9F6F0',
+    backgroundColor: '#FFFFFF',
   },
-  keyboard: { flex: 1 },
-  scroll: {
-    flexGrow: 1,
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  leftPanel: {
+    flex: 55,
+    position: 'relative',
+    overflow: 'hidden',
+    padding: SPACING.xxxl,
+    justifyContent: 'space-between',
+  },
+  decorCircle1: {
+    position: 'absolute',
+    width: 300,
+    height: 300,
+    borderRadius: 150,
+    backgroundColor: 'rgba(100, 60, 180, 0.25)',
+    top: -80,
+    left: -60,
+  },
+  decorCircle2: {
+    position: 'absolute',
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: 'rgba(0, 80, 40, 0.4)',
+    bottom: 100,
+    left: 80,
+  },
+  decorCircle3: {
+    position: 'absolute',
+    width: 160,
+    height: 160,
+    borderRadius: 80,
+    backgroundColor: 'rgba(30, 60, 120, 0.3)',
+    top: 200,
+    right: -40,
+  },
+  leftLogo: {
+    flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: SPACING.xxl,
-    paddingHorizontal: SPACING.lg,
-    paddingBottom: SPACING.xxl,
+    gap: SPACING.md,
   },
-  logoSection: {
-    alignItems: 'center',
-    marginBottom: SPACING.xl,
-    gap: SPACING.sm,
-  },
-  appName: {
-    fontSize: FONT_SIZES.xxl,
+  leftAppName: {
+    fontSize: FONT_SIZES.xxxl,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.primary,
-    marginTop: SPACING.sm,
+    color: '#FFFFFF',
   },
-  appTagline: {
+  featuresList: {
+    flex: 1,
+    justifyContent: 'center',
+    gap: SPACING.lg,
+    marginVertical: SPACING.xxxl,
+  },
+  featureItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.md,
+  },
+  featureEmoji: { fontSize: 22 },
+  featureText: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-SemiBold',
+    color: 'rgba(255,255,255,0.85)',
+  },
+  quoteBlock: {
+    borderLeftWidth: 3,
+    borderLeftColor: COLORS.primary,
+    paddingLeft: SPACING.md,
+  },
+  quoteText: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textMuted,
-    textAlign: 'center',
+    color: 'rgba(255,255,255,0.6)',
+    fontStyle: 'italic',
+    lineHeight: 22,
+  },
+  quoteAuthor: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-SemiBold',
+    color: 'rgba(255,255,255,0.5)',
+    marginTop: 4,
+  },
+  rightPanel: {
+    flex: 45,
+    backgroundColor: '#FFFFFF',
+  },
+  formScroll: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    padding: SPACING.xxxl,
+  },
+  mobileLogo: {
+    alignItems: 'center',
+    gap: SPACING.sm,
+    marginBottom: SPACING.xl,
+  },
+  mobileAppName: {
+    fontSize: FONT_SIZES.xl,
+    fontFamily: 'Poppins-Bold',
+    color: COLORS.primary,
   },
   card: {
     width: '100%',
     maxWidth: 400,
+    alignSelf: 'center',
     backgroundColor: '#FFFFFF',
     borderRadius: RADIUS.xl,
     padding: SPACING.xl,
@@ -294,6 +433,7 @@ const styles = StyleSheet.create({
     minHeight: 52,
   },
   inputGroupError: { borderColor: COLORS.error },
+  inputGroupValid: { borderColor: COLORS.success },
   inputIcon: { fontSize: 18 },
   input: {
     flex: 1,
