@@ -28,6 +28,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 import { PressableScale } from '@/components/PressableScale';
+import { TutorAvatar } from '@/components/TutorAvatar';
 
 type Tab = 'subjects' | 'languages' | 'softskills';
 
@@ -366,7 +367,7 @@ export default function DashboardScreen() {
             }
           }}
         >
-          <Text style={styles.floatingTutorEmoji}>🤖</Text>
+          <TutorAvatar size={28} />
           <Text style={styles.floatingTutorText}>Ask Tutor</Text>
         </TouchableOpacity>
       </View>

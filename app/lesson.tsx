@@ -27,10 +27,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore, type ChatMessage } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
 import { saveProgress } from '@/services/dbService';
-import { LANGUAGES, getGreeting, getUIText } from '@/constants/languages';
+import { getGreeting, getUIText } from '@/constants/languages';
 import { getNigerianGrade, getLessonQuickActions, getQuickPrompts } from '@/constants/subjects';
 import { type Achievement, XP_REWARDS, checkNewAchievements } from '@/constants/achievements';
-import { getPersonality } from '@/constants/personalities';
+import { getPersonality, type TutorPersonality } from '@/constants/personalities';
 import { AchievementToast } from '@/components/AchievementToast';
 import {
   buildSystemPrompt,
@@ -40,12 +40,13 @@ import {
   sendAIMessage,
 } from '@/services/aiService';
 import { QuickActionBar } from '@/components/QuickActionBar';
-import { SPACING, RADIUS, FONT_SIZES, GRADIENTS } from '@/constants/theme';
+import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 import { PressableScale } from '@/components/PressableScale';
 import { MarkdownMessage } from '@/components/MarkdownMessage';
+import { TutorAvatar } from '@/components/TutorAvatar';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 
 const QUIZ_QUESTION_TARGET = 3;
@@ -163,19 +164,19 @@ function BounceDot({ delay, color }: { delay: number; color: string }) {
   return <Animated.View style={[styles.thinkingDot, { backgroundColor: color }, animStyle]} />;
 }
 
-function ThinkingIndicator() {
-  const { colors } = useTheme();
+function ThinkingIndicator({ personality }: { personality: TutorPersonality }) {
+  const { colors, isDarkMode } = useTheme();
 
   return (
-    <View style={styles.typingWrap}>
-      <View style={[styles.avatar, { backgroundColor: colors.primaryLight, borderColor: colors.border }]}>
-        <Text style={styles.avatarEmoji}>👩🏽‍🏫</Text>
-      </View>
-      <View style={[styles.typingBubble, {
-        backgroundColor: colors.white,
-        borderColor: colors.border,
-        borderLeftColor: colors.primary,
-      }]}>
+    <View style={styles.aiRow}>
+      <TutorAvatar size={32} personality={personality} />
+      <View style={[
+        styles.aiBubble,
+        {
+          backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
+          borderColor: colors.border,
+        },
+      ]}>
         <View style={styles.thinkingDotsRow}>
           <BounceDot delay={0} color={colors.primary} />
           <BounceDot delay={160} color={colors.primary} />
@@ -187,41 +188,49 @@ function ThinkingIndicator() {
   );
 }
 
-function ChatBubble({ item, personalityEmoji }: { item: ChatMessage; personalityEmoji: string }) {
+function ChatBubble({
+  item,
+  personality,
+  isDarkMode,
+}: {
+  item: ChatMessage;
+  personality: TutorPersonality;
+  isDarkMode: boolean;
+}) {
   const { colors } = useTheme();
   const isUser = item.role === 'user';
   const time = formatTime(item.timestamp);
 
+  if (isUser) {
+    return (
+      <Animated.View
+        entering={FadeInDown.duration(280).springify()}
+        style={styles.userBubbleWrap}
+      >
+        <View style={[styles.userBubble, { backgroundColor: colors.primary }]}>
+          <Text style={styles.userBubbleText}>{item.content}</Text>
+        </View>
+        <Text style={[styles.bubbleTime, styles.bubbleTimeUser, { color: colors.textMuted }]}>{time}</Text>
+      </Animated.View>
+    );
+  }
+
   return (
-    <Animated.View
-      entering={FadeInDown.duration(280).springify()}
-      style={[styles.bubbleWrap, isUser ? styles.bubbleWrapUser : styles.bubbleWrapAI]}
-    >
-      {!isUser && (
-        <View style={[styles.avatar, { backgroundColor: colors.primaryLight, borderColor: colors.border }]}>
-          <Text style={styles.avatarEmoji}>{personalityEmoji}</Text>
-        </View>
-      )}
-      <View style={styles.bubbleColumn}>
-        <View style={[
-          styles.bubble,
-          isUser ? styles.bubbleUser : [styles.bubbleAI, {
-            backgroundColor: colors.white,
-            borderColor: colors.border,
-            borderLeftColor: colors.primary,
-          }],
-        ]}>
-          {isUser ? (
-            <>
-              <View style={styles.bubbleUserGradientBase} />
-              <View style={styles.bubbleUserGradientTop} />
-              <Text style={[styles.bubbleText, styles.bubbleTextUser, { color: colors.white }]}>{item.content}</Text>
-            </>
-          ) : (
+    <Animated.View entering={FadeInDown.duration(280).springify()}>
+      <View style={styles.aiRow}>
+        <TutorAvatar size={32} personality={personality} />
+        <View style={styles.aiBubbleColumn}>
+          <View style={[
+            styles.aiBubble,
+            {
+              backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
+              borderColor: colors.border,
+            },
+          ]}>
             <MarkdownMessage content={item.content} />
-          )}
+          </View>
+          <Text style={[styles.bubbleTime, { color: colors.textMuted }]}>{time}</Text>
         </View>
-        <Text style={[styles.bubbleTime, { color: colors.textMuted }, isUser && styles.bubbleTimeUser]}>{time}</Text>
       </View>
     </Animated.View>
   );
@@ -257,29 +266,13 @@ export default function LessonScreen() {
   const [quizScore, setQuizScore] = useState<number | null>(null);
   const flatListRef = useRef<FlatList>(null);
   const quizStatsRef = useRef({ correct: 0, answered: 0 });
-  const lang = LANGUAGES.find((l) => l.code === selectedLanguage)!;
   const ui = getUIText(selectedLanguage);
   const personality = getPersonality(selectedPersonalityId);
   const { width } = useWindowDimensions();
   const isCompact = width < 760;
   const isWide = width > 1200;
   const lessonContextRef = useRef<string | null>(null);
-  const xpPulse = useSharedValue(1);
   const { colors, isDarkMode } = useTheme();
-
-  useEffect(() => {
-    xpPulse.value = withRepeat(
-      withSequence(
-        withTiming(1.06, { duration: 900 }),
-        withTiming(1, { duration: 900 })
-      ),
-      -1
-    );
-  }, [xpPulse]);
-
-  const xpBadgeAnimStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: xpPulse.value }],
-  }));
 
   useFocusEffect(
     useCallback(() => {
@@ -468,47 +461,39 @@ export default function LessonScreen() {
       >
         <Atmosphere pointerEvents="none" />
         <View style={[styles.content, isWide && styles.contentWide]}>
-          <GlassCard variant="elevated" style={[styles.header, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
-            <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
-              <Text style={[styles.backArrow, { color: colors.primaryDark }]}>←</Text>
-            </TouchableOpacity>
-            <View
-              style={[
-                styles.subjectIcon,
-                { backgroundColor: selectedSubject?.bgColor ?? colors.primaryLight },
-              ]}
-            >
-              <Text style={styles.subjectEmoji}>{selectedSubject?.icon ?? '📚'}</Text>
-            </View>
-            <View style={styles.headerCenter}>
-              <Text style={[styles.headerTitle, { color: colors.textPrimary }]} numberOfLines={1}>
-                {selectedSubject?.label ?? ui.learn}
-              </Text>
-              <Text style={[styles.headerSub, { color: colors.textSecondary }]} numberOfLines={1}>
-                {ui.primary} {selectedGrade} · {lang.nativeLabel}
-                {isQuizMode ? ` · ${ui.quizMode}` : ''}
-              </Text>
-              <TouchableOpacity
-                style={styles.personalityRow}
-                onPress={() => router.push('/personality')}
-              >
-                <Text style={styles.personalityEmoji}>{personality.emoji}</Text>
-                <Text style={[styles.personalityName, { color: colors.primary }]}>{personality.name}</Text>
-              </TouchableOpacity>
-            </View>
-            <Animated.View style={[styles.xpBadge, { backgroundColor: colors.goldLight }, xpBadgeAnimStyle]}>
-              <Text style={[styles.xpText, { color: colors.goldDark }]}>⚡ {xp} XP</Text>
-            </Animated.View>
-            <TouchableOpacity style={[styles.iconBtn, { backgroundColor: colors.primaryLight, borderColor: colors.border }]} onPress={() => router.push('/progress')}>
-              <Text style={styles.iconBtnEmoji}>📈</Text>
-            </TouchableOpacity>
+          <View style={[
+            styles.header,
+            {
+              backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
+              borderBottomColor: colors.border,
+            },
+          ]}>
             <TouchableOpacity
-              style={[styles.quizBtn, { backgroundColor: colors.primaryLight, borderColor: colors.border, zIndex: 9999 }]}
-              onPress={handleStartQuiz}
+              style={[styles.backBtn, { backgroundColor: colors.primaryLight }]}
+              onPress={() => router.back()}
             >
-              <Text style={[styles.quizBtnText, { color: colors.primaryDark }]}>🧠 {ui.quiz}</Text>
+              <Text style={[styles.backBtnText, { color: colors.primary }]}>←</Text>
             </TouchableOpacity>
-          </GlassCard>
+
+            <View style={styles.headerCenter}>
+              <Text style={styles.headerEmoji}>{selectedSubject?.icon ?? '📚'}</Text>
+              <View style={styles.headerTextBlock}>
+                <Text style={[styles.headerTitle, { color: colors.textPrimary }]} numberOfLines={1}>
+                  {selectedSubject?.label ?? ui.learn}
+                </Text>
+                <Text style={[styles.headerSub, { color: colors.textMuted }]} numberOfLines={1}>
+                  {personality.name}
+                  {isQuizMode ? ` • ${ui.quizMode}` : ''}
+                  {' • '}
+                  {ui.primary} {selectedGrade}
+                </Text>
+              </View>
+            </View>
+
+            <View style={[styles.headerXP, { backgroundColor: colors.goldLight, borderColor: 'rgba(234,162,33,0.3)' }]}>
+              <Text style={[styles.headerXPText, { color: colors.goldDark }]}>⚡ {xp} XP</Text>
+            </View>
+          </View>
 
           {gradeInfo && (
             <GlassCard style={[styles.gradeBanner, { backgroundColor: gradeInfo.bgColor, borderColor: colors.border }]}>
@@ -521,14 +506,36 @@ export default function LessonScreen() {
 
           <FlatList
             ref={flatListRef}
+            style={[styles.messageList, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}
             data={messages}
             keyExtractor={(item) => item.id}
-            contentContainerStyle={[styles.chatContainer, { backgroundColor: colors.background }]}
+            contentContainerStyle={[
+              styles.chatContainer,
+              messages.length === 0 && styles.chatContainerEmpty,
+            ]}
             onContentSizeChange={() => flatListRef.current?.scrollToEnd({ animated: true })}
             renderItem={({ item }) => (
-              <ChatBubble item={item} personalityEmoji={personality.emoji} />
+              <ChatBubble
+                item={item}
+                personality={personality}
+                isDarkMode={isDarkMode}
+              />
             )}
-            ListFooterComponent={isAILoading ? <ThinkingIndicator /> : null}
+            ListEmptyComponent={
+              <View style={styles.emptyState}>
+                <TutorAvatar size={80} personality={personality} />
+                <Text style={[styles.emptyStatePersonality, { color: colors.textMuted }]}>
+                  {personality.emoji} {personality.name ?? 'AI Tutor'}
+                </Text>
+                <Text style={[styles.emptyStateTitle, { color: colors.textPrimary }]}>
+                  Hi, I am {personality.name}!
+                </Text>
+                <Text style={[styles.emptyStateSub, { color: colors.textMuted }]}>
+                  Ask me anything about {selectedSubject?.label ?? 'your lesson'} or tap 🎯 to start a quiz.
+                </Text>
+              </View>
+            }
+            ListFooterComponent={isAILoading ? <ThinkingIndicator personality={personality} /> : null}
           />
 
           {messages.length > 1 && (
@@ -546,9 +553,8 @@ export default function LessonScreen() {
                   key={action.label}
                   style={[
                     styles.quickCard,
-                    { backgroundColor: colors.white, borderColor: colors.border },
+                    { backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF', borderColor: colors.border },
                     isCompact && styles.quickCardCompact,
-                    isDarkMode && { backgroundColor: colors.backgroundCard },
                   ]}
                   onPress={() => handleSend(action.prompt)}
                   scaleTo={0.98}
@@ -560,40 +566,55 @@ export default function LessonScreen() {
             </View>
           )}
 
-          <View style={styles.inputWrap}>
-            {showCharCount && (
-              <Text style={[styles.charCount, { color: colors.textMuted }]}>
-                {inputText.length}/{CHAR_LIMIT}
+          {showCharCount && (
+            <Text style={[styles.charCount, { color: colors.textMuted }]}>
+              {inputText.length}/{CHAR_LIMIT}
+            </Text>
+          )}
+
+          <View style={[
+            styles.inputBar,
+            {
+              backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
+              borderTopColor: colors.border,
+            },
+          ]}>
+            <TouchableOpacity
+              style={[styles.inputBarAction, { backgroundColor: colors.primaryLight }]}
+              onPress={handleStartQuiz}
+              disabled={isAILoading}
+            >
+              <Text style={styles.inputBarActionEmoji}>🎯</Text>
+            </TouchableOpacity>
+
+            <TextInput
+              style={[styles.inputField, {
+                color: colors.textPrimary,
+                backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0',
+              }]}
+              value={inputText}
+              onChangeText={setInputText}
+              placeholder={isConnected ? 'Ask anything...' : 'No internet connection...'}
+              placeholderTextColor={colors.textMuted}
+              multiline
+              maxLength={CHAR_LIMIT}
+              editable={!isAILoading && isConnected}
+              onSubmitEditing={() => handleSend()}
+            />
+
+            <TouchableOpacity
+              style={[
+                styles.sendBtn,
+                { backgroundColor: colors.primary },
+                (!inputText.trim() || isAILoading || !isConnected) && styles.sendBtnDisabled,
+              ]}
+              onPress={() => handleSend()}
+              disabled={!inputText.trim() || isAILoading || !isConnected}
+            >
+              <Text style={styles.sendBtnText}>
+                {isAILoading ? '...' : '➤'}
               </Text>
-            )}
-            <View style={[styles.inputBar, { backgroundColor: colors.white, borderColor: colors.border, shadowColor: colors.shadow }]}>
-              <TextInput
-                style={[styles.input, {
-                  backgroundColor: colors.backgroundCard,
-                  borderColor: colors.border,
-                  color: colors.textPrimary,
-                }]}
-                value={inputText}
-                onChangeText={setInputText}
-                placeholder={isConnected ? ui.askPlaceholder : 'No internet connection...'}
-                placeholderTextColor={colors.textMuted}
-                multiline
-                maxLength={CHAR_LIMIT}
-                editable={!isAILoading && isConnected}
-              />
-              <TouchableOpacity
-                style={[
-                  styles.sendBtn,
-                  { backgroundColor: colors.primary },
-                  (!inputText.trim() || isAILoading || !isConnected) && styles.sendBtnDisabled,
-                ]}
-                onPress={() => handleSend()}
-                disabled={!inputText.trim() || isAILoading || !isConnected}
-              >
-                <View style={styles.sendBtnHighlight} />
-                <Text style={[styles.sendBtnText, { color: colors.white }]}>➤</Text>
-              </TouchableOpacity>
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
       </KeyboardAvoidingView>
@@ -608,72 +629,55 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: SPACING.sm,
-    paddingHorizontal: SPACING.md,
+    gap: SPACING.md,
+    paddingHorizontal: SPACING.lg,
     paddingVertical: SPACING.md,
-    marginHorizontal: SPACING.lg,
-    marginTop: SPACING.sm,
+    borderBottomWidth: 1,
+    shadowColor: '#000',
+    shadowOpacity: 0.04,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 8,
+    elevation: 2,
+    zIndex: 3,
   },
-  backBtn: { padding: SPACING.xs },
-  backArrow: { fontSize: FONT_SIZES.xl, fontFamily: 'Poppins-Bold' },
-  subjectIcon: {
-    width: 52,
-    height: 52,
-    borderRadius: RADIUS.lg,
+  backBtn: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  subjectEmoji: { fontSize: 28 },
-  headerCenter: { flex: 1, minWidth: 0 },
-  headerTitle: {
+  backBtnText: {
+    fontSize: 18,
     fontFamily: 'Poppins-Bold',
-    fontSize: FONT_SIZES.lg,
+  },
+  headerCenter: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.sm,
+    minWidth: 0,
+  },
+  headerTextBlock: { flex: 1, minWidth: 0 },
+  headerEmoji: { fontSize: 28 },
+  headerTitle: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-Bold',
   },
   headerSub: {
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-Regular',
-    marginTop: 2,
   },
-  personalityRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
-    marginTop: 4,
-  },
-  personalityEmoji: { fontSize: 14 },
-  personalityName: {
-    fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-SemiBold',
-  },
-  xpBadge: {
-    borderRadius: RADIUS.full,
-    paddingHorizontal: SPACING.sm,
-    paddingVertical: 6,
-    borderWidth: 1,
-    borderColor: 'rgba(234, 162, 33, 0.4)',
-  },
-  xpText: {
-    fontFamily: 'Poppins-Bold',
-    fontSize: FONT_SIZES.xs,
-  },
-  iconBtn: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-  },
-  iconBtnEmoji: { fontSize: 18 },
-  quizBtn: {
+  headerXP: {
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md,
-    paddingVertical: 8,
+    paddingVertical: 6,
     borderWidth: 1,
+    flexShrink: 0,
   },
-  quizBtnText: {
-    fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-SemiBold',
+  headerXPText: {
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-Bold',
   },
   gradeBanner: {
     flexDirection: 'row',
@@ -688,54 +692,54 @@ const styles = StyleSheet.create({
   },
   gradeLetter: { fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.xxl },
   gradeDetail: { fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.sm },
+  messageList: { flex: 1 },
   chatContainer: {
     paddingHorizontal: SPACING.lg,
     paddingTop: SPACING.lg,
     paddingBottom: SPACING.md,
-    gap: SPACING.lg,
+    gap: SPACING.sm,
   },
-  bubbleWrap: { flexDirection: 'row', gap: SPACING.sm, alignItems: 'flex-end' },
-  bubbleWrapUser: { justifyContent: 'flex-end' },
-  bubbleWrapAI: { justifyContent: 'flex-start' },
-  bubbleColumn: { maxWidth: '78%' },
-  avatar: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexShrink: 0,
-    borderWidth: 1,
+  chatContainerEmpty: {
+    flexGrow: 1,
   },
-  avatarEmoji: { fontSize: 22 },
-  bubble: {
+  aiRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    gap: SPACING.sm,
+    marginBottom: SPACING.sm,
+  },
+  aiBubbleColumn: { flex: 1, maxWidth: '82%' },
+  aiBubble: {
+    maxWidth: '100%',
+    alignSelf: 'flex-start',
     borderRadius: RADIUS.xl,
-    padding: SPACING.md,
-    overflow: 'hidden',
-  },
-  bubbleUser: {
-    position: 'relative',
-    minWidth: 48,
-  },
-  bubbleUserGradientBase: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: GRADIENTS.primaryDeep[0],
-  },
-  bubbleUserGradientTop: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    height: '55%',
-    backgroundColor: GRADIENTS.primary[0],
-    opacity: 0.95,
-  },
-  bubbleAI: {
+    borderTopLeftRadius: RADIUS.sm,
+    padding: SPACING.lg,
     borderWidth: 1,
-    borderLeftWidth: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.05,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 8,
+    elevation: 2,
   },
-  bubbleText: { fontSize: FONT_SIZES.md, lineHeight: 22, fontFamily: 'Poppins-Regular', zIndex: 1 },
-  bubbleTextUser: { fontFamily: 'Poppins-Regular', zIndex: 1 },
+  userBubbleWrap: {
+    alignSelf: 'flex-end',
+    maxWidth: '85%',
+    marginBottom: SPACING.sm,
+  },
+  userBubble: {
+    maxWidth: '100%',
+    alignSelf: 'flex-end',
+    borderRadius: RADIUS.xl,
+    borderTopRightRadius: RADIUS.sm,
+    padding: SPACING.lg,
+  },
+  userBubbleText: {
+    color: '#FFFFFF',
+    fontFamily: 'Poppins-Regular',
+    fontSize: FONT_SIZES.md,
+    lineHeight: 22,
+  },
   bubbleTime: {
     fontSize: 10,
     fontFamily: 'Poppins-Regular',
@@ -743,14 +747,6 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   bubbleTimeUser: { textAlign: 'right', marginRight: 4, marginLeft: 0 },
-  typingWrap: { flexDirection: 'row', alignItems: 'flex-start', gap: SPACING.sm, paddingHorizontal: SPACING.lg },
-  typingBubble: {
-    borderRadius: RADIUS.xl,
-    padding: SPACING.md,
-    borderWidth: 1,
-    borderLeftWidth: 4,
-    minWidth: 140,
-  },
   thinkingDotsRow: {
     flexDirection: 'row',
     gap: 6,
@@ -765,6 +761,31 @@ const styles = StyleSheet.create({
   typingText: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Regular',
+  },
+  emptyState: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: SPACING.xxl,
+    gap: SPACING.md,
+    minHeight: 320,
+  },
+  emptyStatePersonality: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-SemiBold',
+    color: COLORS.textMuted,
+    marginTop: SPACING.sm,
+  },
+  emptyStateTitle: {
+    fontSize: FONT_SIZES.xl,
+    fontFamily: 'Poppins-Bold',
+    textAlign: 'center',
+  },
+  emptyStateSub: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-Regular',
+    textAlign: 'center',
+    lineHeight: 24,
   },
   quickCardsRow: {
     paddingHorizontal: SPACING.lg,
@@ -790,53 +811,51 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-SemiBold',
     fontSize: FONT_SIZES.sm,
   },
-  inputWrap: { paddingHorizontal: SPACING.lg, paddingVertical: SPACING.md },
   charCount: {
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-Regular',
     textAlign: 'right',
-    marginBottom: 4,
+    paddingHorizontal: SPACING.lg,
+    marginBottom: 2,
   },
   inputBar: {
     flexDirection: 'row',
     alignItems: 'flex-end',
     gap: SPACING.sm,
-    paddingHorizontal: SPACING.sm,
-    paddingVertical: SPACING.sm,
-    borderRadius: RADIUS.xl,
-    borderWidth: 1,
-    shadowOpacity: 0.06,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 8,
-    elevation: 2,
+    padding: SPACING.md,
+    borderTopWidth: 1,
   },
-  input: {
+  inputBarAction: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 2,
+  },
+  inputBarActionEmoji: { fontSize: 18 },
+  inputField: {
     flex: 1,
-    minHeight: 48,
-    borderRadius: RADIUS.lg,
+    borderRadius: RADIUS.xl,
     paddingHorizontal: SPACING.md,
     paddingVertical: SPACING.sm,
     fontSize: FONT_SIZES.md,
     fontFamily: 'Poppins-Regular',
-    maxHeight: 120,
-    borderWidth: 1,
+    maxHeight: 100,
+    lineHeight: 22,
   },
   sendBtn: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    overflow: 'hidden',
-  },
-  sendBtnHighlight: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: '50%',
-    backgroundColor: 'rgba(255,255,255,0.15)',
+    marginBottom: 2,
   },
   sendBtnDisabled: { opacity: 0.4 },
-  sendBtnText: { fontSize: FONT_SIZES.lg, fontFamily: 'Poppins-Bold' },
+  sendBtnText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontFamily: 'Poppins-Bold',
+  },
 });

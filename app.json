@@ -1,45 +1,89 @@
 {
   "expo": {
     "name": "Learnova",
-    "slug": "naija-learn",
+    "slug": "learnova",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "learnovaapp",
     "userInterfaceStyle": "automatic",
+    "primaryColor": "#008751",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#065f46"
+      "backgroundColor": "#008751"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yourname.learnovaapp"
+      "bundleIdentifier": "com.learnova.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Learnova uses the microphone for voice answers.",
+        "NSCameraUsageDescription": "Learnova uses the camera to scan worksheets.",
+        "NSFaceIDUsageDescription": "Learnova uses Face ID for secure sign in."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#065f46"
+        "backgroundColor": "#008751"
       },
-      "package": "com.yourname.learnovaapp"
+      "package": "com.learnova.app",
+      "versionCode": 1,
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "CAMERA",
+        "RECORD_AUDIO",
+        "VIBRATE"
+      ],
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
+      "favicon": "./assets/favicon.png",
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/favicon.png"
+      "name": "Learnova",
+      "shortName": "Learnova",
+      "description": "AI-powered primary school tutoring for Nigerian children.",
+      "themeColor": "#008751",
+      "backgroundColor": "#F9F6F0"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "YOUR_EAS_PROJECT_ID"
+      }
     },
     "plugins": [
-      [
-        "expo-router",
-        {
-          "unstable_useServerMiddleware": true
-        }
-      ],
       "expo-font",
-      "@sentry/react-native"
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "buildToolsVersion": "35.0.0"
+          },
+          "ios": {
+            "deploymentTarget": "15.1"
+          }
+        }
+      ]
     ],
+    "scheme": "learnova",
+    "newArchEnabled": true,
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "description": "Learnova — AI-powered primary school tutoring app for Nigerian children (Primary 1–6). Features personalised AI tutors, gamification, and full Nigerian curriculum alignment.",
+    "keywords": [
+      "education",
+      "nigeria",
+      "primary school",
+      "AI tutor",
+      "kids learning",
+      "gamification"
+    ],
+    "owner": "YOUR_EXPO_USERNAME"
   }
 }
