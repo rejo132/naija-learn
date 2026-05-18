@@ -1,42 +1,70 @@
-import { View, Text, TouchableOpacity, StyleSheet, useWindowDimensions } from 'react-native';
+import { useRef, useState } from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  useWindowDimensions,
+  Animated,
+} from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { router, usePathname } from 'expo-router';
-import { COLORS, FONT_SIZES, RADIUS, SPACING, SHADOWS } from '@/constants/theme';
+import { COLORS, FONT_SIZES, RADIUS, SPACING, GRADIENTS } from '@/constants/theme';
 import { useAuthStore } from '@/store/authStore';
-import { useAppStore } from '@/store/appStore';
+
+const DRAWER_WIDE = 240;
+const DRAWER_COLLAPSED = 64;
 
 interface NavItem {
   id: string;
   label: string;
   emoji: string;
   route: string;
-  section?: string;
 }
 
-const NAV_ITEMS: NavItem[] = [
-  { id: 'home', label: 'Home', emoji: '🏠', route: '/', section: 'main' },
-  { id: 'learn', label: 'Learn', emoji: '📚', route: '/dashboard', section: 'main' },
-  { id: 'progress', label: 'My Progress', emoji: '📈', route: '/progress', section: 'main' },
-  { id: 'achievements', label: 'Achievements', emoji: '🏆', route: '/achievements', section: 'main' },
-  { id: 'personality', label: 'My Tutor', emoji: '👩🏽‍🏫', route: '/personality', section: 'settings' },
-  { id: 'children', label: 'Children', emoji: '👨‍👩‍👧', route: '/children', section: 'settings' },
-  { id: 'reports', label: 'Reports', emoji: '📊', route: '/parent-dashboard', section: 'settings' },
+const MAIN_NAV: NavItem[] = [
+  { id: 'home', label: 'Home', emoji: '🏠', route: '/' },
+  { id: 'learn', label: 'Learn', emoji: '📚', route: '/dashboard' },
+  { id: 'progress', label: 'My Progress', emoji: '📈', route: '/progress' },
+  { id: 'achievements', label: 'Achievements', emoji: '🏆', route: '/achievements' },
 ];
 
-function NavButton({ item, pathname }: { item: NavItem; pathname: string }) {
+const SECONDARY_NAV: NavItem[] = [
+  { id: 'personality', label: 'My Tutor', emoji: '👩🏽‍🏫', route: '/personality' },
+  { id: 'children', label: 'Children', emoji: '👨‍👩‍👧', route: '/children' },
+  { id: 'reports', label: 'Reports', emoji: '📊', route: '/parent-dashboard' },
+];
+
+function NavButton({
+  item,
+  pathname,
+  collapsed,
+}: {
+  item: NavItem;
+  pathname: string;
+  collapsed: boolean;
+}) {
   const isActive =
     pathname === item.route ||
     (item.route !== '/' && pathname.startsWith(item.route));
 
   return (
     <TouchableOpacity
-      style={[styles.navItem, isActive && styles.navItemActive]}
+      // @ts-expect-error title is supported on web for hover tooltips
+      title={collapsed ? item.label : undefined}
+      accessibilityLabel={item.label}
+      style={[
+        styles.navItem,
+        collapsed && styles.navItemCollapsed,
+        isActive && !collapsed && styles.navItemActive,
+        isActive && collapsed && styles.navItemActiveCollapsed,
+      ]}
       onPress={() => router.push(item.route as '/')}
     >
-      <Text style={styles.navEmoji}>{item.emoji}</Text>
-      <Text style={[styles.navLabel, isActive && styles.navLabelActive]}>
-        {item.label}
-      </Text>
-      {isActive && <View style={styles.activeDot} />}
+      <Text style={[styles.navEmoji, collapsed && styles.navEmojiCollapsed]}>{item.emoji}</Text>
+      {!collapsed && (
+        <Text style={[styles.navLabel, isActive && styles.navLabelActive]}>{item.label}</Text>
+      )}
     </TouchableOpacity>
   );
 }
@@ -44,67 +72,111 @@ function NavButton({ item, pathname }: { item: NavItem; pathname: string }) {
 export function SideDrawer() {
   const { width } = useWindowDimensions();
   const pathname = usePathname();
-  const { signOut, user } = useAuthStore();
-  const xp = useAppStore((s) => s.xp);
-  const streak = useAppStore((s) => s.streak);
+  const { signOut } = useAuthStore();
+  const [collapsed, setCollapsed] = useState(false);
+  const animatedWidth = useRef(new Animated.Value(DRAWER_WIDE)).current;
 
   if (width <= 768) return null;
   if (pathname.startsWith('/auth')) return null;
 
-  const mainItems = NAV_ITEMS.filter((i) => i.section === 'main');
-  const settingsItems = NAV_ITEMS.filter((i) => i.section === 'settings');
+  function toggleCollapsed() {
+    const nextCollapsed = !collapsed;
+    setCollapsed(nextCollapsed);
+    Animated.timing(animatedWidth, {
+      toValue: nextCollapsed ? DRAWER_COLLAPSED : DRAWER_WIDE,
+      duration: 250,
+      useNativeDriver: false,
+    }).start();
+  }
 
   return (
-    <View style={styles.drawer}>
-      <View style={styles.logoSection}>
-        <View style={styles.logoCircle}>
-          <Text style={styles.logoEmoji}>🎓</Text>
-        </View>
-        <View>
-          <Text style={styles.logoName}>Learnova</Text>
-          <Text style={styles.logoTagline}>AI Learning</Text>
-        </View>
-      </View>
+    <Animated.View style={[styles.drawerOuter, { width: animatedWidth }]}>
+      <LinearGradient
+        colors={GRADIENTS.sidebar as [string, string]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 1 }}
+        style={[styles.drawer, collapsed && styles.drawerCollapsed]}
+      >
+        <TouchableOpacity
+          style={styles.toggleBtn}
+          onPress={toggleCollapsed}
+          accessibilityLabel={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+        >
+          <Text style={styles.toggleBtnText}>{collapsed ? '→' : '←'}</Text>
+        </TouchableOpacity>
 
-      {user && (
-        <View style={styles.statsRow}>
-          <View style={styles.statBadge}>
-            <Text style={styles.statBadgeText}>⚡{xp} XP</Text>
+        <View style={[styles.logoSection, collapsed && styles.logoSectionCollapsed]}>
+          <View style={styles.logoCircle}>
+            <Text style={styles.logoEmoji}>🎓</Text>
           </View>
-          <View style={[styles.statBadge, styles.streakBadge]}>
-            <Text style={[styles.statBadgeText, styles.streakBadgeText]}>🔥{streak}</Text>
-          </View>
+          {!collapsed && (
+            <View style={styles.logoTextBlock}>
+              <Text style={styles.logoName}>Learnova</Text>
+              <Text style={styles.logoTagline}>AI Learning</Text>
+            </View>
+          )}
         </View>
-      )}
 
-      <Text style={styles.sectionLabel}>MAIN</Text>
-      {mainItems.map((item) => (
-        <NavButton key={item.id} item={item} pathname={pathname} />
-      ))}
+        <View style={styles.navList}>
+          {MAIN_NAV.map((item) => (
+            <NavButton key={item.id} item={item} pathname={pathname} collapsed={collapsed} />
+          ))}
 
-      <Text style={[styles.sectionLabel, { marginTop: SPACING.lg }]}>SETTINGS</Text>
-      {settingsItems.map((item) => (
-        <NavButton key={item.id} item={item} pathname={pathname} />
-      ))}
+          <View style={[styles.divider, collapsed && styles.dividerCollapsed]} />
 
-      <TouchableOpacity style={styles.signOutBtn} onPress={() => signOut()}>
-        <Text style={styles.signOutEmoji}>🚪</Text>
-        <Text style={styles.signOutText}>Sign Out</Text>
-      </TouchableOpacity>
-    </View>
+          {SECONDARY_NAV.map((item) => (
+            <NavButton key={item.id} item={item} pathname={pathname} collapsed={collapsed} />
+          ))}
+        </View>
+
+        <TouchableOpacity
+          // @ts-expect-error title is supported on web for hover tooltips
+          title={collapsed ? 'Sign Out' : undefined}
+          accessibilityLabel="Sign Out"
+          style={[styles.signOutBtn, collapsed && styles.signOutBtnCollapsed]}
+          onPress={() => signOut()}
+        >
+          <Text style={styles.signOutEmoji}>🚪</Text>
+          {!collapsed && <Text style={styles.signOutText}>Sign Out</Text>}
+        </TouchableOpacity>
+      </LinearGradient>
+    </Animated.View>
   );
 }
 
 const styles = StyleSheet.create({
+  drawerOuter: {
+    overflow: 'hidden',
+    flexShrink: 0,
+  },
   drawer: {
-    width: 240,
     flex: 1,
-    backgroundColor: 'rgba(255,255,255,0.95)',
-    borderRightWidth: 1,
-    borderRightColor: 'rgba(0,135,81,0.1)',
     paddingHorizontal: SPACING.lg,
     paddingVertical: SPACING.xl,
-    ...SHADOWS.soft,
+    borderRightWidth: 1,
+    borderRightColor: 'rgba(255,255,255,0.08)',
+    minHeight: '100%',
+  },
+  drawerCollapsed: {
+    paddingHorizontal: SPACING.xs,
+  },
+  toggleBtn: {
+    position: 'absolute',
+    top: SPACING.md,
+    right: SPACING.md,
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 10,
+  },
+  toggleBtnText: {
+    color: '#FFFFFF',
+    fontSize: 12,
+    fontFamily: 'Poppins-Bold',
+    lineHeight: 14,
   },
   logoSection: {
     flexDirection: 'row',
@@ -112,57 +184,50 @@ const styles = StyleSheet.create({
     gap: SPACING.md,
     marginBottom: SPACING.lg,
     paddingBottom: SPACING.lg,
+    paddingRight: SPACING.xl,
     borderBottomWidth: 1,
-    borderBottomColor: 'rgba(0,135,81,0.1)',
+    borderBottomColor: 'rgba(255,255,255,0.1)',
+  },
+  logoSectionCollapsed: {
+    justifyContent: 'center',
+    paddingRight: 0,
+    gap: 0,
+  },
+  logoTextBlock: {
+    flex: 1,
   },
   logoCircle: {
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: COLORS.primaryLight,
+    backgroundColor: 'rgba(255,255,255,0.12)',
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.15)',
   },
   logoEmoji: { fontSize: 22 },
   logoName: {
     fontSize: FONT_SIZES.lg,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.textPrimary,
+    color: '#FFFFFF',
   },
   logoTagline: {
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textMuted,
+    color: 'rgba(255,255,255,0.5)',
   },
-  statsRow: {
-    flexDirection: 'row',
-    gap: SPACING.sm,
-    marginBottom: SPACING.lg,
+  navList: {
+    flex: 1,
   },
-  statBadge: {
-    backgroundColor: COLORS.goldLight,
-    borderRadius: RADIUS.full,
-    paddingHorizontal: SPACING.md,
-    paddingVertical: 4,
+  divider: {
+    height: 1,
+    backgroundColor: 'rgba(255,255,255,0.15)',
+    marginVertical: SPACING.sm,
+    marginHorizontal: SPACING.sm,
   },
-  streakBadge: {
-    backgroundColor: '#fee2e2',
-  },
-  statBadgeText: {
-    fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-SemiBold',
-    color: COLORS.goldDark,
-  },
-  streakBadgeText: {
-    color: '#DC2626',
-  },
-  sectionLabel: {
-    fontSize: 10,
-    fontFamily: 'Poppins-SemiBold',
-    color: COLORS.textMuted,
-    letterSpacing: 1.2,
-    marginBottom: SPACING.sm,
-    marginLeft: SPACING.sm,
+  dividerCollapsed: {
+    marginHorizontal: SPACING.xs,
   },
   navItem: {
     flexDirection: 'row',
@@ -172,26 +237,36 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.md,
     borderRadius: RADIUS.md,
     marginBottom: 2,
+    borderLeftWidth: 3,
+    borderLeftColor: 'transparent',
+  },
+  navItemCollapsed: {
+    justifyContent: 'center',
+    paddingHorizontal: 0,
+    gap: 0,
   },
   navItemActive: {
-    backgroundColor: COLORS.primaryLight,
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    borderLeftColor: COLORS.primary,
+  },
+  navItemActiveCollapsed: {
+    backgroundColor: 'transparent',
+    borderLeftColor: COLORS.primary,
   },
   navEmoji: { fontSize: 18 },
+  navEmojiCollapsed: {
+    fontSize: 20,
+    textAlign: 'center',
+  },
   navLabel: {
     flex: 1,
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textSecondary,
+    color: 'rgba(255,255,255,0.75)',
   },
   navLabelActive: {
     fontFamily: 'Poppins-SemiBold',
-    color: COLORS.primary,
-  },
-  activeDot: {
-    width: 6,
-    height: 6,
-    borderRadius: 3,
-    backgroundColor: COLORS.primary,
+    color: '#FFFFFF',
   },
   signOutBtn: {
     flexDirection: 'row',
@@ -202,12 +277,19 @@ const styles = StyleSheet.create({
     borderRadius: RADIUS.md,
     marginTop: 'auto',
     borderWidth: 1,
-    borderColor: 'rgba(229,57,53,0.2)',
+    borderColor: 'rgba(255, 107, 107, 0.25)',
+    borderLeftWidth: 3,
+    borderLeftColor: 'transparent',
+  },
+  signOutBtnCollapsed: {
+    justifyContent: 'center',
+    paddingHorizontal: 0,
+    gap: 0,
   },
   signOutEmoji: { fontSize: 18 },
   signOutText: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-SemiBold',
-    color: '#E53935',
+    color: '#FF6B6B',
   },
 });
