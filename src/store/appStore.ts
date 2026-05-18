@@ -55,6 +55,7 @@ interface AppState {
   lessonsCompleted: number;
   bestQuizScore: number;
   unlockedAchievements: string[];
+  isDarkMode: boolean;
   setLanguage: (lang: LanguageCode) => void;
   setGrade: (grade: number) => void;
   setSubject: (subject: Subject) => void;
@@ -70,6 +71,7 @@ interface AppState {
   incrementLessons: () => void;
   updateBestQuizScore: (score: number) => void;
   unlockAchievement: (id: string) => void;
+  toggleDarkMode: () => void;
 }
 
 type PersistedAppState = Pick<
@@ -85,6 +87,7 @@ type PersistedAppState = Pick<
   | 'lessonsCompleted'
   | 'bestQuizScore'
   | 'unlockedAchievements'
+  | 'isDarkMode'
 >;
 
 export const useAppStore = create<AppState>()(
@@ -105,6 +108,7 @@ export const useAppStore = create<AppState>()(
       lessonsCompleted: 0,
       bestQuizScore: 0,
       unlockedAchievements: [],
+      isDarkMode: false,
       setLanguage: (lang) => set({ selectedLanguage: lang }),
       // Resetting subject when grade changes prevents wrong content showing for the new grade
       setGrade: (grade) => set({ selectedGrade: grade, selectedSubject: null }),
@@ -162,6 +166,7 @@ export const useAppStore = create<AppState>()(
             ? state.unlockedAchievements
             : [...state.unlockedAchievements, id],
         })),
+      toggleDarkMode: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
     }),
     {
       name: 'learnova-app-store',
@@ -181,6 +186,7 @@ export const useAppStore = create<AppState>()(
         lessonsCompleted: state.lessonsCompleted,
         bestQuizScore: state.bestQuizScore,
         unlockedAchievements: state.unlockedAchievements,
+        isDarkMode: state.isDarkMode,
       }),
       merge: (persisted, current) => ({
         ...current,

@@ -16,7 +16,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { LANGUAGES, getUIText } from '@/constants/languages';
 import { NIGERIAN_GRADES } from '@/constants/subjects';
-import { COLORS, SPACING, RADIUS, FONT_SIZES, SHADOWS } from '@/constants/theme';
+import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 import { PressableScale } from '@/components/PressableScale';
@@ -40,6 +41,7 @@ export default function GradeScreen() {
   const { width } = useWindowDimensions();
   const isCompact = width < 680;
   const isWide = width > 1200;
+  const { colors, isDarkMode, shadows } = useTheme();
 
   function handleSelectGrade(grade: number) {
     setGrade(grade);
@@ -47,22 +49,31 @@ export default function GradeScreen() {
   }
 
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
       <Atmosphere />
-      <View style={styles.header}>
+      <View style={[
+        styles.header,
+        {
+          backgroundColor: isDarkMode ? colors.backgroundCard : colors.backgroundGlass,
+          borderBottomColor: colors.border,
+        },
+      ]}>
         <TouchableOpacity
           onPress={() => router.push({ pathname: '/', params: { change: '1' } })}
           style={styles.backBtn}
         >
-          <Text style={styles.backArrow}>←</Text>
+          <Text style={[styles.backArrow, { color: colors.primaryDark }]}>←</Text>
         </TouchableOpacity>
         <View>
-          <Text style={styles.headerTitle}>{ui.appName}</Text>
-          <Text style={styles.headerSub}>{lang.nativeLabel} · {ui.selectClass}</Text>
+          <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>{ui.appName}</Text>
+          <Text style={[styles.headerSub, { color: colors.textSecondary }]}>{lang.nativeLabel} · {ui.selectClass}</Text>
         </View>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={[styles.scroll, { backgroundColor: colors.background }]}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={[styles.content, isWide && styles.contentWide]}>
           <Image
             source={require('../assets/images/onboarding1.png')}
@@ -70,9 +81,9 @@ export default function GradeScreen() {
             resizeMode="contain"
           />
 
-          <GlassCard style={styles.heroCard}>
-            <Text style={styles.title}>{ui.classQuestion}</Text>
-            <Text style={styles.subtitle}>{ui.classSubtitle}</Text>
+          <GlassCard style={[styles.heroCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
+            <Text style={[styles.title, { color: colors.textPrimary }]}>{ui.classQuestion}</Text>
+            <Text style={[styles.subtitle, { color: colors.textSecondary }]}>{ui.classSubtitle}</Text>
           </GlassCard>
 
           <View style={styles.gradeGrid}>
@@ -83,7 +94,11 @@ export default function GradeScreen() {
                   <PressableScale
                     style={[
                       styles.gradeCard,
-                      isSelected && styles.gradeCardSelected,
+                      {
+                        backgroundColor: isSelected ? colors.primary : colors.white,
+                        borderColor: isSelected ? colors.primaryDark : colors.primary,
+                      },
+                      isSelected ? shadows.medium : shadows.soft,
                     ]}
                     onPress={() => handleSelectGrade(g)}
                     scaleTo={0.98}
@@ -91,7 +106,8 @@ export default function GradeScreen() {
                     <Text
                       style={[
                         styles.gradeNumber,
-                        isSelected && styles.gradeNumberSelected,
+                        { color: colors.primaryDark },
+                        isSelected && { color: colors.white },
                       ]}
                     >
                       {g}
@@ -99,7 +115,8 @@ export default function GradeScreen() {
                     <Text
                       style={[
                         styles.gradeLabel,
-                        isSelected && styles.gradeLabelSelected,
+                        { color: colors.textPrimary },
+                        isSelected && { color: colors.white },
                       ]}
                     >
                       {ui.primary} {g}
@@ -107,7 +124,8 @@ export default function GradeScreen() {
                     <Text
                       style={[
                         styles.gradeAge,
-                        isSelected && styles.gradeAgeSelected,
+                        { color: colors.textSecondary },
+                        isSelected && { color: 'rgba(255, 255, 255, 0.85)' },
                       ]}
                     >
                       {GRADE_AGES[g]}
@@ -118,19 +136,19 @@ export default function GradeScreen() {
             })}
           </View>
 
-          <GlassCard style={styles.gradingCard}>
+          <GlassCard style={[styles.gradingCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <PressableScale
               style={styles.gradingToggle}
               onPress={() => setShowGrading((v) => !v)}
               scaleTo={0.99}
             >
-              <Text style={styles.gradingToggleText}>
+              <Text style={[styles.gradingToggleText, { color: colors.primary }]}>
                 View Grade Scale {showGrading ? '▲' : '▼'}
               </Text>
             </PressableScale>
             {showGrading ? (
-              <View style={styles.gradingBody}>
-                <Text style={styles.gradingTitle}>Nigerian Grading System (NERDC)</Text>
+              <View style={[styles.gradingBody, { borderTopColor: colors.border }]}>
+                <Text style={[styles.gradingTitle, { color: colors.textPrimary }]}>Nigerian Grading System (NERDC)</Text>
                 <View style={styles.gradingRows}>
                   {NIGERIAN_GRADES.map((g) => (
                     <View key={g.grade} style={[styles.gradeChip, { backgroundColor: g.bgColor }]}>
@@ -152,11 +170,9 @@ export default function GradeScreen() {
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: COLORS.background },
+  safe: { flex: 1 },
   header: {
-    backgroundColor: 'rgba(255,255,255,0.88)',
     borderBottomWidth: 1,
-    borderBottomColor: COLORS.border,
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.md,
@@ -165,14 +181,12 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   backBtn: { padding: SPACING.xs },
-  backArrow: { fontSize: FONT_SIZES.xl, color: COLORS.primaryDark, fontFamily: 'Poppins-Bold' },
+  backArrow: { fontSize: FONT_SIZES.xl, fontFamily: 'Poppins-Bold' },
   headerTitle: {
-    color: COLORS.textPrimary,
     fontFamily: 'Poppins-Bold',
     fontSize: FONT_SIZES.lg,
   },
   headerSub: {
-    color: COLORS.textSecondary,
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-Regular',
   },
@@ -191,14 +205,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: FONT_SIZES.xxl,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.textPrimary,
     marginBottom: SPACING.xs,
     textAlign: 'center',
   },
   subtitle: {
     fontSize: FONT_SIZES.md,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textSecondary,
     textAlign: 'center',
     lineHeight: 22,
   },
@@ -211,47 +223,27 @@ const styles = StyleSheet.create({
   gradeWrap: { width: '48%' },
   gradeWrapCompact: { width: '100%' },
   gradeCard: {
-    backgroundColor: COLORS.white,
     borderRadius: RADIUS.xl,
     paddingVertical: SPACING.xl,
     paddingHorizontal: SPACING.lg,
     alignItems: 'center',
     width: '100%',
     borderWidth: 2,
-    borderColor: COLORS.primary,
-    ...SHADOWS.soft,
-  },
-  gradeCardSelected: {
-    backgroundColor: COLORS.primary,
-    borderColor: COLORS.primaryDark,
-    ...SHADOWS.medium,
   },
   gradeNumber: {
     fontSize: FONT_SIZES.display,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.primaryDark,
     lineHeight: 52,
-  },
-  gradeNumberSelected: {
-    color: COLORS.white,
   },
   gradeLabel: {
     fontSize: FONT_SIZES.lg,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.textPrimary,
     marginTop: SPACING.xs,
-  },
-  gradeLabelSelected: {
-    color: COLORS.white,
   },
   gradeAge: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textSecondary,
     marginTop: 4,
-  },
-  gradeAgeSelected: {
-    color: 'rgba(255, 255, 255, 0.85)',
   },
   gradingCard: {
     padding: SPACING.lg,
@@ -262,18 +254,15 @@ const styles = StyleSheet.create({
   },
   gradingToggleText: {
     fontFamily: 'Poppins-SemiBold',
-    color: COLORS.primary,
     fontSize: FONT_SIZES.md,
   },
   gradingBody: {
     marginTop: SPACING.md,
     borderTopWidth: 1,
-    borderTopColor: COLORS.border,
     paddingTop: SPACING.md,
   },
   gradingTitle: {
     fontFamily: 'Poppins-Bold',
-    color: COLORS.textPrimary,
     fontSize: FONT_SIZES.sm,
     marginBottom: SPACING.md,
   },

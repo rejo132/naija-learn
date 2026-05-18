@@ -10,11 +10,13 @@ import {
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getChildren, getWeeklySummary, Child } from '@/services/dbService';
-import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 
 export default function ParentDashboardScreen() {
+  const { colors, isDarkMode } = useTheme();
   const [children, setChildren] = useState<Child[]>([]);
   const [summaries, setSummaries] = useState<Record<string, Awaited<ReturnType<typeof getWeeklySummary>>>>({});
   const [isLoading, setIsLoading] = useState(true);
@@ -44,33 +46,33 @@ export default function ParentDashboardScreen() {
   const summary = selectedChild ? summaries[selectedChild.id] : null;
 
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
       <Atmosphere pointerEvents="none" />
-      <ScrollView contentContainerStyle={styles.scroll}>
+      <ScrollView contentContainerStyle={[styles.scroll, { backgroundColor: colors.background }]}>
 
         {/* Header */}
-        <GlassCard style={styles.header}>
+        <GlassCard style={[styles.header, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
           <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
-            <Text style={styles.backArrow}>←</Text>
+            <Text style={[styles.backArrow, { color: colors.primaryDark }]}>←</Text>
           </TouchableOpacity>
-          <Text style={styles.headerTitle}>📊 Progress Report</Text>
+          <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>📊 Progress Report</Text>
           <TouchableOpacity
-            style={styles.manageBtn}
+            style={[styles.manageBtn, { backgroundColor: colors.primaryLight, borderColor: colors.border }]}
             onPress={() => router.push('/children')}
           >
-            <Text style={styles.manageBtnText}>Manage</Text>
+            <Text style={[styles.manageBtnText, { color: colors.primaryDark }]}>Manage</Text>
           </TouchableOpacity>
         </GlassCard>
 
         {isLoading ? (
-          <ActivityIndicator size="large" color={COLORS.primary} style={{ marginTop: 40 }} />
+          <ActivityIndicator size="large" color={colors.primary} style={{ marginTop: 40 }} />
         ) : children.length === 0 ? (
-          <GlassCard style={styles.emptyCard}>
+          <GlassCard style={[styles.emptyCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <Text style={styles.emptyEmoji}>👶</Text>
-            <Text style={styles.emptyTitle}>No children yet</Text>
-            <Text style={styles.emptySubtitle}>Add a child profile to see their progress</Text>
-            <TouchableOpacity style={styles.btn} onPress={() => router.push('/children')}>
-              <Text style={styles.btnText}>+ Add Child</Text>
+            <Text style={[styles.emptyTitle, { color: colors.textPrimary }]}>No children yet</Text>
+            <Text style={[styles.emptySubtitle, { color: colors.textSecondary }]}>Add a child profile to see their progress</Text>
+            <TouchableOpacity style={[styles.btn, { backgroundColor: colors.primary }]} onPress={() => router.push('/children')}>
+              <Text style={[styles.btnText, { color: colors.white }]}>+ Add Child</Text>
             </TouchableOpacity>
           </GlassCard>
         ) : (
@@ -80,11 +82,19 @@ export default function ParentDashboardScreen() {
               {children.map((child) => (
                 <TouchableOpacity
                   key={child.id}
-                  style={[styles.childChip, selectedChild?.id === child.id && styles.childChipSelected]}
+                  style={[
+                    styles.childChip,
+                    { backgroundColor: colors.backgroundGlass, borderColor: colors.border },
+                    selectedChild?.id === child.id && { backgroundColor: colors.primary, borderColor: colors.primary },
+                  ]}
                   onPress={() => setSelectedChild(child)}
                 >
                   <Text style={styles.childChipEmoji}>{child.avatar}</Text>
-                  <Text style={[styles.childChipName, selectedChild?.id === child.id && styles.childChipNameSelected]}>
+                  <Text style={[
+                    styles.childChipName,
+                    { color: colors.textPrimary },
+                    selectedChild?.id === child.id && { color: colors.white },
+                  ]}>
                     {child.name}
                   </Text>
                 </TouchableOpacity>
@@ -94,34 +104,34 @@ export default function ParentDashboardScreen() {
             {/* Summary cards */}
             {selectedChild && summary && (
               <>
-                <Text style={styles.sectionTitle}>This Week</Text>
+                <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>This Week</Text>
                 <View style={styles.statsGrid}>
-                  <GlassCard style={styles.statCard}>
+                  <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
                     <Text style={styles.statEmoji}>📚</Text>
-                    <Text style={styles.statValue}>{summary.totalSessions}</Text>
-                    <Text style={styles.statLabel}>Lessons</Text>
+                    <Text style={[styles.statValue, { color: colors.primaryDark }]}>{summary.totalSessions}</Text>
+                    <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Lessons</Text>
                   </GlassCard>
-                  <GlassCard style={styles.statCard}>
+                  <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
                     <Text style={styles.statEmoji}>⭐</Text>
-                    <Text style={styles.statValue}>{summary.averageScore}%</Text>
-                    <Text style={styles.statLabel}>Avg Score</Text>
+                    <Text style={[styles.statValue, { color: colors.primaryDark }]}>{summary.averageScore}%</Text>
+                    <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Avg Score</Text>
                   </GlassCard>
-                  <GlassCard style={styles.statCard}>
+                  <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
                     <Text style={styles.statEmoji}>⏱️</Text>
-                    <Text style={styles.statValue}>{summary.totalMinutes}m</Text>
-                    <Text style={styles.statLabel}>Study Time</Text>
+                    <Text style={[styles.statValue, { color: colors.primaryDark }]}>{summary.totalMinutes}m</Text>
+                    <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Study Time</Text>
                   </GlassCard>
                 </View>
 
                 {/* Subjects studied */}
                 {summary.subjectsStudied.length > 0 && (
                   <>
-                    <Text style={styles.sectionTitle}>Subjects Studied</Text>
-                    <GlassCard style={styles.subjectsCard}>
+                    <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>Subjects Studied</Text>
+                    <GlassCard style={[styles.subjectsCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
                       <View style={styles.subjectsList}>
                         {summary.subjectsStudied.map((subject) => (
-                          <View key={subject} style={styles.subjectChip}>
-                            <Text style={styles.subjectChipText}>{subject}</Text>
+                          <View key={subject} style={[styles.subjectChip, { backgroundColor: colors.primaryLight, borderColor: colors.border }]}>
+                            <Text style={[styles.subjectChipText, { color: colors.primaryDark }]}>{subject}</Text>
                           </View>
                         ))}
                       </View>
@@ -130,15 +140,22 @@ export default function ParentDashboardScreen() {
                 )}
 
                 {/* Grade banner */}
-                <GlassCard style={[styles.gradeCard, { backgroundColor: summary.averageScore >= 70 ? '#dcfce7' : '#fef9c3' }]}>
+                <GlassCard style={[
+                  styles.gradeCard,
+                  {
+                    backgroundColor: summary.averageScore >= 70 ? colors.successLight : colors.warningLight,
+                    borderColor: colors.border,
+                  },
+                  isDarkMode && { backgroundColor: colors.backgroundCard },
+                ]}>
                   <Text style={styles.gradeEmoji}>
                     {summary.averageScore >= 70 ? '🏆' : '💪'}
                   </Text>
                   <View style={{ flex: 1 }}>
-                    <Text style={styles.gradeTitle}>
+                    <Text style={[styles.gradeTitle, { color: colors.textPrimary }]}>
                       {summary.averageScore >= 70 ? 'Excellent work!' : 'Keep practising!'}
                     </Text>
-                    <Text style={styles.gradeSubtitle}>
+                    <Text style={[styles.gradeSubtitle, { color: colors.textSecondary }]}>
                       {selectedChild.name} is in Primary {selectedChild.grade}
                     </Text>
                   </View>
@@ -147,10 +164,10 @@ export default function ParentDashboardScreen() {
             )}
 
             {summary && summary.totalSessions === 0 && (
-              <GlassCard style={styles.emptyCard}>
+              <GlassCard style={[styles.emptyCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
                 <Text style={styles.emptyEmoji}>📖</Text>
-                <Text style={styles.emptyTitle}>No activity yet</Text>
-                <Text style={styles.emptySubtitle}>
+                <Text style={[styles.emptyTitle, { color: colors.textPrimary }]}>No activity yet</Text>
+                <Text style={[styles.emptySubtitle, { color: colors.textSecondary }]}>
                   {selectedChild?.name} hasn't completed any lessons this week
                 </Text>
               </GlassCard>
@@ -163,7 +180,7 @@ export default function ParentDashboardScreen() {
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: COLORS.background },
+  safe: { flex: 1 },
   scroll: { paddingHorizontal: SPACING.lg, paddingBottom: SPACING.xxl },
   header: {
     flexDirection: 'row', alignItems: 'center',
@@ -171,28 +188,26 @@ const styles = StyleSheet.create({
     marginTop: SPACING.sm, marginBottom: SPACING.md, gap: SPACING.sm,
   },
   backBtn: { padding: SPACING.xs },
-  backArrow: { fontSize: FONT_SIZES.xl, color: COLORS.primaryDark },
-  headerTitle: { flex: 1, fontSize: FONT_SIZES.lg, fontWeight: '800', color: COLORS.textPrimary },
+  backArrow: { fontSize: FONT_SIZES.xl },
+  headerTitle: { flex: 1, fontSize: FONT_SIZES.lg, fontWeight: '800' },
   manageBtn: {
-    backgroundColor: COLORS.primaryLight, borderRadius: RADIUS.full,
+    borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md, paddingVertical: 6,
-    borderWidth: 1, borderColor: '#bde5cc',
+    borderWidth: 1,
   },
-  manageBtnText: { color: COLORS.primaryDark, fontWeight: '700', fontSize: FONT_SIZES.sm },
+  manageBtnText: { fontWeight: '700', fontSize: FONT_SIZES.sm },
   childScroll: { marginBottom: SPACING.md },
   childChip: {
     flexDirection: 'row', alignItems: 'center', gap: SPACING.xs,
-    backgroundColor: 'rgba(255,255,255,0.7)', borderRadius: RADIUS.full,
+    borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md, paddingVertical: SPACING.sm,
-    marginRight: SPACING.sm, borderWidth: 1, borderColor: COLORS.border,
+    marginRight: SPACING.sm, borderWidth: 1,
   },
-  childChipSelected: { backgroundColor: COLORS.primary, borderColor: COLORS.primary },
   childChipEmoji: { fontSize: 20 },
-  childChipName: { fontWeight: '700', color: COLORS.textPrimary, fontSize: FONT_SIZES.sm },
-  childChipNameSelected: { color: COLORS.white },
+  childChipName: { fontWeight: '700', fontSize: FONT_SIZES.sm },
   sectionTitle: {
     fontSize: FONT_SIZES.md, fontWeight: '800',
-    color: COLORS.textPrimary, marginBottom: SPACING.sm,
+    marginBottom: SPACING.sm,
     marginTop: SPACING.md,
   },
   statsGrid: { flexDirection: 'row', gap: SPACING.sm, marginBottom: SPACING.sm },
@@ -200,32 +215,32 @@ const styles = StyleSheet.create({
     flex: 1, alignItems: 'center', padding: SPACING.md, gap: 4,
   },
   statEmoji: { fontSize: 24 },
-  statValue: { fontSize: FONT_SIZES.xxl, fontWeight: '900', color: COLORS.primaryDark },
-  statLabel: { fontSize: FONT_SIZES.xs, color: COLORS.textSecondary, fontWeight: '600' },
+  statValue: { fontSize: FONT_SIZES.xxl, fontWeight: '900' },
+  statLabel: { fontSize: FONT_SIZES.xs, fontWeight: '600' },
   subjectsCard: { padding: SPACING.md },
   subjectsList: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.sm },
   subjectChip: {
-    backgroundColor: COLORS.primaryLight, borderRadius: RADIUS.full,
+    borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md, paddingVertical: 6,
-    borderWidth: 1, borderColor: '#bde5cc',
+    borderWidth: 1,
   },
-  subjectChipText: { color: COLORS.primaryDark, fontWeight: '700', fontSize: FONT_SIZES.sm },
+  subjectChipText: { fontWeight: '700', fontSize: FONT_SIZES.sm },
   gradeCard: {
     flexDirection: 'row', alignItems: 'center',
     padding: SPACING.lg, gap: SPACING.md,
     marginTop: SPACING.md, borderRadius: RADIUS.xl,
-    borderWidth: 1, borderColor: COLORS.border,
+    borderWidth: 1,
   },
   gradeEmoji: { fontSize: 36 },
-  gradeTitle: { fontSize: FONT_SIZES.lg, fontWeight: '800', color: COLORS.textPrimary },
-  gradeSubtitle: { fontSize: FONT_SIZES.sm, color: COLORS.textSecondary, marginTop: 2 },
+  gradeTitle: { fontSize: FONT_SIZES.lg, fontWeight: '800' },
+  gradeSubtitle: { fontSize: FONT_SIZES.sm, marginTop: 2 },
   emptyCard: { padding: SPACING.xl, alignItems: 'center', gap: SPACING.sm, marginTop: SPACING.xl },
   emptyEmoji: { fontSize: 56 },
-  emptyTitle: { fontSize: FONT_SIZES.xl, fontWeight: '800', color: COLORS.textPrimary },
-  emptySubtitle: { fontSize: FONT_SIZES.md, color: COLORS.textSecondary, textAlign: 'center' },
+  emptyTitle: { fontSize: FONT_SIZES.xl, fontWeight: '800' },
+  emptySubtitle: { fontSize: FONT_SIZES.md, textAlign: 'center' },
   btn: {
-    backgroundColor: COLORS.primary, borderRadius: RADIUS.md,
+    borderRadius: RADIUS.md,
     padding: SPACING.md, alignItems: 'center', marginTop: SPACING.sm,
   },
-  btnText: { color: COLORS.white, fontWeight: '800', fontSize: FONT_SIZES.md },
+  btnText: { fontWeight: '800', fontSize: FONT_SIZES.md },
 });

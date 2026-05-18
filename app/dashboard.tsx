@@ -5,6 +5,7 @@ import { useState, useMemo } from 'react';
 import {
   View,
   Text,
+  TextInput,
   TouchableOpacity,
   StyleSheet,
   ScrollView,
@@ -22,7 +23,8 @@ import {
   Subject,
   getLocalizedSubject,
 } from '@/constants/subjects';
-import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 import { PressableScale } from '@/components/PressableScale';
@@ -43,6 +45,7 @@ function isStudiedToday(lastStudyDate: string | null) {
 
 export default function DashboardScreen() {
   const [activeTab, setActiveTab] = useState<Tab>('subjects');
+  const [aiPrompt, setAiPrompt] = useState('');
   const { selectedLanguage, selectedGrade, setSubject, xp, streak, lastStudyDate, lessonsCompleted } =
     useAppStore();
   const user = useAuthStore((s) => s.user);
@@ -51,6 +54,8 @@ export default function DashboardScreen() {
   const isCompact = width < 760;
   const isWide = width > 1200;
   const isMedium = width > 900 && width <= 1200;
+  const showFloatingTutor = width <= 768;
+  const { colors, isDarkMode } = useTheme();
 
   const greeting = getTimeGreeting();
   const userName =
@@ -76,6 +81,27 @@ export default function DashboardScreen() {
     router.push('/lesson');
   }
 
+  function handleAIPromptSubmit() {
+    const text = aiPrompt.trim();
+    if (!text) return;
+
+    const allSubjects = [
+      ...tabContent.subjects,
+      ...tabContent.languages,
+      ...tabContent.softskills,
+    ];
+    const lower = text.toLowerCase();
+    const match = allSubjects.find(
+      (s) =>
+        s.label.toLowerCase().includes(lower) ||
+        lower.includes(s.label.toLowerCase())
+    );
+
+    const subject = match ?? tabContent.subjects[0];
+    setAiPrompt('');
+    handleSubject(getLocalizedSubject(subject, selectedLanguage));
+  }
+
   const TABS = [
     { id: 'subjects' as Tab, label: ui.subjects, emoji: '📚' },
     { id: 'languages' as Tab, label: ui.languages, emoji: '🗣️' },
@@ -83,81 +109,127 @@ export default function DashboardScreen() {
   ];
 
   return (
-    <SafeAreaView style={styles.safe}>
-      <Atmosphere />
-      <ScrollView
-        contentContainerStyle={styles.scroll}
-        showsVerticalScrollIndicator={false}
-      >
+    <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
+      <View style={styles.safeInner}>
+        <Atmosphere />
+        <ScrollView
+          contentContainerStyle={styles.scroll}
+          showsVerticalScrollIndicator={false}
+        >
         <View style={[styles.content, isWide && styles.contentWide, isMedium && styles.contentMedium]}>
           {/* Greeting header */}
           <View style={styles.greetingRow}>
             <View style={styles.greetingLeft}>
-              <Text style={styles.greetingTime}>
+              <Text style={[styles.greetingTime, { color: colors.textMuted }]}>
                 {greeting.emoji} {greeting.text}
               </Text>
-              <Text style={styles.greetingName}>
+              <Text style={[styles.greetingName, { color: colors.textPrimary }]}>
                 {userName ? `Welcome back, ${userName}` : 'Welcome to Learnova'}
               </Text>
               {streak > 0 && (
-                <Text style={styles.greetingStreak}>
+                <Text style={[styles.greetingStreak, { color: colors.accent }]}>
                   🔥 {streak} day streak — keep it up!
                 </Text>
               )}
             </View>
             <View style={styles.greetingRight}>
-              <View style={styles.xpPill}>
+              <View style={[styles.xpPill, { backgroundColor: colors.goldLight, borderColor: 'rgba(234, 162, 33, 0.3)' }]}>
                 <Text style={styles.xpPillEmoji}>⚡</Text>
-                <Text style={styles.xpPillText}>{xp} XP</Text>
+                <Text style={[styles.xpPillText, { color: colors.goldDark }]}>{xp} XP</Text>
               </View>
-              <View style={styles.gradePill}>
-                <Text style={styles.gradePillText}>P{selectedGrade}</Text>
+              <View style={[styles.gradePill, { backgroundColor: colors.primaryLight, borderColor: colors.primaryGlow }]}>
+                <Text style={[styles.gradePillText, { color: colors.primaryDark }]}>P{selectedGrade}</Text>
               </View>
             </View>
+          </View>
+
+          {/* AI Prompt Bar */}
+          <View
+            style={[
+              styles.promptBar,
+              {
+                backgroundColor: isDarkMode ? '#1A2420' : colors.backgroundCard,
+                borderColor: isDarkMode ? 'rgba(255,255,255,0.08)' : colors.border,
+              },
+            ]}
+          >
+            <Text style={styles.promptBarIcon}>🤖</Text>
+            <TextInput
+              style={[styles.promptBarInput, { color: colors.textPrimary }]}
+              value={aiPrompt}
+              onChangeText={setAiPrompt}
+              placeholder="Ask AI — what do you want to learn today?"
+              placeholderTextColor={colors.textMuted}
+              onSubmitEditing={handleAIPromptSubmit}
+              returnKeyType="go"
+            />
+            <TouchableOpacity
+              style={[
+                styles.promptBarBtn,
+                { backgroundColor: colors.primary },
+                !aiPrompt.trim() && styles.promptBarBtnDisabled,
+              ]}
+              onPress={handleAIPromptSubmit}
+              disabled={!aiPrompt.trim()}
+            >
+              <Text style={styles.promptBarBtnText}>Go →</Text>
+            </TouchableOpacity>
           </View>
 
           {/* Quick stats */}
           <View style={styles.statsRow}>
-            <GlassCard variant="elevated" style={styles.statCard}>
+            <GlassCard
+              variant="elevated"
+              style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}
+            >
               <Text style={styles.statEmoji}>📖</Text>
-              <Text style={styles.statValue}>{studiedToday ? 1 : 0}</Text>
-              <Text style={styles.statLabel}>Today&apos;s lessons</Text>
+              <Text style={[styles.statValue, { color: colors.primaryDark }]}>{studiedToday ? 1 : 0}</Text>
+              <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Today&apos;s lessons</Text>
             </GlassCard>
-            <GlassCard variant="elevated" style={styles.statCard}>
+            <GlassCard
+              variant="elevated"
+              style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}
+            >
               <Text style={styles.statEmoji}>🔥</Text>
-              <Text style={styles.statValue}>{streak}</Text>
-              <Text style={styles.statLabel}>Current streak</Text>
+              <Text style={[styles.statValue, { color: colors.primaryDark }]}>{streak}</Text>
+              <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Current streak</Text>
             </GlassCard>
-            <GlassCard variant="elevated" style={styles.statCard}>
+            <GlassCard
+              variant="elevated"
+              style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}
+            >
               <Text style={styles.statEmoji}>⚡</Text>
-              <Text style={styles.statValue}>{xp}</Text>
-              <Text style={styles.statLabel}>Total XP</Text>
+              <Text style={[styles.statValue, { color: colors.primaryDark }]}>{xp}</Text>
+              <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Total XP</Text>
             </GlassCard>
           </View>
 
           {/* Daily mission */}
-          <GlassCard variant="glow" style={styles.missionCard}>
+          <GlassCard
+            variant="glow"
+            style={[styles.missionCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}
+          >
             <View style={styles.missionHeader}>
-              <Text style={styles.missionTitle}>🎯 Daily Mission</Text>
-              <View style={styles.missionXpBadge}>
-                <Text style={styles.missionXpText}>+20 XP</Text>
+              <Text style={[styles.missionTitle, { color: colors.textPrimary }]}>🎯 Daily Mission</Text>
+              <View style={[styles.missionXpBadge, { backgroundColor: colors.goldLight, borderColor: 'rgba(234, 162, 33, 0.3)' }]}>
+                <Text style={[styles.missionXpText, { color: colors.goldDark }]}>+20 XP</Text>
               </View>
             </View>
-            <Text style={styles.missionDesc}>Complete 1 lesson today</Text>
-            <View style={styles.missionBarBg}>
+            <Text style={[styles.missionDesc, { color: colors.textSecondary }]}>Complete 1 lesson today</Text>
+            <View style={[styles.missionBarBg, { backgroundColor: colors.primaryLight }]}>
               <View
                 style={[
                   styles.missionBarFill,
-                  { width: `${dailyMissionProgress * 100}%` },
+                  { width: `${dailyMissionProgress * 100}%`, backgroundColor: colors.primary },
                 ]}
               />
             </View>
-            <Text style={styles.missionProgress}>
+            <Text style={[styles.missionProgress, { color: colors.textMuted }]}>
               {dailyMissionProgress}/1 complete
             </Text>
           </GlassCard>
 
-          <View style={styles.aiRecommendCard}>
+          <View style={[styles.aiRecommendCard, { backgroundColor: colors.primaryDeep }]}>
             <View style={styles.aiRecommendIcon}>
               <Text style={styles.aiRecommendEmoji}>🤖</Text>
             </View>
@@ -171,7 +243,7 @@ export default function DashboardScreen() {
               </Text>
             </View>
             <TouchableOpacity
-              style={styles.aiRecommendBtn}
+              style={[styles.aiRecommendBtn, { backgroundColor: colors.primary }]}
               onPress={() => {
                 const first = tabContent.subjects[0];
                 if (first) handleSubject(getLocalizedSubject(first, selectedLanguage));
@@ -186,11 +258,27 @@ export default function DashboardScreen() {
             {TABS.map((tab) => (
               <PressableScale
                 key={tab.id}
-                style={[styles.tabBtn, activeTab === tab.id && styles.tabBtnActive]}
+                style={[
+                  styles.tabBtn,
+                  {
+                    borderColor: colors.border,
+                    backgroundColor: colors.white,
+                  },
+                  activeTab === tab.id && {
+                    backgroundColor: colors.primaryLight,
+                    borderColor: colors.primary,
+                  },
+                ]}
                 onPress={() => setActiveTab(tab.id)}
                 scaleTo={0.97}
               >
-                <Text style={[styles.tabLabel, activeTab === tab.id && styles.tabLabelActive]}>
+                <Text
+                  style={[
+                    styles.tabLabel,
+                    { color: colors.textSecondary },
+                    activeTab === tab.id && { color: colors.primaryDark },
+                  ]}
+                >
                   {tab.emoji} {tab.label}
                 </Text>
               </PressableScale>
@@ -198,9 +286,22 @@ export default function DashboardScreen() {
           </View>
 
           {activeTab === 'softskills' && (
-            <GlassCard style={styles.banner}>
-              <Text style={styles.bannerTitle}>⭐ {ui.lifeSkillsTitle}</Text>
-              <Text style={styles.bannerText}>{ui.lifeSkillsText}</Text>
+            <GlassCard
+              style={[
+                styles.banner,
+                {
+                  backgroundColor: colors.accentLight,
+                  borderColor: isDarkMode ? colors.border : 'rgba(245, 166, 35, 0.25)',
+                },
+                isDarkMode && { backgroundColor: colors.backgroundCard },
+              ]}
+            >
+              <Text style={[styles.bannerTitle, { color: colors.accentDark }]}>
+                ⭐ {ui.lifeSkillsTitle}
+              </Text>
+              <Text style={[styles.bannerText, { color: colors.textSecondary }]}>
+                {ui.lifeSkillsText}
+              </Text>
             </GlassCard>
           )}
 
@@ -214,7 +315,7 @@ export default function DashboardScreen() {
                   style={isCompact ? styles.cardWrapCompact : styles.cardWrap}
                 >
                   <PressableScale
-                    style={styles.subjectCard}
+                    style={[styles.subjectCard, { backgroundColor: colors.card, borderColor: colors.border }]}
                     onPress={() => handleSubject(localized)}
                     scaleTo={0.98}
                   >
@@ -229,7 +330,7 @@ export default function DashboardScreen() {
                         <Text style={[styles.cardLabel, { color: subject.color }]}>
                           {localized.label}
                         </Text>
-                        <Text style={styles.cardDesc} numberOfLines={2}>
+                        <Text style={[styles.cardDesc, { color: colors.textSecondary }]} numberOfLines={2}>
                           {localized.description}
                         </Text>
                       </View>
@@ -243,17 +344,39 @@ export default function DashboardScreen() {
             })}
           </View>
 
-          <Text style={styles.lessonsHint}>
+          <Text style={[styles.lessonsHint, { color: colors.textMuted }]}>
             {lessonsCompleted} lessons completed overall
           </Text>
         </View>
-      </ScrollView>
+        </ScrollView>
+
+        <TouchableOpacity
+          style={[
+            styles.floatingTutor,
+            {
+              display: showFloatingTutor ? 'flex' : 'none',
+              backgroundColor: colors.accent,
+              shadowColor: colors.accent,
+            },
+          ]}
+          onPress={() => {
+            const first = tabContent.subjects[0];
+            if (first) {
+              handleSubject(getLocalizedSubject(first, selectedLanguage));
+            }
+          }}
+        >
+          <Text style={styles.floatingTutorEmoji}>🤖</Text>
+          <Text style={styles.floatingTutorText}>Ask Tutor</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: '#F9F6F0' },
+  safe: { flex: 1 },
+  safeInner: { flex: 1, position: 'relative' },
   scroll: { paddingBottom: SPACING.xxl },
   content: { width: '100%', maxWidth: 980, alignSelf: 'center', paddingHorizontal: SPACING.lg, zIndex: 2 },
   contentWide: { maxWidth: 1180 },
@@ -271,7 +394,6 @@ const styles = StyleSheet.create({
   greetingTime: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-SemiBold',
-    color: COLORS.textMuted,
     marginBottom: 4,
     textTransform: 'uppercase',
     letterSpacing: 0.8,
@@ -279,13 +401,11 @@ const styles = StyleSheet.create({
   greetingName: {
     fontSize: FONT_SIZES.xxl,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.textPrimary,
     lineHeight: 32,
   },
   greetingStreak: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.accent,
     marginTop: 4,
   },
   greetingRight: {
@@ -297,7 +417,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
-    backgroundColor: COLORS.goldLight,
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md,
     paddingVertical: 6,
@@ -308,20 +427,54 @@ const styles = StyleSheet.create({
   xpPillText: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.goldDark,
   },
   gradePill: {
-    backgroundColor: COLORS.primaryLight,
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md,
     paddingVertical: 6,
     borderWidth: 1,
-    borderColor: COLORS.primaryGlow,
   },
   gradePillText: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.primaryDark,
+  },
+
+  promptBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.sm,
+    borderRadius: RADIUS.xl,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    borderWidth: 1.5,
+    marginBottom: SPACING.lg,
+    shadowColor: '#000',
+    shadowOpacity: 0.06,
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 12,
+    elevation: 3,
+  },
+  promptBarIcon: { fontSize: 20 },
+  promptBarInput: {
+    flex: 1,
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-Regular',
+    paddingVertical: SPACING.sm,
+    // @ts-expect-error outlineStyle is web-only
+    outlineStyle: 'none',
+  },
+  promptBarBtn: {
+    borderRadius: RADIUS.lg,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+  },
+  promptBarBtnDisabled: {
+    opacity: 0.4,
+  },
+  promptBarBtnText: {
+    color: '#FFFFFF',
+    fontFamily: 'Poppins-Bold',
+    fontSize: FONT_SIZES.sm,
   },
 
   statsRow: {
@@ -340,12 +493,10 @@ const styles = StyleSheet.create({
   statValue: {
     fontSize: FONT_SIZES.xl,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.primaryDark,
   },
   statLabel: {
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textSecondary,
     textAlign: 'center',
     marginTop: 2,
   },
@@ -363,10 +514,8 @@ const styles = StyleSheet.create({
   missionTitle: {
     fontSize: FONT_SIZES.lg,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.textPrimary,
   },
   missionXpBadge: {
-    backgroundColor: COLORS.goldLight,
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.sm,
     paddingVertical: 4,
@@ -376,29 +525,24 @@ const styles = StyleSheet.create({
   missionXpText: {
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.goldDark,
   },
   missionDesc: {
     fontSize: FONT_SIZES.md,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textSecondary,
     marginBottom: SPACING.md,
   },
   missionBarBg: {
     height: 10,
-    backgroundColor: COLORS.primaryLight,
     borderRadius: RADIUS.full,
     overflow: 'hidden',
   },
   missionBarFill: {
     height: '100%',
-    backgroundColor: COLORS.primary,
     borderRadius: RADIUS.full,
   },
   missionProgress: {
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-SemiBold',
-    color: COLORS.textMuted,
     marginTop: SPACING.xs,
     textAlign: 'right',
   },
@@ -407,7 +551,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.md,
-    backgroundColor: COLORS.primaryDeep,
     borderRadius: RADIUS.xl,
     padding: SPACING.lg,
     marginBottom: SPACING.md,
@@ -441,7 +584,6 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   aiRecommendBtn: {
-    backgroundColor: COLORS.primary,
     borderRadius: RADIUS.lg,
     paddingHorizontal: SPACING.md,
     paddingVertical: SPACING.sm,
@@ -463,35 +605,23 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.md,
     paddingVertical: 8,
     borderWidth: 1,
-    borderColor: COLORS.border,
-    backgroundColor: COLORS.white,
-  },
-  tabBtnActive: {
-    backgroundColor: COLORS.primaryLight,
-    borderColor: COLORS.primary,
   },
   tabLabel: {
-    color: COLORS.textSecondary,
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-SemiBold',
   },
-  tabLabelActive: { color: COLORS.primaryDark },
 
   banner: {
-    backgroundColor: COLORS.accentLight,
     padding: SPACING.lg,
     marginBottom: SPACING.md,
     borderWidth: 1,
-    borderColor: 'rgba(245, 166, 35, 0.25)',
   },
   bannerTitle: {
     fontFamily: 'Poppins-Bold',
-    color: COLORS.accentDark,
     marginBottom: 6,
     fontSize: FONT_SIZES.sm,
   },
   bannerText: {
-    color: '#78350f',
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Regular',
     lineHeight: 20,
@@ -501,10 +631,8 @@ const styles = StyleSheet.create({
   cardWrap: { width: '48.5%' },
   cardWrapCompact: { width: '100%' },
   subjectCard: {
-    backgroundColor: COLORS.white,
     borderRadius: RADIUS.xl,
     borderWidth: 1,
-    borderColor: 'rgba(0, 0, 0, 0.06)',
     overflow: 'hidden',
     minHeight: 100,
   },
@@ -534,7 +662,6 @@ const styles = StyleSheet.create({
   cardDesc: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textSecondary,
     marginTop: 4,
     lineHeight: 18,
   },
@@ -553,7 +680,28 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textMuted,
     marginTop: SPACING.lg,
+  },
+  floatingTutor: {
+    position: 'absolute',
+    bottom: 80,
+    right: SPACING.lg,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.sm,
+    borderRadius: RADIUS.full,
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.md,
+    shadowOpacity: 0.4,
+    shadowOffset: { width: 0, height: 8 },
+    shadowRadius: 20,
+    elevation: 12,
+    zIndex: 100,
+  },
+  floatingTutorEmoji: { fontSize: 20 },
+  floatingTutorText: {
+    color: '#FFFFFF',
+    fontFamily: 'Poppins-Bold',
+    fontSize: FONT_SIZES.sm,
   },
 });

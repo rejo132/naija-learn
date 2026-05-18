@@ -7,7 +7,8 @@ import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { ACHIEVEMENTS, getLevel, getXPForNextLevel } from '@/constants/achievements';
-import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 
@@ -17,6 +18,7 @@ export default function ProgressScreen() {
   const lessonsCompleted = useAppStore((s) => s.lessonsCompleted);
   const bestQuizScore = useAppStore((s) => s.bestQuizScore);
   const unlockedAchievements = useAppStore((s) => s.unlockedAchievements);
+  const { colors, isDarkMode } = useTheme();
 
   const level = getLevel(xp);
   const xpForNext = getXPForNextLevel(xp);
@@ -24,80 +26,89 @@ export default function ProgressScreen() {
   const unlockedCount = unlockedAchievements.length;
   const totalAchievements = ACHIEVEMENTS.length;
 
+  const streakBg =
+    streak >= 7
+      ? colors.goldLight
+      : streak >= 3
+        ? colors.errorLight
+        : colors.primaryLight;
+
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
       <Atmosphere pointerEvents="none" />
-      <ScrollView contentContainerStyle={styles.scroll}>
+      <ScrollView
+        contentContainerStyle={[styles.scroll, { backgroundColor: colors.background }]}
+      >
 
         {/* Header */}
-        <GlassCard style={styles.header}>
-          <Text style={styles.headerTitle}>📈 My Progress</Text>
+        <GlassCard style={[styles.header, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
+          <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>📈 My Progress</Text>
         </GlassCard>
 
         {/* Level card */}
-        <GlassCard style={styles.levelCard}>
+        <GlassCard style={[styles.levelCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
           <View style={styles.levelTop}>
-            <View style={styles.levelBadge}>
-              <Text style={styles.levelNumber}>Lvl {level}</Text>
+            <View style={[styles.levelBadge, { backgroundColor: colors.primary }]}>
+              <Text style={[styles.levelNumber, { color: colors.white }]}>Lvl {level}</Text>
             </View>
             <View style={styles.levelInfo}>
-              <Text style={styles.levelTitle}>Level {level} Learner</Text>
-              <Text style={styles.levelSubtitle}>{xpForNext} XP to next level</Text>
+              <Text style={[styles.levelTitle, { color: colors.textPrimary }]}>Level {level} Learner</Text>
+              <Text style={[styles.levelSubtitle, { color: colors.textSecondary }]}>{xpForNext} XP to next level</Text>
             </View>
-            <Text style={styles.xpTotal}>⚡{xp} XP</Text>
+            <Text style={[styles.xpTotal, { color: colors.goldDark }]}>⚡{xp} XP</Text>
           </View>
 
           {/* XP Progress bar */}
-          <View style={styles.progressBarBg}>
-            <View style={[styles.progressBarFill, { width: `${xpProgress}%` }]} />
+          <View style={[styles.progressBarBg, { backgroundColor: colors.primaryLight }]}>
+            <View style={[styles.progressBarFill, { width: `${xpProgress}%`, backgroundColor: colors.primary }]} />
           </View>
-          <Text style={styles.progressLabel}>
+          <Text style={[styles.progressLabel, { color: colors.textSecondary }]}>
             {xp % 100}/100 XP to Level {level + 1}
           </Text>
         </GlassCard>
 
         {/* Stats grid */}
-        <Text style={styles.sectionTitle}>Your Stats</Text>
+        <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>Your Stats</Text>
         <View style={styles.statsGrid}>
-          <GlassCard style={styles.statCard}>
+          <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <Text style={styles.statEmoji}>🔥</Text>
-            <Text style={styles.statValue}>{streak}</Text>
-            <Text style={styles.statLabel}>Day Streak</Text>
+            <Text style={[styles.statValue, { color: colors.primaryDark }]}>{streak}</Text>
+            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Day Streak</Text>
           </GlassCard>
-          <GlassCard style={styles.statCard}>
+          <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <Text style={styles.statEmoji}>📚</Text>
-            <Text style={styles.statValue}>{lessonsCompleted}</Text>
-            <Text style={styles.statLabel}>Lessons</Text>
+            <Text style={[styles.statValue, { color: colors.primaryDark }]}>{lessonsCompleted}</Text>
+            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Lessons</Text>
           </GlassCard>
-          <GlassCard style={styles.statCard}>
+          <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <Text style={styles.statEmoji}>🎯</Text>
-            <Text style={styles.statValue}>{bestQuizScore}%</Text>
-            <Text style={styles.statLabel}>Best Score</Text>
+            <Text style={[styles.statValue, { color: colors.primaryDark }]}>{bestQuizScore}%</Text>
+            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Best Score</Text>
           </GlassCard>
-          <GlassCard style={styles.statCard}>
+          <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <Text style={styles.statEmoji}>🏅</Text>
-            <Text style={styles.statValue}>{unlockedCount}/{totalAchievements}</Text>
-            <Text style={styles.statLabel}>Badges</Text>
+            <Text style={[styles.statValue, { color: colors.primaryDark }]}>{unlockedCount}/{totalAchievements}</Text>
+            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Badges</Text>
           </GlassCard>
         </View>
 
         {/* Streak motivator */}
-        <GlassCard style={[styles.streakCard,
-          streak >= 7 ? { backgroundColor: COLORS.goldLight } :
-          streak >= 3 ? { backgroundColor: '#fee2e2' } :
-          { backgroundColor: COLORS.primaryLight }
+        <GlassCard style={[
+          styles.streakCard,
+          { backgroundColor: streakBg, borderColor: colors.border },
+          isDarkMode && { backgroundColor: colors.backgroundCard },
         ]}>
           <Text style={styles.streakEmoji}>
             {streak >= 7 ? '⚡' : streak >= 3 ? '🔥' : '🌱'}
           </Text>
           <View style={{ flex: 1 }}>
-            <Text style={styles.streakTitle}>
+            <Text style={[styles.streakTitle, { color: colors.textPrimary }]}>
               {streak === 0 ? 'Start your streak today!' :
                streak === 1 ? '1 day streak — keep going!' :
                streak >= 7 ? `${streak} days! You are on fire! 🔥` :
                `${streak} day streak! Don't break it!`}
             </Text>
-            <Text style={styles.streakSubtitle}>
+            <Text style={[styles.streakSubtitle, { color: colors.textSecondary }]}>
               {streak === 0 ? 'Study today to start a streak' :
                'Study every day to keep your streak alive'}
             </Text>
@@ -106,9 +117,9 @@ export default function ProgressScreen() {
 
         {/* Achievements */}
         <View style={styles.achievementsHeader}>
-          <Text style={styles.sectionTitle}>Achievements</Text>
+          <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>Achievements</Text>
           <TouchableOpacity onPress={() => router.push('/achievements')}>
-            <Text style={styles.seeAll}>See all →</Text>
+            <Text style={[styles.seeAll, { color: colors.primary }]}>See all →</Text>
           </TouchableOpacity>
         </View>
 
@@ -120,9 +131,11 @@ export default function ProgressScreen() {
                 key={achievement.id}
                 style={[
                   styles.achievementCard,
+                  { borderColor: colors.border },
                   isUnlocked
                     ? { backgroundColor: achievement.bgColor, borderColor: achievement.color + '40' }
-                    : { opacity: 0.5 }
+                    : { opacity: 0.5 },
+                  isDarkMode && !isUnlocked && { backgroundColor: colors.backgroundCard },
                 ]}
               >
                 <Text style={styles.achievementEmoji}>
@@ -130,7 +143,7 @@ export default function ProgressScreen() {
                 </Text>
                 <Text style={[
                   styles.achievementTitle,
-                  isUnlocked ? { color: achievement.color } : { color: COLORS.textMuted }
+                  isUnlocked ? { color: achievement.color } : { color: colors.textMuted }
                 ]}>
                   {achievement.title}
                 </Text>
@@ -145,38 +158,37 @@ export default function ProgressScreen() {
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: COLORS.background },
+  safe: { flex: 1 },
   scroll: { paddingHorizontal: SPACING.lg, paddingBottom: SPACING.xxl },
   header: {
     flexDirection: 'row', alignItems: 'center',
     paddingHorizontal: SPACING.md, paddingVertical: SPACING.sm,
     marginTop: SPACING.sm, marginBottom: SPACING.md, gap: SPACING.sm,
   },
-  headerTitle: { flex: 1, fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold', color: COLORS.textPrimary },
+  headerTitle: { flex: 1, fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold' },
   levelCard: { padding: SPACING.lg, marginBottom: SPACING.md, gap: SPACING.sm },
   levelTop: { flexDirection: 'row', alignItems: 'center', gap: SPACING.md },
   levelBadge: {
     width: 56, height: 56, borderRadius: 28,
-    backgroundColor: COLORS.primary,
     alignItems: 'center', justifyContent: 'center',
   },
-  levelNumber: { color: COLORS.white, fontWeight: '900', fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.sm },
+  levelNumber: { fontWeight: '900', fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.sm },
   levelInfo: { flex: 1 },
-  levelTitle: { fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold', color: COLORS.textPrimary },
-  levelSubtitle: { fontSize: FONT_SIZES.sm, color: COLORS.textSecondary },
-  xpTotal: { fontSize: FONT_SIZES.md, fontWeight: '800', fontFamily: 'Poppins-Bold', color: COLORS.goldDark },
+  levelTitle: { fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold' },
+  levelSubtitle: { fontSize: FONT_SIZES.sm },
+  xpTotal: { fontSize: FONT_SIZES.md, fontWeight: '800', fontFamily: 'Poppins-Bold' },
   progressBarBg: {
-    height: 12, backgroundColor: COLORS.primaryLight,
+    height: 12,
     borderRadius: 6, overflow: 'hidden',
   },
   progressBarFill: {
-    height: '100%', backgroundColor: COLORS.primary,
+    height: '100%',
     borderRadius: 6,
   },
-  progressLabel: { fontSize: FONT_SIZES.xs, color: COLORS.textSecondary, textAlign: 'right' },
+  progressLabel: { fontSize: FONT_SIZES.xs, textAlign: 'right' },
   sectionTitle: {
     fontSize: FONT_SIZES.md, fontWeight: '800', fontFamily: 'Poppins-Bold',
-    color: COLORS.textPrimary, marginBottom: SPACING.sm,
+    marginBottom: SPACING.sm,
     marginTop: SPACING.md,
   },
   statsGrid: {
@@ -188,22 +200,22 @@ const styles = StyleSheet.create({
     padding: SPACING.md, gap: 4,
   },
   statEmoji: { fontSize: 28 },
-  statValue: { fontSize: FONT_SIZES.xxl, fontWeight: '900', fontFamily: 'Poppins-Bold', color: COLORS.primaryDark },
-  statLabel: { fontSize: FONT_SIZES.xs, color: COLORS.textSecondary, fontWeight: '600', fontFamily: 'Poppins-SemiBold' },
+  statValue: { fontSize: FONT_SIZES.xxl, fontWeight: '900', fontFamily: 'Poppins-Bold' },
+  statLabel: { fontSize: FONT_SIZES.xs, fontWeight: '600', fontFamily: 'Poppins-SemiBold' },
   streakCard: {
     flexDirection: 'row', alignItems: 'center',
     padding: SPACING.lg, gap: SPACING.md,
     marginVertical: SPACING.sm, borderRadius: RADIUS.xl,
-    borderWidth: 1, borderColor: COLORS.border,
+    borderWidth: 1,
   },
   streakEmoji: { fontSize: 36 },
-  streakTitle: { fontSize: FONT_SIZES.md, fontWeight: '800', fontFamily: 'Poppins-Bold', color: COLORS.textPrimary },
-  streakSubtitle: { fontSize: FONT_SIZES.sm, color: COLORS.textSecondary, marginTop: 2 },
+  streakTitle: { fontSize: FONT_SIZES.md, fontWeight: '800', fontFamily: 'Poppins-Bold' },
+  streakSubtitle: { fontSize: FONT_SIZES.sm, marginTop: 2 },
   achievementsHeader: {
     flexDirection: 'row', justifyContent: 'space-between',
     alignItems: 'center', marginTop: SPACING.md
   },
-  seeAll: { color: COLORS.primary, fontWeight: '700', fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.sm },
+  seeAll: { fontWeight: '700', fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.sm },
   achievementsGrid: {
     flexDirection: 'row', flexWrap: 'wrap',
     gap: SPACING.sm, marginBottom: SPACING.xl
@@ -211,7 +223,7 @@ const styles = StyleSheet.create({
   achievementCard: {
     width: '30%', alignItems: 'center',
     padding: SPACING.sm, gap: 4,
-    borderWidth: 1, borderColor: COLORS.border,
+    borderWidth: 1,
   },
   achievementEmoji: { fontSize: 28 },
   achievementTitle: {

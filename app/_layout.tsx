@@ -54,6 +54,7 @@ function ErrorFallback() {
 }
 
 export default function RootLayout() {
+  const isDarkMode = useAppStore((s) => s.isDarkMode);
   const [fontsLoaded] = useFonts({
     'Poppins-Regular': require('../assets/fonts/Poppins-Regular.ttf'),
     'Poppins-SemiBold': require('../assets/fonts/Poppins-SemiBold.ttf'),
@@ -75,7 +76,10 @@ export default function RootLayout() {
     <Sentry.ErrorBoundary fallback={<ErrorFallback />}>
       <GestureHandlerRootView style={{ flex: 1 }}>
         <SafeAreaProvider>
-          <StatusBar style="dark" backgroundColor={COLORS.background} />
+          <StatusBar
+            style={isDarkMode ? 'light' : 'dark'}
+            backgroundColor={isDarkMode ? '#0F1512' : COLORS.background}
+          />
           <View style={{ flex: 1, flexDirection: 'row' }}>
             <SideDrawer />
             <View style={{ flex: 1 }}>

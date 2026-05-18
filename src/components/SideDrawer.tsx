@@ -11,6 +11,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { router, usePathname } from 'expo-router';
 import { COLORS, FONT_SIZES, RADIUS, SPACING, GRADIENTS } from '@/constants/theme';
 import { useAuthStore } from '@/store/authStore';
+import { useAppStore } from '@/store/appStore';
 
 const DRAWER_WIDE = 240;
 const DRAWER_COLLAPSED = 64;
@@ -73,6 +74,8 @@ export function SideDrawer() {
   const { width } = useWindowDimensions();
   const pathname = usePathname();
   const { signOut } = useAuthStore();
+  const isDarkMode = useAppStore((s) => s.isDarkMode);
+  const toggleDarkMode = useAppStore((s) => s.toggleDarkMode);
   const [collapsed, setCollapsed] = useState(false);
   const animatedWidth = useRef(new Animated.Value(DRAWER_WIDE)).current;
 
@@ -128,6 +131,21 @@ export function SideDrawer() {
             <NavButton key={item.id} item={item} pathname={pathname} collapsed={collapsed} />
           ))}
         </View>
+
+        <TouchableOpacity
+          // @ts-expect-error title is supported on web for hover tooltips
+          title={collapsed ? (isDarkMode ? 'Light Mode' : 'Dark Mode') : undefined}
+          accessibilityLabel={isDarkMode ? 'Light Mode' : 'Dark Mode'}
+          style={[styles.darkModeBtn, collapsed && styles.darkModeBtnCollapsed]}
+          onPress={toggleDarkMode}
+        >
+          <Text style={styles.darkModeEmoji}>{isDarkMode ? '☀️' : '🌙'}</Text>
+          {!collapsed && (
+            <Text style={styles.darkModeText}>
+              {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+            </Text>
+          )}
+        </TouchableOpacity>
 
         <TouchableOpacity
           // @ts-expect-error title is supported on web for hover tooltips
@@ -268,7 +286,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-SemiBold',
     color: '#FFFFFF',
   },
-  signOutBtn: {
+  darkModeBtn: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.md,
@@ -276,6 +294,27 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.md,
     borderRadius: RADIUS.md,
     marginTop: 'auto',
+    marginBottom: SPACING.sm,
+    backgroundColor: 'rgba(255,255,255,0.06)',
+  },
+  darkModeBtnCollapsed: {
+    justifyContent: 'center',
+    paddingHorizontal: 0,
+    gap: 0,
+  },
+  darkModeEmoji: { fontSize: 16 },
+  darkModeText: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-SemiBold',
+    color: 'rgba(255,255,255,0.7)',
+  },
+  signOutBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.md,
+    paddingVertical: SPACING.sm,
+    paddingHorizontal: SPACING.md,
+    borderRadius: RADIUS.md,
     borderWidth: 1,
     borderColor: 'rgba(255, 107, 107, 0.25)',
     borderLeftWidth: 3,

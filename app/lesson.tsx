@@ -40,7 +40,8 @@ import {
   sendAIMessage,
 } from '@/services/aiService';
 import { QuickActionBar } from '@/components/QuickActionBar';
-import { COLORS, SPACING, RADIUS, FONT_SIZES, GRADIENTS } from '@/constants/theme';
+import { SPACING, RADIUS, FONT_SIZES, GRADIENTS } from '@/constants/theme';
+import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 import { PressableScale } from '@/components/PressableScale';
@@ -139,7 +140,7 @@ function formatTime(timestamp: number): string {
   return `${h}:${m}`;
 }
 
-function BounceDot({ delay }: { delay: number }) {
+function BounceDot({ delay, color }: { delay: number; color: string }) {
   const y = useSharedValue(0);
 
   useEffect(() => {
@@ -159,28 +160,35 @@ function BounceDot({ delay }: { delay: number }) {
     transform: [{ translateY: y.value }],
   }));
 
-  return <Animated.View style={[styles.thinkingDot, animStyle]} />;
+  return <Animated.View style={[styles.thinkingDot, { backgroundColor: color }, animStyle]} />;
 }
 
 function ThinkingIndicator() {
+  const { colors } = useTheme();
+
   return (
     <View style={styles.typingWrap}>
-      <View style={styles.avatar}>
+      <View style={[styles.avatar, { backgroundColor: colors.primaryLight, borderColor: colors.border }]}>
         <Text style={styles.avatarEmoji}>👩🏽‍🏫</Text>
       </View>
-      <View style={styles.typingBubble}>
+      <View style={[styles.typingBubble, {
+        backgroundColor: colors.white,
+        borderColor: colors.border,
+        borderLeftColor: colors.primary,
+      }]}>
         <View style={styles.thinkingDotsRow}>
-          <BounceDot delay={0} />
-          <BounceDot delay={160} />
-          <BounceDot delay={320} />
+          <BounceDot delay={0} color={colors.primary} />
+          <BounceDot delay={160} color={colors.primary} />
+          <BounceDot delay={320} color={colors.primary} />
         </View>
-        <Text style={styles.typingText}>Aunty Naija is thinking...</Text>
+        <Text style={[styles.typingText, { color: colors.textSecondary }]}>Aunty Naija is thinking...</Text>
       </View>
     </View>
   );
 }
 
 function ChatBubble({ item, personalityEmoji }: { item: ChatMessage; personalityEmoji: string }) {
+  const { colors } = useTheme();
   const isUser = item.role === 'user';
   const time = formatTime(item.timestamp);
 
@@ -190,23 +198,30 @@ function ChatBubble({ item, personalityEmoji }: { item: ChatMessage; personality
       style={[styles.bubbleWrap, isUser ? styles.bubbleWrapUser : styles.bubbleWrapAI]}
     >
       {!isUser && (
-        <View style={styles.avatar}>
+        <View style={[styles.avatar, { backgroundColor: colors.primaryLight, borderColor: colors.border }]}>
           <Text style={styles.avatarEmoji}>{personalityEmoji}</Text>
         </View>
       )}
       <View style={styles.bubbleColumn}>
-        <View style={[styles.bubble, isUser ? styles.bubbleUser : styles.bubbleAI]}>
+        <View style={[
+          styles.bubble,
+          isUser ? styles.bubbleUser : [styles.bubbleAI, {
+            backgroundColor: colors.white,
+            borderColor: colors.border,
+            borderLeftColor: colors.primary,
+          }],
+        ]}>
           {isUser ? (
             <>
               <View style={styles.bubbleUserGradientBase} />
               <View style={styles.bubbleUserGradientTop} />
-              <Text style={[styles.bubbleText, styles.bubbleTextUser]}>{item.content}</Text>
+              <Text style={[styles.bubbleText, styles.bubbleTextUser, { color: colors.white }]}>{item.content}</Text>
             </>
           ) : (
             <MarkdownMessage content={item.content} />
           )}
         </View>
-        <Text style={[styles.bubbleTime, isUser && styles.bubbleTimeUser]}>{time}</Text>
+        <Text style={[styles.bubbleTime, { color: colors.textMuted }, isUser && styles.bubbleTimeUser]}>{time}</Text>
       </View>
     </Animated.View>
   );
@@ -250,6 +265,7 @@ export default function LessonScreen() {
   const isWide = width > 1200;
   const lessonContextRef = useRef<string | null>(null);
   const xpPulse = useSharedValue(1);
+  const { colors, isDarkMode } = useTheme();
 
   useEffect(() => {
     xpPulse.value = withRepeat(
@@ -440,7 +456,7 @@ export default function LessonScreen() {
   const showCharCount = inputText.length >= CHAR_WARN_AT;
 
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
       <AchievementToast
         achievement={newAchievement}
         onDismiss={() => setNewAchievement(null)}
@@ -452,23 +468,23 @@ export default function LessonScreen() {
       >
         <Atmosphere pointerEvents="none" />
         <View style={[styles.content, isWide && styles.contentWide]}>
-          <GlassCard variant="elevated" style={styles.header}>
+          <GlassCard variant="elevated" style={[styles.header, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
-              <Text style={styles.backArrow}>←</Text>
+              <Text style={[styles.backArrow, { color: colors.primaryDark }]}>←</Text>
             </TouchableOpacity>
             <View
               style={[
                 styles.subjectIcon,
-                { backgroundColor: selectedSubject?.bgColor ?? COLORS.primaryLight },
+                { backgroundColor: selectedSubject?.bgColor ?? colors.primaryLight },
               ]}
             >
               <Text style={styles.subjectEmoji}>{selectedSubject?.icon ?? '📚'}</Text>
             </View>
             <View style={styles.headerCenter}>
-              <Text style={styles.headerTitle} numberOfLines={1}>
+              <Text style={[styles.headerTitle, { color: colors.textPrimary }]} numberOfLines={1}>
                 {selectedSubject?.label ?? ui.learn}
               </Text>
-              <Text style={styles.headerSub} numberOfLines={1}>
+              <Text style={[styles.headerSub, { color: colors.textSecondary }]} numberOfLines={1}>
                 {ui.primary} {selectedGrade} · {lang.nativeLabel}
                 {isQuizMode ? ` · ${ui.quizMode}` : ''}
               </Text>
@@ -477,25 +493,25 @@ export default function LessonScreen() {
                 onPress={() => router.push('/personality')}
               >
                 <Text style={styles.personalityEmoji}>{personality.emoji}</Text>
-                <Text style={styles.personalityName}>{personality.name}</Text>
+                <Text style={[styles.personalityName, { color: colors.primary }]}>{personality.name}</Text>
               </TouchableOpacity>
             </View>
-            <Animated.View style={[styles.xpBadge, xpBadgeAnimStyle]}>
-              <Text style={styles.xpText}>⚡ {xp} XP</Text>
+            <Animated.View style={[styles.xpBadge, { backgroundColor: colors.goldLight }, xpBadgeAnimStyle]}>
+              <Text style={[styles.xpText, { color: colors.goldDark }]}>⚡ {xp} XP</Text>
             </Animated.View>
-            <TouchableOpacity style={styles.iconBtn} onPress={() => router.push('/progress')}>
+            <TouchableOpacity style={[styles.iconBtn, { backgroundColor: colors.primaryLight, borderColor: colors.border }]} onPress={() => router.push('/progress')}>
               <Text style={styles.iconBtnEmoji}>📈</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              style={[styles.quizBtn, { zIndex: 9999 }]}
+              style={[styles.quizBtn, { backgroundColor: colors.primaryLight, borderColor: colors.border, zIndex: 9999 }]}
               onPress={handleStartQuiz}
             >
-              <Text style={styles.quizBtnText}>🧠 {ui.quiz}</Text>
+              <Text style={[styles.quizBtnText, { color: colors.primaryDark }]}>🧠 {ui.quiz}</Text>
             </TouchableOpacity>
           </GlassCard>
 
           {gradeInfo && (
-            <GlassCard style={[styles.gradeBanner, { backgroundColor: gradeInfo.bgColor }]}>
+            <GlassCard style={[styles.gradeBanner, { backgroundColor: gradeInfo.bgColor, borderColor: colors.border }]}>
               <Text style={[styles.gradeLetter, { color: gradeInfo.color }]}>{gradeInfo.grade}</Text>
               <Text style={[styles.gradeDetail, { color: gradeInfo.color }]}>
                 {quizScore}% · {gradeInfo.remark}
@@ -507,7 +523,7 @@ export default function LessonScreen() {
             ref={flatListRef}
             data={messages}
             keyExtractor={(item) => item.id}
-            contentContainerStyle={styles.chatContainer}
+            contentContainerStyle={[styles.chatContainer, { backgroundColor: colors.background }]}
             onContentSizeChange={() => flatListRef.current?.scrollToEnd({ animated: true })}
             renderItem={({ item }) => (
               <ChatBubble item={item} personalityEmoji={personality.emoji} />
@@ -528,12 +544,17 @@ export default function LessonScreen() {
               {quickActions.map((action) => (
                 <PressableScale
                   key={action.label}
-                  style={[styles.quickCard, isCompact && styles.quickCardCompact]}
+                  style={[
+                    styles.quickCard,
+                    { backgroundColor: colors.white, borderColor: colors.border },
+                    isCompact && styles.quickCardCompact,
+                    isDarkMode && { backgroundColor: colors.backgroundCard },
+                  ]}
                   onPress={() => handleSend(action.prompt)}
                   scaleTo={0.98}
                 >
                   <Text style={styles.quickCardIcon}>{action.icon}</Text>
-                  <Text style={styles.quickCardText}>{action.label}</Text>
+                  <Text style={[styles.quickCardText, { color: colors.textPrimary }]}>{action.label}</Text>
                 </PressableScale>
               ))}
             </View>
@@ -541,17 +562,21 @@ export default function LessonScreen() {
 
           <View style={styles.inputWrap}>
             {showCharCount && (
-              <Text style={styles.charCount}>
+              <Text style={[styles.charCount, { color: colors.textMuted }]}>
                 {inputText.length}/{CHAR_LIMIT}
               </Text>
             )}
-            <View style={styles.inputBar}>
+            <View style={[styles.inputBar, { backgroundColor: colors.white, borderColor: colors.border, shadowColor: colors.shadow }]}>
               <TextInput
-                style={styles.input}
+                style={[styles.input, {
+                  backgroundColor: colors.backgroundCard,
+                  borderColor: colors.border,
+                  color: colors.textPrimary,
+                }]}
                 value={inputText}
                 onChangeText={setInputText}
                 placeholder={isConnected ? ui.askPlaceholder : 'No internet connection...'}
-                placeholderTextColor={COLORS.textMuted}
+                placeholderTextColor={colors.textMuted}
                 multiline
                 maxLength={CHAR_LIMIT}
                 editable={!isAILoading && isConnected}
@@ -559,14 +584,14 @@ export default function LessonScreen() {
               <TouchableOpacity
                 style={[
                   styles.sendBtn,
-                  styles.sendBtnGradient,
+                  { backgroundColor: colors.primary },
                   (!inputText.trim() || isAILoading || !isConnected) && styles.sendBtnDisabled,
                 ]}
                 onPress={() => handleSend()}
                 disabled={!inputText.trim() || isAILoading || !isConnected}
               >
                 <View style={styles.sendBtnHighlight} />
-                <Text style={styles.sendBtnText}>➤</Text>
+                <Text style={[styles.sendBtnText, { color: colors.white }]}>➤</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -577,7 +602,7 @@ export default function LessonScreen() {
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: COLORS.background },
+  safe: { flex: 1 },
   content: { flex: 1, width: '100%', maxWidth: 1000, alignSelf: 'center', zIndex: 2 },
   contentWide: { maxWidth: 1180 },
   header: {
@@ -590,7 +615,7 @@ const styles = StyleSheet.create({
     marginTop: SPACING.sm,
   },
   backBtn: { padding: SPACING.xs },
-  backArrow: { fontSize: FONT_SIZES.xl, color: COLORS.primaryDark, fontFamily: 'Poppins-Bold' },
+  backArrow: { fontSize: FONT_SIZES.xl, fontFamily: 'Poppins-Bold' },
   subjectIcon: {
     width: 52,
     height: 52,
@@ -603,12 +628,10 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontFamily: 'Poppins-Bold',
     fontSize: FONT_SIZES.lg,
-    color: COLORS.textPrimary,
   },
   headerSub: {
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textSecondary,
     marginTop: 2,
   },
   personalityRow: {
@@ -621,10 +644,8 @@ const styles = StyleSheet.create({
   personalityName: {
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-SemiBold',
-    color: COLORS.primary,
   },
   xpBadge: {
-    backgroundColor: COLORS.goldLight,
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.sm,
     paddingVertical: 6,
@@ -632,7 +653,6 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(234, 162, 33, 0.4)',
   },
   xpText: {
-    color: COLORS.goldDark,
     fontFamily: 'Poppins-Bold',
     fontSize: FONT_SIZES.xs,
   },
@@ -640,23 +660,18 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: COLORS.primaryLight,
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: COLORS.border,
   },
   iconBtnEmoji: { fontSize: 18 },
   quizBtn: {
-    backgroundColor: COLORS.primaryLight,
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md,
     paddingVertical: 8,
     borderWidth: 1,
-    borderColor: COLORS.border,
   },
   quizBtnText: {
-    color: COLORS.primaryDark,
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-SemiBold',
   },
@@ -670,7 +685,6 @@ const styles = StyleSheet.create({
     marginTop: SPACING.sm,
     borderRadius: RADIUS.lg,
     borderWidth: 1,
-    borderColor: COLORS.border,
   },
   gradeLetter: { fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.xxl },
   gradeDetail: { fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.sm },
@@ -688,12 +702,10 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: COLORS.primaryLight,
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: 0,
     borderWidth: 1,
-    borderColor: COLORS.border,
   },
   avatarEmoji: { fontSize: 22 },
   bubble: {
@@ -719,31 +731,24 @@ const styles = StyleSheet.create({
     opacity: 0.95,
   },
   bubbleAI: {
-    backgroundColor: COLORS.white,
     borderWidth: 1,
-    borderColor: 'rgba(0, 0, 0, 0.06)',
     borderLeftWidth: 4,
-    borderLeftColor: COLORS.primary,
   },
   bubbleText: { fontSize: FONT_SIZES.md, lineHeight: 22, fontFamily: 'Poppins-Regular', zIndex: 1 },
-  bubbleTextUser: { color: COLORS.white, fontFamily: 'Poppins-Regular', zIndex: 1 },
+  bubbleTextUser: { fontFamily: 'Poppins-Regular', zIndex: 1 },
   bubbleTime: {
     fontSize: 10,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textMuted,
     marginTop: 4,
     marginLeft: 4,
   },
   bubbleTimeUser: { textAlign: 'right', marginRight: 4, marginLeft: 0 },
   typingWrap: { flexDirection: 'row', alignItems: 'flex-start', gap: SPACING.sm, paddingHorizontal: SPACING.lg },
   typingBubble: {
-    backgroundColor: COLORS.white,
     borderRadius: RADIUS.xl,
     padding: SPACING.md,
     borderWidth: 1,
-    borderColor: COLORS.border,
     borderLeftWidth: 4,
-    borderLeftColor: COLORS.primary,
     minWidth: 140,
   },
   thinkingDotsRow: {
@@ -756,10 +761,8 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: COLORS.primary,
   },
   typingText: {
-    color: COLORS.textSecondary,
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Regular',
   },
@@ -774,10 +777,8 @@ const styles = StyleSheet.create({
   quickCard: {
     width: '48%',
     minHeight: 56,
-    backgroundColor: COLORS.white,
     borderRadius: RADIUS.lg,
     borderWidth: 1,
-    borderColor: COLORS.border,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
@@ -786,7 +787,6 @@ const styles = StyleSheet.create({
   quickCardCompact: { width: '100%' },
   quickCardIcon: { fontSize: FONT_SIZES.md },
   quickCardText: {
-    color: COLORS.textPrimary,
     fontFamily: 'Poppins-SemiBold',
     fontSize: FONT_SIZES.sm,
   },
@@ -794,12 +794,10 @@ const styles = StyleSheet.create({
   charCount: {
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textMuted,
     textAlign: 'right',
     marginBottom: 4,
   },
   inputBar: {
-    backgroundColor: COLORS.white,
     flexDirection: 'row',
     alignItems: 'flex-end',
     gap: SPACING.sm,
@@ -807,8 +805,6 @@ const styles = StyleSheet.create({
     paddingVertical: SPACING.sm,
     borderRadius: RADIUS.xl,
     borderWidth: 1,
-    borderColor: COLORS.border,
-    shadowColor: COLORS.shadow,
     shadowOpacity: 0.06,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
@@ -822,11 +818,8 @@ const styles = StyleSheet.create({
     paddingVertical: SPACING.sm,
     fontSize: FONT_SIZES.md,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textPrimary,
     maxHeight: 120,
-    backgroundColor: '#F7FBF8',
     borderWidth: 1,
-    borderColor: 'rgba(0, 87, 51, 0.08)',
   },
   sendBtn: {
     width: 48,
@@ -835,9 +828,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
-  },
-  sendBtnGradient: {
-    backgroundColor: COLORS.primary,
   },
   sendBtnHighlight: {
     position: 'absolute',
@@ -848,5 +838,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,0.15)',
   },
   sendBtnDisabled: { opacity: 0.4 },
-  sendBtnText: { color: COLORS.white, fontSize: FONT_SIZES.lg, fontFamily: 'Poppins-Bold' },
+  sendBtnText: { fontSize: FONT_SIZES.lg, fontFamily: 'Poppins-Bold' },
 });

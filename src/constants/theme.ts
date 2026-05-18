@@ -65,6 +65,66 @@ export const COLORS = {
   flagWhite: '#FFFFFF',
 };
 
+export const DARK_COLORS = {
+  // Primary
+  primary: '#00C870',
+  primaryDark: '#00A651',
+  primaryDeep: '#008751',
+  primaryLight: 'rgba(0, 200, 112, 0.12)',
+  primaryGlow: 'rgba(0, 200, 112, 0.15)',
+
+  // Warm accent
+  accent: '#E8835A',
+  accentLight: 'rgba(232, 131, 90, 0.15)',
+  accentMid: '#C2502A',
+  accentDark: '#FDF0EB',
+
+  // Gold
+  gold: '#F5C842',
+  goldLight: 'rgba(245, 200, 66, 0.15)',
+  goldDark: '#EAA221',
+
+  // Backgrounds
+  background: '#0F1512',
+  backgroundDeep: '#0A0F0C',
+  backgroundCard: '#1A2420',
+  backgroundGlass: 'rgba(255, 255, 255, 0.05)',
+  backgroundDark: 'rgba(0, 0, 0, 0.3)',
+
+  // Text
+  textPrimary: '#F0F7F4',
+  textSecondary: '#A0B8AC',
+  textMuted: '#5A7A6A',
+  textInverse: '#0F1512',
+  textAccent: '#E8835A',
+
+  // Borders & glass
+  border: 'rgba(255, 255, 255, 0.08)',
+  borderStrong: 'rgba(255, 255, 255, 0.15)',
+  glassBorder: 'rgba(255, 255, 255, 0.08)',
+  glassShadow: 'rgba(0, 0, 0, 0.3)',
+
+  // Semantic
+  success: '#00C870',
+  successLight: 'rgba(0, 200, 112, 0.12)',
+  warning: '#F5C842',
+  warningLight: 'rgba(245, 200, 66, 0.12)',
+  error: '#FF5252',
+  errorLight: 'rgba(255, 82, 82, 0.12)',
+
+  // Gamification
+  xpGold: '#F5C842',
+  streakRed: '#FF5252',
+  levelPurple: '#9B72CF',
+
+  // Legacy aliases
+  white: '#F0F7F4',
+  card: '#1A2420',
+  shadow: 'rgba(0, 0, 0, 0.4)',
+  flagGreen: '#00C870',
+  flagWhite: '#F0F7F4',
+};
+
 export const FONTS = {
   regular: 'Poppins-Regular',
   semiBold: 'Poppins-SemiBold',
@@ -129,6 +189,37 @@ export const SHADOWS = {
   glow: {
     shadowColor: '#008751',
     shadowOpacity: 0.25,
+    shadowOffset: { width: 0, height: 0 },
+    shadowRadius: 20,
+    elevation: 8,
+  },
+};
+
+export const DARK_SHADOWS = {
+  soft: {
+    shadowColor: '#000000',
+    shadowOpacity: 0.3,
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 16,
+    elevation: 4,
+  },
+  medium: {
+    shadowColor: '#000000',
+    shadowOpacity: 0.4,
+    shadowOffset: { width: 0, height: 8 },
+    shadowRadius: 24,
+    elevation: 8,
+  },
+  strong: {
+    shadowColor: '#000000',
+    shadowOpacity: 0.5,
+    shadowOffset: { width: 0, height: 16 },
+    shadowRadius: 40,
+    elevation: 16,
+  },
+  glow: {
+    shadowColor: '#00C870',
+    shadowOpacity: 0.3,
     shadowOffset: { width: 0, height: 0 },
     shadowRadius: 20,
     elevation: 8,
