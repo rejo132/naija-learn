@@ -14,7 +14,7 @@ import { Redirect, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
-import { LANGUAGES, getUIText } from '@/constants/languages';
+import { getUIText } from '@/constants/languages';
 import {
   getCoreSubjectsForGrade,
   LANGUAGE_SUBJECTS,
@@ -46,7 +46,6 @@ export default function DashboardScreen() {
   const { selectedLanguage, selectedGrade, setSubject, xp, streak, lastStudyDate, lessonsCompleted } =
     useAppStore();
   const user = useAuthStore((s) => s.user);
-  const lang = LANGUAGES.find((l) => l.code === selectedLanguage)!;
   const ui = getUIText(selectedLanguage);
   const { width } = useWindowDimensions();
   const isCompact = width < 760;
@@ -93,47 +92,27 @@ export default function DashboardScreen() {
         <View style={[styles.content, isWide && styles.contentWide, isMedium && styles.contentMedium]}>
           {/* Greeting header */}
           <View style={styles.greetingRow}>
-            <View style={styles.greetingTextBlock}>
-              <Text style={styles.greetingLine}>
-                {greeting.text} {greeting.emoji}
+            <View style={styles.greetingLeft}>
+              <Text style={styles.greetingTime}>
+                {greeting.emoji} {greeting.text}
               </Text>
-              {userName ? (
-                <Text style={styles.greetingName}>Welcome back, {userName}</Text>
-              ) : (
-                <Text style={styles.greetingSub}>
-                  {ui.primary} {selectedGrade} · {lang.nativeLabel}
+              <Text style={styles.greetingName}>
+                {userName ? `Welcome back, ${userName}` : 'Welcome to Learnova'}
+              </Text>
+              {streak > 0 && (
+                <Text style={styles.greetingStreak}>
+                  🔥 {streak} day streak — keep it up!
                 </Text>
               )}
             </View>
-            <View style={styles.greetingBadges}>
-              <View style={styles.streakBadge}>
-                <Text style={styles.streakBadgeText}>🔥 {streak}</Text>
+            <View style={styles.greetingRight}>
+              <View style={styles.xpPill}>
+                <Text style={styles.xpPillEmoji}>⚡</Text>
+                <Text style={styles.xpPillText}>{xp} XP</Text>
               </View>
-              <View style={styles.xpBadge}>
-                <Text style={styles.xpBadgeText}>⚡ {xp} XP</Text>
+              <View style={styles.gradePill}>
+                <Text style={styles.gradePillText}>P{selectedGrade}</Text>
               </View>
-            </View>
-          </View>
-
-          {/* Nav row */}
-          <View style={styles.navRow}>
-            <Text style={styles.navTitle}>{ui.appName}</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.navActions}>
-              <TouchableOpacity style={styles.headerActionBtn} onPress={() => router.push('/progress')}>
-                <Text style={styles.headerActionBtnText}>📈 Progress</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.headerActionBtn} onPress={() => router.push('/achievements')}>
-                <Text style={styles.headerActionBtnText}>🏆 Achievements</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.headerActionBtn} onPress={() => router.push('/parent-dashboard')}>
-                <Text style={styles.headerActionBtnText}>📊 Reports</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.headerActionBtn} onPress={() => router.push('/children')}>
-                <Text style={styles.headerActionBtnText}>👤 Profiles</Text>
-              </TouchableOpacity>
-            </ScrollView>
-            <View style={styles.gradeBadge}>
-              <Text style={styles.gradeBadgeText}>P{selectedGrade}</Text>
             </View>
           </View>
 
@@ -177,6 +156,30 @@ export default function DashboardScreen() {
               {dailyMissionProgress}/1 complete
             </Text>
           </GlassCard>
+
+          <View style={styles.aiRecommendCard}>
+            <View style={styles.aiRecommendIcon}>
+              <Text style={styles.aiRecommendEmoji}>🤖</Text>
+            </View>
+            <View style={styles.aiRecommendBody}>
+              <Text style={styles.aiRecommendLabel}>AI PICK FOR YOU</Text>
+              <Text style={styles.aiRecommendTitle}>
+                {tabContent.subjects[0]?.label ?? 'Mathematics'}
+              </Text>
+              <Text style={styles.aiRecommendSub}>
+                Start your daily lesson here
+              </Text>
+            </View>
+            <TouchableOpacity
+              style={styles.aiRecommendBtn}
+              onPress={() => {
+                const first = tabContent.subjects[0];
+                if (first) handleSubject(getLocalizedSubject(first, selectedLanguage));
+              }}
+            >
+              <Text style={styles.aiRecommendBtnText}>Start →</Text>
+            </TouchableOpacity>
+          </View>
 
           {/* Tabs */}
           <View style={styles.tabBar}>
@@ -226,9 +229,6 @@ export default function DashboardScreen() {
                         <Text style={[styles.cardLabel, { color: subject.color }]}>
                           {localized.label}
                         </Text>
-                        <Text style={styles.cardGrade}>
-                          {ui.primary} {selectedGrade}
-                        </Text>
                         <Text style={styles.cardDesc} numberOfLines={2}>
                           {localized.description}
                         </Text>
@@ -253,7 +253,7 @@ export default function DashboardScreen() {
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: COLORS.background },
+  safe: { flex: 1, backgroundColor: '#F9F6F0' },
   scroll: { paddingBottom: SPACING.xxl },
   content: { width: '100%', maxWidth: 980, alignSelf: 'center', paddingHorizontal: SPACING.lg, zIndex: 2 },
   contentWide: { maxWidth: 1180 },
@@ -263,101 +263,65 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
-    marginTop: SPACING.sm,
-    marginBottom: SPACING.md,
+    marginTop: SPACING.lg,
+    marginBottom: SPACING.lg,
     gap: SPACING.md,
   },
-  greetingTextBlock: { flex: 1 },
-  greetingLine: {
-    fontSize: FONT_SIZES.xl,
-    fontFamily: 'Poppins-Bold',
-    color: COLORS.textPrimary,
-    letterSpacing: -0.3,
+  greetingLeft: { flex: 1 },
+  greetingTime: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-SemiBold',
+    color: COLORS.textMuted,
+    marginBottom: 4,
+    textTransform: 'uppercase',
+    letterSpacing: 0.8,
   },
   greetingName: {
-    fontSize: FONT_SIZES.md,
-    fontFamily: 'Poppins-Regular',
-    color: COLORS.textSecondary,
-    marginTop: 4,
-  },
-  greetingSub: {
-    fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
-    color: COLORS.textSecondary,
-    marginTop: 4,
-  },
-  greetingBadges: { flexDirection: 'row', gap: SPACING.sm, flexShrink: 0 },
-  streakBadge: {
-    backgroundColor: '#FFEBEE',
-    borderRadius: RADIUS.full,
-    paddingHorizontal: SPACING.md,
-    paddingVertical: 6,
-    borderWidth: 1,
-    borderColor: 'rgba(255, 68, 68, 0.2)',
-  },
-  streakBadgeText: {
-    fontSize: FONT_SIZES.sm,
+    fontSize: FONT_SIZES.xxl,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.streakRed,
+    color: COLORS.textPrimary,
+    lineHeight: 32,
   },
-  xpBadge: {
+  greetingStreak: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.accent,
+    marginTop: 4,
+  },
+  greetingRight: {
+    alignItems: 'flex-end',
+    gap: SPACING.sm,
+    flexShrink: 0,
+  },
+  xpPill: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
     backgroundColor: COLORS.goldLight,
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md,
     paddingVertical: 6,
     borderWidth: 1,
-    borderColor: 'rgba(234, 162, 33, 0.35)',
+    borderColor: 'rgba(234, 162, 33, 0.3)',
   },
-  xpBadgeText: {
+  xpPillEmoji: { fontSize: 14 },
+  xpPillText: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Bold',
     color: COLORS.goldDark,
   },
-
-  navRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: SPACING.sm,
-    marginBottom: SPACING.md,
-    backgroundColor: 'rgba(255,255,255,0.85)',
-    borderRadius: RADIUS.lg,
-    paddingHorizontal: SPACING.sm,
-    paddingVertical: SPACING.sm,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-  },
-  navTitle: {
-    fontSize: FONT_SIZES.md,
-    fontFamily: 'Poppins-Bold',
-    color: COLORS.textPrimary,
-  },
-  navActions: { flex: 1 },
-  headerActionBtn: {
+  gradePill: {
     backgroundColor: COLORS.primaryLight,
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md,
-    paddingVertical: 4,
+    paddingVertical: 6,
     borderWidth: 1,
-    borderColor: COLORS.border,
-    marginRight: SPACING.sm,
+    borderColor: COLORS.primaryGlow,
   },
-  headerActionBtnText: {
-    color: COLORS.primaryDark,
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: FONT_SIZES.xs,
-  },
-  gradeBadge: {
-    backgroundColor: COLORS.primaryLight,
-    borderRadius: RADIUS.full,
-    paddingHorizontal: SPACING.md,
-    paddingVertical: 4,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-  },
-  gradeBadgeText: {
-    color: COLORS.primaryDark,
-    fontFamily: 'Poppins-Bold',
+  gradePillText: {
     fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Bold',
+    color: COLORS.primaryDark,
   },
 
   statsRow: {
@@ -439,6 +403,55 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 
+  aiRecommendCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.md,
+    backgroundColor: COLORS.primaryDeep,
+    borderRadius: RADIUS.xl,
+    padding: SPACING.lg,
+    marginBottom: SPACING.md,
+  },
+  aiRecommendIcon: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  aiRecommendEmoji: { fontSize: 22 },
+  aiRecommendBody: { flex: 1 },
+  aiRecommendLabel: {
+    fontSize: 10,
+    fontFamily: 'Poppins-SemiBold',
+    color: 'rgba(255,255,255,0.5)',
+    letterSpacing: 1.2,
+    marginBottom: 2,
+  },
+  aiRecommendTitle: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-Bold',
+    color: '#FFFFFF',
+  },
+  aiRecommendSub: {
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-Regular',
+    color: 'rgba(255,255,255,0.6)',
+    marginTop: 2,
+  },
+  aiRecommendBtn: {
+    backgroundColor: COLORS.primary,
+    borderRadius: RADIUS.lg,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+  },
+  aiRecommendBtnText: {
+    color: '#FFFFFF',
+    fontFamily: 'Poppins-Bold',
+    fontSize: FONT_SIZES.sm,
+  },
+
   tabBar: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -493,7 +506,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(0, 0, 0, 0.06)',
     overflow: 'hidden',
-    minHeight: 120,
+    minHeight: 100,
   },
   cardGradient: {
     ...StyleSheet.absoluteFillObject,
@@ -517,12 +530,6 @@ const styles = StyleSheet.create({
   cardLabel: {
     fontFamily: 'Poppins-Bold',
     fontSize: FONT_SIZES.lg,
-  },
-  cardGrade: {
-    fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-SemiBold',
-    color: COLORS.textMuted,
-    marginTop: 2,
   },
   cardDesc: {
     fontSize: FONT_SIZES.sm,
