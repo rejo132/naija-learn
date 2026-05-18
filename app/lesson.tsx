@@ -28,6 +28,7 @@ import { useAppStore, type ChatMessage } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
 import { saveProgress } from '@/services/dbService';
 import { getGreeting, getUIText } from '@/constants/languages';
+import { useTranslation } from '@/hooks/useTranslation';
 import { getNigerianGrade, getLessonQuickActions, getQuickPrompts } from '@/constants/subjects';
 import { type Achievement, XP_REWARDS, checkNewAchievements } from '@/constants/achievements';
 import { getPersonality, type TutorPersonality } from '@/constants/personalities';
@@ -267,6 +268,7 @@ export default function LessonScreen() {
   const flatListRef = useRef<FlatList>(null);
   const quizStatsRef = useRef({ correct: 0, answered: 0 });
   const ui = getUIText(selectedLanguage);
+  const { t } = useTranslation();
   const personality = getPersonality(selectedPersonalityId);
   const { width } = useWindowDimensions();
   const isCompact = width < 760;
@@ -583,6 +585,7 @@ export default function LessonScreen() {
               style={[styles.inputBarAction, { backgroundColor: colors.primaryLight }]}
               onPress={handleStartQuiz}
               disabled={isAILoading}
+              accessibilityLabel={t('startQuiz')}
             >
               <Text style={styles.inputBarActionEmoji}>🎯</Text>
             </TouchableOpacity>
@@ -594,7 +597,7 @@ export default function LessonScreen() {
               }]}
               value={inputText}
               onChangeText={setInputText}
-              placeholder={isConnected ? 'Ask anything...' : 'No internet connection...'}
+              placeholder={isConnected ? t('askAnything') : t('error')}
               placeholderTextColor={colors.textMuted}
               multiline
               maxLength={CHAR_LIMIT}

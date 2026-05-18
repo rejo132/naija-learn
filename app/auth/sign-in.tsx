@@ -18,6 +18,8 @@ import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/store/authStore';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { getUIText } from '@/constants/languages';
+import { useTranslation } from '@/hooks/useTranslation';
 import { TutorAvatar } from '@/components/TutorAvatar';
 
 export default function SignInScreen() {
@@ -33,6 +35,8 @@ export default function SignInScreen() {
   const [error, setError] = useState('');
 
   const { signIn, clearError } = useAuthStore();
+  const { t, language } = useTranslation();
+  const ui = getUIText(language);
 
   function validateEmail(value: string) {
     const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -83,14 +87,12 @@ export default function SignInScreen() {
           <View style={styles.logoSection}>
             <TutorAvatar size={64} />
             <Text style={styles.appName}>Learnova</Text>
-            <Text style={styles.appTagline}>
-              AI-Powered Learning for Nigerian Students
-            </Text>
+            <Text style={styles.appTagline}>{ui.appTagline}</Text>
           </View>
 
           <View style={styles.card}>
-            <Text style={styles.welcomeTitle}>Welcome back 🎉</Text>
-            <Text style={styles.welcomeSub}>Sign in to continue learning</Text>
+            <Text style={styles.welcomeTitle}>{t('welcomeBackAuth')}</Text>
+            <Text style={styles.welcomeSub}>{t('signInToContinue')}</Text>
 
             <View style={styles.authToggle}>
               <TouchableOpacity
@@ -103,7 +105,7 @@ export default function SignInScreen() {
                     authMode === 'email' && styles.toggleBtnTextActive,
                   ]}
                 >
-                  📧 Email
+                  {ui.emailMode}
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
@@ -116,7 +118,7 @@ export default function SignInScreen() {
                     authMode === 'phone' && styles.toggleBtnTextActive,
                   ]}
                 >
-                  📱 Phone
+                  {ui.phoneMode}
                 </Text>
               </TouchableOpacity>
             </View>
@@ -147,7 +149,7 @@ export default function SignInScreen() {
                   <Text style={styles.inputIcon}>🔒</Text>
                   <TextInput
                     style={styles.input}
-                    placeholder="Password"
+                    placeholder={t('password')}
                     placeholderTextColor={COLORS.textMuted}
                     value={password}
                     onChangeText={setPassword}
@@ -185,10 +187,10 @@ export default function SignInScreen() {
                 <View style={[styles.checkbox, keepSignedIn && styles.checkboxChecked]}>
                   {keepSignedIn && <Text style={styles.checkmark}>✓</Text>}
                 </View>
-                <Text style={styles.checkLabel}>Keep me signed in</Text>
+                <Text style={styles.checkLabel}>{t('keepSignedIn')}</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => router.push('/auth/forgot-password')}>
-                <Text style={styles.forgotText}>Forgot password?</Text>
+                <Text style={styles.forgotText}>{t('forgotPassword')}</Text>
               </TouchableOpacity>
             </View>
 
@@ -206,15 +208,15 @@ export default function SignInScreen() {
               {isLoading ? (
                 <ActivityIndicator color="#FFFFFF" />
               ) : (
-                <Text style={styles.signInBtnText}>Sign In →</Text>
+                <Text style={styles.signInBtnText}>{t('signIn')}</Text>
               )}
             </TouchableOpacity>
 
-            <Text style={styles.privacyNote}>🔐 We never share your data</Text>
+            <Text style={styles.privacyNote}>{ui.privacyNote}</Text>
 
             <View style={styles.divider}>
               <View style={styles.dividerLine} />
-              <Text style={styles.dividerText}>or sign in with</Text>
+              <Text style={styles.dividerText}>{t('orSignInWith')}</Text>
               <View style={styles.dividerLine} />
             </View>
 
@@ -232,8 +234,8 @@ export default function SignInScreen() {
               onPress={() => router.push('/auth/sign-up')}
             >
               <Text style={styles.signUpLinkText}>
-                No account?{' '}
-                <Text style={styles.signUpLinkBold}>Sign up free</Text>
+                {t('noAccount')}{' '}
+                <Text style={styles.signUpLinkBold}>{t('signUpFree')}</Text>
               </Text>
             </TouchableOpacity>
           </View>

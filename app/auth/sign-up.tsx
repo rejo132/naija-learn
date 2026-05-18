@@ -18,6 +18,8 @@ import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/store/authStore';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { getUIText } from '@/constants/languages';
+import { useTranslation } from '@/hooks/useTranslation';
 import { TutorAvatar } from '@/components/TutorAvatar';
 
 export default function SignUpScreen() {
@@ -34,6 +36,8 @@ export default function SignUpScreen() {
   const [localError, setLocalError] = useState('');
 
   const { signUp, error: storeError, clearError } = useAuthStore();
+  const { t, language } = useTranslation();
+  const ui = getUIText(language);
 
   const displayError = localError || storeError || '';
 
@@ -99,14 +103,12 @@ export default function SignUpScreen() {
           <View style={styles.logoSection}>
             <TutorAvatar size={64} />
             <Text style={styles.appName}>Learnova</Text>
-            <Text style={styles.appTagline}>
-              AI-Powered Learning for Nigerian Students
-            </Text>
+            <Text style={styles.appTagline}>{ui.appTagline}</Text>
           </View>
 
           <View style={styles.card}>
-            <Text style={styles.welcomeTitle}>Create your account 🌟</Text>
-            <Text style={styles.welcomeSub}>Join thousands of Nigerian students</Text>
+            <Text style={styles.welcomeTitle}>{ui.createAccount}</Text>
+            <Text style={styles.welcomeSub}>{ui.joinStudents}</Text>
 
             {displayError ? (
               <View style={styles.errorBanner}>
@@ -118,7 +120,7 @@ export default function SignUpScreen() {
               <Text style={styles.inputIcon}>👤</Text>
               <TextInput
                 style={styles.input}
-                placeholder="Your full name"
+                placeholder={ui.fullName}
                 placeholderTextColor={COLORS.textMuted}
                 value={name}
                 onChangeText={setName}
@@ -166,7 +168,7 @@ export default function SignUpScreen() {
               <Text style={styles.inputIcon}>🔒</Text>
               <TextInput
                 style={styles.input}
-                placeholder="Create a password"
+                placeholder={t('password')}
                 placeholderTextColor={COLORS.textMuted}
                 value={password}
                 onChangeText={setPassword}
@@ -183,7 +185,7 @@ export default function SignUpScreen() {
               <Text style={styles.inputIcon}>🔒</Text>
               <TextInput
                 style={styles.input}
-                placeholder="Confirm password"
+                placeholder={ui.confirmPassword}
                 placeholderTextColor={COLORS.textMuted}
                 value={confirmPassword}
                 onChangeText={setConfirmPassword}
@@ -204,19 +206,19 @@ export default function SignUpScreen() {
               {isLoading ? (
                 <ActivityIndicator color="#FFFFFF" />
               ) : (
-                <Text style={styles.signUpBtnText}>Sign Up →</Text>
+                <Text style={styles.signUpBtnText}>{ui.signUp}</Text>
               )}
             </TouchableOpacity>
 
-            <Text style={styles.privacyNote}>🔐 We never share your data</Text>
+            <Text style={styles.privacyNote}>{ui.privacyNote}</Text>
 
             <TouchableOpacity
               style={styles.signInLink}
               onPress={() => router.push('/auth/sign-in')}
             >
               <Text style={styles.signInLinkText}>
-                Already have an account?{' '}
-                <Text style={styles.signInLinkBold}>Sign in</Text>
+                {ui.alreadyHaveAccount}{' '}
+                <Text style={styles.signInLinkBold}>{ui.signInLink}</Text>
               </Text>
             </TouchableOpacity>
           </View>

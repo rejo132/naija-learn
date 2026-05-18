@@ -15,7 +15,8 @@ import { Redirect, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
-import { getUIText } from '@/constants/languages';
+import { LANGUAGE_NAMES, type Language, getUIText } from '@/constants/languages';
+import { useTranslation } from '@/hooks/useTranslation';
 import {
   getCoreSubjectsForGrade,
   LANGUAGE_SUBJECTS,
@@ -32,11 +33,11 @@ import { TutorAvatar } from '@/components/TutorAvatar';
 
 type Tab = 'subjects' | 'languages' | 'softskills';
 
-function getTimeGreeting() {
+function getTimeGreeting(t: (key: 'goodMorning' | 'goodAfternoon' | 'goodEvening') => string) {
   const hour = new Date().getHours();
-  if (hour < 12) return { text: 'Good morning!', emoji: '🌅' };
-  if (hour < 17) return { text: 'Good afternoon!', emoji: '☀️' };
-  return { text: 'Good evening!', emoji: '🌙' };
+  if (hour < 12) return { text: `${t('goodMorning')}!`, emoji: '🌅' };
+  if (hour < 17) return { text: `${t('goodAfternoon')}!`, emoji: '☀️' };
+  return { text: `${t('goodEvening')}!`, emoji: '🌙' };
 }
 
 function isStudiedToday(lastStudyDate: string | null) {
@@ -47,10 +48,11 @@ function isStudiedToday(lastStudyDate: string | null) {
 export default function DashboardScreen() {
   const [activeTab, setActiveTab] = useState<Tab>('subjects');
   const [aiPrompt, setAiPrompt] = useState('');
-  const { selectedLanguage, selectedGrade, setSubject, xp, streak, lastStudyDate, lessonsCompleted } =
+  const { selectedLanguage, selectedGrade, setSubject, setLanguage, xp, streak, lastStudyDate, lessonsCompleted } =
     useAppStore();
   const user = useAuthStore((s) => s.user);
   const ui = getUIText(selectedLanguage);
+  const { t } = useTranslation();
   const { width } = useWindowDimensions();
   const isCompact = width < 760;
   const isWide = width > 1200;
@@ -58,7 +60,7 @@ export default function DashboardScreen() {
   const showFloatingTutor = width <= 768;
   const { colors, isDarkMode } = useTheme();
 
-  const greeting = getTimeGreeting();
+  const greeting = getTimeGreeting(t);
   const userName =
     (user?.user_metadata?.name as string | undefined) ||
     user?.email?.split('@')[0] ||
@@ -104,9 +106,9 @@ export default function DashboardScreen() {
   }
 
   const TABS = [
-    { id: 'subjects' as Tab, label: ui.subjects, emoji: '📚' },
-    { id: 'languages' as Tab, label: ui.languages, emoji: '🗣️' },
-    { id: 'softskills' as Tab, label: ui.lifeSkills, emoji: '🌟' },
+    { id: 'subjects' as Tab, label: t('subjects'), emoji: '📚' },
+    { id: 'languages' as Tab, label: t('languages'), emoji: '🗣️' },
+    { id: 'softskills' as Tab, label: t('softSkills'), emoji: '🌟' },
   ];
 
   return (
@@ -125,7 +127,7 @@ export default function DashboardScreen() {
                 {greeting.emoji} {greeting.text}
               </Text>
               <Text style={[styles.greetingName, { color: colors.textPrimary }]}>
-                {userName ? `Welcome back, ${userName}` : 'Welcome to Learnova'}
+                {userName ? `${t('welcomeBack')}, ${userName}` : ui.welcomeToLearnova}
               </Text>
               {streak > 0 && (
                 <Text style={[styles.greetingStreak, { color: colors.accent }]}>
@@ -141,6 +143,19 @@ export default function DashboardScreen() {
               <View style={[styles.gradePill, { backgroundColor: colors.primaryLight, borderColor: colors.primaryGlow }]}>
                 <Text style={[styles.gradePillText, { color: colors.primaryDark }]}>P{selectedGrade}</Text>
               </View>
+              <TouchableOpacity
+                style={[styles.langPill, { backgroundColor: colors.accentLight, borderColor: 'rgba(194, 80, 42, 0.2)' }]}
+                onPress={() => {
+                  const langs: Language[] = ['en', 'ha', 'yo', 'ig'];
+                  const current = langs.indexOf(selectedLanguage as Language);
+                  const next = langs[(current + 1) % langs.length];
+                  setLanguage(next);
+                }}
+              >
+                <Text style={styles.langPillText}>
+                  {LANGUAGE_NAMES[selectedLanguage as Language]?.split(' ')[0]}
+                </Text>
+              </TouchableOpacity>
             </View>
           </View>
 
@@ -159,7 +174,7 @@ export default function DashboardScreen() {
               style={[styles.promptBarInput, { color: colors.textPrimary }]}
               value={aiPrompt}
               onChangeText={setAiPrompt}
-              placeholder="Ask AI — what do you want to learn today?"
+              placeholder={t('askAI')}
               placeholderTextColor={colors.textMuted}
               onSubmitEditing={handleAIPromptSubmit}
               returnKeyType="go"
@@ -173,7 +188,7 @@ export default function DashboardScreen() {
               onPress={handleAIPromptSubmit}
               disabled={!aiPrompt.trim()}
             >
-              <Text style={styles.promptBarBtnText}>Go →</Text>
+              <Text style={styles.promptBarBtnText}>{ui.go}</Text>
             </TouchableOpacity>
           </View>
 
@@ -185,7 +200,7 @@ export default function DashboardScreen() {
             >
               <Text style={styles.statEmoji}>📖</Text>
               <Text style={[styles.statValue, { color: colors.primaryDark }]}>{studiedToday ? 1 : 0}</Text>
-              <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Today&apos;s lessons</Text>
+              <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{ui.todaysLessons}</Text>
             </GlassCard>
             <GlassCard
               variant="elevated"
@@ -193,7 +208,7 @@ export default function DashboardScreen() {
             >
               <Text style={styles.statEmoji}>🔥</Text>
               <Text style={[styles.statValue, { color: colors.primaryDark }]}>{streak}</Text>
-              <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Current streak</Text>
+              <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{ui.currentStreak}</Text>
             </GlassCard>
             <GlassCard
               variant="elevated"
@@ -201,7 +216,7 @@ export default function DashboardScreen() {
             >
               <Text style={styles.statEmoji}>⚡</Text>
               <Text style={[styles.statValue, { color: colors.primaryDark }]}>{xp}</Text>
-              <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Total XP</Text>
+              <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{t('totalXP')}</Text>
             </GlassCard>
           </View>
 
@@ -211,12 +226,12 @@ export default function DashboardScreen() {
             style={[styles.missionCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}
           >
             <View style={styles.missionHeader}>
-              <Text style={[styles.missionTitle, { color: colors.textPrimary }]}>🎯 Daily Mission</Text>
+              <Text style={[styles.missionTitle, { color: colors.textPrimary }]}>🎯 {t('dailyMission')}</Text>
               <View style={[styles.missionXpBadge, { backgroundColor: colors.goldLight, borderColor: 'rgba(234, 162, 33, 0.3)' }]}>
                 <Text style={[styles.missionXpText, { color: colors.goldDark }]}>+20 XP</Text>
               </View>
             </View>
-            <Text style={[styles.missionDesc, { color: colors.textSecondary }]}>Complete 1 lesson today</Text>
+            <Text style={[styles.missionDesc, { color: colors.textSecondary }]}>{ui.completeLessonToday}</Text>
             <View style={[styles.missionBarBg, { backgroundColor: colors.primaryLight }]}>
               <View
                 style={[
@@ -226,7 +241,7 @@ export default function DashboardScreen() {
               />
             </View>
             <Text style={[styles.missionProgress, { color: colors.textMuted }]}>
-              {dailyMissionProgress}/1 complete
+              {dailyMissionProgress}/1 {ui.missionComplete}
             </Text>
           </GlassCard>
 
@@ -235,12 +250,12 @@ export default function DashboardScreen() {
               <Text style={styles.aiRecommendEmoji}>🤖</Text>
             </View>
             <View style={styles.aiRecommendBody}>
-              <Text style={styles.aiRecommendLabel}>AI PICK FOR YOU</Text>
+              <Text style={styles.aiRecommendLabel}>{t('aiPickForYou')}</Text>
               <Text style={styles.aiRecommendTitle}>
                 {tabContent.subjects[0]?.label ?? 'Mathematics'}
               </Text>
               <Text style={styles.aiRecommendSub}>
-                Start your daily lesson here
+                {ui.startDailyLesson}
               </Text>
             </View>
             <TouchableOpacity
@@ -250,7 +265,7 @@ export default function DashboardScreen() {
                 if (first) handleSubject(getLocalizedSubject(first, selectedLanguage));
               }}
             >
-              <Text style={styles.aiRecommendBtnText}>Start →</Text>
+              <Text style={styles.aiRecommendBtnText}>{t('startLesson')}</Text>
             </TouchableOpacity>
           </View>
 
@@ -346,7 +361,7 @@ export default function DashboardScreen() {
           </View>
 
           <Text style={[styles.lessonsHint, { color: colors.textMuted }]}>
-            {lessonsCompleted} lessons completed overall
+            {lessonsCompleted} {ui.lessonsCompleted}
           </Text>
         </View>
         </ScrollView>
@@ -368,7 +383,7 @@ export default function DashboardScreen() {
           }}
         >
           <TutorAvatar size={28} />
-          <Text style={styles.floatingTutorText}>Ask Tutor</Text>
+          <Text style={styles.floatingTutorText}>{ui.askTutor}</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -438,6 +453,15 @@ const styles = StyleSheet.create({
   gradePillText: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Bold',
+  },
+  langPill: {
+    borderRadius: RADIUS.full,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: 6,
+    borderWidth: 1,
+  },
+  langPillText: {
+    fontSize: 16,
   },
 
   promptBar: {

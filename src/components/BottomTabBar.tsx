@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FONT_SIZES, RADIUS } from '@/constants/theme';
 import { useAppStore } from '@/store/appStore';
 import { useTheme } from '@/hooks/useTheme';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface TabItem {
   id: string;
@@ -13,21 +14,22 @@ interface TabItem {
   requiresGrade?: boolean;
 }
 
-const BASE_TABS: TabItem[] = [
-  { id: 'home', label: 'Home', emoji: '🏠', route: '/' },
-  { id: 'learn', label: 'Learn', emoji: '📚', route: '/dashboard', requiresGrade: true },
-  { id: 'progress', label: 'Progress', emoji: '📈', route: '/progress' },
-  { id: 'achievements', label: 'Badges', emoji: '🏆', route: '/achievements' },
-  { id: 'profile', label: 'Profile', emoji: '👤', route: '/children' },
-  { id: 'theme', label: 'Theme', emoji: '🌙', route: '' },
-];
-
 export function BottomTabBar() {
   const { width } = useWindowDimensions();
   const pathname = usePathname();
   const insets = useSafeAreaInsets();
   const selectedGrade = useAppStore((s) => s.selectedGrade);
   const { colors, isDarkMode } = useTheme();
+  const { t } = useTranslation();
+
+  const BASE_TABS: TabItem[] = [
+    { id: 'home', label: t('home'), emoji: '🏠', route: '/' },
+    { id: 'learn', label: t('learn'), emoji: '📚', route: '/dashboard', requiresGrade: true },
+    { id: 'progress', label: t('progress'), emoji: '📈', route: '/progress' },
+    { id: 'achievements', label: t('achievements'), emoji: '🏆', route: '/achievements' },
+    { id: 'profile', label: t('children'), emoji: '👤', route: '/children' },
+    { id: 'theme', label: 'Theme', emoji: '🌙', route: '' },
+  ];
 
   const hideOn = ['/auth/sign-in', '/auth/sign-up', '/lesson', '/personality'];
   if (hideOn.some((p) => pathname.startsWith(p))) return null;

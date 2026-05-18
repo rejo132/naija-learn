@@ -12,6 +12,7 @@ import { router, usePathname } from 'expo-router';
 import { COLORS, FONT_SIZES, RADIUS, SPACING, GRADIENTS } from '@/constants/theme';
 import { useAuthStore } from '@/store/authStore';
 import { useAppStore } from '@/store/appStore';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const DRAWER_WIDE = 240;
 const DRAWER_COLLAPSED = 64;
@@ -22,19 +23,6 @@ interface NavItem {
   emoji: string;
   route: string;
 }
-
-const MAIN_NAV: NavItem[] = [
-  { id: 'home', label: 'Home', emoji: '🏠', route: '/' },
-  { id: 'learn', label: 'Learn', emoji: '📚', route: '/dashboard' },
-  { id: 'progress', label: 'My Progress', emoji: '📈', route: '/progress' },
-  { id: 'achievements', label: 'Achievements', emoji: '🏆', route: '/achievements' },
-];
-
-const SECONDARY_NAV: NavItem[] = [
-  { id: 'personality', label: 'My Tutor', emoji: '👩🏽‍🏫', route: '/personality' },
-  { id: 'children', label: 'Children', emoji: '👨‍👩‍👧', route: '/children' },
-  { id: 'reports', label: 'Reports', emoji: '📊', route: '/parent-dashboard' },
-];
 
 function NavButton({
   item,
@@ -76,8 +64,22 @@ export function SideDrawer() {
   const { signOut } = useAuthStore();
   const isDarkMode = useAppStore((s) => s.isDarkMode);
   const toggleDarkMode = useAppStore((s) => s.toggleDarkMode);
+  const { t } = useTranslation();
   const [collapsed, setCollapsed] = useState(false);
   const animatedWidth = useRef(new Animated.Value(DRAWER_WIDE)).current;
+
+  const MAIN_NAV: NavItem[] = [
+    { id: 'home', label: t('home'), emoji: '🏠', route: '/' },
+    { id: 'learn', label: t('learn'), emoji: '📚', route: '/dashboard' },
+    { id: 'progress', label: t('progress'), emoji: '📈', route: '/progress' },
+    { id: 'achievements', label: t('achievements'), emoji: '🏆', route: '/achievements' },
+  ];
+
+  const SECONDARY_NAV: NavItem[] = [
+    { id: 'personality', label: t('myTutor'), emoji: '👩🏽‍🏫', route: '/personality' },
+    { id: 'children', label: t('children'), emoji: '👨‍👩‍👧', route: '/children' },
+    { id: 'reports', label: t('reports'), emoji: '📊', route: '/parent-dashboard' },
+  ];
 
   if (width <= 768) return null;
   if (pathname.startsWith('/auth')) return null;
@@ -149,13 +151,13 @@ export function SideDrawer() {
 
         <TouchableOpacity
           // @ts-expect-error title is supported on web for hover tooltips
-          title={collapsed ? 'Sign Out' : undefined}
-          accessibilityLabel="Sign Out"
+          title={collapsed ? t('signOut') : undefined}
+          accessibilityLabel={t('signOut')}
           style={[styles.signOutBtn, collapsed && styles.signOutBtnCollapsed]}
           onPress={() => signOut()}
         >
           <Text style={styles.signOutEmoji}>🚪</Text>
-          {!collapsed && <Text style={styles.signOutText}>Sign Out</Text>}
+          {!collapsed && <Text style={styles.signOutText}>{t('signOut')}</Text>}
         </TouchableOpacity>
       </LinearGradient>
     </Animated.View>

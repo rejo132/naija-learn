@@ -18,7 +18,7 @@ import { Redirect, router, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
-import { LANGUAGES, Language, getUIText } from '@/constants/languages';
+import { LANGUAGES, type LanguageMeta, getUIText } from '@/constants/languages';
 import { SPACING, RADIUS, FONT_SIZES, SHADOWS } from '@/constants/theme';
 import { PressableScale } from '@/components/PressableScale';
 
@@ -75,8 +75,8 @@ function LanguageCard({
   lang,
   onPress,
 }: {
-  lang: Language;
-  onPress: (language: Language) => void;
+  lang: LanguageMeta;
+  onPress: (language: LanguageMeta) => void;
 }) {
   return (
     <PressableScale style={styles.langCard} onPress={() => onPress(lang)} scaleTo={0.98}>
@@ -113,7 +113,7 @@ export default function WelcomeScreen() {
     return unsub;
   }, []);
 
-  function handleSelectLanguage(lang: Language) {
+  function handleSelectLanguage(lang: LanguageMeta) {
     setLanguage(lang.code);
     router.push('/grade');
   }
