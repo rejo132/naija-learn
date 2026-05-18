@@ -50,6 +50,8 @@ import { MarkdownMessage } from '@/components/MarkdownMessage';
 import { TutorAvatar } from '@/components/TutorAvatar';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { OfflineLearning } from '@/components/OfflineLearning';
+import { LearningFlow } from '@/components/LearningFlow';
+import type { LearningFlowState } from '@/types/ai.types';
 
 const QUIZ_QUESTION_TARGET = 3;
 const CHAR_LIMIT = 500;
@@ -264,6 +266,8 @@ export default function LessonScreen() {
   const updateBestQuizScore = useAppStore((s) => s.updateBestQuizScore);
   const unlockAchievement = useAppStore((s) => s.unlockAchievement);
   const user = useAuthStore((s) => s.user);
+  const [flowCompleted, setFlowCompleted] = useState(false);
+  const [flowState, setFlowState] = useState<LearningFlowState | null>(null);
   const [newAchievement, setNewAchievement] = useState<Achievement | null>(null);
   const [inputText, setInputText] = useState('');
   const [isQuizMode, setIsQuizMode] = useState(false);
@@ -322,12 +326,12 @@ export default function LessonScreen() {
       if (contextChanged) {
         lessonContextRef.current = contextKey;
         clearMessages();
+        setFlowCompleted(false);
+        setFlowState(null);
         setIsQuizMode(false);
         isQuizModeRef.current = false;
         setQuizScore(null);
         quizStatsRef.current = { correct: 0, answered: 0 };
-        const greeting = getGreeting(selectedLanguage, selectedSubject.label, selectedGrade);
-        addMessage({ role: 'assistant', content: greeting });
       }
 
       return () => {
@@ -471,6 +475,89 @@ export default function LessonScreen() {
         )
       : [];
   const showCharCount = inputText.length >= CHAR_WARN_AT;
+
+  function seedChatAfterFlow(state?: LearningFlowState | null) {
+    clearMessages();
+    if (state?.adaptationNeeded) {
+      addMessage({
+        role: 'assistant',
+        content: `I see you are working on ${selectedSubject!.label}! I am here to help you step by step. What part would you like to understand better? 😊`,
+      });
+    } else {
+      addMessage({
+        role: 'assistant',
+        content: getGreeting(selectedLanguage, selectedSubject!.label, selectedGrade!),
+      });
+    }
+  }
+
+  if (!flowCompleted && !showOfflineMode) {
+    return (
+      <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
+        <View style={[styles.content, isWide && styles.contentWide, { flex: 1 }]}>
+          <View
+            style={[
+              styles.header,
+              {
+                backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
+                borderBottomColor: colors.border,
+              },
+            ]}
+          >
+            <TouchableOpacity
+              style={[styles.backBtn, { backgroundColor: colors.primaryLight }]}
+              onPress={() => router.back()}
+            >
+              <Text style={[styles.backBtnText, { color: colors.primary }]}>←</Text>
+            </TouchableOpacity>
+
+            <View style={styles.headerCenter}>
+              <Text style={styles.headerEmoji}>{selectedSubject.icon}</Text>
+              <View style={styles.headerTextBlock}>
+                <Text style={[styles.headerTitle, { color: colors.textPrimary }]} numberOfLines={1}>
+                  {selectedSubject.label}
+                </Text>
+                <Text style={[styles.headerSub, { color: colors.textMuted }]} numberOfLines={1}>
+                  {personality.name} • {ui.primary} {selectedGrade}
+                </Text>
+              </View>
+            </View>
+
+            <View
+              style={[
+                styles.headerXP,
+                { backgroundColor: colors.goldLight, borderColor: 'rgba(234,162,33,0.3)' },
+              ]}
+            >
+              <Text style={[styles.headerXPText, { color: colors.goldDark }]}>⚡ {xp} XP</Text>
+            </View>
+          </View>
+
+          <LearningFlow
+            subject={{
+              label: selectedSubject.label,
+              emoji: selectedSubject.icon,
+              color: selectedSubject.color,
+            }}
+            grade={selectedGrade}
+            personality={{ name: personality.name, emoji: personality.emoji }}
+            onComplete={(state) => {
+              setFlowState(state);
+              setFlowCompleted(true);
+              if (state.xpEarned > 0) {
+                addXP(state.xpEarned);
+              }
+              seedChatAfterFlow(state);
+            }}
+            onSkip={() => {
+              setFlowCompleted(true);
+              seedChatAfterFlow();
+            }}
+          />
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>

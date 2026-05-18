@@ -64,3 +64,21 @@ export interface AITutorResponse {
   /** Assistant reply text to show in the chat UI. */
   reply: string;
 }
+
+export type LearningFlowStep =
+  | 'hook'
+  | 'practice'
+  | 'adaptation'
+  | 'reward'
+  | 'chat';
+
+export interface LearningFlowState {
+  step: LearningFlowStep;
+  hookCompleted: boolean;
+  practiceScore: number;
+  practiceTotal: number;
+  practiceAnswers: number[];
+  adaptationNeeded: boolean;
+  rewardShown: boolean;
+  xpEarned: number;
+}
