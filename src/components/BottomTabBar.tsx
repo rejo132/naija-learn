@@ -28,7 +28,7 @@ export function BottomTabBar() {
   const [pendingRoute, setPendingRoute] = useState('');
 
   const BASE_TABS: TabItem[] = [
-    { id: 'home', label: t('home'), emoji: '🏠', route: '/' },
+    { id: 'home', label: t('home'), emoji: '🏠', route: '/dashboard' },
     { id: 'learn', label: t('learn'), emoji: '📚', route: '/dashboard', requiresGrade: true },
     { id: 'progress', label: t('progress'), emoji: '📈', route: '/progress' },
     { id: 'achievements', label: t('achievements'), emoji: '🏆', route: '/achievements' },
@@ -51,6 +51,13 @@ export function BottomTabBar() {
     router.push(route as '/');
   }
 
+  function isActive(route: string): boolean {
+    if (route === '/dashboard') {
+      return pathname === '/dashboard' || pathname === '/';
+    }
+    return pathname.startsWith(route);
+  }
+
   function handleTabPress(tab: TabItem) {
     if (tab.id === 'theme') {
       useAppStore.getState().toggleDarkMode();
@@ -63,6 +70,10 @@ export function BottomTabBar() {
     if (tab.requiresParentGate) {
       setPendingRoute(tab.route);
       setGateVisible(true);
+      return;
+    }
+    if (tab.route === '/dashboard') {
+      router.replace('/dashboard');
       return;
     }
     navigateTo(tab.route);
@@ -82,20 +93,18 @@ export function BottomTabBar() {
       >
         {BASE_TABS.map((tab) => {
           const emoji = tab.id === 'theme' ? (isDarkMode ? '☀️' : '🌙') : tab.emoji;
-          const isActive =
-            tab.id !== 'theme' &&
-            (pathname === tab.route ||
-              (tab.route !== '/' && pathname.startsWith(tab.route)));
+          const active =
+            tab.id !== 'theme' && tab.route !== '' && isActive(tab.route);
           return (
             <TouchableOpacity
               key={tab.id}
-              style={[styles.tab, isActive && styles.tabActive]}
+              style={[styles.tab, active && styles.tabActive]}
               onPress={() => handleTabPress(tab)}
             >
               <View
                 style={[
                   styles.tabIconWrap,
-                  isActive && { backgroundColor: colors.primaryLight },
+                  active && { backgroundColor: colors.primaryLight },
                 ]}
               >
                 <Text style={styles.tabEmoji}>{emoji}</Text>
@@ -104,7 +113,7 @@ export function BottomTabBar() {
                 style={[
                   styles.tabLabel,
                   { color: colors.textMuted },
-                  isActive && { color: colors.primary, fontFamily: 'Poppins-SemiBold' },
+                  active && { color: colors.primary, fontFamily: 'Poppins-SemiBold' },
                 ]}
                 numberOfLines={1}
               >

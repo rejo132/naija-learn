@@ -86,6 +86,7 @@ export default function SignUpScreen() {
     clearError();
     try {
       await signUp(email.trim(), password, name.trim(), phone.trim());
+      router.replace('/dashboard');
     } catch {
       // error is set in the store — shown via displayError
     } finally {

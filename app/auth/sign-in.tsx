@@ -105,7 +105,7 @@ export default function SignInScreen() {
     clearError();
     try {
       await signIn(email.trim(), password);
-      router.replace('/');
+      router.replace('/dashboard');
     } catch {
       setError('No account found. Please check your details.');
     } finally {

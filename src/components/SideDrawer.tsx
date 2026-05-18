@@ -11,6 +11,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { router, usePathname } from 'expo-router';
 import { COLORS, FONT_SIZES, RADIUS, SPACING, GRADIENTS } from '@/constants/theme';
 import { useAuthStore } from '@/store/authStore';
+import { supabase } from '@/lib/supabase';
 import { useAppStore } from '@/store/appStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { ParentGate } from '@/components/ParentGate';
@@ -33,18 +34,15 @@ interface NavItem {
 
 function NavButton({
   item,
-  pathname,
   collapsed,
   onNavPress,
+  isActive,
 }: {
   item: NavItem;
-  pathname: string;
   collapsed: boolean;
   onNavPress: (route: string) => void;
+  isActive: boolean;
 }) {
-  const isActive =
-    pathname === item.route ||
-    (item.route !== '/' && pathname.startsWith(item.route));
 
   return (
     <TouchableOpacity
@@ -75,7 +73,6 @@ function NavButton({
 export function SideDrawer() {
   const { width } = useWindowDimensions();
   const pathname = usePathname();
-  const { signOut } = useAuthStore();
   const isDarkMode = useAppStore((s) => s.isDarkMode);
   const toggleDarkMode = useAppStore((s) => s.toggleDarkMode);
   const { t } = useTranslation();
@@ -85,7 +82,7 @@ export function SideDrawer() {
   const animatedWidth = useRef(new Animated.Value(DRAWER_WIDE)).current;
 
   const MAIN_NAV: NavItem[] = [
-    { id: 'home', label: t('home'), emoji: '🏠', route: '/' },
+    { id: 'home', label: t('home'), emoji: '🏠', route: '/dashboard' },
     { id: 'learn', label: t('learn'), emoji: '📚', route: '/dashboard' },
     { id: 'progress', label: t('progress'), emoji: '📈', route: '/progress' },
     { id: 'achievements', label: t('achievements'), emoji: '🏆', route: '/achievements' },
@@ -100,7 +97,33 @@ export function SideDrawer() {
   if (width <= 768) return null;
   if (pathname.startsWith('/auth')) return null;
 
+  function isActive(route: string): boolean {
+    if (route === '/dashboard') {
+      return pathname === '/dashboard' || pathname === '/';
+    }
+    return pathname === route || pathname.startsWith(route);
+  }
+
+  async function handleSignOut() {
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+
+      useAuthStore.getState().setSession(null);
+      useAuthStore.getState().setUserRole(null);
+
+      router.replace('/auth/sign-in');
+    } catch (e) {
+      console.error('Sign out error:', e);
+      router.replace('/auth/sign-in');
+    }
+  }
+
   function handleNavPress(route: string) {
+    if (route === '/dashboard') {
+      router.replace('/dashboard');
+      return;
+    }
     if (route === '/children' || route === '/parent-dashboard') {
       setPendingRoute(route);
       setGateVisible(true);
@@ -153,9 +176,9 @@ export function SideDrawer() {
               <NavButton
                 key={item.id}
                 item={item}
-                pathname={pathname}
                 collapsed={collapsed}
                 onNavPress={handleNavPress}
+                isActive={isActive(item.route)}
               />
             ))}
 
@@ -165,9 +188,9 @@ export function SideDrawer() {
               <NavButton
                 key={item.id}
                 item={item}
-                pathname={pathname}
                 collapsed={collapsed}
                 onNavPress={handleNavPress}
+                isActive={isActive(item.route)}
               />
             ))}
           </View>
@@ -192,7 +215,7 @@ export function SideDrawer() {
             title={collapsed ? t('signOut') : undefined}
             accessibilityLabel={t('signOut')}
             style={[styles.signOutBtn, collapsed && styles.signOutBtnCollapsed]}
-            onPress={() => signOut()}
+            onPress={handleSignOut}
           >
             <Text style={styles.signOutEmoji}>🚪</Text>
             {!collapsed && <Text style={styles.signOutText}>{t('signOut')}</Text>}

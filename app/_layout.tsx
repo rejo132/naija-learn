@@ -20,10 +20,10 @@
  * - Splash hides after a fixed 500ms timer, not when fonts/assets finish loading.
  * - All screens use `headerShown: false` and implement their own back UI.
  */
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { View, Text } from 'react-native';
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
+import { Stack, useRouter, useSegments } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Sentry from '@sentry/react-native';
@@ -31,6 +31,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { COLORS } from '@/constants/theme';
 import { useAppStore } from '@/store/appStore';
+import { useAuthStore } from '@/store/authStore';
 import { initialiseSentry } from '@/lib/sentry';
 import { OfflineBanner } from '@/components/OfflineBanner';
 import { BottomTabBar } from '@/components/BottomTabBar';
@@ -51,6 +52,28 @@ function ErrorFallback() {
       </Text>
     </View>
   );
+}
+
+function AuthGuard({ children }: { children: ReactNode }) {
+  const session = useAuthStore((s) => s.session);
+  const segments = useSegments();
+  const router = useRouter();
+
+  useEffect(() => {
+    void useAuthStore.getState().initialise();
+  }, []);
+
+  useEffect(() => {
+    const inAuthGroup = segments[0] === 'auth';
+
+    if (!session && !inAuthGroup) {
+      router.replace('/auth/sign-in');
+    } else if (session && inAuthGroup) {
+      router.replace('/dashboard');
+    }
+  }, [session, segments, router]);
+
+  return children;
 }
 
 export default function RootLayout() {
@@ -80,26 +103,28 @@ export default function RootLayout() {
             style={isDarkMode ? 'light' : 'dark'}
             backgroundColor={isDarkMode ? '#0F1512' : COLORS.background}
           />
-          <View style={{ flex: 1, flexDirection: 'row' }}>
-            <SideDrawer />
-            <View style={{ flex: 1 }}>
-              <OfflineBanner />
-              <Stack screenOptions={{ headerShown: false, animation: 'slide_from_right' }}>
-                <Stack.Screen name="index" />
-                <Stack.Screen name="grade" />
-                <Stack.Screen name="dashboard" />
-                <Stack.Screen name="lesson" />
-                <Stack.Screen name="auth/sign-in" />
-                <Stack.Screen name="auth/sign-up" />
-                <Stack.Screen name="children" />
-                <Stack.Screen name="parent-dashboard" />
-                <Stack.Screen name="achievements" />
-                <Stack.Screen name="progress" />
-                <Stack.Screen name="personality" />
-              </Stack>
-              <BottomTabBar />
+          <AuthGuard>
+            <View style={{ flex: 1, flexDirection: 'row' }}>
+              <SideDrawer />
+              <View style={{ flex: 1 }}>
+                <OfflineBanner />
+                <Stack screenOptions={{ headerShown: false, animation: 'slide_from_right' }}>
+                  <Stack.Screen name="index" />
+                  <Stack.Screen name="grade" />
+                  <Stack.Screen name="dashboard" />
+                  <Stack.Screen name="lesson" />
+                  <Stack.Screen name="auth/sign-in" />
+                  <Stack.Screen name="auth/sign-up" />
+                  <Stack.Screen name="children" />
+                  <Stack.Screen name="parent-dashboard" />
+                  <Stack.Screen name="achievements" />
+                  <Stack.Screen name="progress" />
+                  <Stack.Screen name="personality" />
+                </Stack>
+                <BottomTabBar />
+              </View>
             </View>
-          </View>
+          </AuthGuard>
         </SafeAreaProvider>
       </GestureHandlerRootView>
     </Sentry.ErrorBoundary>
