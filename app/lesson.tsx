@@ -22,7 +22,7 @@ import Animated, {
   withSequence,
   withTiming,
 } from 'react-native-reanimated';
-import { Redirect, router, useFocusEffect } from 'expo-router';
+import { Redirect, router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore, type ChatMessage } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
@@ -49,6 +49,7 @@ import { PressableScale } from '@/components/PressableScale';
 import { MarkdownMessage } from '@/components/MarkdownMessage';
 import { TutorAvatar } from '@/components/TutorAvatar';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
+import { OfflineLearning } from '@/components/OfflineLearning';
 
 const QUIZ_QUESTION_TARGET = 3;
 const CHAR_LIMIT = 500;
@@ -239,6 +240,9 @@ function ChatBubble({
 
 export default function LessonScreen() {
   const { isConnected } = useNetworkStatus();
+  const { offline: offlineParam } = useLocalSearchParams<{ offline?: string }>();
+  const [showOfflineMode, setShowOfflineMode] = useState(false);
+  const dismissedOfflineRef = useRef(false);
   const {
     selectedLanguage,
     selectedGrade,
@@ -276,6 +280,23 @@ export default function LessonScreen() {
   const showSendHint = Platform.OS === 'web' && width > 768;
   const lessonContextRef = useRef<string | null>(null);
   const { colors, isDarkMode } = useTheme();
+
+  useEffect(() => {
+    if (offlineParam === '1') {
+      setShowOfflineMode(true);
+    }
+  }, [offlineParam]);
+
+  useEffect(() => {
+    const hasUserMessages = messages.some((m) => m.role === 'user');
+    if (
+      !isConnected &&
+      !hasUserMessages &&
+      !dismissedOfflineRef.current
+    ) {
+      setShowOfflineMode(true);
+    }
+  }, [isConnected, messages]);
 
   useFocusEffect(
     useCallback(() => {
@@ -507,6 +528,17 @@ export default function LessonScreen() {
             </GlassCard>
           )}
 
+          {showOfflineMode ? (
+            <OfflineLearning
+              grade={selectedGrade ?? 1}
+              subject={selectedSubject?.label}
+              onDismiss={() => {
+                dismissedOfflineRef.current = true;
+                setShowOfflineMode(false);
+              }}
+            />
+          ) : (
+          <>
           <FlatList
             ref={flatListRef}
             style={[styles.messageList, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}
@@ -642,6 +674,8 @@ export default function LessonScreen() {
             <Text style={[styles.sendHint, { color: colors.textMuted }]}>
               Press Enter to send • Shift+Enter for new line
             </Text>
+          )}
+          </>
           )}
         </View>
       </KeyboardAvoidingView>

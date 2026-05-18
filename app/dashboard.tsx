@@ -30,6 +30,7 @@ import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 import { PressableScale } from '@/components/PressableScale';
 import { TutorAvatar } from '@/components/TutorAvatar';
+import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 
 type Tab = 'subjects' | 'languages' | 'softskills';
 
@@ -59,6 +60,7 @@ export default function DashboardScreen() {
   const isMedium = width > 900 && width <= 1200;
   const showFloatingTutor = width <= 768;
   const { colors, isDarkMode } = useTheme();
+  const { isConnected } = useNetworkStatus();
 
   const greeting = getTimeGreeting(t);
   const userName =
@@ -191,6 +193,17 @@ export default function DashboardScreen() {
               <Text style={styles.promptBarBtnText}>{ui.go}</Text>
             </TouchableOpacity>
           </View>
+
+          {!isConnected && (
+            <TouchableOpacity
+              style={styles.offlineBar}
+              onPress={() => router.push({ pathname: '/lesson', params: { offline: '1' } })}
+            >
+              <Text style={styles.offlineBarText}>
+                📴 You are offline — tap to do offline activities
+              </Text>
+            </TouchableOpacity>
+          )}
 
           {/* Quick stats */}
           <View style={styles.statsRow}>
@@ -500,6 +513,20 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontFamily: 'Poppins-Bold',
     fontSize: FONT_SIZES.sm,
+  },
+  offlineBar: {
+    backgroundColor: '#FEF6E4',
+    borderRadius: RADIUS.lg,
+    padding: SPACING.md,
+    borderWidth: 1,
+    borderColor: 'rgba(234,162,33,0.3)',
+    marginBottom: SPACING.md,
+    alignItems: 'center',
+  },
+  offlineBarText: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-SemiBold',
+    color: '#B87B0A',
   },
 
   statsRow: {
