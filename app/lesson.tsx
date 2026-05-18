@@ -273,6 +273,7 @@ export default function LessonScreen() {
   const { width } = useWindowDimensions();
   const isCompact = width < 760;
   const isWide = width > 1200;
+  const showSendHint = Platform.OS === 'web' && width > 768;
   const lessonContextRef = useRef<string | null>(null);
   const { colors, isDarkMode } = useTheme();
 
@@ -602,7 +603,24 @@ export default function LessonScreen() {
               multiline
               maxLength={CHAR_LIMIT}
               editable={!isAILoading && isConnected}
-              onSubmitEditing={() => handleSend()}
+              blurOnSubmit
+              returnKeyType="send"
+              onSubmitEditing={() => {
+                if (inputText.trim()) {
+                  handleSend();
+                }
+              }}
+              onKeyPress={({ nativeEvent }) => {
+                if (
+                  Platform.OS === 'web' &&
+                  nativeEvent.key === 'Enter' &&
+                  !(nativeEvent as { shiftKey?: boolean }).shiftKey
+                ) {
+                  if (inputText.trim()) {
+                    handleSend();
+                  }
+                }
+              }}
             />
 
             <TouchableOpacity
@@ -619,6 +637,12 @@ export default function LessonScreen() {
               </Text>
             </TouchableOpacity>
           </View>
+
+          {showSendHint && (
+            <Text style={[styles.sendHint, { color: colors.textMuted }]}>
+              Press Enter to send • Shift+Enter for new line
+            </Text>
+          )}
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -860,5 +884,12 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontFamily: 'Poppins-Bold',
+  },
+  sendHint: {
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-Regular',
+    textAlign: 'center',
+    paddingBottom: SPACING.xs,
+    opacity: 0.6,
   },
 });
