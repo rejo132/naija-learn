@@ -2,25 +2,23 @@
  * Sign up screen.
  * Parents create an account with email and password.
  */
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import {
   View,
   Text,
+  TextInput,
   TouchableOpacity,
-  Animated,
+  StyleSheet,
+  ActivityIndicator,
+  ScrollView,
   KeyboardAvoidingView,
   Platform,
-  ScrollView,
 } from 'react-native';
 import { router } from 'expo-router';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/store/authStore';
-import { COLORS } from '@/constants/theme';
-import {
-  AuthLayout,
-  AuthTextInput,
-  AuthGradientButton,
-  authFormStyles,
-} from '@/components/AuthLayout';
+import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { TutorAvatar } from '@/components/TutorAvatar';
 
 export default function SignUpScreen() {
   const [name, setName] = useState('');
@@ -28,50 +26,53 @@ export default function SignUpScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [localError, setLocalError] = useState<string | null>(null);
-  const { signUp, isLoading, error, clearError } = useAuthStore();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [emailValid, setEmailValid] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [localError, setLocalError] = useState('');
 
-  const fadeAnim = useRef(new Animated.Value(0)).current;
-  const slideAnim = useRef(new Animated.Value(30)).current;
+  const { signUp, error: storeError, clearError } = useAuthStore();
 
-  useEffect(() => {
-    Animated.parallel([
-      Animated.timing(fadeAnim, {
-        toValue: 1,
-        duration: 600,
-        delay: 200,
-        useNativeDriver: true,
-      }),
-      Animated.timing(slideAnim, {
-        toValue: 0,
-        duration: 600,
-        delay: 200,
-        useNativeDriver: true,
-      }),
-    ]).start();
-  }, [fadeAnim, slideAnim]);
+  const displayError = localError || storeError || '';
 
-  const displayError = localError || error;
-
-  function dismissError() {
-    setLocalError(null);
-    clearError();
+  function validateEmail(value: string) {
+    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    if (!value) {
+      setEmailError('');
+      setEmailValid(false);
+    } else if (!valid) {
+      setEmailError('Please enter a valid email address');
+      setEmailValid(false);
+    } else {
+      setEmailError('');
+      setEmailValid(true);
+    }
   }
 
   async function handleSignUp() {
     if (!name.trim() || !phone.trim() || !email.trim() || !password.trim() || !confirmPassword.trim()) {
       return;
     }
+    if (emailError || !emailValid) {
+      setLocalError('Please enter a valid email address');
+      return;
+    }
     if (password !== confirmPassword) {
       setLocalError('Passwords do not match');
       return;
     }
-    setLocalError(null);
+
+    setIsLoading(true);
+    setLocalError('');
     clearError();
     try {
       await signUp(email.trim(), password, name.trim(), phone.trim());
     } catch {
-      // error is set in the store
+      // error is set in the store — shown via displayError
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -79,112 +80,278 @@ export default function SignUpScreen() {
     name.trim() &&
     phone.trim() &&
     email.trim() &&
+    emailValid &&
     password.trim() &&
     confirmPassword.trim() &&
     !isLoading;
 
   return (
-    <AuthLayout
-      title="Create account 🌟"
-      subtitle="Join thousands of Nigerian students"
-    >
+    <SafeAreaView style={styles.safe}>
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={{ width: '100%' }}
+        style={styles.keyboard}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <ScrollView
+          contentContainerStyle={styles.scroll}
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ flexGrow: 1, paddingBottom: 24 }}
         >
-          <Animated.View
-            style={{
-              opacity: fadeAnim,
-              transform: [{ translateY: slideAnim }],
-            }}
-          >
-            {displayError && (
-              <View style={authFormStyles.errorBox}>
-                <Text style={authFormStyles.errorText}>{displayError}</Text>
-                <TouchableOpacity onPress={dismissError}>
-                  <Text style={authFormStyles.errorDismiss}>✕</Text>
-                </TouchableOpacity>
+          <View style={styles.logoSection}>
+            <TutorAvatar size={64} />
+            <Text style={styles.appName}>Learnova</Text>
+            <Text style={styles.appTagline}>
+              AI-Powered Learning for Nigerian Students
+            </Text>
+          </View>
+
+          <View style={styles.card}>
+            <Text style={styles.welcomeTitle}>Create your account 🌟</Text>
+            <Text style={styles.welcomeSub}>Join thousands of Nigerian students</Text>
+
+            {displayError ? (
+              <View style={styles.errorBanner}>
+                <Text style={styles.errorText}>⚠️ {displayError}</Text>
               </View>
-            )}
+            ) : null}
 
-            <Text style={authFormStyles.label}>Full name</Text>
-            <AuthTextInput
-              value={name}
-              onChangeText={setName}
-              placeholder="Your full name"
-              placeholderTextColor={COLORS.textMuted}
-              autoCapitalize="words"
-              autoComplete="name"
-              editable={!isLoading}
-            />
+            <View style={styles.inputGroup}>
+              <Text style={styles.inputIcon}>👤</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="Your full name"
+                placeholderTextColor={COLORS.textMuted}
+                value={name}
+                onChangeText={setName}
+                autoCapitalize="words"
+                autoComplete="name"
+                editable={!isLoading}
+              />
+            </View>
 
-            <Text style={authFormStyles.label}>Phone number</Text>
-            <AuthTextInput
-              value={phone}
-              onChangeText={setPhone}
-              placeholder="080XXXXXXXX"
-              placeholderTextColor={COLORS.textMuted}
-              keyboardType="phone-pad"
-              autoComplete="tel"
-              editable={!isLoading}
-            />
+            <View style={styles.inputGroup}>
+              <Text style={styles.inputIcon}>📱</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="0803 000 0000"
+                placeholderTextColor={COLORS.textMuted}
+                value={phone}
+                onChangeText={setPhone}
+                keyboardType="phone-pad"
+                autoComplete="tel"
+                editable={!isLoading}
+              />
+            </View>
 
-            <Text style={authFormStyles.label}>Email</Text>
-            <AuthTextInput
-              value={email}
-              onChangeText={setEmail}
-              placeholder="parent@email.com"
-              placeholderTextColor={COLORS.textMuted}
-              keyboardType="email-address"
-              autoCapitalize="none"
-              autoComplete="email"
-              editable={!isLoading}
-            />
+            <View style={[styles.inputGroup, emailError ? styles.inputGroupError : null]}>
+              <Text style={styles.inputIcon}>📧</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="name@example.com"
+                placeholderTextColor={COLORS.textMuted}
+                value={email}
+                onChangeText={(v) => {
+                  setEmail(v);
+                  validateEmail(v);
+                }}
+                keyboardType="email-address"
+                autoCapitalize="none"
+                autoComplete="email"
+                editable={!isLoading}
+              />
+              {emailValid && <Text style={styles.inputValid}>✓</Text>}
+            </View>
+            {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
 
-            <Text style={authFormStyles.label}>Password</Text>
-            <AuthTextInput
-              value={password}
-              onChangeText={setPassword}
-              placeholder="Create a password"
-              placeholderTextColor={COLORS.textMuted}
-              secureTextEntry
-              editable={!isLoading}
-            />
+            <View style={styles.inputGroup}>
+              <Text style={styles.inputIcon}>🔒</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="Create a password"
+                placeholderTextColor={COLORS.textMuted}
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry={!showPassword}
+                autoComplete="new-password"
+                editable={!isLoading}
+              />
+              <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                <Text style={styles.eyeIcon}>{showPassword ? '🙈' : '👁️'}</Text>
+              </TouchableOpacity>
+            </View>
 
-            <Text style={authFormStyles.label}>Confirm password</Text>
-            <AuthTextInput
-              value={confirmPassword}
-              onChangeText={setConfirmPassword}
-              placeholder="Repeat your password"
-              placeholderTextColor={COLORS.textMuted}
-              secureTextEntry
-              editable={!isLoading}
-            />
-
-            <AuthGradientButton
-              label="Sign Up"
-              loading={isLoading}
-              disabled={!canSubmit}
-              onPress={handleSignUp}
-            />
+            <View style={styles.inputGroup}>
+              <Text style={styles.inputIcon}>🔒</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="Confirm password"
+                placeholderTextColor={COLORS.textMuted}
+                value={confirmPassword}
+                onChangeText={setConfirmPassword}
+                secureTextEntry={!showConfirmPassword}
+                autoComplete="new-password"
+                editable={!isLoading}
+              />
+              <TouchableOpacity onPress={() => setShowConfirmPassword(!showConfirmPassword)}>
+                <Text style={styles.eyeIcon}>{showConfirmPassword ? '🙈' : '👁️'}</Text>
+              </TouchableOpacity>
+            </View>
 
             <TouchableOpacity
-              style={authFormStyles.link}
+              style={[styles.signUpBtn, (isLoading || !canSubmit) && styles.signUpBtnLoading]}
+              onPress={handleSignUp}
+              disabled={!canSubmit}
+            >
+              {isLoading ? (
+                <ActivityIndicator color="#FFFFFF" />
+              ) : (
+                <Text style={styles.signUpBtnText}>Sign Up →</Text>
+              )}
+            </TouchableOpacity>
+
+            <Text style={styles.privacyNote}>🔐 We never share your data</Text>
+
+            <TouchableOpacity
+              style={styles.signInLink}
               onPress={() => router.push('/auth/sign-in')}
             >
-              <Text style={authFormStyles.linkText}>
+              <Text style={styles.signInLinkText}>
                 Already have an account?{' '}
-                <Text style={authFormStyles.linkBold}>Sign in</Text>
+                <Text style={styles.signInLinkBold}>Sign in</Text>
               </Text>
             </TouchableOpacity>
-          </Animated.View>
+          </View>
         </ScrollView>
       </KeyboardAvoidingView>
-    </AuthLayout>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  safe: {
+    flex: 1,
+    backgroundColor: '#F9F6F0',
+  },
+  keyboard: { flex: 1 },
+  scroll: {
+    flexGrow: 1,
+    alignItems: 'center',
+    paddingVertical: SPACING.xxl,
+    paddingHorizontal: SPACING.lg,
+    paddingBottom: SPACING.xxl,
+  },
+  logoSection: {
+    alignItems: 'center',
+    marginBottom: SPACING.xl,
+    gap: SPACING.sm,
+  },
+  appName: {
+    fontSize: FONT_SIZES.xxl,
+    fontFamily: 'Poppins-Bold',
+    color: COLORS.primary,
+    marginTop: SPACING.sm,
+  },
+  appTagline: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.textMuted,
+    textAlign: 'center',
+  },
+  card: {
+    width: '100%',
+    maxWidth: 400,
+    backgroundColor: '#FFFFFF',
+    borderRadius: RADIUS.xl,
+    padding: SPACING.xl,
+    shadowColor: '#000',
+    shadowOpacity: 0.08,
+    shadowOffset: { width: 0, height: 8 },
+    shadowRadius: 24,
+    elevation: 6,
+    gap: SPACING.md,
+  },
+  welcomeTitle: {
+    fontSize: FONT_SIZES.xl,
+    fontFamily: 'Poppins-Bold',
+    color: COLORS.textPrimary,
+  },
+  welcomeSub: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.textMuted,
+    marginTop: -SPACING.sm,
+  },
+  inputGroup: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.sm,
+    backgroundColor: COLORS.background,
+    borderRadius: RADIUS.lg,
+    paddingHorizontal: SPACING.md,
+    borderWidth: 1.5,
+    borderColor: 'transparent',
+    minHeight: 52,
+  },
+  inputGroupError: { borderColor: COLORS.error },
+  inputIcon: { fontSize: 18 },
+  input: {
+    flex: 1,
+    fontSize: 16,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.textPrimary,
+    paddingVertical: SPACING.md,
+  },
+  inputValid: {
+    color: COLORS.success,
+    fontSize: 16,
+    fontFamily: 'Poppins-Bold',
+  },
+  eyeIcon: { fontSize: 18, padding: 4 },
+  fieldError: {
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.error,
+    marginTop: -SPACING.sm,
+  },
+  errorBanner: {
+    backgroundColor: COLORS.errorLight,
+    borderRadius: RADIUS.md,
+    padding: SPACING.md,
+    borderWidth: 1,
+    borderColor: COLORS.error,
+  },
+  errorText: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.error,
+  },
+  signUpBtn: {
+    backgroundColor: COLORS.primary,
+    borderRadius: RADIUS.lg,
+    paddingVertical: SPACING.md,
+    alignItems: 'center',
+    minHeight: 52,
+    justifyContent: 'center',
+  },
+  signUpBtnLoading: { opacity: 0.7 },
+  signUpBtnText: {
+    color: '#FFFFFF',
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-Bold',
+  },
+  privacyNote: {
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.textMuted,
+    textAlign: 'center',
+  },
+  signInLink: { alignItems: 'center' },
+  signInLinkText: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.textMuted,
+  },
+  signInLinkBold: {
+    fontFamily: 'Poppins-Bold',
+    color: COLORS.primary,
+  },
+});
