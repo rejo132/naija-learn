@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, useWindowDimensions } from 'react-native';
 import { router, usePathname } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -5,6 +6,7 @@ import { FONT_SIZES, RADIUS } from '@/constants/theme';
 import { useAppStore } from '@/store/appStore';
 import { useTheme } from '@/hooks/useTheme';
 import { useTranslation } from '@/hooks/useTranslation';
+import { ParentGate } from '@/components/ParentGate';
 
 interface TabItem {
   id: string;
@@ -12,6 +14,7 @@ interface TabItem {
   emoji: string;
   route: string;
   requiresGrade?: boolean;
+  requiresParentGate?: boolean;
 }
 
 export function BottomTabBar() {
@@ -21,13 +24,21 @@ export function BottomTabBar() {
   const selectedGrade = useAppStore((s) => s.selectedGrade);
   const { colors, isDarkMode } = useTheme();
   const { t } = useTranslation();
+  const [gateVisible, setGateVisible] = useState(false);
+  const [pendingRoute, setPendingRoute] = useState('');
 
   const BASE_TABS: TabItem[] = [
     { id: 'home', label: t('home'), emoji: '🏠', route: '/' },
     { id: 'learn', label: t('learn'), emoji: '📚', route: '/dashboard', requiresGrade: true },
     { id: 'progress', label: t('progress'), emoji: '📈', route: '/progress' },
     { id: 'achievements', label: t('achievements'), emoji: '🏆', route: '/achievements' },
-    { id: 'profile', label: t('children'), emoji: '👤', route: '/children' },
+    {
+      id: 'profile',
+      label: `${t('children')} 🔐`,
+      emoji: '👤',
+      route: '/children',
+      requiresParentGate: true,
+    },
     { id: 'theme', label: 'Theme', emoji: '🌙', route: '' },
   ];
 
@@ -35,6 +46,10 @@ export function BottomTabBar() {
   if (hideOn.some((p) => pathname.startsWith(p))) return null;
 
   if (width > 768) return null;
+
+  function navigateTo(route: string) {
+    router.push(route as '/');
+  }
 
   function handleTabPress(tab: TabItem) {
     if (tab.id === 'theme') {
@@ -45,53 +60,76 @@ export function BottomTabBar() {
       router.push('/grade');
       return;
     }
-    router.push(tab.route as '/');
+    if (tab.requiresParentGate) {
+      setPendingRoute(tab.route);
+      setGateVisible(true);
+      return;
+    }
+    navigateTo(tab.route);
   }
 
   return (
-    <View
-      style={[
-        styles.container,
-        {
-          paddingBottom: insets.bottom + 4,
-          backgroundColor: isDarkMode ? colors.backgroundCard : '#FFFFFF',
-          borderTopColor: colors.border,
-        },
-      ]}
-    >
-      {BASE_TABS.map((tab) => {
-        const emoji = tab.id === 'theme' ? (isDarkMode ? '☀️' : '🌙') : tab.emoji;
-        const isActive =
-          tab.id !== 'theme' &&
-          (pathname === tab.route ||
-            (tab.route !== '/' && pathname.startsWith(tab.route)));
-        return (
-          <TouchableOpacity
-            key={tab.id}
-            style={[styles.tab, isActive && styles.tabActive]}
-            onPress={() => handleTabPress(tab)}
-          >
-            <View
-              style={[
-                styles.tabIconWrap,
-                isActive && { backgroundColor: colors.primaryLight },
-              ]}
+    <>
+      <View
+        style={[
+          styles.container,
+          {
+            paddingBottom: insets.bottom + 4,
+            backgroundColor: isDarkMode ? colors.backgroundCard : '#FFFFFF',
+            borderTopColor: colors.border,
+          },
+        ]}
+      >
+        {BASE_TABS.map((tab) => {
+          const emoji = tab.id === 'theme' ? (isDarkMode ? '☀️' : '🌙') : tab.emoji;
+          const isActive =
+            tab.id !== 'theme' &&
+            (pathname === tab.route ||
+              (tab.route !== '/' && pathname.startsWith(tab.route)));
+          return (
+            <TouchableOpacity
+              key={tab.id}
+              style={[styles.tab, isActive && styles.tabActive]}
+              onPress={() => handleTabPress(tab)}
             >
-              <Text style={styles.tabEmoji}>{emoji}</Text>
-            </View>
-            <Text
-              style={[
-                styles.tabLabel,
-                { color: colors.textMuted },
-                isActive && { color: colors.primary, fontFamily: 'Poppins-SemiBold' },
-              ]}
-            >
-              {tab.label}
-            </Text>
-          </TouchableOpacity>
-        );
-      })}
-    </View>
+              <View
+                style={[
+                  styles.tabIconWrap,
+                  isActive && { backgroundColor: colors.primaryLight },
+                ]}
+              >
+                <Text style={styles.tabEmoji}>{emoji}</Text>
+              </View>
+              <Text
+                style={[
+                  styles.tabLabel,
+                  { color: colors.textMuted },
+                  isActive && { color: colors.primary, fontFamily: 'Poppins-SemiBold' },
+                ]}
+                numberOfLines={1}
+              >
+                {tab.label}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+
+      <ParentGate
+        visible={gateVisible}
+        onSuccess={() => {
+          setGateVisible(false);
+          if (pendingRoute) {
+            navigateTo(pendingRoute);
+          }
+          setPendingRoute('');
+        }}
+        onCancel={() => {
+          setGateVisible(false);
+          setPendingRoute('');
+        }}
+      />
+    </>
   );
 }
 

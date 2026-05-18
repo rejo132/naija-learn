@@ -13,9 +13,16 @@ import { COLORS, FONT_SIZES, RADIUS, SPACING, GRADIENTS } from '@/constants/them
 import { useAuthStore } from '@/store/authStore';
 import { useAppStore } from '@/store/appStore';
 import { useTranslation } from '@/hooks/useTranslation';
+import { ParentGate } from '@/components/ParentGate';
 
 const DRAWER_WIDE = 240;
 const DRAWER_COLLAPSED = 64;
+
+const PARENT_ROUTES = ['/children', '/parent-dashboard'];
+
+function isParentRoute(route: string) {
+  return PARENT_ROUTES.includes(route);
+}
 
 interface NavItem {
   id: string;
@@ -28,10 +35,12 @@ function NavButton({
   item,
   pathname,
   collapsed,
+  onNavPress,
 }: {
   item: NavItem;
   pathname: string;
   collapsed: boolean;
+  onNavPress: (route: string) => void;
 }) {
   const isActive =
     pathname === item.route ||
@@ -48,11 +57,16 @@ function NavButton({
         isActive && !collapsed && styles.navItemActive,
         isActive && collapsed && styles.navItemActiveCollapsed,
       ]}
-      onPress={() => router.push(item.route as '/')}
+      onPress={() => onNavPress(item.route)}
     >
       <Text style={[styles.navEmoji, collapsed && styles.navEmojiCollapsed]}>{item.emoji}</Text>
       {!collapsed && (
-        <Text style={[styles.navLabel, isActive && styles.navLabelActive]}>{item.label}</Text>
+        <Text style={[styles.navLabel, isActive && styles.navLabelActive]}>
+          {item.label}
+          {isParentRoute(item.route) && (
+            <Text style={styles.parentBadge}> 🔐</Text>
+          )}
+        </Text>
       )}
     </TouchableOpacity>
   );
@@ -66,6 +80,8 @@ export function SideDrawer() {
   const toggleDarkMode = useAppStore((s) => s.toggleDarkMode);
   const { t } = useTranslation();
   const [collapsed, setCollapsed] = useState(false);
+  const [gateVisible, setGateVisible] = useState(false);
+  const [pendingRoute, setPendingRoute] = useState('');
   const animatedWidth = useRef(new Animated.Value(DRAWER_WIDE)).current;
 
   const MAIN_NAV: NavItem[] = [
@@ -84,6 +100,15 @@ export function SideDrawer() {
   if (width <= 768) return null;
   if (pathname.startsWith('/auth')) return null;
 
+  function handleNavPress(route: string) {
+    if (route === '/children' || route === '/parent-dashboard') {
+      setPendingRoute(route);
+      setGateVisible(true);
+      return;
+    }
+    router.push(route as '/');
+  }
+
   function toggleCollapsed() {
     const nextCollapsed = !collapsed;
     setCollapsed(nextCollapsed);
@@ -95,72 +120,101 @@ export function SideDrawer() {
   }
 
   return (
-    <Animated.View style={[styles.drawerOuter, { width: animatedWidth }]}>
-      <LinearGradient
-        colors={GRADIENTS.sidebar as [string, string]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 0, y: 1 }}
-        style={[styles.drawer, collapsed && styles.drawerCollapsed]}
-      >
-        <TouchableOpacity
-          style={styles.toggleBtn}
-          onPress={toggleCollapsed}
-          accessibilityLabel={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+    <>
+      <Animated.View style={[styles.drawerOuter, { width: animatedWidth }]}>
+        <LinearGradient
+          colors={GRADIENTS.sidebar as [string, string]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 0, y: 1 }}
+          style={[styles.drawer, collapsed && styles.drawerCollapsed]}
         >
-          <Text style={styles.toggleBtnText}>{collapsed ? '→' : '←'}</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.toggleBtn}
+            onPress={toggleCollapsed}
+            accessibilityLabel={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+          >
+            <Text style={styles.toggleBtnText}>{collapsed ? '→' : '←'}</Text>
+          </TouchableOpacity>
 
-        <View style={[styles.logoSection, collapsed && styles.logoSectionCollapsed]}>
-          <View style={styles.logoCircle}>
-            <Text style={styles.logoEmoji}>🎓</Text>
-          </View>
-          {!collapsed && (
-            <View style={styles.logoTextBlock}>
-              <Text style={styles.logoName}>Learnova</Text>
-              <Text style={styles.logoTagline}>AI Learning</Text>
+          <View style={[styles.logoSection, collapsed && styles.logoSectionCollapsed]}>
+            <View style={styles.logoCircle}>
+              <Text style={styles.logoEmoji}>🎓</Text>
             </View>
-          )}
-        </View>
+            {!collapsed && (
+              <View style={styles.logoTextBlock}>
+                <Text style={styles.logoName}>Learnova</Text>
+                <Text style={styles.logoTagline}>AI Learning</Text>
+              </View>
+            )}
+          </View>
 
-        <View style={styles.navList}>
-          {MAIN_NAV.map((item) => (
-            <NavButton key={item.id} item={item} pathname={pathname} collapsed={collapsed} />
-          ))}
+          <View style={styles.navList}>
+            {MAIN_NAV.map((item) => (
+              <NavButton
+                key={item.id}
+                item={item}
+                pathname={pathname}
+                collapsed={collapsed}
+                onNavPress={handleNavPress}
+              />
+            ))}
 
-          <View style={[styles.divider, collapsed && styles.dividerCollapsed]} />
+            <View style={[styles.divider, collapsed && styles.dividerCollapsed]} />
 
-          {SECONDARY_NAV.map((item) => (
-            <NavButton key={item.id} item={item} pathname={pathname} collapsed={collapsed} />
-          ))}
-        </View>
+            {SECONDARY_NAV.map((item) => (
+              <NavButton
+                key={item.id}
+                item={item}
+                pathname={pathname}
+                collapsed={collapsed}
+                onNavPress={handleNavPress}
+              />
+            ))}
+          </View>
 
-        <TouchableOpacity
-          // @ts-expect-error title is supported on web for hover tooltips
-          title={collapsed ? (isDarkMode ? 'Light Mode' : 'Dark Mode') : undefined}
-          accessibilityLabel={isDarkMode ? 'Light Mode' : 'Dark Mode'}
-          style={[styles.darkModeBtn, collapsed && styles.darkModeBtnCollapsed]}
-          onPress={toggleDarkMode}
-        >
-          <Text style={styles.darkModeEmoji}>{isDarkMode ? '☀️' : '🌙'}</Text>
-          {!collapsed && (
-            <Text style={styles.darkModeText}>
-              {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-            </Text>
-          )}
-        </TouchableOpacity>
+          <TouchableOpacity
+            // @ts-expect-error title is supported on web for hover tooltips
+            title={collapsed ? (isDarkMode ? 'Light Mode' : 'Dark Mode') : undefined}
+            accessibilityLabel={isDarkMode ? 'Light Mode' : 'Dark Mode'}
+            style={[styles.darkModeBtn, collapsed && styles.darkModeBtnCollapsed]}
+            onPress={toggleDarkMode}
+          >
+            <Text style={styles.darkModeEmoji}>{isDarkMode ? '☀️' : '🌙'}</Text>
+            {!collapsed && (
+              <Text style={styles.darkModeText}>
+                {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+              </Text>
+            )}
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          // @ts-expect-error title is supported on web for hover tooltips
-          title={collapsed ? t('signOut') : undefined}
-          accessibilityLabel={t('signOut')}
-          style={[styles.signOutBtn, collapsed && styles.signOutBtnCollapsed]}
-          onPress={() => signOut()}
-        >
-          <Text style={styles.signOutEmoji}>🚪</Text>
-          {!collapsed && <Text style={styles.signOutText}>{t('signOut')}</Text>}
-        </TouchableOpacity>
-      </LinearGradient>
-    </Animated.View>
+          <TouchableOpacity
+            // @ts-expect-error title is supported on web for hover tooltips
+            title={collapsed ? t('signOut') : undefined}
+            accessibilityLabel={t('signOut')}
+            style={[styles.signOutBtn, collapsed && styles.signOutBtnCollapsed]}
+            onPress={() => signOut()}
+          >
+            <Text style={styles.signOutEmoji}>🚪</Text>
+            {!collapsed && <Text style={styles.signOutText}>{t('signOut')}</Text>}
+          </TouchableOpacity>
+        </LinearGradient>
+      </Animated.View>
+
+      <ParentGate
+        visible={gateVisible}
+        onSuccess={() => {
+          setGateVisible(false);
+          if (pendingRoute) {
+            router.push(pendingRoute as '/');
+          }
+          setPendingRoute('');
+        }}
+        onCancel={() => {
+          setGateVisible(false);
+          setPendingRoute('');
+        }}
+      />
+    </>
   );
 }
 
@@ -287,6 +341,10 @@ const styles = StyleSheet.create({
   navLabelActive: {
     fontFamily: 'Poppins-SemiBold',
     color: '#FFFFFF',
+  },
+  parentBadge: {
+    fontSize: FONT_SIZES.sm,
+    opacity: 0.85,
   },
   darkModeBtn: {
     flexDirection: 'row',

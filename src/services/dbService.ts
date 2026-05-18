@@ -16,6 +16,7 @@ export interface Profile {
   name: string | null;
   phone: string | null;
   email: string | null;
+  role?: 'parent' | 'child';
   created_at: string;
 }
 
