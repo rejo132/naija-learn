@@ -117,6 +117,9 @@ export default function SettingsScreen() {
   const difficulties = ['Easy', 'Medium', 'Hard'] as const;
   const [difficulty, setDifficulty] = useState<(typeof difficulties)[number]>('Medium');
 
+  const speeds = ['Slow', 'Normal', 'Fast'] as const;
+  const [voiceSpeed, setVoiceSpeed] = useState<(typeof speeds)[number]>('Normal');
+
   function openParentZone(purpose: 'children' | 'reports' | 'limits') {
     setParentGatePurpose(purpose);
     setParentGateVisible(true);
@@ -307,6 +310,21 @@ export default function SettingsScreen() {
               </View>
             </View>
           </View>
+          <SettingsRow
+            emoji="🔊"
+            label="AI Voice"
+            sublabel={`Speed: ${voiceSpeed} • Tap to change`}
+            onPress={() => {
+              const curr = speeds.indexOf(voiceSpeed);
+              setVoiceSpeed(speeds[(curr + 1) % speeds.length]);
+            }}
+            colors={colors}
+            rightElement={
+              <View style={[styles.diffBtn, styles.diffBtnActive]}>
+                <Text style={styles.diffBtnTextActive}>{voiceSpeed}</Text>
+              </View>
+            }
+          />
           <SettingsRow
             emoji="🏆"
             label="Rewards & Achievements"

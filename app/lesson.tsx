@@ -3,6 +3,7 @@
  */
 import { useState, useRef, useCallback, useEffect } from 'react';
 import {
+  Alert,
   View,
   Text,
   TextInput,
@@ -51,11 +52,27 @@ import { TutorAvatar } from '@/components/TutorAvatar';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { OfflineLearning } from '@/components/OfflineLearning';
 import { LearningFlow } from '@/components/LearningFlow';
+import { useSpeech, type VoiceLanguage } from '@/hooks/useSpeech';
 import type { LearningFlowState } from '@/types/ai.types';
 
 const QUIZ_QUESTION_TARGET = 3;
 const CHAR_LIMIT = 500;
 const CHAR_WARN_AT = 400;
+
+interface SpeechRecognitionResultEvent {
+  results: { [index: number]: { [index: number]: { transcript: string } } };
+}
+
+interface SpeechRecognitionInstance {
+  lang: string;
+  interimResults: boolean;
+  maxAlternatives: number;
+  onresult: ((event: SpeechRecognitionResultEvent) => void) | null;
+  onerror: (() => void) | null;
+  onend: (() => void) | null;
+  start: () => void;
+  stop: () => void;
+}
 
 function normalizeQuizChoice(text: string): string | null {
   const trimmed = text.trim().toUpperCase();
@@ -196,10 +213,14 @@ function ChatBubble({
   item,
   personality,
   isDarkMode,
+  onToggleSpeak,
+  isSpeaking,
 }: {
   item: ChatMessage;
   personality: TutorPersonality;
   isDarkMode: boolean;
+  onToggleSpeak?: (text: string) => void;
+  isSpeaking?: boolean;
 }) {
   const { colors } = useTheme();
   const isUser = item.role === 'user';
@@ -232,6 +253,17 @@ function ChatBubble({
             },
           ]}>
             <MarkdownMessage content={item.content} />
+            {onToggleSpeak && (
+              <View style={styles.bubbleFooter}>
+                <TouchableOpacity
+                  style={styles.speakerBtn}
+                  onPress={() => onToggleSpeak(item.content)}
+                  accessibilityLabel={isSpeaking ? 'Stop speaking' : 'Read aloud'}
+                >
+                  <Text style={styles.speakerIcon}>{isSpeaking ? '⏹️' : '🔊'}</Text>
+                </TouchableOpacity>
+              </View>
+            )}
           </View>
           <Text style={[styles.bubbleTime, { color: colors.textMuted }]}>{time}</Text>
         </View>
@@ -269,6 +301,12 @@ export default function LessonScreen() {
   const markFlowCompleted = useAppStore((s) => s.markFlowCompleted);
   const updateSubjectProgress = useAppStore((s) => s.updateSubjectProgress);
   const user = useAuthStore((s) => s.user);
+  const { speak, stop, toggle, isSpeaking } = useSpeech(
+    (selectedLanguage as VoiceLanguage) ?? 'en'
+  );
+  const [autoSpeak, setAutoSpeak] = useState(false);
+  const [isListening, setIsListening] = useState(false);
+  const lastSpokenIdRef = useRef<string | null>(null);
   const [flowCompleted, setFlowCompleted] = useState(() => {
     const key = `${selectedSubject?.label ?? ''}_${selectedGrade ?? ''}`;
     return useAppStore.getState().completedFlows[key] ?? false;
@@ -296,6 +334,63 @@ export default function LessonScreen() {
       setShowOfflineMode(true);
     }
   }, [offlineParam]);
+
+  useEffect(() => {
+    const last = messages[messages.length - 1];
+    if (
+      autoSpeak &&
+      last?.role === 'assistant' &&
+      last.id !== lastSpokenIdRef.current
+    ) {
+      lastSpokenIdRef.current = last.id;
+      speak(last.content);
+    }
+  }, [messages, autoSpeak, speak]);
+
+  useEffect(() => {
+    return () => {
+      stop();
+    };
+  }, [stop]);
+
+  async function handleMicPress() {
+    if (
+      typeof window !== 'undefined' &&
+      ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)
+    ) {
+      const SpeechRecognition =
+        (window as unknown as { webkitSpeechRecognition?: new () => SpeechRecognitionInstance })
+          .webkitSpeechRecognition ??
+        (window as unknown as { SpeechRecognition?: new () => SpeechRecognitionInstance })
+          .SpeechRecognition;
+      if (!SpeechRecognition) {
+        setIsListening(false);
+        return;
+      }
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'en-NG';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      setIsListening(true);
+
+      recognition.onresult = (event: SpeechRecognitionResultEvent) => {
+        const transcript = event.results[0]?.[0]?.transcript ?? '';
+        if (transcript) setInputText(transcript);
+        setIsListening(false);
+      };
+      recognition.onerror = () => setIsListening(false);
+      recognition.onend = () => setIsListening(false);
+
+      recognition.start();
+    } else {
+      Alert.alert(
+        '🎙️ Voice Input',
+        'Voice input works on web. On mobile, please type your question.',
+        [{ text: 'OK' }]
+      );
+    }
+  }
 
   useEffect(() => {
     const hasUserMessages = messages.some((m) => m.role === 'user');
@@ -555,6 +650,17 @@ export default function LessonScreen() {
               </View>
             </View>
 
+            <TouchableOpacity
+              style={[styles.autoSpeakBtn, autoSpeak && styles.autoSpeakBtnActive]}
+              onPress={() => {
+                if (autoSpeak) stop();
+                setAutoSpeak((s) => !s);
+              }}
+              accessibilityLabel={autoSpeak ? 'Mute auto read-aloud' : 'Enable auto read-aloud'}
+            >
+              <Text style={styles.autoSpeakIcon}>{autoSpeak ? '🔊' : '🔇'}</Text>
+            </TouchableOpacity>
+
             <View
               style={[
                 styles.headerXP,
@@ -636,6 +742,17 @@ export default function LessonScreen() {
               </View>
             </View>
 
+            <TouchableOpacity
+              style={[styles.autoSpeakBtn, autoSpeak && styles.autoSpeakBtnActive]}
+              onPress={() => {
+                if (autoSpeak) stop();
+                setAutoSpeak((s) => !s);
+              }}
+              accessibilityLabel={autoSpeak ? 'Mute auto read-aloud' : 'Enable auto read-aloud'}
+            >
+              <Text style={styles.autoSpeakIcon}>{autoSpeak ? '🔊' : '🔇'}</Text>
+            </TouchableOpacity>
+
             <View style={[styles.headerXP, { backgroundColor: colors.goldLight, borderColor: 'rgba(234,162,33,0.3)' }]}>
               <Text style={[styles.headerXPText, { color: colors.goldDark }]}>⚡ {xp} XP</Text>
             </View>
@@ -676,6 +793,8 @@ export default function LessonScreen() {
                 item={item}
                 personality={personality}
                 isDarkMode={isDarkMode}
+                onToggleSpeak={toggle}
+                isSpeaking={isSpeaking}
               />
             )}
             ListEmptyComponent={
@@ -743,6 +862,15 @@ export default function LessonScreen() {
               accessibilityLabel={t('startQuiz')}
             >
               <Text style={styles.inputBarActionEmoji}>🎯</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={[styles.micBtn, isListening && styles.micBtnActive]}
+              onPress={handleMicPress}
+              disabled={isAILoading || !isConnected}
+              accessibilityLabel={isListening ? 'Stop listening' : 'Speak your question'}
+            >
+              <Text style={styles.micIcon}>{isListening ? '🔴' : '🎙️'}</Text>
             </TouchableOpacity>
 
             <TextInput
@@ -1048,4 +1176,40 @@ const styles = StyleSheet.create({
     paddingBottom: SPACING.xs,
     opacity: 0.6,
   },
+  bubbleFooter: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    marginTop: SPACING.xs,
+  },
+  speakerBtn: {
+    padding: 4,
+    opacity: 0.6,
+  },
+  speakerIcon: { fontSize: 14 },
+  autoSpeakBtn: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: COLORS.primaryLight,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+  },
+  autoSpeakBtnActive: {
+    backgroundColor: COLORS.primary,
+  },
+  autoSpeakIcon: { fontSize: 16 },
+  micBtn: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: COLORS.primaryLight,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 2,
+  },
+  micBtnActive: {
+    backgroundColor: COLORS.error,
+  },
+  micIcon: { fontSize: 18 },
 });

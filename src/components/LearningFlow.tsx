@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { useTheme } from '@/hooks/useTheme';
 import { FONT_SIZES, SPACING, RADIUS, COLORS } from '@/constants/theme';
+import { useSpeech } from '@/hooks/useSpeech';
 import { LearningFlowState, type LearningFlowStep } from '@/types/ai.types';
 
 interface LearningFlowProps {
@@ -261,6 +262,7 @@ export function LearningFlow({
   onSkip,
 }: LearningFlowProps) {
   const { colors, isDarkMode } = useTheme();
+  const { speak, stop } = useSpeech('en');
   const [step, setStep] = useState<LearningFlowStep>('hook');
   const [currentQ, setCurrentQ] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
@@ -274,6 +276,12 @@ export function LearningFlow({
   const hookLesson = getHookLesson(subject.label, grade);
   const questions = getPracticeQuestions(subject.label, grade);
   const question = questions[currentQ];
+
+  useEffect(() => {
+    return () => {
+      stop();
+    };
+  }, [stop]);
 
   function handleAnswer(idx: number) {
     if (selectedAnswer !== null) return;
@@ -353,6 +361,15 @@ export function LearningFlow({
 
             <Text style={[styles.storyText, { color: colors.textPrimary }]}>{hookLesson.story}</Text>
 
+            <TouchableOpacity
+              style={styles.readAloudBtn}
+              onPress={() => speak(`${hookLesson.title}. ${hookLesson.story}`)}
+              accessibilityLabel="Read this lesson aloud"
+            >
+              <Text style={styles.readAloudIcon}>🔊</Text>
+              <Text style={styles.readAloudText}>Read to me</Text>
+            </TouchableOpacity>
+
             <View style={styles.keyPoints}>
               <Text style={[styles.keyPointsLabel, { color: colors.textMuted }]}>KEY POINTS</Text>
               {hookLesson.keyPoints.map((point, i) => (
@@ -400,6 +417,13 @@ export function LearningFlow({
           </View>
 
           <View style={[styles.questionCard, { backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF' }]}>
+            <TouchableOpacity
+              style={styles.readQuestionBtn}
+              onPress={() => speak(question.question)}
+              accessibilityLabel="Read question aloud"
+            >
+              <Text style={{ fontSize: 18 }}>🔊</Text>
+            </TouchableOpacity>
             <Text style={[styles.subjectTag, { color: colors.textMuted }]}>
               {subject.emoji} {subject.label} • Primary {grade}
             </Text>
@@ -793,5 +817,29 @@ const styles = StyleSheet.create({
     color: '#005C36',
     textAlign: 'center',
     lineHeight: 20,
+  },
+  readAloudBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.sm,
+    backgroundColor: COLORS.primaryLight,
+    borderRadius: RADIUS.full,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    alignSelf: 'flex-start',
+  },
+  readAloudIcon: { fontSize: 16 },
+  readAloudText: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-SemiBold',
+    color: COLORS.primaryDark,
+  },
+  readQuestionBtn: {
+    position: 'absolute',
+    top: SPACING.md,
+    right: SPACING.md,
+    padding: 4,
+    opacity: 0.7,
+    zIndex: 1,
   },
 });
