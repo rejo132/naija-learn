@@ -4,22 +4,23 @@
     "slug": "learnova",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "primaryColor": "#008751",
-    "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#008751"
     },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.learnova.app",
       "buildNumber": "1",
       "infoPlist": {
-        "NSMicrophoneUsageDescription": "Learnova uses the microphone for voice answers.",
-        "NSCameraUsageDescription": "Learnova uses the camera to scan worksheets.",
-        "NSFaceIDUsageDescription": "Learnova uses Face ID for secure sign in."
+        "NSMicrophoneUsageDescription": "Learnova uses the microphone for voice input to answer questions.",
+        "NSSpeechRecognitionUsageDescription": "Learnova uses speech recognition so you can speak your answers.",
+        "NSCameraUsageDescription": "Learnova uses the camera to scan homework."
       }
     },
     "android": {
@@ -30,11 +31,9 @@
       "package": "com.learnova.app",
       "versionCode": 1,
       "permissions": [
-        "INTERNET",
-        "ACCESS_NETWORK_STATE",
-        "CAMERA",
         "RECORD_AUDIO",
-        "VIBRATE"
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
       ],
       "googleServicesFile": "./google-services.json"
     },
@@ -44,18 +43,21 @@
       "output": "static",
       "name": "Learnova",
       "shortName": "Learnova",
-      "description": "AI-powered primary school tutoring for Nigerian children.",
+      "description": "AI-powered learning for Nigerian primary school students",
       "themeColor": "#008751",
       "backgroundColor": "#F9F6F0"
     },
-    "extra": {
-      "eas": {
-        "projectId": "YOUR_EAS_PROJECT_ID"
-      }
-    },
     "plugins": [
-      "expo-font",
       "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#008751",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200
+        }
+      ],
       [
         "expo-build-properties",
         {
@@ -68,8 +70,7 @@
             "deploymentTarget": "15.1"
           }
         }
-      ],
-      "expo-web-browser"
+      ]
     ],
     "scheme": "learnova",
     "newArchEnabled": true,
@@ -85,6 +86,11 @@
       "kids learning",
       "gamification"
     ],
-    "owner": "YOUR_EXPO_USERNAME"
+    "owner": "YOUR_EXPO_USERNAME",
+    "extra": {
+      "eas": {
+        "projectId": "your-eas-project-id"
+      }
+    }
   }
 }
