@@ -4,43 +4,75 @@
  */
 import { useState, useEffect } from 'react';
 import {
-  View, Text, TouchableOpacity, FlatList,
+  View, Text, TouchableOpacity,
   StyleSheet, ActivityIndicator, ScrollView
 } from 'react-native';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { getChildren, getChildWeeklySummary, Child } from '@/services/dbService';
-import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import {
+  getChildren,
+  getWeeklySummary,
+  getChildProgressHistory,
+  Child,
+} from '@/services/dbService';
+import { useAuthStore } from '@/store/authStore';
+import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 
+type ProgressHistoryEntry = Awaited<ReturnType<typeof getChildProgressHistory>>[number];
+
 export default function ParentDashboardScreen() {
   const { colors, isDarkMode } = useTheme();
+  const user = useAuthStore((s) => s.user);
   const [children, setChildren] = useState<Child[]>([]);
-  const [summaries, setSummaries] = useState<Record<string, Awaited<ReturnType<typeof getChildWeeklySummary>>>>({});
+  const [summaries, setSummaries] = useState<Record<string, Awaited<ReturnType<typeof getWeeklySummary>>>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [selectedChild, setSelectedChild] = useState<Child | null>(null);
+  const [progressHistory, setProgressHistory] = useState<ProgressHistoryEntry[]>([]);
+  const [isLoadingHistory, setIsLoadingHistory] = useState(false);
 
   useEffect(() => {
     loadData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (children.length > 0 && user) {
+      loadChildHistory(children[0]);
+    } else if (user && children.length === 0 && !isLoading) {
+      getChildProgressHistory(user.id, user.id).then(setProgressHistory);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [children, isLoading]);
 
   async function loadData() {
     setIsLoading(true);
     const kids = await getChildren();
     setChildren(kids);
+
     if (kids.length > 0) {
       setSelectedChild(kids[0]);
       const summaryMap: typeof summaries = {};
       await Promise.all(
         kids.map(async (kid) => {
-          summaryMap[kid.id] = await getChildWeeklySummary(kid.id);
+          summaryMap[kid.id] = await getWeeklySummary(kid.id, user?.id);
         })
       );
       setSummaries(summaryMap);
+    } else if (user) {
+      const ownSummary = await getWeeklySummary(user.id, user.id);
+      setSummaries({ [user.id]: ownSummary });
     }
     setIsLoading(false);
+  }
+
+  async function loadChildHistory(child: Child) {
+    setIsLoadingHistory(true);
+    const history = await getChildProgressHistory(child.id, user?.id);
+    setProgressHistory(history);
+    setIsLoadingHistory(false);
   }
 
   const summary = selectedChild ? summaries[selectedChild.id] : null;
@@ -68,11 +100,14 @@ export default function ParentDashboardScreen() {
           <ActivityIndicator size="large" color={colors.primary} style={{ marginTop: 40 }} />
         ) : children.length === 0 ? (
           <GlassCard style={[styles.emptyCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
-            <Text style={styles.emptyEmoji}>👶</Text>
-            <Text style={[styles.emptyTitle, { color: colors.textPrimary }]}>No children yet</Text>
-            <Text style={[styles.emptySubtitle, { color: colors.textSecondary }]}>Add a child profile to see their progress</Text>
+            <Text style={styles.emptyEmoji}>📊</Text>
+            <Text style={[styles.emptyTitle, { color: colors.textPrimary }]}>Your Learning Progress</Text>
+            <Text style={[styles.emptySubtitle, { color: colors.textSecondary }]}>
+              Add a child profile to track their progress separately,
+              or view your own activity below.
+            </Text>
             <TouchableOpacity style={[styles.btn, { backgroundColor: colors.primary }]} onPress={() => router.push('/children')}>
-              <Text style={[styles.btnText, { color: colors.white }]}>+ Add Child</Text>
+              <Text style={[styles.btnText, { color: colors.white }]}>+ Add Child Profile</Text>
             </TouchableOpacity>
           </GlassCard>
         ) : (
@@ -87,7 +122,10 @@ export default function ParentDashboardScreen() {
                     { backgroundColor: colors.backgroundGlass, borderColor: colors.border },
                     selectedChild?.id === child.id && { backgroundColor: colors.primary, borderColor: colors.primary },
                   ]}
-                  onPress={() => setSelectedChild(child)}
+                  onPress={() => {
+                    setSelectedChild(child);
+                    loadChildHistory(child);
+                  }}
                 >
                   <Text style={styles.childChipEmoji}>{child.avatar}</Text>
                   <Text style={[
@@ -174,6 +212,69 @@ export default function ParentDashboardScreen() {
             )}
           </>
         )}
+
+        {!isLoading && progressHistory.length > 0 && (
+          <>
+            <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>Recent Sessions</Text>
+            {isLoadingHistory ? (
+              <ActivityIndicator color={COLORS.primary} />
+            ) : (
+              progressHistory.map((entry) => (
+                <GlassCard
+                  key={entry.id}
+                  style={[styles.historyCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}
+                >
+                  <View style={styles.historyLeft}>
+                    <Text style={[styles.historySubject, { color: colors.textPrimary }]}>{entry.subject}</Text>
+                    <Text style={[styles.historyDate, { color: colors.textMuted }]}>
+                      {new Date(entry.created_at).toLocaleDateString('en-NG', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
+                      })}
+                    </Text>
+                  </View>
+                  <View style={styles.historyRight}>
+                    {entry.score !== null && (
+                      <View
+                        style={[
+                          styles.scoreBadge,
+                          {
+                            backgroundColor:
+                              entry.score >= 70 ? COLORS.successLight : COLORS.warningLight,
+                          },
+                        ]}
+                      >
+                        <Text
+                          style={[
+                            styles.scoreText,
+                            { color: entry.score >= 70 ? COLORS.success : COLORS.warning },
+                          ]}
+                        >
+                          {entry.score}%
+                        </Text>
+                      </View>
+                    )}
+                    {entry.duration_seconds > 0 && (
+                      <Text style={[styles.durationText, { color: colors.textMuted }]}>
+                        ⏱ {Math.round(entry.duration_seconds / 60)}m
+                      </Text>
+                    )}
+                  </View>
+                </GlassCard>
+              ))
+            )}
+          </>
+        )}
+
+        {!isLoading && progressHistory.length === 0 && !isLoadingHistory && (
+          <GlassCard style={[styles.noHistoryCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
+            <Text style={styles.noHistoryEmoji}>📖</Text>
+            <Text style={[styles.noHistoryText, { color: colors.textSecondary }]}>
+              No lesson history yet. Complete lessons to see progress here!
+            </Text>
+          </GlassCard>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -243,4 +344,54 @@ const styles = StyleSheet.create({
     padding: SPACING.md, alignItems: 'center', marginTop: SPACING.sm,
   },
   btnText: { fontWeight: '800', fontSize: FONT_SIZES.md },
+  historyCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: SPACING.md,
+    marginBottom: SPACING.sm,
+  },
+  historyLeft: { flex: 1 },
+  historySubject: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-SemiBold',
+    color: COLORS.textPrimary,
+  },
+  historyDate: {
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.textMuted,
+    marginTop: 2,
+  },
+  historyRight: {
+    alignItems: 'flex-end',
+    gap: SPACING.xs,
+  },
+  scoreBadge: {
+    borderRadius: RADIUS.full,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: 4,
+  },
+  scoreText: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Bold',
+  },
+  durationText: {
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.textMuted,
+  },
+  noHistoryCard: {
+    padding: SPACING.xl,
+    alignItems: 'center',
+    gap: SPACING.sm,
+    marginTop: SPACING.md,
+  },
+  noHistoryEmoji: { fontSize: 36 },
+  noHistoryText: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.textSecondary,
+    textAlign: 'center',
+  },
 });

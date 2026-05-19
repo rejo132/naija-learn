@@ -300,6 +300,9 @@ export default function LessonScreen() {
   const setLastSession = useAppStore((s) => s.setLastSession);
   const markFlowCompleted = useAppStore((s) => s.markFlowCompleted);
   const updateSubjectProgress = useAppStore((s) => s.updateSubjectProgress);
+  const activeChildId = useAppStore((s) => s.activeChildId);
+  const addActiveChildXP = useAppStore((s) => s.addActiveChildXP);
+  const updateActiveChildStreak = useAppStore((s) => s.updateActiveChildStreak);
   const user = useAuthStore((s) => s.user);
   const { speak, stop, toggle, isSpeaking } = useSpeech(
     (selectedLanguage as VoiceLanguage) ?? 'en'
@@ -541,16 +544,22 @@ export default function LessonScreen() {
           const durationSecs = Math.round(
             (Date.now() - lessonStartRef.current) / 1000
           );
+          const earnedXP = finalScore === 100 ? 75 : 25;
           saveProgress({
             subject: selectedSubject?.label ?? 'Unknown',
             topic: selectedSubject?.label ?? 'Unknown',
             score: finalScore,
             grade: selectedGrade ?? 1,
-            xpEarned: finalScore === 100 ? 75 : 25,
+            xpEarned: earnedXP,
             durationSeconds: durationSecs,
             flowCompleted: flowState?.hookCompleted ?? false,
-            childId: null,
+            childId: activeChildId,
           }).catch((err) => console.error('saveProgress error:', err));
+
+          if (activeChildId) {
+            addActiveChildXP(earnedXP);
+            updateActiveChildStreak();
+          }
 
           updateSubjectProgress(selectedSubject.label, selectedGrade, finalScore);
         }
@@ -888,7 +897,7 @@ export default function LessonScreen() {
               onChangeText={setInputText}
               placeholder={isConnected ? t('askAnything') : t('error')}
               placeholderTextColor={colors.textMuted}
-              multiline
+              multiline={false}
               maxLength={CHAR_LIMIT}
               editable={!isAILoading && isConnected}
               blurOnSubmit={false}

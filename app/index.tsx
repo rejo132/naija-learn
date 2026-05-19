@@ -21,6 +21,7 @@ import { useAuthStore } from '@/store/authStore';
 import { LANGUAGES, type LanguageMeta, getUIText } from '@/constants/languages';
 import { SPACING, RADIUS, FONT_SIZES, SHADOWS } from '@/constants/theme';
 import { PressableScale } from '@/components/PressableScale';
+import { getChildren } from '@/services/dbService';
 
 const SCREEN = {
   background: '#FAFFFE',
@@ -98,7 +99,6 @@ function LanguageCard({
 export default function WelcomeScreen() {
   const session = useAuthStore((s) => s.session);
   const setLanguage = useAppStore((s) => s.setLanguage);
-  const selectedGrade = useAppStore((s) => s.selectedGrade);
   const { change } = useLocalSearchParams<{ change?: string }>();
   const isChangingLanguage = change === '1';
   const [hydrated, setHydrated] = useState(() => useAppStore.persist.hasHydrated());
@@ -113,6 +113,30 @@ export default function WelcomeScreen() {
     return unsub;
   }, []);
 
+  // After sign-in, route the user based on whether they have any child
+  // profiles. Parents with children land on the "Who is studying today?"
+  // picker; users without children continue through the existing
+  // grade-selection flow. Skip when the user is intentionally changing
+  // language (the welcome screen is reused for that flow).
+  useEffect(() => {
+    if (!session || isChangingLanguage) return;
+
+    let cancelled = false;
+    async function checkChildren() {
+      const kids = await getChildren();
+      if (cancelled) return;
+      if (kids.length > 0) {
+        router.replace('/child-select');
+      } else {
+        router.replace('/grade');
+      }
+    }
+    checkChildren();
+    return () => {
+      cancelled = true;
+    };
+  }, [session, isChangingLanguage]);
+
   function handleSelectLanguage(lang: LanguageMeta) {
     setLanguage(lang.code);
     router.push('/grade');
@@ -124,10 +148,6 @@ export default function WelcomeScreen() {
 
   if (!hydrated) {
     return <SafeAreaView style={styles.safe} />;
-  }
-
-  if (selectedGrade != null && !isChangingLanguage) {
-    return <Redirect href="/dashboard" />;
   }
 
   return (

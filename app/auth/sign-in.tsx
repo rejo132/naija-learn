@@ -58,6 +58,7 @@ export default function SignInScreen() {
   const float2 = useRef(new Animated.Value(0)).current;
   const float3 = useRef(new Animated.Value(0)).current;
   const fadeIn = useRef(new Animated.Value(0)).current;
+  const passwordRef = useRef<any>(null);
 
   useEffect(() => {
     Animated.timing(fadeIn, {
@@ -121,6 +122,25 @@ export default function SignInScreen() {
       ])
     ).start();
   }, [fadeIn, float1, float2, float3]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.key === 'Enter' &&
+        email.trim() &&
+        password.trim() &&
+        !isLoading
+      ) {
+        handleSignIn();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [email, password, isLoading]);
 
   function validateEmail(value: string) {
     const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -331,6 +351,10 @@ export default function SignInScreen() {
                       autoCapitalize="none"
                       autoComplete="email"
                       editable={!isLoading}
+                      returnKeyType="next"
+                      onSubmitEditing={() => {
+                        passwordRef.current?.focus();
+                      }}
                     />
                     {emailValid && <Text style={styles.inputValid}>✓</Text>}
                   </View>
@@ -344,6 +368,7 @@ export default function SignInScreen() {
                   >
                     <Text style={styles.inputIcon}>🔒</Text>
                     <TextInput
+                      ref={passwordRef}
                       style={styles.passwordInput}
                       placeholder={t('password')}
                       placeholderTextColor={COLORS.textMuted}
@@ -354,6 +379,12 @@ export default function SignInScreen() {
                       editable={!isLoading}
                       onFocus={() => setPasswordFocused(true)}
                       onBlur={() => setPasswordFocused(false)}
+                      returnKeyType="go"
+                      onSubmitEditing={() => {
+                        if (email.trim() && password.trim() && !isLoading) {
+                          handleSignIn();
+                        }
+                      }}
                     />
                     <TouchableOpacity
                       style={styles.eyeBtn}

@@ -71,6 +71,16 @@ interface AppState {
   subjectProgress: Record<string, number>;
   /** Tracks whether the LearningFlow intro has been completed for a subject+grade. */
   completedFlows: Record<string, boolean>;
+  // ── Active child session ──
+  /** ID of the child currently using the app, or null when the parent is using it directly. */
+  activeChildId: string | null;
+  activeChildName: string | null;
+  activeChildAvatar: string | null;
+  activeChildGrade: number | null;
+  activeChildLanguage: string | null;
+  activeChildXP: number;
+  activeChildStreak: number;
+  activeChildLastStudyDate: string | null;
   setLanguage: (lang: LanguageCode) => void;
   setGrade: (grade: number) => void;
   setSubject: (subject: Subject) => void;
@@ -102,6 +112,19 @@ interface AppState {
   setXP: (xp: number) => void;
   setStreak: (streak: number) => void;
   setSubjectProgress: (progress: Record<string, number>) => void;
+  setActiveChild: (child: {
+    id: string;
+    name: string;
+    avatar: string;
+    grade: number;
+    language: string;
+    xp?: number;
+    streak?: number;
+    lastStudyDate?: string | null;
+  }) => void;
+  clearActiveChild: () => void;
+  addActiveChildXP: (amount: number) => void;
+  updateActiveChildStreak: () => void;
   /** Wipe all child-facing data — used by the "Delete my data" flow. */
   resetAll: () => void;
 }
@@ -127,6 +150,10 @@ type PersistedAppState = Pick<
   | 'lastOpenedAt'
   | 'subjectProgress'
   | 'completedFlows'
+  | 'activeChildId'
+  | 'activeChildXP'
+  | 'activeChildStreak'
+  | 'activeChildLastStudyDate'
 >;
 
 export const useAppStore = create<AppState>()(
@@ -155,6 +182,14 @@ export const useAppStore = create<AppState>()(
       lastOpenedAt: null,
       subjectProgress: {},
       completedFlows: {},
+      activeChildId: null,
+      activeChildName: null,
+      activeChildAvatar: null,
+      activeChildGrade: null,
+      activeChildLanguage: null,
+      activeChildXP: 0,
+      activeChildStreak: 0,
+      activeChildLastStudyDate: null,
       setLanguage: (lang) => set({ selectedLanguage: lang }),
       // Resetting subject when grade changes prevents wrong content showing for the new grade
       setGrade: (grade) => set({ selectedGrade: grade, selectedSubject: null }),
@@ -242,6 +277,54 @@ export const useAppStore = create<AppState>()(
       setXP: (xp) => set({ xp }),
       setStreak: (streak) => set({ streak }),
       setSubjectProgress: (subjectProgress) => set({ subjectProgress }),
+      setActiveChild: (child) =>
+        set({
+          activeChildId: child.id,
+          activeChildName: child.name,
+          activeChildAvatar: child.avatar,
+          activeChildGrade: child.grade,
+          activeChildLanguage: child.language,
+          activeChildXP: child.xp ?? 0,
+          activeChildStreak: child.streak ?? 0,
+          activeChildLastStudyDate: child.lastStudyDate ?? null,
+          // Also update the shared grade and language so existing screens
+          // automatically use the chosen child's settings.
+          selectedGrade: child.grade,
+          selectedLanguage: child.language as LanguageCode,
+        }),
+      clearActiveChild: () =>
+        set({
+          activeChildId: null,
+          activeChildName: null,
+          activeChildAvatar: null,
+          activeChildGrade: null,
+          activeChildLanguage: null,
+          activeChildXP: 0,
+          activeChildStreak: 0,
+          activeChildLastStudyDate: null,
+        }),
+      addActiveChildXP: (amount) =>
+        set((state) => ({
+          activeChildXP: (state.activeChildXP ?? 0) + amount,
+          // Also update the shared XP for display.
+          xp: (state.xp ?? 0) + amount,
+        })),
+      updateActiveChildStreak: () =>
+        set((state) => {
+          const today = new Date().toISOString().split('T')[0];
+          const last = state.activeChildLastStudyDate;
+          if (last === today) return {};
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          const yesterdayStr = yesterday.toISOString().split('T')[0];
+          const newStreak =
+            last === yesterdayStr ? (state.activeChildStreak ?? 0) + 1 : 1;
+          return {
+            activeChildStreak: newStreak,
+            activeChildLastStudyDate: today,
+            streak: newStreak,
+          };
+        }),
       resetAll: () =>
         set({
           xp: 0,
@@ -263,6 +346,14 @@ export const useAppStore = create<AppState>()(
           isDarkMode: false,
           messages: [],
           totalSessionSeconds: 0,
+          activeChildId: null,
+          activeChildName: null,
+          activeChildAvatar: null,
+          activeChildGrade: null,
+          activeChildLanguage: null,
+          activeChildXP: 0,
+          activeChildStreak: 0,
+          activeChildLastStudyDate: null,
         }),
     }),
     {
@@ -291,6 +382,10 @@ export const useAppStore = create<AppState>()(
         lastOpenedAt: state.lastOpenedAt,
         subjectProgress: state.subjectProgress,
         completedFlows: state.completedFlows,
+        activeChildId: state.activeChildId,
+        activeChildXP: state.activeChildXP,
+        activeChildStreak: state.activeChildStreak,
+        activeChildLastStudyDate: state.activeChildLastStudyDate,
       }),
       merge: (persisted, current) => ({
         ...current,

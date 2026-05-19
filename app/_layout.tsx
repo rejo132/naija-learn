@@ -208,6 +208,7 @@ export default function RootLayout() {
                 <Stack.Screen name="progress" />
                 <Stack.Screen name="achievements" />
                 <Stack.Screen name="children" />
+                <Stack.Screen name="child-select" />
                 <Stack.Screen name="parent-dashboard" />
                 <Stack.Screen name="personality" />
                 <Stack.Screen name="settings" />

@@ -295,10 +295,15 @@ export async function syncProfile({
 }
 
 /**
- * Get a weekly summary of progress for a specific user.
- * Used by parent dashboard to show this week's activity.
+ * Get a weekly summary of progress.
+ * Tries `child_id` first, falls back to `user_id` if a userId is provided
+ * and the child query returns no rows. This handles cases where progress
+ * was saved against the parent's auth id rather than a specific child.
  */
-export async function getWeeklySummary(userId: string): Promise<{
+export async function getWeeklySummary(
+  childId: string,
+  userId?: string
+): Promise<{
   subjectsStudied: string[];
   averageScore: number;
   totalSessions: number;
@@ -308,13 +313,32 @@ export async function getWeeklySummary(userId: string): Promise<{
     const sevenDaysAgo = new Date();
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
 
-    const { data, error } = await supabase
+    let data: Array<{
+      subject: string;
+      score: number | null;
+      duration_seconds: number | null;
+      created_at: string;
+    }> | null = null;
+
+    const { data: byChild, error: childError } = await supabase
       .from('progress')
-      .select('subject, score, duration_seconds')
-      .eq('user_id', userId)
+      .select('subject, score, duration_seconds, created_at')
+      .eq('child_id', childId)
       .gte('created_at', sevenDaysAgo.toISOString());
 
-    if (error || !data) {
+    if (!childError && byChild && byChild.length > 0) {
+      data = byChild;
+    } else if (userId) {
+      const { data: byUser, error: userError } = await supabase
+        .from('progress')
+        .select('subject, score, duration_seconds, created_at')
+        .eq('user_id', userId)
+        .gte('created_at', sevenDaysAgo.toISOString());
+
+      if (!userError) data = byUser;
+    }
+
+    if (!data || data.length === 0) {
       return {
         subjectsStudied: [],
         averageScore: 0,
@@ -350,6 +374,107 @@ export async function getWeeklySummary(userId: string): Promise<{
       totalSessions: 0,
       totalMinutes: 0,
     };
+  }
+}
+
+/**
+ * Get the most recent progress entries (up to 20) for a child.
+ * Tries `child_id` first; if that returns no rows and a userId is provided,
+ * falls back to querying by `user_id`.
+ */
+export async function getChildProgressHistory(
+  childId: string,
+  userId?: string
+): Promise<
+  Array<{
+    id: string;
+    subject: string;
+    topic: string | null;
+    score: number | null;
+    duration_seconds: number;
+    created_at: string;
+    grade: number | null;
+  }>
+> {
+  try {
+    const { data: byChild, error: childError } = await supabase
+      .from('progress')
+      .select('id, subject, topic, score, duration_seconds, created_at, grade')
+      .eq('child_id', childId)
+      .order('created_at', { ascending: false })
+      .limit(20);
+
+    if (!childError && byChild && byChild.length > 0) {
+      return byChild;
+    }
+
+    if (userId) {
+      const { data: byUser, error: userError } = await supabase
+        .from('progress')
+        .select('id, subject, topic, score, duration_seconds, created_at, grade')
+        .eq('user_id', userId)
+        .order('created_at', { ascending: false })
+        .limit(20);
+
+      if (!userError && byUser) return byUser;
+    }
+
+    return [];
+  } catch (err) {
+    console.error('getChildProgressHistory exception:', err);
+    return [];
+  }
+}
+
+/**
+ * Reconstruct a child's saved learning state from their progress rows.
+ * Sums total XP across all sessions and walks back from today to compute
+ * the current streak (consecutive days ending on today). Returns null if
+ * the underlying query fails.
+ */
+export async function loadChildProfile(childId: string): Promise<{
+  xp: number;
+  streak: number;
+  lastStudyDate: string | null;
+} | null> {
+  try {
+    const { data, error } = await supabase
+      .from('progress')
+      .select('xp_earned, created_at')
+      .eq('child_id', childId)
+      .order('created_at', { ascending: false });
+
+    if (error || !data) return null;
+
+    const totalXP = data.reduce((sum, row) => sum + (row.xp_earned ?? 0), 0);
+
+    const dates = data
+      .map((row) => (row.created_at as string).split('T')[0])
+      .filter((v, i, a) => a.indexOf(v) === i)
+      .sort()
+      .reverse();
+
+    let streak = 0;
+    const today = new Date();
+    for (let i = 0; i < dates.length; i++) {
+      const expected = new Date(today);
+      expected.setDate(today.getDate() - i);
+      const expectedStr = expected.toISOString().split('T')[0];
+      if (dates[i] === expectedStr) {
+        streak++;
+      } else {
+        break;
+      }
+    }
+
+    return {
+      xp: totalXP,
+      streak,
+      lastStudyDate: dates[0] ?? null,
+    };
+  } catch (err) {
+    console.error('loadChildProfile exception:', err);
+    return null;
   }
 }
 

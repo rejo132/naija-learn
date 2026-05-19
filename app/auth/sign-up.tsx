@@ -2,7 +2,7 @@
  * Sign up screen.
  * Parents create an account with email and password.
  */
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   View,
   Text,
@@ -54,7 +54,33 @@ export default function SignUpScreen() {
   const { t, language } = useTranslation();
   const ui = getUIText(language);
 
+  const phoneRef = useRef<any>(null);
+  const emailRef = useRef<any>(null);
+  const passwordRef = useRef<any>(null);
+  const confirmPasswordRef = useRef<any>(null);
+
   const displayError = localError || storeError || '';
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.key === 'Enter' &&
+        name.trim() &&
+        email.trim() &&
+        password.trim() &&
+        confirmPassword.trim() &&
+        !isLoading
+      ) {
+        handleSignUp();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [name, email, password, confirmPassword, isLoading]);
 
   function validateEmail(value: string) {
     const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -181,12 +207,17 @@ export default function SignUpScreen() {
                   autoCapitalize="words"
                   autoComplete="name"
                   editable={!isLoading}
+                  returnKeyType="next"
+                  onSubmitEditing={() => {
+                    phoneRef.current?.focus();
+                  }}
                 />
               </View>
 
               <View style={styles.inputGroup}>
                 <Text style={styles.inputIcon}>📱</Text>
                 <TextInput
+                  ref={phoneRef}
                   style={styles.input}
                   placeholder="0803 000 0000"
                   placeholderTextColor={COLORS.textMuted}
@@ -195,6 +226,10 @@ export default function SignUpScreen() {
                   keyboardType="phone-pad"
                   autoComplete="tel"
                   editable={!isLoading}
+                  returnKeyType="next"
+                  onSubmitEditing={() => {
+                    emailRef.current?.focus();
+                  }}
                 />
               </View>
 
@@ -210,6 +245,7 @@ export default function SignUpScreen() {
               >
                 <Text style={styles.inputIcon}>📧</Text>
                 <TextInput
+                  ref={emailRef}
                   style={styles.input}
                   placeholder="name@example.com"
                   placeholderTextColor={COLORS.textMuted}
@@ -222,6 +258,10 @@ export default function SignUpScreen() {
                   autoCapitalize="none"
                   autoComplete="email"
                   editable={!isLoading}
+                  returnKeyType="next"
+                  onSubmitEditing={() => {
+                    passwordRef.current?.focus();
+                  }}
                 />
                 {emailValid && <Text style={styles.inputValid}>✓</Text>}
               </View>
@@ -235,6 +275,7 @@ export default function SignUpScreen() {
               >
                 <Text style={styles.inputIcon}>🔒</Text>
                 <TextInput
+                  ref={passwordRef}
                   style={styles.passwordInput}
                   placeholder={t('password')}
                   placeholderTextColor={COLORS.textMuted}
@@ -245,6 +286,10 @@ export default function SignUpScreen() {
                   editable={!isLoading}
                   onFocus={() => setPasswordFocused(true)}
                   onBlur={() => setPasswordFocused(false)}
+                  returnKeyType="next"
+                  onSubmitEditing={() => {
+                    confirmPasswordRef.current?.focus();
+                  }}
                 />
                 <TouchableOpacity
                   style={styles.eyeBtn}
@@ -262,6 +307,7 @@ export default function SignUpScreen() {
               >
                 <Text style={styles.inputIcon}>🔒</Text>
                 <TextInput
+                  ref={confirmPasswordRef}
                   style={styles.passwordInput}
                   placeholder={ui.confirmPassword}
                   placeholderTextColor={COLORS.textMuted}
@@ -272,6 +318,18 @@ export default function SignUpScreen() {
                   editable={!isLoading}
                   onFocus={() => setConfirmPasswordFocused(true)}
                   onBlur={() => setConfirmPasswordFocused(false)}
+                  returnKeyType="go"
+                  onSubmitEditing={() => {
+                    if (
+                      name.trim() &&
+                      email.trim() &&
+                      password.trim() &&
+                      confirmPassword.trim() &&
+                      !isLoading
+                    ) {
+                      handleSignUp();
+                    }
+                  }}
                 />
                 <TouchableOpacity
                   style={styles.eyeBtn}

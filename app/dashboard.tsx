@@ -58,6 +58,8 @@ export default function DashboardScreen() {
   const lastGrade = useAppStore((s) => s.lastGrade);
   const lastOpenedAt = useAppStore((s) => s.lastOpenedAt);
   const subjectProgress = useAppStore((s) => s.subjectProgress);
+  const activeChildName = useAppStore((s) => s.activeChildName);
+  const activeChildAvatar = useAppStore((s) => s.activeChildAvatar);
   const user = useAuthStore((s) => s.user);
   const ui = getUIText(selectedLanguage);
   const { t } = useTranslation();
@@ -179,6 +181,20 @@ export default function DashboardScreen() {
                   {LANGUAGE_NAMES[selectedLanguage as Language]?.split(' ')[0]}
                 </Text>
               </TouchableOpacity>
+              {activeChildName && (
+                <TouchableOpacity
+                  style={styles.switchChildBtn}
+                  onPress={() => router.push('/child-select')}
+                >
+                  <Text style={styles.switchChildAvatar}>
+                    {activeChildAvatar ?? '🧒'}
+                  </Text>
+                  <Text style={styles.switchChildName} numberOfLines={1}>
+                    {activeChildName}
+                  </Text>
+                  <Text style={styles.switchChildArrow}>⇄</Text>
+                </TouchableOpacity>
+              )}
             </View>
           </View>
 
@@ -587,6 +603,29 @@ const styles = StyleSheet.create({
   },
   langPillText: {
     fontSize: 16,
+  },
+  switchChildBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    backgroundColor: COLORS.primaryLight,
+    borderRadius: RADIUS.full,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: 6,
+    borderWidth: 1,
+    borderColor: COLORS.primaryGlow,
+    marginTop: SPACING.sm,
+  },
+  switchChildAvatar: { fontSize: 16 },
+  switchChildName: {
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-SemiBold',
+    color: COLORS.primaryDark,
+    maxWidth: 80,
+  },
+  switchChildArrow: {
+    fontSize: FONT_SIZES.xs,
+    color: COLORS.primary,
   },
 
   promptBar: {
