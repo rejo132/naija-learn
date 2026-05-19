@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { COLORS, FONT_SIZES, SPACING, RADIUS } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
+import { useAppStore } from '@/store/appStore';
 
 interface ParentGateProps {
   visible: boolean;
@@ -16,15 +17,14 @@ interface ParentGateProps {
   onCancel: () => void;
 }
 
-const PARENT_PIN = '1234'; // TODO: make this configurable per family
-
 export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
   const { colors, isDarkMode } = useTheme();
+  const parentPin = useAppStore((s) => s.parentPin);
   const [pin, setPin] = useState('');
   const [error, setError] = useState('');
 
   function handleSubmit() {
-    if (pin === PARENT_PIN) {
+    if (pin === parentPin) {
       setPin('');
       setError('');
       onSuccess();
@@ -97,8 +97,10 @@ export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
           </TouchableOpacity>
 
           <Text style={[styles.hint, { color: colors.textMuted }]}>
-            Default PIN: 1234{'\n'}
-            Change it in Settings
+            Change your PIN in{' '}
+            <Text style={{ color: colors.primary }}>
+              Settings → Parent Zone
+            </Text>
           </Text>
         </View>
       </View>

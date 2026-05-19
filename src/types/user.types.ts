@@ -1,3 +1,7 @@
+// NOTE: These types are legacy. The canonical
+// Child and Parent types live in dbService.ts.
+// Do not use these for new code.
+
 /**
  * User and authentication types for Learnova.
  * Parents are the paying customers; children are the learners.

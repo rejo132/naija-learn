@@ -107,15 +107,20 @@ export function SideDrawer() {
 
   async function handleSignOut() {
     try {
+      // Wipe local cached learning state BEFORE clearing the session so the
+      // next user signing in on this device doesn't inherit XP / streak /
+      // active child / parent PIN from the previous user.
+      useAppStore.getState().resetAll();
       useAuthStore.getState().setSession(null);
       useAuthStore.getState().setUserRole(null);
 
-      supabase.auth.signOut().catch((e) => {
+      await supabase.auth.signOut().catch((e) => {
         console.error('Supabase signOut error (ignored):', e);
       });
 
       router.replace('/auth/sign-in');
     } catch {
+      useAppStore.getState().resetAll();
       useAuthStore.getState().setSession(null);
       useAuthStore.getState().setUserRole(null);
       router.replace('/auth/sign-in');

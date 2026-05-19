@@ -9,12 +9,13 @@ import {
   TouchableOpacity,
   StyleSheet,
   ScrollView,
-  SafeAreaView,
   Switch,
   Linking,
   Modal,
   TextInput,
+  Alert,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { useTheme } from '@/hooks/useTheme';
 import { useAppStore } from '@/store/appStore';
@@ -139,12 +140,13 @@ export default function SettingsScreen() {
   async function handleDeleteData() {
     if (deleteConfirmText !== 'DELETE') return;
     try {
-      useAppStore.getState().resetAll?.();
+      useAppStore.getState().resetAll();
       useAuthStore.getState().setSession(null);
       useAuthStore.getState().setUserRole(null);
-      supabase.auth.signOut().catch(() => {});
+      await supabase.auth.signOut().catch(() => {});
       router.replace('/auth/sign-in');
     } catch {
+      useAppStore.getState().resetAll();
       useAuthStore.getState().setSession(null);
       router.replace('/auth/sign-in');
     }
@@ -160,14 +162,18 @@ export default function SettingsScreen() {
     Linking.openURL('https://learnova.app/privacy');
   }
 
-  function handleSignOut() {
+  async function handleSignOut() {
+    // Wipe local cached learning state BEFORE clearing the session so the
+    // next user signing in on this device doesn't inherit XP / streak /
+    // active child / parent PIN from the previous user.
+    useAppStore.getState().resetAll();
     useAuthStore.getState().setSession(null);
     useAuthStore.getState().setUserRole(null);
-    supabase.auth.signOut().catch(() => {});
+    await supabase.auth.signOut().catch(() => {});
     router.replace('/auth/sign-in');
   }
 
-  const cardBg = isDarkMode ? '#1A2420' : '#FFFFFF';
+  const cardBg = colors.backgroundCard;
   const languageFullName = LANGUAGE_NAMES[selectedLanguage as Language] ?? 'English';
   const languageBadge = languageFullName.split(' ')[0];
 
@@ -217,8 +223,8 @@ export default function SettingsScreen() {
         <View style={[styles.card, { backgroundColor: cardBg }]}>
           <SettingsRow
             emoji="🔐"
-            label="Change Password"
-            sublabel="Update your account password"
+            label="Change Parent PIN"
+            sublabel="Update the 4-digit Parent Portal PIN"
             onPress={() => router.push('/change-password')}
             colors={colors}
             isLast
@@ -245,7 +251,12 @@ export default function SettingsScreen() {
             emoji="📋"
             label="Subject Focus"
             sublabel="Choose priority subjects"
-            onPress={() => openParentZone('children')}
+            onPress={() =>
+              Alert.alert(
+                'Subject Focus',
+                'Subject focus can be set per child in Manage Children.'
+              )
+            }
             colors={colors}
           />
           <SettingsRow

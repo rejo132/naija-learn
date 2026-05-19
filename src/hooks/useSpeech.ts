@@ -13,9 +13,9 @@ export type VoiceLanguage = 'en' | 'ha' | 'yo' | 'ig';
 
 const SPEECH_LOCALES: Record<VoiceLanguage, string> = {
   en: 'en-NG',
-  ha: 'ha',
-  yo: 'yo',
-  ig: 'ig',
+  ha: 'ha-NG',
+  yo: 'yo-NG',
+  ig: 'ig-NG',
 };
 
 const FALLBACK_LOCALE = 'en-NG';
@@ -33,7 +33,6 @@ function cleanForSpeech(input: string): string {
 
 export function useSpeech(language: VoiceLanguage = 'en') {
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const [isSupported, setIsSupported] = useState(true);
 
   const speak = useCallback(
     async (text: string) => {
@@ -69,7 +68,6 @@ export function useSpeech(language: VoiceLanguage = 'en') {
         });
       } catch {
         setIsSpeaking(false);
-        setIsSupported(false);
       }
     },
     [language]
@@ -94,5 +92,5 @@ export function useSpeech(language: VoiceLanguage = 'en') {
     [isSpeaking, speak, stop]
   );
 
-  return { speak, stop, toggle, isSpeaking, isSupported };
+  return { speak, stop, toggle, isSpeaking };
 }

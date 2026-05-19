@@ -24,7 +24,7 @@ export default function PersonalityScreen() {
   }
 
   return (
-    <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
       <Atmosphere pointerEvents="none" />
       <View style={styles.content}>
         <GlassCard style={[styles.header, isDarkMode && { backgroundColor: colors.backgroundCard }]}>

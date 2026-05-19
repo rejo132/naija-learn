@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#008751"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.learnova.app",
@@ -86,11 +88,12 @@
       "kids learning",
       "gamification"
     ],
-    "owner": "YOUR_EXPO_USERNAME",
+    "owner": "rejeshos-organization",
     "extra": {
       "eas": {
-        "projectId": "your-eas-project-id"
-      }
+        "projectId": "53a5a55d-f949-4d25-b2e3-fb94397d6f2a"
+      },
+      "router": {}
     }
   }
 }

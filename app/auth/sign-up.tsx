@@ -54,10 +54,10 @@ export default function SignUpScreen() {
   const { t, language } = useTranslation();
   const ui = getUIText(language);
 
-  const phoneRef = useRef<any>(null);
-  const emailRef = useRef<any>(null);
-  const passwordRef = useRef<any>(null);
-  const confirmPasswordRef = useRef<any>(null);
+  const phoneRef = useRef<TextInput | null>(null);
+  const emailRef = useRef<TextInput | null>(null);
+  const passwordRef = useRef<TextInput | null>(null);
+  const confirmPasswordRef = useRef<TextInput | null>(null);
 
   const displayError = localError || storeError || '';
 
@@ -114,7 +114,9 @@ export default function SignUpScreen() {
     clearError();
     try {
       await signUp(email.trim(), password, name.trim(), phone.trim());
-      router.replace('/dashboard');
+      // New accounts have no children yet — child-select handles that case
+      // and routes onward to /grade automatically.
+      router.replace('/child-select');
     } catch {
       // error is set in the store — shown via displayError
     } finally {

@@ -78,7 +78,7 @@ export default function ParentDashboardScreen() {
   const summary = selectedChild ? summaries[selectedChild.id] : null;
 
   return (
-    <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
       <Atmosphere pointerEvents="none" />
       <ScrollView contentContainerStyle={[styles.scroll, { backgroundColor: colors.background }]}>
 

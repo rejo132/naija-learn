@@ -1,8 +1,9 @@
 /**
  * Achievements screen — view locked and unlocked achievements.
  */
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { router } from 'expo-router';
 import { useAppStore } from '@/store/appStore';
 import { ACHIEVEMENTS, getLevel } from '@/constants/achievements';
 import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
@@ -18,12 +19,27 @@ export default function AchievementsScreen() {
   const { colors, isDarkMode } = useTheme();
 
   return (
-    <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? colors.background : '#F9F6F0' }]}>
       <Atmosphere pointerEvents="none" />
       <View style={styles.content}>
-        <GlassCard style={[styles.header, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
-          <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>🏆 Achievements</Text>
-        </GlassCard>
+        <View style={styles.headerRow}>
+          <TouchableOpacity
+            style={styles.backBtn}
+            activeOpacity={0.7}
+            onPress={() => router.back()}
+          >
+            <Text style={[styles.backArrow, { color: colors.primary }]}>←</Text>
+          </TouchableOpacity>
+          <GlassCard
+            style={[
+              styles.header,
+              styles.headerCard,
+              isDarkMode && { backgroundColor: colors.backgroundCard },
+            ]}
+          >
+            <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>🏆 Achievements</Text>
+          </GlassCard>
+        </View>
 
         <GlassCard style={[styles.statsCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
           <View style={styles.statItem}>
@@ -89,6 +105,26 @@ export default function AchievementsScreen() {
 const styles = StyleSheet.create({
   safe: { flex: 1 },
   content: { flex: 1, paddingHorizontal: SPACING.lg },
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: SPACING.sm,
+    marginBottom: SPACING.md,
+    gap: SPACING.sm,
+  },
+  backBtn: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  backArrow: {
+    fontSize: 28,
+    fontWeight: '700',
+    lineHeight: 28,
+  },
+  headerCard: { flex: 1, marginTop: 0, marginBottom: 0 },
   header: {
     flexDirection: 'row',
     alignItems: 'center',

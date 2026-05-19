@@ -102,7 +102,8 @@ export default function DashboardScreen() {
       personalityId: selectedPersonalityId ?? 'aunty_naija',
       lastActiveDate: lastActiveDate ?? new Date().toISOString().split('T')[0],
     }).catch(() => {});
-  }, [xp, streak]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [xp, streak, selectedGrade, selectedLanguage, selectedPersonalityId]);
 
   if (!selectedGrade) return <Redirect href="/grade" />;
 
@@ -139,7 +140,7 @@ export default function DashboardScreen() {
   ];
 
   return (
-    <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
       <View style={styles.safeInner}>
         <Atmosphere />
         <ScrollView
@@ -203,7 +204,7 @@ export default function DashboardScreen() {
             style={[
               styles.promptBar,
               {
-                backgroundColor: isDarkMode ? '#1A2420' : colors.backgroundCard,
+                backgroundColor: colors.backgroundCard,
                 borderColor: isDarkMode ? 'rgba(255,255,255,0.08)' : colors.border,
               },
             ]}
@@ -248,7 +249,7 @@ export default function DashboardScreen() {
               style={[
                 styles.resumeCard,
                 {
-                  backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
+                  backgroundColor: colors.backgroundCard,
                   borderColor: colors.primaryGlow,
                 },
               ]}

@@ -23,11 +23,13 @@ import { useAuthStore } from '@/store/authStore';
 import { getChildren, loadChildProfile, type Child } from '@/services/dbService';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { GlassCard } from '@/components/GlassCard';
+import { ParentGate } from '@/components/ParentGate';
 
 export default function ChildSelectScreen() {
   const [children, setChildren] = useState<Child[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectingId, setSelectingId] = useState<string | null>(null);
+  const [showParentGate, setShowParentGate] = useState(false);
   const setActiveChild = useAppStore((s) => s.setActiveChild);
 
   useEffect(() => {
@@ -62,7 +64,21 @@ export default function ChildSelectScreen() {
   }
 
   function handleAddChild() {
-    router.push('/children');
+    // Adding/removing children is a parent action — gate it behind the PIN
+    // even though we reached this screen from inside an authenticated session.
+    // A child sitting on the picker shouldn't be able to delete their siblings.
+    setShowParentGate(true);
+  }
+
+  async function handleSignOut() {
+    // Wipe local cached learning state BEFORE clearing the session so the
+    // next user signing in on this device doesn't inherit XP / streak /
+    // active child / parent PIN from the previous user.
+    useAppStore.getState().resetAll();
+    // useAuthStore.signOut() internally calls supabase.auth.signOut() and
+    // also clears the local session/user/role — keeping it single-source.
+    await useAuthStore.getState().signOut();
+    router.replace('/auth/sign-in');
   }
 
   return (
@@ -159,11 +175,21 @@ export default function ChildSelectScreen() {
 
         <TouchableOpacity
           style={styles.signOutLink}
-          onPress={() => useAuthStore.getState().signOut()}
+          activeOpacity={0.7}
+          onPress={handleSignOut}
         >
           <Text style={styles.signOutText}>Sign Out</Text>
         </TouchableOpacity>
       </LinearGradient>
+
+      <ParentGate
+        visible={showParentGate}
+        onSuccess={() => {
+          setShowParentGate(false);
+          router.push('/children');
+        }}
+        onCancel={() => setShowParentGate(false)}
+      />
     </SafeAreaView>
   );
 }

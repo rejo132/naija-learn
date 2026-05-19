@@ -38,13 +38,10 @@ export default function SignInScreen() {
   const { width } = useWindowDimensions();
   const isWide = width > 768;
 
-  const [authMode, setAuthMode] = useState<'email' | 'phone'>('email');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [passwordFocused, setPasswordFocused] = useState(false);
-  const [keepSignedIn, setKeepSignedIn] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [emailValid, setEmailValid] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -58,7 +55,7 @@ export default function SignInScreen() {
   const float2 = useRef(new Animated.Value(0)).current;
   const float3 = useRef(new Animated.Value(0)).current;
   const fadeIn = useRef(new Animated.Value(0)).current;
-  const passwordRef = useRef<any>(null);
+  const passwordRef = useRef<TextInput | null>(null);
 
   useEffect(() => {
     Animated.timing(fadeIn, {
@@ -157,10 +154,6 @@ export default function SignInScreen() {
   }
 
   async function handleSignIn() {
-    if (authMode === 'phone') {
-      setError('Phone sign-in is coming soon. Please use email.');
-      return;
-    }
     if (!email.trim() || !password.trim()) return;
     if (emailError) return;
 
@@ -169,7 +162,10 @@ export default function SignInScreen() {
     clearError();
     try {
       await signIn(email.trim(), password);
-      router.replace('/dashboard');
+      // Always send the user through the child picker so parents with
+      // multiple kids choose which profile is studying. The picker itself
+      // forwards parents without children straight on to /grade.
+      router.replace('/child-select');
     } catch {
       setError('No account found. Please check your details.');
     } finally {
@@ -296,131 +292,74 @@ export default function SignInScreen() {
               <Text style={styles.welcomeTitle}>{t('welcomeBackAuth')}</Text>
               <Text style={styles.welcomeSub}>{t('signInToContinue')}</Text>
 
-              <View style={styles.authToggle}>
+              <View
+                style={[
+                  styles.inputGroup,
+                  emailError
+                    ? styles.inputGroupError
+                    : emailValid
+                      ? styles.inputGroupValid
+                      : null,
+                ]}
+              >
+                <Text style={styles.inputIcon}>📧</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder="name@example.com"
+                  placeholderTextColor={COLORS.textMuted}
+                  value={email}
+                  onChangeText={(v) => {
+                    setEmail(v);
+                    validateEmail(v);
+                  }}
+                  keyboardType="email-address"
+                  autoCapitalize="none"
+                  autoComplete="email"
+                  editable={!isLoading}
+                  returnKeyType="next"
+                  onSubmitEditing={() => {
+                    passwordRef.current?.focus();
+                  }}
+                />
+                {emailValid && <Text style={styles.inputValid}>✓</Text>}
+              </View>
+              {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
+
+              <View
+                style={[
+                  styles.passwordGroup,
+                  passwordFocused && styles.inputGroupFocused,
+                ]}
+              >
+                <Text style={styles.inputIcon}>🔒</Text>
+                <TextInput
+                  ref={passwordRef}
+                  style={styles.passwordInput}
+                  placeholder={t('password')}
+                  placeholderTextColor={COLORS.textMuted}
+                  value={password}
+                  onChangeText={setPassword}
+                  secureTextEntry={!showPassword}
+                  autoComplete="password"
+                  editable={!isLoading}
+                  onFocus={() => setPasswordFocused(true)}
+                  onBlur={() => setPasswordFocused(false)}
+                  returnKeyType="go"
+                  onSubmitEditing={() => {
+                    if (email.trim() && password.trim() && !isLoading) {
+                      handleSignIn();
+                    }
+                  }}
+                />
                 <TouchableOpacity
-                  style={[styles.toggleBtn, authMode === 'email' && styles.toggleBtnActive]}
-                  onPress={() => setAuthMode('email')}
+                  style={styles.eyeBtn}
+                  onPress={() => setShowPassword((s) => !s)}
                 >
-                  <Text
-                    style={[
-                      styles.toggleBtnText,
-                      authMode === 'email' && styles.toggleBtnTextActive,
-                    ]}
-                  >
-                    {ui.emailMode}
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={[styles.toggleBtn, authMode === 'phone' && styles.toggleBtnActive]}
-                  onPress={() => setAuthMode('phone')}
-                >
-                  <Text
-                    style={[
-                      styles.toggleBtnText,
-                      authMode === 'phone' && styles.toggleBtnTextActive,
-                    ]}
-                  >
-                    {ui.phoneMode}
-                  </Text>
+                  <Text style={styles.eyeIcon}>{showPassword ? '🙈' : '👁️'}</Text>
                 </TouchableOpacity>
               </View>
 
-              {authMode === 'email' && (
-                <>
-                  <View
-                    style={[
-                      styles.inputGroup,
-                      emailError
-                        ? styles.inputGroupError
-                        : emailValid
-                          ? styles.inputGroupValid
-                          : null,
-                    ]}
-                  >
-                    <Text style={styles.inputIcon}>📧</Text>
-                    <TextInput
-                      style={styles.input}
-                      placeholder="name@example.com"
-                      placeholderTextColor={COLORS.textMuted}
-                      value={email}
-                      onChangeText={(v) => {
-                        setEmail(v);
-                        validateEmail(v);
-                      }}
-                      keyboardType="email-address"
-                      autoCapitalize="none"
-                      autoComplete="email"
-                      editable={!isLoading}
-                      returnKeyType="next"
-                      onSubmitEditing={() => {
-                        passwordRef.current?.focus();
-                      }}
-                    />
-                    {emailValid && <Text style={styles.inputValid}>✓</Text>}
-                  </View>
-                  {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
-
-                  <View
-                    style={[
-                      styles.passwordGroup,
-                      passwordFocused && styles.inputGroupFocused,
-                    ]}
-                  >
-                    <Text style={styles.inputIcon}>🔒</Text>
-                    <TextInput
-                      ref={passwordRef}
-                      style={styles.passwordInput}
-                      placeholder={t('password')}
-                      placeholderTextColor={COLORS.textMuted}
-                      value={password}
-                      onChangeText={setPassword}
-                      secureTextEntry={!showPassword}
-                      autoComplete="password"
-                      editable={!isLoading}
-                      onFocus={() => setPasswordFocused(true)}
-                      onBlur={() => setPasswordFocused(false)}
-                      returnKeyType="go"
-                      onSubmitEditing={() => {
-                        if (email.trim() && password.trim() && !isLoading) {
-                          handleSignIn();
-                        }
-                      }}
-                    />
-                    <TouchableOpacity
-                      style={styles.eyeBtn}
-                      onPress={() => setShowPassword((s) => !s)}
-                    >
-                      <Text style={styles.eyeIcon}>{showPassword ? '🙈' : '👁️'}</Text>
-                    </TouchableOpacity>
-                  </View>
-                </>
-              )}
-
-              {authMode === 'phone' && (
-                <View style={styles.inputGroup}>
-                  <Text style={styles.inputIcon}>📱</Text>
-                  <TextInput
-                    style={styles.input}
-                    placeholder="0803 000 0000"
-                    placeholderTextColor={COLORS.textMuted}
-                    value={phone}
-                    onChangeText={setPhone}
-                    keyboardType="phone-pad"
-                    editable={!isLoading}
-                  />
-                </View>
-              )}
-
               <View style={styles.formRow}>
-                <TouchableOpacity
-                  style={styles.checkRow}
-                  onPress={() => setKeepSignedIn((k) => !k)}
-                >
-                  <View style={[styles.checkbox, keepSignedIn && styles.checkboxChecked]}>
-                    {keepSignedIn && <Text style={styles.checkmark}>✓</Text>}
-                  </View>
-                  <Text style={styles.checkLabel}>{t('keepSignedIn')}</Text>
-                </TouchableOpacity>
                 <TouchableOpacity onPress={() => router.push('/auth/forgot-password')}>
                   <Text style={styles.forgotText}>{t('forgotPassword')}</Text>
                 </TouchableOpacity>

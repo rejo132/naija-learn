@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useAuthStore } from '@/store/authStore';
 import { getChildren, addChild, deleteChild, Child } from '@/services/dbService';
 import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
@@ -27,7 +26,6 @@ const LANGUAGES = [
 ];
 
 export default function ChildrenScreen() {
-  const user = useAuthStore((s) => s.user);
   const { colors, isDarkMode } = useTheme();
   const [children, setChildren] = useState<Child[]>([]);
   const [isLoading, setIsLoading] = useState(true);

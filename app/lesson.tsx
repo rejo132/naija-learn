@@ -26,7 +26,6 @@ import Animated, {
 import { Redirect, router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore, type ChatMessage } from '@/store/appStore';
-import { useAuthStore } from '@/store/authStore';
 import { saveProgress } from '@/services/dbService';
 import { getGreeting, getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -303,7 +302,6 @@ export default function LessonScreen() {
   const activeChildId = useAppStore((s) => s.activeChildId);
   const addActiveChildXP = useAppStore((s) => s.addActiveChildXP);
   const updateActiveChildStreak = useAppStore((s) => s.updateActiveChildStreak);
-  const user = useAuthStore((s) => s.user);
   const { speak, stop, toggle, isSpeaking } = useSpeech(
     (selectedLanguage as VoiceLanguage) ?? 'en'
   );
@@ -926,7 +924,7 @@ export default function LessonScreen() {
 
           {showSendHint && (
             <Text style={[styles.sendHint, { color: colors.textMuted }]}>
-              Press Enter to send • Shift+Enter for new line
+              Tap send or press Enter to send
             </Text>
           )}
           </>

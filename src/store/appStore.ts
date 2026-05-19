@@ -81,6 +81,8 @@ interface AppState {
   activeChildXP: number;
   activeChildStreak: number;
   activeChildLastStudyDate: string | null;
+  /** 4-digit PIN that unlocks the parent portal (`ParentGate`). Default `'1234'`. */
+  parentPin: string;
   setLanguage: (lang: LanguageCode) => void;
   setGrade: (grade: number) => void;
   setSubject: (subject: Subject) => void;
@@ -125,6 +127,7 @@ interface AppState {
   clearActiveChild: () => void;
   addActiveChildXP: (amount: number) => void;
   updateActiveChildStreak: () => void;
+  setParentPin: (pin: string) => void;
   /** Wipe all child-facing data — used by the "Delete my data" flow. */
   resetAll: () => void;
 }
@@ -151,45 +154,71 @@ type PersistedAppState = Pick<
   | 'subjectProgress'
   | 'completedFlows'
   | 'activeChildId'
+  | 'activeChildName'
+  | 'activeChildAvatar'
+  | 'activeChildGrade'
+  | 'activeChildLanguage'
   | 'activeChildXP'
   | 'activeChildStreak'
   | 'activeChildLastStudyDate'
+  | 'parentPin'
 >;
+
+/**
+ * Default values for every state field. Extracted so both the store
+ * initialiser and `resetAll` can spread it — guaranteeing they stay
+ * in sync when new fields are added.
+ */
+type AppStateValues = Omit<AppState,
+  | 'setLanguage' | 'setGrade' | 'setSubject' | 'setPersonality'
+  | 'addMessage' | 'clearMessages' | 'setAILoading' | 'setAppReady'
+  | 'startSession' | 'endSession' | 'addXP' | 'updateStreak'
+  | 'incrementLessons' | 'updateBestQuizScore' | 'unlockAchievement'
+  | 'toggleDarkMode' | 'setLastSession' | 'updateSubjectProgress'
+  | 'markFlowCompleted' | 'setXP' | 'setStreak' | 'setSubjectProgress'
+  | 'setActiveChild' | 'clearActiveChild' | 'addActiveChildXP'
+  | 'updateActiveChildStreak' | 'setParentPin' | 'resetAll'
+>;
+
+const initialState: AppStateValues = {
+  selectedLanguage: 'en',
+  selectedGrade: null,
+  selectedSubject: null,
+  selectedPersonalityId: DEFAULT_PERSONALITY_ID,
+  messages: [],
+  isAILoading: false,
+  isAppReady: false,
+  sessionStartTime: null,
+  totalSessionSeconds: 0,
+  xp: 0,
+  streak: 0,
+  lastStudyDate: null,
+  lessonsCompleted: 0,
+  bestQuizScore: 0,
+  unlockedAchievements: [],
+  isDarkMode: false,
+  lastSubject: null,
+  lastSubjectEmoji: null,
+  lastGrade: null,
+  lastPersonalityId: null,
+  lastOpenedAt: null,
+  subjectProgress: {},
+  completedFlows: {},
+  activeChildId: null,
+  activeChildName: null,
+  activeChildAvatar: null,
+  activeChildGrade: null,
+  activeChildLanguage: null,
+  activeChildXP: 0,
+  activeChildStreak: 0,
+  activeChildLastStudyDate: null,
+  parentPin: '1234',
+};
 
 export const useAppStore = create<AppState>()(
   persist(
     (set) => ({
-      selectedLanguage: 'en',
-      selectedGrade: null,
-      selectedSubject: null,
-      selectedPersonalityId: DEFAULT_PERSONALITY_ID,
-      messages: [],
-      isAILoading: false,
-      isAppReady: false,
-      sessionStartTime: null,
-      totalSessionSeconds: 0,
-      xp: 0,
-      streak: 0,
-      lastStudyDate: null,
-      lessonsCompleted: 0,
-      bestQuizScore: 0,
-      unlockedAchievements: [],
-      isDarkMode: false,
-      lastSubject: null,
-      lastSubjectEmoji: null,
-      lastGrade: null,
-      lastPersonalityId: null,
-      lastOpenedAt: null,
-      subjectProgress: {},
-      completedFlows: {},
-      activeChildId: null,
-      activeChildName: null,
-      activeChildAvatar: null,
-      activeChildGrade: null,
-      activeChildLanguage: null,
-      activeChildXP: 0,
-      activeChildStreak: 0,
-      activeChildLastStudyDate: null,
+      ...initialState,
       setLanguage: (lang) => set({ selectedLanguage: lang }),
       // Resetting subject when grade changes prevents wrong content showing for the new grade
       setGrade: (grade) => set({ selectedGrade: grade, selectedSubject: null }),
@@ -309,6 +338,7 @@ export const useAppStore = create<AppState>()(
           // Also update the shared XP for display.
           xp: (state.xp ?? 0) + amount,
         })),
+      setParentPin: (pin) => set({ parentPin: pin }),
       updateActiveChildStreak: () =>
         set((state) => {
           const today = new Date().toISOString().split('T')[0];
@@ -325,36 +355,7 @@ export const useAppStore = create<AppState>()(
             streak: newStreak,
           };
         }),
-      resetAll: () =>
-        set({
-          xp: 0,
-          streak: 0,
-          lastStudyDate: null,
-          lessonsCompleted: 0,
-          bestQuizScore: 0,
-          unlockedAchievements: [],
-          lastSubject: null,
-          lastSubjectEmoji: null,
-          lastGrade: null,
-          lastPersonalityId: null,
-          lastOpenedAt: null,
-          subjectProgress: {},
-          completedFlows: {},
-          selectedGrade: null,
-          selectedLanguage: 'en',
-          selectedSubject: null,
-          isDarkMode: false,
-          messages: [],
-          totalSessionSeconds: 0,
-          activeChildId: null,
-          activeChildName: null,
-          activeChildAvatar: null,
-          activeChildGrade: null,
-          activeChildLanguage: null,
-          activeChildXP: 0,
-          activeChildStreak: 0,
-          activeChildLastStudyDate: null,
-        }),
+      resetAll: () => set({ ...initialState }),
     }),
     {
       name: 'learnova-app-store',
@@ -383,9 +384,14 @@ export const useAppStore = create<AppState>()(
         subjectProgress: state.subjectProgress,
         completedFlows: state.completedFlows,
         activeChildId: state.activeChildId,
+        activeChildName: state.activeChildName,
+        activeChildAvatar: state.activeChildAvatar,
+        activeChildGrade: state.activeChildGrade,
+        activeChildLanguage: state.activeChildLanguage,
         activeChildXP: state.activeChildXP,
         activeChildStreak: state.activeChildStreak,
         activeChildLastStudyDate: state.activeChildLastStudyDate,
+        parentPin: state.parentPin,
       }),
       merge: (persisted, current) => ({
         ...current,

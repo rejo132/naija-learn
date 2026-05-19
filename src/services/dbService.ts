@@ -8,6 +8,7 @@
  * - Used by: screens and stores that need to read/write data
  */
 import { supabase } from '@/lib/supabase';
+import { captureError } from '@/lib/sentry';
 
 // ─── Types ────────────────────────────────────────────────
 
@@ -53,7 +54,7 @@ export async function getProfile(): Promise<Profile | null> {
     .select('*')
     .single();
   if (error) {
-    console.error('getProfile error:', error.message);
+    captureError(error, { context: 'getProfile error' });
     return null;
   }
   return data;
@@ -70,7 +71,7 @@ export async function updateProfile(
     .update(updates)
     .eq('id', (await supabase.auth.getUser()).data.user?.id ?? '');
   if (error) {
-    console.error('updateProfile error:', error.message);
+    captureError(error, { context: 'updateProfile error' });
     return false;
   }
   return true;
@@ -87,7 +88,7 @@ export async function getChildren(): Promise<Child[]> {
     .select('*')
     .order('created_at', { ascending: true });
   if (error) {
-    console.error('getChildren error:', error.message);
+    captureError(error, { context: 'getChildren error' });
     return [];
   }
   return data ?? [];
@@ -108,7 +109,7 @@ export async function addChild(
     .select()
     .single();
   if (error) {
-    console.error('addChild error:', error.message);
+    captureError(error, { context: 'addChild error' });
     return null;
   }
   return data;
@@ -123,7 +124,7 @@ export async function deleteChild(childId: string): Promise<boolean> {
     .delete()
     .eq('id', childId);
   if (error) {
-    console.error('deleteChild error:', error.message);
+    captureError(error, { context: 'deleteChild error' });
     return false;
   }
   return true;
@@ -174,12 +175,12 @@ export async function saveProgress({
     });
 
     if (error) {
-      console.error('saveProgress error:', error.message);
+      captureError(error, { context: 'saveProgress error' });
       return false;
     }
     return true;
   } catch (err) {
-    console.error('saveProgress exception:', err);
+    captureError(err, { context: 'saveProgress exception' });
     return false;
   }
 }
@@ -209,7 +210,7 @@ export async function loadUserProgress(): Promise<{
       .single();
 
     if (profileError || !profile) {
-      console.error('loadUserProgress profile error:', profileError?.message);
+      captureError(profileError, { context: 'loadUserProgress profile error' });
       return null;
     }
 
@@ -219,7 +220,7 @@ export async function loadUserProgress(): Promise<{
       .eq('user_id', user.id);
 
     if (progressError) {
-      console.error('loadUserProgress progress error:', progressError.message);
+      captureError(progressError, { context: 'loadUserProgress progress error' });
     }
 
     const subjectProgress: Record<string, number> = {};
@@ -242,7 +243,7 @@ export async function loadUserProgress(): Promise<{
       subjectProgress,
     };
   } catch (err) {
-    console.error('loadUserProgress exception:', err);
+    captureError(err, { context: 'loadUserProgress exception' });
     return null;
   }
 }
@@ -287,10 +288,10 @@ export async function syncProfile({
       .eq('id', user.id);
 
     if (error) {
-      console.error('syncProfile error:', error.message);
+      captureError(error, { context: 'syncProfile error' });
     }
   } catch (err) {
-    console.error('syncProfile exception:', err);
+    captureError(err, { context: 'syncProfile exception' });
   }
 }
 
@@ -367,7 +368,7 @@ export async function getWeeklySummary(
       totalMinutes: Math.round(totalSeconds / 60),
     };
   } catch (err) {
-    console.error('getWeeklySummary exception:', err);
+    captureError(err, { context: 'getWeeklySummary exception' });
     return {
       subjectsStudied: [],
       averageScore: 0,
@@ -421,7 +422,7 @@ export async function getChildProgressHistory(
 
     return [];
   } catch (err) {
-    console.error('getChildProgressHistory exception:', err);
+    captureError(err, { context: 'getChildProgressHistory exception' });
     return [];
   }
 }
@@ -473,63 +474,8 @@ export async function loadChildProfile(childId: string): Promise<{
       lastStudyDate: dates[0] ?? null,
     };
   } catch (err) {
-    console.error('loadChildProfile exception:', err);
+    captureError(err, { context: 'loadChildProfile exception' });
     return null;
   }
 }
 
-/**
- * Get all progress entries for a specific child.
- * Returns newest first.
- */
-export async function getChildProgress(childId: string): Promise<ProgressEntry[]> {
-  const { data, error } = await supabase
-    .from('progress')
-    .select('*')
-    .eq('child_id', childId)
-    .order('created_at', { ascending: false });
-  if (error) {
-    console.error('getChildProgress error:', error.message);
-    return [];
-  }
-  return data ?? [];
-}
-
-/**
- * Get a summary of progress for a child in the last 7 days (by child_id).
- * Used by the parent dashboard when viewing individual child profiles.
- */
-export async function getChildWeeklySummary(childId: string): Promise<{
-  subjectsStudied: string[];
-  averageScore: number;
-  totalSessions: number;
-  totalMinutes: number;
-}> {
-  const sevenDaysAgo = new Date();
-  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-
-  const { data, error } = await supabase
-    .from('progress')
-    .select('*')
-    .eq('child_id', childId)
-    .gte('created_at', sevenDaysAgo.toISOString());
-
-  if (error || !data) {
-    return { subjectsStudied: [], averageScore: 0, totalSessions: 0, totalMinutes: 0 };
-  }
-
-  const subjects = [...new Set(data.map((p) => p.subject))];
-  const scores = data.filter((p) => p.score !== null).map((p) => p.score as number);
-  const avgScore =
-    scores.length > 0
-      ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
-      : 0;
-  const totalSeconds = data.reduce((a, b) => a + (b.duration_seconds ?? 0), 0);
-
-  return {
-    subjectsStudied: subjects,
-    averageScore: avgScore,
-    totalSessions: data.length,
-    totalMinutes: Math.round(totalSeconds / 60),
-  };
-}
