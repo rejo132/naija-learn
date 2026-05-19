@@ -99,6 +99,8 @@ interface AppState {
     progress: number
   ) => void;
   markFlowCompleted: (subjectLabel: string, grade: number) => void;
+  /** Wipe all child-facing data — used by the "Delete my data" flow. */
+  resetAll: () => void;
 }
 
 type PersistedAppState = Pick<
@@ -234,6 +236,28 @@ export const useAppStore = create<AppState>()(
             [`${subjectLabel}_${grade}`]: true,
           },
         })),
+      resetAll: () =>
+        set({
+          xp: 0,
+          streak: 0,
+          lastStudyDate: null,
+          lessonsCompleted: 0,
+          bestQuizScore: 0,
+          unlockedAchievements: [],
+          lastSubject: null,
+          lastSubjectEmoji: null,
+          lastGrade: null,
+          lastPersonalityId: null,
+          lastOpenedAt: null,
+          subjectProgress: {},
+          completedFlows: {},
+          selectedGrade: null,
+          selectedLanguage: 'en',
+          selectedSubject: null,
+          isDarkMode: false,
+          messages: [],
+          totalSessionSeconds: 0,
+        }),
     }),
     {
       name: 'learnova-app-store',

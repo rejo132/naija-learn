@@ -39,6 +39,7 @@ export function BottomTabBar() {
       route: '/children',
       requiresParentGate: true,
     },
+    { id: 'settings', label: 'Settings', emoji: '⚙️', route: '/settings' },
     { id: 'theme', label: 'Theme', emoji: '🌙', route: '' },
   ];
 

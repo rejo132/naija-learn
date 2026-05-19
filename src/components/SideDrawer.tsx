@@ -92,6 +92,7 @@ export function SideDrawer() {
     { id: 'personality', label: t('myTutor'), emoji: '👩🏽‍🏫', route: '/personality' },
     { id: 'children', label: t('children'), emoji: '👨‍👩‍👧', route: '/children' },
     { id: 'reports', label: t('reports'), emoji: '📊', route: '/parent-dashboard' },
+    { id: 'settings', label: 'Settings', emoji: '⚙️', route: '/settings' },
   ];
 
   if (width <= 768) return null;
