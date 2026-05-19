@@ -43,6 +43,8 @@ export default function SignUpScreen() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [passwordFocused, setPasswordFocused] = useState(false);
+  const [confirmPasswordFocused, setConfirmPasswordFocused] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [emailValid, setEmailValid] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -225,10 +227,15 @@ export default function SignUpScreen() {
               </View>
               {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
 
-              <View style={styles.inputGroup}>
+              <View
+                style={[
+                  styles.passwordGroup,
+                  passwordFocused && styles.inputGroupFocused,
+                ]}
+              >
                 <Text style={styles.inputIcon}>🔒</Text>
                 <TextInput
-                  style={styles.input}
+                  style={styles.passwordInput}
                   placeholder={t('password')}
                   placeholderTextColor={COLORS.textMuted}
                   value={password}
@@ -236,16 +243,26 @@ export default function SignUpScreen() {
                   secureTextEntry={!showPassword}
                   autoComplete="new-password"
                   editable={!isLoading}
+                  onFocus={() => setPasswordFocused(true)}
+                  onBlur={() => setPasswordFocused(false)}
                 />
-                <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                <TouchableOpacity
+                  style={styles.eyeBtn}
+                  onPress={() => setShowPassword(!showPassword)}
+                >
                   <Text style={styles.eyeIcon}>{showPassword ? '🙈' : '👁️'}</Text>
                 </TouchableOpacity>
               </View>
 
-              <View style={styles.inputGroup}>
+              <View
+                style={[
+                  styles.passwordGroup,
+                  confirmPasswordFocused && styles.inputGroupFocused,
+                ]}
+              >
                 <Text style={styles.inputIcon}>🔒</Text>
                 <TextInput
-                  style={styles.input}
+                  style={styles.passwordInput}
                   placeholder={ui.confirmPassword}
                   placeholderTextColor={COLORS.textMuted}
                   value={confirmPassword}
@@ -253,8 +270,13 @@ export default function SignUpScreen() {
                   secureTextEntry={!showConfirmPassword}
                   autoComplete="new-password"
                   editable={!isLoading}
+                  onFocus={() => setConfirmPasswordFocused(true)}
+                  onBlur={() => setConfirmPasswordFocused(false)}
                 />
-                <TouchableOpacity onPress={() => setShowConfirmPassword(!showConfirmPassword)}>
+                <TouchableOpacity
+                  style={styles.eyeBtn}
+                  onPress={() => setShowConfirmPassword(!showConfirmPassword)}
+                >
                   <Text style={styles.eyeIcon}>{showConfirmPassword ? '🙈' : '👁️'}</Text>
                 </TouchableOpacity>
               </View>
@@ -435,6 +457,33 @@ const styles = StyleSheet.create({
   },
   inputGroupError: { borderColor: COLORS.error },
   inputGroupValid: { borderColor: COLORS.success },
+  inputGroupFocused: { borderColor: COLORS.primary },
+  passwordGroup: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.background,
+    borderRadius: RADIUS.lg,
+    paddingHorizontal: SPACING.md,
+    borderWidth: 1.5,
+    borderColor: 'transparent',
+    minHeight: 52,
+    overflow: 'hidden',
+    gap: SPACING.sm,
+  },
+  passwordInput: {
+    flex: 1,
+    fontSize: 16,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.textPrimary,
+    paddingVertical: SPACING.md,
+  },
+  eyeBtn: {
+    width: 36,
+    height: 36,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+  },
   inputIcon: { fontSize: 18 },
   input: {
     flex: 1,

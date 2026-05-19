@@ -99,9 +99,9 @@ export function SideDrawer() {
 
   function isActive(route: string): boolean {
     if (route === '/dashboard') {
-      return pathname === '/dashboard' || pathname === '/';
+      return pathname === '/dashboard' || pathname === '/' || pathname === '';
     }
-    return pathname === route || pathname.startsWith(route);
+    return pathname === route || pathname.startsWith(route + '/');
   }
 
   async function handleSignOut() {
@@ -122,13 +122,13 @@ export function SideDrawer() {
   }
 
   function handleNavPress(route: string) {
-    if (route === '/dashboard') {
-      router.replace('/dashboard');
-      return;
-    }
     if (route === '/children' || route === '/parent-dashboard') {
       setPendingRoute(route);
       setGateVisible(true);
+      return;
+    }
+    if (route === '/dashboard') {
+      router.replace('/dashboard');
       return;
     }
     router.push(route as '/');

@@ -53,9 +53,9 @@ export function BottomTabBar() {
 
   function isActive(route: string): boolean {
     if (route === '/dashboard') {
-      return pathname === '/dashboard' || pathname === '/';
+      return pathname === '/dashboard' || pathname === '/' || pathname === '';
     }
-    return pathname.startsWith(route);
+    return pathname === route;
   }
 
   function handleTabPress(tab: TabItem) {

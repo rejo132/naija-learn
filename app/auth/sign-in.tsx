@@ -2,7 +2,7 @@
  * Sign in screen.
  * Parents enter email and password to access their account.
  */
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   View,
   Text,
@@ -13,6 +13,7 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
+  Animated,
   useWindowDimensions,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -66,6 +67,7 @@ export default function SignInScreen() {
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [passwordFocused, setPasswordFocused] = useState(false);
   const [keepSignedIn, setKeepSignedIn] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [emailValid, setEmailValid] = useState(false);
@@ -77,6 +79,74 @@ export default function SignInScreen() {
   const ui = getUIText(language);
 
   const redirectUri = makeRedirectUri({ scheme: 'learnova' });
+
+  const float1 = useRef(new Animated.Value(0)).current;
+  const float2 = useRef(new Animated.Value(0)).current;
+  const float3 = useRef(new Animated.Value(0)).current;
+  const fadeIn = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeIn, {
+      toValue: 1,
+      duration: 1000,
+      useNativeDriver: true,
+    }).start();
+
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(float1, {
+          toValue: -20,
+          duration: 3000,
+          useNativeDriver: true,
+        }),
+        Animated.timing(float1, {
+          toValue: 0,
+          duration: 3000,
+          useNativeDriver: true,
+        }),
+      ])
+    ).start();
+
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(float2, {
+          toValue: 15,
+          duration: 2500,
+          useNativeDriver: true,
+        }),
+        Animated.timing(float2, {
+          toValue: -10,
+          duration: 2500,
+          useNativeDriver: true,
+        }),
+        Animated.timing(float2, {
+          toValue: 0,
+          duration: 2000,
+          useNativeDriver: true,
+        }),
+      ])
+    ).start();
+
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(float3, {
+          toValue: 12,
+          duration: 2000,
+          useNativeDriver: true,
+        }),
+        Animated.timing(float3, {
+          toValue: -8,
+          duration: 2000,
+          useNativeDriver: true,
+        }),
+        Animated.timing(float3, {
+          toValue: 0,
+          duration: 1500,
+          useNativeDriver: true,
+        }),
+      ])
+    ).start();
+  }, [fadeIn, float1, float2, float3]);
 
   function validateEmail(value: string) {
     const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -114,10 +184,10 @@ export default function SignInScreen() {
   }
 
   async function handleGoogleSignIn() {
+    setIsLoading(true);
+    setError('');
+    clearError();
     try {
-      setIsLoading(true);
-      setError('');
-      clearError();
       const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
@@ -125,7 +195,19 @@ export default function SignInScreen() {
           skipBrowserRedirect: true,
         },
       });
-      if (oauthError) throw oauthError;
+      if (oauthError) {
+        if (
+          oauthError.message?.includes('provider') ||
+          oauthError.message?.includes('not enabled')
+        ) {
+          setError(
+            'Google sign-in is not set up yet. Please use email and password for now.'
+          );
+        } else {
+          setError('Google sign-in failed. Please try again.');
+        }
+        return;
+      }
       if (data?.url) {
         const result = await WebBrowser.openAuthSessionAsync(data.url, redirectUri);
         if (result.type === 'success' && result.url) {
@@ -134,17 +216,19 @@ export default function SignInScreen() {
         }
       }
     } catch {
-      setError('Google sign in failed. Please try again.');
+      setError(
+        'Google sign-in is not available right now. Please sign in with email.'
+      );
     } finally {
       setIsLoading(false);
     }
   }
 
   async function handleMicrosoftSignIn() {
+    setIsLoading(true);
+    setError('');
+    clearError();
     try {
-      setIsLoading(true);
-      setError('');
-      clearError();
       const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
         provider: 'azure',
         options: {
@@ -153,7 +237,12 @@ export default function SignInScreen() {
           scopes: 'email',
         },
       });
-      if (oauthError) throw oauthError;
+      if (oauthError) {
+        setError(
+          'Microsoft sign-in is not set up yet. Please use email and password for now.'
+        );
+        return;
+      }
       if (data?.url) {
         const result = await WebBrowser.openAuthSessionAsync(data.url, redirectUri);
         if (result.type === 'success' && result.url) {
@@ -162,7 +251,9 @@ export default function SignInScreen() {
         }
       }
     } catch {
-      setError('Microsoft sign in failed. Please try again.');
+      setError(
+        'Microsoft sign-in is not available right now. Please sign in with email.'
+      );
     } finally {
       setIsLoading(false);
     }
@@ -172,7 +263,7 @@ export default function SignInScreen() {
     <SafeAreaView style={styles.safe}>
       <View style={styles.container}>
         {isWide && (
-          <View style={styles.leftPanel}>
+          <Animated.View style={[styles.leftPanel, { opacity: fadeIn }]}>
             <LinearGradient
               colors={['#1A0A2E', '#0D1F14', '#003D25']}
               style={StyleSheet.absoluteFill}
@@ -180,9 +271,31 @@ export default function SignInScreen() {
               end={{ x: 1, y: 1 }}
             />
 
-            <View style={styles.decorCircle1} />
-            <View style={styles.decorCircle2} />
-            <View style={styles.decorCircle3} />
+            <Animated.View
+              style={[
+                styles.decorCircle1,
+                { transform: [{ translateY: float1 }] },
+              ]}
+            />
+            <Animated.View
+              style={[
+                styles.decorCircle2,
+                { transform: [{ translateY: float2 }] },
+              ]}
+            />
+            <Animated.View
+              style={[
+                styles.decorCircle3,
+                { transform: [{ translateY: float3 }] },
+              ]}
+            />
+
+            <Animated.View
+              style={[
+                styles.pulseRing,
+                { transform: [{ translateY: float1 }], opacity: fadeIn },
+              ]}
+            />
 
             <View style={styles.leftLogo}>
               <TutorAvatar size={56} />
@@ -191,20 +304,36 @@ export default function SignInScreen() {
 
             <View style={styles.featuresList}>
               {FEATURES.map((f, i) => (
-                <View key={i} style={styles.featureItem}>
+                <Animated.View
+                  key={i}
+                  style={[
+                    styles.featureItem,
+                    {
+                      opacity: fadeIn,
+                      transform: [
+                        {
+                          translateX: fadeIn.interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [-30, 0],
+                          }),
+                        },
+                      ],
+                    },
+                  ]}
+                >
                   <Text style={styles.featureEmoji}>{f.emoji}</Text>
                   <Text style={styles.featureText}>{f.text}</Text>
-                </View>
+                </Animated.View>
               ))}
             </View>
 
-            <View style={styles.quoteBlock}>
+            <Animated.View style={[styles.quoteBlock, { opacity: fadeIn }]}>
               <Text style={styles.quoteText}>
                 &quot;Education is the most powerful weapon&quot;
               </Text>
               <Text style={styles.quoteAuthor}>— Nelson Mandela</Text>
-            </View>
-          </View>
+            </Animated.View>
+          </Animated.View>
         )}
 
         <KeyboardAvoidingView
@@ -287,10 +416,15 @@ export default function SignInScreen() {
                   </View>
                   {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
 
-                  <View style={styles.inputGroup}>
+                  <View
+                    style={[
+                      styles.passwordGroup,
+                      passwordFocused && styles.inputGroupFocused,
+                    ]}
+                  >
                     <Text style={styles.inputIcon}>🔒</Text>
                     <TextInput
-                      style={styles.input}
+                      style={styles.passwordInput}
                       placeholder={t('password')}
                       placeholderTextColor={COLORS.textMuted}
                       value={password}
@@ -298,8 +432,13 @@ export default function SignInScreen() {
                       secureTextEntry={!showPassword}
                       autoComplete="password"
                       editable={!isLoading}
+                      onFocus={() => setPasswordFocused(true)}
+                      onBlur={() => setPasswordFocused(false)}
                     />
-                    <TouchableOpacity onPress={() => setShowPassword((s) => !s)}>
+                    <TouchableOpacity
+                      style={styles.eyeBtn}
+                      onPress={() => setShowPassword((s) => !s)}
+                    >
                       <Text style={styles.eyeIcon}>{showPassword ? '🙈' : '👁️'}</Text>
                     </TouchableOpacity>
                   </View>
@@ -331,7 +470,7 @@ export default function SignInScreen() {
                   </View>
                   <Text style={styles.checkLabel}>{t('keepSignedIn')}</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => router.push('/auth/forgot-password' as never)}>
+                <TouchableOpacity onPress={() => router.push('/auth/forgot-password')}>
                   <Text style={styles.forgotText}>{t('forgotPassword')}</Text>
                 </TouchableOpacity>
               </View>
@@ -568,6 +707,43 @@ const styles = StyleSheet.create({
   },
   inputGroupError: { borderColor: COLORS.error },
   inputGroupValid: { borderColor: COLORS.success },
+  inputGroupFocused: { borderColor: COLORS.primary },
+  passwordGroup: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.background,
+    borderRadius: RADIUS.lg,
+    paddingHorizontal: SPACING.md,
+    borderWidth: 1.5,
+    borderColor: 'transparent',
+    minHeight: 52,
+    overflow: 'hidden',
+    gap: SPACING.sm,
+  },
+  passwordInput: {
+    flex: 1,
+    fontSize: 16,
+    fontFamily: 'Poppins-Regular',
+    color: COLORS.textPrimary,
+    paddingVertical: SPACING.md,
+  },
+  eyeBtn: {
+    width: 36,
+    height: 36,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+  },
+  pulseRing: {
+    position: 'absolute',
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    borderWidth: 1,
+    borderColor: 'rgba(0, 135, 81, 0.2)',
+    top: 20,
+    left: 20,
+  },
   inputIcon: { fontSize: 18 },
   input: {
     flex: 1,
