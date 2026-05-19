@@ -212,6 +212,7 @@ export default function RootLayout() {
                 <Stack.Screen name="parent-dashboard" />
                 <Stack.Screen name="personality" />
                 <Stack.Screen name="settings" />
+                <Stack.Screen name="change-password" />
                 <Stack.Screen name="auth" />
               </Stack>
               <BottomTabBar />

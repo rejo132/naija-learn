@@ -213,6 +213,18 @@ export default function SettingsScreen() {
           </TouchableOpacity>
         </View>
 
+        <SectionHeader title="🔐  ACCOUNT" colors={colors} />
+        <View style={[styles.card, { backgroundColor: cardBg }]}>
+          <SettingsRow
+            emoji="🔐"
+            label="Change Password"
+            sublabel="Update your account password"
+            onPress={() => router.push('/change-password')}
+            colors={colors}
+            isLast
+          />
+        </View>
+
         <SectionHeader title="👨‍👩‍👧  PARENT ZONE" colors={colors} />
         <View style={[styles.card, { backgroundColor: cardBg }]}>
           <SettingsRow
