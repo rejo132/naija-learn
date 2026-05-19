@@ -19,17 +19,12 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import * as WebBrowser from 'expo-web-browser';
-import { makeRedirectUri } from 'expo-auth-session';
-import * as QueryParams from 'expo-auth-session/build/QueryParams';
 import { useAuthStore } from '@/store/authStore';
-import { supabase } from '@/lib/supabase';
+import { signInWithGoogle, signInWithMicrosoft } from '@/services/oauthService';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import { TutorAvatar } from '@/components/TutorAvatar';
-
-WebBrowser.maybeCompleteAuthSession();
 
 const FEATURES = [
   { emoji: '🧠', text: 'Claude AI Tutor' },
@@ -38,25 +33,6 @@ const FEATURES = [
   { emoji: '📊', text: 'Works Offline' },
   { emoji: '🏆', text: 'Gamified Learning' },
 ];
-
-async function completeOAuthFromUrl(url: string) {
-  const { params, errorCode } = QueryParams.getQueryParams(url);
-  if (errorCode) throw new Error(errorCode);
-
-  if (params.access_token && params.refresh_token) {
-    const { error } = await supabase.auth.setSession({
-      access_token: params.access_token,
-      refresh_token: params.refresh_token,
-    });
-    if (error) throw error;
-    return;
-  }
-
-  if (params.code) {
-    const { error } = await supabase.auth.exchangeCodeForSession(params.code);
-    if (error) throw error;
-  }
-}
 
 export default function SignInScreen() {
   const { width } = useWindowDimensions();
@@ -77,8 +53,6 @@ export default function SignInScreen() {
   const { signIn, clearError } = useAuthStore();
   const { t, language } = useTranslation();
   const ui = getUIText(language);
-
-  const redirectUri = makeRedirectUri({ scheme: 'learnova' });
 
   const float1 = useRef(new Animated.Value(0)).current;
   const float2 = useRef(new Animated.Value(0)).current;
@@ -187,40 +161,10 @@ export default function SignInScreen() {
     setIsLoading(true);
     setError('');
     clearError();
-    try {
-      const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: redirectUri,
-          skipBrowserRedirect: true,
-        },
-      });
-      if (oauthError) {
-        if (
-          oauthError.message?.includes('provider') ||
-          oauthError.message?.includes('not enabled')
-        ) {
-          setError(
-            'Google sign-in is not set up yet. Please use email and password for now.'
-          );
-        } else {
-          setError('Google sign-in failed. Please try again.');
-        }
-        return;
-      }
-      if (data?.url) {
-        const result = await WebBrowser.openAuthSessionAsync(data.url, redirectUri);
-        if (result.type === 'success' && result.url) {
-          await completeOAuthFromUrl(result.url);
-          router.replace('/dashboard');
-        }
-      }
-    } catch {
-      setError(
-        'Google sign-in is not available right now. Please sign in with email.'
-      );
-    } finally {
-      setIsLoading(false);
+    const result = await signInWithGoogle();
+    setIsLoading(false);
+    if (!result.success && result.error !== 'Auth cancelled') {
+      setError(result.error ?? 'Google sign in failed');
     }
   }
 
@@ -228,34 +172,10 @@ export default function SignInScreen() {
     setIsLoading(true);
     setError('');
     clearError();
-    try {
-      const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
-        provider: 'azure',
-        options: {
-          redirectTo: redirectUri,
-          skipBrowserRedirect: true,
-          scopes: 'email',
-        },
-      });
-      if (oauthError) {
-        setError(
-          'Microsoft sign-in is not set up yet. Please use email and password for now.'
-        );
-        return;
-      }
-      if (data?.url) {
-        const result = await WebBrowser.openAuthSessionAsync(data.url, redirectUri);
-        if (result.type === 'success' && result.url) {
-          await completeOAuthFromUrl(result.url);
-          router.replace('/dashboard');
-        }
-      }
-    } catch {
-      setError(
-        'Microsoft sign-in is not available right now. Please sign in with email.'
-      );
-    } finally {
-      setIsLoading(false);
+    const result = await signInWithMicrosoft();
+    setIsLoading(false);
+    if (!result.success && result.error !== 'Auth cancelled') {
+      setError(result.error ?? 'Microsoft sign in failed');
     }
   }
 

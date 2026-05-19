@@ -21,7 +21,7 @@
  * - All screens use `headerShown: false` and implement their own back UI.
  */
 import { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
+import { Platform, View, Text } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Stack, useRouter, useSegments } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
@@ -34,6 +34,7 @@ import { useAppStore } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
 import { initialiseSentry } from '@/lib/sentry';
 import { loadUserProgress } from '@/services/dbService';
+import { supabase } from '@/lib/supabase';
 import { OfflineBanner } from '@/components/OfflineBanner';
 import { BottomTabBar } from '@/components/BottomTabBar';
 import { SideDrawer } from '@/components/SideDrawer';
@@ -132,6 +133,23 @@ export default function RootLayout() {
   useEffect(() => {
     const timer = setTimeout(() => SplashScreen.hideAsync(), 500);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Handle OAuth redirect callback on web. The provider redirects back to the
+  // app with the access token in the URL hash; we exchange it for a session
+  // and then clean the URL so the token is not left visible.
+  useEffect(() => {
+    if (Platform.OS !== 'web') return;
+
+    const hash = window.location.hash;
+    if (hash && hash.includes('access_token')) {
+      supabase.auth.getSession().then(({ data: { session } }) => {
+        if (session) {
+          useAuthStore.getState().setSession(session);
+          window.history.replaceState({}, '', window.location.pathname);
+        }
+      });
+    }
   }, []);
 
   if (!fontsLoaded) return null;
