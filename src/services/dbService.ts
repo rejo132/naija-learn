@@ -132,21 +132,225 @@ export async function deleteChild(childId: string): Promise<boolean> {
 // ─── Progress ─────────────────────────────────────────────
 
 /**
- * Save a completed lesson session to the database.
- * Called automatically when a quiz completes or lesson ends.
+ * Save a lesson or quiz result to Supabase.
+ * Uses the upsert_progress RPC function.
+ * Fires and forgets — never blocks the UI.
  */
-export async function saveProgress(
-  entry: Pick<ProgressEntry, 'child_id' | 'subject' | 'topic' | 'score' | 'duration_seconds'>
-): Promise<boolean> {
-  console.log('Attempting to save progress:', JSON.stringify(entry));
-  const { error } = await supabase
-    .from('progress')
-    .insert(entry);
-  if (error) {
-    console.error('saveProgress supabase error:', error.message, error.code, error.details);
+export async function saveProgress({
+  subject,
+  topic,
+  score,
+  grade,
+  xpEarned = 0,
+  durationSeconds = 0,
+  flowCompleted = false,
+  childId,
+}: {
+  subject: string;
+  topic: string;
+  score: number;
+  grade: number;
+  xpEarned?: number;
+  durationSeconds?: number;
+  flowCompleted?: boolean;
+  childId?: string | null;
+}): Promise<boolean> {
+  try {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) return false;
+
+    const { error } = await supabase.rpc('upsert_progress', {
+      p_user_id: user.id,
+      p_child_id: childId ?? null,
+      p_subject: subject,
+      p_topic: topic,
+      p_score: score,
+      p_grade: grade,
+      p_xp_earned: xpEarned,
+      p_duration_seconds: durationSeconds,
+      p_flow_completed: flowCompleted,
+    });
+
+    if (error) {
+      console.error('saveProgress error:', error.message);
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error('saveProgress exception:', err);
     return false;
   }
-  return true;
+}
+
+/**
+ * Load the user's saved progress from Supabase.
+ * Called on app start to restore XP, streak, grade etc.
+ */
+export async function loadUserProgress(): Promise<{
+  totalXP: number;
+  streak: number;
+  grade: number;
+  language: string;
+  personalityId: string;
+  subjectProgress: Record<string, number>;
+} | null> {
+  try {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) return null;
+
+    const { data: profile, error: profileError } = await supabase
+      .from('profiles')
+      .select('xp, streak, grade, language, personality_id')
+      .eq('id', user.id)
+      .single();
+
+    if (profileError || !profile) {
+      console.error('loadUserProgress profile error:', profileError?.message);
+      return null;
+    }
+
+    const { data: progressRows, error: progressError } = await supabase
+      .from('progress')
+      .select('subject, grade, score')
+      .eq('user_id', user.id);
+
+    if (progressError) {
+      console.error('loadUserProgress progress error:', progressError.message);
+    }
+
+    const subjectProgress: Record<string, number> = {};
+    if (progressRows) {
+      for (const row of progressRows) {
+        const key = `${row.subject}_${row.grade}`;
+        const existing = subjectProgress[key] ?? 0;
+        if ((row.score ?? 0) > existing) {
+          subjectProgress[key] = row.score ?? 0;
+        }
+      }
+    }
+
+    return {
+      totalXP: profile.xp ?? 0,
+      streak: profile.streak ?? 0,
+      grade: profile.grade ?? 1,
+      language: profile.language ?? 'en',
+      personalityId: profile.personality_id ?? 'aunty_naija',
+      subjectProgress,
+    };
+  } catch (err) {
+    console.error('loadUserProgress exception:', err);
+    return null;
+  }
+}
+
+/**
+ * Sync the user's XP, streak, and preferences
+ * back to Supabase so they persist across devices.
+ * Call this when XP or streak changes.
+ */
+export async function syncProfile({
+  xp,
+  streak,
+  grade,
+  language,
+  personalityId,
+  lastActiveDate,
+}: {
+  xp: number;
+  streak: number;
+  grade: number;
+  language: string;
+  personalityId: string;
+  lastActiveDate: string;
+}): Promise<void> {
+  try {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) return;
+
+    const { error } = await supabase
+      .from('profiles')
+      .update({
+        xp,
+        streak,
+        grade,
+        language,
+        personality_id: personalityId,
+        last_active_date: lastActiveDate,
+        updated_at: new Date().toISOString(),
+      })
+      .eq('id', user.id);
+
+    if (error) {
+      console.error('syncProfile error:', error.message);
+    }
+  } catch (err) {
+    console.error('syncProfile exception:', err);
+  }
+}
+
+/**
+ * Get a weekly summary of progress for a specific user.
+ * Used by parent dashboard to show this week's activity.
+ */
+export async function getWeeklySummary(userId: string): Promise<{
+  subjectsStudied: string[];
+  averageScore: number;
+  totalSessions: number;
+  totalMinutes: number;
+}> {
+  try {
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
+    const { data, error } = await supabase
+      .from('progress')
+      .select('subject, score, duration_seconds')
+      .eq('user_id', userId)
+      .gte('created_at', sevenDaysAgo.toISOString());
+
+    if (error || !data) {
+      return {
+        subjectsStudied: [],
+        averageScore: 0,
+        totalSessions: 0,
+        totalMinutes: 0,
+      };
+    }
+
+    const subjects = [...new Set(data.map((p) => p.subject))];
+    const scores = data
+      .filter((p) => p.score !== null)
+      .map((p) => p.score as number);
+    const avgScore =
+      scores.length > 0
+        ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
+        : 0;
+    const totalSeconds = data.reduce(
+      (a, b) => a + (b.duration_seconds ?? 0),
+      0
+    );
+
+    return {
+      subjectsStudied: subjects,
+      averageScore: avgScore,
+      totalSessions: data.length,
+      totalMinutes: Math.round(totalSeconds / 60),
+    };
+  } catch (err) {
+    console.error('getWeeklySummary exception:', err);
+    return {
+      subjectsStudied: [],
+      averageScore: 0,
+      totalSessions: 0,
+      totalMinutes: 0,
+    };
+  }
 }
 
 /**
@@ -167,10 +371,10 @@ export async function getChildProgress(childId: string): Promise<ProgressEntry[]
 }
 
 /**
- * Get a summary of progress for a child in the last 7 days.
- * Returns: subjects studied, average score, total sessions.
+ * Get a summary of progress for a child in the last 7 days (by child_id).
+ * Used by the parent dashboard when viewing individual child profiles.
  */
-export async function getWeeklySummary(childId: string): Promise<{
+export async function getChildWeeklySummary(childId: string): Promise<{
   subjectsStudied: string[];
   averageScore: number;
   totalSessions: number;
@@ -191,9 +395,10 @@ export async function getWeeklySummary(childId: string): Promise<{
 
   const subjects = [...new Set(data.map((p) => p.subject))];
   const scores = data.filter((p) => p.score !== null).map((p) => p.score as number);
-  const avgScore = scores.length > 0
-    ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
-    : 0;
+  const avgScore =
+    scores.length > 0
+      ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
+      : 0;
   const totalSeconds = data.reduce((a, b) => a + (b.duration_seconds ?? 0), 0);
 
   return {

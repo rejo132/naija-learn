@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { getChildren, getWeeklySummary, Child } from '@/services/dbService';
+import { getChildren, getChildWeeklySummary, Child } from '@/services/dbService';
 import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
@@ -18,7 +18,7 @@ import { GlassCard } from '@/components/GlassCard';
 export default function ParentDashboardScreen() {
   const { colors, isDarkMode } = useTheme();
   const [children, setChildren] = useState<Child[]>([]);
-  const [summaries, setSummaries] = useState<Record<string, Awaited<ReturnType<typeof getWeeklySummary>>>>({});
+  const [summaries, setSummaries] = useState<Record<string, Awaited<ReturnType<typeof getChildWeeklySummary>>>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [selectedChild, setSelectedChild] = useState<Child | null>(null);
 
@@ -35,7 +35,7 @@ export default function ParentDashboardScreen() {
       const summaryMap: typeof summaries = {};
       await Promise.all(
         kids.map(async (kid) => {
-          summaryMap[kid.id] = await getWeeklySummary(kid.id);
+          summaryMap[kid.id] = await getChildWeeklySummary(kid.id);
         })
       );
       setSummaries(summaryMap);

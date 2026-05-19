@@ -33,6 +33,7 @@ import { COLORS } from '@/constants/theme';
 import { useAppStore } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
 import { initialiseSentry } from '@/lib/sentry';
+import { loadUserProgress } from '@/services/dbService';
 import { OfflineBanner } from '@/components/OfflineBanner';
 import { BottomTabBar } from '@/components/BottomTabBar';
 import { SideDrawer } from '@/components/SideDrawer';
@@ -71,6 +72,40 @@ export default function RootLayout() {
     useAppStore.persist.rehydrate();
     async function init() {
       await useAuthStore.getState().initialise();
+
+      try {
+        const saved = await loadUserProgress();
+        if (saved) {
+          const store = useAppStore.getState();
+
+          if (saved.totalXP > (store.xp ?? 0)) {
+            store.setXP(saved.totalXP);
+          }
+
+          if (saved.streak > (store.streak ?? 0)) {
+            store.setStreak(saved.streak);
+          }
+
+          if (saved.grade && !store.selectedGrade) {
+            store.setGrade(saved.grade);
+          }
+
+          if (saved.language && !store.selectedLanguage) {
+            store.setLanguage(saved.language as 'en' | 'ha' | 'yo' | 'ig');
+          }
+
+          if (Object.keys(saved.subjectProgress).length > 0) {
+            const merged = {
+              ...saved.subjectProgress,
+              ...(store.subjectProgress ?? {}),
+            };
+            store.setSubjectProgress(merged);
+          }
+        }
+      } catch (err) {
+        console.error('Progress restore error:', err);
+      }
+
       setIsInitialising(false);
     }
     init();

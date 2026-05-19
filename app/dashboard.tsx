@@ -1,7 +1,7 @@
 /**
  * Subject dashboard — browse and open lessons (`/dashboard`).
  */
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import {
   View,
   Text,
@@ -31,6 +31,7 @@ import { GlassCard } from '@/components/GlassCard';
 import { PressableScale } from '@/components/PressableScale';
 import { TutorAvatar } from '@/components/TutorAvatar';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
+import { syncProfile } from '@/services/dbService';
 
 type Tab = 'subjects' | 'languages' | 'softskills';
 
@@ -51,6 +52,7 @@ export default function DashboardScreen() {
   const [aiPrompt, setAiPrompt] = useState('');
   const { selectedLanguage, selectedGrade, setSubject, setLanguage, xp, streak, lastStudyDate, lessonsCompleted } =
     useAppStore();
+  const selectedPersonalityId = useAppStore((s) => s.selectedPersonalityId);
   const lastSubject = useAppStore((s) => s.lastSubject);
   const lastSubjectEmoji = useAppStore((s) => s.lastSubjectEmoji);
   const lastGrade = useAppStore((s) => s.lastGrade);
@@ -83,6 +85,20 @@ export default function DashboardScreen() {
     }),
     [selectedGrade]
   );
+
+  const lastActiveDate = lastStudyDate;
+
+  useEffect(() => {
+    if (!xp && !streak) return;
+    syncProfile({
+      xp: xp ?? 0,
+      streak: streak ?? 0,
+      grade: selectedGrade ?? 1,
+      language: selectedLanguage ?? 'en',
+      personalityId: selectedPersonalityId ?? 'aunty_naija',
+      lastActiveDate: lastActiveDate ?? new Date().toISOString().split('T')[0],
+    }).catch(() => {});
+  }, [xp, streak]);
 
   if (!selectedGrade) return <Redirect href="/grade" />;
 

@@ -99,6 +99,9 @@ interface AppState {
     progress: number
   ) => void;
   markFlowCompleted: (subjectLabel: string, grade: number) => void;
+  setXP: (xp: number) => void;
+  setStreak: (streak: number) => void;
+  setSubjectProgress: (progress: Record<string, number>) => void;
   /** Wipe all child-facing data — used by the "Delete my data" flow. */
   resetAll: () => void;
 }
@@ -236,6 +239,9 @@ export const useAppStore = create<AppState>()(
             [`${subjectLabel}_${grade}`]: true,
           },
         })),
+      setXP: (xp) => set({ xp }),
+      setStreak: (streak) => set({ streak }),
+      setSubjectProgress: (subjectProgress) => set({ subjectProgress }),
       resetAll: () =>
         set({
           xp: 0,

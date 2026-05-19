@@ -307,6 +307,7 @@ export default function LessonScreen() {
   const [autoSpeak, setAutoSpeak] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const lastSpokenIdRef = useRef<string | null>(null);
+  const lessonStartRef = useRef<number>(Date.now());
   const [flowCompleted, setFlowCompleted] = useState(() => {
     const key = `${selectedSubject?.label ?? ''}_${selectedGrade ?? ''}`;
     return useAppStore.getState().completedFlows[key] ?? false;
@@ -405,6 +406,7 @@ export default function LessonScreen() {
 
   useFocusEffect(
     useCallback(() => {
+      lessonStartRef.current = Date.now();
       startSession();
 
       if (!selectedSubject || !selectedGrade) {
@@ -471,6 +473,7 @@ export default function LessonScreen() {
   async function handleSend(overrideText?: string, forceQuizMode?: boolean) {
     const text = (overrideText ?? inputText).trim();
     if (!text || isAILoading || !selectedSubject || !selectedGrade) return;
+    setInputText('');
 
     if (forceQuizMode) {
       isQuizModeRef.current = true;
@@ -482,7 +485,6 @@ export default function LessonScreen() {
     const quizModeActive = Boolean(forceQuizMode || isQuizModeRef.current || isQuizMode);
     const scoringQuizAnswer = quizModeActive && !!lastQuizQuestion;
 
-    setInputText('');
     addMessage({ role: 'user', content: text });
     setAILoading(true);
 
@@ -536,15 +538,19 @@ export default function LessonScreen() {
             setNewAchievement(newlyUnlocked[0]);
           }
 
-          if (user) {
-            await saveProgress({
-              child_id: user.id,
-              subject: selectedSubject.label,
-              topic: selectedSubject.label,
-              score: finalScore,
-              duration_seconds: useAppStore.getState().totalSessionSeconds,
-            });
-          }
+          const durationSecs = Math.round(
+            (Date.now() - lessonStartRef.current) / 1000
+          );
+          saveProgress({
+            subject: selectedSubject?.label ?? 'Unknown',
+            topic: selectedSubject?.label ?? 'Unknown',
+            score: finalScore,
+            grade: selectedGrade ?? 1,
+            xpEarned: finalScore === 100 ? 75 : 25,
+            durationSeconds: durationSecs,
+            flowCompleted: flowState?.hookCompleted ?? false,
+            childId: null,
+          }).catch((err) => console.error('saveProgress error:', err));
 
           updateSubjectProgress(selectedSubject.label, selectedGrade, finalScore);
         }
@@ -885,22 +891,11 @@ export default function LessonScreen() {
               multiline
               maxLength={CHAR_LIMIT}
               editable={!isAILoading && isConnected}
-              blurOnSubmit
+              blurOnSubmit={false}
               returnKeyType="send"
               onSubmitEditing={() => {
-                if (inputText.trim()) {
+                if (inputText.trim() && !isAILoading) {
                   handleSend();
-                }
-              }}
-              onKeyPress={({ nativeEvent }) => {
-                if (
-                  Platform.OS === 'web' &&
-                  nativeEvent.key === 'Enter' &&
-                  !(nativeEvent as { shiftKey?: boolean }).shiftKey
-                ) {
-                  if (inputText.trim()) {
-                    handleSend();
-                  }
                 }
               }}
             />
