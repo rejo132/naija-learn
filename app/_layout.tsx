@@ -20,7 +20,7 @@
  * - Splash hides after a fixed 500ms timer, not when fonts/assets finish loading.
  * - All screens use `headerShown: false` and implement their own back UI.
  */
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Stack, useRouter, useSegments } from 'expo-router';
@@ -54,29 +54,12 @@ function ErrorFallback() {
   );
 }
 
-function AuthGuard({ children }: { children: ReactNode }) {
-  const session = useAuthStore((s) => s.session);
-  const segments = useSegments();
-  const router = useRouter();
-
-  useEffect(() => {
-    void useAuthStore.getState().initialise();
-  }, []);
-
-  useEffect(() => {
-    const inAuthGroup = segments[0] === 'auth';
-
-    if (!session && !inAuthGroup) {
-      router.replace('/auth/sign-in');
-    } else if (session && inAuthGroup) {
-      router.replace('/dashboard');
-    }
-  }, [session, segments, router]);
-
-  return children;
-}
-
 export default function RootLayout() {
+  const router = useRouter();
+  const segments = useSegments();
+  const session = useAuthStore((s) => s.session);
+  const [isLayoutReady, setIsLayoutReady] = useState(false);
+  const [isInitialising, setIsInitialising] = useState(true);
   const isDarkMode = useAppStore((s) => s.isDarkMode);
   const [fontsLoaded] = useFonts({
     'Poppins-Regular': require('../assets/fonts/Poppins-Regular.ttf'),
@@ -86,7 +69,30 @@ export default function RootLayout() {
 
   useEffect(() => {
     useAppStore.persist.rehydrate();
+    async function init() {
+      await useAuthStore.getState().initialise();
+      setIsInitialising(false);
+    }
+    init();
   }, []);
+
+  useEffect(() => {
+    if (isInitialising) return;
+    const timer = setTimeout(() => setIsLayoutReady(true), 0);
+    return () => clearTimeout(timer);
+  }, [isInitialising]);
+
+  useEffect(() => {
+    if (!isLayoutReady) return;
+
+    const inAuthGroup = segments[0] === 'auth';
+
+    if (!session && !inAuthGroup) {
+      router.replace('/auth/sign-in');
+    } else if (session && inAuthGroup) {
+      router.replace('/dashboard');
+    }
+  }, [session, segments, isLayoutReady, router]);
 
   useEffect(() => {
     const timer = setTimeout(() => SplashScreen.hideAsync(), 500);
@@ -94,6 +100,40 @@ export default function RootLayout() {
   }, []);
 
   if (!fontsLoaded) return null;
+
+  if (isInitialising) {
+    return (
+      <View
+        style={{
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#008751',
+        }}
+      >
+        <Text style={{ fontSize: 48, marginBottom: 16 }}>🎓</Text>
+        <Text
+          style={{
+            color: '#FFFFFF',
+            fontSize: 28,
+            fontFamily: 'Poppins-Bold',
+          }}
+        >
+          Learnova
+        </Text>
+        <Text
+          style={{
+            color: 'rgba(255,255,255,0.7)',
+            fontSize: 14,
+            fontFamily: 'Poppins-Regular',
+            marginTop: 8,
+          }}
+        >
+          AI-Powered Learning
+        </Text>
+      </View>
+    );
+  }
 
   return (
     <Sentry.ErrorBoundary fallback={<ErrorFallback />}>
@@ -103,28 +143,25 @@ export default function RootLayout() {
             style={isDarkMode ? 'light' : 'dark'}
             backgroundColor={isDarkMode ? '#0F1512' : COLORS.background}
           />
-          <AuthGuard>
-            <View style={{ flex: 1, flexDirection: 'row' }}>
-              <SideDrawer />
-              <View style={{ flex: 1 }}>
-                <OfflineBanner />
-                <Stack screenOptions={{ headerShown: false, animation: 'slide_from_right' }}>
-                  <Stack.Screen name="index" />
-                  <Stack.Screen name="grade" />
-                  <Stack.Screen name="dashboard" />
-                  <Stack.Screen name="lesson" />
-                  <Stack.Screen name="auth/sign-in" />
-                  <Stack.Screen name="auth/sign-up" />
-                  <Stack.Screen name="children" />
-                  <Stack.Screen name="parent-dashboard" />
-                  <Stack.Screen name="achievements" />
-                  <Stack.Screen name="progress" />
-                  <Stack.Screen name="personality" />
-                </Stack>
-                <BottomTabBar />
-              </View>
+          <View style={{ flex: 1, flexDirection: 'row' }}>
+            <SideDrawer />
+            <View style={{ flex: 1 }}>
+              <OfflineBanner />
+              <Stack screenOptions={{ headerShown: false, animation: 'slide_from_right' }}>
+                <Stack.Screen name="index" />
+                <Stack.Screen name="grade" />
+                <Stack.Screen name="dashboard" />
+                <Stack.Screen name="lesson" />
+                <Stack.Screen name="progress" />
+                <Stack.Screen name="achievements" />
+                <Stack.Screen name="children" />
+                <Stack.Screen name="parent-dashboard" />
+                <Stack.Screen name="personality" />
+                <Stack.Screen name="auth" />
+              </Stack>
+              <BottomTabBar />
             </View>
-          </AuthGuard>
+          </View>
         </SafeAreaProvider>
       </GestureHandlerRootView>
     </Sentry.ErrorBoundary>

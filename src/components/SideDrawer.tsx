@@ -106,15 +106,17 @@ export function SideDrawer() {
 
   async function handleSignOut() {
     try {
-      const { error } = await supabase.auth.signOut();
-      if (error) throw error;
-
       useAuthStore.getState().setSession(null);
       useAuthStore.getState().setUserRole(null);
 
+      supabase.auth.signOut().catch((e) => {
+        console.error('Supabase signOut error (ignored):', e);
+      });
+
       router.replace('/auth/sign-in');
-    } catch (e) {
-      console.error('Sign out error:', e);
+    } catch {
+      useAuthStore.getState().setSession(null);
+      useAuthStore.getState().setUserRole(null);
       router.replace('/auth/sign-in');
     }
   }

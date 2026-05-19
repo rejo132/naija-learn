@@ -300,7 +300,7 @@ export function LearningFlow({
       setShowSimpler(false);
     } else {
       const xp = Math.round((score / questions.length) * 50);
-      setXpEarned(x);
+      setXpEarned(xp);
       setStep('reward');
     }
   }
