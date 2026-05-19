@@ -30,6 +30,7 @@ import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 import { PressableScale } from '@/components/PressableScale';
 import { TutorAvatar } from '@/components/TutorAvatar';
+import { ChildSwitcher } from '@/components/ChildSwitcher';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { syncProfile } from '@/services/dbService';
 
@@ -50,6 +51,7 @@ function isStudiedToday(lastStudyDate: string | null) {
 export default function DashboardScreen() {
   const [activeTab, setActiveTab] = useState<Tab>('subjects');
   const [aiPrompt, setAiPrompt] = useState('');
+  const [showSwitcher, setShowSwitcher] = useState(false);
   const { selectedLanguage, selectedGrade, setSubject, setLanguage, xp, streak, lastStudyDate, lessonsCompleted } =
     useAppStore();
   const selectedPersonalityId = useAppStore((s) => s.selectedPersonalityId);
@@ -181,20 +183,18 @@ export default function DashboardScreen() {
                   {LANGUAGE_NAMES[selectedLanguage as Language]?.split(' ')[0]}
                 </Text>
               </TouchableOpacity>
-              {activeChildName && (
-                <TouchableOpacity
-                  style={styles.switchChildBtn}
-                  onPress={() => router.push('/child-select')}
-                >
-                  <Text style={styles.switchChildAvatar}>
-                    {activeChildAvatar ?? '🧒'}
-                  </Text>
-                  <Text style={styles.switchChildName} numberOfLines={1}>
-                    {activeChildName}
-                  </Text>
-                  <Text style={styles.switchChildArrow}>⇄</Text>
-                </TouchableOpacity>
-              )}
+              <TouchableOpacity
+                style={styles.switchChildBtn}
+                onPress={() => setShowSwitcher(true)}
+              >
+                <Text style={styles.switchChildAvatar}>
+                  {activeChildAvatar ?? '👤'}
+                </Text>
+                <Text style={styles.switchChildName} numberOfLines={1}>
+                  {activeChildName ?? 'Select Child'}
+                </Text>
+                <Text style={styles.switchChildChevron}>⌄</Text>
+              </TouchableOpacity>
             </View>
           </View>
 
@@ -526,6 +526,14 @@ export default function DashboardScreen() {
           <TutorAvatar size={28} />
           <Text style={styles.floatingTutorText}>{ui.askTutor}</Text>
         </TouchableOpacity>
+
+        <ChildSwitcher
+          visible={showSwitcher}
+          onClose={() => setShowSwitcher(false)}
+          onChildSelected={() => {
+            setShowSwitcher(false);
+          }}
+        />
       </View>
     </SafeAreaView>
   );
@@ -623,9 +631,10 @@ const styles = StyleSheet.create({
     color: COLORS.primaryDark,
     maxWidth: 80,
   },
-  switchChildArrow: {
-    fontSize: FONT_SIZES.xs,
+  switchChildChevron: {
+    fontSize: FONT_SIZES.sm,
     color: COLORS.primary,
+    fontWeight: '900',
   },
 
   promptBar: {
