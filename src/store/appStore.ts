@@ -56,6 +56,21 @@ interface AppState {
   bestQuizScore: number;
   unlockedAchievements: string[];
   isDarkMode: boolean;
+  // ── Save & resume ──
+  /** Subject label of the most recently opened lesson, or null. */
+  lastSubject: string | null;
+  /** Emoji icon of the most recently opened subject. */
+  lastSubjectEmoji: string | null;
+  /** Grade of the most recently opened lesson. */
+  lastGrade: number | null;
+  /** Personality id selected for the most recent lesson. */
+  lastPersonalityId: string | null;
+  /** ISO timestamp of when the last lesson was opened. */
+  lastOpenedAt: string | null;
+  /** Per-subject completion percentage. Key: `${subjectLabel}_${grade}` → 0-100. */
+  subjectProgress: Record<string, number>;
+  /** Tracks whether the LearningFlow intro has been completed for a subject+grade. */
+  completedFlows: Record<string, boolean>;
   setLanguage: (lang: LanguageCode) => void;
   setGrade: (grade: number) => void;
   setSubject: (subject: Subject) => void;
@@ -72,6 +87,18 @@ interface AppState {
   updateBestQuizScore: (score: number) => void;
   unlockAchievement: (id: string) => void;
   toggleDarkMode: () => void;
+  setLastSession: (
+    subject: string,
+    emoji: string,
+    grade: number,
+    personalityId: string
+  ) => void;
+  updateSubjectProgress: (
+    subjectLabel: string,
+    grade: number,
+    progress: number
+  ) => void;
+  markFlowCompleted: (subjectLabel: string, grade: number) => void;
 }
 
 type PersistedAppState = Pick<
@@ -88,6 +115,13 @@ type PersistedAppState = Pick<
   | 'bestQuizScore'
   | 'unlockedAchievements'
   | 'isDarkMode'
+  | 'lastSubject'
+  | 'lastSubjectEmoji'
+  | 'lastGrade'
+  | 'lastPersonalityId'
+  | 'lastOpenedAt'
+  | 'subjectProgress'
+  | 'completedFlows'
 >;
 
 export const useAppStore = create<AppState>()(
@@ -109,6 +143,13 @@ export const useAppStore = create<AppState>()(
       bestQuizScore: 0,
       unlockedAchievements: [],
       isDarkMode: false,
+      lastSubject: null,
+      lastSubjectEmoji: null,
+      lastGrade: null,
+      lastPersonalityId: null,
+      lastOpenedAt: null,
+      subjectProgress: {},
+      completedFlows: {},
       setLanguage: (lang) => set({ selectedLanguage: lang }),
       // Resetting subject when grade changes prevents wrong content showing for the new grade
       setGrade: (grade) => set({ selectedGrade: grade, selectedSubject: null }),
@@ -167,6 +208,32 @@ export const useAppStore = create<AppState>()(
             : [...state.unlockedAchievements, id],
         })),
       toggleDarkMode: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
+      setLastSession: (subject, emoji, grade, personalityId) =>
+        set({
+          lastSubject: subject,
+          lastSubjectEmoji: emoji,
+          lastGrade: grade,
+          lastPersonalityId: personalityId,
+          lastOpenedAt: new Date().toISOString(),
+        }),
+      updateSubjectProgress: (subjectLabel, grade, progress) =>
+        set((state) => {
+          const key = `${subjectLabel}_${grade}`;
+          const current = state.subjectProgress[key] ?? 0;
+          return {
+            subjectProgress: {
+              ...state.subjectProgress,
+              [key]: Math.min(100, Math.max(current, progress)),
+            },
+          };
+        }),
+      markFlowCompleted: (subjectLabel, grade) =>
+        set((state) => ({
+          completedFlows: {
+            ...state.completedFlows,
+            [`${subjectLabel}_${grade}`]: true,
+          },
+        })),
     }),
     {
       name: 'learnova-app-store',
@@ -187,6 +254,13 @@ export const useAppStore = create<AppState>()(
         bestQuizScore: state.bestQuizScore,
         unlockedAchievements: state.unlockedAchievements,
         isDarkMode: state.isDarkMode,
+        lastSubject: state.lastSubject,
+        lastSubjectEmoji: state.lastSubjectEmoji,
+        lastGrade: state.lastGrade,
+        lastPersonalityId: state.lastPersonalityId,
+        lastOpenedAt: state.lastOpenedAt,
+        subjectProgress: state.subjectProgress,
+        completedFlows: state.completedFlows,
       }),
       merge: (persisted, current) => ({
         ...current,

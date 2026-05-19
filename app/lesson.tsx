@@ -265,8 +265,14 @@ export default function LessonScreen() {
   const incrementLessons = useAppStore((s) => s.incrementLessons);
   const updateBestQuizScore = useAppStore((s) => s.updateBestQuizScore);
   const unlockAchievement = useAppStore((s) => s.unlockAchievement);
+  const setLastSession = useAppStore((s) => s.setLastSession);
+  const markFlowCompleted = useAppStore((s) => s.markFlowCompleted);
+  const updateSubjectProgress = useAppStore((s) => s.updateSubjectProgress);
   const user = useAuthStore((s) => s.user);
-  const [flowCompleted, setFlowCompleted] = useState(false);
+  const [flowCompleted, setFlowCompleted] = useState(() => {
+    const key = `${selectedSubject?.label ?? ''}_${selectedGrade ?? ''}`;
+    return useAppStore.getState().completedFlows[key] ?? false;
+  });
   const [flowState, setFlowState] = useState<LearningFlowState | null>(null);
   const [newAchievement, setNewAchievement] = useState<Achievement | null>(null);
   const [inputText, setInputText] = useState('');
@@ -321,12 +327,22 @@ export default function LessonScreen() {
         addXP(XP_REWARDS.FIRST_LESSON_OF_DAY);
       }
 
+      setLastSession(
+        selectedSubject.label,
+        selectedSubject.icon ?? '📚',
+        selectedGrade,
+        selectedPersonalityId,
+      );
+
       const contextKey = `${selectedSubject.id}:${selectedGrade}:${selectedLanguage}`;
       const contextChanged = lessonContextRef.current !== contextKey;
       if (contextChanged) {
         lessonContextRef.current = contextKey;
         clearMessages();
-        setFlowCompleted(false);
+        const flowKey = `${selectedSubject.label}_${selectedGrade}`;
+        const alreadyCompleted =
+          useAppStore.getState().completedFlows[flowKey] ?? false;
+        setFlowCompleted(alreadyCompleted);
         setFlowState(null);
         setIsQuizMode(false);
         isQuizModeRef.current = false;
@@ -337,7 +353,21 @@ export default function LessonScreen() {
       return () => {
         endSession();
       };
-    }, [selectedSubject?.id, selectedGrade, selectedLanguage, addXP, incrementLessons, updateStreak])
+    }, [
+      selectedSubject?.id,
+      selectedSubject?.label,
+      selectedSubject?.icon,
+      selectedGrade,
+      selectedLanguage,
+      selectedPersonalityId,
+      addXP,
+      incrementLessons,
+      updateStreak,
+      setLastSession,
+      clearMessages,
+      endSession,
+      startSession,
+    ])
   );
 
   if (!selectedGrade) return <Redirect href="/grade" />;
@@ -420,6 +450,8 @@ export default function LessonScreen() {
               duration_seconds: useAppStore.getState().totalSessionSeconds,
             });
           }
+
+          updateSubjectProgress(selectedSubject.label, selectedGrade, finalScore);
         }
       }
     } catch (error: unknown) {
@@ -544,6 +576,9 @@ export default function LessonScreen() {
             onComplete={(state) => {
               setFlowState(state);
               setFlowCompleted(true);
+              if (selectedSubject && selectedGrade) {
+                markFlowCompleted(selectedSubject.label, selectedGrade);
+              }
               if (state.xpEarned > 0) {
                 addXP(state.xpEarned);
               }

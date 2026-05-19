@@ -24,7 +24,7 @@ import {
   Subject,
   getLocalizedSubject,
 } from '@/constants/subjects';
-import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
@@ -51,6 +51,11 @@ export default function DashboardScreen() {
   const [aiPrompt, setAiPrompt] = useState('');
   const { selectedLanguage, selectedGrade, setSubject, setLanguage, xp, streak, lastStudyDate, lessonsCompleted } =
     useAppStore();
+  const lastSubject = useAppStore((s) => s.lastSubject);
+  const lastSubjectEmoji = useAppStore((s) => s.lastSubjectEmoji);
+  const lastGrade = useAppStore((s) => s.lastGrade);
+  const lastOpenedAt = useAppStore((s) => s.lastOpenedAt);
+  const subjectProgress = useAppStore((s) => s.subjectProgress);
   const user = useAuthStore((s) => s.user);
   const ui = getUIText(selectedLanguage);
   const { t } = useTranslation();
@@ -205,6 +210,72 @@ export default function DashboardScreen() {
             </TouchableOpacity>
           )}
 
+          {/* Resume last lesson */}
+          {lastSubject && (
+            <TouchableOpacity
+              style={[
+                styles.resumeCard,
+                {
+                  backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
+                  borderColor: colors.primaryGlow,
+                },
+              ]}
+              onPress={() => {
+                const allSubjects = [
+                  ...tabContent.subjects,
+                  ...tabContent.languages,
+                  ...tabContent.softskills,
+                ];
+                const match = allSubjects.find(
+                  (s) => s.label.toLowerCase() === lastSubject.toLowerCase()
+                );
+                if (match) {
+                  handleSubject(getLocalizedSubject(match, selectedLanguage));
+                }
+              }}
+            >
+              <View style={[styles.resumeLeft, { backgroundColor: colors.primaryLight }]}>
+                <Text style={styles.resumeEmoji}>{lastSubjectEmoji ?? '📚'}</Text>
+              </View>
+
+              <View style={styles.resumeBody}>
+                <Text style={[styles.resumeLabel, { color: colors.textMuted }]}>
+                  CONTINUE WHERE YOU LEFT OFF
+                </Text>
+                <Text style={[styles.resumeSubject, { color: colors.textPrimary }]}>
+                  {lastSubject}
+                </Text>
+
+                <View style={[styles.resumeProgressBar, { backgroundColor: colors.border }]}>
+                  <View
+                    style={[
+                      styles.resumeProgressFill,
+                      {
+                        width: `${
+                          subjectProgress[
+                            `${lastSubject}_${lastGrade ?? selectedGrade}`
+                          ] ?? 0
+                        }%`,
+                        backgroundColor: colors.primary,
+                      },
+                    ]}
+                  />
+                </View>
+
+                <Text style={[styles.resumeProgress, { color: colors.textMuted }]}>
+                  {subjectProgress[
+                    `${lastSubject}_${lastGrade ?? selectedGrade}`
+                  ] ?? 0}
+                  % complete
+                </Text>
+              </View>
+
+              <View style={[styles.resumeArrow, { backgroundColor: colors.primaryLight }]}>
+                <Text style={[styles.resumeArrowText, { color: colors.primary }]}>→</Text>
+              </View>
+            </TouchableOpacity>
+          )}
+
           {/* Quick stats */}
           <View style={styles.statsRow}>
             <GlassCard
@@ -338,6 +409,8 @@ export default function DashboardScreen() {
           <View style={styles.grid}>
             {tabContent[activeTab].map((subject) => {
               const localized = getLocalizedSubject(subject, selectedLanguage);
+              const cardKey = `${subject.label}_${selectedGrade}`;
+              const cardProgress = subjectProgress[cardKey] ?? 0;
               return (
                 <View
                   key={subject.id}
@@ -351,6 +424,29 @@ export default function DashboardScreen() {
                     <View
                       style={[styles.cardGradient, { backgroundColor: subject.bgColor }]}
                     />
+                    {cardProgress > 0 && (
+                      <View
+                        style={[
+                          styles.cardProgressBadge,
+                          {
+                            backgroundColor:
+                              cardProgress >= 100 ? colors.success : colors.primaryLight,
+                          },
+                        ]}
+                      >
+                        <Text
+                          style={[
+                            styles.cardProgressText,
+                            {
+                              color:
+                                cardProgress >= 100 ? '#FFFFFF' : colors.primaryDark,
+                            },
+                          ]}
+                        >
+                          {cardProgress >= 100 ? '✓' : `${cardProgress}%`}
+                        </Text>
+                      </View>
+                    )}
                     <View style={styles.cardInner}>
                       <View style={[styles.cardIcon, { backgroundColor: subject.bgColor }]}>
                         <Text style={styles.cardEmoji}>{subject.icon}</Text>
@@ -529,6 +625,67 @@ const styles = StyleSheet.create({
     color: '#B87B0A',
   },
 
+  resumeCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.md,
+    borderRadius: RADIUS.xl,
+    padding: SPACING.lg,
+    marginBottom: SPACING.md,
+    borderWidth: 1.5,
+    borderColor: COLORS.primaryGlow,
+    shadowColor: '#000',
+    shadowOpacity: 0.05,
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 12,
+    elevation: 3,
+  },
+  resumeLeft: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+  },
+  resumeEmoji: { fontSize: 24 },
+  resumeBody: { flex: 1, gap: 4 },
+  resumeLabel: {
+    fontSize: 9,
+    fontFamily: 'Poppins-SemiBold',
+    letterSpacing: 1,
+  },
+  resumeSubject: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-Bold',
+  },
+  resumeProgressBar: {
+    height: 4,
+    borderRadius: 2,
+    overflow: 'hidden',
+    marginTop: 4,
+  },
+  resumeProgressFill: {
+    height: '100%',
+    borderRadius: 2,
+  },
+  resumeProgress: {
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-Regular',
+  },
+  resumeArrow: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+  },
+  resumeArrowText: {
+    fontSize: 16,
+    fontFamily: 'Poppins-Bold',
+  },
+
   statsRow: {
     flexDirection: 'row',
     gap: SPACING.sm,
@@ -691,6 +848,21 @@ const styles = StyleSheet.create({
   cardGradient: {
     ...StyleSheet.absoluteFillObject,
     opacity: 0.22,
+  },
+  cardProgressBadge: {
+    position: 'absolute',
+    top: SPACING.sm,
+    right: SPACING.sm,
+    borderRadius: RADIUS.full,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    minWidth: 28,
+    alignItems: 'center',
+    zIndex: 1,
+  },
+  cardProgressText: {
+    fontSize: 10,
+    fontFamily: 'Poppins-Bold',
   },
   cardInner: {
     flexDirection: 'row',
