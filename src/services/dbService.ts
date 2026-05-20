@@ -301,14 +301,12 @@ export async function syncProfile({
 }
 
 /**
- * Get a weekly summary of progress.
- * Tries `child_id` first, falls back to `user_id` if a userId is provided
- * and the child query returns no rows. This handles cases where progress
- * was saved against the parent's auth id rather than a specific child.
+ * Get a weekly summary of progress for a specific child.
+ * Only rows with matching `child_id` are included.
  */
 export async function getWeeklySummary(
   childId: string,
-  userId?: string
+  _userId?: string
 ): Promise<{
   subjectsStudied: string[];
   averageScore: number;
@@ -332,16 +330,10 @@ export async function getWeeklySummary(
       .eq('child_id', childId)
       .gte('created_at', sevenDaysAgo.toISOString());
 
-    if (!childError && byChild && byChild.length > 0) {
+    if (childError) {
+      captureError(childError, { context: 'getWeeklySummary child error' });
+    } else if (byChild && byChild.length > 0) {
       data = byChild;
-    } else if (userId) {
-      const { data: byUser, error: userError } = await supabase
-        .from('progress')
-        .select('subject, score, duration_seconds, created_at')
-        .eq('user_id', userId)
-        .gte('created_at', sevenDaysAgo.toISOString());
-
-      if (!userError) data = byUser;
     }
 
     if (!data || data.length === 0) {
@@ -385,12 +377,11 @@ export async function getWeeklySummary(
 
 /**
  * Get the most recent progress entries (up to 20) for a child.
- * Tries `child_id` first; if that returns no rows and a userId is provided,
- * falls back to querying by `user_id`.
+ * Only rows with matching `child_id` are included.
  */
 export async function getChildProgressHistory(
   childId: string,
-  userId?: string
+  _userId?: string
 ): Promise<
   Array<{
     id: string;
@@ -410,22 +401,16 @@ export async function getChildProgressHistory(
       .order('created_at', { ascending: false })
       .limit(20);
 
-    if (!childError && byChild && byChild.length > 0) {
-      return byChild;
+    if (childError) {
+      captureError(childError, { context: 'getChildProgressHistory child error' });
+      return [];
     }
 
-    if (userId) {
-      const { data: byUser, error: userError } = await supabase
-        .from('progress')
-        .select('id, subject, topic, score, duration_seconds, created_at, grade')
-        .eq('user_id', userId)
-        .order('created_at', { ascending: false })
-        .limit(20);
-
-      if (!userError && byUser) return byUser;
+    if (!byChild || byChild.length === 0) {
+      return [];
     }
 
-    return [];
+    return byChild;
   } catch (err) {
     captureError(err, { context: 'getChildProgressHistory exception' });
     return [];

@@ -21,6 +21,7 @@ import { useAppStore } from '@/store/appStore';
 import {
   getChildren,
   loadChildProfile,
+  updateChildStats,
   type Child,
 } from '@/services/dbService';
 import { COLORS, SPACING, RADIUS, FONT_SIZES, FONT_FAMILY, SHADOWS } from '@/constants/theme';
@@ -94,6 +95,25 @@ export function ChildSwitcher({
       return;
     }
     setSwitchingId(child.id);
+
+    const {
+      activeChildId: currentChildId,
+      activeChildXP,
+      activeChildStreak,
+      xp,
+      streak,
+      lastStudyDate,
+    } = useAppStore.getState();
+
+    if (currentChildId) {
+      updateChildStats(
+        currentChildId,
+        activeChildXP ?? xp ?? 0,
+        activeChildStreak ?? streak ?? 0,
+        lastStudyDate ?? new Date().toISOString().split('T')[0],
+      ).catch(() => {});
+    }
+
     const profile = await loadChildProfile(child.id);
     setActiveChild({
       id: child.id,

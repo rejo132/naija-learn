@@ -347,8 +347,6 @@ export const useAppStore = create<AppState>()(
       addActiveChildXP: (amount) =>
         set((state) => ({
           activeChildXP: (state.activeChildXP ?? 0) + amount,
-          // Also update the shared XP for display.
-          xp: (state.xp ?? 0) + amount,
         })),
       setParentPin: (pin) => set({ parentPin: pin }),
       setHasSetupParentPin: (val) => set({ hasSetupParentPin: val }),

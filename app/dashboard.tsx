@@ -63,6 +63,9 @@ export default function DashboardScreen() {
   const subjectProgress = useAppStore((s) => s.subjectProgress);
   const activeChildName = useAppStore((s) => s.activeChildName);
   const activeChildAvatar = useAppStore((s) => s.activeChildAvatar);
+  const activeChildId = useAppStore((s) => s.activeChildId);
+  const activeChildXP = useAppStore((s) => s.activeChildXP);
+  const activeChildStreak = useAppStore((s) => s.activeChildStreak);
   const user = useAuthStore((s) => s.user);
   const ui = getUIText(selectedLanguage);
   const { t } = useTranslation();
@@ -95,15 +98,24 @@ export default function DashboardScreen() {
 
   useEffect(() => {
     syncProfile({
-      xp: xp ?? 0,
-      streak: streak ?? 0,
+      xp: activeChildId ? (activeChildXP ?? xp ?? 0) : (xp ?? 0),
+      streak: activeChildId ? (activeChildStreak ?? streak ?? 0) : (streak ?? 0),
       grade: selectedGrade ?? 1,
       language: selectedLanguage ?? 'en',
       personalityId: selectedPersonalityId ?? 'aunty_naija',
       lastActiveDate: lastActiveDate ?? new Date().toISOString().split('T')[0],
     }).catch(() => {});
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [xp, streak, selectedGrade, selectedLanguage, selectedPersonalityId]);
+  }, [
+    xp,
+    streak,
+    activeChildId,
+    activeChildXP,
+    activeChildStreak,
+    selectedGrade,
+    selectedLanguage,
+    selectedPersonalityId,
+  ]);
 
   if (!selectedGrade) return <Redirect href="/grade" />;
 

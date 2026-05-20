@@ -20,7 +20,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useAppStore } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
-import { getChildren, loadChildProfile, type Child } from '@/services/dbService';
+import {
+  getChildren,
+  loadChildProfile,
+  updateChildStats,
+  type Child,
+} from '@/services/dbService';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { GlassCard } from '@/components/GlassCard';
 import { ParentGate } from '@/components/ParentGate';
@@ -52,6 +57,24 @@ export default function ChildSelectScreen() {
 
   async function handleSelectChild(child: Child) {
     setSelectingId(child.id);
+
+    const {
+      activeChildId: currentChildId,
+      activeChildXP,
+      activeChildStreak,
+      xp,
+      streak,
+      lastStudyDate,
+    } = useAppStore.getState();
+
+    if (currentChildId) {
+      updateChildStats(
+        currentChildId,
+        activeChildXP ?? xp ?? 0,
+        activeChildStreak ?? streak ?? 0,
+        lastStudyDate ?? new Date().toISOString().split('T')[0],
+      ).catch(() => {});
+    }
 
     const profile = await loadChildProfile(child.id);
 

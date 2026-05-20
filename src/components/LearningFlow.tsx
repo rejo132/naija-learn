@@ -331,11 +331,15 @@ export function LearningFlow({
     }).catch(() => {});
 
     if (activeChildId) {
-      const { xp, streak, lastStudyDate } = useAppStore.getState();
+      const {
+        activeChildXP,
+        activeChildStreak,
+        lastStudyDate,
+      } = useAppStore.getState();
       await updateChildStats(
         activeChildId,
-        xp,
-        streak,
+        activeChildXP ?? 0,
+        activeChildStreak ?? 0,
         lastStudyDate ?? new Date().toISOString().split('T')[0],
       ).catch(() => {});
     }

@@ -369,13 +369,17 @@ export default function LessonScreen() {
   }
 
   async function syncChildStatsToDb() {
-    const { activeChildId, xp: storeXp, streak: storeStreak, lastStudyDate } =
-      useAppStore.getState();
+    const {
+      activeChildId,
+      activeChildXP,
+      activeChildStreak,
+      lastStudyDate,
+    } = useAppStore.getState();
     if (activeChildId) {
       await updateChildStats(
         activeChildId,
-        storeXp,
-        storeStreak,
+        activeChildXP ?? 0,
+        activeChildStreak ?? 0,
         lastStudyDate ?? new Date().toISOString().split('T')[0],
       ).catch(() => {});
     }
@@ -575,10 +579,10 @@ export default function LessonScreen() {
             xpEarned: earnedXP,
             durationSeconds: durationSecs,
             flowCompleted: flowState?.hookCompleted ?? false,
-            childId: activeChildId,
+            childId: useAppStore.getState().activeChildId,
           }).catch((err) => console.error('saveProgress error:', err));
 
-          if (activeChildId) {
+          if (useAppStore.getState().activeChildId) {
             addActiveChildXP(earnedXP);
             updateActiveChildStreak();
           }

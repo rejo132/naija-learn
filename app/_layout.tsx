@@ -70,13 +70,15 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    useAppStore.persist.rehydrate();
     async function init() {
+      await useAppStore.persist.rehydrate();
       await useAuthStore.getState().initialise();
 
       try {
+        const restoredChildId = useAppStore.getState().activeChildId;
         const saved = await loadUserProgress();
-        if (saved) {
+
+        if (!restoredChildId && saved) {
           const store = useAppStore.getState();
 
           if (saved.totalXP > (store.xp ?? 0)) {
