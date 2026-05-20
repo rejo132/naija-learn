@@ -18,6 +18,7 @@ import {
 import { useAuthStore } from '@/store/authStore';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
+import { useTranslation } from '@/hooks/useTranslation';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 
@@ -25,6 +26,7 @@ type ProgressHistoryEntry = Awaited<ReturnType<typeof getChildProgressHistory>>[
 
 export default function ParentDashboardScreen() {
   const { colors, isDarkMode } = useTheme();
+  const { t } = useTranslation();
   const user = useAuthStore((s) => s.user);
   const [children, setChildren] = useState<Child[]>([]);
   const [summaries, setSummaries] = useState<Record<string, Awaited<ReturnType<typeof getWeeklySummary>>>>({});
@@ -87,7 +89,7 @@ export default function ParentDashboardScreen() {
           <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
             <Text style={[styles.backArrow, { color: colors.primaryDark }]}>←</Text>
           </TouchableOpacity>
-          <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>📊 Progress Report</Text>
+          <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>📊 {t('parentDashTitle')}</Text>
           <TouchableOpacity
             style={[styles.manageBtn, { backgroundColor: colors.primaryLight, borderColor: colors.border }]}
             onPress={() => router.push('/children')}
@@ -142,7 +144,7 @@ export default function ParentDashboardScreen() {
             {/* Summary cards */}
             {selectedChild && summary && (
               <>
-                <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>This Week</Text>
+                <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>{t('parentDashProgress')}</Text>
                 <View style={styles.statsGrid}>
                   <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
                     <Text style={styles.statEmoji}>📚</Text>
@@ -204,7 +206,7 @@ export default function ParentDashboardScreen() {
             {summary && summary.totalSessions === 0 && (
               <GlassCard style={[styles.emptyCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
                 <Text style={styles.emptyEmoji}>📖</Text>
-                <Text style={[styles.emptyTitle, { color: colors.textPrimary }]}>No activity yet</Text>
+                <Text style={[styles.emptyTitle, { color: colors.textPrimary }]}>{t('parentDashNoData')}</Text>
                 <Text style={[styles.emptySubtitle, { color: colors.textSecondary }]}>
                   {selectedChild?.name} hasn't completed any lessons this week
                 </Text>
@@ -215,7 +217,7 @@ export default function ParentDashboardScreen() {
 
         {!isLoading && progressHistory.length > 0 && (
           <>
-            <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>Recent Sessions</Text>
+            <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>{t('parentDashSessions')}</Text>
             {isLoadingHistory ? (
               <ActivityIndicator color={COLORS.primary} />
             ) : (

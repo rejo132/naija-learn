@@ -5,10 +5,12 @@
  */
 import { View, Text, StyleSheet } from 'react-native';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
+import { useTranslation } from '@/hooks/useTranslation';
 import { SPACING, FONT_SIZES } from '@/constants/theme';
 
 export function OfflineBanner() {
   const { isConnected, isChecking } = useNetworkStatus();
+  const { t } = useTranslation();
 
   if (isChecking || isConnected) return null;
 
@@ -16,8 +18,7 @@ export function OfflineBanner() {
     <View style={styles.banner}>
       <Text style={styles.icon}>📶</Text>
       <Text style={styles.text}>
-        No internet — AI tutor is unavailable.
-        You can still browse subjects.
+        {t('offlineBanner')} — {t('offlineBannerSub')}
       </Text>
     </View>
   );

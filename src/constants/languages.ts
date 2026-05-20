@@ -61,6 +61,83 @@ export const UI_TEXT: Record<Language, {
   incorrect: string;
   score: string;
   level: string;
+  forgotPasswordTitle: string;
+  forgotPasswordSubtitle: string;
+  forgotPasswordButton: string;
+  forgotPasswordSuccess: string;
+  forgotPasswordBack: string;
+  changePinTitle: string;
+  changePinCurrent: string;
+  changePinNew: string;
+  changePinConfirm: string;
+  changePinButton: string;
+  changePinSuccess: string;
+  changePinSuccessMsg: string;
+  childrenTitle: string;
+  childrenAdd: string;
+  childrenEmpty: string;
+  childrenEmptySubtitle: string;
+  childrenName: string;
+  childrenGrade: string;
+  childrenSave: string;
+  childrenDelete: string;
+  childrenEdit: string;
+  childSelectTitle: string;
+  childSelectSubtitle: string;
+  childSelectAdd: string;
+  childSelectContinue: string;
+  parentDashTitle: string;
+  parentDashProgress: string;
+  parentDashSessions: string;
+  parentDashNoData: string;
+  parentDashSubject: string;
+  parentDashScore: string;
+  parentDashDate: string;
+  personalityTitle: string;
+  personalitySubtitle: string;
+  personalitySelect: string;
+  personalitySelected: string;
+  progressTitle: string;
+  progressXP: string;
+  progressStreak: string;
+  progressLessons: string;
+  progressBestScore: string;
+  progressAchievements: string;
+  achievementsTitle: string;
+  achievementsLocked: string;
+  achievementsUnlocked: string;
+  achievementsProgress: string;
+  settingsTitle: string;
+  settingsParentZone: string;
+  settingsForChild: string;
+  settingsAppPrefs: string;
+  settingsAbout: string;
+  settingsSignOut: string;
+  settingsDarkMode: string;
+  settingsLanguage: string;
+  settingsGrade: string;
+  settingsChangePIN: string;
+  settingsManageChildren: string;
+  parentGateTitle: string;
+  parentGateSubtitle: string;
+  parentGateSetupTitle: string;
+  parentGateSetupSubtitle: string;
+  parentGateSetPIN: string;
+  parentGateEnter: string;
+  parentGateWrong: string;
+  parentGateHint: string;
+  childSwitcherTitle: string;
+  childSwitcherActive: string;
+  offlineBanner: string;
+  offlineBannerSub: string;
+  offlineTitle: string;
+  offlineQuiz: string;
+  offlineFlashcards: string;
+  offlineBack: string;
+  progressShort: string;
+  achievementsShort: string;
+  settingsShort: string;
+  childrenShort: string;
 }> = {
   en: {
     home: 'Home',
@@ -111,6 +188,83 @@ export const UI_TEXT: Record<Language, {
     incorrect: 'Not quite. Try again!',
     score: 'Score',
     level: 'Level',
+    forgotPasswordTitle: 'Forgot Password',
+    forgotPasswordSubtitle: 'Enter your email and we will send you a reset link',
+    forgotPasswordButton: 'Send Reset Link',
+    forgotPasswordSuccess: 'Check your email for the reset link',
+    forgotPasswordBack: 'Back to Sign In',
+    changePinTitle: 'Change Parent PIN',
+    changePinCurrent: 'Current PIN',
+    changePinNew: 'New PIN',
+    changePinConfirm: 'Confirm New PIN',
+    changePinButton: 'Update PIN',
+    changePinSuccess: 'PIN Updated!',
+    changePinSuccessMsg: 'Your Parent Portal PIN has been changed successfully.',
+    childrenTitle: 'Manage Children',
+    childrenAdd: 'Add Child',
+    childrenEmpty: 'No children added yet',
+    childrenEmptySubtitle: 'Add your first child to get started',
+    childrenName: "Child's Name",
+    childrenGrade: 'Grade',
+    childrenSave: 'Save',
+    childrenDelete: 'Delete',
+    childrenEdit: 'Edit',
+    childSelectTitle: 'Who is studying today?',
+    childSelectSubtitle: 'Choose a profile to continue',
+    childSelectAdd: 'Add Another Child',
+    childSelectContinue: 'Continue',
+    parentDashTitle: 'Parent Dashboard',
+    parentDashProgress: 'Progress',
+    parentDashSessions: 'Recent Sessions',
+    parentDashNoData: 'No sessions yet',
+    parentDashSubject: 'Subject',
+    parentDashScore: 'Score',
+    parentDashDate: 'Date',
+    personalityTitle: 'Choose Your Tutor',
+    personalitySubtitle: 'Pick the tutor that feels right for you',
+    personalitySelect: 'Select',
+    personalitySelected: 'Selected',
+    progressTitle: 'My Progress',
+    progressXP: 'Total XP',
+    progressStreak: 'Day Streak',
+    progressLessons: 'Lessons Done',
+    progressBestScore: 'Best Score',
+    progressAchievements: 'Achievements',
+    achievementsTitle: 'Achievements',
+    achievementsLocked: 'Locked',
+    achievementsUnlocked: 'Unlocked',
+    achievementsProgress: 'Keep going to unlock more!',
+    settingsTitle: 'Settings',
+    settingsParentZone: 'Parent Zone',
+    settingsForChild: 'For Child',
+    settingsAppPrefs: 'App Preferences',
+    settingsAbout: 'About & Support',
+    settingsSignOut: 'Sign Out',
+    settingsDarkMode: 'Dark Mode',
+    settingsLanguage: 'Language',
+    settingsGrade: 'Grade',
+    settingsChangePIN: 'Change Parent PIN',
+    settingsManageChildren: 'Manage Children',
+    parentGateTitle: 'Parent Zone',
+    parentGateSubtitle: 'Enter your PIN to continue',
+    parentGateSetupTitle: 'Create Your Parent PIN',
+    parentGateSetupSubtitle: 'Set a 4-digit PIN to protect the Parent Zone',
+    parentGateSetPIN: 'Set PIN',
+    parentGateEnter: 'Enter PIN',
+    parentGateWrong: 'Incorrect PIN. Try again.',
+    parentGateHint: 'Change your PIN in Settings',
+    childSwitcherTitle: 'Switch Child',
+    childSwitcherActive: 'Active',
+    offlineBanner: 'You are offline',
+    offlineBannerSub: 'Using saved content',
+    offlineTitle: 'Offline Mode',
+    offlineQuiz: 'Practice Quiz',
+    offlineFlashcards: 'Flashcards',
+    offlineBack: 'Back',
+    progressShort: 'Stats',
+    achievementsShort: 'Awards',
+    settingsShort: 'More',
+    childrenShort: 'Kids',
   },
   ha: {
     home: 'Gida',
@@ -161,6 +315,83 @@ export const UI_TEXT: Record<Language, {
     incorrect: 'Ba daidai ba. Sake gwadawa!',
     score: 'Maki',
     level: 'Matakin',
+    forgotPasswordTitle: 'Manta Kalmar Sirri',
+    forgotPasswordSubtitle: 'Shigar da imel ɗinka mu aika maka hanyar sake saiti',
+    forgotPasswordButton: 'Aika Hanyar Sake Saiti',
+    forgotPasswordSuccess: 'Duba imel ɗinka don hanyar sake saiti',
+    forgotPasswordBack: 'Komawa Shiga',
+    changePinTitle: 'Canja PIN na Iyaye',
+    changePinCurrent: 'PIN na Yanzu',
+    changePinNew: 'Sabon PIN',
+    changePinConfirm: 'Tabbatar da Sabon PIN',
+    changePinButton: 'Sabunta PIN',
+    changePinSuccess: 'An Sabunta PIN!',
+    changePinSuccessMsg: 'An canja PIN ɗin Parent Portal cikin nasara.',
+    childrenTitle: 'Sarrafa Yara',
+    childrenAdd: 'Ƙara Yaro',
+    childrenEmpty: 'Babu yara da aka ƙara',
+    childrenEmptySubtitle: 'Ƙara ɗan ku na farko don farawa',
+    childrenName: 'Sunan Yaro',
+    childrenGrade: 'Aji',
+    childrenSave: 'Ajiye',
+    childrenDelete: 'Cire',
+    childrenEdit: 'Gyara',
+    childSelectTitle: 'Wane ne yana karatu yau?',
+    childSelectSubtitle: 'Zaɓi bayanan martaba don ci gaba',
+    childSelectAdd: 'Ƙara Wani Yaro',
+    childSelectContinue: 'Ci gaba',
+    parentDashTitle: 'Dashboard na Iyaye',
+    parentDashProgress: 'Ci gaba',
+    parentDashSessions: 'Zaman Kwanan Nan',
+    parentDashNoData: 'Babu zaman tukuna',
+    parentDashSubject: 'Darasi',
+    parentDashScore: 'Maki',
+    parentDashDate: 'Kwanan wata',
+    personalityTitle: 'Zaɓi Malamin Ku',
+    personalitySubtitle: 'Zaɓi malamin da ya dace da ku',
+    personalitySelect: 'Zaɓi',
+    personalitySelected: 'An zaɓa',
+    progressTitle: 'Ci Gabana',
+    progressXP: 'Jimillar XP',
+    progressStreak: 'Jerin Kwanaki',
+    progressLessons: 'Darussan da aka Kammala',
+    progressBestScore: 'Mafi Kyawun Maki',
+    progressAchievements: 'Nasarori',
+    achievementsTitle: 'Nasarori',
+    achievementsLocked: 'A kulle',
+    achievementsUnlocked: 'An buɗe',
+    achievementsProgress: 'Ci gaba don buɗe ƙarin!',
+    settingsTitle: 'Saituna',
+    settingsParentZone: 'Yankin Iyaye',
+    settingsForChild: 'Ga Yaro',
+    settingsAppPrefs: 'Abubuwan Manhaja',
+    settingsAbout: 'Game da Mu & Taimako',
+    settingsSignOut: 'Fita',
+    settingsDarkMode: 'Yanayin Duhu',
+    settingsLanguage: 'Harshe',
+    settingsGrade: 'Aji',
+    settingsChangePIN: 'Canja PIN na Iyaye',
+    settingsManageChildren: 'Sarrafa Yara',
+    parentGateTitle: 'Yankin Iyaye',
+    parentGateSubtitle: 'Shigar da PIN ɗinka don ci gaba',
+    parentGateSetupTitle: 'Ƙirƙiri PIN na Iyaye',
+    parentGateSetupSubtitle: 'Saita PIN mai lamba 4 don kare Yankin Iyaye',
+    parentGateSetPIN: 'Saita PIN',
+    parentGateEnter: 'Shigar da PIN',
+    parentGateWrong: 'PIN ba daidai ba. Sake gwadawa.',
+    parentGateHint: 'Canja PIN ɗinka a Saituna',
+    childSwitcherTitle: 'Canja Yaro',
+    childSwitcherActive: 'Aiki',
+    offlineBanner: 'Kana offline',
+    offlineBannerSub: 'Ana amfani da abubuwan da aka ajiye',
+    offlineTitle: 'Yanayin Offline',
+    offlineQuiz: 'Gwajin Aiki',
+    offlineFlashcards: 'Katunan Tunawa',
+    offlineBack: 'Koma baya',
+    progressShort: 'Kididdiga',
+    achievementsShort: 'Kyauta',
+    settingsShort: 'Ƙari',
+    childrenShort: 'Yara',
   },
   yo: {
     home: 'Ilé',
@@ -211,6 +442,83 @@ export const UI_TEXT: Record<Language, {
     incorrect: 'Kò tọ̀. Gbìyànjú lẹ́ẹ̀kan síi!',
     score: 'Àmì',
     level: 'Ìpele',
+    forgotPasswordTitle: 'Gbàgbé Ọ̀rọ̀ Aṣínà',
+    forgotPasswordSubtitle: 'Tẹ imeeli rẹ a o fi ọ̀nà ìtúnṣe ránṣẹ́',
+    forgotPasswordButton: 'Fi Ọ̀nà Ìtúnṣe Ránṣẹ́',
+    forgotPasswordSuccess: 'Ṣàyẹ̀wò imeeli rẹ fún ọ̀nà ìtúnṣe',
+    forgotPasswordBack: 'Padà sí Wíwọlé',
+    changePinTitle: 'Yí Ọ̀rọ̀ Aṣínà Obi Padà',
+    changePinCurrent: 'Ọ̀rọ̀ Aṣínà Lọ́wọ́lọ́wọ́',
+    changePinNew: 'Ọ̀rọ̀ Aṣínà Tuntun',
+    changePinConfirm: 'Jẹ́ Ìmúdájú Ọ̀rọ̀ Aṣínà Tuntun',
+    changePinButton: 'Ṣe Ìmúdájú PIN',
+    changePinSuccess: 'A Ṣe Ìmúdájú PIN!',
+    changePinSuccessMsg: 'A ti yí ọ̀rọ̀ aṣínà Parent Portal padà ní àṣeyọrí.',
+    childrenTitle: 'Ṣàkóso Àwọn Ọmọ',
+    childrenAdd: 'Fi Ọmọ Kún',
+    childrenEmpty: 'Kò sí ọmọ tí a fi kún sílẹ̀',
+    childrenEmptySubtitle: 'Fi ọmọ akọ́kọ rẹ kún láti bẹ̀rẹ̀',
+    childrenName: 'Orúkọ Ọmọ',
+    childrenGrade: 'Kíláàsì',
+    childrenSave: 'Pamọ́',
+    childrenDelete: 'Paárẹ́',
+    childrenEdit: 'Ṣàtúnṣe',
+    childSelectTitle: 'Ta ni ó ń kọ́ ẹ̀kọ́ lónìí?',
+    childSelectSubtitle: 'Yan profaili láti tẹ̀síwájú',
+    childSelectAdd: 'Fi Ọmọ Mìíràn Kún',
+    childSelectContinue: 'Tẹ̀síwájú',
+    parentDashTitle: 'Dashboard Obi',
+    parentDashProgress: 'Ìlọsíwájú',
+    parentDashSessions: 'Àwọn Ìpáde Lẹ́ẹ̀kọ̀ọ̀í',
+    parentDashNoData: 'Kò sí ìpáde sibẹsibẹ',
+    parentDashSubject: 'Kókó Ẹ̀kọ́',
+    parentDashScore: 'Àmì',
+    parentDashDate: 'Ọjọ́',
+    personalityTitle: 'Yan Olùkọ́ Rẹ',
+    personalitySubtitle: 'Yan olùkọ́ tí ó bá ọ mu',
+    personalitySelect: 'Yan',
+    personalitySelected: 'Ti yan',
+    progressTitle: 'Ìlọsíwájú Mi',
+    progressXP: 'Àpapọ̀ XP',
+    progressStreak: 'Ọjọ́ Tẹ̀síwájú',
+    progressLessons: 'Àwọn Ẹ̀kọ́ Tí a Parí',
+    progressBestScore: 'Àmì Tí ó Ga Jù',
+    progressAchievements: 'Àṣeyọrí',
+    achievementsTitle: 'Àṣeyọrí',
+    achievementsLocked: 'Títìpa',
+    achievementsUnlocked: 'Ti ṣí',
+    achievementsProgress: 'Tẹ̀síwájú láti ṣí síwájú sii!',
+    settingsTitle: 'Ètò',
+    settingsParentZone: 'Agbègbè Obi',
+    settingsForChild: 'Fún Ọmọ',
+    settingsAppPrefs: 'Àyàn Áàpù',
+    settingsAbout: 'Nípa & Ìrànlọ́wọ́',
+    settingsSignOut: 'Jáde',
+    settingsDarkMode: 'Àkókò Dúdú',
+    settingsLanguage: 'Èdè',
+    settingsGrade: 'Kíláàsì',
+    settingsChangePIN: 'Yí Ọ̀rọ̀ Aṣínà Obi Padà',
+    settingsManageChildren: 'Ṣàkóso Àwọn Ọmọ',
+    parentGateTitle: 'Agbègbè Obi',
+    parentGateSubtitle: 'Tẹ ọ̀rọ̀ aṣínà rẹ láti tẹ̀síwájú',
+    parentGateSetupTitle: 'Ṣẹ̀dá PIN Obi Rẹ',
+    parentGateSetupSubtitle: 'Ṣètò PIN oní-nọ́mbà 4 láti dáàbò bo Agbègbè Obi',
+    parentGateSetPIN: 'Ṣètò PIN',
+    parentGateEnter: 'Tẹ PIN',
+    parentGateWrong: 'PIN kò tọ̀. Gbìyànjú lẹ́ẹ̀kan síi.',
+    parentGateHint: 'Yí PIN rẹ padà ní Ètò',
+    childSwitcherTitle: 'Yí Ọmọ Padà',
+    childSwitcherActive: 'Ní lọ́wọ́lọ́wọ́',
+    offlineBanner: 'O wa offline',
+    offlineBannerSub: 'Ń lo àkóónú tí a fi pamọ́',
+    offlineTitle: 'Ipò Offline',
+    offlineQuiz: 'Ìdánwò Àdánwò',
+    offlineFlashcards: 'Àwọn Káàdì',
+    offlineBack: 'Padà',
+    progressShort: 'Ìṣirò',
+    achievementsShort: 'Ẹ̀bùn',
+    settingsShort: 'Sii',
+    childrenShort: 'Ọmọ',
   },
   ig: {
     home: 'Ụlọ',
@@ -261,6 +569,83 @@ export const UI_TEXT: Record<Language, {
     incorrect: 'Ọ ezughị ezu. Nwaa ọzọ!',
     score: 'Akara',
     level: 'Ọkwa',
+    forgotPasswordTitle: 'Chefuo Okwuntughe',
+    forgotPasswordSubtitle: 'Tinye ozi-e gị anyị ga-ezitere gị njikọ nrụgharị',
+    forgotPasswordButton: 'Ziga Njikọ Nrụgharị',
+    forgotPasswordSuccess: 'Lelee ozi-e gị maka njikọ nrụgharị',
+    forgotPasswordBack: 'Laghachi na Nbanye',
+    changePinTitle: 'Gbanwee PIN nke Nne na Nna',
+    changePinCurrent: 'PIN Ugbu A',
+    changePinNew: 'PIN Ọhụrụ',
+    changePinConfirm: 'Kwenye PIN Ọhụrụ',
+    changePinButton: 'Melite PIN',
+    changePinSuccess: 'Emelitere PIN!',
+    changePinSuccessMsg: 'Agbanweela PIN Parent Portal gị nke ọma.',
+    childrenTitle: 'Jikwaa Ụmụaka',
+    childrenAdd: 'Tinye Nwa',
+    childrenEmpty: 'Enweghị ụmụaka etinyere',
+    childrenEmptySubtitle: 'Tinye nwa gị mbụ iji malite',
+    childrenName: 'Aha Nwa',
+    childrenGrade: 'Klaasị',
+    childrenSave: 'Chekwaa',
+    childrenDelete: 'Hichapụ',
+    childrenEdit: 'Dezie',
+    childSelectTitle: 'Onye na-azụ ụka taa?',
+    childSelectSubtitle: 'Họrọ profaịlụ iji gaa n\'ihu',
+    childSelectAdd: 'Tinye Nwa Ọzọ',
+    childSelectContinue: 'Gaa n\'ihu',
+    parentDashTitle: 'Dashboard Nne na Nna',
+    parentDashProgress: 'Ọganihu',
+    parentDashSessions: 'Oge Nso A Hụrụ',
+    parentDashNoData: 'Enweghị oge ọ bụla',
+    parentDashSubject: 'Isiokwu',
+    parentDashScore: 'Akara',
+    parentDashDate: 'Ụbọchị',
+    personalityTitle: 'Họrọ Onye Nkuzi Gị',
+    personalitySubtitle: 'Họrọ onye nkuzi kachasị mma gị',
+    personalitySelect: 'Họrọ',
+    personalitySelected: 'Ahọpụtara',
+    progressTitle: 'Ọganihu M',
+    progressXP: 'Ngụkọta XP',
+    progressStreak: 'Ụbọchị n\'otu n\'ihu',
+    progressLessons: 'Ihe Mmụta Emechara',
+    progressBestScore: 'Akara Kachasị Mma',
+    progressAchievements: 'Ihe Nzụlite',
+    achievementsTitle: 'Ihe Nzụlite',
+    achievementsLocked: 'Kpọchiri',
+    achievementsUnlocked: 'Emegheere',
+    achievementsProgress: 'Gaa n\'ihu iji mepee ọzọ!',
+    settingsTitle: 'Ntọala',
+    settingsParentZone: 'Mpaghere Nne na Nna',
+    settingsForChild: 'Maka Nwa',
+    settingsAppPrefs: 'Mmasị Ngwa',
+    settingsAbout: 'Banyere & Nkwado',
+    settingsSignOut: 'Pụọ',
+    settingsDarkMode: 'Ọnọdụ Ọchịchịrị',
+    settingsLanguage: 'Asụsụ',
+    settingsGrade: 'Klaasị',
+    settingsChangePIN: 'Gbanwee PIN nke Nne na Nna',
+    settingsManageChildren: 'Jikwaa Ụmụaka',
+    parentGateTitle: 'Mpaghere Nne na Nna',
+    parentGateSubtitle: 'Tinye PIN gị iji gaa n\'ihu',
+    parentGateSetupTitle: 'Mepụta PIN Nne na Nna',
+    parentGateSetupSubtitle: 'Hazie PIN ọnụọgụ 4 iji chebe Mpaghere Nne na Nna',
+    parentGateSetPIN: 'Hazie PIN',
+    parentGateEnter: 'Tinye PIN',
+    parentGateWrong: 'PIN ezighi ezi. Nwaa ọzọ.',
+    parentGateHint: 'Gbanwee PIN gị na Ntọala',
+    childSwitcherTitle: 'Gbanwee Nwa',
+    childSwitcherActive: 'Na-arụ ọrụ',
+    offlineBanner: 'Ị nọghị n\'ịntanetị',
+    offlineBannerSub: 'Na-eji ndịnaya echekwara',
+    offlineTitle: 'Ọnọdụ Offline',
+    offlineQuiz: 'Ajụjụ Mmụta',
+    offlineFlashcards: 'Kaadị Echeta',
+    offlineBack: 'Laghachi',
+    progressShort: 'Ọnụọgụ',
+    achievementsShort: 'Ihe nrite',
+    settingsShort: 'Ọzọ',
+    childrenShort: 'Ụmụ',
   },
 };
 

@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { COLORS, FONT_SIZES, SPACING, RADIUS } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
+import { useTranslation } from '@/hooks/useTranslation';
 import { useAppStore } from '@/store/appStore';
 
 interface ParentGateProps {
@@ -19,6 +20,7 @@ interface ParentGateProps {
 
 export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
   const { colors, isDarkMode } = useTheme();
+  const { t } = useTranslation();
   const parentPin = useAppStore((s) => s.parentPin);
   const hasSetupParentPin = useAppStore((s) => s.hasSetupParentPin);
   const setHasSetupParentPin = useAppStore((s) => s.setHasSetupParentPin);
@@ -48,7 +50,7 @@ export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
       setError('');
       onSuccess();
     } else {
-      setError('Incorrect PIN. Please try again.');
+      setError(t('parentGateWrong'));
       setPin('');
     }
   }
@@ -94,14 +96,14 @@ export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
           {isSettingUp ? (
             <>
               <Text style={[styles.title, { color: colors.textPrimary }]}>
-                Create Your Parent PIN
+                {t('parentGateSetupTitle')}
               </Text>
               <Text style={[styles.subtitle, { color: colors.textMuted }]}>
-                Set a 4-digit PIN to protect the Parent Zone
+                {t('parentGateSetupSubtitle')}
               </Text>
 
               <Text style={[styles.fieldLabel, { color: colors.textPrimary }]}>
-                New PIN
+                {t('changePinNew')}
               </Text>
               <TextInput
                 style={[
@@ -125,7 +127,7 @@ export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
               />
 
               <Text style={[styles.fieldLabel, { color: colors.textPrimary }]}>
-                Confirm PIN
+                {t('changePinConfirm')}
               </Text>
               <TextInput
                 style={[
@@ -157,25 +159,30 @@ export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
                   (newPin.length !== 4 || confirmPin.length !== 4) &&
                     styles.confirmBtnDisabled,
                 ]}
+                activeOpacity={0.75}
                 onPress={handleSetPin}
                 disabled={newPin.length !== 4 || confirmPin.length !== 4}
               >
-                <Text style={styles.confirmBtnText}>Set PIN</Text>
+                <Text style={styles.confirmBtnText}>{t('parentGateSetPIN')}</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.cancelBtn} onPress={handleCancel}>
+              <TouchableOpacity
+                style={styles.cancelBtn}
+                activeOpacity={0.75}
+                onPress={handleCancel}
+              >
                 <Text style={[styles.cancelBtnText, { color: colors.textMuted }]}>
-                  Cancel
+                  {t('cancel')}
                 </Text>
               </TouchableOpacity>
             </>
           ) : (
             <>
               <Text style={[styles.title, { color: colors.textPrimary }]}>
-                Parent Area
+                {t('parentGateTitle')}
               </Text>
               <Text style={[styles.subtitle, { color: colors.textMuted }]}>
-                Enter your 4-digit PIN to continue
+                {t('parentGateSubtitle')}
               </Text>
 
               <TextInput
@@ -204,23 +211,25 @@ export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
 
               <TouchableOpacity
                 style={[styles.confirmBtn, pin.length !== 4 && styles.confirmBtnDisabled]}
+                activeOpacity={0.75}
                 onPress={handleSubmit}
                 disabled={pin.length !== 4}
               >
-                <Text style={styles.confirmBtnText}>Confirm</Text>
+                <Text style={styles.confirmBtnText}>{t('confirm')}</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.cancelBtn} onPress={handleCancel}>
+              <TouchableOpacity
+                style={styles.cancelBtn}
+                activeOpacity={0.75}
+                onPress={handleCancel}
+              >
                 <Text style={[styles.cancelBtnText, { color: colors.textMuted }]}>
-                  Cancel
+                  {t('cancel')}
                 </Text>
               </TouchableOpacity>
 
               <Text style={[styles.hint, { color: colors.textMuted }]}>
-                Change your PIN in{' '}
-                <Text style={{ color: colors.primary }}>
-                  Settings → Parent Zone
-                </Text>
+                {t('parentGateHint')}
               </Text>
             </>
           )}

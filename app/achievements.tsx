@@ -13,6 +13,7 @@ import {
 } from '@/constants/achievements';
 import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
+import { useTranslation } from '@/hooks/useTranslation';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 
@@ -23,6 +24,7 @@ export default function AchievementsScreen() {
   const bestQuizScore = useAppStore((s) => s.bestQuizScore);
   const level = getLevel(xp);
   const { colors, isDarkMode } = useTheme();
+  const { t } = useTranslation();
 
   const unlocked = getUnlockedAchievements({
     xp,
@@ -51,14 +53,14 @@ export default function AchievementsScreen() {
               isDarkMode && { backgroundColor: colors.backgroundCard },
             ]}
           >
-            <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>🏆 Achievements</Text>
+            <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>🏆 {t('achievementsTitle')}</Text>
           </GlassCard>
         </View>
 
         <GlassCard style={[styles.statsCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
           <View style={styles.statItem}>
             <Text style={[styles.statValue, { color: colors.primaryDark }]}>⚡ {xp}</Text>
-            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Total XP</Text>
+            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{t('progressXP')}</Text>
           </View>
           <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
           <View style={styles.statItem}>
@@ -68,9 +70,13 @@ export default function AchievementsScreen() {
           <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
           <View style={styles.statItem}>
             <Text style={[styles.statValue, { color: colors.primaryDark }]}>🔥 {streak}</Text>
-            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Day Streak</Text>
+            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{t('progressStreak')}</Text>
           </View>
         </GlassCard>
+
+        <Text style={[styles.progressHint, { color: colors.textSecondary }]}>
+          {t('achievementsProgress')}
+        </Text>
 
         <FlatList
           data={ACHIEVEMENT_DEFINITIONS}
@@ -104,11 +110,15 @@ export default function AchievementsScreen() {
                 </View>
                 {isUnlocked ? (
                   <View style={[styles.checkBadge, { backgroundColor: style.color }]}>
-                    <Text style={[styles.checkText, { color: colors.white }]}>✓</Text>
+                    <Text style={[styles.checkText, { color: colors.white }]}>
+                      {t('achievementsUnlocked')}
+                    </Text>
                   </View>
                 ) : (
                   <View style={styles.lockBadge}>
-                    <Text style={styles.lockText}>🔒</Text>
+                    <Text style={[styles.lockText, { color: colors.textMuted }]}>
+                      {t('achievementsLocked')}
+                    </Text>
                   </View>
                 )}
               </GlassCard>
@@ -164,6 +174,13 @@ const styles = StyleSheet.create({
   statValue: { fontSize: FONT_SIZES.lg, fontWeight: '900', fontFamily: 'Poppins-Bold' },
   statLabel: { fontSize: FONT_SIZES.xs, marginTop: 2, fontWeight: '600', fontFamily: 'Poppins-SemiBold' },
   statDivider: { width: 1, height: 36 },
+  progressHint: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Regular',
+    textAlign: 'center',
+    marginBottom: SPACING.md,
+    paddingHorizontal: SPACING.md,
+  },
   list: { gap: SPACING.md, paddingBottom: SPACING.xxl },
   card: {
     flexDirection: 'row',
@@ -186,18 +203,18 @@ const styles = StyleSheet.create({
   name: { fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold' },
   description: { fontSize: FONT_SIZES.sm, marginTop: 2 },
   checkBadge: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: SPACING.xs,
+    borderRadius: RADIUS.lg,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  checkText: { fontWeight: '900', fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.md },
+  checkText: { fontWeight: '700', fontFamily: 'Poppins-SemiBold', fontSize: FONT_SIZES.xs },
   lockBadge: {
-    width: 28,
-    height: 28,
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: SPACING.xs,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  lockText: { fontSize: 18, opacity: 0.6 },
+  lockText: { fontSize: FONT_SIZES.xs, fontFamily: 'Poppins-SemiBold' },
 });

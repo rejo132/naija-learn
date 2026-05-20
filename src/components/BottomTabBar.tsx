@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, useWindowDimensions } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { router, usePathname } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FONT_SIZES, RADIUS } from '@/constants/theme';
@@ -11,14 +11,16 @@ import { ParentGate } from '@/components/ParentGate';
 interface TabItem {
   id: string;
   label: string;
+  shortLabel: string;
   emoji: string;
   route: string;
   requiresGrade?: boolean;
   requiresParentGate?: boolean;
 }
 
+const { width } = Dimensions.get('window');
+
 export function BottomTabBar() {
-  const { width } = useWindowDimensions();
   const pathname = usePathname();
   const insets = useSafeAreaInsets();
   const selectedGrade = useAppStore((s) => s.selectedGrade);
@@ -28,19 +30,20 @@ export function BottomTabBar() {
   const [pendingRoute, setPendingRoute] = useState('');
 
   const BASE_TABS: TabItem[] = [
-    { id: 'home', label: t('home'), emoji: '🏠', route: '/dashboard' },
-    { id: 'learn', label: t('learn'), emoji: '📚', route: '/dashboard', requiresGrade: true },
-    { id: 'progress', label: t('progress'), emoji: '📈', route: '/progress' },
-    { id: 'achievements', label: t('achievements'), emoji: '🏆', route: '/achievements' },
+    { id: 'home', label: t('home'), shortLabel: t('home'), emoji: '🏠', route: '/dashboard' },
+    { id: 'learn', label: t('learn'), shortLabel: t('learn'), emoji: '📚', route: '/dashboard', requiresGrade: true },
+    { id: 'progress', label: t('progress'), shortLabel: t('progressShort'), emoji: '📈', route: '/progress' },
+    { id: 'achievements', label: t('achievements'), shortLabel: t('achievementsShort'), emoji: '🏆', route: '/achievements' },
     {
       id: 'profile',
       label: `${t('children')} 🔐`,
+      shortLabel: t('childrenShort'),
       emoji: '👤',
       route: '/children',
       requiresParentGate: true,
     },
-    { id: 'settings', label: 'Settings', emoji: '⚙️', route: '/settings' },
-    { id: 'theme', label: 'Theme', emoji: '🌙', route: '' },
+    { id: 'settings', label: t('settingsTitle'), shortLabel: t('settingsShort'), emoji: '⚙️', route: '/settings' },
+    { id: 'theme', label: t('settingsDarkMode'), shortLabel: t('settingsDarkMode'), emoji: '🌙', route: '' },
   ];
 
   const hideOn = ['/auth/sign-in', '/auth/sign-up', '/lesson', '/personality'];
@@ -100,6 +103,7 @@ export function BottomTabBar() {
             <TouchableOpacity
               key={tab.id}
               style={[styles.tab, active && styles.tabActive]}
+              activeOpacity={0.75}
               onPress={() => handleTabPress(tab)}
             >
               <View
@@ -113,12 +117,13 @@ export function BottomTabBar() {
               <Text
                 style={[
                   styles.tabLabel,
-                  { color: colors.textMuted },
+                  { color: colors.textMuted, fontSize: width < 375 ? 9 : 11 },
                   active && { color: colors.primary, fontFamily: 'Poppins-SemiBold' },
                 ]}
                 numberOfLines={1}
+                ellipsizeMode="tail"
               >
-                {tab.label}
+                {width < 375 ? tab.shortLabel : tab.label}
               </Text>
             </TouchableOpacity>
           );

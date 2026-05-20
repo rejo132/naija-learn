@@ -13,6 +13,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { getChildren, addChild, deleteChild, Child } from '@/services/dbService';
 import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
+import { useTranslation } from '@/hooks/useTranslation';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 
@@ -27,6 +28,7 @@ const LANGUAGES = [
 
 export default function ChildrenScreen() {
   const { colors, isDarkMode } = useTheme();
+  const { t } = useTranslation();
   const [children, setChildren] = useState<Child[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isAdding, setIsAdding] = useState(false);
@@ -111,12 +113,13 @@ export default function ChildrenScreen() {
           <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
             <Text style={[styles.backArrow, { color: colors.primaryDark }]}>←</Text>
           </TouchableOpacity>
-          <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>👨‍👩‍👧 My Children</Text>
-          <TouchableOpacity 
+          <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>👨‍👩‍👧 {t('childrenTitle')}</Text>
+          <TouchableOpacity
             style={[styles.addBtn, { backgroundColor: colors.primary }]}
+            activeOpacity={0.75}
             onPress={() => setShowForm(!showForm)}
           >
-            <Text style={[styles.addBtnText, { color: colors.white }]}>{showForm ? '✕' : '+ Add'}</Text>
+            <Text style={[styles.addBtnText, { color: colors.white }]}>{showForm ? '✕' : `+ ${t('childrenAdd')}`}</Text>
           </TouchableOpacity>
         </GlassCard>
 
@@ -144,7 +147,7 @@ export default function ChildrenScreen() {
             </View>
 
             {/* Name */}
-            <Text style={[styles.label, { color: colors.textPrimary }]}>Child's Name *</Text>
+            <Text style={[styles.label, { color: colors.textPrimary }]}>{t('childrenName')} *</Text>
             <TextInput
               style={inputStyle}
               value={name}
@@ -167,7 +170,7 @@ export default function ChildrenScreen() {
             />
 
             {/* Grade */}
-            <Text style={[styles.label, { color: colors.textPrimary }]}>Class</Text>
+            <Text style={[styles.label, { color: colors.textPrimary }]}>{t('childrenGrade')}</Text>
             <View style={styles.gradeRow}>
               {GRADES.map((g) => (
                 <TouchableOpacity
@@ -220,12 +223,13 @@ export default function ChildrenScreen() {
                 { backgroundColor: colors.primary },
                 (!name.trim() || isAdding) && styles.saveBtnDisabled,
               ]}
+              activeOpacity={0.75}
               onPress={handleAddChild}
               disabled={!name.trim() || isAdding}
             >
               {isAdding
                 ? <ActivityIndicator color={colors.white} />
-                : <Text style={[styles.saveBtnText, { color: colors.white }]}>Save Child</Text>
+                : <Text style={[styles.saveBtnText, { color: colors.white }]}>{t('childrenSave')}</Text>
               }
             </TouchableOpacity>
           </GlassCard>
@@ -241,15 +245,16 @@ export default function ChildrenScreen() {
         ) : children.length === 0 && !showForm ? (
           <GlassCard style={[styles.emptyCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <Text style={styles.emptyEmoji}>👶</Text>
-            <Text style={[styles.emptyTitle, { color: colors.textPrimary }]}>No children yet</Text>
+            <Text style={[styles.emptyTitle, { color: colors.textPrimary }]}>{t('childrenEmpty')}</Text>
             <Text style={[styles.emptySubtitle, { color: colors.textSecondary }]}>
-              Add your child's profile to track their learning progress
+              {t('childrenEmptySubtitle')}
             </Text>
-            <TouchableOpacity 
-              style={[styles.saveBtn, { backgroundColor: colors.primary }]} 
+            <TouchableOpacity
+              style={[styles.saveBtn, { backgroundColor: colors.primary }]}
+              activeOpacity={0.75}
               onPress={() => setShowForm(true)}
             >
-              <Text style={[styles.saveBtnText, { color: colors.white }]}>+ Add First Child</Text>
+              <Text style={[styles.saveBtnText, { color: colors.white }]}>+ {t('childrenAdd')}</Text>
             </TouchableOpacity>
           </GlassCard>
         ) : (
@@ -331,7 +336,7 @@ const styles = StyleSheet.create({
     borderRadius: RADIUS.md,
     padding: SPACING.md, alignItems: 'center', marginTop: SPACING.md,
   },
-  saveBtnDisabled: { opacity: 0.5 },
+  saveBtnDisabled: { opacity: 0.4 },
   saveBtnText: { fontWeight: '800', fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.md },
   list: { gap: SPACING.md, paddingBottom: SPACING.xl },
   childCard: {

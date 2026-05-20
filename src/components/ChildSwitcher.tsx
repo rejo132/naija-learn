@@ -24,6 +24,7 @@ import {
   type Child,
 } from '@/services/dbService';
 import { COLORS, SPACING, RADIUS, FONT_SIZES, SHADOWS } from '@/constants/theme';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface ChildSwitcherProps {
   visible: boolean;
@@ -46,6 +47,7 @@ export function ChildSwitcher({
 
   const activeChildId = useAppStore((s) => s.activeChildId);
   const setActiveChild = useAppStore((s) => s.setActiveChild);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (visible) {
@@ -128,8 +130,8 @@ export function ChildSwitcher({
       >
         <View style={styles.handle} />
 
-        <Text style={styles.title}>Who is studying?</Text>
-        <Text style={styles.subtitle}>Tap a profile to switch learner</Text>
+        <Text style={styles.title}>{t('childSwitcherTitle')}</Text>
+        <Text style={styles.subtitle}>{t('childSelectSubtitle')}</Text>
 
         {isLoading ? (
           <ActivityIndicator
@@ -184,7 +186,7 @@ export function ChildSwitcher({
                     <ActivityIndicator color={COLORS.primary} size="small" />
                   ) : isActive ? (
                     <View style={styles.activeBadge}>
-                      <Text style={styles.activeBadgeText}>Active</Text>
+                      <Text style={styles.activeBadgeText}>{t('childSwitcherActive')}</Text>
                     </View>
                   ) : (
                     <Text style={styles.switchArrow}>→</Text>

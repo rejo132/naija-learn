@@ -6,9 +6,16 @@ import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-nati
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
-import { ACHIEVEMENTS, getLevel, getXPForNextLevel } from '@/constants/achievements';
+import {
+  ACHIEVEMENT_DEFINITIONS,
+  getAchievementStyle,
+  getLevel,
+  getUnlockedAchievements,
+  getXPForNextLevel,
+} from '@/constants/achievements';
 import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
+import { useTranslation } from '@/hooks/useTranslation';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 
@@ -17,14 +24,21 @@ export default function ProgressScreen() {
   const streak = useAppStore((s) => s.streak);
   const lessonsCompleted = useAppStore((s) => s.lessonsCompleted);
   const bestQuizScore = useAppStore((s) => s.bestQuizScore);
-  const unlockedAchievements = useAppStore((s) => s.unlockedAchievements);
   const { colors, isDarkMode } = useTheme();
+  const { t } = useTranslation();
 
   const level = getLevel(xp);
   const xpForNext = getXPForNextLevel(xp);
   const xpProgress = ((xp % 100) / 100) * 100;
-  const unlockedCount = unlockedAchievements.length;
-  const totalAchievements = ACHIEVEMENTS.length;
+  const unlocked = getUnlockedAchievements({
+    xp,
+    streak,
+    lessonsCompleted,
+    bestQuizScore,
+  });
+  const unlockedIds = new Set(unlocked.map((a) => a.id));
+  const unlockedCount = unlocked.length;
+  const totalAchievements = ACHIEVEMENT_DEFINITIONS.length;
 
   const streakBg =
     streak >= 7
@@ -42,7 +56,7 @@ export default function ProgressScreen() {
 
         {/* Header */}
         <GlassCard style={[styles.header, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
-          <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>📈 My Progress</Text>
+          <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>📈 {t('progressTitle')}</Text>
         </GlassCard>
 
         {/* Level card */}
@@ -73,22 +87,22 @@ export default function ProgressScreen() {
           <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <Text style={styles.statEmoji}>🔥</Text>
             <Text style={[styles.statValue, { color: colors.primaryDark }]}>{streak}</Text>
-            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Day Streak</Text>
+            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{t('progressStreak')}</Text>
           </GlassCard>
           <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <Text style={styles.statEmoji}>📚</Text>
             <Text style={[styles.statValue, { color: colors.primaryDark }]}>{lessonsCompleted}</Text>
-            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Lessons</Text>
+            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{t('progressLessons')}</Text>
           </GlassCard>
           <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <Text style={styles.statEmoji}>🎯</Text>
             <Text style={[styles.statValue, { color: colors.primaryDark }]}>{bestQuizScore}%</Text>
-            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Best Score</Text>
+            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{t('progressBestScore')}</Text>
           </GlassCard>
           <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <Text style={styles.statEmoji}>🏅</Text>
             <Text style={[styles.statValue, { color: colors.primaryDark }]}>{unlockedCount}/{totalAchievements}</Text>
-            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Badges</Text>
+            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{t('achievementsTitle')}</Text>
           </GlassCard>
         </View>
 
@@ -117,15 +131,16 @@ export default function ProgressScreen() {
 
         {/* Achievements */}
         <View style={styles.achievementsHeader}>
-          <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>Achievements</Text>
+          <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>{t('progressAchievements')}</Text>
           <TouchableOpacity onPress={() => router.push('/achievements')}>
             <Text style={[styles.seeAll, { color: colors.primary }]}>See all →</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.achievementsGrid}>
-          {ACHIEVEMENTS.slice(0, 6).map((achievement) => {
-            const isUnlocked = unlockedAchievements.includes(achievement.id);
+          {ACHIEVEMENT_DEFINITIONS.slice(0, 6).map((achievement) => {
+            const isUnlocked = unlockedIds.has(achievement.id);
+            const style = getAchievementStyle(achievement.id);
             return (
               <GlassCard
                 key={achievement.id}
@@ -133,7 +148,7 @@ export default function ProgressScreen() {
                   styles.achievementCard,
                   { borderColor: colors.border },
                   isUnlocked
-                    ? { backgroundColor: achievement.bgColor, borderColor: achievement.color + '40' }
+                    ? { backgroundColor: style.bgColor, borderColor: style.color + '40' }
                     : { opacity: 0.5 },
                   isDarkMode && !isUnlocked && { backgroundColor: colors.backgroundCard },
                 ]}
@@ -143,7 +158,7 @@ export default function ProgressScreen() {
                 </Text>
                 <Text style={[
                   styles.achievementTitle,
-                  isUnlocked ? { color: achievement.color } : { color: colors.textMuted }
+                  isUnlocked ? { color: style.color } : { color: colors.textMuted }
                 ]}>
                   {achievement.title}
                 </Text>

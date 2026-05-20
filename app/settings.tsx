@@ -24,6 +24,7 @@ import { ParentGate } from '@/components/ParentGate';
 import { supabase } from '@/lib/supabase';
 import { COLORS, FONT_SIZES, SPACING, RADIUS } from '@/constants/theme';
 import { LANGUAGE_NAMES, type Language } from '@/constants/languages';
+import { useTranslation } from '@/hooks/useTranslation';
 
 type ThemeColors = ReturnType<typeof useTheme>['colors'];
 
@@ -89,6 +90,7 @@ function SectionHeader({ title, colors }: { title: string; colors: ThemeColors }
 
 export default function SettingsScreen() {
   const { colors, isDarkMode } = useTheme();
+  const { t } = useTranslation();
 
   const selectedLanguage = useAppStore((s) => s.selectedLanguage);
   const setLanguage = useAppStore((s) => s.setLanguage);
@@ -189,7 +191,7 @@ export default function SettingsScreen() {
           <Text style={[styles.backText, { color: colors.primary }]}>←</Text>
         </TouchableOpacity>
         <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>
-          ⚙️ Settings
+          ⚙️ {t('settingsTitle')}
         </Text>
         <View style={{ width: 36 }} />
       </View>
@@ -223,7 +225,7 @@ export default function SettingsScreen() {
         <View style={[styles.card, { backgroundColor: cardBg }]}>
           <SettingsRow
             emoji="🔐"
-            label="Change Parent PIN"
+            label={t('settingsChangePIN')}
             sublabel="Update the 4-digit Parent Portal PIN"
             onPress={() => router.push('/change-password')}
             colors={colors}
@@ -231,11 +233,11 @@ export default function SettingsScreen() {
           />
         </View>
 
-        <SectionHeader title="👨‍👩‍👧  PARENT ZONE" colors={colors} />
+        <SectionHeader title={`👨‍👩‍👧  ${t('settingsParentZone').toUpperCase()}`} colors={colors} />
         <View style={[styles.card, { backgroundColor: cardBg }]}>
           <SettingsRow
             emoji="👧"
-            label="Manage Children"
+            label={t('settingsManageChildren')}
             sublabel="Add or edit child profiles"
             onPress={() => openParentZone('children')}
             colors={colors}
@@ -269,7 +271,7 @@ export default function SettingsScreen() {
           />
         </View>
 
-        <SectionHeader title={`🎮  FOR ${userName.toUpperCase()}`} colors={colors} />
+        <SectionHeader title={`🎮  ${t('settingsForChild').toUpperCase()}: ${userName.toUpperCase()}`} colors={colors} />
         <View style={[styles.card, { backgroundColor: cardBg }]}>
           <SettingsRow
             emoji="🎭"
@@ -280,7 +282,7 @@ export default function SettingsScreen() {
           />
           <SettingsRow
             emoji="🌍"
-            label="Language"
+            label={t('settingsLanguage')}
             sublabel={languageFullName}
             onPress={() => {
               const langs: Language[] = ['en', 'ha', 'yo', 'ig'];
@@ -297,7 +299,7 @@ export default function SettingsScreen() {
           />
           <SettingsRow
             emoji="📚"
-            label="Grade Level"
+            label={t('settingsGrade')}
             sublabel={`Currently: Primary ${selectedGrade ?? '—'}`}
             onPress={() => router.push('/grade')}
             colors={colors}
@@ -358,13 +360,13 @@ export default function SettingsScreen() {
           />
         </View>
 
-        <SectionHeader title="📱  APP PREFERENCES" colors={colors} />
+        <SectionHeader title={`📱  ${t('settingsAppPrefs').toUpperCase()}`} colors={colors} />
         <View style={[styles.card, { backgroundColor: cardBg }]}>
           <View style={[styles.row, { borderBottomColor: colors.border }]}>
             <Text style={styles.rowEmoji}>🌙</Text>
             <View style={styles.rowBody}>
               <Text style={[styles.rowLabel, { color: colors.textPrimary }]}>
-                Dark Mode
+                {t('settingsDarkMode')}
               </Text>
               <Text style={[styles.rowSublabel, { color: colors.textMuted }]}>
                 {isDarkMode ? 'Currently on' : 'Currently off'}
@@ -430,7 +432,7 @@ export default function SettingsScreen() {
           </View>
         </View>
 
-        <SectionHeader title="ℹ️  ABOUT & SUPPORT" colors={colors} />
+        <SectionHeader title={`ℹ️  ${t('settingsAbout').toUpperCase()}`} colors={colors} />
         <View style={[styles.card, { backgroundColor: cardBg }]}>
           <SettingsRow
             emoji="🔐"
@@ -465,9 +467,13 @@ export default function SettingsScreen() {
         </View>
 
         <View style={[styles.card, { backgroundColor: cardBg }]}>
-          <TouchableOpacity style={styles.signOutRow} onPress={handleSignOut}>
+          <TouchableOpacity
+            style={styles.signOutRow}
+            activeOpacity={0.75}
+            onPress={handleSignOut}
+          >
             <Text style={styles.signOutEmoji}>🚪</Text>
-            <Text style={styles.signOutText}>Sign Out</Text>
+            <Text style={styles.signOutText}>{t('settingsSignOut')}</Text>
           </TouchableOpacity>
         </View>
 

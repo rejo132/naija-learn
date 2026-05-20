@@ -225,6 +225,7 @@ export default function DashboardScreen() {
                 { backgroundColor: colors.primary },
                 !aiPrompt.trim() && styles.promptBarBtnDisabled,
               ]}
+              activeOpacity={0.75}
               onPress={handleAIPromptSubmit}
               disabled={!aiPrompt.trim()}
             >

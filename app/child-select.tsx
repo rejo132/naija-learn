@@ -24,6 +24,7 @@ import { getChildren, loadChildProfile, type Child } from '@/services/dbService'
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { GlassCard } from '@/components/GlassCard';
 import { ParentGate } from '@/components/ParentGate';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function ChildSelectScreen() {
   const [children, setChildren] = useState<Child[]>([]);
@@ -31,6 +32,7 @@ export default function ChildSelectScreen() {
   const [selectingId, setSelectingId] = useState<string | null>(null);
   const [showParentGate, setShowParentGate] = useState(false);
   const setActiveChild = useAppStore((s) => s.setActiveChild);
+  const { t } = useTranslation();
 
   useEffect(() => {
     loadChildren();
@@ -92,9 +94,9 @@ export default function ChildSelectScreen() {
         <View style={styles.header}>
           <Text style={styles.logoEmoji}>🎓</Text>
           <Text style={styles.logoName}>Learnova</Text>
-          <Text style={styles.question}>Who is studying today?</Text>
+          <Text style={styles.question}>{t('childSelectTitle')}</Text>
           <Text style={styles.subtitle}>
-            Pick your profile to start learning
+            {t('childSelectSubtitle')}
           </Text>
         </View>
 
@@ -108,16 +110,15 @@ export default function ChildSelectScreen() {
           <View style={styles.emptyState}>
             <GlassCard style={styles.emptyCard}>
               <Text style={styles.emptyEmoji}>👶</Text>
-              <Text style={styles.emptyTitle}>No children yet</Text>
+              <Text style={styles.emptyTitle}>{t('childrenEmpty')}</Text>
               <Text style={styles.emptySubtitle}>
-                Add your children&apos;s profiles so each child
-                can have their own learning journey
+                {t('childrenEmptySubtitle')}
               </Text>
               <TouchableOpacity
                 style={styles.addBtn}
                 onPress={handleAddChild}
               >
-                <Text style={styles.addBtnText}>+ Add First Child</Text>
+                <Text style={styles.addBtnText}>+ {t('childrenAdd')}</Text>
               </TouchableOpacity>
             </GlassCard>
           </View>
@@ -169,7 +170,7 @@ export default function ChildSelectScreen() {
             style={styles.addMoreBtn}
             onPress={handleAddChild}
           >
-            <Text style={styles.addMoreText}>+ Add Another Child</Text>
+            <Text style={styles.addMoreText}>+ {t('childSelectAdd')}</Text>
           </TouchableOpacity>
         )}
 
@@ -178,7 +179,7 @@ export default function ChildSelectScreen() {
           activeOpacity={0.7}
           onPress={handleSignOut}
         >
-          <Text style={styles.signOutText}>Sign Out</Text>
+          <Text style={styles.signOutText}>{t('settingsSignOut')}</Text>
         </TouchableOpacity>
       </LinearGradient>
 

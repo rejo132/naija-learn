@@ -873,6 +873,7 @@ export default function LessonScreen() {
           ]}>
             <TouchableOpacity
               style={[styles.inputBarAction, { backgroundColor: colors.primaryLight }]}
+              activeOpacity={0.75}
               onPress={handleStartQuiz}
               disabled={isAILoading}
               accessibilityLabel={t('startQuiz')}
@@ -914,10 +915,11 @@ export default function LessonScreen() {
               style={[
                 styles.sendBtn,
                 { backgroundColor: colors.primary },
-                (!inputText.trim() || isAILoading || !isConnected) && styles.sendBtnDisabled,
+                !inputText.trim() && styles.sendBtnDisabled,
               ]}
+              activeOpacity={0.75}
               onPress={() => handleSend()}
-              disabled={!inputText.trim() || isAILoading || !isConnected}
+              disabled={!inputText.trim()}
             >
               <Text style={styles.sendBtnText}>
                 {isAILoading ? '...' : '➤'}

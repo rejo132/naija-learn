@@ -413,6 +413,12 @@ export const useAppStore = create<AppState>()(
           if (error) {
             console.error('Hydration error:', error);
           }
+          // One-time migration: parents who already changed PIN before
+          // hasSetupParentPin existed should not see the setup screen again.
+          if (state && state.parentPin !== '1234' && !state.hasSetupParentPin) {
+            state.hasSetupParentPin = true;
+            useAppStore.setState({ hasSetupParentPin: true });
+          }
           // state may be undefined if storage was empty — mark ready either way
           useAppStore.getState().setAppReady(true);
         };

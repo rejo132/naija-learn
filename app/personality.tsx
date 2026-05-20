@@ -9,6 +9,7 @@ import { useAppStore } from '@/store/appStore';
 import { PERSONALITIES } from '@/constants/personalities';
 import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
+import { useTranslation } from '@/hooks/useTranslation';
 import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 import { PressableScale } from '@/components/PressableScale';
@@ -17,6 +18,7 @@ export default function PersonalityScreen() {
   const selectedPersonalityId = useAppStore((s) => s.selectedPersonalityId);
   const setPersonality = useAppStore((s) => s.setPersonality);
   const { colors, isDarkMode } = useTheme();
+  const { t } = useTranslation();
 
   function handleSelect(id: string) {
     setPersonality(id);
@@ -31,11 +33,11 @@ export default function PersonalityScreen() {
           <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
             <Text style={[styles.backArrow, { color: colors.primaryDark }]}>←</Text>
           </TouchableOpacity>
-          <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>Choose Your Teacher</Text>
+          <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>{t('personalityTitle')}</Text>
         </GlassCard>
 
         <Text style={[styles.subtitle, { color: colors.textSecondary }]}>
-          Pick the teaching style that helps you learn best
+          {t('personalitySubtitle')}
         </Text>
 
         <FlatList
@@ -59,10 +61,16 @@ export default function PersonalityScreen() {
                     <Text style={[styles.name, { color: item.color }]}>{item.name}</Text>
                     <Text style={[styles.tagline, { color: colors.textSecondary }]}>{item.tagline}</Text>
                   </View>
-                  {isSelected && (
+                  {isSelected ? (
                     <View style={[styles.checkBadge, { backgroundColor: item.color }]}>
-                      <Text style={[styles.checkText, { color: colors.white }]}>✓</Text>
+                      <Text style={[styles.checkText, { color: colors.white }]}>
+                        {t('personalitySelected')}
+                      </Text>
                     </View>
+                  ) : (
+                    <Text style={[styles.selectLabel, { color: colors.textMuted }]}>
+                      {t('personalitySelect')}
+                    </Text>
                   )}
                 </GlassCard>
               </PressableScale>
@@ -105,8 +113,12 @@ const styles = StyleSheet.create({
   name: { fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold' },
   tagline: { fontSize: FONT_SIZES.sm, marginTop: 2 },
   checkBadge: {
-    width: 28, height: 28, borderRadius: 14,
-    alignItems: 'center', justifyContent: 'center',
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: SPACING.xs,
+    borderRadius: RADIUS.lg,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  checkText: { fontWeight: '900', fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.md },
+  checkText: { fontWeight: '700', fontFamily: 'Poppins-SemiBold', fontSize: FONT_SIZES.xs },
+  selectLabel: { fontSize: FONT_SIZES.xs, fontFamily: 'Poppins-SemiBold' },
 });

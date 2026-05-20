@@ -7,6 +7,7 @@ import {
   ScrollView,
 } from 'react-native';
 import { useTheme } from '@/hooks/useTheme';
+import { useTranslation } from '@/hooks/useTranslation';
 import { FONT_SIZES, SPACING, RADIUS } from '@/constants/theme';
 import {
   getOfflineQuizzes,
@@ -21,6 +22,7 @@ interface OfflineLearningProps {
 
 export function OfflineLearning({ grade, subject, onDismiss }: OfflineLearningProps) {
   const { colors } = useTheme();
+  const { t } = useTranslation();
   const [mode, setMode] = useState<'menu' | 'quiz' | 'flashcard'>('menu');
   const [quizzes] = useState(() => getOfflineQuizzes(grade, subject));
   const [flashcards] = useState(() => getOfflineFlashcards(grade, subject));
@@ -73,7 +75,7 @@ export function OfflineLearning({ grade, subject, onDismiss }: OfflineLearningPr
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={styles.header}>
         <View style={styles.offlineBadge}>
-          <Text style={styles.offlineBadgeText}>📴 Offline Mode</Text>
+          <Text style={styles.offlineBadgeText}>📴 {t('offlineTitle')}</Text>
         </View>
         <TouchableOpacity onPress={onDismiss}>
           <Text style={[styles.closeBtn, { color: colors.textMuted }]}>✕</Text>
@@ -99,7 +101,7 @@ export function OfflineLearning({ grade, subject, onDismiss }: OfflineLearningPr
             <Text style={styles.menuCardEmoji}>🎯</Text>
             <View style={styles.menuCardBody}>
               <Text style={[styles.menuCardTitle, { color: colors.textPrimary }]}>
-                Practice Quiz
+                {t('offlineQuiz')}
               </Text>
               <Text style={[styles.menuCardSub, { color: colors.textMuted }]}>
                 {quizzes.length} questions ready
@@ -118,7 +120,7 @@ export function OfflineLearning({ grade, subject, onDismiss }: OfflineLearningPr
             <Text style={styles.menuCardEmoji}>🃏</Text>
             <View style={styles.menuCardBody}>
               <Text style={[styles.menuCardTitle, { color: colors.textPrimary }]}>
-                Flashcards
+                {t('offlineFlashcards')}
               </Text>
               <Text style={[styles.menuCardSub, { color: colors.textMuted }]}>
                 {flashcards.length} cards to review
@@ -207,7 +209,7 @@ export function OfflineLearning({ grade, subject, onDismiss }: OfflineLearningPr
 
           <TouchableOpacity style={styles.backToMenu} onPress={() => setMode('menu')}>
             <Text style={[styles.backToMenuText, { color: colors.textMuted }]}>
-              ← Back to menu
+              ← {t('offlineBack')}
             </Text>
           </TouchableOpacity>
         </ScrollView>
@@ -302,7 +304,7 @@ export function OfflineLearning({ grade, subject, onDismiss }: OfflineLearningPr
 
           <TouchableOpacity style={styles.backToMenu} onPress={() => setMode('menu')}>
             <Text style={[styles.backToMenuText, { color: colors.textMuted }]}>
-              ← Back to menu
+              ← {t('offlineBack')}
             </Text>
           </TouchableOpacity>
         </View>

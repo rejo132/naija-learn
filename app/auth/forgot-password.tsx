@@ -16,8 +16,10 @@ import { router } from 'expo-router';
 import { supabase } from '@/lib/supabase';
 import { COLORS, FONT_SIZES, SPACING, RADIUS } from '@/constants/theme';
 import { TutorAvatar } from '@/components/TutorAvatar';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function ForgotPasswordScreen() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [sent, setSent] = useState(false);
@@ -48,15 +50,15 @@ export default function ForgotPasswordScreen() {
     <SafeAreaView style={styles.safe}>
       <View style={styles.container}>
         <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-          <Text style={styles.backBtnText}>← Back</Text>
+          <Text style={styles.backBtnText}>← {t('back')}</Text>
         </TouchableOpacity>
 
         <View style={styles.card}>
           <TutorAvatar size={56} />
 
-          <Text style={styles.title}>Forgot Password?</Text>
+          <Text style={styles.title}>{t('forgotPasswordTitle')}</Text>
           <Text style={styles.subtitle}>
-            Enter your email and we will send you a reset link.
+            {t('forgotPasswordSubtitle')}
           </Text>
 
           {!sent ? (
@@ -85,30 +87,33 @@ export default function ForgotPasswordScreen() {
               ) : null}
 
               <TouchableOpacity
-                style={[styles.resetBtn, isLoading && { opacity: 0.7 }]}
+                style={[styles.resetBtn, isLoading && styles.resetBtnDisabled]}
+                activeOpacity={0.75}
                 onPress={handleReset}
                 disabled={isLoading}
               >
                 {isLoading ? (
                   <ActivityIndicator color="#FFFFFF" />
                 ) : (
-                  <Text style={styles.resetBtnText}>Send Reset Link →</Text>
+                  <Text style={styles.resetBtnText}>{t('forgotPasswordButton')} →</Text>
                 )}
               </TouchableOpacity>
             </>
           ) : (
             <View style={styles.successBox}>
               <Text style={styles.successEmoji}>📬</Text>
-              <Text style={styles.successTitle}>Check your email!</Text>
+              <Text style={styles.successTitle}>{t('forgotPasswordSuccess')}</Text>
               <Text style={styles.successSub}>
-                We sent a password reset link to{'\n'}
+                {t('forgotPasswordSuccess')}
+                {'\n'}
                 <Text style={styles.successEmail}>{email}</Text>
               </Text>
               <TouchableOpacity
                 style={styles.resetBtn}
+                activeOpacity={0.75}
                 onPress={() => router.replace('/auth/sign-in')}
               >
-                <Text style={styles.resetBtnText}>Back to Sign In</Text>
+                <Text style={styles.resetBtnText}>{t('forgotPasswordBack')}</Text>
               </TouchableOpacity>
             </View>
           )}
@@ -208,6 +213,7 @@ const styles = StyleSheet.create({
     minHeight: 52,
     justifyContent: 'center',
   },
+  resetBtnDisabled: { opacity: 0.4 },
   resetBtnText: {
     color: '#FFFFFF',
     fontSize: FONT_SIZES.md,

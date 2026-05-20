@@ -20,9 +20,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function ChangePinScreen() {
   const { colors, isDarkMode } = useTheme();
+  const { t } = useTranslation();
   const parentPin = useAppStore((s) => s.parentPin);
   const setParentPin = useAppStore((s) => s.setParentPin);
 
@@ -107,7 +109,7 @@ export default function ChangePinScreen() {
           <Text style={[styles.backArrow, { color: colors.primary }]}>←</Text>
         </TouchableOpacity>
         <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>
-          Change Parent PIN
+          {t('changePinTitle')}
         </Text>
         <View style={{ width: 40 }} />
       </View>
@@ -125,7 +127,7 @@ export default function ChangePinScreen() {
           <View style={[styles.successCard, { backgroundColor: cardBg }]}>
             <Text style={styles.successEmoji}>✅</Text>
             <Text style={[styles.successTitle, { color: COLORS.success }]}>
-              PIN Updated!
+              {t('changePinSuccess')}
             </Text>
             <Text
               style={[
@@ -133,8 +135,7 @@ export default function ChangePinScreen() {
                 { color: colors.textSecondary },
               ]}
             >
-              Your Parent Portal PIN has been changed
-              successfully. Going back...
+              {t('changePinSuccessMsg')}
             </Text>
           </View>
         ) : (
@@ -160,7 +161,7 @@ export default function ChangePinScreen() {
             )}
 
             <Text style={[styles.label, { color: colors.textPrimary }]}>
-              Current PIN
+              {t('changePinCurrent')}
             </Text>
             <TextInput
               style={[
@@ -189,7 +190,7 @@ export default function ChangePinScreen() {
             />
 
             <Text style={[styles.label, { color: colors.textPrimary }]}>
-              New PIN
+              {t('changePinNew')}
             </Text>
             <TextInput
               ref={newPinRef}
@@ -236,7 +237,7 @@ export default function ChangePinScreen() {
             )}
 
             <Text style={[styles.label, { color: colors.textPrimary }]}>
-              Confirm New PIN
+              {t('changePinConfirm')}
             </Text>
             <TextInput
               ref={confirmPinRef}
@@ -288,23 +289,25 @@ export default function ChangePinScreen() {
                 styles.submitBtn,
                 submitDisabled && styles.submitBtnDisabled,
               ]}
+              activeOpacity={0.75}
               onPress={handleChangePin}
               disabled={submitDisabled}
             >
               {isLoading ? (
                 <ActivityIndicator color="#FFFFFF" />
               ) : (
-                <Text style={styles.submitBtnText}>Update PIN</Text>
+                <Text style={styles.submitBtnText}>{t('changePinButton')}</Text>
               )}
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.cancelBtn}
+              activeOpacity={0.75}
               onPress={() => router.back()}
               disabled={isLoading}
             >
               <Text style={[styles.cancelBtnText, { color: colors.textMuted }]}>
-                Cancel
+                {t('cancel')}
               </Text>
             </TouchableOpacity>
           </View>

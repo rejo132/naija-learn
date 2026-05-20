@@ -127,26 +127,6 @@ export function getXPForNextLevel(xp: number): number {
   return currentLevel * 100 - xp;
 }
 
-/**
- * Check which achievements are newly unlocked
- * given current stats
- */
-export function checkNewAchievements(
-  stats: { xp: number; streak: number; lessonsCompleted: number; bestQuizScore: number },
-  alreadyUnlocked: string[]
-): Achievement[] {
-  return ACHIEVEMENTS.filter((a) => {
-    if (alreadyUnlocked.includes(a.id)) return false;
-    switch (a.requirement.type) {
-      case 'xp': return stats.xp >= a.requirement.value;
-      case 'streak': return stats.streak >= a.requirement.value;
-      case 'lessons': return stats.lessonsCompleted >= a.requirement.value;
-      case 'quiz_score': return stats.bestQuizScore >= a.requirement.value;
-      default: return false;
-    }
-  });
-}
-
 /** Threshold-based achievement definitions for live unlock checks. */
 export const ACHIEVEMENT_DEFINITIONS = [
   {
@@ -254,4 +234,41 @@ export function getAchievementStyle(id: string): { color: string; bgColor: strin
   const existing = ACHIEVEMENTS.find((a) => a.id === id);
   if (existing) return { color: existing.color, bgColor: existing.bgColor };
   return { color: '#1B7340', bgColor: '#dcfce7' };
+}
+
+function definitionToAchievement(def: AchievementDefinition): Achievement {
+  const style = getAchievementStyle(def.id);
+  const requirementType =
+    def.requirement.type === 'lessonsCompleted'
+      ? 'lessons'
+      : def.requirement.type === 'bestQuizScore'
+        ? 'quiz_score'
+        : def.requirement.type;
+  return {
+    id: def.id,
+    title: def.title,
+    description: def.description,
+    emoji: def.emoji,
+    color: style.color,
+    bgColor: style.bgColor,
+    requirement: {
+      type: requirementType as Achievement['requirement']['type'],
+      value: def.requirement.value,
+    },
+  };
+}
+
+/**
+ * Check which achievements are newly unlocked
+ * given current stats (uses ACHIEVEMENT_DEFINITIONS).
+ */
+export function checkNewAchievements(
+  stats: { xp: number; streak: number; lessonsCompleted: number; bestQuizScore: number },
+  alreadyUnlocked: string[]
+): Achievement[] {
+  return ACHIEVEMENT_DEFINITIONS.filter((a) => {
+    if (alreadyUnlocked.includes(a.id)) return false;
+    const val = stats[a.requirement.type as keyof typeof stats];
+    return val >= a.requirement.value;
+  }).map(definitionToAchievement);
 }
