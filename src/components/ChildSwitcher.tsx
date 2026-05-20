@@ -100,10 +100,12 @@ export function ChildSwitcher({
       name: child.name,
       avatar: child.avatar,
       grade: child.grade,
-      language: child.language_preference,
+      language: child.language ?? 'en',
       xp: profile?.xp ?? 0,
       streak: profile?.streak ?? 0,
       lastStudyDate: profile?.lastStudyDate ?? null,
+      lessonsCompleted: profile?.lessonsCompleted ?? 0,
+      bestQuizScore: profile?.bestQuizScore ?? 0,
     });
     setSwitchingId(null);
     onChildSelected();
@@ -173,11 +175,11 @@ export function ChildSwitcher({
                     </Text>
                     <Text style={styles.childMeta}>
                       Primary {child.grade} ·{' '}
-                      {child.language_preference === 'en'
+                      {child.language === 'en'
                         ? 'English'
-                        : child.language_preference === 'yo'
+                        : child.language === 'yo'
                           ? 'Yorùbá'
-                          : child.language_preference === 'ig'
+                          : child.language === 'ig'
                             ? 'Igbo'
                             : 'Hausa'}
                     </Text>

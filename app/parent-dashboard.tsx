@@ -77,7 +77,9 @@ export default function ParentDashboardScreen() {
     setIsLoadingHistory(false);
   }
 
-  const summary = selectedChild ? summaries[selectedChild.id] : null;
+  const currentSummary = selectedChild
+    ? (summaries[selectedChild.id] ?? null)
+    : null;
 
   return (
     <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
@@ -142,34 +144,34 @@ export default function ParentDashboardScreen() {
             </ScrollView>
 
             {/* Summary cards */}
-            {selectedChild && summary && (
+            {selectedChild && currentSummary && (
               <>
                 <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>{t('parentDashProgress')}</Text>
                 <View style={styles.statsGrid}>
                   <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
                     <Text style={styles.statEmoji}>📚</Text>
-                    <Text style={[styles.statValue, { color: colors.primaryDark }]}>{summary.totalSessions}</Text>
+                    <Text style={[styles.statValue, { color: colors.primaryDark }]}>{currentSummary.totalSessions}</Text>
                     <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Lessons</Text>
                   </GlassCard>
                   <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
                     <Text style={styles.statEmoji}>⭐</Text>
-                    <Text style={[styles.statValue, { color: colors.primaryDark }]}>{summary.averageScore}%</Text>
+                    <Text style={[styles.statValue, { color: colors.primaryDark }]}>{currentSummary.averageScore}%</Text>
                     <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Avg Score</Text>
                   </GlassCard>
                   <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
                     <Text style={styles.statEmoji}>⏱️</Text>
-                    <Text style={[styles.statValue, { color: colors.primaryDark }]}>{summary.totalMinutes}m</Text>
+                    <Text style={[styles.statValue, { color: colors.primaryDark }]}>{currentSummary.totalMinutes}m</Text>
                     <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Study Time</Text>
                   </GlassCard>
                 </View>
 
                 {/* Subjects studied */}
-                {summary.subjectsStudied.length > 0 && (
+                {currentSummary.subjectsStudied.length > 0 && (
                   <>
                     <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>Subjects Studied</Text>
                     <GlassCard style={[styles.subjectsCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
                       <View style={styles.subjectsList}>
-                        {summary.subjectsStudied.map((subject) => (
+                        {currentSummary.subjectsStudied.map((subject) => (
                           <View key={subject} style={[styles.subjectChip, { backgroundColor: colors.primaryLight, borderColor: colors.border }]}>
                             <Text style={[styles.subjectChipText, { color: colors.primaryDark }]}>{subject}</Text>
                           </View>
@@ -183,17 +185,17 @@ export default function ParentDashboardScreen() {
                 <GlassCard style={[
                   styles.gradeCard,
                   {
-                    backgroundColor: summary.averageScore >= 70 ? colors.successLight : colors.warningLight,
+                    backgroundColor: currentSummary.averageScore >= 70 ? colors.successLight : colors.warningLight,
                     borderColor: colors.border,
                   },
                   isDarkMode && { backgroundColor: colors.backgroundCard },
                 ]}>
                   <Text style={styles.gradeEmoji}>
-                    {summary.averageScore >= 70 ? '🏆' : '💪'}
+                    {currentSummary.averageScore >= 70 ? '🏆' : '💪'}
                   </Text>
                   <View style={{ flex: 1 }}>
                     <Text style={[styles.gradeTitle, { color: colors.textPrimary }]}>
-                      {summary.averageScore >= 70 ? 'Excellent work!' : 'Keep practising!'}
+                      {currentSummary.averageScore >= 70 ? 'Excellent work!' : 'Keep practising!'}
                     </Text>
                     <Text style={[styles.gradeSubtitle, { color: colors.textSecondary }]}>
                       {selectedChild.name} is in Primary {selectedChild.grade}
@@ -203,7 +205,7 @@ export default function ParentDashboardScreen() {
               </>
             )}
 
-            {summary && summary.totalSessions === 0 && (
+            {currentSummary && currentSummary.totalSessions === 0 && (
               <GlassCard style={[styles.emptyCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
                 <Text style={styles.emptyEmoji}>📖</Text>
                 <Text style={[styles.emptyTitle, { color: colors.textPrimary }]}>{t('parentDashNoData')}</Text>

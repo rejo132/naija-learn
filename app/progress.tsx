@@ -82,7 +82,7 @@ export default function ProgressScreen() {
         </GlassCard>
 
         {/* Stats grid */}
-        <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>Your Stats</Text>
+        <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>{t('yourStats')}</Text>
         <View style={styles.statsGrid}>
           <GlassCard style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
             <Text style={styles.statEmoji}>🔥</Text>
@@ -118,9 +118,9 @@ export default function ProgressScreen() {
           <View style={{ flex: 1 }}>
             <Text style={[styles.streakTitle, { color: colors.textPrimary }]}>
               {streak === 0 ? 'Start your streak today!' :
-               streak === 1 ? '1 day streak — keep going!' :
+               streak === 1 ? `1 ${t('dayStreakLabel')} — keep going!` :
                streak >= 7 ? `${streak} days! You are on fire! 🔥` :
-               `${streak} day streak! Don't break it!`}
+               `${streak} ${t('dayStreakLabel')}! Don't break it!`}
             </Text>
             <Text style={[styles.streakSubtitle, { color: colors.textSecondary }]}>
               {streak === 0 ? 'Study today to start a streak' :

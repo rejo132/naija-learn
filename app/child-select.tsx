@@ -25,6 +25,7 @@ import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { GlassCard } from '@/components/GlassCard';
 import { ParentGate } from '@/components/ParentGate';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useTheme } from '@/hooks/useTheme';
 
 export default function ChildSelectScreen() {
   const [children, setChildren] = useState<Child[]>([]);
@@ -33,6 +34,10 @@ export default function ChildSelectScreen() {
   const [showParentGate, setShowParentGate] = useState(false);
   const setActiveChild = useAppStore((s) => s.setActiveChild);
   const { t } = useTranslation();
+  const { colors, isDarkMode } = useTheme();
+  const gradientColors = isDarkMode
+    ? [colors.primaryDark, colors.primary, colors.primary]
+    : (['#003D25', '#008751', '#00A651'] as const);
 
   useEffect(() => {
     loadChildren();
@@ -55,10 +60,12 @@ export default function ChildSelectScreen() {
       name: child.name,
       avatar: child.avatar,
       grade: child.grade,
-      language: child.language_preference,
+      language: child.language ?? 'en',
       xp: profile?.xp ?? 0,
       streak: profile?.streak ?? 0,
       lastStudyDate: profile?.lastStudyDate ?? null,
+      lessonsCompleted: profile?.lessonsCompleted ?? 0,
+      bestQuizScore: profile?.bestQuizScore ?? 0,
     });
 
     setSelectingId(null);
@@ -86,7 +93,7 @@ export default function ChildSelectScreen() {
   return (
     <SafeAreaView style={styles.safe}>
       <LinearGradient
-        colors={['#003D25', '#008751', '#00A651']}
+        colors={gradientColors}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
         style={styles.gradient}
@@ -150,11 +157,11 @@ export default function ChildSelectScreen() {
                   </Text>
                   <View style={styles.childLangBadge}>
                     <Text style={styles.childLangText}>
-                      {item.language_preference === 'en'
+                      {item.language === 'en'
                         ? '🇳🇬 English'
-                        : item.language_preference === 'yo'
+                        : item.language === 'yo'
                           ? 'Yorùbá'
-                          : item.language_preference === 'ig'
+                          : item.language === 'ig'
                             ? 'Igbo'
                             : 'Hausa'}
                     </Text>

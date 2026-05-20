@@ -125,6 +125,8 @@ interface AppState {
     xp?: number;
     streak?: number;
     lastStudyDate?: string | null;
+    lessonsCompleted?: number;
+    bestQuizScore?: number;
   }) => void;
   clearActiveChild: () => void;
   addActiveChildXP: (amount: number) => void;
@@ -321,10 +323,15 @@ export const useAppStore = create<AppState>()(
           activeChildXP: child.xp ?? 0,
           activeChildStreak: child.streak ?? 0,
           activeChildLastStudyDate: child.lastStudyDate ?? null,
-          // Also update the shared grade and language so existing screens
-          // automatically use the chosen child's settings.
+          xp: child.xp ?? 0,
+          streak: child.streak ?? 0,
+          lastStudyDate: child.lastStudyDate ?? null,
           selectedGrade: child.grade,
-          selectedLanguage: child.language as LanguageCode,
+          selectedLanguage: (child.language ?? 'en') as LanguageCode,
+          lessonsCompleted: child.lessonsCompleted ?? 0,
+          bestQuizScore: child.bestQuizScore ?? 0,
+          subjectProgress: {},
+          completedFlows: {},
         }),
       clearActiveChild: () =>
         set({

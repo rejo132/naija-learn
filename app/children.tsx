@@ -37,7 +37,6 @@ export default function ChildrenScreen() {
   
   // Form state
   const [name, setName] = useState('');
-  const [age, setAge] = useState('');
   const [grade, setGrade] = useState(1);
   const [language, setLanguage] = useState('en');
   const [avatar, setAvatar] = useState('🧒');
@@ -58,16 +57,14 @@ export default function ChildrenScreen() {
     setIsAdding(true);
     const child = await addChild({
       name: name.trim(),
-      age: age ? parseInt(age) : null,
       grade,
-      language_preference: language,
+      language,
       avatar,
     });
     if (child) {
       setChildren((prev) => [...prev, child]);
       setShowForm(false);
       setName('');
-      setAge('');
       setGrade(1);
       setLanguage('en');
       setAvatar('🧒');
@@ -77,12 +74,12 @@ export default function ChildrenScreen() {
 
   async function handleDeleteChild(childId: string, childName: string) {
     Alert.alert(
-      'Remove Child',
-      `Remove ${childName} from your account?`,
+      t('childrenDeleteConfirmTitle'),
+      t('childrenDeleteConfirmMsg'),
       [
-        { text: 'Cancel', style: 'cancel' },
+        { text: t('childrenDeleteCancel'), style: 'cancel' },
         {
-          text: 'Remove',
+          text: t('childrenDeleteConfirm'),
           style: 'destructive',
           onPress: async () => {
             const success = await deleteChild(childId);
@@ -103,9 +100,10 @@ export default function ChildrenScreen() {
       color: colors.textPrimary,
       fontSize: 16,
     },
-    Platform.OS === 'web'
-      ? ({ outlineStyle: 'none', outlineWidth: 0 } as unknown as TextStyle)
-      : undefined,
+    Platform.OS === 'web' && {
+      outlineStyle: 'none' as any,
+      outlineWidth: 0,
+    } as any,
   ];
 
   return (
@@ -157,21 +155,9 @@ export default function ChildrenScreen() {
               style={inputStyle}
               value={name}
               onChangeText={setName}
-              placeholder="e.g. Emeka"
+              placeholder={t('childrenNamePlaceholder')}
               placeholderTextColor={colors.textMuted}
               autoCapitalize="words"
-            />
-
-            {/* Age */}
-            <Text style={[styles.label, { color: colors.textPrimary }]}>Age</Text>
-            <TextInput
-              style={inputStyle}
-              value={age}
-              onChangeText={setAge}
-              placeholder="e.g. 8"
-              placeholderTextColor={colors.textMuted}
-              keyboardType="number-pad"
-              maxLength={2}
             />
 
             {/* Grade */}
@@ -273,8 +259,8 @@ export default function ChildrenScreen() {
                 <View style={styles.childInfo}>
                   <Text style={[styles.childName, { color: colors.textPrimary }]}>{item.name}</Text>
                   <Text style={[styles.childDetails, { color: colors.textSecondary }]}>
-                    Primary {item.grade} · Age {item.age ?? '?'} · {
-                      LANGUAGES.find(l => l.code === item.language_preference)?.label ?? 'English'
+                    Primary {item.grade} · {
+                      LANGUAGES.find((l) => l.code === item.language)?.label ?? 'English'
                     }
                   </Text>
                 </View>

@@ -66,7 +66,7 @@ export default function AchievementsScreen() {
           <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
           <View style={styles.statItem}>
             <Text style={[styles.statValue, { color: colors.primaryDark }]}>Lv {level}</Text>
-            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Level</Text>
+            <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{t('levelLabel')}</Text>
           </View>
           <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
           <View style={styles.statItem}>

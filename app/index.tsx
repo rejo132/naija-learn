@@ -22,6 +22,7 @@ import { LANGUAGES, type LanguageMeta, getUIText } from '@/constants/languages';
 import { SPACING, RADIUS, FONT_SIZES, SHADOWS } from '@/constants/theme';
 import { PressableScale } from '@/components/PressableScale';
 import { getChildren } from '@/services/dbService';
+import { useTheme } from '@/hooks/useTheme';
 
 const SCREEN = {
   background: '#FAFFFE',
@@ -106,6 +107,7 @@ export default function WelcomeScreen() {
   const { width } = useWindowDimensions();
   const isCompact = width < 760;
   const isWide = width > 1200;
+  const { colors, isDarkMode } = useTheme();
 
   useEffect(() => {
     const unsub = useAppStore.persist.onFinishHydration(() => setHydrated(true));
@@ -151,9 +153,9 @@ export default function WelcomeScreen() {
   }
 
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
       <ScrollView
-        contentContainerStyle={styles.scroll}
+        contentContainerStyle={[styles.scroll, { backgroundColor: colors.background }]}
         showsVerticalScrollIndicator={false}
       >
         <View style={[styles.content, isWide && styles.contentWide]}>
@@ -205,8 +207,24 @@ export default function WelcomeScreen() {
           {/* Feature pills */}
           <View style={styles.featuresRow}>
             {FEATURES.map((label) => (
-              <View key={label} style={styles.featurePill}>
-                <Text style={styles.featurePillText}>{label}</Text>
+              <View
+                key={label}
+                style={[
+                  styles.featurePill,
+                  {
+                    backgroundColor: isDarkMode ? colors.backgroundCard : SCREEN.pillBg,
+                    borderColor: isDarkMode ? colors.border : SCREEN.pillBorder,
+                  },
+                ]}
+              >
+                <Text
+                  style={[
+                    styles.featurePillText,
+                    { color: isDarkMode ? colors.textPrimary : SCREEN.accent },
+                  ]}
+                >
+                  {label}
+                </Text>
               </View>
             ))}
           </View>

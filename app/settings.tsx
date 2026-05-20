@@ -109,6 +109,7 @@ export default function SettingsScreen() {
 
   const [parentGateVisible, setParentGateVisible] = useState(false);
   const [parentGatePurpose, setParentGatePurpose] = useState('');
+  const [showPinGate, setShowPinGate] = useState(false);
   const [dataSaver, setDataSaver] = useState(false);
   const [notifications, setNotifications] = useState(true);
   const [offlineMode, setOfflineMode] = useState(false);
@@ -228,7 +229,7 @@ export default function SettingsScreen() {
             emoji="🔐"
             label={t('settingsChangePIN')}
             sublabel="Update the 4-digit Parent Portal PIN"
-            onPress={() => router.push('/change-password')}
+            onPress={() => setShowPinGate(true)}
             colors={colors}
             isLast
           />
@@ -256,8 +257,9 @@ export default function SettingsScreen() {
             sublabel="Choose priority subjects"
             onPress={() =>
               Alert.alert(
-                'Subject Focus',
-                'Subject focus can be set per child in Manage Children.'
+                t('subjectFocusAlertTitle'),
+                t('subjectFocusAlertMsg'),
+                [{ text: t('subjectFocusAlertOk') }]
               )
             }
             colors={colors}
@@ -487,6 +489,15 @@ export default function SettingsScreen() {
         onCancel={() => setParentGateVisible(false)}
       />
 
+      <ParentGate
+        visible={showPinGate}
+        onSuccess={() => {
+          setShowPinGate(false);
+          router.push('/change-password');
+        }}
+        onCancel={() => setShowPinGate(false)}
+      />
+
       <Modal visible={showDailyLimit} transparent animationType="slide">
         <View style={styles.modalOverlay}>
           <View style={[styles.modalCard, { backgroundColor: cardBg }]}>
@@ -541,7 +552,7 @@ export default function SettingsScreen() {
               This cannot be undone.
             </Text>
             <Text style={[styles.deleteInstruction, { color: colors.textPrimary }]}>
-              Type DELETE to confirm:
+              {t('deleteAccountConfirm')}
             </Text>
             <TextInput
               style={[

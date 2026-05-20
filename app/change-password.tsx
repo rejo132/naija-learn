@@ -178,6 +178,10 @@ export default function ChangePinScreen() {
                       : colors.border,
                   color: colors.textPrimary,
                 },
+                Platform.OS === 'web' && {
+                  outlineStyle: 'none' as any,
+                  outlineWidth: 0,
+                } as any,
               ]}
               value={currentPin}
               onChangeText={(v) => {
@@ -205,6 +209,10 @@ export default function ChangePinScreen() {
                   borderColor: colors.border,
                   color: colors.textPrimary,
                 },
+                Platform.OS === 'web' && {
+                  outlineStyle: 'none' as any,
+                  outlineWidth: 0,
+                } as any,
               ]}
               value={newPin}
               onChangeText={(v) => {
@@ -257,6 +265,10 @@ export default function ChangePinScreen() {
                       : colors.border,
                   color: colors.textPrimary,
                 },
+                Platform.OS === 'web' && {
+                  outlineStyle: 'none' as any,
+                  outlineWidth: 0,
+                } as any,
               ]}
               value={confirmPin}
               onChangeText={(v) => {
@@ -407,7 +419,6 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY.bold,
     textAlign: 'center',
     letterSpacing: 16,
-    ...(Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }),
   },
   dotsRow: {
     flexDirection: 'row',

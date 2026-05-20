@@ -26,7 +26,7 @@ import Animated, {
 import { Redirect, router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore, type ChatMessage } from '@/store/appStore';
-import { saveProgress } from '@/services/dbService';
+import { saveProgress, updateChildStats } from '@/services/dbService';
 import { getGreeting, getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getNigerianGrade, getLessonQuickActions, getQuickPrompts } from '@/constants/subjects';
@@ -293,7 +293,6 @@ export default function LessonScreen() {
   const unlockedAchievements = useAppStore((s) => s.unlockedAchievements);
   const addXP = useAppStore((s) => s.addXP);
   const updateStreak = useAppStore((s) => s.updateStreak);
-  const incrementLessons = useAppStore((s) => s.incrementLessons);
   const updateBestQuizScore = useAppStore((s) => s.updateBestQuizScore);
   const unlockAchievement = useAppStore((s) => s.unlockAchievement);
   const setLastSession = useAppStore((s) => s.setLastSession);
@@ -309,6 +308,7 @@ export default function LessonScreen() {
   const [isListening, setIsListening] = useState(false);
   const lastSpokenIdRef = useRef<string | null>(null);
   const lessonStartRef = useRef<number>(Date.now());
+  const hasCountedLesson = useRef(false);
   const [flowCompleted, setFlowCompleted] = useState(() => {
     const key = `${selectedSubject?.label ?? ''}_${selectedGrade ?? ''}`;
     return useAppStore.getState().completedFlows[key] ?? false;
@@ -355,6 +355,32 @@ export default function LessonScreen() {
     };
   }, [stop]);
 
+  useEffect(() => {
+    return () => {
+      hasCountedLesson.current = false;
+    };
+  }, []);
+
+  function countLessonOnce() {
+    if (!hasCountedLesson.current) {
+      hasCountedLesson.current = true;
+      useAppStore.getState().incrementLessons();
+    }
+  }
+
+  async function syncChildStatsToDb() {
+    const { activeChildId, xp: storeXp, streak: storeStreak, lastStudyDate } =
+      useAppStore.getState();
+    if (activeChildId) {
+      await updateChildStats(
+        activeChildId,
+        storeXp,
+        storeStreak,
+        lastStudyDate ?? new Date().toISOString().split('T')[0],
+      ).catch(() => {});
+    }
+  }
+
   async function handleMicPress() {
     if (
       typeof window !== 'undefined' &&
@@ -387,9 +413,9 @@ export default function LessonScreen() {
       recognition.start();
     } else {
       Alert.alert(
-        '🎙️ Voice Input',
-        'Voice input works on web. On mobile, please type your question.',
-        [{ text: 'OK' }]
+        t('micPermissionTitle'),
+        t('micPermissionMsg'),
+        [{ text: t('micPermissionOk') }]
       );
     }
   }
@@ -420,7 +446,6 @@ export default function LessonScreen() {
       const isFirstLessonToday = useAppStore.getState().lastStudyDate !== today;
       updateStreak();
       addXP(XP_REWARDS.LESSON_STARTED);
-      incrementLessons();
       if (isFirstLessonToday) {
         addXP(XP_REWARDS.FIRST_LESSON_OF_DAY);
       }
@@ -459,7 +484,6 @@ export default function LessonScreen() {
       selectedLanguage,
       selectedPersonalityId,
       addXP,
-      incrementLessons,
       updateStreak,
       setLastSession,
       clearMessages,
@@ -562,6 +586,8 @@ export default function LessonScreen() {
           useAppStore.getState().updateStreak();
 
           updateSubjectProgress(selectedSubject.label, selectedGrade, finalScore);
+          countLessonOnce();
+          void syncChildStatsToDb();
         }
       }
     } catch (error: unknown) {
@@ -704,6 +730,8 @@ export default function LessonScreen() {
                 addXP(state.xpEarned);
               }
               useAppStore.getState().updateStreak();
+              countLessonOnce();
+              void syncChildStatsToDb();
               seedChatAfterFlow(state);
             }}
             onSkip={() => {
@@ -891,11 +919,18 @@ export default function LessonScreen() {
             </TouchableOpacity>
 
             <TextInput
-              style={[styles.inputField, {
-                color: colors.textPrimary,
-                backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0',
-                fontSize: 16,
-              }, Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }]}
+              style={[
+                styles.inputField,
+                {
+                  color: colors.textPrimary,
+                  backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0',
+                  fontSize: 16,
+                },
+                Platform.OS === 'web' && {
+                  outlineStyle: 'none' as any,
+                  outlineWidth: 0,
+                } as any,
+              ]}
               value={inputText}
               onChangeText={setInputText}
               placeholder={isConnected ? t('askAnything') : t('error')}
@@ -1162,7 +1197,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     maxHeight: 100,
     lineHeight: 22,
-    ...(Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }),
   },
   sendBtn: {
     width: 40,

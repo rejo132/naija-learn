@@ -25,9 +25,8 @@ export interface Child {
   id: string;
   parent_id: string;
   name: string;
-  age: number | null;
   grade: number;
-  language_preference: string;
+  language: string;
   avatar: string;
   created_at: string;
 }
@@ -98,14 +97,20 @@ export async function getChildren(): Promise<Child[]> {
  * Add a new child profile under the logged-in parent.
  */
 export async function addChild(
-  child: Pick<Child, 'name' | 'age' | 'grade' | 'language_preference' | 'avatar'>
+  child: Pick<Child, 'name' | 'grade' | 'language' | 'avatar'>
 ): Promise<Child | null> {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return null;
 
   const { data, error } = await supabase
     .from('children')
-    .insert({ ...child, parent_id: user.id })
+    .insert({
+      name: child.name,
+      grade: String(child.grade),
+      language: child.language,
+      avatar: child.avatar,
+      parent_id: user.id,
+    })
     .select()
     .single();
   if (error) {
@@ -433,21 +438,51 @@ export async function getChildProgressHistory(
  * the current streak (consecutive days ending on today). Returns null if
  * the underlying query fails.
  */
+export async function updateChildStats(
+  childId: string,
+  xp: number,
+  streak: number,
+  lastActiveDate: string
+): Promise<void> {
+  try {
+    const { error } = await supabase
+      .from('children')
+      .update({
+        xp,
+        streak,
+        last_active_date: lastActiveDate,
+      })
+      .eq('id', childId);
+
+    if (error) throw error;
+  } catch (err) {
+    captureError(err, { context: 'updateChildStats' });
+  }
+}
+
 export async function loadChildProfile(childId: string): Promise<{
   xp: number;
   streak: number;
   lastStudyDate: string | null;
+  lessonsCompleted: number;
+  bestQuizScore: number;
 } | null> {
   try {
     const { data, error } = await supabase
       .from('progress')
-      .select('xp_earned, created_at')
+      .select('xp_earned, score, created_at')
       .eq('child_id', childId)
       .order('created_at', { ascending: false });
 
     if (error || !data) return null;
 
     const totalXP = data.reduce((sum, row) => sum + (row.xp_earned ?? 0), 0);
+    const lessonsCompleted = data.length;
+    const scores = data
+      .filter((row) => row.score != null)
+      .map((row) => row.score as number);
+    const bestQuizScore =
+      scores.length > 0 ? Math.max(...scores) : 0;
 
     const dates = data
       .map((row) => (row.created_at as string).split('T')[0])
@@ -472,6 +507,8 @@ export async function loadChildProfile(childId: string): Promise<{
       xp: totalXP,
       streak,
       lastStudyDate: dates[0] ?? null,
+      lessonsCompleted,
+      bestQuizScore,
     };
   } catch (err) {
     captureError(err, { context: 'loadChildProfile exception' });

@@ -30,7 +30,11 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
+# Environment variables - never commit these
+.env
+.env.local
+.env.production
+.env.development
 .env*.local
 supabase/.env
 

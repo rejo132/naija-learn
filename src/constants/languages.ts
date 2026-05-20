@@ -138,6 +138,24 @@ export const UI_TEXT: Record<Language, {
   achievementsShort: string;
   settingsShort: string;
   childrenShort: string;
+  selectChild: string;
+  childrenAge: string;
+  childrenNamePlaceholder: string;
+  childrenDeleteConfirmTitle: string;
+  childrenDeleteConfirmMsg: string;
+  childrenDeleteConfirm: string;
+  childrenDeleteCancel: string;
+  micPermissionTitle: string;
+  micPermissionMsg: string;
+  micPermissionOk: string;
+  yourStats: string;
+  dayStreakLabel: string;
+  levelLabel: string;
+  subjectFocusAlertTitle: string;
+  subjectFocusAlertMsg: string;
+  subjectFocusAlertOk: string;
+  deleteAccountTitle: string;
+  deleteAccountConfirm: string;
 }> = {
   en: {
     home: 'Home',
@@ -265,6 +283,24 @@ export const UI_TEXT: Record<Language, {
     achievementsShort: 'Awards',
     settingsShort: 'More',
     childrenShort: 'Kids',
+    selectChild: 'Select Child',
+    childrenAge: 'Age',
+    childrenNamePlaceholder: 'e.g. Emeka',
+    childrenDeleteConfirmTitle: 'Delete Child',
+    childrenDeleteConfirmMsg: 'Are you sure you want to delete this child profile?',
+    childrenDeleteConfirm: 'Delete',
+    childrenDeleteCancel: 'Cancel',
+    micPermissionTitle: 'Microphone Access',
+    micPermissionMsg: 'Please enable microphone access in Settings to use voice input.',
+    micPermissionOk: 'OK',
+    yourStats: 'Your Stats',
+    dayStreakLabel: 'day streak',
+    levelLabel: 'Level',
+    subjectFocusAlertTitle: 'Subject Focus',
+    subjectFocusAlertMsg: 'Subject focus can be set per child in Manage Children.',
+    subjectFocusAlertOk: 'Got it',
+    deleteAccountTitle: 'Delete Account',
+    deleteAccountConfirm: 'Type DELETE to confirm',
   },
   ha: {
     home: 'Gida',
@@ -392,6 +428,25 @@ export const UI_TEXT: Record<Language, {
     achievementsShort: 'Kyauta',
     settingsShort: 'Ƙari',
     childrenShort: 'Yara',
+    // TODO: native review
+    selectChild: 'Zaɓi Yaro',
+    childrenAge: 'Shekaru',
+    childrenNamePlaceholder: 'misali Emeka',
+    childrenDeleteConfirmTitle: 'Share Yaro',
+    childrenDeleteConfirmMsg: 'Ka tabbata kana son share wannan bayanin yaro?',
+    childrenDeleteConfirm: 'Share',
+    childrenDeleteCancel: 'Soke',
+    micPermissionTitle: 'Samun Makirufo',
+    micPermissionMsg: 'Da fatan za a kunna makirufo a Saituna don amfani da shigar murya.',
+    micPermissionOk: 'To',
+    yourStats: 'Kididdigar Ku',
+    dayStreakLabel: 'ranar ci gaba',
+    levelLabel: 'Mataki',
+    subjectFocusAlertTitle: 'Mayar da Hankali kan Darasi',
+    subjectFocusAlertMsg: 'Ana iya saita mayar da hankali ga kowane yaro a Sarrafa Yara.',
+    subjectFocusAlertOk: 'Na gane',
+    deleteAccountTitle: 'Share Asusu',
+    deleteAccountConfirm: 'Rubuta DELETE don tabbatarwa',
   },
   yo: {
     home: 'Ilé',
@@ -519,6 +574,25 @@ export const UI_TEXT: Record<Language, {
     achievementsShort: 'Ẹ̀bùn',
     settingsShort: 'Sii',
     childrenShort: 'Ọmọ',
+    // TODO: native review
+    selectChild: 'Yan Ọmọ',
+    childrenAge: 'Ọjọ́ ori',
+    childrenNamePlaceholder: 'apẹẹrẹ Emeka',
+    childrenDeleteConfirmTitle: 'Pa Ọmọ Rẹ́',
+    childrenDeleteConfirmMsg: 'Ṣe o da ọ lọwọ pe o fẹ pa profaili ọmọ yìí rẹ́?',
+    childrenDeleteConfirm: 'Pa Rẹ́',
+    childrenDeleteCancel: 'Fagilee',
+    micPermissionTitle: 'Wiwọle Gbohùngbohùn',
+    micPermissionMsg: 'Jọwọ ṣe igbalaaye gbohùngbohùn nínú Ètò láti lo àgbéwọ̀rọ̀ ohùn.',
+    micPermissionOk: 'Ó dára',
+    yourStats: 'Àwọn Ìṣirò Rẹ',
+    dayStreakLabel: 'ọjọ́ tẹ̀síwájú',
+    levelLabel: 'Ìpele',
+    subjectFocusAlertTitle: 'Àfojúsí Kókó-ọ̀rọ̀',
+    subjectFocusAlertMsg: 'Àfojúsí kókó-ọ̀rọ̀ le ṣètò fún ọmọ kọ̀ọ̀kan ní Ṣàkóso Àwọn Ọmọ.',
+    subjectFocusAlertOk: 'Ó ye mi',
+    deleteAccountTitle: 'Pa Àkántì Rẹ́',
+    deleteAccountConfirm: 'Tẹ DELETE láti jẹ́rìísí',
   },
   ig: {
     home: 'Ụlọ',
@@ -646,6 +720,25 @@ export const UI_TEXT: Record<Language, {
     achievementsShort: 'Ihe nrite',
     settingsShort: 'Ọzọ',
     childrenShort: 'Ụmụ',
+    // TODO: native review
+    selectChild: 'Họrọ Nwa',
+    childrenAge: 'Afọ',
+    childrenNamePlaceholder: 'dịka Emeka',
+    childrenDeleteConfirmTitle: 'Hichapụ Nwa',
+    childrenDeleteConfirmMsg: 'Ị ji n\'aka na ị chọrọ ihichapụ profaịlụ nwa a?',
+    childrenDeleteConfirm: 'Hichapụ',
+    childrenDeleteCancel: 'Kagbuo',
+    micPermissionTitle: 'Ikike Igwe Okwu',
+    micPermissionMsg: 'Biko gbanye igwe okwu na Ntọala iji jiri ọdụ okwu.',
+    micPermissionOk: 'Ọ dị mma',
+    yourStats: 'Ọganihu Gị',
+    dayStreakLabel: 'ụbọchị n\'otu n\'ihu',
+    levelLabel: 'Ọkwa',
+    subjectFocusAlertTitle: 'Nleba Anyị Isiokwu',
+    subjectFocusAlertMsg: 'Enwere ike ịhazie nleba anyị isiokwu kwa nwa na Jikwaa Ụmụaka.',
+    subjectFocusAlertOk: 'E nwetara ya',
+    deleteAccountTitle: 'Hichapụ Akaụntụ',
+    deleteAccountConfirm: 'Pịnye DELETE iji kwado',
   },
 };
 

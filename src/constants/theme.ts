@@ -135,7 +135,7 @@ export const FONTS = {
 
 export const FONT_FAMILY = {
   regular: 'Poppins-Regular',
-  medium: 'Poppins-Medium',
+  medium: 'Poppins-SemiBold',
   semiBold: 'Poppins-SemiBold',
   bold: 'Poppins-Bold',
 };

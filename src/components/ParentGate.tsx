@@ -9,7 +9,7 @@ import {
   Platform,
 } from 'react-native';
 import { ShieldCheck } from 'lucide-react-native';
-import { COLORS, FONT_SIZES, SPACING, RADIUS } from '@/constants/theme';
+import { COLORS, FONT_SIZES, FONT_FAMILY, SPACING, RADIUS } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useAppStore } from '@/store/appStore';
@@ -115,6 +115,10 @@ export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
                     borderColor: setupError ? COLORS.error : colors.border,
                     backgroundColor: isDarkMode ? '#0F1512' : COLORS.background,
                   },
+                  Platform.OS === 'web' && {
+                    outlineStyle: 'none' as any,
+                    outlineWidth: 0,
+                  } as any,
                 ]}
                 value={newPin}
                 onChangeText={(v) => {
@@ -139,6 +143,10 @@ export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
                     borderColor: setupError ? COLORS.error : colors.border,
                     backgroundColor: isDarkMode ? '#0F1512' : COLORS.background,
                   },
+                  Platform.OS === 'web' && {
+                    outlineStyle: 'none' as any,
+                    outlineWidth: 0,
+                  } as any,
                 ]}
                 value={confirmPin}
                 onChangeText={(v) => {
@@ -195,6 +203,10 @@ export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
                     borderColor: error ? COLORS.error : colors.border,
                     backgroundColor: isDarkMode ? '#0F1512' : COLORS.background,
                   },
+                  Platform.OS === 'web' && {
+                    outlineStyle: 'none' as any,
+                    outlineWidth: 0,
+                  } as any,
                 ]}
                 value={pin}
                 onChangeText={(v) => {
@@ -281,7 +293,6 @@ const styles = StyleSheet.create({
     borderRadius: RADIUS.lg,
     paddingVertical: SPACING.md,
     letterSpacing: 12,
-    ...(Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }),
   },
   errorText: {
     fontSize: FONT_SIZES.sm,

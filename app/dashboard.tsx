@@ -10,6 +10,7 @@ import {
   StyleSheet,
   ScrollView,
   useWindowDimensions,
+  Platform,
 } from 'react-native';
 import { Redirect, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -93,7 +94,6 @@ export default function DashboardScreen() {
   const lastActiveDate = lastStudyDate;
 
   useEffect(() => {
-    if (!xp && !streak) return;
     syncProfile({
       xp: xp ?? 0,
       streak: streak ?? 0,
@@ -159,7 +159,7 @@ export default function DashboardScreen() {
               </Text>
               {streak > 0 && (
                 <Text style={[styles.greetingStreak, { color: colors.accent }]}>
-                  🔥 {streak} day streak — keep it up!
+                  🔥 {streak} {t('dayStreakLabel')} — keep it up!
                 </Text>
               )}
             </View>
@@ -192,7 +192,7 @@ export default function DashboardScreen() {
                   {activeChildAvatar ?? '👤'}
                 </Text>
                 <Text style={styles.switchChildName} numberOfLines={1}>
-                  {activeChildName ?? 'Select Child'}
+                  {activeChildName ?? t('selectChild')}
                 </Text>
                 <Text style={styles.switchChildChevron}>⌄</Text>
               </TouchableOpacity>
@@ -211,7 +211,14 @@ export default function DashboardScreen() {
           >
             <Text style={styles.promptBarIcon}>🤖</Text>
             <TextInput
-              style={[styles.promptBarInput, { color: colors.textPrimary }]}
+              style={[
+                styles.promptBarInput,
+                { color: colors.textPrimary },
+                Platform.OS === 'web' && {
+                  outlineStyle: 'none' as any,
+                  outlineWidth: 0,
+                } as any,
+              ]}
               value={aiPrompt}
               onChangeText={setAiPrompt}
               placeholder={t('askAI')}
@@ -660,8 +667,6 @@ const styles = StyleSheet.create({
     fontSize: FONT_SIZES.md,
     fontFamily: 'Poppins-Regular',
     paddingVertical: SPACING.sm,
-    // @ts-expect-error outlineStyle is web-only
-    outlineStyle: 'none',
   },
   promptBarBtn: {
     borderRadius: RADIUS.lg,

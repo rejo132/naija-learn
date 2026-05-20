@@ -304,7 +304,13 @@ export default function SignInScreen() {
               >
                 <Text style={styles.inputIcon}>📧</Text>
                 <TextInput
-                  style={styles.input}
+                  style={[
+                    styles.input,
+                    Platform.OS === 'web' && {
+                      outlineStyle: 'none' as any,
+                      outlineWidth: 0,
+                    } as any,
+                  ]}
                   placeholder="name@example.com"
                   placeholderTextColor={COLORS.textMuted}
                   value={email}
@@ -334,7 +340,13 @@ export default function SignInScreen() {
                 <Text style={styles.inputIcon}>🔒</Text>
                 <TextInput
                   ref={passwordRef}
-                  style={styles.passwordInput}
+                  style={[
+                    styles.passwordInput,
+                    Platform.OS === 'web' && {
+                      outlineStyle: 'none' as any,
+                      outlineWidth: 0,
+                    } as any,
+                  ]}
                   placeholder={t('password')}
                   placeholderTextColor={COLORS.textMuted}
                   value={password}
@@ -616,7 +628,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     color: COLORS.textPrimary,
     paddingVertical: SPACING.md,
-    ...(Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }),
   },
   eyeBtn: {
     width: 36,
@@ -642,7 +653,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     color: COLORS.textPrimary,
     paddingVertical: SPACING.md,
-    ...(Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }),
   },
   inputValid: {
     color: COLORS.success,

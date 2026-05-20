@@ -67,7 +67,13 @@ export default function ForgotPasswordScreen() {
               <View style={styles.inputGroup}>
                 <Text style={styles.inputIcon}>📧</Text>
                 <TextInput
-                  style={styles.input}
+                  style={[
+                    styles.input,
+                    Platform.OS === 'web' && {
+                      outlineStyle: 'none' as any,
+                      outlineWidth: 0,
+                    } as any,
+                  ]}
                   placeholder="name@example.com"
                   placeholderTextColor={COLORS.textMuted}
                   value={email}
@@ -191,7 +197,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     color: COLORS.textPrimary,
     paddingVertical: SPACING.md,
-    ...(Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }),
   },
   errorBanner: {
     width: '100%',

@@ -7,15 +7,22 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { useTranslation } from '@/hooks/useTranslation';
 import { SPACING, FONT_SIZES, FONT_FAMILY } from '@/constants/theme';
+import { useTheme } from '@/hooks/useTheme';
 
 export function OfflineBanner() {
   const { isConnected, isChecking } = useNetworkStatus();
   const { t } = useTranslation();
+  const { isDarkMode } = useTheme();
 
   if (isChecking || isConnected) return null;
 
   return (
-    <View style={styles.banner}>
+    <View
+      style={[
+        styles.banner,
+        { backgroundColor: isDarkMode ? '#3D3000' : '#FFF3CD' },
+      ]}
+    >
       <Text style={styles.icon}>📶</Text>
       <Text style={styles.text}>
         {t('offlineBanner')} — {t('offlineBannerSub')}
@@ -26,7 +33,6 @@ export function OfflineBanner() {
 
 const styles = StyleSheet.create({
   banner: {
-    backgroundColor: '#FFF3CD',
     borderBottomWidth: 1,
     borderBottomColor: '#FFEAA7',
     paddingHorizontal: SPACING.lg,
