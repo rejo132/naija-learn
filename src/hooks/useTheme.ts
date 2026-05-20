@@ -9,9 +9,12 @@ import { COLORS, DARK_COLORS, SHADOWS, DARK_SHADOWS } from '@/constants/theme';
 
 export function useTheme() {
   const isDarkMode = useAppStore((s) => s.isDarkMode);
+  const toggleDarkMode = useAppStore((s) => s.toggleDarkMode);
+  const colors = isDarkMode ? DARK_COLORS : COLORS;
   return {
-    colors: isDarkMode ? DARK_COLORS : COLORS,
-    shadows: isDarkMode ? DARK_SHADOWS : SHADOWS,
     isDarkMode,
+    toggleDarkMode,
+    colors,
+    shadows: isDarkMode ? DARK_SHADOWS : SHADOWS,
   };
 }

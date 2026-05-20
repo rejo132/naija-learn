@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -20,8 +20,27 @@ interface ParentGateProps {
 export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
   const { colors, isDarkMode } = useTheme();
   const parentPin = useAppStore((s) => s.parentPin);
+  const hasSetupParentPin = useAppStore((s) => s.hasSetupParentPin);
+  const setHasSetupParentPin = useAppStore((s) => s.setHasSetupParentPin);
+  const setParentPin = useAppStore((s) => s.setParentPin);
+
+  const [isSettingUp, setIsSettingUp] = useState(!hasSetupParentPin);
   const [pin, setPin] = useState('');
+  const [newPin, setNewPin] = useState('');
+  const [confirmPin, setConfirmPin] = useState('');
   const [error, setError] = useState('');
+  const [setupError, setSetupError] = useState('');
+
+  useEffect(() => {
+    if (visible) {
+      setIsSettingUp(!hasSetupParentPin);
+      setPin('');
+      setNewPin('');
+      setConfirmPin('');
+      setError('');
+      setSetupError('');
+    }
+  }, [visible, hasSetupParentPin]);
 
   function handleSubmit() {
     if (pin === parentPin) {
@@ -34,6 +53,33 @@ export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
     }
   }
 
+  function handleSetPin() {
+    if (newPin.length !== 4) {
+      setSetupError('PIN must be 4 digits');
+      return;
+    }
+    if (newPin !== confirmPin) {
+      setSetupError('PINs do not match');
+      return;
+    }
+    setParentPin(newPin);
+    setHasSetupParentPin(true);
+    setIsSettingUp(false);
+    setNewPin('');
+    setConfirmPin('');
+    setSetupError('');
+    onSuccess();
+  }
+
+  function handleCancel() {
+    setPin('');
+    setNewPin('');
+    setConfirmPin('');
+    setError('');
+    setSetupError('');
+    onCancel();
+  }
+
   return (
     <Modal visible={visible} transparent animationType="fade">
       <View style={styles.overlay}>
@@ -44,64 +90,140 @@ export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
           ]}
         >
           <Text style={styles.lockEmoji}>🔐</Text>
-          <Text style={[styles.title, { color: colors.textPrimary }]}>
-            Parent Area
-          </Text>
-          <Text style={[styles.subtitle, { color: colors.textMuted }]}>
-            Enter your 4-digit PIN to continue
-          </Text>
 
-          <TextInput
-            style={[
-              styles.pinInput,
-              {
-                color: colors.textPrimary,
-                borderColor: error ? COLORS.error : colors.border,
-                backgroundColor: isDarkMode ? '#0F1512' : COLORS.background,
-              },
-            ]}
-            value={pin}
-            onChangeText={(v) => {
-              setPin(v);
-              setError('');
-            }}
-            keyboardType="number-pad"
-            maxLength={4}
-            secureTextEntry
-            placeholder="••••"
-            placeholderTextColor={colors.textMuted}
-            onSubmitEditing={handleSubmit}
-          />
+          {isSettingUp ? (
+            <>
+              <Text style={[styles.title, { color: colors.textPrimary }]}>
+                Create Your Parent PIN
+              </Text>
+              <Text style={[styles.subtitle, { color: colors.textMuted }]}>
+                Set a 4-digit PIN to protect the Parent Zone
+              </Text>
 
-          {error ? <Text style={styles.errorText}>{error}</Text> : null}
+              <Text style={[styles.fieldLabel, { color: colors.textPrimary }]}>
+                New PIN
+              </Text>
+              <TextInput
+                style={[
+                  styles.pinInput,
+                  {
+                    color: colors.textPrimary,
+                    borderColor: setupError ? COLORS.error : colors.border,
+                    backgroundColor: isDarkMode ? '#0F1512' : COLORS.background,
+                  },
+                ]}
+                value={newPin}
+                onChangeText={(v) => {
+                  setNewPin(v.replace(/\D/g, '').slice(0, 4));
+                  setSetupError('');
+                }}
+                keyboardType="number-pad"
+                maxLength={4}
+                secureTextEntry
+                placeholder="••••"
+                placeholderTextColor={colors.textMuted}
+              />
 
-          <TouchableOpacity
-            style={[styles.confirmBtn, pin.length !== 4 && styles.confirmBtnDisabled]}
-            onPress={handleSubmit}
-            disabled={pin.length !== 4}
-          >
-            <Text style={styles.confirmBtnText}>Confirm</Text>
-          </TouchableOpacity>
+              <Text style={[styles.fieldLabel, { color: colors.textPrimary }]}>
+                Confirm PIN
+              </Text>
+              <TextInput
+                style={[
+                  styles.pinInput,
+                  {
+                    color: colors.textPrimary,
+                    borderColor: setupError ? COLORS.error : colors.border,
+                    backgroundColor: isDarkMode ? '#0F1512' : COLORS.background,
+                  },
+                ]}
+                value={confirmPin}
+                onChangeText={(v) => {
+                  setConfirmPin(v.replace(/\D/g, '').slice(0, 4));
+                  setSetupError('');
+                }}
+                keyboardType="number-pad"
+                maxLength={4}
+                secureTextEntry
+                placeholder="••••"
+                placeholderTextColor={colors.textMuted}
+                onSubmitEditing={handleSetPin}
+              />
 
-          <TouchableOpacity
-            style={styles.cancelBtn}
-            onPress={() => {
-              setPin('');
-              setError('');
-              onCancel();
-            }}
-          >
-            <Text style={[styles.cancelBtnText, { color: colors.textMuted }]}>
-              Cancel
-            </Text>
-          </TouchableOpacity>
+              {setupError ? <Text style={styles.errorText}>{setupError}</Text> : null}
 
-          <Text style={[styles.hint, { color: colors.textMuted }]}>
-            Change your PIN in{' '}
-            <Text style={{ color: colors.primary }}>
-              Settings → Parent Zone
-            </Text>
-          </Text>
+              <TouchableOpacity
+                style={[
+                  styles.confirmBtn,
+                  (newPin.length !== 4 || confirmPin.length !== 4) &&
+                    styles.confirmBtnDisabled,
+                ]}
+                onPress={handleSetPin}
+                disabled={newPin.length !== 4 || confirmPin.length !== 4}
+              >
+                <Text style={styles.confirmBtnText}>Set PIN</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.cancelBtn} onPress={handleCancel}>
+                <Text style={[styles.cancelBtnText, { color: colors.textMuted }]}>
+                  Cancel
+                </Text>
+              </TouchableOpacity>
+            </>
+          ) : (
+            <>
+              <Text style={[styles.title, { color: colors.textPrimary }]}>
+                Parent Area
+              </Text>
+              <Text style={[styles.subtitle, { color: colors.textMuted }]}>
+                Enter your 4-digit PIN to continue
+              </Text>
+
+              <TextInput
+                style={[
+                  styles.pinInput,
+                  {
+                    color: colors.textPrimary,
+                    borderColor: error ? COLORS.error : colors.border,
+                    backgroundColor: isDarkMode ? '#0F1512' : COLORS.background,
+                  },
+                ]}
+                value={pin}
+                onChangeText={(v) => {
+                  setPin(v);
+                  setError('');
+                }}
+                keyboardType="number-pad"
+                maxLength={4}
+                secureTextEntry
+                placeholder="••••"
+                placeholderTextColor={colors.textMuted}
+                onSubmitEditing={handleSubmit}
+              />
+
+              {error ? <Text style={styles.errorText}>{error}</Text> : null}
+
+              <TouchableOpacity
+                style={[styles.confirmBtn, pin.length !== 4 && styles.confirmBtnDisabled]}
+                onPress={handleSubmit}
+                disabled={pin.length !== 4}
+              >
+                <Text style={styles.confirmBtnText}>Confirm</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.cancelBtn} onPress={handleCancel}>
+                <Text style={[styles.cancelBtnText, { color: colors.textMuted }]}>
+                  Cancel
+                </Text>
+              </TouchableOpacity>
+
+              <Text style={[styles.hint, { color: colors.textMuted }]}>
+                Change your PIN in{' '}
+                <Text style={{ color: colors.primary }}>
+                  Settings → Parent Zone
+                </Text>
+              </Text>
+            </>
+          )}
         </View>
       </View>
     </Modal>
@@ -133,6 +255,12 @@ const styles = StyleSheet.create({
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Regular',
     textAlign: 'center',
+  },
+  fieldLabel: {
+    alignSelf: 'flex-start',
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-SemiBold',
+    marginTop: SPACING.xs,
   },
   pinInput: {
     width: 160,

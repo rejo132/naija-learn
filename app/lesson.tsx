@@ -559,6 +559,8 @@ export default function LessonScreen() {
             updateActiveChildStreak();
           }
 
+          useAppStore.getState().updateStreak();
+
           updateSubjectProgress(selectedSubject.label, selectedGrade, finalScore);
         }
       }
@@ -701,6 +703,7 @@ export default function LessonScreen() {
               if (state.xpEarned > 0) {
                 addXP(state.xpEarned);
               }
+              useAppStore.getState().updateStreak();
               seedChatAfterFlow(state);
             }}
             onSkip={() => {

@@ -9,6 +9,8 @@ import {
 import { useTheme } from '@/hooks/useTheme';
 import { FONT_SIZES, SPACING, RADIUS, COLORS } from '@/constants/theme';
 import { useSpeech } from '@/hooks/useSpeech';
+import { saveProgress } from '@/services/dbService';
+import { useAppStore } from '@/store/appStore';
 import { LearningFlowState, type LearningFlowStep } from '@/types/ai.types';
 
 interface LearningFlowProps {
@@ -313,7 +315,21 @@ export function LearningFlow({
     }
   }
 
-  function handleContinueToChat() {
+  async function handleContinueToChat() {
+    const finalScore = Math.round((score / questions.length) * 100);
+    const { activeChildId } = useAppStore.getState();
+
+    await saveProgress({
+      subject: subject.label,
+      topic: subject.label,
+      score: finalScore,
+      grade,
+      xpEarned,
+      durationSeconds: 0,
+      flowCompleted: true,
+      childId: activeChildId,
+    }).catch(() => {});
+
     onComplete({
       step: 'chat',
       hookCompleted: true,

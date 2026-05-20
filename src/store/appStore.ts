@@ -83,6 +83,8 @@ interface AppState {
   activeChildLastStudyDate: string | null;
   /** 4-digit PIN that unlocks the parent portal (`ParentGate`). Default `'1234'`. */
   parentPin: string;
+  /** `true` after the parent has created a custom PIN via ParentGate setup. */
+  hasSetupParentPin: boolean;
   setLanguage: (lang: LanguageCode) => void;
   setGrade: (grade: number) => void;
   setSubject: (subject: Subject) => void;
@@ -128,6 +130,7 @@ interface AppState {
   addActiveChildXP: (amount: number) => void;
   updateActiveChildStreak: () => void;
   setParentPin: (pin: string) => void;
+  setHasSetupParentPin: (val: boolean) => void;
   /** Wipe all child-facing data — used by the "Delete my data" flow. */
   resetAll: () => void;
 }
@@ -162,6 +165,7 @@ type PersistedAppState = Pick<
   | 'activeChildStreak'
   | 'activeChildLastStudyDate'
   | 'parentPin'
+  | 'hasSetupParentPin'
 >;
 
 /**
@@ -177,7 +181,7 @@ type AppStateValues = Omit<AppState,
   | 'toggleDarkMode' | 'setLastSession' | 'updateSubjectProgress'
   | 'markFlowCompleted' | 'setXP' | 'setStreak' | 'setSubjectProgress'
   | 'setActiveChild' | 'clearActiveChild' | 'addActiveChildXP'
-  | 'updateActiveChildStreak' | 'setParentPin' | 'resetAll'
+  | 'updateActiveChildStreak' | 'setParentPin' | 'setHasSetupParentPin' | 'resetAll'
 >;
 
 const initialState: AppStateValues = {
@@ -213,6 +217,7 @@ const initialState: AppStateValues = {
   activeChildStreak: 0,
   activeChildLastStudyDate: null,
   parentPin: '1234',
+  hasSetupParentPin: false,
 };
 
 export const useAppStore = create<AppState>()(
@@ -339,6 +344,7 @@ export const useAppStore = create<AppState>()(
           xp: (state.xp ?? 0) + amount,
         })),
       setParentPin: (pin) => set({ parentPin: pin }),
+      setHasSetupParentPin: (val) => set({ hasSetupParentPin: val }),
       updateActiveChildStreak: () =>
         set((state) => {
           const today = new Date().toISOString().split('T')[0];
@@ -392,6 +398,7 @@ export const useAppStore = create<AppState>()(
         activeChildStreak: state.activeChildStreak,
         activeChildLastStudyDate: state.activeChildLastStudyDate,
         parentPin: state.parentPin,
+        hasSetupParentPin: state.hasSetupParentPin,
       }),
       merge: (persisted, current) => ({
         ...current,

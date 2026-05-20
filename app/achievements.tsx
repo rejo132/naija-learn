@@ -5,7 +5,12 @@ import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { useAppStore } from '@/store/appStore';
-import { ACHIEVEMENTS, getLevel } from '@/constants/achievements';
+import {
+  ACHIEVEMENT_DEFINITIONS,
+  getAchievementStyle,
+  getLevel,
+  getUnlockedAchievements,
+} from '@/constants/achievements';
 import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
@@ -14,9 +19,18 @@ import { GlassCard } from '@/components/GlassCard';
 export default function AchievementsScreen() {
   const xp = useAppStore((s) => s.xp);
   const streak = useAppStore((s) => s.streak);
-  const unlockedAchievements = useAppStore((s) => s.unlockedAchievements);
+  const lessonsCompleted = useAppStore((s) => s.lessonsCompleted);
+  const bestQuizScore = useAppStore((s) => s.bestQuizScore);
   const level = getLevel(xp);
   const { colors, isDarkMode } = useTheme();
+
+  const unlocked = getUnlockedAchievements({
+    xp,
+    streak,
+    lessonsCompleted,
+    bestQuizScore,
+  });
+  const unlockedIds = new Set(unlocked.map((a) => a.id));
 
   return (
     <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? colors.background : '#F9F6F0' }]}>
@@ -59,25 +73,29 @@ export default function AchievementsScreen() {
         </GlassCard>
 
         <FlatList
-          data={ACHIEVEMENTS}
+          data={ACHIEVEMENT_DEFINITIONS}
           keyExtractor={(item) => item.id}
           contentContainerStyle={[styles.list, { backgroundColor: colors.background }]}
           renderItem={({ item }) => {
-            const isUnlocked = unlockedAchievements.includes(item.id);
+            const isUnlocked = unlockedIds.has(item.id);
+            const style = getAchievementStyle(item.id);
             return (
               <GlassCard
                 style={[
                   styles.card,
-                  !isUnlocked && [styles.cardLocked, { borderColor: colors.border, backgroundColor: colors.backgroundGlass }],
-                  isUnlocked && { borderColor: item.color, backgroundColor: item.bgColor },
+                  !isUnlocked && [
+                    styles.cardLocked,
+                    { borderColor: colors.border, backgroundColor: colors.backgroundGlass, opacity: 0.4 },
+                  ],
+                  isUnlocked && { borderColor: style.color, backgroundColor: style.bgColor, opacity: 1 },
                   isDarkMode && !isUnlocked && { backgroundColor: colors.backgroundCard },
                 ]}
               >
-                <View style={[styles.emojiCircle, { backgroundColor: isUnlocked ? item.bgColor : colors.backgroundDeep }]}>
+                <View style={[styles.emojiCircle, { backgroundColor: isUnlocked ? style.bgColor : colors.backgroundDeep }]}>
                   <Text style={[styles.emoji, !isUnlocked && styles.emojiLocked]}>{item.emoji}</Text>
                 </View>
                 <View style={styles.cardBody}>
-                  <Text style={[styles.name, isUnlocked && { color: item.color }, !isUnlocked && { color: colors.textMuted }]}>
+                  <Text style={[styles.name, isUnlocked && { color: style.color }, !isUnlocked && { color: colors.textMuted }]}>
                     {item.title}
                   </Text>
                   <Text style={[styles.description, !isUnlocked && { color: colors.textMuted }, isUnlocked && { color: colors.textSecondary }]}>
@@ -85,7 +103,7 @@ export default function AchievementsScreen() {
                   </Text>
                 </View>
                 {isUnlocked ? (
-                  <View style={[styles.checkBadge, { backgroundColor: item.color }]}>
+                  <View style={[styles.checkBadge, { backgroundColor: style.color }]}>
                     <Text style={[styles.checkText, { color: colors.white }]}>✓</Text>
                   </View>
                 ) : (
@@ -154,9 +172,7 @@ const styles = StyleSheet.create({
     gap: SPACING.md,
     borderWidth: 2,
   },
-  cardLocked: {
-    opacity: 0.65,
-  },
+  cardLocked: {},
   emojiCircle: {
     width: 56,
     height: 56,
