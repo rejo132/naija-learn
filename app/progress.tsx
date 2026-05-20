@@ -13,7 +13,7 @@ import {
   getUnlockedAchievements,
   getXPForNextLevel,
 } from '@/constants/achievements';
-import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { SPACING, RADIUS, FONT_SIZES, FONT_FAMILY } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Atmosphere } from '@/components/Atmosphere';
@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
   levelNumber: { fontWeight: '900', fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.sm },
   levelInfo: { flex: 1 },
   levelTitle: { fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold' },
-  levelSubtitle: { fontSize: FONT_SIZES.sm },
+  levelSubtitle: { fontSize: FONT_SIZES.sm, fontFamily: FONT_FAMILY.regular },
   xpTotal: { fontSize: FONT_SIZES.md, fontWeight: '800', fontFamily: 'Poppins-Bold' },
   progressBarBg: {
     height: 12,
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
     height: '100%',
     borderRadius: 6,
   },
-  progressLabel: { fontSize: FONT_SIZES.xs, textAlign: 'right' },
+  progressLabel: { fontSize: FONT_SIZES.xs, textAlign: 'right', fontFamily: FONT_FAMILY.regular },
   sectionTitle: {
     fontSize: FONT_SIZES.md, fontWeight: '800', fontFamily: 'Poppins-Bold',
     marginBottom: SPACING.sm,
@@ -212,9 +212,9 @@ const styles = StyleSheet.create({
   },
   statCard: {
     width: '47%', alignItems: 'center',
-    padding: SPACING.md, gap: 4,
+    padding: SPACING.md, gap: SPACING.xs,
   },
-  statEmoji: { fontSize: 28 },
+  statEmoji: { fontSize: FONT_SIZES.xxxl },
   statValue: { fontSize: FONT_SIZES.xxl, fontWeight: '900', fontFamily: 'Poppins-Bold' },
   statLabel: { fontSize: FONT_SIZES.xs, fontWeight: '600', fontFamily: 'Poppins-SemiBold' },
   streakCard: {
@@ -223,9 +223,9 @@ const styles = StyleSheet.create({
     marginVertical: SPACING.sm, borderRadius: RADIUS.xl,
     borderWidth: 1,
   },
-  streakEmoji: { fontSize: 36 },
-  streakTitle: { fontSize: FONT_SIZES.md, fontWeight: '800', fontFamily: 'Poppins-Bold' },
-  streakSubtitle: { fontSize: FONT_SIZES.sm, marginTop: 2 },
+  streakEmoji: { fontSize: FONT_SIZES.display },
+  streakTitle: { fontSize: FONT_SIZES.md, fontWeight: '800', fontFamily: FONT_FAMILY.bold },
+  streakSubtitle: { fontSize: FONT_SIZES.sm, marginTop: 2, fontFamily: FONT_FAMILY.regular },
   achievementsHeader: {
     flexDirection: 'row', justifyContent: 'space-between',
     alignItems: 'center', marginTop: SPACING.md
@@ -237,12 +237,12 @@ const styles = StyleSheet.create({
   },
   achievementCard: {
     width: '30%', alignItems: 'center',
-    padding: SPACING.sm, gap: 4,
+    padding: SPACING.sm, gap: SPACING.xs,
     borderWidth: 1,
   },
-  achievementEmoji: { fontSize: 28 },
+  achievementEmoji: { fontSize: FONT_SIZES.xxxl },
   achievementTitle: {
-    fontSize: 10, fontWeight: '700', fontFamily: 'Poppins-Bold',
+    fontSize: FONT_SIZES.xs, fontWeight: '700', fontFamily: FONT_FAMILY.bold,
     textAlign: 'center',
   },
 });

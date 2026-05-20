@@ -7,7 +7,7 @@ import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { PERSONALITIES } from '@/constants/personalities';
-import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { SPACING, RADIUS, FONT_SIZES, FONT_FAMILY } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Atmosphere } from '@/components/Atmosphere';
@@ -91,10 +91,11 @@ const styles = StyleSheet.create({
     marginTop: SPACING.sm, marginBottom: SPACING.sm, gap: SPACING.sm,
   },
   backBtn: { padding: SPACING.xs },
-  backArrow: { fontSize: FONT_SIZES.xl },
+  backArrow: { fontSize: FONT_SIZES.xl, fontFamily: FONT_FAMILY.bold },
   headerTitle: { flex: 1, fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold' },
   subtitle: {
     fontSize: FONT_SIZES.md,
+    fontFamily: FONT_FAMILY.regular,
     textAlign: 'center', marginBottom: SPACING.md,
     paddingHorizontal: SPACING.md,
   },
@@ -108,10 +109,10 @@ const styles = StyleSheet.create({
     width: 56, height: 56, borderRadius: 28,
     alignItems: 'center', justifyContent: 'center',
   },
-  emoji: { fontSize: 28 },
+  emoji: { fontSize: FONT_SIZES.xxxl },
   cardBody: { flex: 1 },
-  name: { fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold' },
-  tagline: { fontSize: FONT_SIZES.sm, marginTop: 2 },
+  name: { fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: FONT_FAMILY.bold },
+  tagline: { fontSize: FONT_SIZES.sm, marginTop: 2, fontFamily: FONT_FAMILY.regular },
   checkBadge: {
     paddingHorizontal: SPACING.sm,
     paddingVertical: SPACING.xs,

@@ -894,7 +894,8 @@ export default function LessonScreen() {
               style={[styles.inputField, {
                 color: colors.textPrimary,
                 backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0',
-              }]}
+                fontSize: 16,
+              }, Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }]}
               value={inputText}
               onChangeText={setInputText}
               placeholder={isConnected ? t('askAnything') : t('error')}
@@ -1157,10 +1158,11 @@ const styles = StyleSheet.create({
     borderRadius: RADIUS.xl,
     paddingHorizontal: SPACING.md,
     paddingVertical: SPACING.sm,
-    fontSize: FONT_SIZES.md,
+    fontSize: 16,
     fontFamily: 'Poppins-Regular',
     maxHeight: 100,
     lineHeight: 22,
+    ...(Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }),
   },
   sendBtn: {
     width: 40,

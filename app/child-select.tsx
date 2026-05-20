@@ -260,8 +260,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,0.15)',
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md,
-    paddingVertical: 4,
-    marginTop: 4,
+    paddingVertical: SPACING.xs,
+    marginTop: SPACING.xs,
   },
   childLangText: {
     fontSize: FONT_SIZES.xs,

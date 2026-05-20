@@ -616,6 +616,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     color: COLORS.textPrimary,
     paddingVertical: SPACING.md,
+    ...(Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }),
   },
   eyeBtn: {
     width: 36,
@@ -641,6 +642,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     color: COLORS.textPrimary,
     paddingVertical: SPACING.md,
+    ...(Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }),
   },
   inputValid: {
     color: COLORS.success,

@@ -2,6 +2,7 @@
  * Achievements screen — view locked and unlocked achievements.
  */
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { ChevronLeft, Lock } from 'lucide-react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { useAppStore } from '@/store/appStore';
@@ -11,7 +12,7 @@ import {
   getLevel,
   getUnlockedAchievements,
 } from '@/constants/achievements';
-import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { SPACING, RADIUS, FONT_SIZES, FONT_FAMILY } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Atmosphere } from '@/components/Atmosphere';
@@ -44,7 +45,7 @@ export default function AchievementsScreen() {
             activeOpacity={0.7}
             onPress={() => router.back()}
           >
-            <Text style={[styles.backArrow, { color: colors.primary }]}>←</Text>
+            <ChevronLeft size={24} color={colors.primary} />
           </TouchableOpacity>
           <GlassCard
             style={[
@@ -116,9 +117,7 @@ export default function AchievementsScreen() {
                   </View>
                 ) : (
                   <View style={styles.lockBadge}>
-                    <Text style={[styles.lockText, { color: colors.textMuted }]}>
-                      {t('achievementsLocked')}
-                    </Text>
+                    <Lock size={20} color={colors.textMuted} />
                   </View>
                 )}
               </GlassCard>
@@ -147,11 +146,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  backArrow: {
-    fontSize: 28,
-    fontWeight: '700',
-    lineHeight: 28,
-  },
   headerCard: { flex: 1, marginTop: 0, marginBottom: 0 },
   header: {
     flexDirection: 'row',
@@ -162,7 +156,7 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.md,
     gap: SPACING.sm,
   },
-  headerTitle: { flex: 1, fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold' },
+  headerTitle: { flex: 1, fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: FONT_FAMILY.bold },
   statsCard: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -171,12 +165,12 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.md,
   },
   statItem: { alignItems: 'center', flex: 1 },
-  statValue: { fontSize: FONT_SIZES.lg, fontWeight: '900', fontFamily: 'Poppins-Bold' },
-  statLabel: { fontSize: FONT_SIZES.xs, marginTop: 2, fontWeight: '600', fontFamily: 'Poppins-SemiBold' },
+  statValue: { fontSize: FONT_SIZES.lg, fontWeight: '900', fontFamily: FONT_FAMILY.bold },
+  statLabel: { fontSize: FONT_SIZES.xs, marginTop: 2, fontWeight: '600', fontFamily: FONT_FAMILY.semiBold },
   statDivider: { width: 1, height: 36 },
   progressHint: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     textAlign: 'center',
     marginBottom: SPACING.md,
     paddingHorizontal: SPACING.md,
@@ -197,11 +191,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  emoji: { fontSize: 28 },
+  emoji: { fontSize: FONT_SIZES.xxxl },
   emojiLocked: { opacity: 0.4 },
   cardBody: { flex: 1 },
-  name: { fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold' },
-  description: { fontSize: FONT_SIZES.sm, marginTop: 2 },
+  name: { fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: FONT_FAMILY.bold },
+  description: { fontSize: FONT_SIZES.sm, marginTop: 2, fontFamily: FONT_FAMILY.regular },
   checkBadge: {
     paddingHorizontal: SPACING.sm,
     paddingVertical: SPACING.xs,
@@ -209,12 +203,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  checkText: { fontWeight: '700', fontFamily: 'Poppins-SemiBold', fontSize: FONT_SIZES.xs },
+  checkText: { fontWeight: '700', fontFamily: FONT_FAMILY.semiBold, fontSize: FONT_SIZES.xs },
   lockBadge: {
     paddingHorizontal: SPACING.sm,
     paddingVertical: SPACING.xs,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  lockText: { fontSize: FONT_SIZES.xs, fontFamily: 'Poppins-SemiBold' },
 });

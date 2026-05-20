@@ -133,6 +133,13 @@ export const FONTS = {
   system: 'System',
 };
 
+export const FONT_FAMILY = {
+  regular: 'Poppins-Regular',
+  medium: 'Poppins-Medium',
+  semiBold: 'Poppins-SemiBold',
+  bold: 'Poppins-Bold',
+};
+
 export const FONT_SIZES = {
   xs: 11,
   sm: 13,

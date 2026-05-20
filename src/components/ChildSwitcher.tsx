@@ -23,7 +23,7 @@ import {
   loadChildProfile,
   type Child,
 } from '@/services/dbService';
-import { COLORS, SPACING, RADIUS, FONT_SIZES, SHADOWS } from '@/constants/theme';
+import { COLORS, SPACING, RADIUS, FONT_SIZES, FONT_FAMILY, SHADOWS } from '@/constants/theme';
 import { useTranslation } from '@/hooks/useTranslation';
 
 interface ChildSwitcherProps {
@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     color: COLORS.textMuted,
     textAlign: 'center',
     marginBottom: SPACING.lg,
@@ -285,7 +285,7 @@ const styles = StyleSheet.create({
   avatarCircleActive: {
     backgroundColor: 'rgba(0,135,81,0.15)',
   },
-  avatarText: { fontSize: 28 },
+  avatarText: { fontSize: FONT_SIZES.xxxl },
   childInfo: { flex: 1 },
   childName: {
     fontSize: FONT_SIZES.md,
@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
   childNameActive: { color: COLORS.primaryDark },
   childMeta: {
     fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     color: COLORS.textMuted,
     marginTop: 2,
   },
@@ -303,11 +303,11 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md,
-    paddingVertical: 4,
+    paddingVertical: SPACING.xs,
   },
   activeBadgeText: {
     color: '#FFFFFF',
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: FONT_FAMILY.semiBold,
     fontSize: FONT_SIZES.xs,
   },
   switchArrow: {
@@ -322,7 +322,7 @@ const styles = StyleSheet.create({
   emptyEmoji: { fontSize: 48 },
   emptyText: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     color: COLORS.textSecondary,
     textAlign: 'center',
     lineHeight: 22,

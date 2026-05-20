@@ -6,12 +6,13 @@
 import { useState, useEffect } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, FlatList,
-  StyleSheet, ActivityIndicator, Alert
+  StyleSheet, ActivityIndicator, Alert, Platform, type StyleProp, type TextStyle,
 } from 'react-native';
+import { Trash2 } from 'lucide-react-native';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getChildren, addChild, deleteChild, Child } from '@/services/dbService';
-import { SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { COLORS, SPACING, RADIUS, FONT_SIZES, FONT_FAMILY } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Atmosphere } from '@/components/Atmosphere';
@@ -94,13 +95,17 @@ export default function ChildrenScreen() {
     );
   }
 
-  const inputStyle = [
+  const inputStyle: StyleProp<TextStyle> = [
     styles.input,
     {
       backgroundColor: colors.backgroundCard,
       borderColor: colors.border,
       color: colors.textPrimary,
+      fontSize: 16,
     },
+    Platform.OS === 'web'
+      ? ({ outlineStyle: 'none', outlineWidth: 0 } as unknown as TextStyle)
+      : undefined,
   ];
 
   return (
@@ -277,7 +282,7 @@ export default function ChildrenScreen() {
                   style={styles.deleteBtn}
                   onPress={() => handleDeleteChild(item.id, item.name)}
                 >
-                  <Text style={styles.deleteBtnText}>🗑</Text>
+                  <Trash2 size={18} color={COLORS.error} />
                 </TouchableOpacity>
               </GlassCard>
             )}
@@ -311,22 +316,23 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1, borderRadius: RADIUS.md,
     padding: SPACING.md, fontSize: FONT_SIZES.md,
-    marginTop: 4,
+    fontFamily: FONT_FAMILY.regular,
+    marginTop: SPACING.xs,
   },
-  avatarRow: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.sm, marginTop: 4 },
+  avatarRow: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.sm, marginTop: SPACING.xs },
   avatarBtn: {
     width: 44, height: 44, borderRadius: 22,
     borderWidth: 2,
     alignItems: 'center', justifyContent: 'center',
   },
   avatarEmoji: { fontSize: 24 },
-  gradeRow: { flexDirection: 'row', gap: SPACING.sm, marginTop: 4, flexWrap: 'wrap' },
+  gradeRow: { flexDirection: 'row', gap: SPACING.sm, marginTop: SPACING.xs, flexWrap: 'wrap' },
   gradeBtn: {
     paddingHorizontal: SPACING.md, paddingVertical: SPACING.sm,
     borderRadius: RADIUS.md, borderWidth: 1,
   },
   gradeBtnText: { fontWeight: '700', fontFamily: 'Poppins-Bold', fontSize: FONT_SIZES.sm },
-  langRow: { flexDirection: 'row', gap: SPACING.sm, marginTop: 4, flexWrap: 'wrap' },
+  langRow: { flexDirection: 'row', gap: SPACING.sm, marginTop: SPACING.xs, flexWrap: 'wrap' },
   langBtn: {
     paddingHorizontal: SPACING.md, paddingVertical: SPACING.sm,
     borderRadius: RADIUS.md, borderWidth: 1,
@@ -346,11 +352,10 @@ const styles = StyleSheet.create({
   childAvatar: { fontSize: 36 },
   childInfo: { flex: 1 },
   childName: { fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: 'Poppins-Bold' },
-  childDetails: { fontSize: FONT_SIZES.sm, marginTop: 2 },
+  childDetails: { fontSize: FONT_SIZES.sm, marginTop: 2, fontFamily: FONT_FAMILY.regular },
   deleteBtn: { padding: SPACING.sm },
-  deleteBtnText: { fontSize: FONT_SIZES.lg },
   emptyCard: { padding: SPACING.xl, alignItems: 'center', gap: SPACING.sm, marginTop: SPACING.xl },
   emptyEmoji: { fontSize: 56 },
   emptyTitle: { fontSize: FONT_SIZES.xl, fontWeight: '800', fontFamily: 'Poppins-Bold' },
-  emptySubtitle: { fontSize: FONT_SIZES.md, textAlign: 'center' },
+  emptySubtitle: { fontSize: FONT_SIZES.md, textAlign: 'center', fontFamily: FONT_FAMILY.regular },
 });

@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   ActivityIndicator,
+  Platform,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
@@ -190,6 +191,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     color: COLORS.textPrimary,
     paddingVertical: SPACING.md,
+    ...(Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }),
   },
   errorBanner: {
     width: '100%',

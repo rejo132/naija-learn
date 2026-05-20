@@ -14,11 +14,13 @@ import {
   StyleSheet,
   ActivityIndicator,
   Animated,
+  Platform,
 } from 'react-native';
+import { ChevronLeft, Lock } from 'lucide-react-native';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
-import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { COLORS, SPACING, RADIUS, FONT_SIZES, FONT_FAMILY } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { useTranslation } from '@/hooks/useTranslation';
 
@@ -106,7 +108,7 @@ export default function ChangePinScreen() {
           style={styles.backBtn}
           onPress={() => router.back()}
         >
-          <Text style={[styles.backArrow, { color: colors.primary }]}>←</Text>
+          <ChevronLeft size={24} color={colors.primary} />
         </TouchableOpacity>
         <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>
           {t('changePinTitle')}
@@ -140,7 +142,9 @@ export default function ChangePinScreen() {
           </View>
         ) : (
           <View style={[styles.formCard, { backgroundColor: cardBg }]}>
-            <Text style={styles.lockEmoji}>🔐</Text>
+            <View style={{ marginBottom: SPACING.sm }}>
+              <Lock size={56} color={colors.primary} />
+            </View>
             <Text style={[styles.formTitle, { color: colors.textPrimary }]}>
               Change Parent Portal PIN
             </Text>
@@ -333,10 +337,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  backArrow: {
-    fontSize: 22,
-    fontFamily: 'Poppins-Bold',
-  },
   headerTitle: {
     fontSize: FONT_SIZES.lg,
     fontFamily: 'Poppins-Bold',
@@ -355,10 +355,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowRadius: 16,
     elevation: 4,
-  },
-  lockEmoji: {
-    fontSize: 56,
-    marginBottom: SPACING.sm,
   },
   formTitle: {
     fontSize: FONT_SIZES.xl,
@@ -398,7 +394,7 @@ const styles = StyleSheet.create({
     width: '100%',
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-SemiBold',
-    marginBottom: 4,
+    marginBottom: SPACING.xs,
     marginTop: SPACING.sm,
   },
   pinInput: {
@@ -408,16 +404,17 @@ const styles = StyleSheet.create({
     paddingVertical: SPACING.md,
     paddingHorizontal: SPACING.lg,
     fontSize: FONT_SIZES.xxl,
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
     textAlign: 'center',
     letterSpacing: 16,
+    ...(Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }),
   },
   dotsRow: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.sm,
     width: '100%',
-    marginTop: 4,
+    marginTop: SPACING.xs,
   },
   dot: {
     width: 10,
@@ -433,7 +430,7 @@ const styles = StyleSheet.create({
     width: '100%',
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-SemiBold',
-    marginTop: 4,
+    marginTop: SPACING.xs,
   },
   submitBtn: {
     width: '100%',

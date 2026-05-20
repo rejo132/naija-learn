@@ -16,7 +16,7 @@ import {
   Child,
 } from '@/services/dbService';
 import { useAuthStore } from '@/store/authStore';
-import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { COLORS, SPACING, RADIUS, FONT_SIZES, FONT_FAMILY } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Atmosphere } from '@/components/Atmosphere';
@@ -291,14 +291,14 @@ const styles = StyleSheet.create({
     marginTop: SPACING.sm, marginBottom: SPACING.md, gap: SPACING.sm,
   },
   backBtn: { padding: SPACING.xs },
-  backArrow: { fontSize: FONT_SIZES.xl },
-  headerTitle: { flex: 1, fontSize: FONT_SIZES.lg, fontWeight: '800' },
+  backArrow: { fontSize: FONT_SIZES.xl, fontFamily: FONT_FAMILY.bold },
+  headerTitle: { flex: 1, fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: FONT_FAMILY.bold },
   manageBtn: {
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md, paddingVertical: 6,
     borderWidth: 1,
   },
-  manageBtnText: { fontWeight: '700', fontSize: FONT_SIZES.sm },
+  manageBtnText: { fontWeight: '700', fontSize: FONT_SIZES.sm, fontFamily: FONT_FAMILY.semiBold },
   childScroll: { marginBottom: SPACING.md },
   childChip: {
     flexDirection: 'row', alignItems: 'center', gap: SPACING.xs,
@@ -307,19 +307,19 @@ const styles = StyleSheet.create({
     marginRight: SPACING.sm, borderWidth: 1,
   },
   childChipEmoji: { fontSize: 20 },
-  childChipName: { fontWeight: '700', fontSize: FONT_SIZES.sm },
+  childChipName: { fontWeight: '700', fontSize: FONT_SIZES.sm, fontFamily: FONT_FAMILY.semiBold },
   sectionTitle: {
-    fontSize: FONT_SIZES.md, fontWeight: '800',
+    fontSize: FONT_SIZES.md, fontWeight: '800', fontFamily: FONT_FAMILY.bold,
     marginBottom: SPACING.sm,
     marginTop: SPACING.md,
   },
   statsGrid: { flexDirection: 'row', gap: SPACING.sm, marginBottom: SPACING.sm },
   statCard: {
-    flex: 1, alignItems: 'center', padding: SPACING.md, gap: 4,
+    flex: 1, alignItems: 'center', padding: SPACING.md, gap: SPACING.xs,
   },
   statEmoji: { fontSize: 24 },
-  statValue: { fontSize: FONT_SIZES.xxl, fontWeight: '900' },
-  statLabel: { fontSize: FONT_SIZES.xs, fontWeight: '600' },
+  statValue: { fontSize: FONT_SIZES.xxl, fontWeight: '900', fontFamily: FONT_FAMILY.bold },
+  statLabel: { fontSize: FONT_SIZES.xs, fontWeight: '600', fontFamily: FONT_FAMILY.semiBold },
   subjectsCard: { padding: SPACING.md },
   subjectsList: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.sm },
   subjectChip: {
@@ -327,25 +327,25 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.md, paddingVertical: 6,
     borderWidth: 1,
   },
-  subjectChipText: { fontWeight: '700', fontSize: FONT_SIZES.sm },
+  subjectChipText: { fontWeight: '700', fontSize: FONT_SIZES.sm, fontFamily: FONT_FAMILY.semiBold },
   gradeCard: {
     flexDirection: 'row', alignItems: 'center',
     padding: SPACING.lg, gap: SPACING.md,
     marginTop: SPACING.md, borderRadius: RADIUS.xl,
     borderWidth: 1,
   },
-  gradeEmoji: { fontSize: 36 },
-  gradeTitle: { fontSize: FONT_SIZES.lg, fontWeight: '800' },
-  gradeSubtitle: { fontSize: FONT_SIZES.sm, marginTop: 2 },
+  gradeEmoji: { fontSize: FONT_SIZES.display },
+  gradeTitle: { fontSize: FONT_SIZES.lg, fontWeight: '800', fontFamily: FONT_FAMILY.bold },
+  gradeSubtitle: { fontSize: FONT_SIZES.sm, marginTop: 2, fontFamily: FONT_FAMILY.regular },
   emptyCard: { padding: SPACING.xl, alignItems: 'center', gap: SPACING.sm, marginTop: SPACING.xl },
   emptyEmoji: { fontSize: 56 },
-  emptyTitle: { fontSize: FONT_SIZES.xl, fontWeight: '800' },
-  emptySubtitle: { fontSize: FONT_SIZES.md, textAlign: 'center' },
+  emptyTitle: { fontSize: FONT_SIZES.xl, fontWeight: '800', fontFamily: FONT_FAMILY.bold },
+  emptySubtitle: { fontSize: FONT_SIZES.md, textAlign: 'center', fontFamily: FONT_FAMILY.regular },
   btn: {
     borderRadius: RADIUS.md,
     padding: SPACING.md, alignItems: 'center', marginTop: SPACING.sm,
   },
-  btnText: { fontWeight: '800', fontSize: FONT_SIZES.md },
+  btnText: { fontWeight: '800', fontSize: FONT_SIZES.md, fontFamily: FONT_FAMILY.semiBold },
   historyCard: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -356,12 +356,12 @@ const styles = StyleSheet.create({
   historyLeft: { flex: 1 },
   historySubject: {
     fontSize: FONT_SIZES.md,
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: FONT_FAMILY.semiBold,
     color: COLORS.textPrimary,
   },
   historyDate: {
     fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     color: COLORS.textMuted,
     marginTop: 2,
   },
@@ -372,15 +372,15 @@ const styles = StyleSheet.create({
   scoreBadge: {
     borderRadius: RADIUS.full,
     paddingHorizontal: SPACING.md,
-    paddingVertical: 4,
+    paddingVertical: SPACING.xs,
   },
   scoreText: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
   },
   durationText: {
     fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     color: COLORS.textMuted,
   },
   noHistoryCard: {
@@ -389,10 +389,10 @@ const styles = StyleSheet.create({
     gap: SPACING.sm,
     marginTop: SPACING.md,
   },
-  noHistoryEmoji: { fontSize: 36 },
+  noHistoryEmoji: { fontSize: FONT_SIZES.display },
   noHistoryText: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     color: COLORS.textSecondary,
     textAlign: 'center',
   },

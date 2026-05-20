@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { useTheme } from '@/hooks/useTheme';
 import { useTranslation } from '@/hooks/useTranslation';
-import { FONT_SIZES, SPACING, RADIUS } from '@/constants/theme';
+import { FONT_SIZES, FONT_FAMILY, SPACING, RADIUS } from '@/constants/theme';
 import {
   getOfflineQuizzes,
   getOfflineFlashcards,
@@ -332,7 +332,7 @@ const styles = StyleSheet.create({
   },
   offlineBadgeText: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: FONT_FAMILY.semiBold,
     color: '#B87B0A',
   },
   closeBtn: {
@@ -345,13 +345,13 @@ const styles = StyleSheet.create({
   },
   menuTitle: {
     fontSize: FONT_SIZES.xl,
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
     textAlign: 'center',
     marginBottom: SPACING.xs,
   },
   menuSub: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     textAlign: 'center',
     marginBottom: SPACING.lg,
   },
@@ -371,16 +371,16 @@ const styles = StyleSheet.create({
   menuCardBody: { flex: 1 },
   menuCardTitle: {
     fontSize: FONT_SIZES.md,
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
   },
   menuCardSub: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     marginTop: 2,
   },
   menuCardArrow: {
     fontSize: 20,
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
   },
   quizContainer: {
     padding: SPACING.lg,
@@ -393,11 +393,11 @@ const styles = StyleSheet.create({
   },
   progressText: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
   },
   scoreText: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
   },
   progressBar: {
     height: 6,
@@ -419,7 +419,7 @@ const styles = StyleSheet.create({
   },
   questionText: {
     fontSize: FONT_SIZES.md,
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: FONT_FAMILY.semiBold,
     lineHeight: 26,
     textAlign: 'center',
   },
@@ -433,19 +433,19 @@ const styles = StyleSheet.create({
   },
   optionLetter: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
     width: 24,
   },
   optionText: {
     flex: 1,
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     lineHeight: 20,
   },
   optionCheck: {
-    fontSize: 16,
+    fontSize: FONT_SIZES.lg,
     color: '#005C36',
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
   },
   explanation: {
     backgroundColor: '#FEF6E4',
@@ -456,7 +456,7 @@ const styles = StyleSheet.create({
   },
   explanationText: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     color: '#B87B0A',
     lineHeight: 20,
   },
@@ -467,7 +467,7 @@ const styles = StyleSheet.create({
   },
   nextBtnText: {
     color: '#FFFFFF',
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
     fontSize: FONT_SIZES.md,
   },
   backToMenu: {
@@ -476,7 +476,7 @@ const styles = StyleSheet.create({
   },
   backToMenuText: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
   },
   results: {
     flex: 1,
@@ -488,15 +488,15 @@ const styles = StyleSheet.create({
   resultsEmoji: { fontSize: 72 },
   resultsTitle: {
     fontSize: FONT_SIZES.xxl,
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
   },
   resultsScore: {
     fontSize: FONT_SIZES.xl,
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
   },
   resultsSub: {
     fontSize: FONT_SIZES.md,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     textAlign: 'center',
     lineHeight: 24,
   },
@@ -525,13 +525,13 @@ const styles = StyleSheet.create({
   flashcardEmoji: { fontSize: 48 },
   flashcardText: {
     fontSize: FONT_SIZES.xl,
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
     textAlign: 'center',
     lineHeight: 32,
   },
   flashcardHint: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     marginTop: SPACING.sm,
   },
   flashcardActions: {
@@ -548,7 +548,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
   },
   fcBtnText: {
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
     fontSize: FONT_SIZES.sm,
   },
 });

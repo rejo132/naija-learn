@@ -6,7 +6,9 @@ import {
   TouchableOpacity,
   StyleSheet,
   Modal,
+  Platform,
 } from 'react-native';
+import { ShieldCheck } from 'lucide-react-native';
 import { COLORS, FONT_SIZES, SPACING, RADIUS } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -91,7 +93,7 @@ export function ParentGate({ visible, onSuccess, onCancel }: ParentGateProps) {
             { backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF' },
           ]}
         >
-          <Text style={styles.lockEmoji}>🔐</Text>
+          <ShieldCheck size={48} color={colors.primary} />
 
           {isSettingUp ? (
             <>
@@ -255,35 +257,35 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: SPACING.md,
   },
-  lockEmoji: { fontSize: 48 },
   title: {
     fontSize: FONT_SIZES.xl,
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
   },
   subtitle: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     textAlign: 'center',
   },
   fieldLabel: {
     alignSelf: 'flex-start',
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: FONT_FAMILY.semiBold,
     marginTop: SPACING.xs,
   },
   pinInput: {
     width: 160,
     textAlign: 'center',
     fontSize: FONT_SIZES.xxl,
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
     borderWidth: 2,
     borderRadius: RADIUS.lg,
     paddingVertical: SPACING.md,
     letterSpacing: 12,
+    ...(Platform.OS === 'web' && { outlineStyle: 'none', outlineWidth: 0 }),
   },
   errorText: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     color: COLORS.error,
     textAlign: 'center',
   },
@@ -297,17 +299,17 @@ const styles = StyleSheet.create({
   confirmBtnDisabled: { opacity: 0.4 },
   confirmBtnText: {
     color: '#FFFFFF',
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONT_FAMILY.bold,
     fontSize: FONT_SIZES.md,
   },
   cancelBtn: { paddingVertical: SPACING.sm },
   cancelBtnText: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
   },
   hint: {
     fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: FONT_FAMILY.regular,
     textAlign: 'center',
     lineHeight: 18,
     opacity: 0.6,

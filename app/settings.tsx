@@ -15,6 +15,7 @@ import {
   TextInput,
   Alert,
 } from 'react-native';
+import { ChevronLeft, ChevronRight } from 'lucide-react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { useTheme } from '@/hooks/useTheme';
@@ -76,7 +77,7 @@ function SettingsRow({
       </View>
       {rightElement ??
         (onPress ? (
-          <Text style={[styles.rowChevron, { color: colors.textMuted }]}>›</Text>
+          <ChevronRight size={20} color={colors.textMuted} />
         ) : null)}
     </TouchableOpacity>
   );
@@ -188,7 +189,7 @@ export default function SettingsScreen() {
         ]}
       >
         <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-          <Text style={[styles.backText, { color: colors.primary }]}>←</Text>
+          <ChevronLeft size={24} color={colors.primary} />
         </TouchableOpacity>
         <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>
           ⚙️ {t('settingsTitle')}
