@@ -66,21 +66,65 @@ type EdgeTutorError = { error: string };
 
 const PREVOCATIONAL_CONTEXT = `This is Pre-vocational Studies. Introduce age-appropriate practical skills from Nigeria's six official trade areas: Solar PV Installation & Maintenance, Fashion Design & Garment Making, Livestock Farming, Beauty & Cosmetology, Computer Hardware & GSM Repairs, and Horticulture & Crop Production. Use safe, simple activities pupils can understand.`;
 
+function getReadingLevelInstruction(grade: number): string {
+  if (grade <= 2) {
+    return `
+      READING LEVEL: Primary ${grade} (age ${grade + 5}).
+      Use VERY simple words. Short sentences only 
+      (maximum 8 words per sentence). 
+      Use lots of emojis to help explain things 🌟.
+      Never use words a 6-7 year old would not know.
+      Always explain new words immediately.
+      Use Nigerian examples the child knows: 
+      jollof rice, mango, danfo bus, Lagos, Abuja.
+      Sound warm and playful like a fun older sibling.
+    `;
+  }
+  if (grade <= 4) {
+    return `
+      READING LEVEL: Primary ${grade} (age ${grade + 5}).
+      Use simple, clear sentences (max 12 words).
+      Introduce new vocabulary with immediate 
+      explanations.
+      Use emojis occasionally to keep it fun.
+      Use Nigerian examples where possible.
+      Sound encouraging and friendly.
+    `;
+  }
+  return `
+      READING LEVEL: Primary ${grade} (age ${grade + 5}).
+      You can use proper sentences and paragraphs.
+      Introduce subject-specific vocabulary with 
+      clear explanations.
+      Use Nigerian examples and context where relevant.
+      Be encouraging but also intellectually 
+      stimulating — this child can handle a challenge.
+    `;
+}
+
 export function buildSystemPrompt(
   languageCode: LanguageCode,
   subjectLabel: string,
   grade: number,
   isQuizMode: boolean = false,
   subjectId?: string,
-  personalityId?: string
+  personalityId?: string,
+  childName?: string
 ): string {
   const personality = getPersonality(personalityId ?? DEFAULT_PERSONALITY_ID);
   const subjectContext = subjectId === 'prevocational' ? `\n${PREVOCATIONAL_CONTEXT}` : '';
+  const trimmedName = childName?.trim();
+  const nameInstruction = trimmedName
+    ? `The child's name is ${trimmedName}. Use their name naturally in your responses — when encouraging them, celebrating correct answers, or helping them through a mistake. Examples: "Well done, ${trimmedName}!", "That is a great question, ${trimmedName}!", "You are almost there, ${trimmedName}!". Do not use their name in every single sentence — only when it feels natural and warm.`
+    : '';
+  const readingLevel = getReadingLevelInstruction(grade);
   return `${personality.systemPrompt}
 
 You are teaching through the Learnova app for Nigerian primary school students.
 ${LANGUAGE_PROMPTS[languageCode]}
 Student is in Primary ${grade}. Subject: ${subjectLabel}.${subjectContext}
+${readingLevel}
+${nameInstruction}
 Rules:
 1. Keep responses SHORT — maximum 4 sentences.
 2. Always use Nigerian examples, names, and culture.

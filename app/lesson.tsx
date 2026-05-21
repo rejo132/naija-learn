@@ -206,14 +206,14 @@ function getFriendlyAIErrorMessage(error: unknown): string {
       case 'quota_exceeded':
         return 'Aunty Naija is resting for a moment. Please try again in a few minutes! 😊';
       case 'no_internet':
-        return 'Something went wrong. Check your connection and try again.';
+        return 'Oops! It looks like you are not connected to the internet. Check your WiFi and try again! 📶';
       case 'api_error':
       case 'unknown':
       default:
-        return 'Something went wrong. Check your connection and try again.';
+        return 'Hmm, something went a little wrong! 🙈 Tap the send button to try again.';
     }
   }
-  return 'Something went wrong. Check your connection and try again.';
+  return 'Hmm, something went a little wrong! 🙈 Tap the send button to try again.';
 }
 
 function formatTime(timestamp: number): string {
@@ -375,7 +375,7 @@ function ChatBubble({
               borderColor: colors.border,
             },
           ]}>
-            <MarkdownMessage content={item.content} />
+            <MarkdownMessage content={item.content} fontSize={17} lineHeight={26} />
             {onToggleSpeak && (
               <View style={styles.bubbleFooter}>
                 <TouchableOpacity
@@ -832,13 +832,15 @@ export default function LessonScreen() {
     const firstUserIndex = allMessages.findIndex((m) => m.role === 'user');
     const currentMessages =
       firstUserIndex === -1 ? [] : allMessages.slice(firstUserIndex);
+    const childName = useAppStore.getState().userName;
     const systemPrompt = buildSystemPrompt(
       selectedLanguage,
       selectedSubject.label,
       selectedGrade,
       quizModeActive,
       selectedSubject.id,
-      selectedPersonalityId
+      selectedPersonalityId,
+      childName || undefined
     );
 
     try {
@@ -1583,8 +1585,8 @@ const styles = StyleSheet.create({
   userBubbleText: {
     color: '#FFFFFF',
     fontFamily: 'Poppins-Regular',
-    fontSize: FONT_SIZES.md,
-    lineHeight: 22,
+    fontSize: 17,
+    lineHeight: 26,
   },
   bubbleTime: {
     fontSize: 10,

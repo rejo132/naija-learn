@@ -98,6 +98,26 @@ function LanguageCard({
 
 export default function WelcomeScreen() {
   const session = useAuthStore((s) => s.session);
+  const userGrade = useAppStore((s) => s.userGrade);
+  const { change } = useLocalSearchParams<{ change?: string }>();
+  const isChangingLanguage = change === '1';
+
+  if (session && userGrade?.trim() && !isChangingLanguage) {
+    return <Redirect href="/dashboard" />;
+  }
+
+  if (session && !userGrade?.trim()) {
+    return <Redirect href="/auth/sign-up?step=2" />;
+  }
+
+  if (!session) {
+    return <Redirect href="/auth/sign-in" />;
+  }
+
+  return <WelcomeScreenContent />;
+}
+
+function WelcomeScreenContent() {
   const setLanguage = useAppStore((s) => s.setLanguage);
   const { change } = useLocalSearchParams<{ change?: string }>();
   const isChangingLanguage = change === '1';
@@ -114,26 +134,9 @@ export default function WelcomeScreen() {
     return unsub;
   }, []);
 
-  // After sign-in, go to the dashboard (or grade picker if grade not set).
-  // Skip when the user is intentionally changing language on this screen.
-  useEffect(() => {
-    if (!session || isChangingLanguage) return;
-
-    const grade = useAppStore.getState().selectedGrade;
-    if (grade) {
-      router.replace('/dashboard');
-    } else {
-      router.replace('/grade');
-    }
-  }, [session, isChangingLanguage]);
-
   function handleSelectLanguage(lang: LanguageMeta) {
     setLanguage(lang.code);
     router.push('/grade');
-  }
-
-  if (!session) {
-    return <Redirect href="/auth/sign-in" />;
   }
 
   if (!hydrated) {

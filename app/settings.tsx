@@ -14,6 +14,7 @@ import {
   Modal,
   TextInput,
   Alert,
+  ActivityIndicator,
 } from 'react-native';
 import { ChevronLeft, ChevronRight } from 'lucide-react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -121,6 +122,12 @@ export default function SettingsScreen() {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [deleteConfirmText, setDeleteConfirmText] = useState('');
   const [showAbout, setShowAbout] = useState(false);
+  const [showPasswordChange, setShowPasswordChange] = useState(false);
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordChangeLoading, setPasswordChangeLoading] = useState(false);
+  const [passwordChangeError, setPasswordChangeError] = useState('');
+  const [passwordChangeSuccess, setPasswordChangeSuccess] = useState(false);
 
   const difficulties = ['Easy', 'Medium', 'Hard'] as const;
   const [difficulty, setDifficulty] = useState<(typeof difficulties)[number]>('Medium');
@@ -151,6 +158,45 @@ export default function SettingsScreen() {
 
   function handlePrivacyPolicy() {
     Linking.openURL('https://learnova.app/privacy');
+  }
+
+  async function handleChangePassword() {
+    if (!newPassword || !confirmPassword) return;
+
+    if (newPassword.length < 6) {
+      setPasswordChangeError('Password must be at least 6 characters');
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      setPasswordChangeError('Passwords do not match. Try again!');
+      return;
+    }
+
+    setPasswordChangeLoading(true);
+    setPasswordChangeError('');
+
+    try {
+      const { error } = await supabase.auth.updateUser({
+        password: newPassword,
+      });
+
+      if (error) {
+        setPasswordChangeError('Could not update password. Please try again.');
+      } else {
+        setPasswordChangeSuccess(true);
+        setNewPassword('');
+        setConfirmPassword('');
+        setTimeout(() => {
+          setShowPasswordChange(false);
+          setPasswordChangeSuccess(false);
+        }, 2000);
+      }
+    } catch {
+      setPasswordChangeError('Something went wrong. Try again!');
+    } finally {
+      setPasswordChangeLoading(false);
+    }
   }
 
   async function handleSignOut() {
@@ -359,6 +405,19 @@ export default function SettingsScreen() {
             label="Rewards & Achievements"
             sublabel={`${xp} XP earned total`}
             onPress={() => router.push('/achievements')}
+            colors={colors}
+          />
+          <SettingsRow
+            emoji="🔑"
+            label="Change Password"
+            sublabel="Update your secret password"
+            onPress={() => {
+              setShowPasswordChange(true);
+              setPasswordChangeError('');
+              setPasswordChangeSuccess(false);
+              setNewPassword('');
+              setConfirmPassword('');
+            }}
             colors={colors}
             isLast
           />
@@ -586,6 +645,162 @@ export default function SettingsScreen() {
                 </Text>
               </TouchableOpacity>
             </View>
+          </View>
+        </View>
+      </Modal>
+
+      <Modal visible={showPasswordChange} transparent animationType="slide">
+        <View style={styles.modalOverlay}>
+          <View style={[styles.modalCard, { backgroundColor: cardBg }]}>
+            <Text style={{ fontSize: 48 }}>🔑</Text>
+
+            <Text style={[styles.modalTitle, { color: colors.textPrimary }]}>
+              Change Password
+            </Text>
+
+            <Text style={[styles.modalSub, { color: colors.textMuted }]}>
+              Choose a new secret password that only you know!
+            </Text>
+
+            {passwordChangeSuccess ? (
+              <View style={{ alignItems: 'center', gap: 8 }}>
+                <Text style={{ fontSize: 48 }}>✅</Text>
+                <Text
+                  style={{
+                    color: '#2E9E5A',
+                    fontFamily: 'Poppins-Bold',
+                    fontSize: 16,
+                    textAlign: 'center',
+                  }}
+                >
+                  Password changed! 🎉
+                </Text>
+              </View>
+            ) : (
+              <>
+                <View
+                  style={[
+                    styles.deleteInput,
+                    {
+                      borderColor: colors.border,
+                      borderWidth: 1.5,
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      paddingHorizontal: 16,
+                      width: '100%',
+                    },
+                  ]}
+                >
+                  <Text style={{ fontSize: 18, marginRight: 8 }}>🔒</Text>
+                  <TextInput
+                    style={{
+                      flex: 1,
+                      fontSize: 16,
+                      fontFamily: 'Poppins-Regular',
+                      color: colors.textPrimary,
+                      paddingVertical: 12,
+                      letterSpacing: 0,
+                      textAlign: 'left',
+                    }}
+                    placeholder="New password"
+                    placeholderTextColor={colors.textMuted}
+                    value={newPassword}
+                    onChangeText={setNewPassword}
+                    secureTextEntry
+                    autoCapitalize="none"
+                  />
+                </View>
+
+                <View
+                  style={[
+                    styles.deleteInput,
+                    {
+                      borderColor: colors.border,
+                      borderWidth: 1.5,
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      paddingHorizontal: 16,
+                      width: '100%',
+                    },
+                  ]}
+                >
+                  <Text style={{ fontSize: 18, marginRight: 8 }}>✅</Text>
+                  <TextInput
+                    style={{
+                      flex: 1,
+                      fontSize: 16,
+                      fontFamily: 'Poppins-Regular',
+                      color: colors.textPrimary,
+                      paddingVertical: 12,
+                      letterSpacing: 0,
+                      textAlign: 'left',
+                    }}
+                    placeholder="Type it again"
+                    placeholderTextColor={colors.textMuted}
+                    value={confirmPassword}
+                    onChangeText={setConfirmPassword}
+                    secureTextEntry
+                    autoCapitalize="none"
+                  />
+                </View>
+
+                {passwordChangeError ? (
+                  <Text
+                    style={{
+                      color: '#E53935',
+                      fontFamily: 'Poppins-Regular',
+                      fontSize: 13,
+                      textAlign: 'center',
+                    }}
+                  >
+                    ⚠️ {passwordChangeError}
+                  </Text>
+                ) : null}
+
+                <View style={styles.modalBtnRow}>
+                  <TouchableOpacity
+                    style={[
+                      styles.modalBtnHalf,
+                      { borderColor: colors.border, borderWidth: 1.5 },
+                    ]}
+                    onPress={() => setShowPasswordChange(false)}
+                    disabled={passwordChangeLoading}
+                  >
+                    <Text style={[styles.modalBtnHalfText, { color: colors.textPrimary }]}>
+                      Cancel
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[
+                      styles.modalBtnHalf,
+                      {
+                        backgroundColor: colors.primary,
+                        opacity:
+                          newPassword.length >= 6 &&
+                          confirmPassword.length >= 6 &&
+                          !passwordChangeLoading
+                            ? 1
+                            : 0.4,
+                      },
+                    ]}
+                    onPress={handleChangePassword}
+                    disabled={
+                      newPassword.length < 6 ||
+                      confirmPassword.length < 6 ||
+                      passwordChangeLoading
+                    }
+                  >
+                    {passwordChangeLoading ? (
+                      <ActivityIndicator color="#FFFFFF" size="small" />
+                    ) : (
+                      <Text style={[styles.modalBtnHalfText, { color: '#FFFFFF' }]}>
+                        Save
+                      </Text>
+                    )}
+                  </TouchableOpacity>
+                </View>
+              </>
+            )}
           </View>
         </View>
       </Modal>

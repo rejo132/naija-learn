@@ -7,11 +7,26 @@ import { COLORS, FONT_SIZES } from '@/constants/theme';
 
 interface MarkdownMessageProps {
   content: string;
+  fontSize?: number;
+  lineHeight?: number;
 }
 
-export function MarkdownMessage({ content }: MarkdownMessageProps) {
+export function MarkdownMessage({
+  content,
+  fontSize = FONT_SIZES.md,
+  lineHeight = 22,
+}: MarkdownMessageProps) {
   return (
-    <Markdown style={markdownStyles}>
+    <Markdown
+      style={{
+        ...markdownStyles,
+        body: {
+          ...markdownStyles.body,
+          fontSize,
+          lineHeight,
+        },
+      }}
+    >
       {content}
     </Markdown>
   );

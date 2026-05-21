@@ -14,6 +14,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   useWindowDimensions,
+  Animated,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -73,6 +74,15 @@ export default function SignUpScreen() {
 
   const emailRef = useRef<TextInput | null>(null);
   const passwordRef = useRef<TextInput | null>(null);
+  const gradeScaleAnims = useRef(
+    GRADE_OPTIONS.reduce(
+      (acc, g) => {
+        acc[g] = new Animated.Value(1);
+        return acc;
+      },
+      {} as Record<number, Animated.Value>
+    )
+  ).current;
 
   const displayError = localError || storeError || '';
 
@@ -160,6 +170,21 @@ export default function SignUpScreen() {
   function handleGradePick(grade: number) {
     setSelectedGradeNum(grade);
     setStep('avatar');
+  }
+
+  function handleGradePress(g: number) {
+    Animated.sequence([
+      Animated.timing(gradeScaleAnims[g], {
+        toValue: 0.92,
+        duration: 80,
+        useNativeDriver: true,
+      }),
+      Animated.spring(gradeScaleAnims[g], {
+        toValue: 1,
+        friction: 4,
+        useNativeDriver: true,
+      }),
+    ]).start(() => handleGradePick(g));
   }
 
   async function handleFinish() {
@@ -362,28 +387,32 @@ export default function SignUpScreen() {
           {GRADE_OPTIONS.map((g) => {
             const active = selectedGradeNum === g;
             return (
-              <TouchableOpacity
+              <Animated.View
                 key={g}
-                style={[
-                  styles.gradeCard,
-                  {
-                    backgroundColor: active ? colors.primaryLight : inputBg,
-                    borderColor: active ? colors.primary : colors.border,
-                  },
-                ]}
-                onPress={() => handleGradePick(g)}
-                activeOpacity={0.8}
+                style={{ transform: [{ scale: gradeScaleAnims[g] }] }}
               >
-                <Text style={styles.gradeEmoji}>📚</Text>
-                <Text
+                <TouchableOpacity
                   style={[
-                    styles.gradeLabel,
-                    { color: active ? colors.primaryDark : colors.textPrimary },
+                    styles.gradeCard,
+                    {
+                      backgroundColor: active ? colors.primaryLight : inputBg,
+                      borderColor: active ? colors.primary : colors.border,
+                    },
                   ]}
+                  onPress={() => handleGradePress(g)}
+                  activeOpacity={0.8}
                 >
-                  Primary {g}
-                </Text>
-              </TouchableOpacity>
+                  <Text style={styles.gradeEmoji}>📚</Text>
+                  <Text
+                    style={[
+                      styles.gradeLabel,
+                      { color: active ? colors.primaryDark : colors.textPrimary },
+                    ]}
+                  >
+                    Primary {g}
+                  </Text>
+                </TouchableOpacity>
+              </Animated.View>
             );
           })}
         </View>

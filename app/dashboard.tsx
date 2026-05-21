@@ -308,6 +308,105 @@ export default function DashboardScreen() {
             </View>
           </View>
 
+          {lastSubject ? (
+            <TouchableOpacity
+              style={[
+                styles.resumeCard,
+                {
+                  backgroundColor: colors.backgroundCard,
+                  borderColor: colors.primaryGlow,
+                  borderLeftColor: colors.primary,
+                },
+              ]}
+              onPress={() => {
+                const allSubjects = [
+                  ...tabContent.subjects,
+                  ...tabContent.languages,
+                  ...tabContent.softskills,
+                ];
+                const match = allSubjects.find(
+                  (s) => s.label.toLowerCase() === lastSubject.toLowerCase()
+                );
+                if (match) {
+                  handleSubject(getLocalizedSubject(match, selectedLanguage));
+                }
+              }}
+            >
+              <View style={[styles.resumeLeft, { backgroundColor: colors.primaryLight }]}>
+                <Text style={styles.resumeEmoji}>{lastSubjectEmoji ?? '📚'}</Text>
+              </View>
+
+              <View style={styles.resumeBody}>
+                <Text style={[styles.resumeLabel, { color: colors.primary }]}>
+                  CONTINUE WHERE YOU LEFT OFF
+                </Text>
+                <Text style={[styles.resumeSubject, { color: colors.textPrimary }]}>
+                  {lastSubject}
+                </Text>
+
+                <View style={[styles.resumeProgressBar, { backgroundColor: colors.border }]}>
+                  <View
+                    style={[
+                      styles.resumeProgressFill,
+                      {
+                        width: `${
+                          subjectProgress[
+                            `${lastSubject}_${lastGrade ?? selectedGrade}`
+                          ] ?? 0
+                        }%`,
+                        backgroundColor: colors.primary,
+                      },
+                    ]}
+                  />
+                </View>
+
+                <Text style={[styles.resumeProgress, { color: colors.textMuted }]}>
+                  {subjectProgress[
+                    `${lastSubject}_${lastGrade ?? selectedGrade}`
+                  ] ?? 0}
+                  % complete
+                </Text>
+              </View>
+
+              <View style={[styles.resumeArrow, { backgroundColor: colors.primary }]}>
+                <Text style={styles.resumeArrowText}>▶ Continue</Text>
+              </View>
+            </TouchableOpacity>
+          ) : (
+            <View
+              style={{
+                backgroundColor: colors.primaryLight,
+                borderRadius: RADIUS.xl,
+                padding: SPACING.lg,
+                marginBottom: SPACING.md,
+                alignItems: 'center',
+                gap: SPACING.sm,
+              }}
+            >
+              <Text style={{ fontSize: 32 }}>👋</Text>
+              <Text
+                style={{
+                  fontSize: FONT_SIZES.lg,
+                  fontFamily: 'Poppins-Bold',
+                  color: colors.primaryDark,
+                  textAlign: 'center',
+                }}
+              >
+                Ready to start learning?
+              </Text>
+              <Text
+                style={{
+                  fontSize: FONT_SIZES.sm,
+                  fontFamily: 'Poppins-Regular',
+                  color: colors.textSecondary,
+                  textAlign: 'center',
+                }}
+              >
+                Pick a subject below and your AI tutor will guide you! 🚀
+              </Text>
+            </View>
+          )}
+
           <View
             style={[
               styles.levelCard,
@@ -403,72 +502,6 @@ export default function DashboardScreen() {
               <Text style={styles.offlineBarText}>
                 📴 You are offline — tap to do offline activities
               </Text>
-            </TouchableOpacity>
-          )}
-
-          {/* Resume last lesson */}
-          {lastSubject && (
-            <TouchableOpacity
-              style={[
-                styles.resumeCard,
-                {
-                  backgroundColor: colors.backgroundCard,
-                  borderColor: colors.primaryGlow,
-                },
-              ]}
-              onPress={() => {
-                const allSubjects = [
-                  ...tabContent.subjects,
-                  ...tabContent.languages,
-                  ...tabContent.softskills,
-                ];
-                const match = allSubjects.find(
-                  (s) => s.label.toLowerCase() === lastSubject.toLowerCase()
-                );
-                if (match) {
-                  handleSubject(getLocalizedSubject(match, selectedLanguage));
-                }
-              }}
-            >
-              <View style={[styles.resumeLeft, { backgroundColor: colors.primaryLight }]}>
-                <Text style={styles.resumeEmoji}>{lastSubjectEmoji ?? '📚'}</Text>
-              </View>
-
-              <View style={styles.resumeBody}>
-                <Text style={[styles.resumeLabel, { color: colors.textMuted }]}>
-                  CONTINUE WHERE YOU LEFT OFF
-                </Text>
-                <Text style={[styles.resumeSubject, { color: colors.textPrimary }]}>
-                  {lastSubject}
-                </Text>
-
-                <View style={[styles.resumeProgressBar, { backgroundColor: colors.border }]}>
-                  <View
-                    style={[
-                      styles.resumeProgressFill,
-                      {
-                        width: `${
-                          subjectProgress[
-                            `${lastSubject}_${lastGrade ?? selectedGrade}`
-                          ] ?? 0
-                        }%`,
-                        backgroundColor: colors.primary,
-                      },
-                    ]}
-                  />
-                </View>
-
-                <Text style={[styles.resumeProgress, { color: colors.textMuted }]}>
-                  {subjectProgress[
-                    `${lastSubject}_${lastGrade ?? selectedGrade}`
-                  ] ?? 0}
-                  % complete
-                </Text>
-              </View>
-
-              <View style={[styles.resumeArrow, { backgroundColor: colors.primaryLight }]}>
-                <Text style={[styles.resumeArrowText, { color: colors.primary }]}>→</Text>
-              </View>
             </TouchableOpacity>
           )}
 
@@ -1031,6 +1064,7 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.md,
     borderWidth: 1.5,
     borderColor: COLORS.primaryGlow,
+    borderLeftWidth: 4,
     shadowColor: '#000',
     shadowOpacity: 0.05,
     shadowOffset: { width: 0, height: 4 },
@@ -1048,8 +1082,8 @@ const styles = StyleSheet.create({
   resumeEmoji: { fontSize: 24 },
   resumeBody: { flex: 1, gap: 4 },
   resumeLabel: {
-    fontSize: 9,
-    fontFamily: 'Poppins-SemiBold',
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Bold',
     letterSpacing: 1,
   },
   resumeSubject: {
@@ -1071,16 +1105,17 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
   },
   resumeArrow: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
+    minHeight: 44,
+    borderRadius: RADIUS.lg,
+    paddingHorizontal: 12,
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: 0,
   },
   resumeArrowText: {
-    fontSize: 16,
+    fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Bold',
+    color: '#FFFFFF',
   },
 
   statsRow: {
