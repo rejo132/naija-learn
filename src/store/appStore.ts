@@ -75,6 +75,12 @@ interface AppState {
   subjectProgress: Record<string, number>;
   /** Tracks whether the LearningFlow intro has been completed for a subject+grade. */
   completedFlows: Record<string, boolean>;
+  /** Lessons completed per subject label. */
+  subjectLessonsCount: Record<string, number>;
+  dailyChallengeDate: string;
+  dailyChallengeCompleted: boolean;
+  dailyChallengeSubject: string;
+  dailyChallengeTopic: string;
   setLanguage: (lang: LanguageCode) => void;
   setGrade: (grade: number) => void;
   setSubject: (subject: Subject) => void;
@@ -106,6 +112,9 @@ interface AppState {
   setXP: (xp: number) => void;
   setStreak: (streak: number) => void;
   setSubjectProgress: (progress: Record<string, number>) => void;
+  incrementSubjectLesson: (subject: string) => void;
+  generateDailyChallenge: () => void;
+  completeDailyChallenge: () => void;
   /** Wipe all child-facing data — used by the "Delete my data" flow. */
   resetAll: () => void;
 }
@@ -134,6 +143,11 @@ type PersistedAppState = Pick<
   | 'lastOpenedAt'
   | 'subjectProgress'
   | 'completedFlows'
+  | 'subjectLessonsCount'
+  | 'dailyChallengeDate'
+  | 'dailyChallengeCompleted'
+  | 'dailyChallengeSubject'
+  | 'dailyChallengeTopic'
 >;
 
 /**
@@ -148,6 +162,7 @@ type AppStateValues = Omit<AppState,
   | 'incrementLessons' | 'updateBestQuizScore' | 'unlockAchievement'
   | 'toggleDarkMode' | 'setLastSession' | 'updateSubjectProgress'
   | 'markFlowCompleted' | 'setXP' | 'setStreak' | 'setSubjectProgress'
+  | 'incrementSubjectLesson' | 'generateDailyChallenge' | 'completeDailyChallenge'
   | 'resetAll'
 >;
 
@@ -178,6 +193,11 @@ const initialState: AppStateValues = {
   lastOpenedAt: null,
   subjectProgress: {},
   completedFlows: {},
+  subjectLessonsCount: {},
+  dailyChallengeDate: '',
+  dailyChallengeCompleted: false,
+  dailyChallengeSubject: '',
+  dailyChallengeTopic: '',
 };
 
 export const useAppStore = create<AppState>()(
@@ -271,6 +291,45 @@ export const useAppStore = create<AppState>()(
       setXP: (xp) => set({ xp }),
       setStreak: (streak) => set({ streak }),
       setSubjectProgress: (subjectProgress) => set({ subjectProgress }),
+      incrementSubjectLesson: (subject) =>
+        set((state) => ({
+          subjectLessonsCount: {
+            ...state.subjectLessonsCount,
+            [subject]: (state.subjectLessonsCount[subject] ?? 0) + 1,
+          },
+        })),
+      generateDailyChallenge: () =>
+        set((state) => {
+          const today = new Date().toISOString().split('T')[0];
+          if (state.dailyChallengeDate === today) return state;
+
+          const subjects = [
+            'English Studies',
+            'Mathematics',
+            'Basic Science',
+            'Social & Citizenship Studies',
+            'Civic Education',
+          ];
+          const topics = [
+            'Key Concepts',
+            'Practice Problems',
+            'Quick Quiz',
+            'Fun Facts',
+            'Brain Teaser',
+          ];
+
+          const subject =
+            subjects[Math.floor(Math.random() * subjects.length)];
+          const topic = topics[Math.floor(Math.random() * topics.length)];
+
+          return {
+            dailyChallengeDate: today,
+            dailyChallengeCompleted: false,
+            dailyChallengeSubject: subject,
+            dailyChallengeTopic: topic,
+          };
+        }),
+      completeDailyChallenge: () => set({ dailyChallengeCompleted: true }),
       resetAll: () => set({ ...initialState }),
     }),
     {
@@ -302,6 +361,11 @@ export const useAppStore = create<AppState>()(
         lastOpenedAt: state.lastOpenedAt,
         subjectProgress: state.subjectProgress,
         completedFlows: state.completedFlows,
+        subjectLessonsCount: state.subjectLessonsCount,
+        dailyChallengeDate: state.dailyChallengeDate,
+        dailyChallengeCompleted: state.dailyChallengeCompleted,
+        dailyChallengeSubject: state.dailyChallengeSubject,
+        dailyChallengeTopic: state.dailyChallengeTopic,
       }),
       merge: (persisted, current) => ({
         ...current,

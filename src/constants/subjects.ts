@@ -263,3 +263,110 @@ export const getQuickPrompts = (
   };
   return promptsByLanguage[languageCode];
 };
+
+const SUBJECT_TOPIC_MAP: Record<string, string[]> = {
+  'English Language': [
+    'Reading & Comprehension',
+    'Grammar & Punctuation',
+    'Vocabulary',
+    'Creative Writing',
+    'Spelling',
+  ],
+  'English Studies': [
+    'Reading & Comprehension',
+    'Grammar & Punctuation',
+    'Vocabulary',
+    'Creative Writing',
+    'Spelling',
+  ],
+  Mathematics: [
+    'Numbers & Counting',
+    'Addition & Subtraction',
+    'Multiplication & Division',
+    'Fractions',
+    'Shapes & Geometry',
+    'Word Problems',
+  ],
+  'Basic Science': [
+    'Living Things',
+    'Plants & Animals',
+    'Human Body',
+    'Weather & Environment',
+    'Simple Machines',
+    'Health & Hygiene',
+  ],
+  'Basic Science & Technology': [
+    'Living Things',
+    'Plants & Animals',
+    'Human Body',
+    'Weather & Environment',
+    'Simple Machines',
+    'Health & Hygiene',
+  ],
+  'Social Studies': [
+    'My Family & Community',
+    'Nigeria & Its People',
+    'Our Government',
+    'Map Reading',
+    'Transportation',
+    'Culture & Festivals',
+  ],
+  'Social & Citizenship Studies': [
+    'My Family & Community',
+    'Nigeria & Its People',
+    'Our Government',
+    'Map Reading',
+    'Transportation',
+    'Culture & Festivals',
+  ],
+  'Civic Education': [
+    'Rights & Responsibilities',
+    'Good Citizenship',
+    'Our Constitution',
+    'Community Service',
+    'Democracy',
+    'National Symbols',
+  ],
+  'Agricultural Science': [
+    'Farming & Crops',
+    'Soil & Fertilizer',
+    'Farm Animals',
+    'Food & Nutrition',
+    'Farm Tools',
+    'Pest Control',
+  ],
+};
+
+const GENERIC_TOPICS = [
+  'Introduction & Basics',
+  'Key Concepts',
+  'Practice & Examples',
+  'Review & Quiz',
+];
+
+/** Lesson topic choices shown before chat starts for a subject. */
+export function getTopicsForSubject(subjectLabel: string): string[] {
+  if (SUBJECT_TOPIC_MAP[subjectLabel]) {
+    return SUBJECT_TOPIC_MAP[subjectLabel];
+  }
+  const key = Object.keys(SUBJECT_TOPIC_MAP).find((k) =>
+    subjectLabel.toLowerCase().includes(k.toLowerCase().split(' ')[0] ?? '')
+  );
+  if (key) return SUBJECT_TOPIC_MAP[key];
+  return GENERIC_TOPICS;
+}
+
+export const ALL_SUBJECTS: Subject[] = [
+  ...CORE_SUBJECTS,
+  ...LANGUAGE_SUBJECTS,
+  ...SOFT_SKILLS,
+];
+
+export function findSubjectByLabel(label: string): Subject | null {
+  const normalized = label.trim().toLowerCase();
+  return (
+    ALL_SUBJECTS.find((s) => s.label.toLowerCase() === normalized) ??
+    ALL_SUBJECTS.find((s) => normalized.includes(s.label.toLowerCase().split(' ')[0] ?? '')) ??
+    null
+  );
+}

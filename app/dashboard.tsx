@@ -24,7 +24,14 @@ import {
   SOFT_SKILLS,
   Subject,
   getLocalizedSubject,
+  findSubjectByLabel,
 } from '@/constants/subjects';
+import {
+  getCurrentLevel,
+  getNextLevel,
+  getXPProgress,
+  getSubjectStars,
+} from '@/constants/levels';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
@@ -51,8 +58,20 @@ function isStudiedToday(lastStudyDate: string | null) {
 export default function DashboardScreen() {
   const [activeTab, setActiveTab] = useState<Tab>('subjects');
   const [aiPrompt, setAiPrompt] = useState('');
-  const { selectedLanguage, selectedGrade, setSubject, setLanguage, xp, streak, lastStudyDate, lessonsCompleted } =
-    useAppStore();
+  const {
+    selectedLanguage,
+    selectedGrade,
+    setSubject,
+    setLanguage,
+    xp,
+    streak,
+    lastStudyDate,
+    lessonsCompleted,
+  } = useAppStore();
+  const dailyChallengeCompleted = useAppStore((s) => s.dailyChallengeCompleted);
+  const dailyChallengeSubject = useAppStore((s) => s.dailyChallengeSubject);
+  const dailyChallengeTopic = useAppStore((s) => s.dailyChallengeTopic);
+  const subjectLessonsCount = useAppStore((s) => s.subjectLessonsCount);
   const selectedPersonalityId = useAppStore((s) => s.selectedPersonalityId);
   const lastSubject = useAppStore((s) => s.lastSubject);
   const lastSubjectEmoji = useAppStore((s) => s.lastSubjectEmoji);
@@ -81,6 +100,13 @@ export default function DashboardScreen() {
     'Student';
   const studiedToday = isStudiedToday(lastStudyDate);
   const dailyMissionProgress = studiedToday ? 1 : 0;
+  const currentLevel = getCurrentLevel(xp);
+  const nextLevel = getNextLevel(xp);
+  const levelProgress = getXPProgress(xp);
+
+  useEffect(() => {
+    useAppStore.getState().generateDailyChallenge();
+  }, []);
 
   const tabContent: Record<Tab, Subject[]> = useMemo(
     () => ({
@@ -187,6 +213,46 @@ export default function DashboardScreen() {
                 </Text>
               </TouchableOpacity>
             </View>
+          </View>
+
+          <View
+            style={[
+              styles.levelCard,
+              {
+                backgroundColor: colors.backgroundCard,
+                borderColor: colors.border,
+              },
+            ]}
+          >
+            <View style={styles.levelCardHeader}>
+              <Text style={[styles.levelCardTitle, { color: colors.textPrimary }]}>
+                {currentLevel.emoji} {currentLevel.title}
+              </Text>
+              <Text style={[styles.levelCardLevel, { color: colors.textMuted }]}>
+                Level {currentLevel.level}
+              </Text>
+            </View>
+            <View style={[styles.levelBarBg, { backgroundColor: colors.primaryLight }]}>
+              <View
+                style={[
+                  styles.levelBarFill,
+                  {
+                    width: `${levelProgress}%`,
+                    backgroundColor: colors.primary,
+                  },
+                ]}
+              />
+            </View>
+            <Text style={[styles.levelXpText, { color: colors.textSecondary }]}>
+              {nextLevel
+                ? `${xp} / ${nextLevel.minXP} XP`
+                : `${xp} XP`}
+            </Text>
+            <Text style={[styles.levelNextText, { color: colors.textMuted }]}>
+              {nextLevel
+                ? `Next: ${nextLevel.title}`
+                : 'Max Level Reached! 🌟'}
+            </Text>
           </View>
 
           {/* AI Prompt Bar */}
@@ -416,6 +482,54 @@ export default function DashboardScreen() {
             ))}
           </View>
 
+          <View
+            style={[
+              styles.dailyChallengeCard,
+              {
+                backgroundColor: `${colors.primary}1A`,
+                borderColor: colors.primary,
+              },
+            ]}
+          >
+            <View style={styles.dailyChallengeHeader}>
+              <Text style={[styles.dailyChallengeTitle, { color: colors.textPrimary }]}>
+                ⚡ Daily Challenge
+              </Text>
+              <View style={[styles.dailyChallengeBadge, { backgroundColor: colors.primary }]}>
+                <Text style={styles.dailyChallengeBadgeText}>3x XP</Text>
+              </View>
+            </View>
+            <Text style={[styles.dailyChallengeMeta, { color: colors.textSecondary }]}>
+              {dailyChallengeSubject} • {dailyChallengeTopic}
+            </Text>
+            {dailyChallengeCompleted ? (
+              <Text style={[styles.dailyChallengeDone, { color: colors.primary }]}>
+                ✅ Completed!
+              </Text>
+            ) : (
+              <TouchableOpacity
+                style={[styles.dailyChallengeBtn, { backgroundColor: colors.primary }]}
+                onPress={() => {
+                  const match = findSubjectByLabel(dailyChallengeSubject);
+                  if (match) {
+                    setSubject(getLocalizedSubject(match, selectedLanguage));
+                  }
+                  router.push({
+                    pathname: '/lesson',
+                    params: {
+                      subject: dailyChallengeSubject,
+                      topic: dailyChallengeTopic,
+                      isChallenge: 'true',
+                    },
+                  });
+                }}
+                activeOpacity={0.85}
+              >
+                <Text style={styles.dailyChallengeBtnText}>Start Challenge</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+
           {activeTab === 'softskills' && (
             <GlassCard
               style={[
@@ -442,6 +556,12 @@ export default function DashboardScreen() {
               const localized = getLocalizedSubject(subject, selectedLanguage);
               const cardKey = `${subject.label}_${selectedGrade}`;
               const cardProgress = subjectProgress[cardKey] ?? 0;
+              const stars = getSubjectStars(
+                subjectLessonsCount[localized.label] ?? subjectLessonsCount[subject.label] ?? 0
+              );
+              const starDisplay = Array.from({ length: 5 }, (_, i) =>
+                i < stars ? '★' : '☆'
+              ).join('');
               return (
                 <View
                   key={subject.id}
@@ -485,6 +605,22 @@ export default function DashboardScreen() {
                       <View style={styles.cardTextBlock}>
                         <Text style={[styles.cardLabel, { color: subject.color }]}>
                           {localized.label}
+                        </Text>
+                        <Text style={styles.cardStars}>
+                          {starDisplay.split('').map((char, i) => (
+                            <Text
+                              key={i}
+                              style={{
+                                color:
+                                  char === '★'
+                                    ? '#F5A623'
+                                    : colors.textMuted,
+                                fontSize: 12,
+                              }}
+                            >
+                              {char}
+                            </Text>
+                          ))}
                         </Text>
                         <Text style={[styles.cardDesc, { color: colors.textSecondary }]} numberOfLines={2}>
                           {localized.description}
@@ -569,6 +705,91 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     gap: SPACING.sm,
     flexShrink: 0,
+  },
+  levelCard: {
+    borderRadius: RADIUS.xl,
+    borderWidth: 1,
+    padding: SPACING.lg,
+    marginBottom: SPACING.lg,
+  },
+  levelCardHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: SPACING.sm,
+  },
+  levelCardTitle: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-Bold',
+  },
+  levelCardLevel: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-SemiBold',
+  },
+  levelBarBg: {
+    height: 10,
+    borderRadius: RADIUS.full,
+    overflow: 'hidden',
+    backgroundColor: COLORS.backgroundCard,
+    marginBottom: SPACING.xs,
+  },
+  levelBarFill: {
+    height: '100%',
+    borderRadius: RADIUS.full,
+  },
+  levelXpText: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-SemiBold',
+  },
+  levelNextText: {
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-Regular',
+    marginTop: 2,
+  },
+  dailyChallengeCard: {
+    borderRadius: 16,
+    borderWidth: 2,
+    padding: SPACING.lg,
+    marginBottom: SPACING.md,
+  },
+  dailyChallengeHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: SPACING.xs,
+  },
+  dailyChallengeTitle: {
+    fontSize: FONT_SIZES.lg,
+    fontFamily: 'Poppins-Bold',
+  },
+  dailyChallengeBadge: {
+    borderRadius: RADIUS.full,
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: 4,
+  },
+  dailyChallengeBadgeText: {
+    color: '#FFFFFF',
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-Bold',
+  },
+  dailyChallengeMeta: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Regular',
+    marginBottom: SPACING.md,
+  },
+  dailyChallengeBtn: {
+    borderRadius: RADIUS.lg,
+    paddingVertical: SPACING.sm,
+    alignItems: 'center',
+  },
+  dailyChallengeBtnText: {
+    color: '#FFFFFF',
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Bold',
+  },
+  dailyChallengeDone: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-SemiBold',
   },
   xpPill: {
     flexDirection: 'row',
@@ -936,6 +1157,11 @@ const styles = StyleSheet.create({
   cardLabel: {
     fontFamily: 'Poppins-Bold',
     fontSize: FONT_SIZES.lg,
+  },
+  cardStars: {
+    flexDirection: 'row',
+    marginTop: 4,
+    marginBottom: 2,
   },
   cardDesc: {
     fontSize: FONT_SIZES.sm,

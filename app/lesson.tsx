@@ -4,6 +4,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import {
   Alert,
+  Animated as RNAnimated,
   View,
   Text,
   TextInput,
@@ -12,6 +13,7 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
   Platform,
+  ScrollView,
   useWindowDimensions,
 } from 'react-native';
 import Animated, {
@@ -27,9 +29,15 @@ import { Redirect, router, useFocusEffect, useLocalSearchParams } from 'expo-rou
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore, type ChatMessage } from '@/store/appStore';
 import { saveProgress } from '@/services/dbService';
-import { getGreeting, getUIText } from '@/constants/languages';
+import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
-import { getNigerianGrade, getLessonQuickActions, getQuickPrompts } from '@/constants/subjects';
+import {
+  getNigerianGrade,
+  getLessonQuickActions,
+  getQuickPrompts,
+  getTopicsForSubject,
+  findSubjectByLabel,
+} from '@/constants/subjects';
 import { type Achievement, XP_REWARDS, checkNewAchievements } from '@/constants/achievements';
 import { getPersonality, type TutorPersonality } from '@/constants/personalities';
 import { AchievementToast } from '@/components/AchievementToast';
@@ -57,6 +65,52 @@ import type { LearningFlowState } from '@/types/ai.types';
 const QUIZ_QUESTION_TARGET = 3;
 const CHAR_LIMIT = 500;
 const CHAR_WARN_AT = 400;
+
+const TOPIC_EMOJIS: Record<string, string> = {
+  'Reading & Comprehension': '📖',
+  'Grammar & Punctuation': '✏️',
+  Vocabulary: '📝',
+  'Creative Writing': '✍️',
+  Spelling: '🔤',
+  'Numbers & Counting': '🔢',
+  'Addition & Subtraction': '➕',
+  'Multiplication & Division': '✖️',
+  Fractions: '🍕',
+  'Shapes & Geometry': '📐',
+  'Word Problems': '🧩',
+  'Living Things': '🦋',
+  'Plants & Animals': '🌿',
+  'Human Body': '🫀',
+  'Weather & Environment': '🌦️',
+  'Simple Machines': '⚙️',
+  'Health & Hygiene': '🧼',
+  'My Family & Community': '👨‍👩‍👧',
+  'Nigeria & Its People': '🇳🇬',
+  'Our Government': '🏛️',
+  'Map Reading': '🗺️',
+  Transportation: '🚌',
+  'Culture & Festivals': '🎉',
+  'Rights & Responsibilities': '⚖️',
+  'Good Citizenship': '🤝',
+  'Our Constitution': '📜',
+  'Community Service': '💚',
+  Democracy: '🗳️',
+  'National Symbols': '🦅',
+  'Farming & Crops': '🌾',
+  'Soil & Fertilizer': '🪴',
+  'Farm Animals': '🐄',
+  'Food & Nutrition': '🥗',
+  'Farm Tools': '🔧',
+  'Pest Control': '🐛',
+  'Introduction & Basics': '🌟',
+  'Key Concepts': '💡',
+  'Practice & Examples': '✅',
+  'Review & Quiz': '🎯',
+  'Practice Problems': '📊',
+  'Quick Quiz': '⚡',
+  'Fun Facts': '🎲',
+  'Brain Teaser': '🧠',
+};
 
 interface SpeechRecognitionResultEvent {
   results: { [index: number]: { [index: number]: { transcript: string } } };
@@ -273,7 +327,18 @@ function ChatBubble({
 
 export default function LessonScreen() {
   const { isConnected } = useNetworkStatus();
-  const { offline: offlineParam } = useLocalSearchParams<{ offline?: string }>();
+  const {
+    offline: offlineParam,
+    subject: subjectParam,
+    topic: topicParam,
+    isChallenge: isChallengeParam,
+  } = useLocalSearchParams<{
+    offline?: string;
+    subject?: string;
+    topic?: string;
+    isChallenge?: string;
+  }>();
+  const isChallenge = isChallengeParam === 'true';
   const [showOfflineMode, setShowOfflineMode] = useState(false);
   const dismissedOfflineRef = useRef(false);
   const {
@@ -298,6 +363,7 @@ export default function LessonScreen() {
   const setLastSession = useAppStore((s) => s.setLastSession);
   const markFlowCompleted = useAppStore((s) => s.markFlowCompleted);
   const updateSubjectProgress = useAppStore((s) => s.updateSubjectProgress);
+  const setSubject = useAppStore((s) => s.setSubject);
   const { speak, stop, toggle, isSpeaking } = useSpeech(
     (selectedLanguage as VoiceLanguage) ?? 'en'
   );
@@ -307,11 +373,24 @@ export default function LessonScreen() {
   const lessonStartRef = useRef<number>(Date.now());
   const hasCountedLesson = useRef(false);
   const [flowCompleted, setFlowCompleted] = useState(() => {
+    if (isChallengeParam === 'true') return true;
     const key = `${selectedSubject?.label ?? ''}_${selectedGrade ?? ''}`;
     return useAppStore.getState().completedFlows[key] ?? false;
   });
   const [flowState, setFlowState] = useState<LearningFlowState | null>(null);
+  const [topicSelected, setTopicSelected] = useState(
+    () => isChallengeParam === 'true' && Boolean(topicParam)
+  );
+  const [selectedTopic, setSelectedTopic] = useState(() => {
+    const t = topicParam;
+    return typeof t === 'string' ? t : Array.isArray(t) ? t[0] ?? '' : '';
+  });
   const [newAchievement, setNewAchievement] = useState<Achievement | null>(null);
+  const coinAnim = useRef(new RNAnimated.Value(0)).current;
+  const coinOpacity = useRef(new RNAnimated.Value(0)).current;
+  const [xpGained, setXpGained] = useState(0);
+  const [showCoinAnim, setShowCoinAnim] = useState(false);
+  const challengeStartedRef = useRef(false);
   const [inputText, setInputText] = useState('');
   const [isQuizMode, setIsQuizMode] = useState(false);
   const isQuizModeRef = useRef(false);
@@ -358,12 +437,77 @@ export default function LessonScreen() {
     };
   }, []);
 
+  const triggerCoinAnimation = useCallback((amount: number) => {
+    setXpGained(amount);
+    setShowCoinAnim(true);
+    coinAnim.setValue(0);
+    coinOpacity.setValue(1);
+
+    RNAnimated.parallel([
+      RNAnimated.timing(coinAnim, {
+        toValue: -80,
+        duration: 800,
+        useNativeDriver: true,
+      }),
+      RNAnimated.sequence([
+        RNAnimated.delay(500),
+        RNAnimated.timing(coinOpacity, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+      ]),
+    ]).start(() => {
+      setShowCoinAnim(false);
+    });
+  }, [coinAnim, coinOpacity]);
+
+  const awardXP = useCallback(
+    (baseAmount: number) => {
+      const amount = isChallenge ? baseAmount * 3 : baseAmount;
+      addXP(amount);
+      triggerCoinAnimation(amount);
+      if (isChallenge) {
+        useAppStore.getState().completeDailyChallenge();
+      }
+    },
+    [addXP, isChallenge, triggerCoinAnimation]
+  );
+
   function countLessonOnce() {
     if (!hasCountedLesson.current) {
       hasCountedLesson.current = true;
       useAppStore.getState().incrementLessons();
+      if (selectedSubject?.label) {
+        useAppStore.getState().incrementSubjectLesson(selectedSubject.label);
+      }
     }
   }
+
+  useEffect(() => {
+    if (!isChallenge || challengeStartedRef.current) return;
+    const label = typeof subjectParam === 'string' ? subjectParam : '';
+    const topic = typeof topicParam === 'string' ? topicParam : '';
+    if (!label || !topic) return;
+
+    const match = findSubjectByLabel(label);
+    if (match) setSubject(match);
+
+    setFlowCompleted(true);
+    setSelectedTopic(topic);
+    setTopicSelected(true);
+    challengeStartedRef.current = true;
+  }, [isChallenge, subjectParam, topicParam, setSubject]);
+
+  useEffect(() => {
+    if (!isChallenge || !topicSelected || !selectedTopic || messages.length > 0) return;
+    if (!selectedSubject) return;
+    handleSend(
+      `I want to learn about ${selectedTopic} in ${selectedSubject.label}`,
+      false
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isChallenge, topicSelected, selectedTopic, selectedSubject?.label]);
 
   async function handleMicPress() {
     if (
@@ -449,12 +593,16 @@ export default function LessonScreen() {
         const flowKey = `${selectedSubject.label}_${selectedGrade}`;
         const alreadyCompleted =
           useAppStore.getState().completedFlows[flowKey] ?? false;
-        setFlowCompleted(alreadyCompleted);
+        setFlowCompleted(isChallenge ? true : alreadyCompleted);
         setFlowState(null);
         setIsQuizMode(false);
         isQuizModeRef.current = false;
         setQuizScore(null);
         quizStatsRef.current = { correct: 0, answered: 0 };
+        if (!isChallenge) {
+          setTopicSelected(false);
+          setSelectedTopic('');
+        }
       }
 
       return () => {
@@ -473,6 +621,7 @@ export default function LessonScreen() {
       clearMessages,
       endSession,
       startSession,
+      isChallenge,
     ])
   );
 
@@ -529,8 +678,8 @@ export default function LessonScreen() {
           const finalScore = Math.round((stats.correct / stats.answered) * 100);
           setQuizScore(finalScore);
 
-          addXP(XP_REWARDS.QUIZ_COMPLETED);
-          if (finalScore === 100) addXP(XP_REWARDS.PERFECT_QUIZ);
+          awardXP(XP_REWARDS.QUIZ_COMPLETED);
+          if (finalScore === 100) awardXP(XP_REWARDS.PERFECT_QUIZ);
           updateBestQuizScore(finalScore);
 
           const newlyUnlocked = checkNewAchievements(
@@ -553,7 +702,7 @@ export default function LessonScreen() {
           const earnedXP = finalScore === 100 ? 75 : 25;
           saveProgress({
             subject: selectedSubject?.label ?? 'Unknown',
-            topic: selectedSubject?.label ?? 'Unknown',
+            topic: selectedTopic || (selectedSubject?.label ?? 'Unknown'),
             score: finalScore,
             grade: selectedGrade ?? 1,
             xpEarned: earnedXP,
@@ -622,22 +771,27 @@ export default function LessonScreen() {
       : [];
   const showCharCount = inputText.length >= CHAR_WARN_AT;
 
-  function seedChatAfterFlow(state?: LearningFlowState | null) {
-    clearMessages();
-    if (state?.adaptationNeeded) {
-      addMessage({
-        role: 'assistant',
-        content: `I see you are working on ${selectedSubject!.label}! I am here to help you step by step. What part would you like to understand better? 😊`,
-      });
-    } else {
-      addMessage({
-        role: 'assistant',
-        content: getGreeting(selectedLanguage, selectedSubject!.label, selectedGrade!),
-      });
-    }
+  const subjectTopics = getTopicsForSubject(selectedSubject.label);
+
+  function handleConfirmTopic() {
+    if (!selectedTopic || !selectedSubject) return;
+    setTopicSelected(true);
+    handleSend(
+      `I want to learn about ${selectedTopic} in ${selectedSubject.label}`
+    );
   }
 
-  if (!flowCompleted && !showOfflineMode) {
+  function handleChangeTopic() {
+    setTopicSelected(false);
+    setSelectedTopic('');
+    clearMessages();
+    setIsQuizMode(false);
+    isQuizModeRef.current = false;
+    setQuizScore(null);
+    quizStatsRef.current = { correct: 0, answered: 0 };
+  }
+
+  if (!flowCompleted && !showOfflineMode && !isChallenge) {
     return (
       <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
         <View style={[styles.content, isWide && styles.contentWide, { flex: 1 }]}>
@@ -705,17 +859,115 @@ export default function LessonScreen() {
                 markFlowCompleted(selectedSubject.label, selectedGrade);
               }
               if (state.xpEarned > 0) {
-                addXP(state.xpEarned);
+                awardXP(state.xpEarned);
               }
               useAppStore.getState().updateStreak();
               countLessonOnce();
-              seedChatAfterFlow(state);
+              clearMessages();
+              setTopicSelected(false);
+              setSelectedTopic('');
             }}
             onSkip={() => {
               setFlowCompleted(true);
-              seedChatAfterFlow();
+              clearMessages();
+              setTopicSelected(false);
+              setSelectedTopic('');
             }}
           />
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  if (flowCompleted && !topicSelected && !showOfflineMode) {
+    return (
+      <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
+        <View style={[styles.content, isWide && styles.contentWide, { flex: 1 }]}>
+          <View
+            style={[
+              styles.header,
+              {
+                backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
+                borderBottomColor: colors.border,
+              },
+            ]}
+          >
+            <TouchableOpacity
+              style={[styles.backBtn, { backgroundColor: colors.primaryLight }]}
+              onPress={() => router.back()}
+            >
+              <Text style={[styles.backBtnText, { color: colors.primary }]}>←</Text>
+            </TouchableOpacity>
+            <View style={styles.headerCenter}>
+              <Text style={styles.headerEmoji}>{selectedSubject.icon}</Text>
+              <View style={styles.headerTextBlock}>
+                <Text style={[styles.headerTitle, { color: colors.textPrimary }]} numberOfLines={1}>
+                  {selectedSubject.label}
+                </Text>
+              </View>
+            </View>
+          </View>
+
+          <ScrollView
+            contentContainerStyle={styles.topicPickerScroll}
+            showsVerticalScrollIndicator={false}
+          >
+            <Text style={styles.topicPickerEmoji}>{selectedSubject.icon}</Text>
+            <Text style={[styles.topicPickerTitle, { color: colors.textPrimary }]}>
+              {selectedSubject.label}
+            </Text>
+            <Text style={[styles.topicPickerSubtitle, { color: colors.textMuted }]}>
+              What do you want to learn today?
+            </Text>
+
+            <View style={styles.topicGrid}>
+              {subjectTopics.map((topic) => {
+                const isSelected = selectedTopic === topic;
+                return (
+                  <TouchableOpacity
+                    key={topic}
+                    style={[
+                      styles.topicCard,
+                      {
+                        backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
+                        borderColor: isSelected ? colors.primary : colors.border,
+                        borderWidth: isSelected ? 2 : 1,
+                      },
+                    ]}
+                    onPress={() => setSelectedTopic(topic)}
+                    activeOpacity={0.8}
+                  >
+                    <Text style={styles.topicCardEmoji}>
+                      {TOPIC_EMOJIS[topic] ?? '📌'}
+                    </Text>
+                    <Text
+                      style={[
+                        styles.topicCardLabel,
+                        { color: isSelected ? colors.primary : colors.textPrimary },
+                      ]}
+                    >
+                      {topic}
+                    </Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+          </ScrollView>
+
+          <View style={styles.topicPickerFooter}>
+            <TouchableOpacity
+              style={[
+                styles.letsLearnBtn,
+                { backgroundColor: colors.primary },
+                !selectedTopic && styles.letsLearnBtnDisabled,
+              ]}
+              onPress={handleConfirmTopic}
+              disabled={!selectedTopic}
+              activeOpacity={0.85}
+            >
+              <Text style={styles.letsLearnBtnText}>Let&apos;s Learn!</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </SafeAreaView>
     );
@@ -733,6 +985,30 @@ export default function LessonScreen() {
         enabled={Platform.OS !== 'web'}
       >
         <Atmosphere pointerEvents="none" />
+        {showCoinAnim && (
+          <RNAnimated.View
+            style={{
+              position: 'absolute',
+              bottom: 120,
+              alignSelf: 'center',
+              zIndex: 999,
+              transform: [{ translateY: coinAnim }],
+              opacity: coinOpacity,
+              alignItems: 'center',
+            }}
+          >
+            <Text style={{ fontSize: 32 }}>🪙</Text>
+            <Text
+              style={{
+                fontSize: 18,
+                fontFamily: 'Poppins-Bold',
+                color: colors.primary,
+              }}
+            >
+              +{xpGained} XP
+            </Text>
+          </RNAnimated.View>
+        )}
         <View style={[styles.content, isWide && styles.contentWide]}>
           <View style={[
             styles.header,
@@ -751,9 +1027,16 @@ export default function LessonScreen() {
             <View style={styles.headerCenter}>
               <Text style={styles.headerEmoji}>{selectedSubject?.icon ?? '📚'}</Text>
               <View style={styles.headerTextBlock}>
-                <Text style={[styles.headerTitle, { color: colors.textPrimary }]} numberOfLines={1}>
-                  {selectedSubject?.label ?? ui.learn}
-                </Text>
+                <View style={styles.headerTitleRow}>
+                  <Text style={[styles.headerTitle, { color: colors.textPrimary }]} numberOfLines={1}>
+                    {selectedSubject?.label ?? ui.learn}
+                  </Text>
+                  <TouchableOpacity onPress={handleChangeTopic} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+                    <Text style={[styles.changeTopicBtn, { color: colors.primary }]}>
+                      Change Topic
+                    </Text>
+                  </TouchableOpacity>
+                </View>
                 <Text style={[styles.headerSub, { color: colors.textMuted }]} numberOfLines={1}>
                   {personality.name}
                   {isQuizMode ? ` • ${ui.quizMode}` : ''}
@@ -1232,4 +1515,74 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.error,
   },
   micIcon: { fontSize: 18 },
+  headerTitleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.sm,
+    flexWrap: 'wrap',
+  },
+  changeTopicBtn: {
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-SemiBold',
+  },
+  topicPickerScroll: {
+    paddingHorizontal: SPACING.lg,
+    paddingTop: SPACING.xl,
+    paddingBottom: SPACING.xxl,
+    alignItems: 'center',
+  },
+  topicPickerEmoji: {
+    fontSize: 48,
+    marginBottom: SPACING.sm,
+  },
+  topicPickerTitle: {
+    fontSize: FONT_SIZES.xl,
+    fontFamily: 'Poppins-Bold',
+    textAlign: 'center',
+    marginBottom: SPACING.xs,
+  },
+  topicPickerSubtitle: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-Regular',
+    textAlign: 'center',
+    marginBottom: SPACING.xl,
+  },
+  topicGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: SPACING.md,
+    width: '100%',
+    justifyContent: 'center',
+  },
+  topicCard: {
+    width: '47%',
+    minWidth: 140,
+    borderRadius: 12,
+    padding: SPACING.md,
+    alignItems: 'flex-start',
+    gap: SPACING.xs,
+  },
+  topicCardEmoji: { fontSize: 24 },
+  topicCardLabel: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-SemiBold',
+    lineHeight: 20,
+  },
+  topicPickerFooter: {
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.lg,
+    borderTopWidth: 1,
+    borderTopColor: COLORS.border,
+  },
+  letsLearnBtn: {
+    borderRadius: RADIUS.lg,
+    paddingVertical: SPACING.md,
+    alignItems: 'center',
+  },
+  letsLearnBtnDisabled: { opacity: 0.4 },
+  letsLearnBtnText: {
+    color: '#FFFFFF',
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-Bold',
+  },
 });
