@@ -1,6 +1,6 @@
 /**
- * Sign up screen.
- * Parents create an account with email and password.
+ * Sign up screen — child-first onboarding.
+ * Step 1: account · Step 2: grade · Step 3: avatar → dashboard
  */
 import { useEffect, useRef, useState } from 'react';
 import {
@@ -19,32 +19,39 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/store/authStore';
-import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
+import { useAppStore } from '@/store/appStore';
+import { COLORS, SPACING, RADIUS, FONT_SIZES, FONT_FAMILY } from '@/constants/theme';
 import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useTheme } from '@/hooks/useTheme';
 import { TutorAvatar } from '@/components/TutorAvatar';
+import { syncProfile } from '@/services/dbService';
 
 const FEATURES = [
   { emoji: '🧠', text: 'Claude AI Tutor' },
   { emoji: '📚', text: 'NERDC Curriculum' },
   { emoji: '🌍', text: '4 Nigerian Languages' },
-  { emoji: '📊', text: 'Works Offline' },
+  { emoji: '📶', text: 'Works Offline' },
   { emoji: '🏆', text: 'Gamified Learning' },
 ];
+
+const GRADE_OPTIONS = [1, 2, 3, 4, 5, 6] as const;
+const AVATAR_OPTIONS = ['🦁', '🐯', '🦊', '🐧', '🦅', '🐬'] as const;
+
+type SignUpStep = 'account' | 'grade' | 'avatar';
 
 export default function SignUpScreen() {
   const { width } = useWindowDimensions();
   const isWide = width > 768;
+  const { colors, isDarkMode } = useTheme();
 
+  const [step, setStep] = useState<SignUpStep>('account');
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [passwordFocused, setPasswordFocused] = useState(false);
-  const [confirmPasswordFocused, setConfirmPasswordFocused] = useState(false);
+  const [selectedGradeNum, setSelectedGradeNum] = useState<number | null>(null);
+  const [selectedAvatar, setSelectedAvatar] = useState<string>('🦁');
   const [emailError, setEmailError] = useState('');
   const [emailValid, setEmailValid] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -54,10 +61,8 @@ export default function SignUpScreen() {
   const { t, language } = useTranslation();
   const ui = getUIText(language);
 
-  const phoneRef = useRef<TextInput | null>(null);
   const emailRef = useRef<TextInput | null>(null);
   const passwordRef = useRef<TextInput | null>(null);
-  const confirmPasswordRef = useRef<TextInput | null>(null);
 
   const displayError = localError || storeError || '';
 
@@ -66,21 +71,21 @@ export default function SignUpScreen() {
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (
+        step === 'account' &&
         e.key === 'Enter' &&
         name.trim() &&
         email.trim() &&
         password.trim() &&
-        confirmPassword.trim() &&
         !isLoading
       ) {
-        handleSignUp();
+        handleAccountSubmit();
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [name, email, password, confirmPassword, isLoading]);
+  }, [name, email, password, isLoading, step]);
 
   function validateEmail(value: string) {
     const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -96,16 +101,10 @@ export default function SignUpScreen() {
     }
   }
 
-  async function handleSignUp() {
-    if (!name.trim() || !phone.trim() || !email.trim() || !password.trim() || !confirmPassword.trim()) {
-      return;
-    }
+  async function handleAccountSubmit() {
+    if (!name.trim() || !email.trim() || !password.trim()) return;
     if (emailError || !emailValid) {
       setLocalError('Please enter a valid email address');
-      return;
-    }
-    if (password !== confirmPassword) {
-      setLocalError('Passwords do not match');
       return;
     }
 
@@ -113,28 +112,292 @@ export default function SignUpScreen() {
     setLocalError('');
     clearError();
     try {
-      await signUp(email.trim(), password, name.trim(), phone.trim());
-      // New accounts have no children yet — child-select handles that case
-      // and routes onward to /grade automatically.
-      router.replace('/child-select');
+      await signUp(email.trim(), password, name.trim(), '');
+      setStep('grade');
     } catch {
-      // error is set in the store — shown via displayError
+      // error shown via displayError
     } finally {
       setIsLoading(false);
     }
   }
 
-  const canSubmit =
-    name.trim() &&
-    phone.trim() &&
-    email.trim() &&
-    emailValid &&
-    password.trim() &&
-    confirmPassword.trim() &&
-    !isLoading;
+  function handleGradePick(grade: number) {
+    setSelectedGradeNum(grade);
+    setStep('avatar');
+  }
+
+  async function handleFinish() {
+    if (selectedGradeNum === null) return;
+
+    setIsLoading(true);
+    setLocalError('');
+
+    try {
+      useAppStore.getState().setGrade(selectedGradeNum);
+      useAppStore.setState({
+        userName: name.trim(),
+        userAvatar: selectedAvatar,
+        userGrade: `Primary ${selectedGradeNum}`,
+      });
+
+      await syncProfile({
+        name: name.trim(),
+        grade: selectedGradeNum,
+        avatar: selectedAvatar,
+        xp: 0,
+        streak: 0,
+        language: 'en',
+        personalityId: 'aunty_naija',
+        lastActiveDate: new Date().toISOString().split('T')[0],
+        role: 'student',
+      });
+
+      router.replace('/dashboard');
+    } catch {
+      setLocalError('Could not save your profile. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  const canSubmitAccount =
+    name.trim() && email.trim() && emailValid && password.trim() && !isLoading;
+
+  const cardBg = isDarkMode ? colors.backgroundCard : '#FFFFFF';
+  const inputBg = isDarkMode ? colors.background : COLORS.background;
+
+  function renderAccountStep() {
+    return (
+      <>
+        <Text style={[styles.stepTitle, { color: colors.textPrimary }]}>
+          {ui.createAccount}
+        </Text>
+        <Text style={[styles.stepSub, { color: colors.textMuted }]}>
+          {ui.joinStudents}
+        </Text>
+
+        {displayError ? (
+          <View style={styles.errorBanner}>
+            <Text style={styles.errorText}>⚠️ {displayError}</Text>
+          </View>
+        ) : null}
+
+        <View style={[styles.inputGroup, { backgroundColor: inputBg, borderColor: colors.border }]}>
+          <Text style={styles.inputIcon}>👤</Text>
+          <TextInput
+            style={[
+              styles.input,
+              { color: colors.textPrimary },
+              Platform.OS === 'web' && {
+                outlineStyle: 'none' as any,
+                outlineWidth: 0,
+              } as any,
+            ]}
+            placeholder={ui.fullName}
+            placeholderTextColor={colors.textMuted}
+            value={name}
+            onChangeText={setName}
+            autoCapitalize="words"
+            editable={!isLoading}
+            returnKeyType="next"
+            onSubmitEditing={() => emailRef.current?.focus()}
+          />
+        </View>
+
+        <View
+          style={[
+            styles.inputGroup,
+            { backgroundColor: inputBg, borderColor: colors.border },
+            emailError ? styles.inputGroupError : emailValid ? styles.inputGroupValid : null,
+          ]}
+        >
+          <Text style={styles.inputIcon}>📧</Text>
+          <TextInput
+            ref={emailRef}
+            style={[
+              styles.input,
+              { color: colors.textPrimary },
+              Platform.OS === 'web' && {
+                outlineStyle: 'none' as any,
+                outlineWidth: 0,
+              } as any,
+            ]}
+            placeholder="name@example.com"
+            placeholderTextColor={colors.textMuted}
+            value={email}
+            onChangeText={(v) => {
+              setEmail(v);
+              validateEmail(v);
+            }}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            editable={!isLoading}
+            returnKeyType="next"
+            onSubmitEditing={() => passwordRef.current?.focus()}
+          />
+          {emailValid && <Text style={styles.inputValid}>✓</Text>}
+        </View>
+        {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
+
+        <View style={[styles.passwordGroup, { backgroundColor: inputBg, borderColor: colors.border }]}>
+          <Text style={styles.inputIcon}>🔒</Text>
+          <TextInput
+            ref={passwordRef}
+            style={[
+              styles.passwordInput,
+              { color: colors.textPrimary },
+              Platform.OS === 'web' && {
+                outlineStyle: 'none' as any,
+                outlineWidth: 0,
+              } as any,
+            ]}
+            placeholder={t('password')}
+            placeholderTextColor={colors.textMuted}
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry={!showPassword}
+            editable={!isLoading}
+            returnKeyType="go"
+            onSubmitEditing={() => {
+              if (canSubmitAccount) handleAccountSubmit();
+            }}
+          />
+          <TouchableOpacity
+            style={styles.eyeBtn}
+            onPress={() => setShowPassword(!showPassword)}
+          >
+            <Text style={styles.eyeIcon}>{showPassword ? '🙈' : '👁️'}</Text>
+          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity
+          style={[
+            styles.primaryBtn,
+            { backgroundColor: colors.primary },
+            (isLoading || !canSubmitAccount) && styles.primaryBtnDisabled,
+          ]}
+          onPress={handleAccountSubmit}
+          disabled={!canSubmitAccount}
+        >
+          {isLoading ? (
+            <ActivityIndicator color="#FFFFFF" />
+          ) : (
+            <Text style={styles.primaryBtnText}>Let&apos;s Go →</Text>
+          )}
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.signInLink}
+          onPress={() => router.push('/auth/sign-in')}
+        >
+          <Text style={[styles.signInLinkText, { color: colors.textMuted }]}>
+            {ui.alreadyHaveAccount}{' '}
+            <Text style={[styles.signInLinkBold, { color: colors.primary }]}>
+              {ui.signInLink}
+            </Text>
+          </Text>
+        </TouchableOpacity>
+      </>
+    );
+  }
+
+  function renderGradeStep() {
+    return (
+      <>
+        <Text style={[styles.stepTitle, { color: colors.textPrimary }]}>
+          What grade are you in?
+        </Text>
+        <Text style={[styles.stepSub, { color: colors.textMuted }]}>
+          Tap your class to continue
+        </Text>
+
+        <View style={styles.gradeGrid}>
+          {GRADE_OPTIONS.map((g) => {
+            const active = selectedGradeNum === g;
+            return (
+              <TouchableOpacity
+                key={g}
+                style={[
+                  styles.gradeCard,
+                  {
+                    backgroundColor: active ? colors.primaryLight : inputBg,
+                    borderColor: active ? colors.primary : colors.border,
+                  },
+                ]}
+                onPress={() => handleGradePick(g)}
+                activeOpacity={0.8}
+              >
+                <Text style={styles.gradeEmoji}>📚</Text>
+                <Text
+                  style={[
+                    styles.gradeLabel,
+                    { color: active ? colors.primaryDark : colors.textPrimary },
+                  ]}
+                >
+                  Primary {g}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      </>
+    );
+  }
+
+  function renderAvatarStep() {
+    return (
+      <>
+        <Text style={[styles.stepTitle, { color: colors.textPrimary }]}>
+          Pick your avatar!
+        </Text>
+        <Text style={[styles.stepSub, { color: colors.textMuted }]}>
+          Choose the one that feels like you
+        </Text>
+
+        <View style={styles.avatarGrid}>
+          {AVATAR_OPTIONS.map((emoji) => {
+            const active = selectedAvatar === emoji;
+            return (
+              <TouchableOpacity
+                key={emoji}
+                style={[
+                  styles.avatarCard,
+                  {
+                    backgroundColor: active ? colors.primaryLight : inputBg,
+                    borderColor: active ? colors.primary : colors.border,
+                  },
+                  active && styles.avatarCardActive,
+                ]}
+                onPress={() => setSelectedAvatar(emoji)}
+                activeOpacity={0.8}
+              >
+                <Text style={styles.avatarEmoji}>{emoji}</Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+
+        <TouchableOpacity
+          style={[
+            styles.primaryBtn,
+            { backgroundColor: colors.primary },
+            isLoading && styles.primaryBtnDisabled,
+          ]}
+          onPress={handleFinish}
+          disabled={isLoading}
+        >
+          {isLoading ? (
+            <ActivityIndicator color="#FFFFFF" />
+          ) : (
+            <Text style={styles.primaryBtnText}>Start Learning →</Text>
+          )}
+        </TouchableOpacity>
+      </>
+    );
+  }
 
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
       <View style={styles.container}>
         {isWide && (
           <View style={styles.leftPanel}>
@@ -144,16 +407,12 @@ export default function SignUpScreen() {
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}
             />
-
             <View style={styles.decorCircle1} />
             <View style={styles.decorCircle2} />
-            <View style={styles.decorCircle3} />
-
             <View style={styles.leftLogo}>
               <TutorAvatar size={56} />
               <Text style={styles.leftAppName}>Learnova</Text>
             </View>
-
             <View style={styles.featuresList}>
               {FEATURES.map((f, i) => (
                 <View key={i} style={styles.featureItem}>
@@ -162,7 +421,6 @@ export default function SignUpScreen() {
                 </View>
               ))}
             </View>
-
             <View style={styles.quoteBlock}>
               <Text style={styles.quoteText}>
                 &quot;Education is the most powerful weapon&quot;
@@ -173,7 +431,7 @@ export default function SignUpScreen() {
         )}
 
         <KeyboardAvoidingView
-          style={styles.rightPanel}
+          style={[styles.rightPanel, { backgroundColor: colors.background }]}
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         >
           <ScrollView
@@ -184,216 +442,31 @@ export default function SignUpScreen() {
             {!isWide && (
               <View style={styles.mobileLogo}>
                 <TutorAvatar size={48} />
-                <Text style={styles.mobileAppName}>Learnova</Text>
+                <Text style={[styles.mobileAppName, { color: colors.primary }]}>
+                  Learnova
+                </Text>
               </View>
             )}
 
-            <View style={styles.card}>
-              <Text style={styles.welcomeTitle}>{ui.createAccount}</Text>
-              <Text style={styles.welcomeSub}>{ui.joinStudents}</Text>
-
-              {displayError ? (
-                <View style={styles.errorBanner}>
-                  <Text style={styles.errorText}>⚠️ {displayError}</Text>
-                </View>
-              ) : null}
-
-              <View style={styles.inputGroup}>
-                <Text style={styles.inputIcon}>👤</Text>
-                <TextInput
+            <View style={styles.stepDots}>
+              {(['account', 'grade', 'avatar'] as SignUpStep[]).map((s, i) => (
+                <View
+                  key={s}
                   style={[
-                    styles.input,
-                    Platform.OS === 'web' && {
-                      outlineStyle: 'none' as any,
-                      outlineWidth: 0,
-                    } as any,
+                    styles.dot,
+                    {
+                      backgroundColor:
+                        step === s ? colors.primary : colors.border,
+                    },
                   ]}
-                  placeholder={ui.fullName}
-                  placeholderTextColor={COLORS.textMuted}
-                  value={name}
-                  onChangeText={setName}
-                  autoCapitalize="words"
-                  autoComplete="name"
-                  editable={!isLoading}
-                  returnKeyType="next"
-                  onSubmitEditing={() => {
-                    phoneRef.current?.focus();
-                  }}
                 />
-              </View>
+              ))}
+            </View>
 
-              <View style={styles.inputGroup}>
-                <Text style={styles.inputIcon}>📱</Text>
-                <TextInput
-                  ref={phoneRef}
-                  style={[
-                    styles.input,
-                    Platform.OS === 'web' && {
-                      outlineStyle: 'none' as any,
-                      outlineWidth: 0,
-                    } as any,
-                  ]}
-                  placeholder="0803 000 0000"
-                  placeholderTextColor={COLORS.textMuted}
-                  value={phone}
-                  onChangeText={setPhone}
-                  keyboardType="phone-pad"
-                  autoComplete="tel"
-                  editable={!isLoading}
-                  returnKeyType="next"
-                  onSubmitEditing={() => {
-                    emailRef.current?.focus();
-                  }}
-                />
-              </View>
-
-              <View
-                style={[
-                  styles.inputGroup,
-                  emailError
-                    ? styles.inputGroupError
-                    : emailValid
-                      ? styles.inputGroupValid
-                      : null,
-                ]}
-              >
-                <Text style={styles.inputIcon}>📧</Text>
-                <TextInput
-                  ref={emailRef}
-                  style={[
-                    styles.input,
-                    Platform.OS === 'web' && {
-                      outlineStyle: 'none' as any,
-                      outlineWidth: 0,
-                    } as any,
-                  ]}
-                  placeholder="name@example.com"
-                  placeholderTextColor={COLORS.textMuted}
-                  value={email}
-                  onChangeText={(v) => {
-                    setEmail(v);
-                    validateEmail(v);
-                  }}
-                  keyboardType="email-address"
-                  autoCapitalize="none"
-                  autoComplete="email"
-                  editable={!isLoading}
-                  returnKeyType="next"
-                  onSubmitEditing={() => {
-                    passwordRef.current?.focus();
-                  }}
-                />
-                {emailValid && <Text style={styles.inputValid}>✓</Text>}
-              </View>
-              {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
-
-              <View
-                style={[
-                  styles.passwordGroup,
-                  passwordFocused && styles.inputGroupFocused,
-                ]}
-              >
-                <Text style={styles.inputIcon}>🔒</Text>
-                <TextInput
-                  ref={passwordRef}
-                  style={[
-                    styles.passwordInput,
-                    Platform.OS === 'web' && {
-                      outlineStyle: 'none' as any,
-                      outlineWidth: 0,
-                    } as any,
-                  ]}
-                  placeholder={t('password')}
-                  placeholderTextColor={COLORS.textMuted}
-                  value={password}
-                  onChangeText={setPassword}
-                  secureTextEntry={!showPassword}
-                  autoComplete="new-password"
-                  editable={!isLoading}
-                  onFocus={() => setPasswordFocused(true)}
-                  onBlur={() => setPasswordFocused(false)}
-                  returnKeyType="next"
-                  onSubmitEditing={() => {
-                    confirmPasswordRef.current?.focus();
-                  }}
-                />
-                <TouchableOpacity
-                  style={styles.eyeBtn}
-                  onPress={() => setShowPassword(!showPassword)}
-                >
-                  <Text style={styles.eyeIcon}>{showPassword ? '🙈' : '👁️'}</Text>
-                </TouchableOpacity>
-              </View>
-
-              <View
-                style={[
-                  styles.passwordGroup,
-                  confirmPasswordFocused && styles.inputGroupFocused,
-                ]}
-              >
-                <Text style={styles.inputIcon}>🔒</Text>
-                <TextInput
-                  ref={confirmPasswordRef}
-                  style={[
-                    styles.passwordInput,
-                    Platform.OS === 'web' && {
-                      outlineStyle: 'none' as any,
-                      outlineWidth: 0,
-                    } as any,
-                  ]}
-                  placeholder={ui.confirmPassword}
-                  placeholderTextColor={COLORS.textMuted}
-                  value={confirmPassword}
-                  onChangeText={setConfirmPassword}
-                  secureTextEntry={!showConfirmPassword}
-                  autoComplete="new-password"
-                  editable={!isLoading}
-                  onFocus={() => setConfirmPasswordFocused(true)}
-                  onBlur={() => setConfirmPasswordFocused(false)}
-                  returnKeyType="go"
-                  onSubmitEditing={() => {
-                    if (
-                      name.trim() &&
-                      email.trim() &&
-                      password.trim() &&
-                      confirmPassword.trim() &&
-                      !isLoading
-                    ) {
-                      handleSignUp();
-                    }
-                  }}
-                />
-                <TouchableOpacity
-                  style={styles.eyeBtn}
-                  onPress={() => setShowConfirmPassword(!showConfirmPassword)}
-                >
-                  <Text style={styles.eyeIcon}>{showConfirmPassword ? '🙈' : '👁️'}</Text>
-                </TouchableOpacity>
-              </View>
-
-              <TouchableOpacity
-                style={[styles.signUpBtn, (isLoading || !canSubmit) && styles.signUpBtnLoading]}
-                onPress={handleSignUp}
-                disabled={!canSubmit}
-              >
-                {isLoading ? (
-                  <ActivityIndicator color="#FFFFFF" />
-                ) : (
-                  <Text style={styles.signUpBtnText}>{ui.signUp}</Text>
-                )}
-              </TouchableOpacity>
-
-              <Text style={styles.privacyNote}>{ui.privacyNote}</Text>
-
-              <TouchableOpacity
-                style={styles.signInLink}
-                onPress={() => router.push('/auth/sign-in')}
-              >
-                <Text style={styles.signInLinkText}>
-                  {ui.alreadyHaveAccount}{' '}
-                  <Text style={styles.signInLinkBold}>{ui.signInLink}</Text>
-                </Text>
-              </TouchableOpacity>
+            <View style={[styles.card, { backgroundColor: cardBg, borderColor: colors.border }]}>
+              {step === 'account' && renderAccountStep()}
+              {step === 'grade' && renderGradeStep()}
+              {step === 'avatar' && renderAvatarStep()}
             </View>
           </ScrollView>
         </KeyboardAvoidingView>
@@ -403,14 +476,8 @@ export default function SignUpScreen() {
 }
 
 const styles = StyleSheet.create({
-  safe: {
-    flex: 1,
-    backgroundColor: '#FFFFFF',
-  },
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-  },
+  safe: { flex: 1 },
+  container: { flex: 1, flexDirection: 'row' },
   leftPanel: {
     flex: 55,
     position: 'relative',
@@ -435,15 +502,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 80, 40, 0.4)',
     bottom: 100,
     left: 80,
-  },
-  decorCircle3: {
-    position: 'absolute',
-    width: 160,
-    height: 160,
-    borderRadius: 80,
-    backgroundColor: 'rgba(30, 60, 120, 0.3)',
-    top: 200,
-    right: -40,
   },
   leftLogo: {
     flexDirection: 'row',
@@ -482,7 +540,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     color: 'rgba(255,255,255,0.6)',
     fontStyle: 'italic',
-    lineHeight: 22,
   },
   quoteAuthor: {
     fontSize: FONT_SIZES.sm,
@@ -490,10 +547,7 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.5)',
     marginTop: 4,
   },
-  rightPanel: {
-    flex: 45,
-    backgroundColor: '#FFFFFF',
-  },
+  rightPanel: { flex: 45 },
   formScroll: {
     flexGrow: 1,
     justifyContent: 'center',
@@ -502,84 +556,79 @@ const styles = StyleSheet.create({
   mobileLogo: {
     alignItems: 'center',
     gap: SPACING.sm,
-    marginBottom: SPACING.xl,
+    marginBottom: SPACING.lg,
   },
   mobileAppName: {
     fontSize: FONT_SIZES.xl,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.primary,
+  },
+  stepDots: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: SPACING.sm,
+    marginBottom: SPACING.lg,
+  },
+  dot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
   },
   card: {
     width: '100%',
-    maxWidth: 400,
+    maxWidth: 440,
     alignSelf: 'center',
-    backgroundColor: '#FFFFFF',
     borderRadius: RADIUS.xl,
     padding: SPACING.xl,
-    shadowColor: '#000',
-    shadowOpacity: 0.08,
-    shadowOffset: { width: 0, height: 8 },
-    shadowRadius: 24,
-    elevation: 6,
+    borderWidth: 1,
     gap: SPACING.md,
+    shadowColor: '#000',
+    shadowOpacity: 0.06,
+    shadowOffset: { width: 0, height: 8 },
+    shadowRadius: 20,
+    elevation: 4,
   },
-  welcomeTitle: {
-    fontSize: FONT_SIZES.xl,
+  stepTitle: {
+    fontSize: FONT_SIZES.xxl,
     fontFamily: 'Poppins-Bold',
-    color: COLORS.textPrimary,
+    textAlign: 'center',
   },
-  welcomeSub: {
-    fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
-    color: COLORS.textMuted,
-    marginTop: -SPACING.sm,
+  stepSub: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: FONT_FAMILY.regular,
+    textAlign: 'center',
+    marginBottom: SPACING.sm,
   },
   inputGroup: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.sm,
-    backgroundColor: COLORS.background,
     borderRadius: RADIUS.lg,
     paddingHorizontal: SPACING.md,
     borderWidth: 1.5,
-    borderColor: 'transparent',
     minHeight: 52,
   },
   inputGroupError: { borderColor: COLORS.error },
   inputGroupValid: { borderColor: COLORS.success },
-  inputGroupFocused: { borderColor: COLORS.primary },
   passwordGroup: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: COLORS.background,
     borderRadius: RADIUS.lg,
     paddingHorizontal: SPACING.md,
     borderWidth: 1.5,
-    borderColor: 'transparent',
     minHeight: 52,
-    overflow: 'hidden',
     gap: SPACING.sm,
-  },
-  passwordInput: {
-    flex: 1,
-    fontSize: 16,
-    fontFamily: 'Poppins-Regular',
-    color: COLORS.textPrimary,
-    paddingVertical: SPACING.md,
-  },
-  eyeBtn: {
-    width: 36,
-    height: 36,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexShrink: 0,
   },
   inputIcon: { fontSize: 18 },
   input: {
     flex: 1,
     fontSize: 16,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textPrimary,
+    paddingVertical: SPACING.md,
+  },
+  passwordInput: {
+    flex: 1,
+    fontSize: 16,
+    fontFamily: 'Poppins-Regular',
     paddingVertical: SPACING.md,
   },
   inputValid: {
@@ -587,10 +636,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: 'Poppins-Bold',
   },
-  eyeIcon: { fontSize: 18, padding: 4 },
+  eyeBtn: {
+    width: 36,
+    height: 36,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  eyeIcon: { fontSize: 18 },
   fieldError: {
     fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-Regular',
     color: COLORS.error,
     marginTop: -SPACING.sm,
   },
@@ -603,37 +657,72 @@ const styles = StyleSheet.create({
   },
   errorText: {
     fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
     color: COLORS.error,
   },
-  signUpBtn: {
-    backgroundColor: COLORS.primary,
+  primaryBtn: {
     borderRadius: RADIUS.lg,
     paddingVertical: SPACING.md,
     alignItems: 'center',
-    minHeight: 52,
+    minHeight: 56,
     justifyContent: 'center',
+    marginTop: SPACING.sm,
   },
-  signUpBtnLoading: { opacity: 0.7 },
-  signUpBtnText: {
+  primaryBtnDisabled: { opacity: 0.6 },
+  primaryBtnText: {
     color: '#FFFFFF',
-    fontSize: FONT_SIZES.md,
+    fontSize: FONT_SIZES.lg,
     fontFamily: 'Poppins-Bold',
   },
-  privacyNote: {
-    fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-Regular',
-    color: COLORS.textMuted,
-    textAlign: 'center',
-  },
-  signInLink: { alignItems: 'center' },
+  signInLink: { alignItems: 'center', marginTop: SPACING.sm },
   signInLinkText: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-Regular',
-    color: COLORS.textMuted,
   },
   signInLinkBold: {
     fontFamily: 'Poppins-Bold',
-    color: COLORS.primary,
   },
+  gradeGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: SPACING.md,
+    justifyContent: 'center',
+  },
+  gradeCard: {
+    width: '46%',
+    minWidth: 140,
+    paddingVertical: SPACING.lg,
+    paddingHorizontal: SPACING.md,
+    borderRadius: RADIUS.xl,
+    borderWidth: 2,
+    alignItems: 'center',
+    gap: SPACING.sm,
+  },
+  gradeEmoji: { fontSize: 28 },
+  gradeLabel: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-Bold',
+  },
+  avatarGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: SPACING.md,
+    justifyContent: 'center',
+    marginBottom: SPACING.md,
+  },
+  avatarCard: {
+    width: 88,
+    height: 88,
+    borderRadius: 44,
+    borderWidth: 3,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  avatarCardActive: {
+    shadowColor: COLORS.primary,
+    shadowOpacity: 0.35,
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 12,
+    elevation: 6,
+  },
+  avatarEmoji: { fontSize: 40 },
 });

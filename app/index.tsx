@@ -21,7 +21,6 @@ import { useAuthStore } from '@/store/authStore';
 import { LANGUAGES, type LanguageMeta, getUIText } from '@/constants/languages';
 import { SPACING, RADIUS, FONT_SIZES, SHADOWS } from '@/constants/theme';
 import { PressableScale } from '@/components/PressableScale';
-import { getChildren } from '@/services/dbService';
 import { useTheme } from '@/hooks/useTheme';
 
 const SCREEN = {
@@ -115,28 +114,17 @@ export default function WelcomeScreen() {
     return unsub;
   }, []);
 
-  // After sign-in, route the user based on whether they have any child
-  // profiles. Parents with children land on the "Who is studying today?"
-  // picker; users without children continue through the existing
-  // grade-selection flow. Skip when the user is intentionally changing
-  // language (the welcome screen is reused for that flow).
+  // After sign-in, go to the dashboard (or grade picker if grade not set).
+  // Skip when the user is intentionally changing language on this screen.
   useEffect(() => {
     if (!session || isChangingLanguage) return;
 
-    let cancelled = false;
-    async function checkChildren() {
-      const kids = await getChildren();
-      if (cancelled) return;
-      if (kids.length > 0) {
-        router.replace('/child-select');
-      } else {
-        router.replace('/grade');
-      }
+    const grade = useAppStore.getState().selectedGrade;
+    if (grade) {
+      router.replace('/dashboard');
+    } else {
+      router.replace('/grade');
     }
-    checkChildren();
-    return () => {
-      cancelled = true;
-    };
   }, [session, isChangingLanguage]);
 
   function handleSelectLanguage(lang: LanguageMeta) {

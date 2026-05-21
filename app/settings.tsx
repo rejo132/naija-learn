@@ -21,7 +21,6 @@ import { router } from 'expo-router';
 import { useTheme } from '@/hooks/useTheme';
 import { useAppStore } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
-import { ParentGate } from '@/components/ParentGate';
 import { supabase } from '@/lib/supabase';
 import { COLORS, FONT_SIZES, SPACING, RADIUS } from '@/constants/theme';
 import { LANGUAGE_NAMES, type Language } from '@/constants/languages';
@@ -107,9 +106,6 @@ export default function SettingsScreen() {
     user?.email?.split('@')[0] ??
     'Student';
 
-  const [parentGateVisible, setParentGateVisible] = useState(false);
-  const [parentGatePurpose, setParentGatePurpose] = useState('');
-  const [showPinGate, setShowPinGate] = useState(false);
   const [dataSaver, setDataSaver] = useState(false);
   const [notifications, setNotifications] = useState(true);
   const [offlineMode, setOfflineMode] = useState(false);
@@ -124,22 +120,6 @@ export default function SettingsScreen() {
 
   const speeds = ['Slow', 'Normal', 'Fast'] as const;
   const [voiceSpeed, setVoiceSpeed] = useState<(typeof speeds)[number]>('Normal');
-
-  function openParentZone(purpose: 'children' | 'reports' | 'limits') {
-    setParentGatePurpose(purpose);
-    setParentGateVisible(true);
-  }
-
-  function handleParentSuccess() {
-    setParentGateVisible(false);
-    if (parentGatePurpose === 'children') {
-      router.push('/children');
-    } else if (parentGatePurpose === 'reports') {
-      router.push('/parent-dashboard');
-    } else if (parentGatePurpose === 'limits') {
-      setShowDailyLimit(true);
-    }
-  }
 
   async function handleDeleteData() {
     if (deleteConfirmText !== 'DELETE') return;
@@ -168,8 +148,7 @@ export default function SettingsScreen() {
 
   async function handleSignOut() {
     // Wipe local cached learning state BEFORE clearing the session so the
-    // next user signing in on this device doesn't inherit XP / streak /
-    // active child / parent PIN from the previous user.
+    // next user signing in on this device doesn't inherit XP / streak from the previous user.
     useAppStore.getState().resetAll();
     useAuthStore.getState().setSession(null);
     useAuthStore.getState().setUserRole(null);
@@ -221,57 +200,6 @@ export default function SettingsScreen() {
           >
             <Text style={styles.editProfileText}>Edit</Text>
           </TouchableOpacity>
-        </View>
-
-        <SectionHeader title="🔐  ACCOUNT" colors={colors} />
-        <View style={[styles.card, { backgroundColor: cardBg }]}>
-          <SettingsRow
-            emoji="🔐"
-            label={t('settingsChangePIN')}
-            sublabel="Update the 4-digit Parent Portal PIN"
-            onPress={() => setShowPinGate(true)}
-            colors={colors}
-            isLast
-          />
-        </View>
-
-        <SectionHeader title={`👨‍👩‍👧  ${t('settingsParentZone').toUpperCase()}`} colors={colors} />
-        <View style={[styles.card, { backgroundColor: cardBg }]}>
-          <SettingsRow
-            emoji="👧"
-            label={t('settingsManageChildren')}
-            sublabel="Add or edit child profiles"
-            onPress={() => openParentZone('children')}
-            colors={colors}
-          />
-          <SettingsRow
-            emoji="⏱️"
-            label="Daily Screen Limits"
-            sublabel={`Current: ${dailyLimitMinutes} minutes/day`}
-            onPress={() => openParentZone('limits')}
-            colors={colors}
-          />
-          <SettingsRow
-            emoji="📋"
-            label="Subject Focus"
-            sublabel="Choose priority subjects"
-            onPress={() =>
-              Alert.alert(
-                t('subjectFocusAlertTitle'),
-                t('subjectFocusAlertMsg'),
-                [{ text: t('subjectFocusAlertOk') }]
-              )
-            }
-            colors={colors}
-          />
-          <SettingsRow
-            emoji="📊"
-            label="Download Reports"
-            sublabel="View detailed progress reports"
-            onPress={() => openParentZone('reports')}
-            colors={colors}
-            isLast
-          />
         </View>
 
         <SectionHeader title={`🎮  ${t('settingsForChild').toUpperCase()}: ${userName.toUpperCase()}`} colors={colors} />
@@ -482,21 +410,6 @@ export default function SettingsScreen() {
 
         <View style={{ height: SPACING.xxxl }} />
       </ScrollView>
-
-      <ParentGate
-        visible={parentGateVisible}
-        onSuccess={handleParentSuccess}
-        onCancel={() => setParentGateVisible(false)}
-      />
-
-      <ParentGate
-        visible={showPinGate}
-        onSuccess={() => {
-          setShowPinGate(false);
-          router.push('/change-password');
-        }}
-        onCancel={() => setShowPinGate(false)}
-      />
 
       <Modal visible={showDailyLimit} transparent animationType="slide">
         <View style={styles.modalOverlay}>

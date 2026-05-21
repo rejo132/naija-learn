@@ -56,6 +56,10 @@ interface AppState {
   bestQuizScore: number;
   unlockedAchievements: string[];
   isDarkMode: boolean;
+  // ── Student profile (local display) ──
+  userName: string;
+  userAvatar: string;
+  userGrade: string;
   // ── Save & resume ──
   /** Subject label of the most recently opened lesson, or null. */
   lastSubject: string | null;
@@ -71,20 +75,6 @@ interface AppState {
   subjectProgress: Record<string, number>;
   /** Tracks whether the LearningFlow intro has been completed for a subject+grade. */
   completedFlows: Record<string, boolean>;
-  // ── Active child session ──
-  /** ID of the child currently using the app, or null when the parent is using it directly. */
-  activeChildId: string | null;
-  activeChildName: string | null;
-  activeChildAvatar: string | null;
-  activeChildGrade: number | null;
-  activeChildLanguage: string | null;
-  activeChildXP: number;
-  activeChildStreak: number;
-  activeChildLastStudyDate: string | null;
-  /** 4-digit PIN that unlocks the parent portal (`ParentGate`). Default `'1234'`. */
-  parentPin: string;
-  /** `true` after the parent has created a custom PIN via ParentGate setup. */
-  hasSetupParentPin: boolean;
   setLanguage: (lang: LanguageCode) => void;
   setGrade: (grade: number) => void;
   setSubject: (subject: Subject) => void;
@@ -116,23 +106,6 @@ interface AppState {
   setXP: (xp: number) => void;
   setStreak: (streak: number) => void;
   setSubjectProgress: (progress: Record<string, number>) => void;
-  setActiveChild: (child: {
-    id: string;
-    name: string;
-    avatar: string;
-    grade: number;
-    language: string;
-    xp?: number;
-    streak?: number;
-    lastStudyDate?: string | null;
-    lessonsCompleted?: number;
-    bestQuizScore?: number;
-  }) => void;
-  clearActiveChild: () => void;
-  addActiveChildXP: (amount: number) => void;
-  updateActiveChildStreak: () => void;
-  setParentPin: (pin: string) => void;
-  setHasSetupParentPin: (val: boolean) => void;
   /** Wipe all child-facing data — used by the "Delete my data" flow. */
   resetAll: () => void;
 }
@@ -151,6 +124,9 @@ type PersistedAppState = Pick<
   | 'bestQuizScore'
   | 'unlockedAchievements'
   | 'isDarkMode'
+  | 'userName'
+  | 'userAvatar'
+  | 'userGrade'
   | 'lastSubject'
   | 'lastSubjectEmoji'
   | 'lastGrade'
@@ -158,16 +134,6 @@ type PersistedAppState = Pick<
   | 'lastOpenedAt'
   | 'subjectProgress'
   | 'completedFlows'
-  | 'activeChildId'
-  | 'activeChildName'
-  | 'activeChildAvatar'
-  | 'activeChildGrade'
-  | 'activeChildLanguage'
-  | 'activeChildXP'
-  | 'activeChildStreak'
-  | 'activeChildLastStudyDate'
-  | 'parentPin'
-  | 'hasSetupParentPin'
 >;
 
 /**
@@ -182,8 +148,7 @@ type AppStateValues = Omit<AppState,
   | 'incrementLessons' | 'updateBestQuizScore' | 'unlockAchievement'
   | 'toggleDarkMode' | 'setLastSession' | 'updateSubjectProgress'
   | 'markFlowCompleted' | 'setXP' | 'setStreak' | 'setSubjectProgress'
-  | 'setActiveChild' | 'clearActiveChild' | 'addActiveChildXP'
-  | 'updateActiveChildStreak' | 'setParentPin' | 'setHasSetupParentPin' | 'resetAll'
+  | 'resetAll'
 >;
 
 const initialState: AppStateValues = {
@@ -203,6 +168,9 @@ const initialState: AppStateValues = {
   bestQuizScore: 0,
   unlockedAchievements: [],
   isDarkMode: false,
+  userName: '',
+  userAvatar: '🦁',
+  userGrade: '',
   lastSubject: null,
   lastSubjectEmoji: null,
   lastGrade: null,
@@ -210,16 +178,6 @@ const initialState: AppStateValues = {
   lastOpenedAt: null,
   subjectProgress: {},
   completedFlows: {},
-  activeChildId: null,
-  activeChildName: null,
-  activeChildAvatar: null,
-  activeChildGrade: null,
-  activeChildLanguage: null,
-  activeChildXP: 0,
-  activeChildStreak: 0,
-  activeChildLastStudyDate: null,
-  parentPin: '1234',
-  hasSetupParentPin: false,
 };
 
 export const useAppStore = create<AppState>()(
@@ -313,59 +271,6 @@ export const useAppStore = create<AppState>()(
       setXP: (xp) => set({ xp }),
       setStreak: (streak) => set({ streak }),
       setSubjectProgress: (subjectProgress) => set({ subjectProgress }),
-      setActiveChild: (child) =>
-        set({
-          activeChildId: child.id,
-          activeChildName: child.name,
-          activeChildAvatar: child.avatar,
-          activeChildGrade: child.grade,
-          activeChildLanguage: child.language,
-          activeChildXP: child.xp ?? 0,
-          activeChildStreak: child.streak ?? 0,
-          activeChildLastStudyDate: child.lastStudyDate ?? null,
-          xp: child.xp ?? 0,
-          streak: child.streak ?? 0,
-          lastStudyDate: child.lastStudyDate ?? null,
-          selectedGrade: child.grade,
-          selectedLanguage: (child.language ?? 'en') as LanguageCode,
-          lessonsCompleted: child.lessonsCompleted ?? 0,
-          bestQuizScore: child.bestQuizScore ?? 0,
-          subjectProgress: {},
-          completedFlows: {},
-        }),
-      clearActiveChild: () =>
-        set({
-          activeChildId: null,
-          activeChildName: null,
-          activeChildAvatar: null,
-          activeChildGrade: null,
-          activeChildLanguage: null,
-          activeChildXP: 0,
-          activeChildStreak: 0,
-          activeChildLastStudyDate: null,
-        }),
-      addActiveChildXP: (amount) =>
-        set((state) => ({
-          activeChildXP: (state.activeChildXP ?? 0) + amount,
-        })),
-      setParentPin: (pin) => set({ parentPin: pin }),
-      setHasSetupParentPin: (val) => set({ hasSetupParentPin: val }),
-      updateActiveChildStreak: () =>
-        set((state) => {
-          const today = new Date().toISOString().split('T')[0];
-          const last = state.activeChildLastStudyDate;
-          if (last === today) return {};
-          const yesterday = new Date();
-          yesterday.setDate(yesterday.getDate() - 1);
-          const yesterdayStr = yesterday.toISOString().split('T')[0];
-          const newStreak =
-            last === yesterdayStr ? (state.activeChildStreak ?? 0) + 1 : 1;
-          return {
-            activeChildStreak: newStreak,
-            activeChildLastStudyDate: today,
-            streak: newStreak,
-          };
-        }),
       resetAll: () => set({ ...initialState }),
     }),
     {
@@ -387,6 +292,9 @@ export const useAppStore = create<AppState>()(
         bestQuizScore: state.bestQuizScore,
         unlockedAchievements: state.unlockedAchievements,
         isDarkMode: state.isDarkMode,
+        userName: state.userName,
+        userAvatar: state.userAvatar,
+        userGrade: state.userGrade,
         lastSubject: state.lastSubject,
         lastSubjectEmoji: state.lastSubjectEmoji,
         lastGrade: state.lastGrade,
@@ -394,16 +302,6 @@ export const useAppStore = create<AppState>()(
         lastOpenedAt: state.lastOpenedAt,
         subjectProgress: state.subjectProgress,
         completedFlows: state.completedFlows,
-        activeChildId: state.activeChildId,
-        activeChildName: state.activeChildName,
-        activeChildAvatar: state.activeChildAvatar,
-        activeChildGrade: state.activeChildGrade,
-        activeChildLanguage: state.activeChildLanguage,
-        activeChildXP: state.activeChildXP,
-        activeChildStreak: state.activeChildStreak,
-        activeChildLastStudyDate: state.activeChildLastStudyDate,
-        parentPin: state.parentPin,
-        hasSetupParentPin: state.hasSetupParentPin,
       }),
       merge: (persisted, current) => ({
         ...current,
@@ -414,17 +312,10 @@ export const useAppStore = create<AppState>()(
         sessionStartTime: null,
       }),
       onRehydrateStorage: () => {
-        return (state, error) => {
+        return (_state, error) => {
           if (error) {
             console.error('Hydration error:', error);
           }
-          // One-time migration: parents who already changed PIN before
-          // hasSetupParentPin existed should not see the setup screen again.
-          if (state && state.parentPin !== '1234' && !state.hasSetupParentPin) {
-            state.hasSetupParentPin = true;
-            useAppStore.setState({ hasSetupParentPin: true });
-          }
-          // state may be undefined if storage was empty — mark ready either way
           useAppStore.getState().setAppReady(true);
         };
       },

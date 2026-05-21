@@ -31,7 +31,6 @@ import { Atmosphere } from '@/components/Atmosphere';
 import { GlassCard } from '@/components/GlassCard';
 import { PressableScale } from '@/components/PressableScale';
 import { TutorAvatar } from '@/components/TutorAvatar';
-import { ChildSwitcher } from '@/components/ChildSwitcher';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { syncProfile } from '@/services/dbService';
 
@@ -52,7 +51,6 @@ function isStudiedToday(lastStudyDate: string | null) {
 export default function DashboardScreen() {
   const [activeTab, setActiveTab] = useState<Tab>('subjects');
   const [aiPrompt, setAiPrompt] = useState('');
-  const [showSwitcher, setShowSwitcher] = useState(false);
   const { selectedLanguage, selectedGrade, setSubject, setLanguage, xp, streak, lastStudyDate, lessonsCompleted } =
     useAppStore();
   const selectedPersonalityId = useAppStore((s) => s.selectedPersonalityId);
@@ -61,11 +59,8 @@ export default function DashboardScreen() {
   const lastGrade = useAppStore((s) => s.lastGrade);
   const lastOpenedAt = useAppStore((s) => s.lastOpenedAt);
   const subjectProgress = useAppStore((s) => s.subjectProgress);
-  const activeChildName = useAppStore((s) => s.activeChildName);
-  const activeChildAvatar = useAppStore((s) => s.activeChildAvatar);
-  const activeChildId = useAppStore((s) => s.activeChildId);
-  const activeChildXP = useAppStore((s) => s.activeChildXP);
-  const activeChildStreak = useAppStore((s) => s.activeChildStreak);
+  const userName = useAppStore((s) => s.userName);
+  const userAvatar = useAppStore((s) => s.userAvatar);
   const user = useAuthStore((s) => s.user);
   const ui = getUIText(selectedLanguage);
   const { t } = useTranslation();
@@ -78,10 +73,12 @@ export default function DashboardScreen() {
   const { isConnected } = useNetworkStatus();
 
   const greeting = getTimeGreeting(t);
-  const userName =
+  const displayName =
+    userName ||
     (user?.user_metadata?.name as string | undefined) ||
+    (user?.user_metadata?.full_name as string | undefined) ||
     user?.email?.split('@')[0] ||
-    null;
+    'Student';
   const studiedToday = isStudiedToday(lastStudyDate);
   const dailyMissionProgress = studiedToday ? 1 : 0;
 
@@ -98,24 +95,17 @@ export default function DashboardScreen() {
 
   useEffect(() => {
     syncProfile({
-      xp: activeChildId ? (activeChildXP ?? xp ?? 0) : (xp ?? 0),
-      streak: activeChildId ? (activeChildStreak ?? streak ?? 0) : (streak ?? 0),
+      name: displayName,
       grade: selectedGrade ?? 1,
+      avatar: userAvatar,
+      xp: xp ?? 0,
+      streak: streak ?? 0,
       language: selectedLanguage ?? 'en',
       personalityId: selectedPersonalityId ?? 'aunty_naija',
       lastActiveDate: lastActiveDate ?? new Date().toISOString().split('T')[0],
     }).catch(() => {});
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    xp,
-    streak,
-    activeChildId,
-    activeChildXP,
-    activeChildStreak,
-    selectedGrade,
-    selectedLanguage,
-    selectedPersonalityId,
-  ]);
+  }, [xp, streak, selectedGrade, selectedLanguage, selectedPersonalityId, displayName, userAvatar]);
 
   if (!selectedGrade) return <Redirect href="/grade" />;
 
@@ -167,7 +157,7 @@ export default function DashboardScreen() {
                 {greeting.emoji} {greeting.text}
               </Text>
               <Text style={[styles.greetingName, { color: colors.textPrimary }]}>
-                {userName ? `${t('welcomeBack')}, ${userName}` : ui.welcomeToLearnova}
+                {userAvatar} Hello, {displayName}!
               </Text>
               {streak > 0 && (
                 <Text style={[styles.greetingStreak, { color: colors.accent }]}>
@@ -195,18 +185,6 @@ export default function DashboardScreen() {
                 <Text style={styles.langPillText}>
                   {LANGUAGE_NAMES[selectedLanguage as Language]?.split(' ')[0]}
                 </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.switchChildBtn}
-                onPress={() => setShowSwitcher(true)}
-              >
-                <Text style={styles.switchChildAvatar}>
-                  {activeChildAvatar ?? '👤'}
-                </Text>
-                <Text style={styles.switchChildName} numberOfLines={1}>
-                  {activeChildName ?? t('selectChild')}
-                </Text>
-                <Text style={styles.switchChildChevron}>⌄</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -548,13 +526,6 @@ export default function DashboardScreen() {
           <Text style={styles.floatingTutorText}>{ui.askTutor}</Text>
         </TouchableOpacity>
 
-        <ChildSwitcher
-          visible={showSwitcher}
-          onClose={() => setShowSwitcher(false)}
-          onChildSelected={() => {
-            setShowSwitcher(false);
-          }}
-        />
       </View>
     </SafeAreaView>
   );

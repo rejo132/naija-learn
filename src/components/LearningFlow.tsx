@@ -9,7 +9,7 @@ import {
 import { useTheme } from '@/hooks/useTheme';
 import { FONT_SIZES, SPACING, RADIUS, COLORS } from '@/constants/theme';
 import { useSpeech } from '@/hooks/useSpeech';
-import { saveProgress, updateChildStats } from '@/services/dbService';
+import { saveProgress } from '@/services/dbService';
 import { useAppStore } from '@/store/appStore';
 import { LearningFlowState, type LearningFlowStep } from '@/types/ai.types';
 
@@ -317,7 +317,6 @@ export function LearningFlow({
 
   async function handleContinueToChat() {
     const finalScore = Math.round((score / questions.length) * 100);
-    const { activeChildId } = useAppStore.getState();
 
     await saveProgress({
       subject: subject.label,
@@ -327,22 +326,8 @@ export function LearningFlow({
       xpEarned,
       durationSeconds: 0,
       flowCompleted: true,
-      childId: activeChildId,
+      childId: null,
     }).catch(() => {});
-
-    if (activeChildId) {
-      const {
-        activeChildXP,
-        activeChildStreak,
-        lastStudyDate,
-      } = useAppStore.getState();
-      await updateChildStats(
-        activeChildId,
-        activeChildXP ?? 0,
-        activeChildStreak ?? 0,
-        lastStudyDate ?? new Date().toISOString().split('T')[0],
-      ).catch(() => {});
-    }
 
     onComplete({
       step: 'chat',

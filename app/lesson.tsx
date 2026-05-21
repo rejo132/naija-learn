@@ -26,7 +26,7 @@ import Animated, {
 import { Redirect, router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore, type ChatMessage } from '@/store/appStore';
-import { saveProgress, updateChildStats } from '@/services/dbService';
+import { saveProgress } from '@/services/dbService';
 import { getGreeting, getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getNigerianGrade, getLessonQuickActions, getQuickPrompts } from '@/constants/subjects';
@@ -298,9 +298,6 @@ export default function LessonScreen() {
   const setLastSession = useAppStore((s) => s.setLastSession);
   const markFlowCompleted = useAppStore((s) => s.markFlowCompleted);
   const updateSubjectProgress = useAppStore((s) => s.updateSubjectProgress);
-  const activeChildId = useAppStore((s) => s.activeChildId);
-  const addActiveChildXP = useAppStore((s) => s.addActiveChildXP);
-  const updateActiveChildStreak = useAppStore((s) => s.updateActiveChildStreak);
   const { speak, stop, toggle, isSpeaking } = useSpeech(
     (selectedLanguage as VoiceLanguage) ?? 'en'
   );
@@ -365,23 +362,6 @@ export default function LessonScreen() {
     if (!hasCountedLesson.current) {
       hasCountedLesson.current = true;
       useAppStore.getState().incrementLessons();
-    }
-  }
-
-  async function syncChildStatsToDb() {
-    const {
-      activeChildId,
-      activeChildXP,
-      activeChildStreak,
-      lastStudyDate,
-    } = useAppStore.getState();
-    if (activeChildId) {
-      await updateChildStats(
-        activeChildId,
-        activeChildXP ?? 0,
-        activeChildStreak ?? 0,
-        lastStudyDate ?? new Date().toISOString().split('T')[0],
-      ).catch(() => {});
     }
   }
 
@@ -579,19 +559,13 @@ export default function LessonScreen() {
             xpEarned: earnedXP,
             durationSeconds: durationSecs,
             flowCompleted: flowState?.hookCompleted ?? false,
-            childId: useAppStore.getState().activeChildId,
+            childId: null,
           }).catch((err) => console.error('saveProgress error:', err));
-
-          if (useAppStore.getState().activeChildId) {
-            addActiveChildXP(earnedXP);
-            updateActiveChildStreak();
-          }
 
           useAppStore.getState().updateStreak();
 
           updateSubjectProgress(selectedSubject.label, selectedGrade, finalScore);
           countLessonOnce();
-          void syncChildStatsToDb();
         }
       }
     } catch (error: unknown) {
@@ -735,7 +709,6 @@ export default function LessonScreen() {
               }
               useAppStore.getState().updateStreak();
               countLessonOnce();
-              void syncChildStatsToDb();
               seedChatAfterFlow(state);
             }}
             onSkip={() => {

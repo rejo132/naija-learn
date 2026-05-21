@@ -21,16 +21,6 @@ export interface Profile {
   created_at: string;
 }
 
-export interface Child {
-  id: string;
-  parent_id: string;
-  name: string;
-  grade: number;
-  language: string;
-  avatar: string;
-  created_at: string;
-}
-
 export interface ProgressEntry {
   id: string;
   child_id: string;
@@ -71,65 +61,6 @@ export async function updateProfile(
     .eq('id', (await supabase.auth.getUser()).data.user?.id ?? '');
   if (error) {
     captureError(error, { context: 'updateProfile error' });
-    return false;
-  }
-  return true;
-}
-
-// ─── Children ─────────────────────────────────────────────
-
-/**
- * Get all children belonging to the logged-in parent.
- */
-export async function getChildren(): Promise<Child[]> {
-  const { data, error } = await supabase
-    .from('children')
-    .select('*')
-    .order('created_at', { ascending: true });
-  if (error) {
-    captureError(error, { context: 'getChildren error' });
-    return [];
-  }
-  return data ?? [];
-}
-
-/**
- * Add a new child profile under the logged-in parent.
- */
-export async function addChild(
-  child: Pick<Child, 'name' | 'grade' | 'language' | 'avatar'>
-): Promise<Child | null> {
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return null;
-
-  const { data, error } = await supabase
-    .from('children')
-    .insert({
-      name: child.name,
-      grade: String(child.grade),
-      language: child.language,
-      avatar: child.avatar,
-      parent_id: user.id,
-    })
-    .select()
-    .single();
-  if (error) {
-    captureError(error, { context: 'addChild error' });
-    return null;
-  }
-  return data;
-}
-
-/**
- * Delete a child profile by ID.
- */
-export async function deleteChild(childId: string): Promise<boolean> {
-  const { error } = await supabase
-    .from('children')
-    .delete()
-    .eq('id', childId);
-  if (error) {
-    captureError(error, { context: 'deleteChild error' });
     return false;
   }
   return true;
@@ -195,6 +126,7 @@ export async function saveProgress({
  * Called on app start to restore XP, streak, grade etc.
  */
 export async function loadUserProgress(): Promise<{
+  name: string;
   totalXP: number;
   streak: number;
   grade: number;
@@ -210,7 +142,7 @@ export async function loadUserProgress(): Promise<{
 
     const { data: profile, error: profileError } = await supabase
       .from('profiles')
-      .select('xp, streak, grade, language, personality_id')
+      .select('name, xp, streak, grade, language, personality_id')
       .eq('id', user.id)
       .single();
 
@@ -239,10 +171,16 @@ export async function loadUserProgress(): Promise<{
       }
     }
 
+    const gradeNum =
+      typeof profile.grade === 'number'
+        ? profile.grade
+        : parseInt(String(profile.grade ?? '1'), 10) || 1;
+
     return {
+      name: profile.name ?? '',
       totalXP: profile.xp ?? 0,
       streak: profile.streak ?? 0,
-      grade: profile.grade ?? 1,
+      grade: gradeNum,
       language: profile.language ?? 'en',
       personalityId: profile.personality_id ?? 'aunty_naija',
       subjectProgress,
@@ -259,19 +197,25 @@ export async function loadUserProgress(): Promise<{
  * Call this when XP or streak changes.
  */
 export async function syncProfile({
+  name,
+  grade,
+  avatar,
   xp,
   streak,
-  grade,
   language,
   personalityId,
   lastActiveDate,
+  role,
 }: {
+  name?: string;
+  grade?: number | string;
+  avatar?: string;
   xp: number;
   streak: number;
-  grade: number;
   language: string;
   personalityId: string;
   lastActiveDate: string;
+  role?: string;
 }): Promise<void> {
   try {
     const {
@@ -279,17 +223,23 @@ export async function syncProfile({
     } = await supabase.auth.getUser();
     if (!user) return;
 
+    const updates: Record<string, unknown> = {
+      xp,
+      streak,
+      language,
+      personality_id: personalityId,
+      last_active_date: lastActiveDate,
+      updated_at: new Date().toISOString(),
+    };
+
+    if (name !== undefined) updates.name = name;
+    if (grade !== undefined) updates.grade = String(grade);
+    if (avatar !== undefined) updates.avatar = avatar;
+    if (role !== undefined) updates.role = role;
+
     const { error } = await supabase
       .from('profiles')
-      .update({
-        xp,
-        streak,
-        grade,
-        language,
-        personality_id: personalityId,
-        last_active_date: lastActiveDate,
-        updated_at: new Date().toISOString(),
-      })
+      .update(updates)
       .eq('id', user.id);
 
     if (error) {
@@ -297,207 +247,6 @@ export async function syncProfile({
     }
   } catch (err) {
     captureError(err, { context: 'syncProfile exception' });
-  }
-}
-
-/**
- * Get a weekly summary of progress for a specific child.
- * Only rows with matching `child_id` are included.
- */
-export async function getWeeklySummary(
-  childId: string,
-  _userId?: string
-): Promise<{
-  subjectsStudied: string[];
-  averageScore: number;
-  totalSessions: number;
-  totalMinutes: number;
-}> {
-  try {
-    const sevenDaysAgo = new Date();
-    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-
-    let data: Array<{
-      subject: string;
-      score: number | null;
-      duration_seconds: number | null;
-      created_at: string;
-    }> | null = null;
-
-    const { data: byChild, error: childError } = await supabase
-      .from('progress')
-      .select('subject, score, duration_seconds, created_at')
-      .eq('child_id', childId)
-      .gte('created_at', sevenDaysAgo.toISOString());
-
-    if (childError) {
-      captureError(childError, { context: 'getWeeklySummary child error' });
-    } else if (byChild && byChild.length > 0) {
-      data = byChild;
-    }
-
-    if (!data || data.length === 0) {
-      return {
-        subjectsStudied: [],
-        averageScore: 0,
-        totalSessions: 0,
-        totalMinutes: 0,
-      };
-    }
-
-    const subjects = [...new Set(data.map((p) => p.subject))];
-    const scores = data
-      .filter((p) => p.score !== null)
-      .map((p) => p.score as number);
-    const avgScore =
-      scores.length > 0
-        ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
-        : 0;
-    const totalSeconds = data.reduce(
-      (a, b) => a + (b.duration_seconds ?? 0),
-      0
-    );
-
-    return {
-      subjectsStudied: subjects,
-      averageScore: avgScore,
-      totalSessions: data.length,
-      totalMinutes: Math.round(totalSeconds / 60),
-    };
-  } catch (err) {
-    captureError(err, { context: 'getWeeklySummary exception' });
-    return {
-      subjectsStudied: [],
-      averageScore: 0,
-      totalSessions: 0,
-      totalMinutes: 0,
-    };
-  }
-}
-
-/**
- * Get the most recent progress entries (up to 20) for a child.
- * Only rows with matching `child_id` are included.
- */
-export async function getChildProgressHistory(
-  childId: string,
-  _userId?: string
-): Promise<
-  Array<{
-    id: string;
-    subject: string;
-    topic: string | null;
-    score: number | null;
-    duration_seconds: number;
-    created_at: string;
-    grade: number | null;
-  }>
-> {
-  try {
-    const { data: byChild, error: childError } = await supabase
-      .from('progress')
-      .select('id, subject, topic, score, duration_seconds, created_at, grade')
-      .eq('child_id', childId)
-      .order('created_at', { ascending: false })
-      .limit(20);
-
-    if (childError) {
-      captureError(childError, { context: 'getChildProgressHistory child error' });
-      return [];
-    }
-
-    if (!byChild || byChild.length === 0) {
-      return [];
-    }
-
-    return byChild;
-  } catch (err) {
-    captureError(err, { context: 'getChildProgressHistory exception' });
-    return [];
-  }
-}
-
-/**
- * Reconstruct a child's saved learning state from their progress rows.
- * Sums total XP across all sessions and walks back from today to compute
- * the current streak (consecutive days ending on today). Returns null if
- * the underlying query fails.
- */
-export async function updateChildStats(
-  childId: string,
-  xp: number,
-  streak: number,
-  lastActiveDate: string
-): Promise<void> {
-  try {
-    const { error } = await supabase
-      .from('children')
-      .update({
-        xp,
-        streak,
-        last_active_date: lastActiveDate,
-      })
-      .eq('id', childId);
-
-    if (error) throw error;
-  } catch (err) {
-    captureError(err, { context: 'updateChildStats' });
-  }
-}
-
-export async function loadChildProfile(childId: string): Promise<{
-  xp: number;
-  streak: number;
-  lastStudyDate: string | null;
-  lessonsCompleted: number;
-  bestQuizScore: number;
-} | null> {
-  try {
-    const { data, error } = await supabase
-      .from('progress')
-      .select('xp_earned, score, created_at')
-      .eq('child_id', childId)
-      .order('created_at', { ascending: false });
-
-    if (error || !data) return null;
-
-    const totalXP = data.reduce((sum, row) => sum + (row.xp_earned ?? 0), 0);
-    const lessonsCompleted = data.length;
-    const scores = data
-      .filter((row) => row.score != null)
-      .map((row) => row.score as number);
-    const bestQuizScore =
-      scores.length > 0 ? Math.max(...scores) : 0;
-
-    const dates = data
-      .map((row) => (row.created_at as string).split('T')[0])
-      .filter((v, i, a) => a.indexOf(v) === i)
-      .sort()
-      .reverse();
-
-    let streak = 0;
-    const today = new Date();
-    for (let i = 0; i < dates.length; i++) {
-      const expected = new Date(today);
-      expected.setDate(today.getDate() - i);
-      const expectedStr = expected.toISOString().split('T')[0];
-      if (dates[i] === expectedStr) {
-        streak++;
-      } else {
-        break;
-      }
-    }
-
-    return {
-      xp: totalXP,
-      streak,
-      lastStudyDate: dates[0] ?? null,
-      lessonsCompleted,
-      bestQuizScore,
-    };
-  } catch (err) {
-    captureError(err, { context: 'loadChildProfile exception' });
-    return null;
   }
 }
 

@@ -20,6 +20,7 @@ create table if not exists public.profiles (
   email              text,
   phone              text,
   role               text default 'parent',
+  avatar             text,
   xp                 integer default 0,
   streak             integer default 0,
   grade              text,

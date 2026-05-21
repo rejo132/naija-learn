@@ -75,10 +75,9 @@ export default function RootLayout() {
       await useAuthStore.getState().initialise();
 
       try {
-        const restoredChildId = useAppStore.getState().activeChildId;
         const saved = await loadUserProgress();
 
-        if (!restoredChildId && saved) {
+        if (saved) {
           const store = useAppStore.getState();
 
           if (saved.totalXP > (store.xp ?? 0)) {
@@ -95,6 +94,10 @@ export default function RootLayout() {
 
           if (saved.language && !store.selectedLanguage) {
             store.setLanguage(saved.language as 'en' | 'ha' | 'yo' | 'ig');
+          }
+
+          if (saved.name && !store.userName) {
+            useAppStore.setState({ userName: saved.name });
           }
 
           if (Object.keys(saved.subjectProgress).length > 0) {
@@ -209,12 +212,8 @@ export default function RootLayout() {
                 <Stack.Screen name="lesson" />
                 <Stack.Screen name="progress" />
                 <Stack.Screen name="achievements" />
-                <Stack.Screen name="children" />
-                <Stack.Screen name="child-select" />
-                <Stack.Screen name="parent-dashboard" />
                 <Stack.Screen name="personality" />
                 <Stack.Screen name="settings" />
-                <Stack.Screen name="change-password" />
                 <Stack.Screen name="auth" />
               </Stack>
               <BottomTabBar />

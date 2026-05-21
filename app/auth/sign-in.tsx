@@ -162,10 +162,7 @@ export default function SignInScreen() {
     clearError();
     try {
       await signIn(email.trim(), password);
-      // Always send the user through the child picker so parents with
-      // multiple kids choose which profile is studying. The picker itself
-      // forwards parents without children straight on to /grade.
-      router.replace('/child-select');
+      router.replace('/dashboard');
     } catch {
       setError('No account found. Please check your details.');
     } finally {
