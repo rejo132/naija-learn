@@ -25,6 +25,8 @@ import { supabase } from '@/lib/supabase';
 import { COLORS, FONT_SIZES, SPACING, RADIUS } from '@/constants/theme';
 import { LANGUAGE_NAMES, type Language } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
+import { AVATAR_UNLOCKS } from '@/constants/levels';
+import { syncProfile } from '@/services/dbService';
 
 type ThemeColors = ReturnType<typeof useTheme>['colors'];
 
@@ -99,6 +101,11 @@ export default function SettingsScreen() {
   const toggleDarkMode = useAppStore((s) => s.toggleDarkMode);
   const xp = useAppStore((s) => s.xp);
   const streak = useAppStore((s) => s.streak);
+  const userAvatar = useAppStore((s) => s.userAvatar);
+  const setUserAvatar = useAppStore((s) => s.setUserAvatar);
+  const selectedPersonalityId = useAppStore((s) => s.selectedPersonalityId);
+  const unlockedAvatars = useAppStore((s) => s.unlockedAvatars);
+  const [avatarHint, setAvatarHint] = useState<string | null>(null);
   const user = useAuthStore((s) => s.user);
   const userName =
     (user?.user_metadata?.full_name as string | undefined) ??
@@ -184,7 +191,7 @@ export default function SettingsScreen() {
       >
         <View style={[styles.userCard, { backgroundColor: colors.primary }]}>
           <View style={styles.userCardLeft}>
-            <Text style={styles.userCardEmoji}>👤</Text>
+            <Text style={styles.userCardEmoji}>{userAvatar || '👤'}</Text>
             <View style={{ flexShrink: 1 }}>
               <Text style={styles.userCardName} numberOfLines={1}>
                 {userName}
@@ -203,10 +210,74 @@ export default function SettingsScreen() {
         </View>
 
         <SectionHeader title={`🎮  ${t('settingsForChild').toUpperCase()}: ${userName.toUpperCase()}`} colors={colors} />
+        <View style={[styles.avatarSection, { backgroundColor: cardBg }]}>
+          <Text style={[styles.avatarSectionTitle, { color: colors.textPrimary }]}>
+            Your Avatar
+          </Text>
+          <Text style={[styles.avatarSectionSub, { color: colors.textMuted }]}>
+            Earn XP to unlock more!
+          </Text>
+          <View style={styles.avatarGrid}>
+            {AVATAR_UNLOCKS.map((avatar) => {
+              const isUnlocked = xp >= avatar.requiredXP;
+              const isSelected = userAvatar === avatar.emoji;
+              return (
+                <TouchableOpacity
+                  key={avatar.emoji}
+                  style={[
+                    styles.avatarCell,
+                    {
+                      borderColor: isSelected ? colors.primary : colors.border,
+                      backgroundColor: isUnlocked
+                        ? colors.background
+                        : colors.primaryLight,
+                      opacity: isUnlocked ? 1 : 0.5,
+                    },
+                    isSelected && styles.avatarCellSelected,
+                  ]}
+                  onPress={() => {
+                    if (!isUnlocked) {
+                      setAvatarHint(avatar.hint);
+                      return;
+                    }
+                    setUserAvatar(avatar.emoji);
+                    syncProfile({
+                      name: userName,
+                      grade: selectedGrade ?? 1,
+                      avatar: avatar.emoji,
+                      xp,
+                      streak,
+                      language: selectedLanguage,
+                      personalityId: selectedPersonalityId,
+                    }).catch(() => {});
+                  }}
+                  onLongPress={() => {
+                    if (!isUnlocked) setAvatarHint(avatar.hint);
+                  }}
+                  activeOpacity={0.8}
+                >
+                  <Text style={styles.avatarCellEmoji}>
+                    {isUnlocked ? avatar.emoji : '🔒'}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+          {avatarHint ? (
+            <Text style={[styles.avatarHint, { color: colors.textMuted }]}>
+              {avatarHint} to unlock
+            </Text>
+          ) : null}
+          <Text style={[styles.avatarCount, { color: colors.textSecondary }]}>
+            {AVATAR_UNLOCKS.filter((a) => xp >= a.requiredXP).length} / 12 avatars
+            unlocked
+          </Text>
+        </View>
+
         <View style={[styles.card, { backgroundColor: cardBg }]}>
           <SettingsRow
             emoji="🎭"
-            label="Choose Avatar & Tutor"
+            label="Choose Tutor Personality"
             sublabel="Pick your AI tutor personality"
             onPress={() => router.push('/personality')}
             colors={colors}
@@ -622,6 +693,59 @@ const styles = StyleSheet.create({
     marginTop: SPACING.md,
     marginBottom: SPACING.xs,
     marginLeft: SPACING.xs,
+  },
+  avatarSection: {
+    borderRadius: RADIUS.xl,
+    padding: SPACING.lg,
+    marginBottom: SPACING.sm,
+    shadowColor: '#000',
+    shadowOpacity: 0.04,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 8,
+    elevation: 2,
+  },
+  avatarSectionTitle: {
+    fontSize: FONT_SIZES.md,
+    fontFamily: 'Poppins-Bold',
+    marginBottom: 4,
+  },
+  avatarSectionSub: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Regular',
+    marginBottom: SPACING.md,
+  },
+  avatarGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: SPACING.sm,
+    justifyContent: 'space-between',
+  },
+  avatarCell: {
+    width: '15%',
+    minWidth: 48,
+    aspectRatio: 1,
+    borderRadius: RADIUS.lg,
+    borderWidth: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  avatarCellSelected: {
+    borderWidth: 3,
+  },
+  avatarCellEmoji: {
+    fontSize: 32,
+  },
+  avatarHint: {
+    fontSize: FONT_SIZES.xs,
+    fontFamily: 'Poppins-Regular',
+    textAlign: 'center',
+    marginTop: SPACING.sm,
+  },
+  avatarCount: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-SemiBold',
+    textAlign: 'center',
+    marginTop: SPACING.md,
   },
   card: {
     borderRadius: RADIUS.xl,

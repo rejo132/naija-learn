@@ -1,7 +1,7 @@
 /**
  * Subject dashboard — browse and open lessons (`/dashboard`).
  */
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -11,6 +11,7 @@ import {
   ScrollView,
   useWindowDimensions,
   Platform,
+  Animated,
 } from 'react-native';
 import { Redirect, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -40,6 +41,7 @@ import { PressableScale } from '@/components/PressableScale';
 import { TutorAvatar } from '@/components/TutorAvatar';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { syncProfile } from '@/services/dbService';
+import StreakCelebration from '@/components/StreakCelebration';
 
 type Tab = 'subjects' | 'languages' | 'softskills';
 
@@ -55,9 +57,51 @@ function isStudiedToday(lastStudyDate: string | null) {
   return lastStudyDate === new Date().toISOString().split('T')[0];
 }
 
+function PulsingChallengeButton({
+  onPress,
+  colors,
+}: {
+  onPress: () => void;
+  colors: ReturnType<typeof useTheme>['colors'];
+}) {
+  const pulseAnim = useRef(new Animated.Value(1)).current;
+
+  useEffect(() => {
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(pulseAnim, {
+          toValue: 1.04,
+          duration: 600,
+          useNativeDriver: true,
+        }),
+        Animated.timing(pulseAnim, {
+          toValue: 1,
+          duration: 600,
+          useNativeDriver: true,
+        }),
+      ])
+    );
+    loop.start();
+    return () => loop.stop();
+  }, [pulseAnim]);
+
+  return (
+    <Animated.View style={{ transform: [{ scale: pulseAnim }] }}>
+      <TouchableOpacity
+        style={[styles.dailyChallengeBtn, { backgroundColor: colors.primary }]}
+        onPress={onPress}
+        activeOpacity={0.85}
+      >
+        <Text style={styles.dailyChallengeBtnText}>Start Challenge</Text>
+      </TouchableOpacity>
+    </Animated.View>
+  );
+}
+
 export default function DashboardScreen() {
   const [activeTab, setActiveTab] = useState<Tab>('subjects');
   const [aiPrompt, setAiPrompt] = useState('');
+  const [showStreakCelebration, setShowStreakCelebration] = useState(false);
   const {
     selectedLanguage,
     selectedGrade,
@@ -72,6 +116,9 @@ export default function DashboardScreen() {
   const dailyChallengeSubject = useAppStore((s) => s.dailyChallengeSubject);
   const dailyChallengeTopic = useAppStore((s) => s.dailyChallengeTopic);
   const subjectLessonsCount = useAppStore((s) => s.subjectLessonsCount);
+  const lastCelebratedStreak = useAppStore((s) => s.lastCelebratedStreak);
+  const markStreakCelebrated = useAppStore((s) => s.markStreakCelebrated);
+  const shimmerAnim = useRef(new Animated.Value(0)).current;
   const selectedPersonalityId = useAppStore((s) => s.selectedPersonalityId);
   const lastSubject = useAppStore((s) => s.lastSubject);
   const lastSubjectEmoji = useAppStore((s) => s.lastSubjectEmoji);
@@ -107,6 +154,35 @@ export default function DashboardScreen() {
   useEffect(() => {
     useAppStore.getState().generateDailyChallenge();
   }, []);
+
+  useEffect(() => {
+    const milestones = [3, 7, 14, 30];
+    if (milestones.includes(streak) && lastCelebratedStreak !== streak) {
+      setShowStreakCelebration(true);
+    }
+  }, [streak, lastCelebratedStreak]);
+
+  const showLevelShimmer = levelProgress >= 80 && levelProgress < 100;
+
+  useEffect(() => {
+    if (!showLevelShimmer) return;
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(shimmerAnim, {
+          toValue: 1,
+          duration: 1000,
+          useNativeDriver: true,
+        }),
+        Animated.timing(shimmerAnim, {
+          toValue: 0,
+          duration: 1000,
+          useNativeDriver: true,
+        }),
+      ])
+    );
+    loop.start();
+    return () => loop.stop();
+  }, [showLevelShimmer, shimmerAnim]);
 
   const tabContent: Record<Tab, Subject[]> = useMemo(
     () => ({
@@ -233,12 +309,18 @@ export default function DashboardScreen() {
               </Text>
             </View>
             <View style={[styles.levelBarBg, { backgroundColor: colors.primaryLight }]}>
-              <View
+              <Animated.View
                 style={[
                   styles.levelBarFill,
                   {
                     width: `${levelProgress}%`,
                     backgroundColor: colors.primary,
+                    opacity: showLevelShimmer
+                      ? shimmerAnim.interpolate({
+                          inputRange: [0, 1],
+                          outputRange: [0.85, 1],
+                        })
+                      : 1,
                   },
                 ]}
               />
@@ -488,6 +570,7 @@ export default function DashboardScreen() {
               {
                 backgroundColor: `${colors.primary}1A`,
                 borderColor: colors.primary,
+                opacity: dailyChallengeCompleted ? 0.7 : 1,
               },
             ]}
           >
@@ -503,12 +586,17 @@ export default function DashboardScreen() {
               {dailyChallengeSubject} • {dailyChallengeTopic}
             </Text>
             {dailyChallengeCompleted ? (
-              <Text style={[styles.dailyChallengeDone, { color: colors.primary }]}>
-                ✅ Completed!
-              </Text>
+              <>
+                <Text style={[styles.dailyChallengeDone, { color: '#2E9E5A' }]}>
+                  ✅ Completed!
+                </Text>
+                <Text style={[styles.dailyChallengeTomorrow, { color: colors.textMuted }]}>
+                  Come back tomorrow!
+                </Text>
+              </>
             ) : (
-              <TouchableOpacity
-                style={[styles.dailyChallengeBtn, { backgroundColor: colors.primary }]}
+              <PulsingChallengeButton
+                colors={colors}
                 onPress={() => {
                   const match = findSubjectByLabel(dailyChallengeSubject);
                   if (match) {
@@ -523,10 +611,7 @@ export default function DashboardScreen() {
                     },
                   });
                 }}
-                activeOpacity={0.85}
-              >
-                <Text style={styles.dailyChallengeBtnText}>Start Challenge</Text>
-              </TouchableOpacity>
+              />
             )}
           </View>
 
@@ -606,22 +691,28 @@ export default function DashboardScreen() {
                         <Text style={[styles.cardLabel, { color: subject.color }]}>
                           {localized.label}
                         </Text>
-                        <Text style={styles.cardStars}>
-                          {starDisplay.split('').map((char, i) => (
-                            <Text
-                              key={i}
-                              style={{
-                                color:
-                                  char === '★'
-                                    ? '#F5A623'
-                                    : colors.textMuted,
-                                fontSize: 12,
-                              }}
-                            >
-                              {char}
-                            </Text>
-                          ))}
-                        </Text>
+                        <View
+                          style={[
+                            styles.cardStarsWrap,
+                            stars === 5 && styles.cardStarsGlow,
+                          ]}
+                        >
+                          <View style={styles.cardStars}>
+                            {starDisplay.split('').map((char, i) => (
+                              <Text
+                                key={i}
+                                style={{
+                                  color:
+                                    char === '★' ? '#F5A623' : colors.textMuted,
+                                  fontSize: 14,
+                                  marginRight: i < 4 ? 2 : 0,
+                                }}
+                              >
+                                {char}
+                              </Text>
+                            ))}
+                          </View>
+                        </View>
                         <Text style={[styles.cardDesc, { color: colors.textSecondary }]} numberOfLines={2}>
                           {localized.description}
                         </Text>
@@ -662,6 +753,15 @@ export default function DashboardScreen() {
           <Text style={styles.floatingTutorText}>{ui.askTutor}</Text>
         </TouchableOpacity>
 
+        {showStreakCelebration && (
+          <StreakCelebration
+            streak={streak}
+            onDismiss={() => {
+              setShowStreakCelebration(false);
+              markStreakCelebrated(streak);
+            }}
+          />
+        )}
       </View>
     </SafeAreaView>
   );
@@ -790,6 +890,11 @@ const styles = StyleSheet.create({
   dailyChallengeDone: {
     fontSize: FONT_SIZES.md,
     fontFamily: 'Poppins-SemiBold',
+  },
+  dailyChallengeTomorrow: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-Regular',
+    marginTop: 4,
   },
   xpPill: {
     flexDirection: 'row',
@@ -1158,10 +1263,20 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Bold',
     fontSize: FONT_SIZES.lg,
   },
-  cardStars: {
-    flexDirection: 'row',
+  cardStarsWrap: {
     marginTop: 4,
     marginBottom: 2,
+    alignSelf: 'flex-start',
+  },
+  cardStarsGlow: {
+    backgroundColor: 'rgba(245,166,35,0.12)',
+    borderRadius: 8,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+  },
+  cardStars: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   cardDesc: {
     fontSize: FONT_SIZES.sm,

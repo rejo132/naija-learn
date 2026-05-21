@@ -59,6 +59,8 @@ import { TutorAvatar } from '@/components/TutorAvatar';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { OfflineLearning } from '@/components/OfflineLearning';
 import { LearningFlow } from '@/components/LearningFlow';
+import LevelUpCelebration from '@/components/LevelUpCelebration';
+import { AVATAR_UNLOCKS, getCurrentLevel } from '@/constants/levels';
 import { useSpeech, type VoiceLanguage } from '@/hooks/useSpeech';
 import type { LearningFlowState } from '@/types/ai.types';
 
@@ -238,6 +240,68 @@ function BounceDot({ delay, color }: { delay: number; color: string }) {
   return <Animated.View style={[styles.thinkingDot, { backgroundColor: color }, animStyle]} />;
 }
 
+function TopicPickerCard({
+  topic,
+  emoji,
+  isSelected,
+  isDarkMode,
+  onSelect,
+}: {
+  topic: string;
+  emoji: string;
+  isSelected: boolean;
+  isDarkMode: boolean;
+  onSelect: () => void;
+}) {
+  const { colors } = useTheme();
+  const scaleAnim = useRef(new RNAnimated.Value(1)).current;
+
+  function handlePressIn() {
+    RNAnimated.spring(scaleAnim, {
+      toValue: 0.95,
+      useNativeDriver: true,
+      friction: 8,
+    }).start();
+  }
+
+  function handlePressOut() {
+    RNAnimated.spring(scaleAnim, {
+      toValue: 1,
+      useNativeDriver: true,
+      friction: 6,
+    }).start();
+  }
+
+  return (
+    <RNAnimated.View style={{ transform: [{ scale: scaleAnim }] }}>
+      <TouchableOpacity
+        style={[
+          styles.topicCard,
+          {
+            backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
+            borderColor: isSelected ? colors.primary : colors.border,
+            borderWidth: isSelected ? 2 : 1,
+          },
+        ]}
+        onPress={onSelect}
+        onPressIn={handlePressIn}
+        onPressOut={handlePressOut}
+        activeOpacity={1}
+      >
+        <Text style={styles.topicCardEmoji}>{emoji}</Text>
+        <Text
+          style={[
+            styles.topicCardLabel,
+            { color: isSelected ? colors.primary : colors.textPrimary },
+          ]}
+        >
+          {topic}
+        </Text>
+      </TouchableOpacity>
+    </RNAnimated.View>
+  );
+}
+
 function ThinkingIndicator({ personality }: { personality: TutorPersonality }) {
   const { colors, isDarkMode } = useTheme();
 
@@ -390,6 +454,19 @@ export default function LessonScreen() {
   const coinOpacity = useRef(new RNAnimated.Value(0)).current;
   const [xpGained, setXpGained] = useState(0);
   const [showCoinAnim, setShowCoinAnim] = useState(false);
+  const [showLevelUp, setShowLevelUp] = useState(false);
+  const [levelUpData, setLevelUpData] = useState<{
+    level: number;
+    title: string;
+    emoji: string;
+  } | null>(null);
+  const [showUnlockToast, setShowUnlockToast] = useState(false);
+  const [newUnlock, setNewUnlock] = useState<{
+    emoji: string;
+    name: string;
+  } | null>(null);
+  const unlockToastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const topicGridScaleAnim = useRef(new RNAnimated.Value(0.92)).current;
   const challengeStartedRef = useRef(false);
   const [inputText, setInputText] = useState('');
   const [isQuizMode, setIsQuizMode] = useState(false);
@@ -464,15 +541,72 @@ export default function LessonScreen() {
 
   const awardXP = useCallback(
     (baseAmount: number) => {
+      const xpBefore = useAppStore.getState().xp;
+      const levelBefore = getCurrentLevel(xpBefore);
       const amount = isChallenge ? baseAmount * 3 : baseAmount;
       addXP(amount);
+      const xpAfter = useAppStore.getState().xp;
+      const levelAfter = getCurrentLevel(xpAfter);
+
+      if (levelAfter.level > levelBefore.level) {
+        const lastCelebratedLevel = useAppStore.getState().lastCelebratedLevel;
+        if (lastCelebratedLevel < levelAfter.level) {
+          setLevelUpData({
+            level: levelAfter.level,
+            title: levelAfter.title,
+            emoji: levelAfter.emoji,
+          });
+          setShowLevelUp(true);
+        }
+      }
+
       triggerCoinAnimation(amount);
+
+      const unlockedAvatars = useAppStore.getState().unlockedAvatars;
+      const unlockAvatar = useAppStore.getState().unlockAvatar;
+      for (const avatar of AVATAR_UNLOCKS) {
+        if (
+          xpAfter >= avatar.requiredXP &&
+          !unlockedAvatars.includes(avatar.emoji)
+        ) {
+          unlockAvatar(avatar.emoji);
+          setNewUnlock({ emoji: avatar.emoji, name: avatar.name });
+          setShowUnlockToast(true);
+          if (unlockToastTimerRef.current) {
+            clearTimeout(unlockToastTimerRef.current);
+          }
+          unlockToastTimerRef.current = setTimeout(() => {
+            setShowUnlockToast(false);
+          }, 3000);
+        }
+      }
+
       if (isChallenge) {
         useAppStore.getState().completeDailyChallenge();
       }
     },
     [addXP, isChallenge, triggerCoinAnimation]
   );
+
+  useEffect(() => {
+    return () => {
+      if (unlockToastTimerRef.current) {
+        clearTimeout(unlockToastTimerRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (flowCompleted && !topicSelected && !showOfflineMode) {
+      topicGridScaleAnim.setValue(0.92);
+      RNAnimated.spring(topicGridScaleAnim, {
+        toValue: 1,
+        tension: 50,
+        friction: 8,
+        useNativeDriver: true,
+      }).start();
+    }
+  }, [flowCompleted, topicSelected, showOfflineMode, topicGridScaleAnim]);
 
   function countLessonOnce() {
     if (!hasCountedLesson.current) {
@@ -773,6 +907,56 @@ export default function LessonScreen() {
 
   const subjectTopics = getTopicsForSubject(selectedSubject.label);
 
+  function renderLessonOverlays() {
+    return (
+      <>
+        {showLevelUp && levelUpData && (
+          <LevelUpCelebration
+            level={levelUpData.level}
+            title={levelUpData.title}
+            emoji={levelUpData.emoji}
+            onDismiss={() => {
+              setShowLevelUp(false);
+              useAppStore.getState().markLevelCelebrated(levelUpData.level);
+            }}
+          />
+        )}
+        {showUnlockToast && newUnlock && (
+          <View
+            style={{
+              position: 'absolute',
+              top: 80,
+              alignSelf: 'center',
+              backgroundColor: '#1a1a2e',
+              borderRadius: 50,
+              paddingHorizontal: 20,
+              paddingVertical: 10,
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: 8,
+              zIndex: 1000,
+              shadowColor: '#000',
+              shadowOpacity: 0.3,
+              shadowRadius: 12,
+              elevation: 8,
+            }}
+          >
+            <Text style={{ fontSize: 24 }}>{newUnlock.emoji}</Text>
+            <Text
+              style={{
+                color: '#fff',
+                fontFamily: 'Poppins-SemiBold',
+                fontSize: 14,
+              }}
+            >
+              New avatar unlocked: {newUnlock.name}!
+            </Text>
+          </View>
+        )}
+      </>
+    );
+  }
+
   function handleConfirmTopic() {
     if (!selectedTopic || !selectedSubject) return;
     setTopicSelected(true);
@@ -882,6 +1066,7 @@ export default function LessonScreen() {
   if (flowCompleted && !topicSelected && !showOfflineMode) {
     return (
       <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
+        {renderLessonOverlays()}
         <View style={[styles.content, isWide && styles.contentWide, { flex: 1 }]}>
           <View
             style={[
@@ -920,38 +1105,23 @@ export default function LessonScreen() {
               What do you want to learn today?
             </Text>
 
-            <View style={styles.topicGrid}>
-              {subjectTopics.map((topic) => {
-                const isSelected = selectedTopic === topic;
-                return (
-                  <TouchableOpacity
-                    key={topic}
-                    style={[
-                      styles.topicCard,
-                      {
-                        backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
-                        borderColor: isSelected ? colors.primary : colors.border,
-                        borderWidth: isSelected ? 2 : 1,
-                      },
-                    ]}
-                    onPress={() => setSelectedTopic(topic)}
-                    activeOpacity={0.8}
-                  >
-                    <Text style={styles.topicCardEmoji}>
-                      {TOPIC_EMOJIS[topic] ?? '📌'}
-                    </Text>
-                    <Text
-                      style={[
-                        styles.topicCardLabel,
-                        { color: isSelected ? colors.primary : colors.textPrimary },
-                      ]}
-                    >
-                      {topic}
-                    </Text>
-                  </TouchableOpacity>
-                );
-              })}
-            </View>
+            <RNAnimated.View
+              style={[
+                styles.topicGrid,
+                { transform: [{ scale: topicGridScaleAnim }] },
+              ]}
+            >
+              {subjectTopics.map((topic) => (
+                <TopicPickerCard
+                  key={topic}
+                  topic={topic}
+                  emoji={TOPIC_EMOJIS[topic] ?? '📌'}
+                  isSelected={selectedTopic === topic}
+                  isDarkMode={isDarkMode}
+                  onSelect={() => setSelectedTopic(topic)}
+                />
+              ))}
+            </RNAnimated.View>
           </ScrollView>
 
           <View style={styles.topicPickerFooter}>
@@ -975,6 +1145,7 @@ export default function LessonScreen() {
 
   return (
     <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
+      {renderLessonOverlays()}
       <AchievementToast
         achievement={newAchievement}
         onDismiss={() => setNewAchievement(null)}

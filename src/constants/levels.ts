@@ -38,3 +38,18 @@ export function getSubjectStars(lessonsCount: number): number {
   if (lessonsCount >= 1) return 1;
   return 0;
 }
+
+export const AVATAR_UNLOCKS = [
+  { emoji: '🦁', name: 'Lion', requiredXP: 0, hint: 'Starter avatar' },
+  { emoji: '🐯', name: 'Tiger', requiredXP: 0, hint: 'Starter avatar' },
+  { emoji: '🦊', name: 'Fox', requiredXP: 0, hint: 'Starter avatar' },
+  { emoji: '🐧', name: 'Penguin', requiredXP: 0, hint: 'Starter avatar' },
+  { emoji: '🦅', name: 'Eagle', requiredXP: 0, hint: 'Starter avatar' },
+  { emoji: '🐬', name: 'Dolphin', requiredXP: 0, hint: 'Starter avatar' },
+  { emoji: '🦋', name: 'Butterfly', requiredXP: 150, hint: 'Reach Scholar level' },
+  { emoji: '🐉', name: 'Dragon', requiredXP: 300, hint: 'Reach Brain Champ level' },
+  { emoji: '🦄', name: 'Unicorn', requiredXP: 500, hint: 'Reach Champion level' },
+  { emoji: '🦸', name: 'Hero', requiredXP: 750, hint: 'Reach Genius level' },
+  { emoji: '🌍', name: 'World', requiredXP: 1000, hint: 'Reach Naija Legend' },
+  { emoji: '🌟', name: 'Star', requiredXP: 3000, hint: 'Reach Naija Genius' },
+];

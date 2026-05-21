@@ -81,6 +81,9 @@ interface AppState {
   dailyChallengeCompleted: boolean;
   dailyChallengeSubject: string;
   dailyChallengeTopic: string;
+  lastCelebratedStreak: number;
+  lastCelebratedLevel: number;
+  unlockedAvatars: string[];
   setLanguage: (lang: LanguageCode) => void;
   setGrade: (grade: number) => void;
   setSubject: (subject: Subject) => void;
@@ -115,6 +118,10 @@ interface AppState {
   incrementSubjectLesson: (subject: string) => void;
   generateDailyChallenge: () => void;
   completeDailyChallenge: () => void;
+  markStreakCelebrated: (streak: number) => void;
+  markLevelCelebrated: (level: number) => void;
+  unlockAvatar: (emoji: string) => void;
+  setUserAvatar: (avatar: string) => void;
   /** Wipe all child-facing data — used by the "Delete my data" flow. */
   resetAll: () => void;
 }
@@ -148,6 +155,9 @@ type PersistedAppState = Pick<
   | 'dailyChallengeCompleted'
   | 'dailyChallengeSubject'
   | 'dailyChallengeTopic'
+  | 'lastCelebratedStreak'
+  | 'lastCelebratedLevel'
+  | 'unlockedAvatars'
 >;
 
 /**
@@ -163,6 +173,7 @@ type AppStateValues = Omit<AppState,
   | 'toggleDarkMode' | 'setLastSession' | 'updateSubjectProgress'
   | 'markFlowCompleted' | 'setXP' | 'setStreak' | 'setSubjectProgress'
   | 'incrementSubjectLesson' | 'generateDailyChallenge' | 'completeDailyChallenge'
+  | 'markStreakCelebrated' | 'markLevelCelebrated' | 'unlockAvatar' | 'setUserAvatar'
   | 'resetAll'
 >;
 
@@ -198,6 +209,9 @@ const initialState: AppStateValues = {
   dailyChallengeCompleted: false,
   dailyChallengeSubject: '',
   dailyChallengeTopic: '',
+  lastCelebratedStreak: 0,
+  lastCelebratedLevel: 0,
+  unlockedAvatars: ['🦁', '🐯', '🦊', '🐧', '🦅', '🐬'],
 };
 
 export const useAppStore = create<AppState>()(
@@ -330,6 +344,15 @@ export const useAppStore = create<AppState>()(
           };
         }),
       completeDailyChallenge: () => set({ dailyChallengeCompleted: true }),
+      markStreakCelebrated: (streak) => set({ lastCelebratedStreak: streak }),
+      markLevelCelebrated: (level) => set({ lastCelebratedLevel: level }),
+      unlockAvatar: (emoji) =>
+        set((state) => ({
+          unlockedAvatars: state.unlockedAvatars.includes(emoji)
+            ? state.unlockedAvatars
+            : [...state.unlockedAvatars, emoji],
+        })),
+      setUserAvatar: (avatar) => set({ userAvatar: avatar }),
       resetAll: () => set({ ...initialState }),
     }),
     {
@@ -366,6 +389,9 @@ export const useAppStore = create<AppState>()(
         dailyChallengeCompleted: state.dailyChallengeCompleted,
         dailyChallengeSubject: state.dailyChallengeSubject,
         dailyChallengeTopic: state.dailyChallengeTopic,
+        lastCelebratedStreak: state.lastCelebratedStreak,
+        lastCelebratedLevel: state.lastCelebratedLevel,
+        unlockedAvatars: state.unlockedAvatars,
       }),
       merge: (persisted, current) => ({
         ...current,
