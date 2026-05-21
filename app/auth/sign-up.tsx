@@ -16,7 +16,7 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/store/authStore';
 import { useAppStore } from '@/store/appStore';
@@ -40,12 +40,21 @@ const AVATAR_OPTIONS = ['🦁', '🐯', '🦊', '🐧', '🦅', '🐬'] as const
 
 type SignUpStep = 'account' | 'grade' | 'avatar';
 
+function stepFromParam(stepParam: string | string[] | undefined): SignUpStep {
+  const raw = Array.isArray(stepParam) ? stepParam[0] : stepParam;
+  const n = raw ? parseInt(raw, 10) : 1;
+  if (n === 2) return 'grade';
+  if (n === 3) return 'avatar';
+  return 'account';
+}
+
 export default function SignUpScreen() {
+  const { step: stepParam } = useLocalSearchParams<{ step?: string }>();
   const { width } = useWindowDimensions();
   const isWide = width > 768;
   const { colors, isDarkMode } = useTheme();
 
-  const [step, setStep] = useState<SignUpStep>('account');
+  const [step, setStep] = useState<SignUpStep>(() => stepFromParam(stepParam));
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -53,6 +62,7 @@ export default function SignUpScreen() {
   const [selectedGradeNum, setSelectedGradeNum] = useState<number | null>(null);
   const [selectedAvatar, setSelectedAvatar] = useState<string>('🦁');
   const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [emailValid, setEmailValid] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [localError, setLocalError] = useState('');
@@ -65,6 +75,12 @@ export default function SignUpScreen() {
   const passwordRef = useRef<TextInput | null>(null);
 
   const displayError = localError || storeError || '';
+
+  useEffect(() => {
+    if (stepParam) {
+      setStep(stepFromParam(stepParam));
+    }
+  }, [stepParam]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -88,23 +104,43 @@ export default function SignUpScreen() {
   }, [name, email, password, isLoading, step]);
 
   function validateEmail(value: string) {
-    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
     if (!value) {
       setEmailError('');
       setEmailValid(false);
-    } else if (!valid) {
+      return;
+    }
+    if (!value.includes('@') || !value.includes('.')) {
       setEmailError('Please enter a valid email address');
       setEmailValid(false);
-    } else {
-      setEmailError('');
-      setEmailValid(true);
+      return;
     }
+    setEmailError('');
+    setEmailValid(true);
+  }
+
+  function validatePassword(value: string) {
+    if (!value) {
+      setPasswordError('');
+      return false;
+    }
+    if (value.length < 6) {
+      setPasswordError('Password must be at least 6 characters');
+      return false;
+    }
+    setPasswordError('');
+    return true;
   }
 
   async function handleAccountSubmit() {
     if (!name.trim() || !email.trim() || !password.trim()) return;
-    if (emailError || !emailValid) {
+
+    validateEmail(email.trim());
+    const passwordOk = validatePassword(password);
+    if (!email.includes('@') || !email.includes('.') || emailError) {
       setLocalError('Please enter a valid email address');
+      return;
+    }
+    if (!passwordOk) {
       return;
     }
 
@@ -161,7 +197,14 @@ export default function SignUpScreen() {
   }
 
   const canSubmitAccount =
-    name.trim() && email.trim() && emailValid && password.trim() && !isLoading;
+    name.trim() &&
+    email.trim() &&
+    email.includes('@') &&
+    email.includes('.') &&
+    password.length >= 6 &&
+    !emailError &&
+    !passwordError &&
+    !isLoading;
 
   const cardBg = isDarkMode ? colors.backgroundCard : '#FFFFFF';
   const inputBg = isDarkMode ? colors.background : COLORS.background;
@@ -254,7 +297,10 @@ export default function SignUpScreen() {
             placeholder={t('password')}
             placeholderTextColor={colors.textMuted}
             value={password}
-            onChangeText={setPassword}
+            onChangeText={(v) => {
+              setPassword(v);
+              validatePassword(v);
+            }}
             secureTextEntry={!showPassword}
             editable={!isLoading}
             returnKeyType="go"
@@ -269,6 +315,7 @@ export default function SignUpScreen() {
             <Text style={styles.eyeIcon}>{showPassword ? '🙈' : '👁️'}</Text>
           </TouchableOpacity>
         </View>
+        {passwordError ? <Text style={styles.fieldError}>{passwordError}</Text> : null}
 
         <TouchableOpacity
           style={[

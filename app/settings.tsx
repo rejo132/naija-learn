@@ -249,6 +249,8 @@ export default function SettingsScreen() {
                       streak,
                       language: selectedLanguage,
                       personalityId: selectedPersonalityId,
+                      lastActiveDate:
+                        new Date().toISOString().split('T')[0],
                     }).catch(() => {});
                   }}
                   onLongPress={() => {

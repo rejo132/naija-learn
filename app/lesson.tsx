@@ -25,10 +25,16 @@ import Animated, {
   withSequence,
   withTiming,
 } from 'react-native-reanimated';
-import { Redirect, router, useFocusEffect, useLocalSearchParams } from 'expo-router';
+import {
+  Redirect,
+  router,
+  useFocusEffect,
+  useLocalSearchParams,
+  useNavigation,
+} from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore, type ChatMessage } from '@/store/appStore';
-import { saveProgress } from '@/services/dbService';
+import { saveProgress, syncProfile } from '@/services/dbService';
 import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import {
@@ -200,14 +206,14 @@ function getFriendlyAIErrorMessage(error: unknown): string {
       case 'quota_exceeded':
         return 'Aunty Naija is resting for a moment. Please try again in a few minutes! 😊';
       case 'no_internet':
-        return 'No internet connection. Please check your data or WiFi and try again.';
+        return 'Something went wrong. Check your connection and try again.';
       case 'api_error':
       case 'unknown':
       default:
-        return 'Something went wrong. Please try again!';
+        return 'Something went wrong. Check your connection and try again.';
     }
   }
-  return 'Something went wrong. Please try again!';
+  return 'Something went wrong. Check your connection and try again.';
 }
 
 function formatTime(timestamp: number): string {
@@ -468,6 +474,9 @@ export default function LessonScreen() {
   const unlockToastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const topicGridScaleAnim = useRef(new RNAnimated.Value(0.92)).current;
   const challengeStartedRef = useRef(false);
+  const quizXpAwarded = useRef(false);
+  const flowXpAwarded = useRef(false);
+  const navigation = useNavigation();
   const [inputText, setInputText] = useState('');
   const [isQuizMode, setIsQuizMode] = useState(false);
   const isQuizModeRef = useRef(false);
@@ -543,7 +552,10 @@ export default function LessonScreen() {
     (baseAmount: number) => {
       const xpBefore = useAppStore.getState().xp;
       const levelBefore = getCurrentLevel(xpBefore);
-      const amount = isChallenge ? baseAmount * 3 : baseAmount;
+      const challengeEligible =
+        isChallenge && !useAppStore.getState().dailyChallengeCompleted;
+      const amount = challengeEligible ? baseAmount * 3 : baseAmount;
+
       addXP(amount);
       const xpAfter = useAppStore.getState().xp;
       const levelAfter = getCurrentLevel(xpAfter);
@@ -581,9 +593,21 @@ export default function LessonScreen() {
         }
       }
 
-      if (isChallenge) {
+      if (challengeEligible) {
         useAppStore.getState().completeDailyChallenge();
       }
+
+      const state = useAppStore.getState();
+      syncProfile({
+        name: state.userName,
+        grade: state.selectedGrade ?? 1,
+        avatar: state.userAvatar,
+        xp: xpAfter,
+        streak: state.streak,
+        language: state.selectedLanguage,
+        personalityId: state.selectedPersonalityId,
+        lastActiveDate: state.lastStudyDate ?? new Date().toISOString().split('T')[0],
+      }).catch(() => {});
     },
     [addXP, isChallenge, triggerCoinAnimation]
   );
@@ -595,6 +619,28 @@ export default function LessonScreen() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('beforeRemove', (e) => {
+      if (!topicSelected || messages.length === 0) return;
+
+      e.preventDefault();
+      Alert.alert(
+        'Leave lesson?',
+        'Your progress in this topic will be saved.',
+        [
+          { text: 'Keep Learning', style: 'cancel' },
+          {
+            text: 'Leave',
+            style: 'destructive',
+            onPress: () => navigation.dispatch(e.data.action),
+          },
+        ]
+      );
+    });
+
+    return unsubscribe;
+  }, [navigation, topicSelected, messages.length]);
 
   useEffect(() => {
     if (flowCompleted && !topicSelected && !showOfflineMode) {
@@ -737,6 +783,8 @@ export default function LessonScreen() {
           setTopicSelected(false);
           setSelectedTopic('');
         }
+        quizXpAwarded.current = false;
+        flowXpAwarded.current = false;
       }
 
       return () => {
@@ -801,7 +849,11 @@ export default function LessonScreen() {
         subject: selectedSubject.label,
         language: selectedLanguage,
       });
-      addMessage({ role: 'assistant', content: reply });
+      const assistantContent =
+        !reply || reply.trim() === ''
+          ? "Hmm, I didn't catch that. Try asking again! 🤔"
+          : reply;
+      addMessage({ role: 'assistant', content: assistantContent });
 
       if (scoringQuizAnswer) {
         const correct = scoreQuizAnswer(text, reply);
@@ -812,8 +864,14 @@ export default function LessonScreen() {
           const finalScore = Math.round((stats.correct / stats.answered) * 100);
           setQuizScore(finalScore);
 
-          awardXP(XP_REWARDS.QUIZ_COMPLETED);
-          if (finalScore === 100) awardXP(XP_REWARDS.PERFECT_QUIZ);
+          if (!quizXpAwarded.current) {
+            quizXpAwarded.current = true;
+            let quizXp = XP_REWARDS.QUIZ_COMPLETED;
+            if (finalScore === 100) {
+              quizXp += XP_REWARDS.PERFECT_QUIZ;
+            }
+            awardXP(quizXp);
+          }
           updateBestQuizScore(finalScore);
 
           const newlyUnlocked = checkNewAchievements(
@@ -968,6 +1026,8 @@ export default function LessonScreen() {
   function handleChangeTopic() {
     setTopicSelected(false);
     setSelectedTopic('');
+    quizXpAwarded.current = false;
+    flowXpAwarded.current = false;
     clearMessages();
     setIsQuizMode(false);
     isQuizModeRef.current = false;
@@ -1042,7 +1102,8 @@ export default function LessonScreen() {
               if (selectedSubject && selectedGrade) {
                 markFlowCompleted(selectedSubject.label, selectedGrade);
               }
-              if (state.xpEarned > 0) {
+              if (state.xpEarned > 0 && !flowXpAwarded.current) {
+                flowXpAwarded.current = true;
                 awardXP(state.xpEarned);
               }
               useAppStore.getState().updateStreak();

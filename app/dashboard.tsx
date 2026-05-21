@@ -116,6 +116,7 @@ export default function DashboardScreen() {
   const dailyChallengeSubject = useAppStore((s) => s.dailyChallengeSubject);
   const dailyChallengeTopic = useAppStore((s) => s.dailyChallengeTopic);
   const subjectLessonsCount = useAppStore((s) => s.subjectLessonsCount);
+  const userGrade = useAppStore((s) => s.userGrade);
   const lastCelebratedStreak = useAppStore((s) => s.lastCelebratedStreak);
   const markStreakCelebrated = useAppStore((s) => s.markStreakCelebrated);
   const shimmerAnim = useRef(new Animated.Value(0)).current;
@@ -152,7 +153,15 @@ export default function DashboardScreen() {
   const levelProgress = getXPProgress(xp);
 
   useEffect(() => {
-    useAppStore.getState().generateDailyChallenge();
+    const store = useAppStore.getState();
+    store.generateDailyChallenge();
+    const after = useAppStore.getState();
+    if (!after.dailyChallengeSubject || !after.dailyChallengeTopic) {
+      useAppStore.setState({
+        dailyChallengeSubject: after.dailyChallengeSubject || 'Mathematics',
+        dailyChallengeTopic: after.dailyChallengeTopic || 'Key Concepts',
+      });
+    }
   }, []);
 
   useEffect(() => {
@@ -258,7 +267,11 @@ export default function DashboardScreen() {
               <Text style={[styles.greetingTime, { color: colors.textMuted }]}>
                 {greeting.emoji} {greeting.text}
               </Text>
-              <Text style={[styles.greetingName, { color: colors.textPrimary }]}>
+              <Text
+                style={[styles.greetingName, { color: colors.textPrimary }]}
+                numberOfLines={1}
+                ellipsizeMode="tail"
+              >
                 {userAvatar} Hello, {displayName}!
               </Text>
               {streak > 0 && (
@@ -273,7 +286,11 @@ export default function DashboardScreen() {
                 <Text style={[styles.xpPillText, { color: colors.goldDark }]}>{xp} XP</Text>
               </View>
               <View style={[styles.gradePill, { backgroundColor: colors.primaryLight, borderColor: colors.primaryGlow }]}>
-                <Text style={[styles.gradePillText, { color: colors.primaryDark }]}>P{selectedGrade}</Text>
+                <Text style={[styles.gradePillText, { color: colors.primaryDark }]}>
+                  {userGrade?.trim().startsWith('Primary')
+                    ? userGrade
+                    : `Primary ${selectedGrade}`}
+                </Text>
               </View>
               <TouchableOpacity
                 style={[styles.langPill, { backgroundColor: colors.accentLight, borderColor: 'rgba(194, 80, 42, 0.2)' }]}

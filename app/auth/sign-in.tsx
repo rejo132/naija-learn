@@ -18,6 +18,7 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
+import { useAppStore } from '@/store/appStore';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/store/authStore';
 import { signInWithGoogle, signInWithMicrosoft } from '@/services/oauthService';
@@ -25,6 +26,23 @@ import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import { TutorAvatar } from '@/components/TutorAvatar';
+
+function mapAuthErrorMessage(message: string): string {
+  const lower = message.toLowerCase();
+  if (lower.includes('invalid login credentials')) {
+    return 'Wrong email or password. Try again.';
+  }
+  if (lower.includes('email not confirmed')) {
+    return 'Please check your email and confirm your account first.';
+  }
+  if (lower.includes('too many requests')) {
+    return 'Too many attempts. Please wait a moment and try again.';
+  }
+  return message
+    .replace(/^AuthApiError:\s*/i, '')
+    .replace(/^Error:\s*/i, '')
+    .trim();
+}
 
 const FEATURES = [
   { emoji: '🧠', text: 'Claude AI Tutor' },
@@ -162,9 +180,18 @@ export default function SignInScreen() {
     clearError();
     try {
       await signIn(email.trim(), password);
-      router.replace('/dashboard');
-    } catch {
-      setError('No account found. Please check your details.');
+      const userGrade = useAppStore.getState().userGrade;
+      if (!userGrade?.trim()) {
+        router.replace('/auth/sign-up?step=2');
+      } else {
+        router.replace('/dashboard');
+      }
+    } catch (err: unknown) {
+      const raw =
+        err instanceof Error
+          ? err.message
+          : useAuthStore.getState().error ?? 'Sign in failed';
+      setError(mapAuthErrorMessage(raw));
     } finally {
       setIsLoading(false);
     }

@@ -128,9 +128,16 @@ export default function RootLayout() {
 
     const inAuthGroup = segments[0] === 'auth';
 
+    const userGrade = useAppStore.getState().userGrade;
+    const profileIncomplete = !userGrade?.trim();
+    const onSignUp =
+      segments[0] === 'auth' && (segments as string[])[1] === 'sign-up';
+
     if (!session && !inAuthGroup) {
       router.replace('/auth/sign-in');
-    } else if (session && inAuthGroup) {
+    } else if (session && profileIncomplete && !onSignUp) {
+      router.replace('/auth/sign-up?step=2');
+    } else if (session && inAuthGroup && !profileIncomplete) {
       router.replace('/dashboard');
     }
   }, [session, segments, isLayoutReady, router]);

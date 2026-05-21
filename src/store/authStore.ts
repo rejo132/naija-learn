@@ -87,7 +87,10 @@ export const useAuthStore = create<AuthState>((set) => ({
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
-        options: { data: { name, phone } },
+        options: {
+          data: { name, phone },
+          emailRedirectTo: 'https://trylearnova.com/auth/callback',
+        },
       });
       if (error) throw error;
       // Set session directly if available (email confirmation off)
