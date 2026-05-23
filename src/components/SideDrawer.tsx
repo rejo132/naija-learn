@@ -103,12 +103,18 @@ export function SideDrawer() {
     }
   }
 
+  function goDashboard() {
+    try {
+      router.dismissAll();
+    } catch {
+      // dismissAll throws when stack is empty
+    }
+    router.replace('/dashboard');
+  }
+
   function handleNavPress(route: string) {
     if (route === '/dashboard') {
-      if (router.canGoBack()) {
-        router.dismissAll();
-      }
-      router.replace('/dashboard');
+      goDashboard();
       return;
     }
     router.push(route as '/');

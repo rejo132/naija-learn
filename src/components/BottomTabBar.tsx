@@ -2,7 +2,6 @@ import { View, Text, TouchableOpacity, StyleSheet, useWindowDimensions } from 'r
 import { router, usePathname } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FONT_SIZES, RADIUS } from '@/constants/theme';
-import { useAppStore } from '@/store/appStore';
 import { useTheme } from '@/hooks/useTheme';
 import { useTranslation } from '@/hooks/useTranslation';
 
@@ -11,20 +10,18 @@ interface TabItem {
   label: string;
   emoji: string;
   route: string;
-  requiresGrade?: boolean;
 }
 
 export function BottomTabBar() {
   const { width } = useWindowDimensions();
   const pathname = usePathname();
   const insets = useSafeAreaInsets();
-  const selectedGrade = useAppStore((s) => s.selectedGrade);
   const { colors, isDarkMode } = useTheme();
   const { t } = useTranslation();
 
   const TABS: TabItem[] = [
     { id: 'home', label: t('home'), emoji: '🏠', route: '/dashboard' },
-    { id: 'learn', label: t('learn'), emoji: '📚', route: '/dashboard', requiresGrade: true },
+    { id: 'learn', label: t('learn'), emoji: '📚', route: '/dashboard' },
     { id: 'progress', label: t('progress'), emoji: '📈', route: '/progress' },
     { id: 'achievements', label: t('achievements'), emoji: '🏆', route: '/achievements' },
     { id: 'settings', label: t('settingsTitle'), emoji: '⚙️', route: '/settings' },
@@ -36,8 +33,10 @@ export function BottomTabBar() {
   if (width > 768) return null;
 
   function goDashboard() {
-    if (router.canGoBack()) {
+    try {
       router.dismissAll();
+    } catch {
+      // dismissAll throws when stack is empty
     }
     router.replace('/dashboard');
   }
@@ -50,10 +49,6 @@ export function BottomTabBar() {
   }
 
   function handleTabPress(tab: TabItem) {
-    if (tab.requiresGrade && !selectedGrade) {
-      router.push('/grade');
-      return;
-    }
     if (tab.route === '/dashboard') {
       goDashboard();
       return;

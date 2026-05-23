@@ -23,7 +23,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import { LanguageCode } from '@/constants/languages';
 import { DEFAULT_PERSONALITY_ID } from '@/constants/personalities';
 import { Subject } from '@/constants/subjects';
-import { loadUserProgress as fetchUserProgress } from '@/services/dbService';
+import { loadUserProgress as fetchUserProgress, syncProfile as syncProfileToDb } from '@/services/dbService';
 
 export type DifficultyLevel = 'Easy' | 'Medium' | 'Hard';
 export type VoiceSpeedLevel = 'Slow' | 'Normal' | 'Fast';
@@ -135,6 +135,7 @@ interface AppState {
   setUserName: (name: string) => void;
   setUserGrade: (grade: string) => void;
   loadUserProgress: () => Promise<void>;
+  syncProfile: () => Promise<void>;
   resetSession: () => void;
   setLastSession: (
     subject: string,
@@ -234,7 +235,7 @@ type AppStateValues = Omit<AppState,
   | 'toggleDarkMode' | 'setSoundEnabled' | 'setOfflineMode' | 'setDataSaver'
   | 'setNotificationsEnabled' | 'setNotificationHour' | 'setNotificationMinute'
   | 'setDifficulty' | 'setVoiceSpeed' | 'setIsSignedOut' | 'setSetupComplete'
-  | 'setUserName' | 'setUserGrade' | 'loadUserProgress' | 'resetSession'
+  | 'setUserName' | 'setUserGrade' | 'loadUserProgress' | 'syncProfile' | 'resetSession'
   | 'setLastSession' | 'updateSubjectProgress'
   | 'markFlowCompleted' | 'setXP' | 'setStreak' | 'setSubjectProgress'
   | 'incrementSubjectLesson' | 'generateDailyChallenge' | 'completeDailyChallenge'
@@ -380,10 +381,25 @@ export const useAppStore = create<AppState>()(
           if (!saved) return;
 
           const state = useAppStore.getState();
+          const isNewDevice =
+            state.xp === 0 &&
+            state.lessonsCompleted === 0 &&
+            !state.setupComplete;
+
+          const mergedXP = isNewDevice
+            ? saved.totalXP
+            : Math.max(state.xp, saved.totalXP);
+          const mergedStreak = isNewDevice
+            ? saved.streak
+            : Math.max(state.streak, saved.streak);
+          const mergedLessons = isNewDevice
+            ? saved.lessonsCompleted
+            : Math.max(state.lessonsCompleted, saved.lessonsCompleted);
 
           const updates: Partial<AppStateValues> = {
-            xp: Math.max(state.xp, saved.totalXP),
-            streak: Math.max(state.streak, saved.streak),
+            xp: mergedXP,
+            streak: mergedStreak,
+            lessonsCompleted: mergedLessons,
           };
 
           if (saved.name) {
@@ -391,13 +407,11 @@ export const useAppStore = create<AppState>()(
           }
 
           if (saved.grade) {
-            if (!state.selectedGrade) {
-              updates.selectedGrade = saved.grade;
-            }
+            updates.selectedGrade = saved.grade;
             if (!state.userGrade?.trim()) {
               updates.userGrade = `Primary ${saved.grade}`;
-              updates.setupComplete = true;
             }
+            updates.setupComplete = true;
           }
 
           if (saved.avatar) {
@@ -413,16 +427,33 @@ export const useAppStore = create<AppState>()(
           }
 
           if (Object.keys(saved.subjectProgress).length > 0) {
-            updates.subjectProgress = {
-              ...saved.subjectProgress,
-              ...state.subjectProgress,
-            };
+            updates.subjectProgress = isNewDevice
+              ? saved.subjectProgress
+              : {
+                  ...saved.subjectProgress,
+                  ...state.subjectProgress,
+                };
           }
 
           useAppStore.setState(updates);
         } catch (err) {
           console.error('Progress restore error:', err);
         }
+      },
+      syncProfile: async () => {
+        const state = useAppStore.getState();
+        await syncProfileToDb({
+          name: state.userName,
+          grade: state.userGrade || state.selectedGrade || 1,
+          avatar: state.userAvatar,
+          xp: state.xp,
+          streak: state.streak,
+          language: state.selectedLanguage,
+          personalityId: state.selectedPersonalityId,
+          lastActiveDate:
+            state.lastStudyDate ?? new Date().toISOString().split('T')[0],
+          role: 'child',
+        });
       },
       resetSession: () =>
         set({

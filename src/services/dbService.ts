@@ -134,6 +134,7 @@ export async function loadUserProgress(): Promise<{
   language: string;
   personalityId: string;
   subjectProgress: Record<string, number>;
+  lessonsCompleted: number;
 } | null> {
   try {
     const {
@@ -172,6 +173,15 @@ export async function loadUserProgress(): Promise<{
       }
     }
 
+    const { count: lessonsCompleted, error: countError } = await supabase
+      .from('progress')
+      .select('*', { count: 'exact', head: true })
+      .eq('user_id', user.id);
+
+    if (countError) {
+      captureError(countError, { context: 'loadUserProgress count error' });
+    }
+
     const gradeNum =
       typeof profile.grade === 'number'
         ? profile.grade
@@ -186,6 +196,7 @@ export async function loadUserProgress(): Promise<{
       language: profile.language ?? 'en',
       personalityId: profile.personality_id ?? 'aunty_naija',
       subjectProgress,
+      lessonsCompleted: lessonsCompleted ?? 0,
     };
   } catch (err) {
     captureError(err, { context: 'loadUserProgress exception' });
@@ -226,6 +237,7 @@ export async function syncProfile({
     if (!user) return;
 
     const updates: Record<string, unknown> = {
+      id: user.id,
       xp,
       streak,
       language,
@@ -238,11 +250,9 @@ export async function syncProfile({
     if (grade !== undefined) updates.grade = String(grade);
     if (avatar !== undefined) updates.avatar = avatar;
     if (role !== undefined) updates.role = role;
+    if (user.email) updates.email = user.email;
 
-    const { error } = await supabase
-      .from('profiles')
-      .update(updates)
-      .eq('id', user.id);
+    const { error } = await supabase.from('profiles').upsert(updates);
 
     if (error) {
       captureError(error, { context: 'syncProfile error' });

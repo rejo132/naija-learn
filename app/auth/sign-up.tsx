@@ -341,26 +341,43 @@ export default function SignUpScreen() {
         </View>
         {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
 
-        <View style={[styles.passwordGroup, { backgroundColor: inputBg, borderColor: colors.border }]}>
-          <Text style={styles.inputIcon}>🔒</Text>
+        <View
+          style={[
+            {
+              flexDirection: 'row',
+              alignItems: 'center',
+              borderWidth: 1.5,
+              borderRadius: 12,
+              paddingHorizontal: 12,
+              marginBottom: 4,
+            },
+            {
+              borderColor: passwordError ? '#E53935' : colors.border,
+              backgroundColor: colors.backgroundCard,
+            },
+          ]}
+        >
+          <Text style={{ fontSize: 18, marginRight: 8 }}>🔒</Text>
           <TextInput
             ref={passwordRef}
-            style={[
-              styles.passwordInput,
-              { color: colors.textPrimary },
-              Platform.OS === 'web' && {
-                outlineStyle: 'none' as any,
-                outlineWidth: 0,
-              } as any,
-            ]}
-            placeholder={t('password')}
+            style={{
+              flex: 1,
+              fontSize: 16,
+              fontFamily: 'Poppins-Regular',
+              color: colors.textPrimary,
+              paddingVertical: 14,
+            }}
+            placeholder="Create a password"
             placeholderTextColor={colors.textMuted}
             value={password}
-            onChangeText={(v) => {
-              setPassword(v);
-              validatePassword(v);
+            onChangeText={(t) => {
+              setPassword(t);
+              if (passwordError) setPasswordError('');
+              validatePassword(t);
             }}
             secureTextEntry={!showPassword}
+            autoCapitalize="none"
+            autoCorrect={false}
             editable={!isLoading}
             returnKeyType="go"
             onSubmitEditing={() => {
@@ -368,10 +385,18 @@ export default function SignUpScreen() {
             }}
           />
           <TouchableOpacity
-            style={styles.eyeBtn}
-            onPress={() => setShowPassword(!showPassword)}
+            onPress={() => setShowPassword((v) => !v)}
+            style={{
+              padding: 8,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+            accessibilityLabel={showPassword ? 'Hide password' : 'Show password'}
           >
-            <Text style={styles.eyeIcon}>{showPassword ? '🙈' : '👁️'}</Text>
+            <Text style={{ fontSize: 20, color: colors.textMuted }}>
+              {showPassword ? '🙈' : '👁️'}
+            </Text>
           </TouchableOpacity>
         </View>
         {passwordError ? <Text style={styles.fieldError}>{passwordError}</Text> : null}

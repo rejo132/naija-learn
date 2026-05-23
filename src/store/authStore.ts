@@ -1,12 +1,5 @@
 /**
  * Authentication state (Zustand).
- *
- * Responsible for: tracking the current Supabase session,
- * sign up, sign in, sign out, and loading state.
- *
- * Talks to:
- * - src/lib/supabase.ts for all auth operations
- * - Used by: auth screens and root layout
  */
 import { create } from 'zustand';
 import { Session, User } from '@supabase/supabase-js';
@@ -47,7 +40,7 @@ interface AuthState {
   setSession: (session: Session | null) => void;
   setUserRole: (role: UserRole | null) => void;
   signUp: (email: string, password: string, name: string, phone: string) => Promise<void>;
-  signIn: (email: string, password: string) => Promise<void>;
+  signIn: (identifier: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
   clearError: () => void;
   initialise: () => Promise<void>;
@@ -138,14 +131,45 @@ export const useAuthStore = create<AuthState>((set) => ({
     }
   },
 
-  signIn: async (email, password) => {
+  signIn: async (identifier, password) => {
     set({ isLoading: true, error: null });
     try {
+      let emailToUse = identifier.trim();
+
+      if (!identifier.includes('@')) {
+        const { data: profile, error: lookupError } = await supabase
+          .from('profiles')
+          .select('email, name')
+          .ilike('name', identifier.trim())
+          .limit(1)
+          .maybeSingle();
+
+        if (lookupError || !profile?.email) {
+          const msg = 'No account found with that username.';
+          set({ error: msg, isLoading: false });
+          throw new Error(msg);
+        }
+
+        emailToUse = profile.email;
+      }
+
       const { data, error } = await supabase.auth.signInWithPassword({
-        email,
+        email: emailToUse,
         password,
       });
-      if (error) throw error;
+
+      if (error) {
+        const msg = error.message.includes('Invalid login credentials')
+          ? 'Wrong email/username or password. Try again.'
+          : error.message.includes('Email not confirmed')
+            ? 'Please check your email and confirm your account.'
+            : error.message.includes('Too many requests')
+              ? 'Too many attempts. Please wait and try again.'
+              : error.message;
+        set({ error: msg, isLoading: false });
+        throw new Error(msg);
+      }
+
       const role = await fetchUserRole();
       set({
         session: data.session,
@@ -164,8 +188,10 @@ export const useAuthStore = create<AuthState>((set) => ({
         useAppStore.getState().loadUserProgress().catch(() => {});
       }
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : 'Sign in failed';
-      set({ error: message });
+      if (!(err instanceof Error && useAuthStore.getState().error)) {
+        const message = err instanceof Error ? err.message : 'Sign in failed';
+        set({ error: message });
+      }
       throw err;
     } finally {
       set({ isLoading: false });

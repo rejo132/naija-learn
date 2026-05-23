@@ -55,12 +55,10 @@ export default function SignInScreen() {
   const { width } = useWindowDimensions();
   const isWide = width > 768;
 
-  const [email, setEmail] = useState('');
+  const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [passwordFocused, setPasswordFocused] = useState(false);
-  const [emailError, setEmailError] = useState('');
-  const [emailValid, setEmailValid] = useState(false);
+  const [identifierError, setIdentifierError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -143,7 +141,7 @@ export default function SignInScreen() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (
         e.key === 'Enter' &&
-        email.trim() &&
+        identifier.trim() &&
         password.trim() &&
         !isLoading
       ) {
@@ -154,31 +152,34 @@ export default function SignInScreen() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [email, password, isLoading]);
+  }, [identifier, password, isLoading]);
 
-  function validateEmail(value: string) {
-    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    if (!value) {
-      setEmailError('');
-      setEmailValid(false);
-    } else if (!valid) {
-      setEmailError('Please enter a valid email address');
-      setEmailValid(false);
+  function validateIdentifier(value: string) {
+    if (!value.trim()) {
+      setIdentifierError('');
+      return;
+    }
+    if (value.includes('@')) {
+      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      if (!valid) {
+        setIdentifierError('Please enter a valid email address');
+      } else {
+        setIdentifierError('');
+      }
     } else {
-      setEmailError('');
-      setEmailValid(true);
+      setIdentifierError('');
     }
   }
 
   async function handleSignIn() {
-    if (!email.trim() || !password.trim()) return;
-    if (emailError) return;
+    if (!identifier.trim() || !password.trim()) return;
+    if (identifierError) return;
 
     setIsLoading(true);
     setError('');
     clearError();
     try {
-      await signIn(email.trim(), password);
+      await signIn(identifier.trim(), password);
     } catch (err: unknown) {
       const raw =
         err instanceof Error
@@ -309,17 +310,14 @@ export default function SignInScreen() {
               <Text style={styles.welcomeTitle}>{t('welcomeBackAuth')}</Text>
               <Text style={styles.welcomeSub}>{t('signInToContinue')}</Text>
 
+              <Text style={styles.inputLabel}>Email or Username</Text>
               <View
                 style={[
                   styles.inputGroup,
-                  emailError
-                    ? styles.inputGroupError
-                    : emailValid
-                      ? styles.inputGroupValid
-                      : null,
+                  identifierError ? styles.inputGroupError : null,
                 ]}
               >
-                <Text style={styles.inputIcon}>📧</Text>
+                <Text style={styles.inputIcon}>👤</Text>
                 <TextInput
                   style={[
                     styles.input,
@@ -328,63 +326,76 @@ export default function SignInScreen() {
                       outlineWidth: 0,
                     } as any,
                   ]}
-                  placeholder="name@example.com"
+                  placeholder="Enter your email or username"
                   placeholderTextColor={COLORS.textMuted}
-                  value={email}
+                  value={identifier}
                   onChangeText={(v) => {
-                    setEmail(v);
-                    validateEmail(v);
+                    setIdentifier(v);
+                    validateIdentifier(v);
                   }}
-                  keyboardType="email-address"
                   autoCapitalize="none"
-                  autoComplete="email"
+                  autoCorrect={false}
                   editable={!isLoading}
                   returnKeyType="next"
                   onSubmitEditing={() => {
                     passwordRef.current?.focus();
                   }}
                 />
-                {emailValid && <Text style={styles.inputValid}>✓</Text>}
               </View>
-              {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
+              {identifierError ? (
+                <Text style={styles.fieldError}>{identifierError}</Text>
+              ) : null}
 
               <View
                 style={[
-                  styles.passwordGroup,
-                  passwordFocused && styles.inputGroupFocused,
+                  styles.inputGroup,
+                  {
+                    borderColor: COLORS.border,
+                    backgroundColor: COLORS.backgroundCard,
+                    marginTop: SPACING.sm,
+                  },
                 ]}
               >
-                <Text style={styles.inputIcon}>🔒</Text>
+                <Text style={{ fontSize: 18, marginRight: 8 }}>🔒</Text>
                 <TextInput
                   ref={passwordRef}
-                  style={[
-                    styles.passwordInput,
-                    Platform.OS === 'web' && {
-                      outlineStyle: 'none' as any,
-                      outlineWidth: 0,
-                    } as any,
-                  ]}
-                  placeholder={t('password')}
+                  style={{
+                    flex: 1,
+                    fontSize: 16,
+                    fontFamily: 'Poppins-Regular',
+                    color: COLORS.textPrimary,
+                    paddingVertical: 14,
+                  }}
+                  placeholder="Enter your password"
                   placeholderTextColor={COLORS.textMuted}
                   value={password}
                   onChangeText={setPassword}
                   secureTextEntry={!showPassword}
-                  autoComplete="password"
+                  autoCapitalize="none"
+                  autoCorrect={false}
                   editable={!isLoading}
-                  onFocus={() => setPasswordFocused(true)}
-                  onBlur={() => setPasswordFocused(false)}
                   returnKeyType="go"
                   onSubmitEditing={() => {
-                    if (email.trim() && password.trim() && !isLoading) {
+                    if (identifier.trim() && password.trim() && !isLoading) {
                       handleSignIn();
                     }
                   }}
                 />
                 <TouchableOpacity
-                  style={styles.eyeBtn}
-                  onPress={() => setShowPassword((s) => !s)}
+                  onPress={() => setShowPassword((v) => !v)}
+                  style={{
+                    padding: 8,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                  hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                  accessibilityLabel={
+                    showPassword ? 'Hide password' : 'Show password'
+                  }
                 >
-                  <Text style={styles.eyeIcon}>{showPassword ? '🙈' : '👁️'}</Text>
+                  <Text style={{ fontSize: 20, color: COLORS.textMuted }}>
+                    {showPassword ? '🙈' : '👁️'}
+                  </Text>
                 </TouchableOpacity>
               </View>
 
@@ -664,6 +675,12 @@ const styles = StyleSheet.create({
     left: 20,
   },
   inputIcon: { fontSize: 18 },
+  inputLabel: {
+    fontSize: FONT_SIZES.sm,
+    fontFamily: 'Poppins-SemiBold',
+    color: COLORS.textPrimary,
+    marginBottom: SPACING.xs,
+  },
   input: {
     flex: 1,
     fontSize: 16,

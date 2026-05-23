@@ -34,7 +34,7 @@ import {
 } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore, type ChatMessage } from '@/store/appStore';
-import { saveProgress, syncProfile } from '@/services/dbService';
+import { saveProgress } from '@/services/dbService';
 import { playSound } from '@/services/soundService';
 import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -604,17 +604,7 @@ export default function LessonScreen() {
         useAppStore.getState().completeDailyChallenge();
       }
 
-      const state = useAppStore.getState();
-      syncProfile({
-        name: state.userName,
-        grade: state.selectedGrade ?? 1,
-        avatar: state.userAvatar,
-        xp: xpAfter,
-        streak: state.streak,
-        language: state.selectedLanguage,
-        personalityId: state.selectedPersonalityId,
-        lastActiveDate: state.lastStudyDate ?? new Date().toISOString().split('T')[0],
-      }).catch(() => {});
+      useAppStore.getState().syncProfile().catch(() => {});
     },
     [addXP, isChallenge, triggerCoinAnimation]
   );

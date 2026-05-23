@@ -10,8 +10,9 @@ import {
   ScrollView,
   useWindowDimensions,
   Animated,
+  AppState,
 } from 'react-native';
-import { Redirect, router } from 'expo-router';
+import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
@@ -78,6 +79,7 @@ export default function DashboardScreen() {
   const dailyChallengeTopic = useAppStore((s) => s.dailyChallengeTopic);
   const subjectLessonsCount = useAppStore((s) => s.subjectLessonsCount);
   const userGrade = useAppStore((s) => s.userGrade);
+  const setupComplete = useAppStore((s) => s.setupComplete);
   const lastCelebratedStreak = useAppStore((s) => s.lastCelebratedStreak);
   const markStreakCelebrated = useAppStore((s) => s.markStreakCelebrated);
   const shimmerAnim = useRef(new Animated.Value(0)).current;
@@ -152,13 +154,29 @@ export default function DashboardScreen() {
     return () => loop.stop();
   }, [showLevelShimmer, shimmerAnim]);
 
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state === 'active') {
+        useAppStore.getState().loadUserProgress().catch(() => {});
+      }
+    });
+    return () => sub.remove();
+  }, []);
+
+  const effectiveGrade =
+    selectedGrade ??
+    (() => {
+      const n = parseInt(userGrade.replace(/\D/g, ''), 10);
+      return n >= 1 && n <= 6 ? n : 1;
+    })();
+
   const tabContent: Record<Tab, Subject[]> = useMemo(
     () => ({
-      subjects: getCoreSubjectsForGrade(selectedGrade!),
+      subjects: getCoreSubjectsForGrade(effectiveGrade),
       languages: LANGUAGE_SUBJECTS,
       softskills: SOFT_SKILLS,
     }),
-    [selectedGrade]
+    [effectiveGrade]
   );
 
   const lastActiveDate = lastStudyDate;
@@ -166,7 +184,7 @@ export default function DashboardScreen() {
   useEffect(() => {
     syncProfile({
       name: displayName,
-      grade: selectedGrade ?? 1,
+      grade: effectiveGrade,
       avatar: userAvatar,
       xp: xp ?? 0,
       streak: streak ?? 0,
@@ -175,9 +193,67 @@ export default function DashboardScreen() {
       lastActiveDate: lastActiveDate ?? new Date().toISOString().split('T')[0],
     }).catch(() => {});
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [xp, streak, selectedGrade, selectedLanguage, selectedPersonalityId, displayName, userAvatar]);
+  }, [xp, streak, effectiveGrade, selectedLanguage, selectedPersonalityId, displayName, userAvatar]);
 
-  if (!selectedGrade) return <Redirect href="/grade" />;
+  if (!userGrade?.trim() && !setupComplete) {
+    return (
+      <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: 32,
+            backgroundColor: colors.background,
+          }}
+        >
+          <Text style={{ fontSize: 48 }}>👋</Text>
+          <Text
+            style={{
+              fontSize: 20,
+              fontFamily: 'Poppins-Bold',
+              color: colors.textPrimary,
+              textAlign: 'center',
+              marginTop: 16,
+            }}
+          >
+            Welcome to Learnova!
+          </Text>
+          <Text
+            style={{
+              fontSize: 15,
+              fontFamily: 'Poppins-Regular',
+              color: colors.textMuted,
+              textAlign: 'center',
+              marginTop: 8,
+              marginBottom: 24,
+            }}
+          >
+            Let&apos;s set up your profile first
+          </Text>
+          <TouchableOpacity
+            style={{
+              backgroundColor: colors.primary,
+              borderRadius: 50,
+              paddingHorizontal: 32,
+              paddingVertical: 14,
+            }}
+            onPress={() => router.push('/auth/sign-up?step=2')}
+          >
+            <Text
+              style={{
+                color: '#fff',
+                fontFamily: 'Poppins-Bold',
+                fontSize: 16,
+              }}
+            >
+              Set Up Profile
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   function handleSubject(subject: Subject) {
     playSound('tap');
@@ -244,7 +320,7 @@ export default function DashboardScreen() {
                 <Text style={[styles.gradePillText, { color: colors.primaryDark }]}>
                   {userGrade?.trim().startsWith('Primary')
                     ? userGrade
-                    : `Primary ${selectedGrade}`}
+                    : `Primary ${effectiveGrade}`}
                 </Text>
               </View>
               <TouchableOpacity
@@ -311,7 +387,7 @@ export default function DashboardScreen() {
                       {
                         width: `${
                           subjectProgress[
-                            `${lastSubject}_${lastGrade ?? selectedGrade}`
+                            `${lastSubject}_${lastGrade ?? effectiveGrade}`
                           ] ?? 0
                         }%`,
                         backgroundColor: colors.primary,
@@ -322,7 +398,7 @@ export default function DashboardScreen() {
 
                 <Text style={[styles.resumeProgress, { color: colors.textMuted }]}>
                   {subjectProgress[
-                    `${lastSubject}_${lastGrade ?? selectedGrade}`
+                    `${lastSubject}_${lastGrade ?? effectiveGrade}`
                   ] ?? 0}
                   % complete
                 </Text>
@@ -586,7 +662,7 @@ export default function DashboardScreen() {
           <View style={styles.grid}>
             {tabContent[activeTab].map((subject) => {
               const localized = getLocalizedSubject(subject, selectedLanguage);
-              const cardKey = `${subject.label}_${selectedGrade}`;
+              const cardKey = `${subject.label}_${effectiveGrade}`;
               const cardProgress = subjectProgress[cardKey] ?? 0;
               const stars = getSubjectStars(
                 subjectLessonsCount[localized.label] ?? subjectLessonsCount[subject.label] ?? 0

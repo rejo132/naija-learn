@@ -97,6 +97,7 @@ export default function RootLayout() {
     const inAuthGroup = segments[0] === 'auth';
     const onSignUp =
       segments[0] === 'auth' && (segments as string[])[1] === 'sign-up';
+    const onDashboard = (segments as string[]).includes('dashboard');
 
     async function route() {
       if (!session && !inAuthGroup) {
@@ -138,7 +139,7 @@ export default function RootLayout() {
         return;
       }
 
-      if (!onSignUp) {
+      if (!onSignUp && !onDashboard) {
         router.replace('/auth/sign-up?step=2');
       }
     }
