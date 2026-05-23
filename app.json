@@ -12,9 +12,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#008751"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.learnova.app",
@@ -35,7 +33,10 @@
       "permissions": [
         "RECORD_AUDIO",
         "INTERNET",
-        "ACCESS_NETWORK_STATE"
+        "ACCESS_NETWORK_STATE",
+        "RECEIVE_BOOT_COMPLETED",
+        "SCHEDULE_EXACT_ALARM",
+        "VIBRATE"
       ],
       "googleServicesFile": "./google-services.json"
     },
@@ -50,6 +51,14 @@
       "backgroundColor": "#F9F6F0"
     },
     "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#1a7a4a",
+          "sounds": []
+        }
+      ],
       "expo-router",
       "expo-font",
       [
@@ -92,8 +101,7 @@
     "extra": {
       "eas": {
         "projectId": "53a5a55d-f949-4d25-b2e3-fb94397d6f2a"
-      },
-      "router": {}
+      }
     }
   }
 }

@@ -64,8 +64,12 @@ interface AppState {
   offlineMode: boolean;
   dataSaver: boolean;
   notificationsEnabled: boolean;
+  notificationHour: number;
+  notificationMinute: number;
   difficulty: DifficultyLevel;
   voiceSpeed: VoiceSpeedLevel;
+  isSignedOut: boolean;
+  setupComplete: boolean;
   // ── Student profile (local display) ──
   userName: string;
   userAvatar: string;
@@ -114,9 +118,16 @@ interface AppState {
   setOfflineMode: (v: boolean) => void;
   setDataSaver: (v: boolean) => void;
   setNotificationsEnabled: (v: boolean) => void;
+  setNotificationHour: (hour: number) => void;
+  setNotificationMinute: (minute: number) => void;
   setDifficulty: (v: DifficultyLevel) => void;
   setVoiceSpeed: (v: VoiceSpeedLevel) => void;
+  setIsSignedOut: (v: boolean) => void;
+  setSetupComplete: (v: boolean) => void;
+  setUserName: (name: string) => void;
+  setUserGrade: (grade: string) => void;
   loadUserProgress: () => Promise<void>;
+  resetSession: () => void;
   setLastSession: (
     subject: string,
     emoji: string,
@@ -161,8 +172,12 @@ type PersistedAppState = Pick<
   | 'offlineMode'
   | 'dataSaver'
   | 'notificationsEnabled'
+  | 'notificationHour'
+  | 'notificationMinute'
   | 'difficulty'
   | 'voiceSpeed'
+  | 'isSignedOut'
+  | 'setupComplete'
   | 'userName'
   | 'userAvatar'
   | 'userGrade'
@@ -194,7 +209,9 @@ type AppStateValues = Omit<AppState,
   | 'startSession' | 'endSession' | 'addXP' | 'updateStreak'
   | 'incrementLessons' | 'updateBestQuizScore' | 'unlockAchievement'
   | 'toggleDarkMode' | 'setSoundEnabled' | 'setOfflineMode' | 'setDataSaver'
-  | 'setNotificationsEnabled' | 'setDifficulty' | 'setVoiceSpeed' | 'loadUserProgress'
+  | 'setNotificationsEnabled' | 'setNotificationHour' | 'setNotificationMinute'
+  | 'setDifficulty' | 'setVoiceSpeed' | 'setIsSignedOut' | 'setSetupComplete'
+  | 'setUserName' | 'setUserGrade' | 'loadUserProgress' | 'resetSession'
   | 'setLastSession' | 'updateSubjectProgress'
   | 'markFlowCompleted' | 'setXP' | 'setStreak' | 'setSubjectProgress'
   | 'incrementSubjectLesson' | 'generateDailyChallenge' | 'completeDailyChallenge'
@@ -223,8 +240,12 @@ const initialState: AppStateValues = {
   offlineMode: false,
   dataSaver: false,
   notificationsEnabled: true,
+  notificationHour: 16,
+  notificationMinute: 0,
   difficulty: 'Medium',
   voiceSpeed: 'Normal',
+  isSignedOut: false,
+  setupComplete: false,
   userName: '',
   userAvatar: '🦁',
   userGrade: '',
@@ -311,46 +332,76 @@ export const useAppStore = create<AppState>()(
       setOfflineMode: (v) => set({ offlineMode: v }),
       setDataSaver: (v) => set({ dataSaver: v }),
       setNotificationsEnabled: (v) => set({ notificationsEnabled: v }),
+      setNotificationHour: (hour) => set({ notificationHour: hour }),
+      setNotificationMinute: (minute) => set({ notificationMinute: minute }),
       setDifficulty: (v) => set({ difficulty: v }),
       setVoiceSpeed: (v) => set({ voiceSpeed: v }),
+      setIsSignedOut: (v) => set({ isSignedOut: v }),
+      setSetupComplete: (v) => set({ setupComplete: v }),
+      setUserName: (name) => set({ userName: name }),
+      setUserGrade: (grade) => set({ userGrade: grade }),
       loadUserProgress: async () => {
         try {
           const saved = await fetchUserProgress();
           if (!saved) return;
 
-          const store = useAppStore.getState();
+          const state = useAppStore.getState();
 
-          if (saved.totalXP > (store.xp ?? 0)) {
-            store.setXP(saved.totalXP);
+          const updates: Partial<AppStateValues> = {
+            xp: Math.max(state.xp, saved.totalXP),
+            streak: Math.max(state.streak, saved.streak),
+          };
+
+          if (saved.name) {
+            updates.userName = saved.name || state.userName;
           }
 
-          if (saved.streak > (store.streak ?? 0)) {
-            store.setStreak(saved.streak);
+          if (saved.grade) {
+            if (!state.selectedGrade) {
+              updates.selectedGrade = saved.grade;
+            }
+            if (!state.userGrade?.trim()) {
+              updates.userGrade = `Primary ${saved.grade}`;
+              updates.setupComplete = true;
+            }
           }
 
-          if (saved.grade && !store.selectedGrade) {
-            store.setGrade(saved.grade);
+          if (saved.avatar) {
+            updates.userAvatar = saved.avatar || state.userAvatar;
           }
 
-          if (saved.language && !store.selectedLanguage) {
-            store.setLanguage(saved.language as LanguageCode);
+          if (saved.language) {
+            updates.selectedLanguage = saved.language as LanguageCode;
           }
 
-          if (saved.name && !store.userName) {
-            useAppStore.setState({ userName: saved.name });
+          if (saved.personalityId) {
+            updates.selectedPersonalityId = saved.personalityId;
           }
 
           if (Object.keys(saved.subjectProgress).length > 0) {
-            const merged = {
+            updates.subjectProgress = {
               ...saved.subjectProgress,
-              ...(store.subjectProgress ?? {}),
+              ...state.subjectProgress,
             };
-            store.setSubjectProgress(merged);
           }
+
+          useAppStore.setState(updates);
         } catch (err) {
           console.error('Progress restore error:', err);
         }
       },
+      resetSession: () =>
+        set({
+          messages: [],
+          isAILoading: false,
+          sessionStartTime: null,
+          selectedSubject: null,
+          lastSubject: null,
+          lastSubjectEmoji: null,
+          lastGrade: null,
+          lastPersonalityId: null,
+          lastOpenedAt: null,
+        }),
       setLastSession: (subject, emoji, grade, personalityId) =>
         set({
           lastSubject: subject,
@@ -453,8 +504,12 @@ export const useAppStore = create<AppState>()(
         offlineMode: state.offlineMode,
         dataSaver: state.dataSaver,
         notificationsEnabled: state.notificationsEnabled,
+        notificationHour: state.notificationHour,
+        notificationMinute: state.notificationMinute,
         difficulty: state.difficulty,
         voiceSpeed: state.voiceSpeed,
+        isSignedOut: state.isSignedOut,
+        setupComplete: state.setupComplete,
         userName: state.userName,
         userAvatar: state.userAvatar,
         userGrade: state.userGrade,

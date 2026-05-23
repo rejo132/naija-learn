@@ -30,6 +30,10 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { AVATAR_UNLOCKS } from '@/constants/levels';
 import { syncProfile } from '@/services/dbService';
 import { playSound } from '@/services/soundService';
+import {
+  scheduleDailyReminder,
+  cancelDailyReminder,
+} from '@/services/notificationService';
 import type { DifficultyLevel, VoiceSpeedLevel } from '@/store/appStore';
 
 // TODO: Replace with real support number before handover to buyer
@@ -136,6 +140,10 @@ export default function SettingsScreen() {
   const setDataSaver = useAppStore((s) => s.setDataSaver);
   const notifications = useAppStore((s) => s.notificationsEnabled);
   const setNotifications = useAppStore((s) => s.setNotificationsEnabled);
+  const notificationHour = useAppStore((s) => s.notificationHour);
+  const notificationMinute = useAppStore((s) => s.notificationMinute);
+  const setNotificationHour = useAppStore((s) => s.setNotificationHour);
+  const storeUserName = useAppStore((s) => s.userName);
   const difficulty = useAppStore((s) => s.difficulty);
   const setDifficulty = useAppStore((s) => s.setDifficulty);
   const voiceSpeed = useAppStore((s) => s.voiceSpeed);
@@ -239,12 +247,7 @@ export default function SettingsScreen() {
   }
 
   async function handleSignOut() {
-    // Wipe local cached learning state BEFORE clearing the session so the
-    // next user signing in on this device doesn't inherit XP / streak from the previous user.
-    useAppStore.getState().resetAll();
-    useAuthStore.getState().setSession(null);
-    useAuthStore.getState().setUserRole(null);
-    await supabase.auth.signOut().catch(() => {});
+    await useAuthStore.getState().signOut();
     router.replace('/auth/sign-in');
   }
 
@@ -545,23 +548,104 @@ export default function SettingsScreen() {
               thumbColor="#FFFFFF"
             />
           </View>
-          <View style={[styles.row, styles.rowLast]}>
+          <View style={[styles.row, { borderBottomColor: colors.border }]}>
             <Text style={styles.rowEmoji}>🔔</Text>
             <View style={styles.rowBody}>
               <Text style={[styles.rowLabel, { color: colors.textPrimary }]}>
-                Notifications
+                Daily Reminders
               </Text>
               <Text style={[styles.rowSublabel, { color: colors.textMuted }]}>
-                Daily learning reminders
+                Get reminded to learn every day
               </Text>
             </View>
             <Switch
               value={notifications}
-              onValueChange={setNotifications}
+              onValueChange={async (v) => {
+                setNotifications(v);
+                if (v) {
+                  const granted = await scheduleDailyReminder(
+                    notificationHour,
+                    notificationMinute,
+                    storeUserName || userName
+                  );
+                  if (!granted) {
+                    setNotifications(false);
+                  }
+                } else {
+                  await cancelDailyReminder();
+                }
+              }}
               trackColor={{ false: COLORS.border, true: COLORS.primary }}
               thumbColor="#FFFFFF"
             />
           </View>
+          {notifications && (
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                paddingHorizontal: SPACING.lg,
+                paddingVertical: SPACING.sm,
+                borderTopWidth: 1,
+                borderTopColor: colors.border + '40',
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: FONT_SIZES.sm,
+                  fontFamily: 'Poppins-Regular',
+                  color: colors.textMuted,
+                }}
+              >
+                Reminder time
+              </Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 8,
+                  flexWrap: 'wrap',
+                  justifyContent: 'flex-end',
+                  flex: 1,
+                }}
+              >
+                {[8, 12, 14, 16, 18, 20].map((h) => (
+                  <TouchableOpacity
+                    key={h}
+                    onPress={() => {
+                      setNotificationHour(h);
+                      scheduleDailyReminder(
+                        h,
+                        notificationMinute,
+                        storeUserName || userName
+                      ).catch(() => {});
+                    }}
+                    style={{
+                      paddingHorizontal: 10,
+                      paddingVertical: 5,
+                      borderRadius: 12,
+                      backgroundColor:
+                        notificationHour === h
+                          ? colors.primary
+                          : colors.border + '60',
+                    }}
+                  >
+                    <Text
+                      style={{
+                        fontSize: 12,
+                        fontFamily: 'Poppins-SemiBold',
+                        color:
+                          notificationHour === h ? '#FFFFFF' : colors.textMuted,
+                      }}
+                    >
+                      {h < 12 ? `${h}am` : h === 12 ? '12pm' : `${h - 12}pm`}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+          )}
         </View>
 
         <SectionHeader title={`ℹ️  ${t('settingsAbout').toUpperCase()}`} colors={colors} />

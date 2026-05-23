@@ -5,19 +5,17 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import {
   View,
   Text,
-  TextInput,
   TouchableOpacity,
   StyleSheet,
   ScrollView,
   useWindowDimensions,
-  Platform,
   Animated,
 } from 'react-native';
 import { Redirect, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
-import { LANGUAGE_NAMES, type Language, getUIText } from '@/constants/languages';
+import { type Language } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import {
   getCoreSubjectsForGrade,
@@ -36,10 +34,7 @@ import {
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
-import { GlassCard } from '@/components/GlassCard';
 import { PressableScale } from '@/components/PressableScale';
-import { TutorAvatar } from '@/components/TutorAvatar';
-import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { syncProfile } from '@/services/dbService';
 import StreakCelebration from '@/components/StreakCelebration';
 import { playSound } from '@/services/soundService';
@@ -66,50 +61,8 @@ function isStudiedToday(lastStudyDate: string | null) {
   return lastStudyDate === new Date().toISOString().split('T')[0];
 }
 
-function PulsingChallengeButton({
-  onPress,
-  colors,
-}: {
-  onPress: () => void;
-  colors: ReturnType<typeof useTheme>['colors'];
-}) {
-  const pulseAnim = useRef(new Animated.Value(1)).current;
-
-  useEffect(() => {
-    const loop = Animated.loop(
-      Animated.sequence([
-        Animated.timing(pulseAnim, {
-          toValue: 1.04,
-          duration: 600,
-          useNativeDriver: true,
-        }),
-        Animated.timing(pulseAnim, {
-          toValue: 1,
-          duration: 600,
-          useNativeDriver: true,
-        }),
-      ])
-    );
-    loop.start();
-    return () => loop.stop();
-  }, [pulseAnim]);
-
-  return (
-    <Animated.View style={{ transform: [{ scale: pulseAnim }] }}>
-      <TouchableOpacity
-        style={[styles.dailyChallengeBtn, { backgroundColor: colors.primary }]}
-        onPress={onPress}
-        activeOpacity={0.85}
-      >
-        <Text style={styles.dailyChallengeBtnText}>Start Challenge</Text>
-      </TouchableOpacity>
-    </Animated.View>
-  );
-}
-
 export default function DashboardScreen() {
   const [activeTab, setActiveTab] = useState<Tab>('subjects');
-  const [aiPrompt, setAiPrompt] = useState('');
   const [showStreakCelebration, setShowStreakCelebration] = useState(false);
   const {
     selectedLanguage,
@@ -119,7 +72,6 @@ export default function DashboardScreen() {
     xp,
     streak,
     lastStudyDate,
-    lessonsCompleted,
   } = useAppStore();
   const dailyChallengeCompleted = useAppStore((s) => s.dailyChallengeCompleted);
   const dailyChallengeSubject = useAppStore((s) => s.dailyChallengeSubject);
@@ -138,15 +90,12 @@ export default function DashboardScreen() {
   const userName = useAppStore((s) => s.userName);
   const userAvatar = useAppStore((s) => s.userAvatar);
   const user = useAuthStore((s) => s.user);
-  const ui = getUIText(selectedLanguage);
   const { t } = useTranslation();
   const { width } = useWindowDimensions();
   const isCompact = width < 760;
   const isWide = width > 1200;
   const isMedium = width > 900 && width <= 1200;
-  const showFloatingTutor = width <= 768;
-  const { colors, isDarkMode } = useTheme();
-  const { isConnected } = useNetworkStatus();
+  const { colors } = useTheme();
 
   const greeting = getTimeGreeting(t);
   const displayName =
@@ -156,7 +105,7 @@ export default function DashboardScreen() {
     user?.email?.split('@')[0] ||
     'Student';
   const studiedToday = isStudiedToday(lastStudyDate);
-  const dailyMissionProgress = studiedToday ? 1 : 0;
+  const missionProgress = studiedToday ? 100 : 0;
   const currentLevel = getCurrentLevel(xp);
   const nextLevel = getNextLevel(xp);
   const levelProgress = getXPProgress(xp);
@@ -236,25 +185,20 @@ export default function DashboardScreen() {
     router.push('/lesson');
   }
 
-  function handleAIPromptSubmit() {
-    const text = aiPrompt.trim();
-    if (!text) return;
-
-    const allSubjects = [
-      ...tabContent.subjects,
-      ...tabContent.languages,
-      ...tabContent.softskills,
-    ];
-    const lower = text.toLowerCase();
-    const match = allSubjects.find(
-      (s) =>
-        s.label.toLowerCase().includes(lower) ||
-        lower.includes(s.label.toLowerCase())
-    );
-
-    const subject = match ?? tabContent.subjects[0];
-    setAiPrompt('');
-    handleSubject(getLocalizedSubject(subject, selectedLanguage));
+  function handleStartChallenge() {
+    playSound('tap');
+    const match = findSubjectByLabel(dailyChallengeSubject);
+    if (match) {
+      setSubject(getLocalizedSubject(match, selectedLanguage));
+    }
+    router.push({
+      pathname: '/lesson',
+      params: {
+        subject: dailyChallengeSubject,
+        topic: dailyChallengeTopic,
+        isChallenge: 'true',
+      },
+    });
   }
 
   const TABS = [
@@ -469,136 +413,145 @@ export default function DashboardScreen() {
             </Text>
           </View>
 
-          {/* AI Prompt Bar */}
           <View
-            style={[
-              styles.promptBar,
-              {
+            style={{
                 backgroundColor: colors.backgroundCard,
-                borderColor: isDarkMode ? 'rgba(255,255,255,0.08)' : colors.border,
-              },
-            ]}
+                borderRadius: RADIUS.xl,
+                padding: SPACING.lg,
+                marginBottom: SPACING.md,
+                borderWidth: 1.5,
+                borderColor: colors.primary + '30',
+              }}
           >
-            <Text style={styles.promptBarIcon}>🤖</Text>
-            <TextInput
-              style={[
-                styles.promptBarInput,
-                { color: colors.textPrimary },
-                Platform.OS === 'web' && {
-                  outlineStyle: 'none' as any,
-                  outlineWidth: 0,
-                } as any,
-              ]}
-              value={aiPrompt}
-              onChangeText={setAiPrompt}
-              placeholder={t('askAI')}
-              placeholderTextColor={colors.textMuted}
-              onSubmitEditing={handleAIPromptSubmit}
-              returnKeyType="go"
-            />
-            <TouchableOpacity
-              style={[
-                styles.promptBarBtn,
-                { backgroundColor: colors.primary },
-                !aiPrompt.trim() && styles.promptBarBtnDisabled,
-              ]}
-              activeOpacity={0.75}
-              onPress={handleAIPromptSubmit}
-              disabled={!aiPrompt.trim()}
-            >
-              <Text style={styles.promptBarBtnText}>{ui.go}</Text>
-            </TouchableOpacity>
-          </View>
-
-          {!isConnected && (
-            <TouchableOpacity
-              style={styles.offlineBar}
-              onPress={() => router.push({ pathname: '/lesson', params: { offline: '1' } })}
-            >
-              <Text style={styles.offlineBarText}>
-                📴 You are offline — tap to do offline activities
-              </Text>
-            </TouchableOpacity>
-          )}
-
-          {/* Quick stats */}
-          <View style={styles.statsRow}>
-            <GlassCard
-              variant="elevated"
-              style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}
-            >
-              <Text style={styles.statEmoji}>📖</Text>
-              <Text style={[styles.statValue, { color: colors.primaryDark }]}>{studiedToday ? 1 : 0}</Text>
-              <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{ui.todaysLessons}</Text>
-            </GlassCard>
-            <GlassCard
-              variant="elevated"
-              style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}
-            >
-              <Text style={styles.statEmoji}>🔥</Text>
-              <Text style={[styles.statValue, { color: colors.primaryDark }]}>{streak}</Text>
-              <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{ui.currentStreak}</Text>
-            </GlassCard>
-            <GlassCard
-              variant="elevated"
-              style={[styles.statCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}
-            >
-              <Text style={styles.statEmoji}>⚡</Text>
-              <Text style={[styles.statValue, { color: colors.primaryDark }]}>{xp}</Text>
-              <Text style={[styles.statLabel, { color: colors.textSecondary }]}>{t('totalXP')}</Text>
-            </GlassCard>
-          </View>
-
-          {/* Daily mission */}
-          <GlassCard
-            variant="glow"
-            style={[styles.missionCard, isDarkMode && { backgroundColor: colors.backgroundCard }]}
-          >
-            <View style={styles.missionHeader}>
-              <Text style={[styles.missionTitle, { color: colors.textPrimary }]}>🎯 {t('dailyMission')}</Text>
-              <View style={[styles.missionXpBadge, { backgroundColor: colors.goldLight, borderColor: 'rgba(234, 162, 33, 0.3)' }]}>
-                <Text style={[styles.missionXpText, { color: colors.goldDark }]}>+20 XP</Text>
-              </View>
-            </View>
-            <Text style={[styles.missionDesc, { color: colors.textSecondary }]}>{ui.completeLessonToday}</Text>
-            <View style={[styles.missionBarBg, { backgroundColor: colors.primaryLight }]}>
-              <View
-                style={[
-                  styles.missionBarFill,
-                  { width: `${dailyMissionProgress * 100}%`, backgroundColor: colors.primary },
-                ]}
-              />
-            </View>
-            <Text style={[styles.missionProgress, { color: colors.textMuted }]}>
-              {dailyMissionProgress}/1 {ui.missionComplete}
-            </Text>
-          </GlassCard>
-
-          <View style={[styles.aiRecommendCard, { backgroundColor: colors.primaryDeep }]}>
-            <View style={styles.aiRecommendIcon}>
-              <Text style={styles.aiRecommendEmoji}>🤖</Text>
-            </View>
-            <View style={styles.aiRecommendBody}>
-              <Text style={styles.aiRecommendLabel}>{t('aiPickForYou')}</Text>
-              <Text style={styles.aiRecommendTitle}>
-                {tabContent.subjects[0]?.label ?? 'Mathematics'}
-              </Text>
-              <Text style={styles.aiRecommendSub}>
-                {ui.startDailyLesson}
-              </Text>
-            </View>
-            <TouchableOpacity
-              style={[styles.aiRecommendBtn, { backgroundColor: colors.primary }]}
-              onPress={() => {
-                const first = tabContent.subjects[0];
-                if (first) handleSubject(getLocalizedSubject(first, selectedLanguage));
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginBottom: SPACING.sm,
               }}
             >
-              <Text style={styles.aiRecommendBtnText}>{t('startLesson')}</Text>
-            </TouchableOpacity>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 8,
+                }}
+              >
+                <Text style={{ fontSize: 20 }}>⚡</Text>
+                <Text
+                  style={{
+                    fontSize: FONT_SIZES.md,
+                    fontFamily: 'Poppins-Bold',
+                    color: colors.textPrimary,
+                  }}
+                >
+                  Daily Challenge
+                </Text>
+              </View>
+              <View
+                style={{
+                  backgroundColor: colors.primary,
+                  borderRadius: 20,
+                  paddingHorizontal: 10,
+                  paddingVertical: 3,
+                }}
+              >
+                <Text
+                  style={{
+                    fontSize: FONT_SIZES.xs,
+                    fontFamily: 'Poppins-Bold',
+                    color: '#FFFFFF',
+                  }}
+                >
+                  3x XP
+                </Text>
+              </View>
+            </View>
+
+            <Text
+              style={{
+                fontSize: FONT_SIZES.sm,
+                fontFamily: 'Poppins-Regular',
+                color: colors.textMuted,
+                marginBottom: 4,
+              }}
+            >
+              🎯 Complete 1 lesson today
+            </Text>
+
+            <Text
+              style={{
+                fontSize: FONT_SIZES.sm,
+                fontFamily: 'Poppins-SemiBold',
+                color: colors.textPrimary,
+                marginBottom: SPACING.md,
+              }}
+            >
+              {dailyChallengeSubject} • {dailyChallengeTopic}
+            </Text>
+
+            <View
+              style={{
+                height: 5,
+                backgroundColor: colors.border,
+                borderRadius: 3,
+                marginBottom: SPACING.sm,
+                overflow: 'hidden',
+              }}
+            >
+              <View
+                style={{
+                  height: 5,
+                  width: dailyChallengeCompleted ? '100%' : `${missionProgress}%`,
+                  backgroundColor: colors.primary,
+                  borderRadius: 3,
+                }}
+              />
+            </View>
+
+            {dailyChallengeCompleted ? (
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 6,
+                }}
+              >
+                <Text style={{ fontSize: 16 }}>✅</Text>
+                <Text
+                  style={{
+                    fontSize: FONT_SIZES.sm,
+                    fontFamily: 'Poppins-SemiBold',
+                    color: '#2E9E5A',
+                  }}
+                >
+                  Completed! Come back tomorrow 🌟
+                </Text>
+              </View>
+            ) : (
+              <TouchableOpacity
+                style={{
+                  backgroundColor: colors.primary,
+                  borderRadius: RADIUS.lg,
+                  paddingVertical: 12,
+                  alignItems: 'center',
+                }}
+                onPress={handleStartChallenge}
+              >
+                <Text
+                  style={{
+                    fontSize: FONT_SIZES.sm,
+                    fontFamily: 'Poppins-Bold',
+                    color: '#FFFFFF',
+                  }}
+                >
+                  Start Challenge ⚡
+                </Text>
+              </TouchableOpacity>
+            )}
           </View>
 
-          {/* Tabs */}
           <View style={styles.tabBar}>
             {TABS.map((tab) => (
               <PressableScale
@@ -630,79 +583,6 @@ export default function DashboardScreen() {
             ))}
           </View>
 
-          <View
-            style={[
-              styles.dailyChallengeCard,
-              {
-                backgroundColor: `${colors.primary}1A`,
-                borderColor: colors.primary,
-                opacity: dailyChallengeCompleted ? 0.7 : 1,
-              },
-            ]}
-          >
-            <View style={styles.dailyChallengeHeader}>
-              <Text style={[styles.dailyChallengeTitle, { color: colors.textPrimary }]}>
-                ⚡ Daily Challenge
-              </Text>
-              <View style={[styles.dailyChallengeBadge, { backgroundColor: colors.primary }]}>
-                <Text style={styles.dailyChallengeBadgeText}>3x XP</Text>
-              </View>
-            </View>
-            <Text style={[styles.dailyChallengeMeta, { color: colors.textSecondary }]}>
-              {dailyChallengeSubject} • {dailyChallengeTopic}
-            </Text>
-            {dailyChallengeCompleted ? (
-              <>
-                <Text style={[styles.dailyChallengeDone, { color: '#2E9E5A' }]}>
-                  ✅ Completed!
-                </Text>
-                <Text style={[styles.dailyChallengeTomorrow, { color: colors.textMuted }]}>
-                  Come back tomorrow!
-                </Text>
-              </>
-            ) : (
-              <PulsingChallengeButton
-                colors={colors}
-                onPress={() => {
-                  playSound('tap');
-                  const match = findSubjectByLabel(dailyChallengeSubject);
-                  if (match) {
-                    setSubject(getLocalizedSubject(match, selectedLanguage));
-                  }
-                  router.push({
-                    pathname: '/lesson',
-                    params: {
-                      subject: dailyChallengeSubject,
-                      topic: dailyChallengeTopic,
-                      isChallenge: 'true',
-                    },
-                  });
-                }}
-              />
-            )}
-          </View>
-
-          {activeTab === 'softskills' && (
-            <GlassCard
-              style={[
-                styles.banner,
-                {
-                  backgroundColor: colors.accentLight,
-                  borderColor: isDarkMode ? colors.border : 'rgba(245, 166, 35, 0.25)',
-                },
-                isDarkMode && { backgroundColor: colors.backgroundCard },
-              ]}
-            >
-              <Text style={[styles.bannerTitle, { color: colors.accentDark }]}>
-                ⭐ {ui.lifeSkillsTitle}
-              </Text>
-              <Text style={[styles.bannerText, { color: colors.textSecondary }]}>
-                {ui.lifeSkillsText}
-              </Text>
-            </GlassCard>
-          )}
-
-          {/* Subject grid */}
           <View style={styles.grid}>
             {tabContent[activeTab].map((subject) => {
               const localized = getLocalizedSubject(subject, selectedLanguage);
@@ -793,32 +673,8 @@ export default function DashboardScreen() {
               );
             })}
           </View>
-
-          <Text style={[styles.lessonsHint, { color: colors.textMuted }]}>
-            {lessonsCompleted} {ui.lessonsCompleted}
-          </Text>
         </View>
         </ScrollView>
-
-        <TouchableOpacity
-          style={[
-            styles.floatingTutor,
-            {
-              display: showFloatingTutor ? 'flex' : 'none',
-              backgroundColor: colors.accent,
-              shadowColor: colors.accent,
-            },
-          ]}
-          onPress={() => {
-            const first = tabContent.subjects[0];
-            if (first) {
-              handleSubject(getLocalizedSubject(first, selectedLanguage));
-            }
-          }}
-        >
-          <TutorAvatar size={28} />
-          <Text style={styles.floatingTutorText}>{ui.askTutor}</Text>
-        </TouchableOpacity>
 
         {showStreakCelebration && (
           <StreakCelebration
@@ -913,56 +769,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     marginTop: 2,
   },
-  dailyChallengeCard: {
-    borderRadius: 16,
-    borderWidth: 2,
-    padding: SPACING.lg,
-    marginBottom: SPACING.md,
-  },
-  dailyChallengeHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: SPACING.xs,
-  },
-  dailyChallengeTitle: {
-    fontSize: FONT_SIZES.lg,
-    fontFamily: 'Poppins-Bold',
-  },
-  dailyChallengeBadge: {
-    borderRadius: RADIUS.full,
-    paddingHorizontal: SPACING.sm,
-    paddingVertical: 4,
-  },
-  dailyChallengeBadgeText: {
-    color: '#FFFFFF',
-    fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-Bold',
-  },
-  dailyChallengeMeta: {
-    fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
-    marginBottom: SPACING.md,
-  },
-  dailyChallengeBtn: {
-    borderRadius: RADIUS.lg,
-    paddingVertical: SPACING.sm,
-    alignItems: 'center',
-  },
-  dailyChallengeBtnText: {
-    color: '#FFFFFF',
-    fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Bold',
-  },
-  dailyChallengeDone: {
-    fontSize: FONT_SIZES.md,
-    fontFamily: 'Poppins-SemiBold',
-  },
-  dailyChallengeTomorrow: {
-    fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
-    marginTop: 4,
-  },
   xpPill: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -1020,56 +826,6 @@ const styles = StyleSheet.create({
     fontSize: FONT_SIZES.sm,
     color: COLORS.primary,
     fontWeight: '900',
-  },
-
-  promptBar: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: SPACING.sm,
-    borderRadius: RADIUS.xl,
-    paddingHorizontal: SPACING.md,
-    paddingVertical: SPACING.sm,
-    borderWidth: 1.5,
-    marginBottom: SPACING.lg,
-    shadowColor: '#000',
-    shadowOpacity: 0.06,
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 12,
-    elevation: 3,
-  },
-  promptBarIcon: { fontSize: 20 },
-  promptBarInput: {
-    flex: 1,
-    fontSize: FONT_SIZES.md,
-    fontFamily: 'Poppins-Regular',
-    paddingVertical: SPACING.sm,
-  },
-  promptBarBtn: {
-    borderRadius: RADIUS.lg,
-    paddingHorizontal: SPACING.md,
-    paddingVertical: SPACING.sm,
-  },
-  promptBarBtnDisabled: {
-    opacity: 0.4,
-  },
-  promptBarBtnText: {
-    color: '#FFFFFF',
-    fontFamily: 'Poppins-Bold',
-    fontSize: FONT_SIZES.sm,
-  },
-  offlineBar: {
-    backgroundColor: '#FEF6E4',
-    borderRadius: RADIUS.lg,
-    padding: SPACING.md,
-    borderWidth: 1,
-    borderColor: 'rgba(234,162,33,0.3)',
-    marginBottom: SPACING.md,
-    alignItems: 'center',
-  },
-  offlineBarText: {
-    fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-SemiBold',
-    color: '#B87B0A',
   },
 
   resumeCard: {
@@ -1135,123 +891,6 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
 
-  statsRow: {
-    flexDirection: 'row',
-    gap: SPACING.sm,
-    marginBottom: SPACING.md,
-  },
-  statCard: {
-    flex: 1,
-    alignItems: 'center',
-    paddingVertical: SPACING.md,
-    paddingHorizontal: SPACING.sm,
-    minWidth: 96,
-  },
-  statEmoji: { fontSize: 22, marginBottom: 4 },
-  statValue: {
-    fontSize: FONT_SIZES.xl,
-    fontFamily: 'Poppins-Bold',
-  },
-  statLabel: {
-    fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-Regular',
-    textAlign: 'center',
-    marginTop: 2,
-  },
-
-  missionCard: {
-    padding: SPACING.lg,
-    marginBottom: SPACING.md,
-  },
-  missionHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: SPACING.xs,
-  },
-  missionTitle: {
-    fontSize: FONT_SIZES.lg,
-    fontFamily: 'Poppins-Bold',
-  },
-  missionXpBadge: {
-    borderRadius: RADIUS.full,
-    paddingHorizontal: SPACING.sm,
-    paddingVertical: 4,
-    borderWidth: 1,
-    borderColor: 'rgba(234, 162, 33, 0.3)',
-  },
-  missionXpText: {
-    fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-Bold',
-  },
-  missionDesc: {
-    fontSize: FONT_SIZES.md,
-    fontFamily: 'Poppins-Regular',
-    marginBottom: SPACING.md,
-  },
-  missionBarBg: {
-    height: 10,
-    borderRadius: RADIUS.full,
-    overflow: 'hidden',
-  },
-  missionBarFill: {
-    height: '100%',
-    borderRadius: RADIUS.full,
-  },
-  missionProgress: {
-    fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-SemiBold',
-    marginTop: SPACING.xs,
-    textAlign: 'right',
-  },
-
-  aiRecommendCard: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: SPACING.md,
-    borderRadius: RADIUS.xl,
-    padding: SPACING.lg,
-    marginBottom: SPACING.md,
-  },
-  aiRecommendIcon: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    backgroundColor: 'rgba(255,255,255,0.1)',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  aiRecommendEmoji: { fontSize: 22 },
-  aiRecommendBody: { flex: 1 },
-  aiRecommendLabel: {
-    fontSize: 10,
-    fontFamily: 'Poppins-SemiBold',
-    color: 'rgba(255,255,255,0.5)',
-    letterSpacing: 1.2,
-    marginBottom: 2,
-  },
-  aiRecommendTitle: {
-    fontSize: FONT_SIZES.md,
-    fontFamily: 'Poppins-Bold',
-    color: '#FFFFFF',
-  },
-  aiRecommendSub: {
-    fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-Regular',
-    color: 'rgba(255,255,255,0.6)',
-    marginTop: 2,
-  },
-  aiRecommendBtn: {
-    borderRadius: RADIUS.lg,
-    paddingHorizontal: SPACING.md,
-    paddingVertical: SPACING.sm,
-  },
-  aiRecommendBtnText: {
-    color: '#FFFFFF',
-    fontFamily: 'Poppins-Bold',
-    fontSize: FONT_SIZES.sm,
-  },
-
   tabBar: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -1267,22 +906,6 @@ const styles = StyleSheet.create({
   tabLabel: {
     fontSize: FONT_SIZES.sm,
     fontFamily: 'Poppins-SemiBold',
-  },
-
-  banner: {
-    padding: SPACING.lg,
-    marginBottom: SPACING.md,
-    borderWidth: 1,
-  },
-  bannerTitle: {
-    fontFamily: 'Poppins-Bold',
-    marginBottom: 6,
-    fontSize: FONT_SIZES.sm,
-  },
-  bannerText: {
-    fontSize: FONT_SIZES.sm,
-    fontFamily: 'Poppins-Regular',
-    lineHeight: 20,
   },
 
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.md },
@@ -1363,34 +986,5 @@ const styles = StyleSheet.create({
   cardArrowText: {
     fontSize: FONT_SIZES.lg,
     fontFamily: 'Poppins-Bold',
-  },
-  lessonsHint: {
-    textAlign: 'center',
-    fontSize: FONT_SIZES.xs,
-    fontFamily: 'Poppins-Regular',
-    marginTop: SPACING.lg,
-  },
-  floatingTutor: {
-    position: 'absolute',
-    bottom: 90,
-    right: SPACING.md,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: SPACING.sm,
-    borderRadius: RADIUS.full,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-    shadowColor: '#000',
-    shadowOpacity: 0.18,
-    shadowOffset: { width: 0, height: 3 },
-    shadowRadius: 8,
-    elevation: 6,
-    zIndex: 100,
-  },
-  floatingTutorEmoji: { fontSize: 20 },
-  floatingTutorText: {
-    color: '#FFFFFF',
-    fontFamily: 'Poppins-Bold',
-    fontSize: 13,
   },
 });

@@ -12,8 +12,21 @@ import { create } from 'zustand';
 import { Session, User } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase';
 import { getProfile } from '@/services/dbService';
+import { useAppStore } from '@/store/appStore';
 
 export type UserRole = 'parent' | 'child';
+
+export interface AuthProfile {
+  id: string;
+  name: string | null;
+  email: string | null;
+  avatar: string | null;
+  grade: string | null;
+  xp: number | null;
+  streak: number | null;
+  language: string | null;
+  personality_id: string | null;
+}
 
 async function fetchUserRole(): Promise<UserRole | null> {
   const profile = await getProfile();
@@ -31,7 +44,6 @@ interface AuthState {
   isLoading: boolean;
   error: string | null;
 
-  // Actions
   setSession: (session: Session | null) => void;
   setUserRole: (role: UserRole | null) => void;
   signUp: (email: string, password: string, name: string, phone: string) => Promise<void>;
@@ -39,6 +51,7 @@ interface AuthState {
   signOut: () => Promise<void>;
   clearError: () => void;
   initialise: () => Promise<void>;
+  fetchProfile: () => Promise<AuthProfile | null>;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -56,8 +69,23 @@ export const useAuthStore = create<AuthState>((set) => ({
 
   setUserRole: (role) => set({ userRole: role }),
 
+  fetchProfile: async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) return null;
+
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('id, name, email, avatar, grade, xp, streak, language, personality_id')
+      .eq('id', user.id)
+      .single();
+
+    if (error || !data) return null;
+    return data as AuthProfile;
+  },
+
   initialise: async () => {
-    // Skip during SSR — window is not available
     if (typeof window === 'undefined') return;
 
     const {
@@ -93,7 +121,6 @@ export const useAuthStore = create<AuthState>((set) => ({
         },
       });
       if (error) throw error;
-      // Set session directly if available (email confirmation off)
       if (data.session) {
         const role = await fetchUserRole();
         set({
@@ -120,12 +147,22 @@ export const useAuthStore = create<AuthState>((set) => ({
       });
       if (error) throw error;
       const role = await fetchUserRole();
-      // Set session directly — don't wait for onAuthStateChange
       set({
         session: data.session,
         user: data.session?.user ?? null,
         userRole: role,
       });
+
+      const { userGrade, setupComplete, isSignedOut } = useAppStore.getState();
+      if (isSignedOut && (userGrade?.trim() || setupComplete)) {
+        useAppStore.getState().setIsSignedOut(false);
+        useAppStore.getState().loadUserProgress().catch(() => {});
+      } else if (!userGrade?.trim() && !setupComplete) {
+        await useAppStore.getState().loadUserProgress();
+      } else {
+        useAppStore.getState().setIsSignedOut(false);
+        useAppStore.getState().loadUserProgress().catch(() => {});
+      }
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : 'Sign in failed';
       set({ error: message });
@@ -139,6 +176,8 @@ export const useAuthStore = create<AuthState>((set) => ({
     set({ isLoading: true, error: null });
     try {
       await supabase.auth.signOut();
+      useAppStore.getState().resetSession();
+      useAppStore.getState().setIsSignedOut(true);
       set({ session: null, user: null, userRole: null });
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : 'Sign out failed';

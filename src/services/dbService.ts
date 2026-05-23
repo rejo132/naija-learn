@@ -127,6 +127,7 @@ export async function saveProgress({
  */
 export async function loadUserProgress(): Promise<{
   name: string;
+  avatar: string;
   totalXP: number;
   streak: number;
   grade: number;
@@ -142,7 +143,7 @@ export async function loadUserProgress(): Promise<{
 
     const { data: profile, error: profileError } = await supabase
       .from('profiles')
-      .select('name, xp, streak, grade, language, personality_id')
+      .select('name, avatar, xp, streak, grade, language, personality_id')
       .eq('id', user.id)
       .single();
 
@@ -178,6 +179,7 @@ export async function loadUserProgress(): Promise<{
 
     return {
       name: profile.name ?? '',
+      avatar: profile.avatar ?? '🦁',
       totalXP: profile.xp ?? 0,
       streak: profile.streak ?? 0,
       grade: gradeNum,

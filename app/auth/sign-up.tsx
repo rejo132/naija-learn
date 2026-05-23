@@ -203,6 +203,7 @@ export default function SignUpScreen() {
         userName: name.trim(),
         userAvatar: selectedAvatar,
         userGrade: `Primary ${selectedGradeNum}`,
+        setupComplete: true,
       });
 
       syncProfile({

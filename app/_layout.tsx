@@ -1,24 +1,5 @@
 /**
  * Root application layout for Expo Router.
- *
- * @remarks
- * **Responsible for:** Wrapping every screen with gesture handling and safe-area
- * context; keeping the native splash visible briefly; registering the file-based
- * stack (`index`, `grade`, `dashboard`, `lesson`) with headers hidden.
- *
- * **Talks to:**
- * - Imports: `expo-router` (`Stack`), `expo-status-bar`, `expo-splash-screen`,
- *   `react-native-gesture-handler`, `react-native-safe-area-context`,
- *   `@/constants/theme` (`COLORS`).
- * - Consumed by: Expo Router automatically — this file is the app shell; no other
- *   file imports it directly.
- * - Exports: default `RootLayout` (required Expo Router root layout).
- *
- * **Notes for new developers:**
- * - Screen file names under `app/` map 1:1 to routes; new screens need a
- *   `<Stack.Screen name="..." />` entry here.
- * - Splash hides when fonts load and init finishes.
- * - All screens use `headerShown: false` and implement their own back UI.
  */
 import { useEffect, useState } from 'react';
 import { Platform, View, Text } from 'react-native';
@@ -27,6 +8,7 @@ import { Stack, useRouter, useSegments } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Sentry from '@sentry/react-native';
+import * as Notifications from 'expo-notifications';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { COLORS } from '@/constants/theme';
@@ -38,6 +20,10 @@ import { OfflineBanner } from '@/components/OfflineBanner';
 import { BottomTabBar } from '@/components/BottomTabBar';
 import { SideDrawer } from '@/components/SideDrawer';
 import { loadSounds, unloadSounds } from '@/services/soundService';
+import {
+  scheduleDailyReminder,
+  cancelDailyReminder,
+} from '@/services/notificationService';
 
 SplashScreen.preventAutoHideAsync();
 initialiseSentry();
@@ -54,6 +40,20 @@ function ErrorFallback() {
       </Text>
     </View>
   );
+}
+
+function parseGradeFromProfile(grade: string | null): {
+  userGrade: string;
+  selectedGrade: number;
+} | null {
+  if (!grade?.trim()) return null;
+  const gradeStr = String(grade).trim();
+  const gradeNum = parseInt(gradeStr.replace(/\D/g, ''), 10) || 0;
+  if (gradeNum < 1) return null;
+  return {
+    userGrade: gradeStr.startsWith('Primary') ? gradeStr : `Primary ${gradeNum}`,
+    selectedGrade: gradeNum,
+  };
 }
 
 export default function RootLayout() {
@@ -95,31 +95,85 @@ export default function RootLayout() {
     if (!isLayoutReady) return;
 
     const inAuthGroup = segments[0] === 'auth';
-
-    const userGrade = useAppStore.getState().userGrade;
-    const profileIncomplete = !userGrade?.trim();
     const onSignUp =
       segments[0] === 'auth' && (segments as string[])[1] === 'sign-up';
 
-    if (!session && !inAuthGroup) {
-      router.replace('/auth/sign-in');
-    } else if (session && profileIncomplete && !onSignUp) {
-      router.replace('/auth/sign-up?step=2');
-    } else if (session && inAuthGroup && !profileIncomplete) {
-      router.replace('/dashboard');
-      useAppStore.getState().loadUserProgress().catch(() => {});
+    async function route() {
+      if (!session && !inAuthGroup) {
+        router.replace('/auth/sign-in');
+        return;
+      }
+
+      if (!session) return;
+
+      const store = useAppStore.getState();
+      let userGrade = store.userGrade?.trim();
+      const setupComplete = store.setupComplete;
+
+      if (!userGrade && !setupComplete) {
+        const profile = await useAuthStore.getState().fetchProfile();
+        if (profile?.grade) {
+          const parsed = parseGradeFromProfile(profile.grade);
+          if (parsed) {
+            useAppStore.setState({
+              userGrade: parsed.userGrade,
+              selectedGrade: parsed.selectedGrade,
+              userAvatar: profile.avatar ?? store.userAvatar,
+              userName: profile.name ?? store.userName,
+              setupComplete: true,
+            });
+            userGrade = parsed.userGrade;
+          }
+        }
+      }
+
+      if (userGrade || setupComplete) {
+        if (inAuthGroup && !onSignUp) {
+          router.replace('/dashboard');
+        }
+        store.loadUserProgress().catch(() => {});
+        if (store.isSignedOut) {
+          store.setIsSignedOut(false);
+        }
+        return;
+      }
+
+      if (!onSignUp) {
+        router.replace('/auth/sign-up?step=2');
+      }
     }
+
+    route().catch(() => {});
   }, [session, segments, isLayoutReady, router]);
 
   useEffect(() => {
-    if (!isLayoutReady || !session) return;
-    const userGrade = useAppStore.getState().userGrade;
-    if (!userGrade?.trim()) return;
-    const inAuthGroup = segments[0] === 'auth';
-    if (inAuthGroup) return;
-    useAppStore.getState().loadUserProgress().catch(() => {});
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLayoutReady, session]);
+    if (isInitialising) return;
+
+    const { notificationsEnabled, userName, notificationHour, notificationMinute } =
+      useAppStore.getState();
+
+    if (notificationsEnabled) {
+      scheduleDailyReminder(
+        notificationHour,
+        notificationMinute,
+        userName || 'there'
+      ).catch(() => {});
+    } else {
+      cancelDailyReminder().catch(() => {});
+    }
+  }, [isInitialising]);
+
+  useEffect(() => {
+    const sub = Notifications.addNotificationResponseReceivedListener(
+      (response: Notifications.NotificationResponse) => {
+      const screen = response.notification.request.content.data?.screen;
+      if (screen === 'dashboard') {
+        router.push('/dashboard');
+      }
+    }
+    );
+    return () => sub.remove();
+  }, [router]);
 
   useEffect(() => {
     loadSounds();
@@ -134,9 +188,6 @@ export default function RootLayout() {
     }
   }, [isInitialising, fontsLoaded]);
 
-  // Handle OAuth redirect callback on web. The provider redirects back to the
-  // app with the access token in the URL hash; we exchange it for a session
-  // and then clean the URL so the token is not left visible.
   useEffect(() => {
     if (Platform.OS !== 'web') return;
 

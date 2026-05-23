@@ -11,7 +11,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { router, usePathname } from 'expo-router';
 import { COLORS, FONT_SIZES, RADIUS, SPACING, GRADIENTS } from '@/constants/theme';
 import { useAuthStore } from '@/store/authStore';
-import { supabase } from '@/lib/supabase';
 import { useAppStore } from '@/store/appStore';
 import { useTranslation } from '@/hooks/useTranslation';
 
@@ -93,17 +92,11 @@ export function SideDrawer() {
 
   async function handleSignOut() {
     try {
-      useAppStore.getState().resetAll();
-      useAuthStore.getState().setSession(null);
-      useAuthStore.getState().setUserRole(null);
-
-      await supabase.auth.signOut().catch((e) => {
-        console.error('Supabase signOut error (ignored):', e);
-      });
-
+      await useAuthStore.getState().signOut();
       router.replace('/auth/sign-in');
     } catch {
-      useAppStore.getState().resetAll();
+      useAppStore.getState().resetSession();
+      useAppStore.getState().setIsSignedOut(true);
       useAuthStore.getState().setSession(null);
       useAuthStore.getState().setUserRole(null);
       router.replace('/auth/sign-in');
