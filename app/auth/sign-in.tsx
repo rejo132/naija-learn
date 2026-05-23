@@ -60,9 +60,9 @@ export default function SignInScreen() {
   const [showPassword, setShowPassword] = useState(false);
   const [identifierError, setIdentifierError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [oauthError, setOauthError] = useState('');
 
-  const { signIn, clearError } = useAuthStore();
+  const { signIn, clearError, error: authError } = useAuthStore();
   const { t, language } = useTranslation();
   const ui = getUIText(language);
 
@@ -176,16 +176,12 @@ export default function SignInScreen() {
     if (identifierError) return;
 
     setIsLoading(true);
-    setError('');
+    setOauthError('');
     clearError();
     try {
       await signIn(identifier.trim(), password);
-    } catch (err: unknown) {
-      const raw =
-        err instanceof Error
-          ? err.message
-          : useAuthStore.getState().error ?? 'Sign in failed';
-      setError(mapAuthErrorMessage(raw));
+    } catch {
+      // Error shown via authError from store
     } finally {
       setIsLoading(false);
     }
@@ -193,23 +189,23 @@ export default function SignInScreen() {
 
   async function handleGoogleSignIn() {
     setIsLoading(true);
-    setError('');
+    setOauthError('');
     clearError();
     const result = await signInWithGoogle();
     setIsLoading(false);
     if (!result.success && result.error !== 'Auth cancelled') {
-      setError(result.error ?? 'Google sign in failed');
+      setOauthError(result.error ?? 'Google sign in failed');
     }
   }
 
   async function handleMicrosoftSignIn() {
     setIsLoading(true);
-    setError('');
+    setOauthError('');
     clearError();
     const result = await signInWithMicrosoft();
     setIsLoading(false);
     if (!result.success && result.error !== 'Auth cancelled') {
-      setError(result.error ?? 'Microsoft sign in failed');
+      setOauthError(result.error ?? 'Microsoft sign in failed');
     }
   }
 
@@ -332,6 +328,8 @@ export default function SignInScreen() {
                   onChangeText={(v) => {
                     setIdentifier(v);
                     validateIdentifier(v);
+                    if (authError) clearError();
+                    if (oauthError) setOauthError('');
                   }}
                   autoCapitalize="none"
                   autoCorrect={false}
@@ -345,6 +343,18 @@ export default function SignInScreen() {
               {identifierError ? (
                 <Text style={styles.fieldError}>{identifierError}</Text>
               ) : null}
+
+              <Text
+                style={{
+                  fontSize: 12,
+                  fontFamily: 'Poppins-Regular',
+                  color: COLORS.textMuted,
+                  marginTop: 4,
+                  marginBottom: 8,
+                }}
+              >
+                You can sign in with your email or your username
+              </Text>
 
               <View
                 style={[
@@ -369,7 +379,10 @@ export default function SignInScreen() {
                   placeholder="Enter your password"
                   placeholderTextColor={COLORS.textMuted}
                   value={password}
-                  onChangeText={setPassword}
+                  onChangeText={(t) => {
+                    setPassword(t);
+                    if (authError) clearError();
+                  }}
                   secureTextEntry={!showPassword}
                   autoCapitalize="none"
                   autoCorrect={false}
@@ -405,9 +418,31 @@ export default function SignInScreen() {
                 </TouchableOpacity>
               </View>
 
-              {error ? (
+              {authError ? (
+                <View
+                  style={{
+                    backgroundColor: '#FFEBEE',
+                    borderRadius: 8,
+                    padding: 12,
+                    marginBottom: 12,
+                  }}
+                >
+                  <Text
+                    style={{
+                      color: '#C62828',
+                      fontFamily: 'Poppins-Regular',
+                      fontSize: 14,
+                      textAlign: 'center',
+                    }}
+                  >
+                    ⚠️ {authError}
+                  </Text>
+                </View>
+              ) : null}
+
+              {oauthError ? (
                 <View style={styles.errorBanner}>
-                  <Text style={styles.errorText}>⚠️ {error}</Text>
+                  <Text style={styles.errorText}>⚠️ {oauthError}</Text>
                 </View>
               ) : null}
 

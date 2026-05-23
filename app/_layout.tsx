@@ -108,24 +108,28 @@ export default function RootLayout() {
       if (!session) return;
 
       const store = useAppStore.getState();
-      let userGrade = store.userGrade?.trim();
+      const userGrade = store.userGrade?.trim();
       const setupComplete = store.setupComplete;
 
       if (!userGrade && !setupComplete) {
         const profile = await useAuthStore.getState().fetchProfile();
+
         if (profile?.grade) {
           const parsed = parseGradeFromProfile(profile.grade);
           if (parsed) {
+            useAppStore.getState().setUserGrade(parsed.userGrade);
+            useAppStore.getState().setUserName(profile.name ?? '');
+            useAppStore.getState().setUserAvatar(profile.avatar ?? '🦁');
+            useAppStore.getState().setSetupComplete(true);
             useAppStore.setState({
-              userGrade: parsed.userGrade,
               selectedGrade: parsed.selectedGrade,
-              userAvatar: profile.avatar ?? store.userAvatar,
-              userName: profile.name ?? store.userName,
-              setupComplete: true,
             });
-            userGrade = parsed.userGrade;
           }
+          router.replace('/dashboard');
+        } else {
+          router.replace('/auth/sign-up?step=2');
         }
+        return;
       }
 
       if (userGrade || setupComplete) {

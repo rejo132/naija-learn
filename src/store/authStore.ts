@@ -63,19 +63,22 @@ export const useAuthStore = create<AuthState>((set) => ({
   setUserRole: (role) => set({ userRole: role }),
 
   fetchProfile: async () => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) return null;
+    try {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (!user) return null;
 
-    const { data, error } = await supabase
-      .from('profiles')
-      .select('id, name, email, avatar, grade, xp, streak, language, personality_id')
-      .eq('id', user.id)
-      .single();
+      const { data } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', user.id)
+        .maybeSingle();
 
-    if (error || !data) return null;
-    return data as AuthProfile;
+      return (data as AuthProfile) ?? null;
+    } catch {
+      return null;
+    }
   },
 
   initialise: async () => {
@@ -137,15 +140,22 @@ export const useAuthStore = create<AuthState>((set) => ({
       let emailToUse = identifier.trim();
 
       if (!identifier.includes('@')) {
-        const { data: profile, error: lookupError } = await supabase
+        const { data: profile } = await supabase
           .from('profiles')
-          .select('email, name')
+          .select('email, id')
           .ilike('name', identifier.trim())
-          .limit(1)
           .maybeSingle();
 
-        if (lookupError || !profile?.email) {
-          const msg = 'No account found with that username.';
+        if (!profile) {
+          const msg =
+            'No account found with that username. Try your email instead.';
+          set({ error: msg, isLoading: false });
+          throw new Error(msg);
+        }
+
+        if (!profile.email) {
+          const msg =
+            'No account found with that username. Try your email instead.';
           set({ error: msg, isLoading: false });
           throw new Error(msg);
         }

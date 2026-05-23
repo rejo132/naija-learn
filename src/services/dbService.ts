@@ -238,6 +238,7 @@ export async function syncProfile({
 
     const updates: Record<string, unknown> = {
       id: user.id,
+      email: user.email,
       xp,
       streak,
       language,
@@ -250,7 +251,6 @@ export async function syncProfile({
     if (grade !== undefined) updates.grade = String(grade);
     if (avatar !== undefined) updates.avatar = avatar;
     if (role !== undefined) updates.role = role;
-    if (user.email) updates.email = user.email;
 
     const { error } = await supabase.from('profiles').upsert(updates);
 

@@ -26,6 +26,7 @@ import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useTheme } from '@/hooks/useTheme';
 import { TutorAvatar } from '@/components/TutorAvatar';
+import { supabase } from '@/lib/supabase';
 import { syncProfile } from '@/services/dbService';
 import { playSound } from '@/services/soundService';
 
@@ -176,6 +177,20 @@ export default function SignUpScreen() {
     setLocalError('');
     clearError();
     try {
+      const { data: existing } = await supabase
+        .from('profiles')
+        .select('id')
+        .ilike('name', trimmedUsername)
+        .maybeSingle();
+
+      if (existing) {
+        setUsernameError(
+          'That username is already taken. Try another one!'
+        );
+        setIsLoading(false);
+        return;
+      }
+
       await signUp(email.trim(), password, trimmedUsername, '');
       useAppStore.getState().setUserName(trimmedUsername);
       setStep('grade');
@@ -224,17 +239,21 @@ export default function SignUpScreen() {
         setupComplete: true,
       });
 
-      syncProfile({
-        name: username.trim(),
-        grade: selectedGradeNum,
-        avatar: selectedAvatar,
-        xp: 0,
-        streak: 0,
-        language: 'en',
-        personalityId: 'aunty_naija',
-        lastActiveDate: new Date().toISOString().split('T')[0],
-        role: 'student',
-      }).catch(() => {});
+      try {
+        await syncProfile({
+          name: username.trim(),
+          grade: selectedGradeNum,
+          avatar: selectedAvatar,
+          xp: 0,
+          streak: 0,
+          language: 'en',
+          personalityId: 'aunty_naija',
+          lastActiveDate: new Date().toISOString().split('T')[0],
+          role: 'student',
+        });
+      } catch {
+        // Non-blocking — proceed anyway
+      }
 
       router.replace('/dashboard');
     } catch {
