@@ -4,6 +4,7 @@
  */
 import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
 import { router } from 'expo-router';
+import { goBack } from '@/utils/navigation';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { PERSONALITIES } from '@/constants/personalities';
@@ -22,7 +23,7 @@ export default function PersonalityScreen() {
 
   function handleSelect(id: string) {
     setPersonality(id);
-    router.back();
+    goBack();
   }
 
   return (
@@ -30,7 +31,7 @@ export default function PersonalityScreen() {
       <Atmosphere pointerEvents="none" />
       <View style={styles.content}>
         <GlassCard style={[styles.header, isDarkMode && { backgroundColor: colors.backgroundCard }]}>
-          <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
+          <TouchableOpacity onPress={() => goBack()} style={styles.backBtn}>
             <Text style={[styles.backArrow, { color: colors.primaryDark }]}>←</Text>
           </TouchableOpacity>
           <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>{t('personalityTitle')}</Text>

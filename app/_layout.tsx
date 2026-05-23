@@ -17,7 +17,7 @@
  * **Notes for new developers:**
  * - Screen file names under `app/` map 1:1 to routes; new screens need a
  *   `<Stack.Screen name="..." />` entry here.
- * - Splash hides after a fixed 500ms timer, not when fonts/assets finish loading.
+ * - Splash hides when fonts load and init finishes.
  * - All screens use `headerShown: false` and implement their own back UI.
  */
 import { useEffect, useState } from 'react';
@@ -33,11 +33,11 @@ import { COLORS } from '@/constants/theme';
 import { useAppStore } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
 import { initialiseSentry } from '@/lib/sentry';
-import { loadUserProgress } from '@/services/dbService';
 import { supabase } from '@/lib/supabase';
 import { OfflineBanner } from '@/components/OfflineBanner';
 import { BottomTabBar } from '@/components/BottomTabBar';
 import { SideDrawer } from '@/components/SideDrawer';
+import { loadSounds, unloadSounds } from '@/services/soundService';
 
 SplashScreen.preventAutoHideAsync();
 initialiseSentry();
@@ -71,48 +71,16 @@ export default function RootLayout() {
 
   useEffect(() => {
     async function init() {
-      await useAppStore.persist.rehydrate();
-      await useAuthStore.getState().initialise();
-
       try {
-        const saved = await loadUserProgress();
-
-        if (saved) {
-          const store = useAppStore.getState();
-
-          if (saved.totalXP > (store.xp ?? 0)) {
-            store.setXP(saved.totalXP);
-          }
-
-          if (saved.streak > (store.streak ?? 0)) {
-            store.setStreak(saved.streak);
-          }
-
-          if (saved.grade && !store.selectedGrade) {
-            store.setGrade(saved.grade);
-          }
-
-          if (saved.language && !store.selectedLanguage) {
-            store.setLanguage(saved.language as 'en' | 'ha' | 'yo' | 'ig');
-          }
-
-          if (saved.name && !store.userName) {
-            useAppStore.setState({ userName: saved.name });
-          }
-
-          if (Object.keys(saved.subjectProgress).length > 0) {
-            const merged = {
-              ...saved.subjectProgress,
-              ...(store.subjectProgress ?? {}),
-            };
-            store.setSubjectProgress(merged);
-          }
-        }
-      } catch (err) {
-        console.error('Progress restore error:', err);
+        await Promise.all([
+          useAppStore.persist.rehydrate(),
+          useAuthStore.getState().initialise(),
+        ]);
+      } catch (e) {
+        console.error('Init error:', e);
+      } finally {
+        setIsInitialising(false);
       }
-
-      setIsInitialising(false);
     }
     init();
   }, []);
@@ -139,13 +107,32 @@ export default function RootLayout() {
       router.replace('/auth/sign-up?step=2');
     } else if (session && inAuthGroup && !profileIncomplete) {
       router.replace('/dashboard');
+      useAppStore.getState().loadUserProgress().catch(() => {});
     }
   }, [session, segments, isLayoutReady, router]);
 
   useEffect(() => {
-    const timer = setTimeout(() => SplashScreen.hideAsync(), 500);
-    return () => clearTimeout(timer);
+    if (!isLayoutReady || !session) return;
+    const userGrade = useAppStore.getState().userGrade;
+    if (!userGrade?.trim()) return;
+    const inAuthGroup = segments[0] === 'auth';
+    if (inAuthGroup) return;
+    useAppStore.getState().loadUserProgress().catch(() => {});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLayoutReady, session]);
+
+  useEffect(() => {
+    loadSounds();
+    return () => {
+      unloadSounds();
+    };
   }, []);
+
+  useEffect(() => {
+    if (!isInitialising && fontsLoaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [isInitialising, fontsLoaded]);
 
   // Handle OAuth redirect callback on web. The provider redirects back to the
   // app with the access token in the URL hash; we exchange it for a session

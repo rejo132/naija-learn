@@ -35,6 +35,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore, type ChatMessage } from '@/store/appStore';
 import { saveProgress, syncProfile } from '@/services/dbService';
+import { playSound } from '@/services/soundService';
 import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import {
@@ -69,10 +70,19 @@ import LevelUpCelebration from '@/components/LevelUpCelebration';
 import { AVATAR_UNLOCKS, getCurrentLevel } from '@/constants/levels';
 import { useSpeech, type VoiceLanguage } from '@/hooks/useSpeech';
 import type { LearningFlowState } from '@/types/ai.types';
+import { goBack } from '@/utils/navigation';
+import { toTitleCase } from '@/utils/format';
 
 const QUIZ_QUESTION_TARGET = 3;
 const CHAR_LIMIT = 500;
 const CHAR_WARN_AT = 400;
+
+const SPEECH_LANG_MAP: Record<string, string> = {
+  en: 'en-NG',
+  ha: 'ha',
+  yo: 'yo',
+  ig: 'ig',
+};
 
 const TOPIC_EMOJIS: Record<string, string> = {
   'Reading & Comprehension': '📖',
@@ -524,6 +534,7 @@ export default function LessonScreen() {
   }, []);
 
   const triggerCoinAnimation = useCallback((amount: number) => {
+    playSound('xp');
     setXpGained(amount);
     setShowCoinAnim(true);
     coinAnim.setValue(0);
@@ -568,6 +579,7 @@ export default function LessonScreen() {
             title: levelAfter.title,
             emoji: levelAfter.emoji,
           });
+          playSound('levelUp');
           setShowLevelUp(true);
         }
       }
@@ -583,6 +595,7 @@ export default function LessonScreen() {
         ) {
           unlockAvatar(avatar.emoji);
           setNewUnlock({ emoji: avatar.emoji, name: avatar.name });
+          playSound('unlock');
           setShowUnlockToast(true);
           if (unlockToastTimerRef.current) {
             clearTimeout(unlockToastTimerRef.current);
@@ -704,7 +717,7 @@ export default function LessonScreen() {
         return;
       }
       const recognition = new SpeechRecognition();
-      recognition.lang = 'en-NG';
+      recognition.lang = SPEECH_LANG_MAP[selectedLanguage] ?? 'en-NG';
       recognition.interimResults = false;
       recognition.maxAlternatives = 1;
 
@@ -712,8 +725,15 @@ export default function LessonScreen() {
 
       recognition.onresult = (event: SpeechRecognitionResultEvent) => {
         const transcript = event.results[0]?.[0]?.transcript ?? '';
-        if (transcript) setInputText(transcript);
-        setIsListening(false);
+        if (transcript) {
+          setInputText(transcript);
+          setIsListening(false);
+          setTimeout(() => {
+            handleSend(transcript);
+          }, 600);
+        } else {
+          setIsListening(false);
+        }
       };
       recognition.onerror = () => setIsListening(false);
       recognition.onend = () => setIsListening(false);
@@ -840,7 +860,7 @@ export default function LessonScreen() {
       quizModeActive,
       selectedSubject.id,
       selectedPersonalityId,
-      childName || undefined
+      childName ? toTitleCase(childName) : undefined
     );
 
     try {
@@ -859,6 +879,7 @@ export default function LessonScreen() {
 
       if (scoringQuizAnswer) {
         const correct = scoreQuizAnswer(text, reply);
+        playSound(correct ? 'correct' : 'wrong');
         const stats = quizStatsRef.current;
         stats.answered += 1;
         if (correct) stats.correct += 1;
@@ -912,7 +933,12 @@ export default function LessonScreen() {
         }
       }
     } catch (error: unknown) {
-      addMessage({ role: 'assistant', content: getFriendlyAIErrorMessage(error) });
+      const hadUserMessages = priorMessages.some((m) => m.role === 'user');
+      if (!isConnected && !hadUserMessages) {
+        // OfflineLearning handles the first offline attempt
+      } else {
+        addMessage({ role: 'assistant', content: getFriendlyAIErrorMessage(error) });
+      }
     }
 
     setAILoading(false);
@@ -1052,7 +1078,7 @@ export default function LessonScreen() {
           >
             <TouchableOpacity
               style={[styles.backBtn, { backgroundColor: colors.primaryLight }]}
-              onPress={() => router.back()}
+              onPress={() => goBack()}
             >
               <Text style={[styles.backBtnText, { color: colors.primary }]}>←</Text>
             </TouchableOpacity>
@@ -1077,7 +1103,10 @@ export default function LessonScreen() {
               }}
               accessibilityLabel={autoSpeak ? 'Mute auto read-aloud' : 'Enable auto read-aloud'}
             >
-              <Text style={styles.autoSpeakIcon}>{autoSpeak ? '🔊' : '🔇'}</Text>
+              <View style={styles.iconWithLabel}>
+                <Text style={styles.autoSpeakIcon}>{autoSpeak ? '🔊' : '🔇'}</Text>
+                <Text style={[styles.iconLabel, { color: colors.textMuted }]}>Audio</Text>
+              </View>
             </TouchableOpacity>
 
             <View
@@ -1142,7 +1171,7 @@ export default function LessonScreen() {
           >
             <TouchableOpacity
               style={[styles.backBtn, { backgroundColor: colors.primaryLight }]}
-              onPress={() => router.back()}
+              onPress={() => goBack()}
             >
               <Text style={[styles.backBtnText, { color: colors.primary }]}>←</Text>
             </TouchableOpacity>
@@ -1181,7 +1210,10 @@ export default function LessonScreen() {
                   emoji={TOPIC_EMOJIS[topic] ?? '📌'}
                   isSelected={selectedTopic === topic}
                   isDarkMode={isDarkMode}
-                  onSelect={() => setSelectedTopic(topic)}
+                  onSelect={() => {
+                    playSound('tap');
+                    setSelectedTopic(topic);
+                  }}
                 />
               ))}
             </RNAnimated.View>
@@ -1253,7 +1285,7 @@ export default function LessonScreen() {
           ]}>
             <TouchableOpacity
               style={[styles.backBtn, { backgroundColor: colors.primaryLight }]}
-              onPress={() => router.back()}
+              onPress={() => goBack()}
             >
               <Text style={[styles.backBtnText, { color: colors.primary }]}>←</Text>
             </TouchableOpacity>
@@ -1288,7 +1320,10 @@ export default function LessonScreen() {
               }}
               accessibilityLabel={autoSpeak ? 'Mute auto read-aloud' : 'Enable auto read-aloud'}
             >
-              <Text style={styles.autoSpeakIcon}>{autoSpeak ? '🔊' : '🔇'}</Text>
+              <View style={styles.iconWithLabel}>
+                <Text style={styles.autoSpeakIcon}>{autoSpeak ? '🔊' : '🔇'}</Text>
+                <Text style={[styles.iconLabel, { color: colors.textMuted }]}>Audio</Text>
+              </View>
             </TouchableOpacity>
 
             <View style={[styles.headerXP, { backgroundColor: colors.goldLight, borderColor: 'rgba(234,162,33,0.3)' }]}>
@@ -1394,13 +1429,19 @@ export default function LessonScreen() {
             },
           ]}>
             <TouchableOpacity
-              style={[styles.inputBarAction, { backgroundColor: colors.primaryLight }]}
+              style={[
+                styles.inputBarAction,
+                { backgroundColor: colors.primaryLight },
+              ]}
               activeOpacity={0.75}
               onPress={handleStartQuiz}
               disabled={isAILoading}
               accessibilityLabel={t('startQuiz')}
             >
-              <Text style={styles.inputBarActionEmoji}>🎯</Text>
+              <View style={styles.iconWithLabel}>
+                <Text style={styles.inputBarActionEmoji}>🎯</Text>
+                <Text style={[styles.iconLabel, { color: colors.textMuted }]}>Quiz</Text>
+              </View>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -1409,7 +1450,10 @@ export default function LessonScreen() {
               disabled={isAILoading || !isConnected}
               accessibilityLabel={isListening ? 'Stop listening' : 'Speak your question'}
             >
-              <Text style={styles.micIcon}>{isListening ? '🔴' : '🎙️'}</Text>
+              <View style={styles.iconWithLabel}>
+                <Text style={styles.micIcon}>{isListening ? '🔴' : '🎙️'}</Text>
+                <Text style={[styles.iconLabel, { color: colors.textMuted }]}>Speak</Text>
+              </View>
             </TouchableOpacity>
 
             <TextInput
@@ -1448,7 +1492,10 @@ export default function LessonScreen() {
                 !inputText.trim() && styles.sendBtnDisabled,
               ]}
               activeOpacity={0.75}
-              onPress={() => handleSend()}
+              onPress={() => {
+                playSound('tap');
+                handleSend();
+              }}
               disabled={!inputText.trim()}
             >
               <Text style={styles.sendBtnText}>
@@ -1674,14 +1721,23 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
   },
   inputBarAction: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: 48,
+    height: 48,
+    borderRadius: 24,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 2,
   },
   inputBarActionEmoji: { fontSize: 18 },
+  iconWithLabel: {
+    alignItems: 'center',
+    gap: 2,
+  },
+  iconLabel: {
+    fontSize: 9,
+    fontFamily: 'Poppins-Regular',
+    letterSpacing: 0.3,
+  },
   inputField: {
     flex: 1,
     borderRadius: RADIUS.xl,
@@ -1693,9 +1749,9 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   sendBtn: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: 48,
+    height: 48,
+    borderRadius: 24,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 2,
@@ -1724,9 +1780,9 @@ const styles = StyleSheet.create({
   },
   speakerIcon: { fontSize: 14 },
   autoSpeakBtn: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
+    width: 48,
+    height: 48,
+    borderRadius: 24,
     backgroundColor: COLORS.primaryLight,
     alignItems: 'center',
     justifyContent: 'center',
@@ -1737,9 +1793,9 @@ const styles = StyleSheet.create({
   },
   autoSpeakIcon: { fontSize: 16 },
   micBtn: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: 48,
+    height: 48,
+    borderRadius: 24,
     backgroundColor: COLORS.primaryLight,
     alignItems: 'center',
     justifyContent: 'center',

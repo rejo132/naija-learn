@@ -4,6 +4,7 @@
  */
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { router } from 'expo-router';
+import { goBack } from '@/utils/navigation';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import {
@@ -24,18 +25,15 @@ export default function ProgressScreen() {
   const streak = useAppStore((s) => s.streak);
   const lessonsCompleted = useAppStore((s) => s.lessonsCompleted);
   const bestQuizScore = useAppStore((s) => s.bestQuizScore);
+  const unlockedAchievements = useAppStore((s) => s.unlockedAchievements);
   const { colors, isDarkMode } = useTheme();
   const { t } = useTranslation();
 
   const level = getLevel(xp);
   const xpForNext = getXPForNextLevel(xp);
   const xpProgress = ((xp % 100) / 100) * 100;
-  const unlocked = getUnlockedAchievements({
-    xp,
-    streak,
-    lessonsCompleted,
-    bestQuizScore,
-  });
+  const stats = { xp, streak, lessonsCompleted, bestQuizScore };
+  const unlocked = getUnlockedAchievements(stats, unlockedAchievements);
   const unlockedIds = new Set(unlocked.map((a) => a.id));
   const unlockedCount = unlocked.length;
   const totalAchievements = ACHIEVEMENT_DEFINITIONS.length;
@@ -53,6 +51,27 @@ export default function ProgressScreen() {
       <ScrollView
         contentContainerStyle={[styles.scroll, { backgroundColor: colors.background }]}
       >
+        <TouchableOpacity
+          onPress={() => goBack()}
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            padding: SPACING.md,
+            gap: 6,
+          }}
+          accessibilityLabel="Go back"
+        >
+          <Text style={{ fontSize: 22, color: colors.primary }}>←</Text>
+          <Text
+            style={{
+              fontSize: FONT_SIZES.sm,
+              fontFamily: 'Poppins-SemiBold',
+              color: colors.primary,
+            }}
+          >
+            Back
+          </Text>
+        </TouchableOpacity>
 
         {/* Header */}
         <GlassCard style={[styles.header, isDarkMode && { backgroundColor: colors.backgroundCard }]}>

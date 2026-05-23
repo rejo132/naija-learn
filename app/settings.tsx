@@ -19,6 +19,7 @@ import {
 import { ChevronLeft, ChevronRight } from 'lucide-react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
+import { goBack } from '@/utils/navigation';
 import { useTheme } from '@/hooks/useTheme';
 import { useAppStore } from '@/store/appStore';
 import { useAuthStore } from '@/store/authStore';
@@ -28,6 +29,19 @@ import { LANGUAGE_NAMES, type Language } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import { AVATAR_UNLOCKS } from '@/constants/levels';
 import { syncProfile } from '@/services/dbService';
+import { playSound } from '@/services/soundService';
+import type { DifficultyLevel, VoiceSpeedLevel } from '@/store/appStore';
+
+// TODO: Replace with real support number before handover to buyer
+const SUPPORT_WHATSAPP = '2348000000000';
+const SUPPORT_EMAIL = 'support@trylearnova.com';
+
+const LANG_NATIVE: Record<string, string> = {
+  en: 'English',
+  ha: 'Hausa',
+  yo: 'Yorùbá',
+  ig: 'Igbo',
+};
 
 type ThemeColors = ReturnType<typeof useTheme>['colors'];
 
@@ -100,6 +114,8 @@ export default function SettingsScreen() {
   const selectedGrade = useAppStore((s) => s.selectedGrade);
   const isDarkModeStore = useAppStore((s) => s.isDarkMode);
   const toggleDarkMode = useAppStore((s) => s.toggleDarkMode);
+  const soundEnabled = useAppStore((s) => s.soundEnabled);
+  const setSoundEnabled = useAppStore((s) => s.setSoundEnabled);
   const xp = useAppStore((s) => s.xp);
   const streak = useAppStore((s) => s.streak);
   const userAvatar = useAppStore((s) => s.userAvatar);
@@ -114,9 +130,16 @@ export default function SettingsScreen() {
     user?.email?.split('@')[0] ??
     'Student';
 
-  const [dataSaver, setDataSaver] = useState(false);
-  const [notifications, setNotifications] = useState(true);
-  const [offlineMode, setOfflineMode] = useState(false);
+  const offlineMode = useAppStore((s) => s.offlineMode);
+  const setOfflineMode = useAppStore((s) => s.setOfflineMode);
+  const dataSaver = useAppStore((s) => s.dataSaver);
+  const setDataSaver = useAppStore((s) => s.setDataSaver);
+  const notifications = useAppStore((s) => s.notificationsEnabled);
+  const setNotifications = useAppStore((s) => s.setNotificationsEnabled);
+  const difficulty = useAppStore((s) => s.difficulty);
+  const setDifficulty = useAppStore((s) => s.setDifficulty);
+  const voiceSpeed = useAppStore((s) => s.voiceSpeed);
+  const setVoiceSpeed = useAppStore((s) => s.setVoiceSpeed);
   const [dailyLimitMinutes, setDailyLimitMinutes] = useState(60);
   const [showDailyLimit, setShowDailyLimit] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
@@ -129,11 +152,8 @@ export default function SettingsScreen() {
   const [passwordChangeError, setPasswordChangeError] = useState('');
   const [passwordChangeSuccess, setPasswordChangeSuccess] = useState(false);
 
-  const difficulties = ['Easy', 'Medium', 'Hard'] as const;
-  const [difficulty, setDifficulty] = useState<(typeof difficulties)[number]>('Medium');
-
-  const speeds = ['Slow', 'Normal', 'Fast'] as const;
-  const [voiceSpeed, setVoiceSpeed] = useState<(typeof speeds)[number]>('Normal');
+  const difficulties = ['Easy', 'Medium', 'Hard'] as const satisfies readonly DifficultyLevel[];
+  const speeds = ['Slow', 'Normal', 'Fast'] as const satisfies readonly VoiceSpeedLevel[];
 
   async function handleDeleteData() {
     if (deleteConfirmText !== 'DELETE') return;
@@ -150,9 +170,28 @@ export default function SettingsScreen() {
     }
   }
 
-  function handleWhatsApp() {
-    Linking.openURL(
-      'https://wa.me/2348000000000?text=Hello%20Learnova%20Support'
+  function handleSupport() {
+    Alert.alert(
+      'Contact Support',
+      'How would you like to reach us?',
+      [
+        {
+          text: '💬 WhatsApp',
+          onPress: () =>
+            Linking.openURL(
+              `https://wa.me/${SUPPORT_WHATSAPP}` +
+                `?text=Hello%2C%20I%20need%20help%20with%20Learnova`
+            ),
+        },
+        {
+          text: '✉️ Email',
+          onPress: () =>
+            Linking.openURL(
+              `mailto:${SUPPORT_EMAIL}?subject=Learnova%20Support`
+            ),
+        },
+        { text: 'Cancel', style: 'cancel' },
+      ]
     );
   }
 
@@ -211,7 +250,7 @@ export default function SettingsScreen() {
 
   const cardBg = colors.backgroundCard;
   const languageFullName = LANGUAGE_NAMES[selectedLanguage as Language] ?? 'English';
-  const languageBadge = languageFullName.split(' ')[0];
+  const languageNative = LANG_NATIVE[selectedLanguage] ?? 'English';
 
   return (
     <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
@@ -221,7 +260,7 @@ export default function SettingsScreen() {
           { backgroundColor: cardBg, borderBottomColor: colors.border },
         ]}
       >
-        <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
+        <TouchableOpacity style={styles.backBtn} onPress={() => goBack()}>
           <ChevronLeft size={24} color={colors.primary} />
         </TouchableOpacity>
         <Text style={[styles.headerTitle, { color: colors.textPrimary }]}>
@@ -342,9 +381,19 @@ export default function SettingsScreen() {
             }}
             colors={colors}
             rightElement={
-              <View style={styles.langBadge}>
-                <Text style={styles.langBadgeText}>{languageBadge}</Text>
-              </View>
+              <Text
+                style={{
+                  fontSize: FONT_SIZES.xs,
+                  fontFamily: 'Poppins-SemiBold',
+                  color: colors.primary,
+                  backgroundColor: colors.primaryLight,
+                  paddingHorizontal: 10,
+                  paddingVertical: 4,
+                  borderRadius: 20,
+                }}
+              >
+                {languageNative}
+              </Text>
             }
           />
           <SettingsRow
@@ -425,6 +474,26 @@ export default function SettingsScreen() {
 
         <SectionHeader title={`📱  ${t('settingsAppPrefs').toUpperCase()}`} colors={colors} />
         <View style={[styles.card, { backgroundColor: cardBg }]}>
+          <SettingsRow
+            emoji="🔊"
+            label="Sound Effects"
+            sublabel="Chimes, taps and celebrations"
+            colors={colors}
+            rightElement={
+              <Switch
+                value={soundEnabled}
+                onValueChange={(v) => {
+                  setSoundEnabled(v);
+                  if (v) playSound('tap');
+                }}
+                trackColor={{
+                  false: colors.border,
+                  true: colors.primary,
+                }}
+                thumbColor="#FFFFFF"
+              />
+            }
+          />
           <View style={[styles.row, { borderBottomColor: colors.border }]}>
             <Text style={styles.rowEmoji}>🌙</Text>
             <View style={styles.rowBody}>
@@ -508,7 +577,7 @@ export default function SettingsScreen() {
             emoji="💬"
             label="Contact Support"
             sublabel="WhatsApp: tap to message us"
-            onPress={handleWhatsApp}
+            onPress={handleSupport}
             colors={colors}
           />
           <SettingsRow

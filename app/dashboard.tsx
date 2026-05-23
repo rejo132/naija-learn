@@ -42,6 +42,15 @@ import { TutorAvatar } from '@/components/TutorAvatar';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { syncProfile } from '@/services/dbService';
 import StreakCelebration from '@/components/StreakCelebration';
+import { playSound } from '@/services/soundService';
+import { toTitleCase } from '@/utils/format';
+
+const LANG_NATIVE: Record<string, string> = {
+  en: 'English',
+  ha: 'Hausa',
+  yo: 'Yorùbá',
+  ig: 'Igbo',
+};
 
 type Tab = 'subjects' | 'languages' | 'softskills';
 
@@ -167,6 +176,7 @@ export default function DashboardScreen() {
   useEffect(() => {
     const milestones = [3, 7, 14, 30];
     if (milestones.includes(streak) && lastCelebratedStreak !== streak) {
+      playSound('streak');
       setShowStreakCelebration(true);
     }
   }, [streak, lastCelebratedStreak]);
@@ -221,6 +231,7 @@ export default function DashboardScreen() {
   if (!selectedGrade) return <Redirect href="/grade" />;
 
   function handleSubject(subject: Subject) {
+    playSound('tap');
     setSubject(subject);
     router.push('/lesson');
   }
@@ -272,7 +283,7 @@ export default function DashboardScreen() {
                 numberOfLines={1}
                 ellipsizeMode="tail"
               >
-                {userAvatar} Hello, {displayName}!
+                {userAvatar} Hello, {toTitleCase(displayName)}!
               </Text>
               {streak > 0 && (
                 <Text style={[styles.greetingStreak, { color: colors.accent }]}>
@@ -301,8 +312,13 @@ export default function DashboardScreen() {
                   setLanguage(next);
                 }}
               >
-                <Text style={styles.langPillText}>
-                  {LANGUAGE_NAMES[selectedLanguage as Language]?.split(' ')[0]}
+                <Text
+                  style={[
+                    styles.langPillText,
+                    { color: colors.primary, fontFamily: 'Poppins-SemiBold' },
+                  ]}
+                >
+                  {LANG_NATIVE[selectedLanguage] ?? 'English'}
                 </Text>
               </TouchableOpacity>
             </View>
@@ -648,6 +664,7 @@ export default function DashboardScreen() {
               <PulsingChallengeButton
                 colors={colors}
                 onPress={() => {
+                  playSound('tap');
                   const match = findSubjectByLabel(dailyChallengeSubject);
                   if (match) {
                     setSubject(getLocalizedSubject(match, selectedLanguage));
@@ -1355,24 +1372,25 @@ const styles = StyleSheet.create({
   },
   floatingTutor: {
     position: 'absolute',
-    bottom: 80,
-    right: SPACING.lg,
+    bottom: 90,
+    right: SPACING.md,
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.sm,
     borderRadius: RADIUS.full,
-    paddingHorizontal: SPACING.lg,
-    paddingVertical: SPACING.md,
-    shadowOpacity: 0.4,
-    shadowOffset: { width: 0, height: 8 },
-    shadowRadius: 20,
-    elevation: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    shadowColor: '#000',
+    shadowOpacity: 0.18,
+    shadowOffset: { width: 0, height: 3 },
+    shadowRadius: 8,
+    elevation: 6,
     zIndex: 100,
   },
   floatingTutorEmoji: { fontSize: 20 },
   floatingTutorText: {
     color: '#FFFFFF',
     fontFamily: 'Poppins-Bold',
-    fontSize: FONT_SIZES.sm,
+    fontSize: 13,
   },
 });

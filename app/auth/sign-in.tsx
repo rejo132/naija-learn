@@ -18,7 +18,6 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
-import { useAppStore } from '@/store/appStore';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/store/authStore';
 import { signInWithGoogle, signInWithMicrosoft } from '@/services/oauthService';
@@ -180,12 +179,6 @@ export default function SignInScreen() {
     clearError();
     try {
       await signIn(email.trim(), password);
-      const userGrade = useAppStore.getState().userGrade;
-      if (!userGrade?.trim()) {
-        router.replace('/auth/sign-up?step=2');
-      } else {
-        router.replace('/dashboard');
-      }
     } catch (err: unknown) {
       const raw =
         err instanceof Error

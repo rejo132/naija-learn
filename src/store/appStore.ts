@@ -23,6 +23,10 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import { LanguageCode } from '@/constants/languages';
 import { DEFAULT_PERSONALITY_ID } from '@/constants/personalities';
 import { Subject } from '@/constants/subjects';
+import { loadUserProgress as fetchUserProgress } from '@/services/dbService';
+
+export type DifficultyLevel = 'Easy' | 'Medium' | 'Hard';
+export type VoiceSpeedLevel = 'Slow' | 'Normal' | 'Fast';
 
 export interface ChatMessage {
   id: string;
@@ -56,6 +60,12 @@ interface AppState {
   bestQuizScore: number;
   unlockedAchievements: string[];
   isDarkMode: boolean;
+  soundEnabled: boolean;
+  offlineMode: boolean;
+  dataSaver: boolean;
+  notificationsEnabled: boolean;
+  difficulty: DifficultyLevel;
+  voiceSpeed: VoiceSpeedLevel;
   // ── Student profile (local display) ──
   userName: string;
   userAvatar: string;
@@ -100,6 +110,13 @@ interface AppState {
   updateBestQuizScore: (score: number) => void;
   unlockAchievement: (id: string) => void;
   toggleDarkMode: () => void;
+  setSoundEnabled: (v: boolean) => void;
+  setOfflineMode: (v: boolean) => void;
+  setDataSaver: (v: boolean) => void;
+  setNotificationsEnabled: (v: boolean) => void;
+  setDifficulty: (v: DifficultyLevel) => void;
+  setVoiceSpeed: (v: VoiceSpeedLevel) => void;
+  loadUserProgress: () => Promise<void>;
   setLastSession: (
     subject: string,
     emoji: string,
@@ -140,6 +157,12 @@ type PersistedAppState = Pick<
   | 'bestQuizScore'
   | 'unlockedAchievements'
   | 'isDarkMode'
+  | 'soundEnabled'
+  | 'offlineMode'
+  | 'dataSaver'
+  | 'notificationsEnabled'
+  | 'difficulty'
+  | 'voiceSpeed'
   | 'userName'
   | 'userAvatar'
   | 'userGrade'
@@ -170,7 +193,9 @@ type AppStateValues = Omit<AppState,
   | 'addMessage' | 'clearMessages' | 'setAILoading' | 'setAppReady'
   | 'startSession' | 'endSession' | 'addXP' | 'updateStreak'
   | 'incrementLessons' | 'updateBestQuizScore' | 'unlockAchievement'
-  | 'toggleDarkMode' | 'setLastSession' | 'updateSubjectProgress'
+  | 'toggleDarkMode' | 'setSoundEnabled' | 'setOfflineMode' | 'setDataSaver'
+  | 'setNotificationsEnabled' | 'setDifficulty' | 'setVoiceSpeed' | 'loadUserProgress'
+  | 'setLastSession' | 'updateSubjectProgress'
   | 'markFlowCompleted' | 'setXP' | 'setStreak' | 'setSubjectProgress'
   | 'incrementSubjectLesson' | 'generateDailyChallenge' | 'completeDailyChallenge'
   | 'markStreakCelebrated' | 'markLevelCelebrated' | 'unlockAvatar' | 'setUserAvatar'
@@ -194,6 +219,12 @@ const initialState: AppStateValues = {
   bestQuizScore: 0,
   unlockedAchievements: [],
   isDarkMode: false,
+  soundEnabled: true,
+  offlineMode: false,
+  dataSaver: false,
+  notificationsEnabled: true,
+  difficulty: 'Medium',
+  voiceSpeed: 'Normal',
   userName: '',
   userAvatar: '🦁',
   userGrade: '',
@@ -276,6 +307,50 @@ export const useAppStore = create<AppState>()(
             : [...state.unlockedAchievements, id],
         })),
       toggleDarkMode: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
+      setSoundEnabled: (v) => set({ soundEnabled: v }),
+      setOfflineMode: (v) => set({ offlineMode: v }),
+      setDataSaver: (v) => set({ dataSaver: v }),
+      setNotificationsEnabled: (v) => set({ notificationsEnabled: v }),
+      setDifficulty: (v) => set({ difficulty: v }),
+      setVoiceSpeed: (v) => set({ voiceSpeed: v }),
+      loadUserProgress: async () => {
+        try {
+          const saved = await fetchUserProgress();
+          if (!saved) return;
+
+          const store = useAppStore.getState();
+
+          if (saved.totalXP > (store.xp ?? 0)) {
+            store.setXP(saved.totalXP);
+          }
+
+          if (saved.streak > (store.streak ?? 0)) {
+            store.setStreak(saved.streak);
+          }
+
+          if (saved.grade && !store.selectedGrade) {
+            store.setGrade(saved.grade);
+          }
+
+          if (saved.language && !store.selectedLanguage) {
+            store.setLanguage(saved.language as LanguageCode);
+          }
+
+          if (saved.name && !store.userName) {
+            useAppStore.setState({ userName: saved.name });
+          }
+
+          if (Object.keys(saved.subjectProgress).length > 0) {
+            const merged = {
+              ...saved.subjectProgress,
+              ...(store.subjectProgress ?? {}),
+            };
+            store.setSubjectProgress(merged);
+          }
+        } catch (err) {
+          console.error('Progress restore error:', err);
+        }
+      },
       setLastSession: (subject, emoji, grade, personalityId) =>
         set({
           lastSubject: subject,
@@ -374,6 +449,12 @@ export const useAppStore = create<AppState>()(
         bestQuizScore: state.bestQuizScore,
         unlockedAchievements: state.unlockedAchievements,
         isDarkMode: state.isDarkMode,
+        soundEnabled: state.soundEnabled,
+        offlineMode: state.offlineMode,
+        dataSaver: state.dataSaver,
+        notificationsEnabled: state.notificationsEnabled,
+        difficulty: state.difficulty,
+        voiceSpeed: state.voiceSpeed,
         userName: state.userName,
         userAvatar: state.userAvatar,
         userGrade: state.userGrade,

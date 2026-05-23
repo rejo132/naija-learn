@@ -59,11 +59,16 @@ export function BottomTabBar() {
       return;
     }
     if (tab.route === '/dashboard') {
-      router.replace('/dashboard');
+      if (pathname !== '/dashboard' && pathname !== '/' && pathname !== '') {
+        router.push('/dashboard');
+      }
       return;
     }
     navigateTo(tab.route);
   }
+
+  const mainTabs = BASE_TABS.filter((tab) => tab.id !== 'theme');
+  const themeTab = BASE_TABS.find((tab) => tab.id === 'theme')!;
 
   return (
     <View
@@ -76,10 +81,8 @@ export function BottomTabBar() {
         },
       ]}
     >
-      {BASE_TABS.map((tab) => {
-        const emoji = tab.id === 'theme' ? (isDarkMode ? '☀️' : '🌙') : tab.emoji;
-        const active =
-          tab.id !== 'theme' && tab.route !== '' && isActive(tab.route);
+      {mainTabs.map((tab) => {
+        const active = tab.route !== '' && isActive(tab.route);
         return (
           <TouchableOpacity
             key={tab.id}
@@ -93,22 +96,29 @@ export function BottomTabBar() {
                 active && { backgroundColor: colors.primaryLight },
               ]}
             >
-              <Text style={styles.tabEmoji}>{emoji}</Text>
+              <Text style={styles.tabEmoji}>{tab.emoji}</Text>
             </View>
             <Text
               style={[
                 styles.tabLabel,
-                { color: colors.textMuted, fontSize: width < 375 ? 9 : 11 },
+                { color: colors.textMuted, fontSize: 11 },
                 active && { color: colors.primary, fontFamily: 'Poppins-SemiBold' },
               ]}
               numberOfLines={1}
               ellipsizeMode="tail"
             >
-              {width < 375 ? tab.shortLabel : tab.label}
+              {tab.label}
             </Text>
           </TouchableOpacity>
         );
       })}
+      <TouchableOpacity
+        onPress={() => handleTabPress(themeTab)}
+        style={styles.themeTab}
+        activeOpacity={0.75}
+      >
+        <Text style={styles.themeEmoji}>{isDarkMode ? '☀️' : '🌙'}</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -128,7 +138,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     gap: 2,
-    paddingVertical: 4,
+    paddingVertical: 8,
   },
   tabActive: {},
   tabIconWrap: {
@@ -143,4 +153,13 @@ const styles = StyleSheet.create({
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-Regular',
   },
+  themeTab: {
+    flex: 0,
+    width: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 4,
+    opacity: 0.65,
+  },
+  themeEmoji: { fontSize: 18 },
 });

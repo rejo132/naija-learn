@@ -27,6 +27,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { useTheme } from '@/hooks/useTheme';
 import { TutorAvatar } from '@/components/TutorAvatar';
 import { syncProfile } from '@/services/dbService';
+import { playSound } from '@/services/soundService';
 
 const FEATURES = [
   { emoji: '🧠', text: 'Claude AI Tutor' },
@@ -184,7 +185,10 @@ export default function SignUpScreen() {
         friction: 4,
         useNativeDriver: true,
       }),
-    ]).start(() => handleGradePick(g));
+    ]).start(() => {
+      playSound('tap');
+      handleGradePick(g);
+    });
   }
 
   async function handleFinish() {
@@ -201,7 +205,7 @@ export default function SignUpScreen() {
         userGrade: `Primary ${selectedGradeNum}`,
       });
 
-      await syncProfile({
+      syncProfile({
         name: name.trim(),
         grade: selectedGradeNum,
         avatar: selectedAvatar,
@@ -211,7 +215,7 @@ export default function SignUpScreen() {
         personalityId: 'aunty_naija',
         lastActiveDate: new Date().toISOString().split('T')[0],
         role: 'student',
-      });
+      }).catch(() => {});
 
       router.replace('/dashboard');
     } catch {
@@ -373,9 +377,18 @@ export default function SignUpScreen() {
     );
   }
 
+  function renderStepBack(onPress: () => void) {
+    return (
+      <TouchableOpacity onPress={onPress} style={{ padding: SPACING.md, alignSelf: 'flex-start' }}>
+        <Text style={{ fontSize: 22, color: colors.textMuted }}>←</Text>
+      </TouchableOpacity>
+    );
+  }
+
   function renderGradeStep() {
     return (
       <>
+        {renderStepBack(() => setStep('account'))}
         <Text style={[styles.stepTitle, { color: colors.textPrimary }]}>
           What grade are you in?
         </Text>
@@ -423,6 +436,7 @@ export default function SignUpScreen() {
   function renderAvatarStep() {
     return (
       <>
+        {renderStepBack(() => setStep('grade'))}
         <Text style={[styles.stepTitle, { color: colors.textPrimary }]}>
           Pick your avatar!
         </Text>
@@ -444,7 +458,10 @@ export default function SignUpScreen() {
                   },
                   active && styles.avatarCardActive,
                 ]}
-                onPress={() => setSelectedAvatar(emoji)}
+                onPress={() => {
+                  playSound('tap');
+                  setSelectedAvatar(emoji);
+                }}
                 activeOpacity={0.8}
               >
                 <Text style={styles.avatarEmoji}>{emoji}</Text>

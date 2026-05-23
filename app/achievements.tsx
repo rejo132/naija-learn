@@ -4,14 +4,15 @@
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { ChevronLeft, Lock } from 'lucide-react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { router } from 'expo-router';
 import { useAppStore } from '@/store/appStore';
 import {
   ACHIEVEMENT_DEFINITIONS,
+  getAchievementProgress,
   getAchievementStyle,
   getLevel,
   getUnlockedAchievements,
 } from '@/constants/achievements';
+import { goBack } from '@/utils/navigation';
 import { SPACING, RADIUS, FONT_SIZES, FONT_FAMILY } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -23,16 +24,13 @@ export default function AchievementsScreen() {
   const streak = useAppStore((s) => s.streak);
   const lessonsCompleted = useAppStore((s) => s.lessonsCompleted);
   const bestQuizScore = useAppStore((s) => s.bestQuizScore);
+  const unlockedAchievements = useAppStore((s) => s.unlockedAchievements);
   const level = getLevel(xp);
   const { colors, isDarkMode } = useTheme();
   const { t } = useTranslation();
 
-  const unlocked = getUnlockedAchievements({
-    xp,
-    streak,
-    lessonsCompleted,
-    bestQuizScore,
-  });
+  const stats = { xp, streak, lessonsCompleted, bestQuizScore };
+  const unlocked = getUnlockedAchievements(stats, unlockedAchievements);
   const unlockedIds = new Set(unlocked.map((a) => a.id));
 
   return (
@@ -43,7 +41,7 @@ export default function AchievementsScreen() {
           <TouchableOpacity
             style={styles.backBtn}
             activeOpacity={0.7}
-            onPress={() => router.back()}
+            onPress={() => goBack()}
           >
             <ChevronLeft size={24} color={colors.primary} />
           </TouchableOpacity>
@@ -108,6 +106,42 @@ export default function AchievementsScreen() {
                   <Text style={[styles.description, !isUnlocked && { color: colors.textMuted }, isUnlocked && { color: colors.textSecondary }]}>
                     {item.description}
                   </Text>
+                  {!isUnlocked && (() => {
+                    const prog = getAchievementProgress(item, stats);
+                    const pct = Math.min(prog.current / prog.required, 1);
+                    return (
+                      <>
+                        <Text
+                          style={{
+                            fontSize: 12,
+                            fontFamily: 'Poppins-SemiBold',
+                            color: colors.primary,
+                            marginTop: 4,
+                          }}
+                        >
+                          {prog.current} / {prog.required}
+                        </Text>
+                        <View
+                          style={{
+                            height: 4,
+                            backgroundColor: colors.border,
+                            borderRadius: 2,
+                            marginTop: 4,
+                            overflow: 'hidden',
+                          }}
+                        >
+                          <View
+                            style={{
+                              height: 4,
+                              width: `${pct * 100}%`,
+                              backgroundColor: colors.primary,
+                              borderRadius: 2,
+                            }}
+                          />
+                        </View>
+                      </>
+                    );
+                  })()}
                 </View>
                 {isUnlocked ? (
                   <View style={[styles.checkBadge, { backgroundColor: style.color }]}>

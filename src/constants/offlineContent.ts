@@ -204,7 +204,216 @@ export const OFFLINE_QUIZZES: OfflineQuiz[] = [
     correct: 1,
     explanation: 'The Nigerian flag has two green stripes and one white stripe',
   },
+  {
+    id: 'math_offline_1',
+    subject: 'Mathematics',
+    grade: 3,
+    question: 'What is 7 × 8?',
+    options: ['54', '56', '64', '48'],
+    correct: 1,
+    explanation: '7 × 8 = 56. Count by 7s: 7, 14, 21, 28, 35, 42, 49, 56! 🔢',
+  },
+  {
+    id: 'math_offline_2',
+    subject: 'Mathematics',
+    grade: 3,
+    question: 'What is half of 100?',
+    options: ['25', '75', '50', '40'],
+    correct: 2,
+    explanation: 'Half means divide by 2. 100 ÷ 2 = 50! ✂️',
+  },
+  {
+    id: 'math_offline_3',
+    subject: 'Mathematics',
+    grade: 3,
+    question: 'How many sides does a triangle have?',
+    options: ['2', '3', '4', '5'],
+    correct: 1,
+    explanation: 'A triangle has 3 sides and 3 corners! 🔺',
+  },
+  {
+    id: 'math_offline_4',
+    subject: 'Mathematics',
+    grade: 3,
+    question: 'What comes after 199?',
+    options: ['200', '210', '198', '201'],
+    correct: 0,
+    explanation: '199 + 1 = 200! You are counting into the hundreds! 🎉',
+  },
+  {
+    id: 'math_offline_5',
+    subject: 'Mathematics',
+    grade: 3,
+    question: 'Which number is the biggest?',
+    options: ['67', '76', '69', '70'],
+    correct: 1,
+    explanation: '76 is the biggest! Compare the tens digit first: 7 > 6! 📊',
+  },
+  {
+    id: 'science_offline_1',
+    subject: 'Basic Science',
+    grade: 3,
+    question: 'Which planet do we live on?',
+    options: ['Mars', 'Venus', 'Earth', 'Jupiter'],
+    correct: 2,
+    explanation: 'We live on Earth — the third planet from the Sun! 🌍',
+  },
+  {
+    id: 'science_offline_2',
+    subject: 'Basic Science',
+    grade: 3,
+    question: 'What do plants need to make food?',
+    options: ['Moonlight', 'Sunlight', 'Darkness', 'Wind'],
+    correct: 1,
+    explanation:
+      'Plants use sunlight, water, and air to make food. This is called photosynthesis! 🌱',
+  },
+  {
+    id: 'science_offline_3',
+    subject: 'Basic Science',
+    grade: 3,
+    question: 'How many legs does an insect have?',
+    options: ['4', '8', '6', '10'],
+    correct: 2,
+    explanation: 'All insects have exactly 6 legs! 🐛',
+  },
+  {
+    id: 'science_offline_4',
+    subject: 'Basic Science',
+    grade: 3,
+    question: 'What state of matter is ice?',
+    options: ['Gas', 'Liquid', 'Solid', 'Plasma'],
+    correct: 2,
+    explanation: 'Ice is frozen water — a solid! When it melts it becomes liquid water. 🧊',
+  },
+  {
+    id: 'science_offline_5',
+    subject: 'Basic Science',
+    grade: 3,
+    question: 'Which organ pumps blood around the body?',
+    options: ['Brain', 'Lungs', 'Heart', 'Stomach'],
+    correct: 2,
+    explanation: 'The heart pumps blood to every part of your body! ❤️',
+  },
+  {
+    id: 'social_offline_1',
+    subject: 'Social Studies',
+    grade: 3,
+    question: 'What is the capital city of Nigeria?',
+    options: ['Lagos', 'Kano', 'Abuja', 'Port Harcourt'],
+    correct: 2,
+    explanation: 'Abuja is the capital city of Nigeria! It became the capital in 1991. 🇳🇬',
+  },
+  {
+    id: 'social_offline_2',
+    subject: 'Social Studies',
+    grade: 3,
+    question: 'How many states are in Nigeria?',
+    options: ['30', '36', '38', '40'],
+    correct: 1,
+    explanation: 'Nigeria has 36 states plus the FCT (Abuja)! 🗺️',
+  },
+  {
+    id: 'social_offline_3',
+    subject: 'Social Studies',
+    grade: 3,
+    question: 'Which of these is a means of transportation?',
+    options: ['Television', 'Bicycle', 'Radio', 'Chair'],
+    correct: 1,
+    explanation:
+      'A bicycle is used to move from one place to another — that makes it transportation! 🚲',
+  },
+  {
+    id: 'social_offline_4',
+    subject: 'Social Studies',
+    grade: 3,
+    question: 'What do we call the leader of Nigeria?',
+    options: ['Prime Minister', 'King', 'President', 'Governor'],
+    correct: 2,
+    explanation:
+      'Nigeria is led by a President! The president is the head of the Federal Government. 🏛️',
+  },
+  {
+    id: 'social_offline_5',
+    subject: 'Social Studies',
+    grade: 3,
+    question: 'Which of these is a natural resource in Nigeria?',
+    options: ['Plastic', 'Crude oil', 'Glass', 'Paper'],
+    correct: 1,
+    explanation: "Crude oil is one of Nigeria's most important natural resources! ⛽",
+  },
+  {
+    id: 'civic_offline_1',
+    subject: 'Civic Education',
+    grade: 3,
+    question: 'What is a right?',
+    options: [
+      'Something you must do',
+      'Something you are allowed to have or do',
+      'A type of punishment',
+      'A school subject',
+    ],
+    correct: 1,
+    explanation:
+      'A right is something every person is allowed to have or do, like the right to education! 📚',
+  },
+  {
+    id: 'civic_offline_2',
+    subject: 'Civic Education',
+    grade: 3,
+    question: 'What is a responsibility?',
+    options: [
+      'Something you earn',
+      'A type of game',
+      'A duty you must carry out',
+      'A kind of reward',
+    ],
+    correct: 2,
+    explanation:
+      'A responsibility is a duty — something you should do, like keeping your environment clean! 🌿',
+  },
+  {
+    id: 'civic_offline_3',
+    subject: 'Civic Education',
+    grade: 3,
+    question: 'Which of these is a national symbol of Nigeria?',
+    options: ['The Eiffel Tower', 'The Niger River', 'Big Ben', 'The Pyramids'],
+    correct: 1,
+    explanation:
+      'The River Niger is a major national symbol of Nigeria — our country is named after it! 🌊',
+  },
+  {
+    id: 'civic_offline_4',
+    subject: 'Civic Education',
+    grade: 3,
+    question: 'What does a good citizen do?',
+    options: [
+      'Litters everywhere',
+      'Disobeys rules',
+      'Respects others and follows the law',
+      "Takes other people's things",
+    ],
+    correct: 2,
+    explanation:
+      'A good citizen respects others, follows the law, and helps their community! 🤝',
+  },
+  {
+    id: 'civic_offline_5',
+    subject: 'Civic Education',
+    grade: 3,
+    question: 'In which year did Nigeria gain independence?',
+    options: ['1957', '1963', '1960', '1970'],
+    correct: 2,
+    explanation: 'Nigeria became independent on October 1, 1960! We celebrate this every year. 🎉',
+  },
 ];
+
+function matchesSubject(quizSubject: string, filter?: string): boolean {
+  if (!filter) return true;
+  const q = quizSubject.toLowerCase();
+  const f = filter.toLowerCase();
+  return q === f || q.includes(f) || f.includes(q);
+}
 
 export const OFFLINE_FLASHCARDS: OfflineFlashcard[] = [
   { id: 'fc_001', subject: 'Mathematics', grade: 1, front: '2 + 2 = ?', back: '4', emoji: '🔢' },
@@ -220,17 +429,23 @@ export const OFFLINE_FLASHCARDS: OfflineFlashcard[] = [
 ];
 
 export function getOfflineQuizzes(grade: number, subject?: string): OfflineQuiz[] {
-  return OFFLINE_QUIZZES.filter(
-    (q) =>
-      q.grade <= grade &&
-      (!subject || q.subject.toLowerCase().includes(subject.toLowerCase()))
-  );
+  const byGrade = OFFLINE_QUIZZES.filter((q) => q.grade <= grade);
+  if (!subject) return byGrade;
+
+  const exact = byGrade.filter((q) => q.subject === subject);
+  if (exact.length > 0) return exact;
+
+  const loose = byGrade.filter((q) => matchesSubject(q.subject, subject));
+  return loose.length > 0 ? loose : byGrade;
 }
 
 export function getOfflineFlashcards(grade: number, subject?: string): OfflineFlashcard[] {
-  return OFFLINE_FLASHCARDS.filter(
-    (f) =>
-      f.grade <= grade &&
-      (!subject || f.subject.toLowerCase().includes(subject.toLowerCase()))
-  );
+  const byGrade = OFFLINE_FLASHCARDS.filter((f) => f.grade <= grade);
+  if (!subject) return byGrade;
+
+  const exact = byGrade.filter((f) => f.subject === subject);
+  if (exact.length > 0) return exact;
+
+  const loose = byGrade.filter((f) => matchesSubject(f.subject, subject));
+  return loose.length > 0 ? loose : byGrade;
 }

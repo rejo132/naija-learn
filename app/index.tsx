@@ -43,6 +43,13 @@ const FEATURES = [
   '🌍 4 Languages',
 ] as const;
 
+const LANG_FLAGS: Record<string, string> = {
+  en: '🇬🇧',
+  ha: '🇳🇬',
+  yo: '🇳🇬',
+  ig: '🇳🇬',
+};
+
 const BOTTOM_STATS = [
   { icon: '🛡️', text: 'Trusted by schools across Nigeria' },
   { icon: '✨', text: 'Loved by students and teachers' },
@@ -82,7 +89,7 @@ function LanguageCard({
   return (
     <PressableScale style={styles.langCard} onPress={() => onPress(lang)} scaleTo={0.98}>
       <View style={styles.langFlagWrap}>
-        <Text style={styles.langFlag}>🇳🇬</Text>
+        <Text style={styles.langFlag}>{LANG_FLAGS[lang.code] ?? '🇳🇬'}</Text>
       </View>
       <View style={styles.langBody}>
         <Text style={[styles.langLabel, { color: lang.color }]}>{lang.nativeLabel}</Text>

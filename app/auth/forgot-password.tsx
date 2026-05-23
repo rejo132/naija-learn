@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
+import { goBack } from '@/utils/navigation';
 import { supabase } from '@/lib/supabase';
 import { COLORS, FONT_SIZES, SPACING, RADIUS } from '@/constants/theme';
 import { TutorAvatar } from '@/components/TutorAvatar';
@@ -50,7 +51,7 @@ export default function ForgotPasswordScreen() {
   return (
     <SafeAreaView style={styles.safe}>
       <View style={styles.container}>
-        <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
+        <TouchableOpacity style={styles.backBtn} onPress={() => goBack('/auth/sign-in')}>
           <Text style={styles.backBtnText}>← {t('back')}</Text>
         </TouchableOpacity>
 
