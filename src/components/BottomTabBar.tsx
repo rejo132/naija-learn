@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, useWindowDimensions } from 'react-native';
 import { router, usePathname } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FONT_SIZES, RADIUS } from '@/constants/theme';
@@ -9,28 +9,25 @@ import { useTranslation } from '@/hooks/useTranslation';
 interface TabItem {
   id: string;
   label: string;
-  shortLabel: string;
   emoji: string;
   route: string;
   requiresGrade?: boolean;
 }
 
-const { width } = Dimensions.get('window');
-
 export function BottomTabBar() {
+  const { width } = useWindowDimensions();
   const pathname = usePathname();
   const insets = useSafeAreaInsets();
   const selectedGrade = useAppStore((s) => s.selectedGrade);
   const { colors, isDarkMode } = useTheme();
   const { t } = useTranslation();
 
-  const BASE_TABS: TabItem[] = [
-    { id: 'home', label: t('home'), shortLabel: t('home'), emoji: '🏠', route: '/dashboard' },
-    { id: 'learn', label: t('learn'), shortLabel: t('learn'), emoji: '📚', route: '/dashboard', requiresGrade: true },
-    { id: 'progress', label: t('progress'), shortLabel: t('progressShort'), emoji: '📈', route: '/progress' },
-    { id: 'achievements', label: t('achievements'), shortLabel: t('achievementsShort'), emoji: '🏆', route: '/achievements' },
-    { id: 'settings', label: t('settingsTitle'), shortLabel: t('settingsShort'), emoji: '⚙️', route: '/settings' },
-    { id: 'theme', label: t('settingsDarkMode'), shortLabel: t('settingsDarkMode'), emoji: '🌙', route: '' },
+  const TABS: TabItem[] = [
+    { id: 'home', label: t('home'), emoji: '🏠', route: '/dashboard' },
+    { id: 'learn', label: t('learn'), emoji: '📚', route: '/dashboard', requiresGrade: true },
+    { id: 'progress', label: t('progress'), emoji: '📈', route: '/progress' },
+    { id: 'achievements', label: t('achievements'), emoji: '🏆', route: '/achievements' },
+    { id: 'settings', label: t('settingsTitle'), emoji: '⚙️', route: '/settings' },
   ];
 
   const hideOn = ['/auth/sign-in', '/auth/sign-up', '/lesson', '/personality'];
@@ -38,8 +35,11 @@ export function BottomTabBar() {
 
   if (width > 768) return null;
 
-  function navigateTo(route: string) {
-    router.push(route as '/');
+  function goDashboard() {
+    if (router.canGoBack()) {
+      router.dismissAll();
+    }
+    router.replace('/dashboard');
   }
 
   function isActive(route: string): boolean {
@@ -50,25 +50,16 @@ export function BottomTabBar() {
   }
 
   function handleTabPress(tab: TabItem) {
-    if (tab.id === 'theme') {
-      useAppStore.getState().toggleDarkMode();
-      return;
-    }
     if (tab.requiresGrade && !selectedGrade) {
       router.push('/grade');
       return;
     }
     if (tab.route === '/dashboard') {
-      if (pathname !== '/dashboard' && pathname !== '/' && pathname !== '') {
-        router.push('/dashboard');
-      }
+      goDashboard();
       return;
     }
-    navigateTo(tab.route);
+    router.push(tab.route as '/');
   }
-
-  const mainTabs = BASE_TABS.filter((tab) => tab.id !== 'theme');
-  const themeTab = BASE_TABS.find((tab) => tab.id === 'theme')!;
 
   return (
     <View
@@ -81,8 +72,8 @@ export function BottomTabBar() {
         },
       ]}
     >
-      {mainTabs.map((tab) => {
-        const active = tab.route !== '' && isActive(tab.route);
+      {TABS.map((tab) => {
+        const active = isActive(tab.route);
         return (
           <TouchableOpacity
             key={tab.id}
@@ -112,13 +103,6 @@ export function BottomTabBar() {
           </TouchableOpacity>
         );
       })}
-      <TouchableOpacity
-        onPress={() => handleTabPress(themeTab)}
-        style={styles.themeTab}
-        activeOpacity={0.75}
-      >
-        <Text style={styles.themeEmoji}>{isDarkMode ? '☀️' : '🌙'}</Text>
-      </TouchableOpacity>
     </View>
   );
 }
@@ -137,8 +121,8 @@ const styles = StyleSheet.create({
   tab: {
     flex: 1,
     alignItems: 'center',
-    gap: 2,
     paddingVertical: 8,
+    minHeight: 56,
   },
   tabActive: {},
   tabIconWrap: {
@@ -153,13 +137,4 @@ const styles = StyleSheet.create({
     fontSize: FONT_SIZES.xs,
     fontFamily: 'Poppins-Regular',
   },
-  themeTab: {
-    flex: 0,
-    width: 44,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 4,
-    opacity: 0.65,
-  },
-  themeEmoji: { fontSize: 18 },
 });

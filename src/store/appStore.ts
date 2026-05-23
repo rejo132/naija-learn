@@ -98,6 +98,14 @@ interface AppState {
   lastCelebratedStreak: number;
   lastCelebratedLevel: number;
   unlockedAvatars: string[];
+  weekendLessons: number;
+  consecutivePerfectQuizzes: number;
+  fastestQuizSeconds: number | null;
+  retriedAndPassedQuiz: boolean;
+  nonEnglishLessons: number;
+  uniqueSubjectsTried: string[];
+  todaysLessons: number;
+  todaysLessonsDate: string;
   setLanguage: (lang: LanguageCode) => void;
   setGrade: (grade: number) => void;
   setSubject: (subject: Subject) => void;
@@ -150,6 +158,13 @@ interface AppState {
   markLevelCelebrated: (level: number) => void;
   unlockAvatar: (emoji: string) => void;
   setUserAvatar: (avatar: string) => void;
+  incrementWeekendLessons: () => void;
+  incrementNonEnglishLessons: () => void;
+  addUniqueSubject: (subject: string) => void;
+  incrementTodaysLessons: () => void;
+  setConsecutivePerfectQuizzes: (count: number) => void;
+  setFastestQuizSeconds: (seconds: number) => void;
+  setRetriedAndPassedQuiz: (v: boolean) => void;
   /** Wipe all child-facing data — used by the "Delete my data" flow. */
   resetAll: () => void;
 }
@@ -196,6 +211,14 @@ type PersistedAppState = Pick<
   | 'lastCelebratedStreak'
   | 'lastCelebratedLevel'
   | 'unlockedAvatars'
+  | 'weekendLessons'
+  | 'consecutivePerfectQuizzes'
+  | 'fastestQuizSeconds'
+  | 'retriedAndPassedQuiz'
+  | 'nonEnglishLessons'
+  | 'uniqueSubjectsTried'
+  | 'todaysLessons'
+  | 'todaysLessonsDate'
 >;
 
 /**
@@ -216,6 +239,9 @@ type AppStateValues = Omit<AppState,
   | 'markFlowCompleted' | 'setXP' | 'setStreak' | 'setSubjectProgress'
   | 'incrementSubjectLesson' | 'generateDailyChallenge' | 'completeDailyChallenge'
   | 'markStreakCelebrated' | 'markLevelCelebrated' | 'unlockAvatar' | 'setUserAvatar'
+  | 'incrementWeekendLessons' | 'incrementNonEnglishLessons' | 'addUniqueSubject'
+  | 'incrementTodaysLessons' | 'setConsecutivePerfectQuizzes' | 'setFastestQuizSeconds'
+  | 'setRetriedAndPassedQuiz'
   | 'resetAll'
 >;
 
@@ -264,6 +290,14 @@ const initialState: AppStateValues = {
   lastCelebratedStreak: 0,
   lastCelebratedLevel: 0,
   unlockedAvatars: ['🦁', '🐯', '🦊', '🐧', '🦅', '🐬'],
+  weekendLessons: 0,
+  consecutivePerfectQuizzes: 0,
+  fastestQuizSeconds: null,
+  retriedAndPassedQuiz: false,
+  nonEnglishLessons: 0,
+  uniqueSubjectsTried: [],
+  todaysLessons: 0,
+  todaysLessonsDate: '',
 };
 
 export const useAppStore = create<AppState>()(
@@ -479,6 +513,27 @@ export const useAppStore = create<AppState>()(
             : [...state.unlockedAvatars, emoji],
         })),
       setUserAvatar: (avatar) => set({ userAvatar: avatar }),
+      incrementWeekendLessons: () =>
+        set((state) => ({ weekendLessons: state.weekendLessons + 1 })),
+      incrementNonEnglishLessons: () =>
+        set((state) => ({ nonEnglishLessons: state.nonEnglishLessons + 1 })),
+      addUniqueSubject: (subject) =>
+        set((state) => ({
+          uniqueSubjectsTried: state.uniqueSubjectsTried.includes(subject)
+            ? state.uniqueSubjectsTried
+            : [...state.uniqueSubjectsTried, subject],
+        })),
+      incrementTodaysLessons: () =>
+        set((state) => {
+          const today = new Date().toISOString().split('T')[0];
+          const count =
+            state.todaysLessonsDate === today ? state.todaysLessons + 1 : 1;
+          return { todaysLessons: count, todaysLessonsDate: today };
+        }),
+      setConsecutivePerfectQuizzes: (count) =>
+        set({ consecutivePerfectQuizzes: count }),
+      setFastestQuizSeconds: (seconds) => set({ fastestQuizSeconds: seconds }),
+      setRetriedAndPassedQuiz: (v) => set({ retriedAndPassedQuiz: v }),
       resetAll: () => set({ ...initialState }),
     }),
     {
@@ -528,6 +583,14 @@ export const useAppStore = create<AppState>()(
         lastCelebratedStreak: state.lastCelebratedStreak,
         lastCelebratedLevel: state.lastCelebratedLevel,
         unlockedAvatars: state.unlockedAvatars,
+        weekendLessons: state.weekendLessons,
+        consecutivePerfectQuizzes: state.consecutivePerfectQuizzes,
+        fastestQuizSeconds: state.fastestQuizSeconds,
+        retriedAndPassedQuiz: state.retriedAndPassedQuiz,
+        nonEnglishLessons: state.nonEnglishLessons,
+        uniqueSubjectsTried: state.uniqueSubjectsTried,
+        todaysLessons: state.todaysLessons,
+        todaysLessonsDate: state.todaysLessonsDate,
       }),
       merge: (persisted, current) => ({
         ...current,

@@ -57,7 +57,8 @@ export default function SignUpScreen() {
   const { colors, isDarkMode } = useTheme();
 
   const [step, setStep] = useState<SignUpStep>(() => stepFromParam(stepParam));
-  const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
+  const [usernameError, setUsernameError] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -100,7 +101,7 @@ export default function SignUpScreen() {
       if (
         step === 'account' &&
         e.key === 'Enter' &&
-        name.trim() &&
+        username.trim() &&
         email.trim() &&
         password.trim() &&
         !isLoading
@@ -112,7 +113,7 @@ export default function SignUpScreen() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [name, email, password, isLoading, step]);
+  }, [username, email, password, isLoading, step]);
 
   function validateEmail(value: string) {
     if (!value) {
@@ -143,7 +144,23 @@ export default function SignUpScreen() {
   }
 
   async function handleAccountSubmit() {
-    if (!name.trim() || !email.trim() || !password.trim()) return;
+    const trimmedUsername = username.trim();
+    if (!trimmedUsername || !email.trim() || !password.trim()) return;
+
+    if (!trimmedUsername) {
+      setUsernameError('Please choose a username');
+      return;
+    }
+    if (trimmedUsername.length < 3) {
+      setUsernameError('Username must be at least 3 characters');
+      return;
+    }
+    if (!/^[a-zA-Z0-9_]+$/.test(trimmedUsername)) {
+      setUsernameError(
+        'Username can only have letters, numbers, and underscores'
+      );
+      return;
+    }
 
     validateEmail(email.trim());
     const passwordOk = validatePassword(password);
@@ -159,7 +176,8 @@ export default function SignUpScreen() {
     setLocalError('');
     clearError();
     try {
-      await signUp(email.trim(), password, name.trim(), '');
+      await signUp(email.trim(), password, trimmedUsername, '');
+      useAppStore.getState().setUserName(trimmedUsername);
       setStep('grade');
     } catch {
       // error shown via displayError
@@ -200,14 +218,14 @@ export default function SignUpScreen() {
     try {
       useAppStore.getState().setGrade(selectedGradeNum);
       useAppStore.setState({
-        userName: name.trim(),
+        userName: username.trim(),
         userAvatar: selectedAvatar,
         userGrade: `Primary ${selectedGradeNum}`,
         setupComplete: true,
       });
 
       syncProfile({
-        name: name.trim(),
+        name: username.trim(),
         grade: selectedGradeNum,
         avatar: selectedAvatar,
         xp: 0,
@@ -227,7 +245,8 @@ export default function SignUpScreen() {
   }
 
   const canSubmitAccount =
-    name.trim() &&
+    username.trim().length >= 3 &&
+    /^[a-zA-Z0-9_]+$/.test(username.trim()) &&
     email.trim() &&
     email.includes('@') &&
     email.includes('.') &&
@@ -255,7 +274,12 @@ export default function SignUpScreen() {
           </View>
         ) : null}
 
-        <View style={[styles.inputGroup, { backgroundColor: inputBg, borderColor: colors.border }]}>
+        <View
+          style={[
+            styles.inputGroup,
+            { backgroundColor: inputBg, borderColor: usernameError ? '#E53935' : colors.border },
+          ]}
+        >
           <Text style={styles.inputIcon}>👤</Text>
           <TextInput
             style={[
@@ -266,16 +290,21 @@ export default function SignUpScreen() {
                 outlineWidth: 0,
               } as any,
             ]}
-            placeholder={ui.fullName}
+            placeholder="Choose a username"
             placeholderTextColor={colors.textMuted}
-            value={name}
-            onChangeText={setName}
-            autoCapitalize="words"
+            value={username}
+            onChangeText={(v) => {
+              setUsername(v);
+              setUsernameError('');
+            }}
+            autoCapitalize="none"
+            autoCorrect={false}
             editable={!isLoading}
             returnKeyType="next"
             onSubmitEditing={() => emailRef.current?.focus()}
           />
         </View>
+        {usernameError ? <Text style={styles.fieldError}>{usernameError}</Text> : null}
 
         <View
           style={[

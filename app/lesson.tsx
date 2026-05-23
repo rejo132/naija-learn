@@ -45,7 +45,7 @@ import {
   getTopicsForSubject,
   findSubjectByLabel,
 } from '@/constants/subjects';
-import { type Achievement, XP_REWARDS, checkNewAchievements } from '@/constants/achievements';
+import { type Achievement, type AchievementStats, XP_REWARDS, checkNewAchievements } from '@/constants/achievements';
 import { getPersonality, type TutorPersonality } from '@/constants/personalities';
 import { AchievementToast } from '@/components/AchievementToast';
 import {
@@ -65,11 +65,9 @@ import { MarkdownMessage } from '@/components/MarkdownMessage';
 import { TutorAvatar } from '@/components/TutorAvatar';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { OfflineLearning } from '@/components/OfflineLearning';
-import { LearningFlow } from '@/components/LearningFlow';
 import LevelUpCelebration from '@/components/LevelUpCelebration';
 import { AVATAR_UNLOCKS, getCurrentLevel } from '@/constants/levels';
 import { useSpeech, type VoiceLanguage } from '@/hooks/useSpeech';
-import type { LearningFlowState } from '@/types/ai.types';
 import { goBack } from '@/utils/navigation';
 import { toTitleCase } from '@/utils/format';
 
@@ -139,7 +137,7 @@ interface SpeechRecognitionInstance {
   interimResults: boolean;
   maxAlternatives: number;
   onresult: ((event: SpeechRecognitionResultEvent) => void) | null;
-  onerror: (() => void) | null;
+  onerror: ((event: { error?: string }) => void) | null;
   onend: (() => void) | null;
   start: () => void;
   stop: () => void;
@@ -449,15 +447,10 @@ export default function LessonScreen() {
   );
   const [autoSpeak, setAutoSpeak] = useState(false);
   const [isListening, setIsListening] = useState(false);
+  const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
   const lastSpokenIdRef = useRef<string | null>(null);
   const lessonStartRef = useRef<number>(Date.now());
   const hasCountedLesson = useRef(false);
-  const [flowCompleted, setFlowCompleted] = useState(() => {
-    if (isChallengeParam === 'true') return true;
-    const key = `${selectedSubject?.label ?? ''}_${selectedGrade ?? ''}`;
-    return useAppStore.getState().completedFlows[key] ?? false;
-  });
-  const [flowState, setFlowState] = useState<LearningFlowState | null>(null);
   const [topicSelected, setTopicSelected] = useState(
     () => isChallengeParam === 'true' && Boolean(topicParam)
   );
@@ -485,7 +478,8 @@ export default function LessonScreen() {
   const topicGridScaleAnim = useRef(new RNAnimated.Value(0.92)).current;
   const challengeStartedRef = useRef(false);
   const quizXpAwarded = useRef(false);
-  const flowXpAwarded = useRef(false);
+  const quizStartTime = useRef<number | null>(null);
+  const hadFailedQuizRef = useRef(false);
   const navigation = useNavigation();
   const [inputText, setInputText] = useState('');
   const [isQuizMode, setIsQuizMode] = useState(false);
@@ -656,7 +650,7 @@ export default function LessonScreen() {
   }, [navigation, topicSelected, messages.length]);
 
   useEffect(() => {
-    if (flowCompleted && !topicSelected && !showOfflineMode) {
+    if (!topicSelected && !showOfflineMode) {
       topicGridScaleAnim.setValue(0.92);
       RNAnimated.spring(topicGridScaleAnim, {
         toValue: 1,
@@ -665,7 +659,45 @@ export default function LessonScreen() {
         useNativeDriver: true,
       }).start();
     }
-  }, [flowCompleted, topicSelected, showOfflineMode, topicGridScaleAnim]);
+  }, [topicSelected, showOfflineMode, topicGridScaleAnim]);
+
+  function buildAchievementStats(
+    extra?: Partial<AchievementStats>
+  ): AchievementStats {
+    const s = useAppStore.getState();
+    return {
+      xp: s.xp,
+      streak: s.streak,
+      lessonsCompleted: s.lessonsCompleted,
+      bestQuizScore: s.bestQuizScore,
+      weekendLessons: s.weekendLessons,
+      consecutivePerfectQuizzes: s.consecutivePerfectQuizzes,
+      fastestQuizSeconds: s.fastestQuizSeconds,
+      retriedAndPassedQuiz: s.retriedAndPassedQuiz,
+      nonEnglishLessons: s.nonEnglishLessons,
+      uniqueSubjectsTried: s.uniqueSubjectsTried.length,
+      todaysLessons: s.todaysLessons,
+      subjectLessons: s.subjectLessonsCount,
+      unlockedAchievements: s.unlockedAchievements,
+      ...extra,
+    };
+  }
+
+  function trackLessonAchievements() {
+    const store = useAppStore.getState();
+    const now = new Date();
+    const day = now.getDay();
+    if (day === 0 || day === 6) {
+      store.incrementWeekendLessons();
+    }
+    if (selectedLanguage !== 'en') {
+      store.incrementNonEnglishLessons();
+    }
+    if (selectedSubject?.label) {
+      store.addUniqueSubject(selectedSubject.label);
+    }
+    store.incrementTodaysLessons();
+  }
 
   function countLessonOnce() {
     if (!hasCountedLesson.current) {
@@ -674,6 +706,7 @@ export default function LessonScreen() {
       if (selectedSubject?.label) {
         useAppStore.getState().incrementSubjectLesson(selectedSubject.label);
       }
+      trackLessonAchievements();
     }
   }
 
@@ -684,9 +717,8 @@ export default function LessonScreen() {
     if (!label || !topic) return;
 
     const match = findSubjectByLabel(label);
-    if (match) setSubject(match);
+    if (match)     setSubject(match);
 
-    setFlowCompleted(true);
     setSelectedTopic(topic);
     setTopicSelected(true);
     challengeStartedRef.current = true;
@@ -703,6 +735,12 @@ export default function LessonScreen() {
   }, [isChallenge, topicSelected, selectedTopic, selectedSubject?.label]);
 
   async function handleMicPress() {
+    if (isListening) {
+      recognitionRef.current?.stop();
+      setIsListening(false);
+      return;
+    }
+
     if (
       typeof window !== 'undefined' &&
       ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)
@@ -717,6 +755,7 @@ export default function LessonScreen() {
         return;
       }
       const recognition = new SpeechRecognition();
+      recognitionRef.current = recognition;
       recognition.lang = SPEECH_LANG_MAP[selectedLanguage] ?? 'en-NG';
       recognition.interimResults = false;
       recognition.maxAlternatives = 1;
@@ -724,26 +763,38 @@ export default function LessonScreen() {
       setIsListening(true);
 
       recognition.onresult = (event: SpeechRecognitionResultEvent) => {
-        const transcript = event.results[0]?.[0]?.transcript ?? '';
-        if (transcript) {
-          setInputText(transcript);
+        const transcript =
+          event.results[0]?.[0]?.transcript?.trim() ?? '';
+
+        if (!transcript) {
           setIsListening(false);
-          setTimeout(() => {
-            handleSend(transcript);
-          }, 600);
-        } else {
-          setIsListening(false);
+          return;
+        }
+
+        setInputText(transcript);
+        setIsListening(false);
+
+        setTimeout(() => {
+          handleSend(transcript);
+        }, 600);
+      };
+      recognition.onerror = (event: { error?: string }) => {
+        console.log('Speech error:', event.error);
+        setIsListening(false);
+
+        if (event.error !== 'no-speech' && event.error !== 'aborted') {
+          setInputText('');
         }
       };
-      recognition.onerror = () => setIsListening(false);
-      recognition.onend = () => setIsListening(false);
+      recognition.onend = () => {
+        setIsListening(false);
+      };
 
       recognition.start();
     } else {
       Alert.alert(
-        t('micPermissionTitle'),
-        t('micPermissionMsg'),
-        [{ text: t('micPermissionOk') }]
+        'Microphone not available',
+        'Speech recognition is not supported on this device.',
       );
     }
   }
@@ -790,11 +841,6 @@ export default function LessonScreen() {
       if (contextChanged) {
         lessonContextRef.current = contextKey;
         clearMessages();
-        const flowKey = `${selectedSubject.label}_${selectedGrade}`;
-        const alreadyCompleted =
-          useAppStore.getState().completedFlows[flowKey] ?? false;
-        setFlowCompleted(isChallenge ? true : alreadyCompleted);
-        setFlowState(null);
         setIsQuizMode(false);
         isQuizModeRef.current = false;
         setQuizScore(null);
@@ -804,7 +850,8 @@ export default function LessonScreen() {
           setSelectedTopic('');
         }
         quizXpAwarded.current = false;
-        flowXpAwarded.current = false;
+        quizStartTime.current = null;
+        hadFailedQuizRef.current = false;
       }
 
       return () => {
@@ -897,13 +944,30 @@ export default function LessonScreen() {
           }
           updateBestQuizScore(finalScore);
 
+          const store = useAppStore.getState();
+          if (finalScore === 100) {
+            store.setConsecutivePerfectQuizzes(store.consecutivePerfectQuizzes + 1);
+          } else {
+            store.setConsecutivePerfectQuizzes(0);
+          }
+          if (quizStartTime.current) {
+            const secs = Math.round((Date.now() - quizStartTime.current) / 1000);
+            if (
+              store.fastestQuizSeconds === null ||
+              secs < store.fastestQuizSeconds
+            ) {
+              store.setFastestQuizSeconds(secs);
+            }
+          }
+          if (hadFailedQuizRef.current && finalScore >= 60) {
+            store.setRetriedAndPassedQuiz(true);
+          }
+          if (finalScore < 60) {
+            hadFailedQuizRef.current = true;
+          }
+
           const newlyUnlocked = checkNewAchievements(
-            {
-              xp: useAppStore.getState().xp,
-              streak: useAppStore.getState().streak,
-              lessonsCompleted: useAppStore.getState().lessonsCompleted,
-              bestQuizScore: finalScore,
-            },
+            buildAchievementStats({ bestQuizScore: finalScore }),
             unlockedAchievements
           );
           if (newlyUnlocked.length > 0) {
@@ -922,7 +986,7 @@ export default function LessonScreen() {
             grade: selectedGrade ?? 1,
             xpEarned: earnedXP,
             durationSeconds: durationSecs,
-            flowCompleted: flowState?.hookCompleted ?? false,
+            flowCompleted: true,
             childId: null,
           }).catch((err) => console.error('saveProgress error:', err));
 
@@ -950,6 +1014,8 @@ export default function LessonScreen() {
     setIsQuizMode(true);
     setQuizScore(null);
     quizStatsRef.current = { correct: 0, answered: 0 };
+    hadFailedQuizRef.current = quizScore !== null && quizScore < 60;
+    quizStartTime.current = Date.now();
     handleSend(
       getQuickPrompts(selectedSubject?.label ?? '', selectedGrade ?? 1, selectedLanguage)[2],
       true
@@ -1043,19 +1109,21 @@ export default function LessonScreen() {
     );
   }
 
-  function handleConfirmTopic() {
-    if (!selectedTopic || !selectedSubject) return;
+  function selectTopicAndStart(topic: string) {
+    if (!selectedSubject) return;
+    playSound('tap');
+    setSelectedTopic(topic);
     setTopicSelected(true);
-    handleSend(
-      `I want to learn about ${selectedTopic} in ${selectedSubject.label}`
-    );
+    if (selectedSubject && selectedGrade) {
+      markFlowCompleted(selectedSubject.label, selectedGrade);
+    }
+    handleSend(`I want to learn about ${topic} in ${selectedSubject.label}`);
   }
 
   function handleChangeTopic() {
     setTopicSelected(false);
     setSelectedTopic('');
     quizXpAwarded.current = false;
-    flowXpAwarded.current = false;
     clearMessages();
     setIsQuizMode(false);
     isQuizModeRef.current = false;
@@ -1063,99 +1131,7 @@ export default function LessonScreen() {
     quizStatsRef.current = { correct: 0, answered: 0 };
   }
 
-  if (!flowCompleted && !showOfflineMode && !isChallenge) {
-    return (
-      <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
-        <View style={[styles.content, isWide && styles.contentWide, { flex: 1 }]}>
-          <View
-            style={[
-              styles.header,
-              {
-                backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
-                borderBottomColor: colors.border,
-              },
-            ]}
-          >
-            <TouchableOpacity
-              style={[styles.backBtn, { backgroundColor: colors.primaryLight }]}
-              onPress={() => goBack()}
-            >
-              <Text style={[styles.backBtnText, { color: colors.primary }]}>←</Text>
-            </TouchableOpacity>
-
-            <View style={styles.headerCenter}>
-              <Text style={styles.headerEmoji}>{selectedSubject.icon}</Text>
-              <View style={styles.headerTextBlock}>
-                <Text style={[styles.headerTitle, { color: colors.textPrimary }]} numberOfLines={1}>
-                  {selectedSubject.label}
-                </Text>
-                <Text style={[styles.headerSub, { color: colors.textMuted }]} numberOfLines={1}>
-                  {personality.name} • {ui.primary} {selectedGrade}
-                </Text>
-              </View>
-            </View>
-
-            <TouchableOpacity
-              style={[styles.autoSpeakBtn, autoSpeak && styles.autoSpeakBtnActive]}
-              onPress={() => {
-                if (autoSpeak) stop();
-                setAutoSpeak((s) => !s);
-              }}
-              accessibilityLabel={autoSpeak ? 'Mute auto read-aloud' : 'Enable auto read-aloud'}
-            >
-              <View style={styles.iconWithLabel}>
-                <Text style={styles.autoSpeakIcon}>{autoSpeak ? '🔊' : '🔇'}</Text>
-                <Text style={[styles.iconLabel, { color: colors.textMuted }]}>Audio</Text>
-              </View>
-            </TouchableOpacity>
-
-            <View
-              style={[
-                styles.headerXP,
-                { backgroundColor: colors.goldLight, borderColor: 'rgba(234,162,33,0.3)' },
-              ]}
-            >
-              <Text style={[styles.headerXPText, { color: colors.goldDark }]}>⚡ {xp} XP</Text>
-            </View>
-          </View>
-
-          <LearningFlow
-            subject={{
-              label: selectedSubject.label,
-              emoji: selectedSubject.icon,
-              color: selectedSubject.color,
-            }}
-            grade={selectedGrade}
-            personality={{ name: personality.name, emoji: personality.emoji }}
-            onComplete={(state) => {
-              setFlowState(state);
-              setFlowCompleted(true);
-              if (selectedSubject && selectedGrade) {
-                markFlowCompleted(selectedSubject.label, selectedGrade);
-              }
-              if (state.xpEarned > 0 && !flowXpAwarded.current) {
-                flowXpAwarded.current = true;
-                awardXP(state.xpEarned);
-              }
-              useAppStore.getState().updateStreak();
-              countLessonOnce();
-              clearMessages();
-              setTopicSelected(false);
-              setSelectedTopic('');
-            }}
-            onSkip={() => {
-              setFlowCompleted(true);
-              clearMessages();
-              setTopicSelected(false);
-              setSelectedTopic('');
-            }}
-          />
-        </View>
-      </SafeAreaView>
-    );
-  }
-
-  if (flowCompleted && !topicSelected && !showOfflineMode) {
+  if (!topicSelected && !showOfflineMode && !isChallenge) {
     return (
       <SafeAreaView style={[styles.safe, { backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0' }]}>
         {renderLessonOverlays()}
@@ -1170,10 +1146,16 @@ export default function LessonScreen() {
             ]}
           >
             <TouchableOpacity
-              style={[styles.backBtn, { backgroundColor: colors.primaryLight }]}
-              onPress={() => goBack()}
+              onPress={() => goBack('/dashboard')}
+              style={{
+                width: 48,
+                height: 48,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              accessibilityLabel="Go back"
             >
-              <Text style={[styles.backBtnText, { color: colors.primary }]}>←</Text>
+              <Text style={{ fontSize: 22, color: colors.textPrimary }}>←</Text>
             </TouchableOpacity>
             <View style={styles.headerCenter}>
               <Text style={styles.headerEmoji}>{selectedSubject.icon}</Text>
@@ -1210,29 +1192,11 @@ export default function LessonScreen() {
                   emoji={TOPIC_EMOJIS[topic] ?? '📌'}
                   isSelected={selectedTopic === topic}
                   isDarkMode={isDarkMode}
-                  onSelect={() => {
-                    playSound('tap');
-                    setSelectedTopic(topic);
-                  }}
+                  onSelect={() => selectTopicAndStart(topic)}
                 />
               ))}
             </RNAnimated.View>
           </ScrollView>
-
-          <View style={styles.topicPickerFooter}>
-            <TouchableOpacity
-              style={[
-                styles.letsLearnBtn,
-                { backgroundColor: colors.primary },
-                !selectedTopic && styles.letsLearnBtnDisabled,
-              ]}
-              onPress={handleConfirmTopic}
-              disabled={!selectedTopic}
-              activeOpacity={0.85}
-            >
-              <Text style={styles.letsLearnBtnText}>Let&apos;s Learn!</Text>
-            </TouchableOpacity>
-          </View>
         </View>
       </SafeAreaView>
     );
@@ -1284,10 +1248,16 @@ export default function LessonScreen() {
             },
           ]}>
             <TouchableOpacity
-              style={[styles.backBtn, { backgroundColor: colors.primaryLight }]}
-              onPress={() => goBack()}
+              onPress={() => goBack('/dashboard')}
+              style={{
+                width: 48,
+                height: 48,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              accessibilityLabel="Go back"
             >
-              <Text style={[styles.backBtnText, { color: colors.primary }]}>←</Text>
+              <Text style={{ fontSize: 22, color: colors.textPrimary }}>←</Text>
             </TouchableOpacity>
 
             <View style={styles.headerCenter}>
@@ -1445,7 +1415,21 @@ export default function LessonScreen() {
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={[styles.micBtn, isListening && styles.micBtnActive]}
+              style={[
+                styles.micBtn,
+                {
+                  width: 48,
+                  height: 48,
+                  borderRadius: 24,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: isListening
+                    ? '#FF000015'
+                    : colors.backgroundCard,
+                  borderWidth: isListening ? 2 : 0,
+                  borderColor: isListening ? '#FF4444' : 'transparent',
+                },
+              ]}
               onPress={handleMicPress}
               disabled={isAILoading || !isConnected}
               accessibilityLabel={isListening ? 'Stop listening' : 'Speak your question'}

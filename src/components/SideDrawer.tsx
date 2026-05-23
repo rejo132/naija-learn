@@ -105,6 +105,9 @@ export function SideDrawer() {
 
   function handleNavPress(route: string) {
     if (route === '/dashboard') {
+      if (router.canGoBack()) {
+        router.dismissAll();
+      }
       router.replace('/dashboard');
       return;
     }
