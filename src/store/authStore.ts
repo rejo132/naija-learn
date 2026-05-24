@@ -187,16 +187,13 @@ export const useAuthStore = create<AuthState>((set) => ({
         userRole: role,
       });
 
-      const { userGrade, setupComplete, isSignedOut } = useAppStore.getState();
-      if (isSignedOut && (userGrade?.trim() || setupComplete)) {
-        useAppStore.getState().setIsSignedOut(false);
-        useAppStore.getState().loadUserProgress().catch(() => {});
-      } else if (!userGrade?.trim() && !setupComplete) {
+      try {
         await useAppStore.getState().loadUserProgress();
-      } else {
-        useAppStore.getState().setIsSignedOut(false);
-        useAppStore.getState().loadUserProgress().catch(() => {});
+      } catch (e) {
+        console.error('Load progress failed:', e);
       }
+
+      useAppStore.getState().setIsSignedOut(false);
     } catch (err: unknown) {
       if (!(err instanceof Error && useAuthStore.getState().error)) {
         const message = err instanceof Error ? err.message : 'Sign in failed';

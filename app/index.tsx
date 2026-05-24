@@ -105,20 +105,21 @@ function LanguageCard({
 
 export default function WelcomeScreen() {
   const session = useAuthStore((s) => s.session);
-  const userGrade = useAppStore((s) => s.userGrade);
   const { change } = useLocalSearchParams<{ change?: string }>();
   const isChangingLanguage = change === '1';
 
-  if (session && userGrade?.trim() && !isChangingLanguage) {
-    return <Redirect href="/dashboard" />;
-  }
-
-  if (session && !userGrade?.trim()) {
-    return <Redirect href="/auth/sign-up?step=2" />;
-  }
+  useEffect(() => {
+    if (session && !isChangingLanguage) {
+      router.replace('/dashboard');
+    }
+  }, [session, isChangingLanguage]);
 
   if (!session) {
     return <Redirect href="/auth/sign-in" />;
+  }
+
+  if (!isChangingLanguage) {
+    return null;
   }
 
   return <WelcomeScreenContent />;

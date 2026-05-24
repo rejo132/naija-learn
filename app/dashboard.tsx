@@ -79,7 +79,6 @@ export default function DashboardScreen() {
   const dailyChallengeTopic = useAppStore((s) => s.dailyChallengeTopic);
   const subjectLessonsCount = useAppStore((s) => s.subjectLessonsCount);
   const userGrade = useAppStore((s) => s.userGrade);
-  const setupComplete = useAppStore((s) => s.setupComplete);
   const lastCelebratedStreak = useAppStore((s) => s.lastCelebratedStreak);
   const markStreakCelebrated = useAppStore((s) => s.markStreakCelebrated);
   const shimmerAnim = useRef(new Animated.Value(0)).current;
@@ -166,8 +165,8 @@ export default function DashboardScreen() {
   const effectiveGrade =
     selectedGrade ??
     (() => {
-      const n = parseInt(userGrade.replace(/\D/g, ''), 10);
-      return n >= 1 && n <= 6 ? n : 1;
+      const n = parseInt((userGrade || 'Primary 3').replace(/\D/g, ''), 10);
+      return n >= 1 && n <= 6 ? n : 3;
     })();
 
   const tabContent: Record<Tab, Subject[]> = useMemo(
@@ -182,78 +181,23 @@ export default function DashboardScreen() {
   const lastActiveDate = lastStudyDate;
 
   useEffect(() => {
-    syncProfile({
-      name: displayName,
-      grade: effectiveGrade,
-      avatar: userAvatar,
-      xp: xp ?? 0,
-      streak: streak ?? 0,
-      language: selectedLanguage ?? 'en',
-      personalityId: selectedPersonalityId ?? 'aunty_naija',
-      lastActiveDate: lastActiveDate ?? new Date().toISOString().split('T')[0],
-    }).catch(() => {});
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [xp, streak, effectiveGrade, selectedLanguage, selectedPersonalityId, displayName, userAvatar]);
-
-  if (!userGrade?.trim() && !setupComplete) {
-    return (
-      <SafeAreaView style={[styles.safe, { backgroundColor: colors.background }]}>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: 32,
-            backgroundColor: colors.background,
-          }}
-        >
-          <Text style={{ fontSize: 48 }}>👋</Text>
-          <Text
-            style={{
-              fontSize: 20,
-              fontFamily: 'Poppins-Bold',
-              color: colors.textPrimary,
-              textAlign: 'center',
-              marginTop: 16,
-            }}
-          >
-            Welcome to Learnova!
-          </Text>
-          <Text
-            style={{
-              fontSize: 15,
-              fontFamily: 'Poppins-Regular',
-              color: colors.textMuted,
-              textAlign: 'center',
-              marginTop: 8,
-              marginBottom: 24,
-            }}
-          >
-            Let&apos;s set up your profile first
-          </Text>
-          <TouchableOpacity
-            style={{
-              backgroundColor: colors.primary,
-              borderRadius: 50,
-              paddingHorizontal: 32,
-              paddingVertical: 14,
-            }}
-            onPress={() => router.push('/auth/sign-up?step=2')}
-          >
-            <Text
-              style={{
-                color: '#fff',
-                fontFamily: 'Poppins-Bold',
-                fontSize: 16,
-              }}
-            >
-              Set Up Profile
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </SafeAreaView>
+    syncProfile().catch((err) =>
+      console.error('Sync after XP failed:', err)
     );
-  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [xp, streak, effectiveGrade, selectedLanguage, selectedPersonalityId, displayName, userAvatar, lastActiveDate]);
+
+  useEffect(() => {
+    if (dailyChallengeCompleted) {
+      syncProfile().catch((err) =>
+        console.error('Sync after XP failed:', err)
+      );
+    }
+  }, [dailyChallengeCompleted]);
+
+  const displayGrade =
+    userGrade?.trim() ||
+    (effectiveGrade ? `Primary ${effectiveGrade}` : 'Primary 3');
 
   function handleSubject(subject: Subject) {
     playSound('tap');
@@ -318,8 +262,8 @@ export default function DashboardScreen() {
               </View>
               <View style={[styles.gradePill, { backgroundColor: colors.primaryLight, borderColor: colors.primaryGlow }]}>
                 <Text style={[styles.gradePillText, { color: colors.primaryDark }]}>
-                  {userGrade?.trim().startsWith('Primary')
-                    ? userGrade
+                  {displayGrade.startsWith('Primary')
+                    ? displayGrade
                     : `Primary ${effectiveGrade}`}
                 </Text>
               </View>

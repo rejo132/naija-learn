@@ -25,6 +25,7 @@ import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import { TutorAvatar } from '@/components/TutorAvatar';
+import { useTheme } from '@/hooks/useTheme';
 
 function mapAuthErrorMessage(message: string): string {
   const lower = message.toLowerCase();
@@ -65,6 +66,7 @@ export default function SignInScreen() {
   const { signIn, clearError, error: authError } = useAuthStore();
   const { t, language } = useTranslation();
   const ui = getUIText(language);
+  const { colors } = useTheme();
 
   const float1 = useRef(new Animated.Value(0)).current;
   const float2 = useRef(new Animated.Value(0)).current;
@@ -357,14 +359,18 @@ export default function SignInScreen() {
               </Text>
 
               <View
-                style={[
-                  styles.inputGroup,
-                  {
-                    borderColor: COLORS.border,
-                    backgroundColor: COLORS.backgroundCard,
-                    marginTop: SPACING.sm,
-                  },
-                ]}
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  borderWidth: 1.5,
+                  borderRadius: 12,
+                  borderColor: colors.border,
+                  backgroundColor: colors.backgroundCard,
+                  paddingHorizontal: 12,
+                  marginTop: SPACING.sm,
+                  marginBottom: 16,
+                  overflow: 'hidden',
+                }}
               >
                 <Text style={{ fontSize: 18, marginRight: 8 }}>🔒</Text>
                 <TextInput
@@ -373,11 +379,11 @@ export default function SignInScreen() {
                     flex: 1,
                     fontSize: 16,
                     fontFamily: 'Poppins-Regular',
-                    color: COLORS.textPrimary,
+                    color: colors.textPrimary,
                     paddingVertical: 14,
                   }}
                   placeholder="Enter your password"
-                  placeholderTextColor={COLORS.textMuted}
+                  placeholderTextColor={colors.textMuted}
                   value={password}
                   onChangeText={(t) => {
                     setPassword(t);
@@ -398,15 +404,19 @@ export default function SignInScreen() {
                   onPress={() => setShowPassword((v) => !v)}
                   style={{
                     padding: 8,
-                    justifyContent: 'center',
-                    alignItems: 'center',
+                    marginLeft: 4,
                   }}
-                  hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                  hitSlop={{
+                    top: 12,
+                    bottom: 12,
+                    left: 12,
+                    right: 12,
+                  }}
                   accessibilityLabel={
                     showPassword ? 'Hide password' : 'Show password'
                   }
                 >
-                  <Text style={{ fontSize: 20, color: COLORS.textMuted }}>
+                  <Text style={{ fontSize: 20, color: colors.textMuted }}>
                     {showPassword ? '🙈' : '👁️'}
                   </Text>
                 </TouchableOpacity>

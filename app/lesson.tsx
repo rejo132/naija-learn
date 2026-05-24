@@ -34,7 +34,7 @@ import {
 } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore, type ChatMessage } from '@/store/appStore';
-import { saveProgress } from '@/services/dbService';
+import { saveProgress, syncProfile } from '@/services/dbService';
 import { playSound } from '@/services/soundService';
 import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -604,7 +604,9 @@ export default function LessonScreen() {
         useAppStore.getState().completeDailyChallenge();
       }
 
-      useAppStore.getState().syncProfile().catch(() => {});
+      syncProfile().catch((err) =>
+        console.error('Sync after XP failed:', err)
+      );
     },
     [addXP, isChallenge, triggerCoinAnimation]
   );
@@ -697,6 +699,9 @@ export default function LessonScreen() {
         useAppStore.getState().incrementSubjectLesson(selectedSubject.label);
       }
       trackLessonAchievements();
+      syncProfile().catch((err) =>
+        console.error('Sync after XP failed:', err)
+      );
     }
   }
 
@@ -818,6 +823,9 @@ export default function LessonScreen() {
       if (isFirstLessonToday) {
         addXP(XP_REWARDS.FIRST_LESSON_OF_DAY);
       }
+      syncProfile().catch((err) =>
+        console.error('Sync after XP failed:', err)
+      );
 
       setLastSession(
         selectedSubject.label,
@@ -981,6 +989,9 @@ export default function LessonScreen() {
           }).catch((err) => console.error('saveProgress error:', err));
 
           useAppStore.getState().updateStreak();
+          syncProfile().catch((err) =>
+            console.error('Sync after XP failed:', err)
+          );
 
           updateSubjectProgress(selectedSubject.label, selectedGrade, finalScore);
           countLessonOnce();

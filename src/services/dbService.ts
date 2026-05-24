@@ -9,6 +9,7 @@
  */
 import { supabase } from '@/lib/supabase';
 import { captureError } from '@/lib/sentry';
+import { useAppStore } from '@/store/appStore';
 
 // ─── Types ────────────────────────────────────────────────
 
@@ -19,6 +20,21 @@ export interface Profile {
   email: string | null;
   role?: 'parent' | 'child';
   created_at: string;
+}
+
+export interface ProfileUpdate {
+  name?: string;
+  grade?: number | string;
+  avatar?: string;
+  xp?: number;
+  streak?: number;
+  language?: string;
+  personality_id?: string;
+  last_active_date?: string;
+  role?: string;
+  lessons_completed?: number;
+  unlocked_achievements?: string[];
+  unlocked_avatars?: string[];
 }
 
 export interface ProgressEntry {
@@ -205,60 +221,71 @@ export async function loadUserProgress(): Promise<{
 }
 
 /**
- * Sync the user's XP, streak, and preferences
- * back to Supabase so they persist across devices.
- * Call this when XP or streak changes.
+ * Sync the user's profile and progress to Supabase.
+ * Reads from the app store; optional overrides for sign-up etc.
  */
-export async function syncProfile({
-  name,
-  grade,
-  avatar,
-  xp,
-  streak,
-  language,
-  personalityId,
-  lastActiveDate,
-  role,
-}: {
-  name?: string;
-  grade?: number | string;
-  avatar?: string;
-  xp: number;
-  streak: number;
-  language: string;
-  personalityId: string;
-  lastActiveDate: string;
-  role?: string;
-}): Promise<void> {
+export async function syncProfile(overrides?: Partial<ProfileUpdate>): Promise<void> {
   try {
+    const store = useAppStore.getState();
     const {
       data: { user },
     } = await supabase.auth.getUser();
     if (!user) return;
 
+    const gradeValue =
+      overrides?.grade ??
+      (store.userGrade ||
+        (store.selectedGrade ? `Primary ${store.selectedGrade}` : ''));
+
     const updates: Record<string, unknown> = {
       id: user.id,
       email: user.email,
-      xp,
-      streak,
-      language,
-      personality_id: personalityId,
-      last_active_date: lastActiveDate,
+      name: overrides?.name ?? (store.userName || ''),
+      grade: String(gradeValue),
+      avatar: overrides?.avatar ?? (store.userAvatar || '🦁'),
+      xp: overrides?.xp ?? store.xp ?? 0,
+      streak: overrides?.streak ?? store.streak ?? 0,
+      language: overrides?.language ?? (store.selectedLanguage || 'en'),
+      personality_id:
+        overrides?.personality_id ??
+        store.selectedPersonalityId ??
+        'aunty_naija',
+      last_active_date:
+        overrides?.last_active_date ??
+        store.lastStudyDate ??
+        new Date().toISOString().split('T')[0],
+      lessons_completed:
+        overrides?.lessons_completed ?? store.lessonsCompleted ?? 0,
+      unlocked_achievements:
+        overrides?.unlocked_achievements ??
+        store.unlockedAchievements ??
+        [],
+      unlocked_avatars:
+        overrides?.unlocked_avatars ?? store.unlockedAvatars ?? [],
       updated_at: new Date().toISOString(),
+      ...overrides,
     };
 
-    if (name !== undefined) updates.name = name;
-    if (grade !== undefined) updates.grade = String(grade);
-    if (avatar !== undefined) updates.avatar = avatar;
-    if (role !== undefined) updates.role = role;
-
-    const { error } = await supabase.from('profiles').upsert(updates);
+    const { error } = await supabase.from('profiles').upsert(updates, {
+      onConflict: 'id',
+    });
 
     if (error) {
+      console.error(
+        '[syncProfile] Supabase error:',
+        JSON.stringify(error)
+      );
       captureError(error, { context: 'syncProfile error' });
+      throw error;
     }
+
+    console.log('[syncProfile] Saved to Supabase:', {
+      xp: updates.xp,
+      streak: updates.streak,
+      lessons: updates.lessons_completed,
+    });
   } catch (err) {
     captureError(err, { context: 'syncProfile exception' });
+    throw err;
   }
 }
-

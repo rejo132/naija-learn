@@ -4,7 +4,7 @@
 import { useEffect, useState } from 'react';
 import { Platform, View, Text } from 'react-native';
 import { useFonts } from 'expo-font';
-import { Stack, useRouter, useSegments } from 'expo-router';
+import { Stack, usePathname, useRouter, useSegments } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Sentry from '@sentry/react-native';
@@ -59,7 +59,10 @@ function parseGradeFromProfile(grade: string | null): {
 export default function RootLayout() {
   const router = useRouter();
   const segments = useSegments();
+  const pathname = usePathname();
   const session = useAuthStore((s) => s.session);
+  const userGrade = useAppStore((s) => s.userGrade);
+  const setupComplete = useAppStore((s) => s.setupComplete);
   const [isLayoutReady, setIsLayoutReady] = useState(false);
   const [isInitialising, setIsInitialising] = useState(true);
   const isDarkMode = useAppStore((s) => s.isDarkMode);
@@ -92,64 +95,75 @@ export default function RootLayout() {
   }, [isInitialising]);
 
   useEffect(() => {
-    if (!isLayoutReady) return;
+    if (isInitialising || !fontsLoaded) return;
 
     const inAuthGroup = segments[0] === 'auth';
-    const onSignUp =
-      segments[0] === 'auth' && (segments as string[])[1] === 'sign-up';
-    const onDashboard = (segments as string[]).includes('dashboard');
+    const onIndex = pathname === '/' || pathname === '';
+    const onDashboard = segments[0] === 'dashboard';
+    const hasGrade = Boolean(userGrade?.trim()) || setupComplete;
 
-    async function route() {
-      if (!session && !inAuthGroup) {
-        router.replace('/auth/sign-in');
-        return;
+    if (!session) {
+      if (!inAuthGroup && !onIndex) {
+        router.replace('/');
       }
-
-      if (!session) return;
-
-      const store = useAppStore.getState();
-      const userGrade = store.userGrade?.trim();
-      const setupComplete = store.setupComplete;
-
-      if (!userGrade && !setupComplete) {
-        const profile = await useAuthStore.getState().fetchProfile();
-
-        if (profile?.grade) {
-          const parsed = parseGradeFromProfile(profile.grade);
-          if (parsed) {
-            useAppStore.getState().setUserGrade(parsed.userGrade);
-            useAppStore.getState().setUserName(profile.name ?? '');
-            useAppStore.getState().setUserAvatar(profile.avatar ?? '🦁');
-            useAppStore.getState().setSetupComplete(true);
-            useAppStore.setState({
-              selectedGrade: parsed.selectedGrade,
-            });
-          }
-          router.replace('/dashboard');
-        } else {
-          router.replace('/auth/sign-up?step=2');
-        }
-        return;
-      }
-
-      if (userGrade || setupComplete) {
-        if (inAuthGroup && !onSignUp) {
-          router.replace('/dashboard');
-        }
-        store.loadUserProgress().catch(() => {});
-        if (store.isSignedOut) {
-          store.setIsSignedOut(false);
-        }
-        return;
-      }
-
-      if (!onSignUp && !onDashboard) {
-        router.replace('/auth/sign-up?step=2');
-      }
+      return;
     }
 
-    route().catch(() => {});
-  }, [session, segments, isLayoutReady, router]);
+    if (onIndex) {
+      return;
+    }
+
+    if (!hasGrade && !onDashboard && !inAuthGroup) {
+      return;
+    }
+
+    if (inAuthGroup && hasGrade) {
+      router.replace('/dashboard');
+    }
+  }, [
+    session,
+    isInitialising,
+    fontsLoaded,
+    segments,
+    pathname,
+    userGrade,
+    setupComplete,
+    router,
+  ]);
+
+  useEffect(() => {
+    if (!session || userGrade?.trim() || setupComplete) return;
+
+    (async () => {
+      const profile = await useAuthStore.getState().fetchProfile();
+      if (profile?.grade) {
+        const parsed = parseGradeFromProfile(profile.grade);
+        if (parsed) {
+          useAppStore.getState().setUserGrade(parsed.userGrade);
+          useAppStore.setState({ selectedGrade: parsed.selectedGrade });
+        } else {
+          useAppStore.getState().setUserGrade(profile.grade);
+        }
+        useAppStore.getState().setUserName(profile.name ?? '');
+        useAppStore.getState().setUserAvatar(profile.avatar ?? '🦁');
+        useAppStore.getState().setSetupComplete(true);
+        router.replace('/dashboard');
+      } else {
+        router.replace('/auth/sign-up?step=2');
+      }
+    })();
+  }, [session, userGrade, setupComplete, router]);
+
+  useEffect(() => {
+    if (!session) return;
+    if (!userGrade?.trim() && !setupComplete) return;
+
+    const store = useAppStore.getState();
+    store.loadUserProgress().catch(() => {});
+    if (store.isSignedOut) {
+      store.setIsSignedOut(false);
+    }
+  }, [session, userGrade, setupComplete]);
 
   useEffect(() => {
     if (isInitialising) return;

@@ -12,6 +12,7 @@ import {
   Image,
 } from 'react-native';
 import { router } from 'expo-router';
+import { goBack } from '@/utils/navigation';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
 import { LANGUAGES, getUIText } from '@/constants/languages';
@@ -59,7 +60,7 @@ export default function GradeScreen() {
         },
       ]}>
         <TouchableOpacity
-          onPress={() => router.push({ pathname: '/', params: { change: '1' } })}
+          onPress={() => goBack('/dashboard')}
           style={styles.backBtn}
         >
           <Text style={[styles.backArrow, { color: colors.primaryDark }]}>←</Text>

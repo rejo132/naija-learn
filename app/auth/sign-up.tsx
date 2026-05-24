@@ -247,8 +247,8 @@ export default function SignUpScreen() {
           xp: 0,
           streak: 0,
           language: 'en',
-          personalityId: 'aunty_naija',
-          lastActiveDate: new Date().toISOString().split('T')[0],
+          personality_id: 'aunty_naija',
+          last_active_date: new Date().toISOString().split('T')[0],
           role: 'student',
         });
       } catch {
@@ -361,20 +361,17 @@ export default function SignUpScreen() {
         {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
 
         <View
-          style={[
-            {
-              flexDirection: 'row',
-              alignItems: 'center',
-              borderWidth: 1.5,
-              borderRadius: 12,
-              paddingHorizontal: 12,
-              marginBottom: 4,
-            },
-            {
-              borderColor: passwordError ? '#E53935' : colors.border,
-              backgroundColor: colors.backgroundCard,
-            },
-          ]}
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            borderWidth: 1.5,
+            borderRadius: 12,
+            borderColor: passwordError ? '#E53935' : colors.border,
+            backgroundColor: colors.backgroundCard,
+            paddingHorizontal: 12,
+            marginBottom: passwordError ? 4 : 16,
+            overflow: 'hidden',
+          }}
         >
           <Text style={{ fontSize: 18, marginRight: 8 }}>🔒</Text>
           <TextInput
@@ -407,10 +404,14 @@ export default function SignUpScreen() {
             onPress={() => setShowPassword((v) => !v)}
             style={{
               padding: 8,
-              justifyContent: 'center',
-              alignItems: 'center',
+              marginLeft: 4,
             }}
-            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+            hitSlop={{
+              top: 12,
+              bottom: 12,
+              left: 12,
+              right: 12,
+            }}
             accessibilityLabel={showPassword ? 'Hide password' : 'Show password'}
           >
             <Text style={{ fontSize: 20, color: colors.textMuted }}>

@@ -329,17 +329,7 @@ export default function SettingsScreen() {
                       return;
                     }
                     setUserAvatar(avatar.emoji);
-                    syncProfile({
-                      name: userName,
-                      grade: selectedGrade ?? 1,
-                      avatar: avatar.emoji,
-                      xp,
-                      streak,
-                      language: selectedLanguage,
-                      personalityId: selectedPersonalityId,
-                      lastActiveDate:
-                        new Date().toISOString().split('T')[0],
-                    }).catch(() => {});
+                    syncProfile({ avatar: avatar.emoji }).catch(() => {});
                   }}
                   onLongPress={() => {
                     if (!isUnlocked) setAvatarHint(avatar.hint);

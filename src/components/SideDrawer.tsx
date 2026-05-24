@@ -120,6 +120,15 @@ export function SideDrawer() {
     router.push(route as '/');
   }
 
+  function handleHomePress() {
+    try {
+      router.dismissAll();
+    } catch {
+      // dismissAll throws when stack is empty
+    }
+    router.replace('/dashboard');
+  }
+
   function toggleCollapsed() {
     const nextCollapsed = !collapsed;
     setCollapsed(nextCollapsed);

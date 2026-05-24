@@ -23,7 +23,8 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import { LanguageCode } from '@/constants/languages';
 import { DEFAULT_PERSONALITY_ID } from '@/constants/personalities';
 import { Subject } from '@/constants/subjects';
-import { loadUserProgress as fetchUserProgress, syncProfile as syncProfileToDb } from '@/services/dbService';
+import { syncProfile as syncProfileToDb } from '@/services/dbService';
+import { supabase } from '@/lib/supabase';
 
 export type DifficultyLevel = 'Easy' | 'Medium' | 'Hard';
 export type VoiceSpeedLevel = 'Slow' | 'Normal' | 'Fast';
@@ -377,83 +378,117 @@ export const useAppStore = create<AppState>()(
       setUserGrade: (grade) => set({ userGrade: grade }),
       loadUserProgress: async () => {
         try {
-          const saved = await fetchUserProgress();
-          if (!saved) return;
+          const {
+            data: { user },
+          } = await supabase.auth.getUser();
+          if (!user) return;
 
-          const state = useAppStore.getState();
+          const { data: profile } = await supabase
+            .from('profiles')
+            .select('*')
+            .eq('id', user.id)
+            .maybeSingle();
+
+          if (!profile) return;
+
+          const localState = useAppStore.getState();
+
           const isNewDevice =
-            state.xp === 0 &&
-            state.lessonsCompleted === 0 &&
-            !state.setupComplete;
+            localState.xp === 0 &&
+            localState.lessonsCompleted === 0 &&
+            !localState.setupComplete;
 
           const mergedXP = isNewDevice
-            ? saved.totalXP
-            : Math.max(state.xp, saved.totalXP);
-          const mergedStreak = isNewDevice
-            ? saved.streak
-            : Math.max(state.streak, saved.streak);
-          const mergedLessons = isNewDevice
-            ? saved.lessonsCompleted
-            : Math.max(state.lessonsCompleted, saved.lessonsCompleted);
+            ? (profile.xp ?? 0)
+            : Math.max(localState.xp, profile.xp ?? 0);
 
-          const updates: Partial<AppStateValues> = {
+          const mergedStreak = isNewDevice
+            ? (profile.streak ?? 0)
+            : Math.max(localState.streak, profile.streak ?? 0);
+
+          const remoteLessons = profile.lessons_completed ?? 0;
+          const mergedLessons = isNewDevice
+            ? remoteLessons
+            : Math.max(localState.lessonsCompleted, remoteLessons);
+
+          const localAchievements = localState.unlockedAchievements || [];
+          const remoteAchievements = profile.unlocked_achievements || [];
+          const mergedAchievements = [
+            ...new Set([...localAchievements, ...remoteAchievements]),
+          ];
+
+          const mergedAvatars = [
+            ...new Set([
+              ...(localState.unlockedAvatars || []),
+              ...(profile.unlocked_avatars || []),
+            ]),
+          ];
+
+          const gradeStr = profile.grade ? String(profile.grade).trim() : '';
+          const gradeNum = parseInt(gradeStr.replace(/\D/g, ''), 10) || 0;
+
+          const { data: progressRows } = await supabase
+            .from('progress')
+            .select('subject, grade, score')
+            .eq('user_id', user.id);
+
+          const remoteSubjectProgress: Record<string, number> = {};
+          if (progressRows) {
+            for (const row of progressRows) {
+              const key = `${row.subject}_${row.grade}`;
+              const existing = remoteSubjectProgress[key] ?? 0;
+              if ((row.score ?? 0) > existing) {
+                remoteSubjectProgress[key] = row.score ?? 0;
+              }
+            }
+          }
+
+          useAppStore.setState({
             xp: mergedXP,
             streak: mergedStreak,
             lessonsCompleted: mergedLessons,
-          };
+            userName: profile.name || localState.userName,
+            userGrade:
+              gradeStr ||
+              localState.userGrade ||
+              (gradeNum > 0 ? `Primary ${gradeNum}` : localState.userGrade),
+            userAvatar: profile.avatar || localState.userAvatar,
+            selectedLanguage:
+              (profile.language as LanguageCode) || localState.selectedLanguage,
+            selectedPersonalityId:
+              profile.personality_id || localState.selectedPersonalityId,
+            lastStudyDate:
+              profile.last_active_date || localState.lastStudyDate,
+            unlockedAchievements: mergedAchievements,
+            unlockedAvatars: mergedAvatars,
+            setupComplete: !!profile.grade || localState.setupComplete,
+            ...(gradeNum >= 1 && gradeNum <= 6
+              ? { selectedGrade: gradeNum }
+              : {}),
+            ...(Object.keys(remoteSubjectProgress).length > 0
+              ? {
+                  subjectProgress: isNewDevice
+                    ? remoteSubjectProgress
+                    : {
+                        ...remoteSubjectProgress,
+                        ...localState.subjectProgress,
+                      },
+                }
+              : {}),
+          });
 
-          if (saved.name) {
-            updates.userName = saved.name || state.userName;
-          }
-
-          if (saved.grade) {
-            updates.selectedGrade = saved.grade;
-            if (!state.userGrade?.trim()) {
-              updates.userGrade = `Primary ${saved.grade}`;
-            }
-            updates.setupComplete = true;
-          }
-
-          if (saved.avatar) {
-            updates.userAvatar = saved.avatar || state.userAvatar;
-          }
-
-          if (saved.language) {
-            updates.selectedLanguage = saved.language as LanguageCode;
-          }
-
-          if (saved.personalityId) {
-            updates.selectedPersonalityId = saved.personalityId;
-          }
-
-          if (Object.keys(saved.subjectProgress).length > 0) {
-            updates.subjectProgress = isNewDevice
-              ? saved.subjectProgress
-              : {
-                  ...saved.subjectProgress,
-                  ...state.subjectProgress,
-                };
-          }
-
-          useAppStore.setState(updates);
-        } catch (err) {
-          console.error('Progress restore error:', err);
+          console.log('[loadUserProgress] Restored:', {
+            xp: mergedXP,
+            streak: mergedStreak,
+            lessons: mergedLessons,
+            achievements: mergedAchievements.length,
+          });
+        } catch (e) {
+          console.error('loadUserProgress error:', e);
         }
       },
       syncProfile: async () => {
-        const state = useAppStore.getState();
-        await syncProfileToDb({
-          name: state.userName,
-          grade: state.userGrade || state.selectedGrade || 1,
-          avatar: state.userAvatar,
-          xp: state.xp,
-          streak: state.streak,
-          language: state.selectedLanguage,
-          personalityId: state.selectedPersonalityId,
-          lastActiveDate:
-            state.lastStudyDate ?? new Date().toISOString().split('T')[0],
-          role: 'child',
-        });
+        await syncProfileToDb();
       },
       resetSession: () =>
         set({
