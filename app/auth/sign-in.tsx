@@ -21,6 +21,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/store/authStore';
 import { useAppStore } from '@/store/appStore';
+import { supabase } from '@/lib/supabase';
 import { signInWithGoogle } from '@/services/oauthService';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { getUIText } from '@/constants/languages';
@@ -88,29 +89,68 @@ export default function SignInScreen() {
     if (!hash.includes('access_token'))
       return;
 
-    // OAuth return detected via hash
-    let attempts = 0;
-    const interval = setInterval(() => {
-      attempts++;
-      const session =
-        useAuthStore.getState().session;
-      if (session) {
-        clearInterval(interval);
-        useAppStore.getState()
-          .loadUserProgress()
-          .then(() => {
-            router.replace('/dashboard');
-          })
-          .catch(() => {
-            router.replace('/dashboard');
-          });
-      }
-      if (attempts >= 20) {
-        clearInterval(interval);
-      }
-    }, 500);
+    // Immediately try to get session
+    // from Supabase directly using
+    // the hash — don't wait for _layout
+    supabase.auth.getSession().then(
+      async ({ data: { session } }) => {
+        if (session) {
+          // Set session in store
+          useAuthStore.getState()
+            .setSession(session);
+          // Load progress
+          try {
+            await useAppStore.getState()
+              .loadUserProgress();
+          } catch {}
+          // Clear hash from URL
+          window.history.replaceState(
+            {}, '', '/auth/sign-in');
+          router.replace('/dashboard');
+          return;
+        }
 
-    return () => clearInterval(interval);
+        // Session not ready yet —
+        // poll for it
+        let attempts = 0;
+        const interval = setInterval(
+          async () => {
+            attempts++;
+            const s = useAuthStore
+              .getState().session;
+            if (s) {
+              clearInterval(interval);
+              try {
+                await useAppStore
+                  .getState()
+                  .loadUserProgress();
+              } catch {}
+              router.replace('/dashboard');
+              return;
+            }
+            // Also try getSession again
+            const { data } = await
+              supabase.auth.getSession();
+            if (data.session) {
+              clearInterval(interval);
+              useAuthStore.getState()
+                .setSession(data.session);
+              try {
+                await useAppStore
+                  .getState()
+                  .loadUserProgress();
+              } catch {}
+              router.replace('/dashboard');
+              return;
+            }
+            if (attempts >= 20) {
+              clearInterval(interval);
+            }
+          }, 500);
+
+        return () => clearInterval(interval);
+      }
+    );
   }, []);
 
   useEffect(() => {
