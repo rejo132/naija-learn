@@ -24,6 +24,7 @@ import {
   scheduleDailyReminder,
   cancelDailyReminder,
 } from '@/services/notificationService';
+import { verifySyncColumns } from '@/services/dbService';
 
 SplashScreen.preventAutoHideAsync();
 initialiseSentry();
@@ -92,6 +93,12 @@ export default function RootLayout() {
     if (isInitialising) return;
     const timer = setTimeout(() => setIsLayoutReady(true), 0);
     return () => clearTimeout(timer);
+  }, [isInitialising]);
+
+  useEffect(() => {
+    if (!isInitialising) {
+      verifySyncColumns().catch(() => {});
+    }
   }, [isInitialising]);
 
   useEffect(() => {

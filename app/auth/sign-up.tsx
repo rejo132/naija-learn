@@ -62,7 +62,8 @@ export default function SignUpScreen() {
   const [usernameError, setUsernameError] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] =
+    useState(false);
   const [selectedGradeNum, setSelectedGradeNum] = useState<number | null>(null);
   const [selectedAvatar, setSelectedAvatar] = useState<string>('🦁');
   const [emailError, setEmailError] = useState('');
@@ -360,35 +361,40 @@ export default function SignUpScreen() {
         </View>
         {emailError ? <Text style={styles.fieldError}>{emailError}</Text> : null}
 
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            borderWidth: 1.5,
-            borderRadius: 12,
-            borderColor: passwordError ? '#E53935' : colors.border,
-            backgroundColor: colors.backgroundCard,
-            paddingHorizontal: 12,
-            marginBottom: passwordError ? 4 : 16,
-            overflow: 'hidden',
-          }}
-        >
-          <Text style={{ fontSize: 18, marginRight: 8 }}>🔒</Text>
+        {/* Password field */}
+        <View style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          borderWidth: 1.5,
+          borderRadius: 12,
+          borderColor: passwordError
+            ? '#E53935' : '#CCCCCC',
+          backgroundColor: '#FFFFFF',
+          paddingLeft: 12,
+          paddingRight: 4,
+          marginBottom: 4,
+        }}>
+          <Text style={{
+            fontSize: 18,
+            marginRight: 8,
+            color: '#666666',
+          }}>🔒</Text>
           <TextInput
             ref={passwordRef}
             style={{
               flex: 1,
               fontSize: 16,
-              fontFamily: 'Poppins-Regular',
-              color: colors.textPrimary,
+              color: '#111111',
               paddingVertical: 14,
             }}
             placeholder="Create a password"
-            placeholderTextColor={colors.textMuted}
+            placeholderTextColor="#999999"
             value={password}
             onChangeText={(t) => {
               setPassword(t);
-              if (passwordError) setPasswordError('');
+              if (typeof setPasswordError
+                === 'function')
+                setPasswordError('');
               validatePassword(t);
             }}
             secureTextEntry={!showPassword}
@@ -401,20 +407,23 @@ export default function SignUpScreen() {
             }}
           />
           <TouchableOpacity
-            onPress={() => setShowPassword((v) => !v)}
+            onPress={() =>
+              setShowPassword(prev => !prev)}
             style={{
-              padding: 8,
-              marginLeft: 4,
+              width: 44,
+              height: 44,
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
             hitSlop={{
-              top: 12,
-              bottom: 12,
-              left: 12,
-              right: 12,
+              top: 8, bottom: 8,
+              left: 8, right: 8,
             }}
-            accessibilityLabel={showPassword ? 'Hide password' : 'Show password'}
           >
-            <Text style={{ fontSize: 20, color: colors.textMuted }}>
+            <Text style={{
+              fontSize: 22,
+              color: '#666666',
+            }}>
               {showPassword ? '🙈' : '👁️'}
             </Text>
           </TouchableOpacity>

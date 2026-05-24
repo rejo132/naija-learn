@@ -391,6 +391,17 @@ export const useAppStore = create<AppState>()(
 
           if (!profile) return;
 
+          console.log(
+            '[loadUserProgress] Raw from DB:',
+            JSON.stringify({
+              xp: profile.xp,
+              streak: profile.streak,
+              lessons_completed: profile.lessons_completed,
+              grade: profile.grade,
+              name: profile.name,
+            })
+          );
+
           const localState = useAppStore.getState();
 
           const isNewDevice =

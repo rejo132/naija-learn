@@ -58,7 +58,10 @@ export default function SignInScreen() {
 
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] =
+    useState(false);
+  const passwordError = '';
+  const setPasswordError = (_s: string) => {};
   const [identifierError, setIdentifierError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [oauthError, setOauthError] = useState('');
@@ -358,35 +361,40 @@ export default function SignInScreen() {
                 You can sign in with your email or your username
               </Text>
 
-              <View
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  borderWidth: 1.5,
-                  borderRadius: 12,
-                  borderColor: colors.border,
-                  backgroundColor: colors.backgroundCard,
-                  paddingHorizontal: 12,
-                  marginTop: SPACING.sm,
-                  marginBottom: 16,
-                  overflow: 'hidden',
-                }}
-              >
-                <Text style={{ fontSize: 18, marginRight: 8 }}>🔒</Text>
+              {/* Password field */}
+              <View style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                borderWidth: 1.5,
+                borderRadius: 12,
+                borderColor: passwordError
+                  ? '#E53935' : '#CCCCCC',
+                backgroundColor: '#FFFFFF',
+                paddingLeft: 12,
+                paddingRight: 4,
+                marginBottom: 4,
+              }}>
+                <Text style={{
+                  fontSize: 18,
+                  marginRight: 8,
+                  color: '#666666',
+                }}>🔒</Text>
                 <TextInput
                   ref={passwordRef}
                   style={{
                     flex: 1,
                     fontSize: 16,
-                    fontFamily: 'Poppins-Regular',
-                    color: colors.textPrimary,
+                    color: '#111111',
                     paddingVertical: 14,
                   }}
                   placeholder="Enter your password"
-                  placeholderTextColor={colors.textMuted}
+                  placeholderTextColor="#999999"
                   value={password}
                   onChangeText={(t) => {
                     setPassword(t);
+                    if (typeof setPasswordError
+                      === 'function')
+                      setPasswordError('');
                     if (authError) clearError();
                   }}
                   secureTextEntry={!showPassword}
@@ -401,22 +409,23 @@ export default function SignInScreen() {
                   }}
                 />
                 <TouchableOpacity
-                  onPress={() => setShowPassword((v) => !v)}
+                  onPress={() =>
+                    setShowPassword(prev => !prev)}
                   style={{
-                    padding: 8,
-                    marginLeft: 4,
+                    width: 44,
+                    height: 44,
+                    alignItems: 'center',
+                    justifyContent: 'center',
                   }}
                   hitSlop={{
-                    top: 12,
-                    bottom: 12,
-                    left: 12,
-                    right: 12,
+                    top: 8, bottom: 8,
+                    left: 8, right: 8,
                   }}
-                  accessibilityLabel={
-                    showPassword ? 'Hide password' : 'Show password'
-                  }
                 >
-                  <Text style={{ fontSize: 20, color: colors.textMuted }}>
+                  <Text style={{
+                    fontSize: 22,
+                    color: '#666666',
+                  }}>
                     {showPassword ? '🙈' : '👁️'}
                   </Text>
                 </TouchableOpacity>
@@ -470,28 +479,28 @@ export default function SignInScreen() {
 
               <Text style={styles.privacyNote}>{ui.privacyNote}</Text>
 
-              <View style={styles.divider}>
-                <View style={styles.dividerLine} />
-                <Text style={styles.dividerText}>{t('orSignInWith')}</Text>
-                <View style={styles.dividerLine} />
-              </View>
+              {/* OAuth — hidden until buyer
+                  configures providers in Supabase */}
+              {false && (
+                <View style={styles.divider}>
+                  <View style={styles.dividerLine} />
+                  <Text style={styles.dividerText}>{t('orSignInWith')}</Text>
+                  <View style={styles.dividerLine} />
+                </View>
+              )}
 
-              <View style={styles.socialRow}>
-                <TouchableOpacity
-                  style={styles.socialBtn}
-                  onPress={handleGoogleSignIn}
-                  disabled={isLoading}
-                >
-                  <Text style={styles.socialBtnText}>G  Google</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={styles.socialBtn}
-                  onPress={handleMicrosoftSignIn}
-                  disabled={isLoading}
-                >
-                  <Text style={styles.socialBtnText}>M  Microsoft</Text>
-                </TouchableOpacity>
-              </View>
+              {false && (
+                <View style={{
+                  flexDirection: 'row',
+                  gap: 12,
+                  marginTop: 8,
+                }}>
+                  {/* Google and Microsoft buttons
+                      hidden — enable after configuring
+                      OAuth providers in Supabase
+                      Authentication settings */}
+                </View>
+              )}
 
               <TouchableOpacity
                 style={styles.signUpLink}

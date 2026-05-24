@@ -14,9 +14,10 @@ import {
   useWindowDimensions,
   Image,
 } from 'react-native';
-import { Redirect, router, useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore } from '@/store/appStore';
+import type { Session } from '@supabase/supabase-js';
 import { useAuthStore } from '@/store/authStore';
 import { LANGUAGES, type LanguageMeta, getUIText } from '@/constants/languages';
 import { SPACING, RADIUS, FONT_SIZES, SHADOWS } from '@/constants/theme';
@@ -105,8 +106,8 @@ function LanguageCard({
 
 export default function WelcomeScreen() {
   const session = useAuthStore((s) => s.session);
-  const { change } = useLocalSearchParams<{ change?: string }>();
-  const isChangingLanguage = change === '1';
+  const params = useLocalSearchParams();
+  const isChangingLanguage = params.change === '1';
 
   useEffect(() => {
     if (session && !isChangingLanguage) {
@@ -114,21 +115,26 @@ export default function WelcomeScreen() {
     }
   }, [session, isChangingLanguage]);
 
-  if (!session) {
-    return <Redirect href="/auth/sign-in" />;
-  }
-
-  if (!isChangingLanguage) {
+  if (session && !isChangingLanguage) {
     return null;
   }
 
-  return <WelcomeScreenContent />;
+  return (
+    <WelcomeScreenContent
+      session={session}
+      isChangingLanguage={isChangingLanguage}
+    />
+  );
 }
 
-function WelcomeScreenContent() {
+function WelcomeScreenContent({
+  session,
+  isChangingLanguage,
+}: {
+  session: Session | null;
+  isChangingLanguage: boolean;
+}) {
   const setLanguage = useAppStore((s) => s.setLanguage);
-  const { change } = useLocalSearchParams<{ change?: string }>();
-  const isChangingLanguage = change === '1';
   const [hydrated, setHydrated] = useState(() => useAppStore.persist.hasHydrated());
   const ui = getUIText('en');
   const { width } = useWindowDimensions();
@@ -143,8 +149,13 @@ function WelcomeScreenContent() {
   }, []);
 
   function handleSelectLanguage(lang: LanguageMeta) {
-    setLanguage(lang.code);
-    router.push('/grade');
+    if (session && isChangingLanguage) {
+      setLanguage(lang.code);
+      router.replace('/dashboard');
+    } else {
+      setLanguage(lang.code);
+      router.push('/auth/sign-in');
+    }
   }
 
   if (!hydrated) {

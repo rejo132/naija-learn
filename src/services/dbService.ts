@@ -221,6 +221,58 @@ export async function loadUserProgress(): Promise<{
 }
 
 /**
+ * Verify sync columns exist in Supabase (dev console check).
+ */
+export async function verifySyncColumns(): Promise<void> {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) {
+    console.log('[verify] No user');
+    return;
+  }
+
+  const { data, error } = await supabase
+    .from('profiles')
+    .select(
+      'id, xp, streak,' +
+        'lessons_completed,' +
+        'unlocked_achievements,' +
+        'unlocked_avatars'
+    )
+    .eq('id', user.id)
+    .single();
+
+  if (error) {
+    console.error(
+      '[verify] Column check failed:',
+      JSON.stringify(error)
+    );
+    console.error(
+      '[verify] This means the SQL ' +
+        'migration has NOT been run yet ' +
+        'in Supabase. Run this SQL:\n' +
+        'ALTER TABLE profiles ADD COLUMN ' +
+        'IF NOT EXISTS lessons_completed ' +
+        'integer DEFAULT 0;\n' +
+        'ALTER TABLE profiles ADD COLUMN ' +
+        'IF NOT EXISTS ' +
+        'unlocked_achievements text[] ' +
+        "DEFAULT '{}';\n" +
+        'ALTER TABLE profiles ADD COLUMN ' +
+        'IF NOT EXISTS unlocked_avatars ' +
+        "text[] DEFAULT '{}';"
+    );
+  } else {
+    console.log(
+      '[verify] Supabase profile data:',
+      JSON.stringify(data)
+    );
+    console.log('[verify] Column check PASSED ✅');
+  }
+}
+
+/**
  * Sync the user's profile and progress to Supabase.
  * Reads from the app store; optional overrides for sign-up etc.
  */
@@ -266,24 +318,61 @@ export async function syncProfile(overrides?: Partial<ProfileUpdate>): Promise<v
       ...overrides,
     };
 
-    const { error } = await supabase.from('profiles').upsert(updates, {
-      onConflict: 'id',
-    });
-
-    if (error) {
-      console.error(
-        '[syncProfile] Supabase error:',
-        JSON.stringify(error)
-      );
-      captureError(error, { context: 'syncProfile error' });
-      throw error;
-    }
-
-    console.log('[syncProfile] Saved to Supabase:', {
+    const safeUpdate = {
+      id: updates.id,
+      email: updates.email,
+      name: updates.name,
+      grade: updates.grade,
+      avatar: updates.avatar,
       xp: updates.xp,
       streak: updates.streak,
-      lessons: updates.lessons_completed,
-    });
+      language: updates.language,
+      personality_id: updates.personality_id,
+      last_active_date: updates.last_active_date,
+      updated_at: updates.updated_at,
+    };
+
+    const { error: safeError } = await supabase
+      .from('profiles')
+      .upsert(safeUpdate, {
+        onConflict: 'id',
+      });
+
+    if (safeError) {
+      console.error(
+        '[syncProfile] Safe upsert failed:',
+        safeError.message
+      );
+      captureError(safeError, { context: 'syncProfile error' });
+      throw safeError;
+    }
+
+    const extendedUpdate = {
+      id: updates.id,
+      lessons_completed: updates.lessons_completed,
+      unlocked_achievements: updates.unlocked_achievements,
+      unlocked_avatars: updates.unlocked_avatars,
+    };
+
+    const { error: extError } = await supabase
+      .from('profiles')
+      .upsert(extendedUpdate, {
+        onConflict: 'id',
+      });
+
+    if (extError) {
+      console.warn(
+        '[syncProfile] Extended upsert ' +
+          'failed (run SQL migration):',
+        extError.message
+      );
+    } else {
+      console.log('[syncProfile] Full sync OK ✅', {
+        xp: safeUpdate.xp,
+        streak: safeUpdate.streak,
+        lessons: extendedUpdate.lessons_completed,
+      });
+    }
   } catch (err) {
     captureError(err, { context: 'syncProfile exception' });
     throw err;
