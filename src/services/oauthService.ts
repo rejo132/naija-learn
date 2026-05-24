@@ -28,7 +28,7 @@ export async function signInWithGoogle(): Promise<{
   try {
     const redirectTo =
       Platform.OS === 'web'
-        ? window.location.origin
+        ? window.location.origin + '/?oauth=1'
         : makeRedirectUri({ scheme: 'learnova' });
 
     const { data, error } = await supabase.auth.signInWithOAuth({

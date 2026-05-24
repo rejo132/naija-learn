@@ -13,6 +13,7 @@ import {
   ScrollView,
   useWindowDimensions,
   Image,
+  ActivityIndicator,
 } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -108,12 +109,61 @@ export default function WelcomeScreen() {
   const session = useAuthStore((s) => s.session);
   const params = useLocalSearchParams();
   const isChangingLanguage = params.change === '1';
+  const isOAuthReturn = params.oauth === '1';
 
   useEffect(() => {
+    // Already signed in, not changing
+    // language → go to dashboard
     if (session && !isChangingLanguage) {
       router.replace('/dashboard');
+      return;
     }
-  }, [session, isChangingLanguage]);
+
+    // OAuth return — wait up to 3 seconds
+    // for session to be set by _layout.tsx
+    // hash effect, then go to dashboard
+    if (isOAuthReturn && !session) {
+      const timeout = setTimeout(() => {
+        const currentSession =
+          useAuthStore.getState().session;
+        if (currentSession) {
+          router.replace('/dashboard');
+        } else {
+          // Session never arrived →
+          // fall through to welcome screen
+          router.replace('/');
+        }
+      }, 2000);
+      return () => clearTimeout(timeout);
+    }
+  }, [session, isChangingLanguage,
+      isOAuthReturn]);
+
+  // While waiting for OAuth session,
+  // show a loading spinner
+  if (isOAuthReturn && !session) {
+    return (
+      <View style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#0A1628',
+      }}>
+        <ActivityIndicator
+          size="large"
+          color="#1a7a4a"
+        />
+        <Text style={{
+          color: '#FFFFFF',
+          marginTop: 16,
+          fontSize: 16,
+          fontFamily: 'Poppins-Regular',
+        }}>
+          Signing you in...
+        </Text>
+      </View>
+    );
+  }
 
   if (session && !isChangingLanguage) {
     return null;
