@@ -82,11 +82,13 @@ export default function SignInScreen() {
   const passwordRef = useRef<TextInput | null>(null);
 
   useEffect(() => {
-    if (!isOAuthReturn) return;
+    if (Platform.OS !== 'web') return;
 
-    // User just returned from Google OAuth
-    // Wait for _layout.tsx to set session
-    // from the URL hash, then redirect
+    const hash = window.location.hash;
+    if (!hash.includes('access_token'))
+      return;
+
+    // OAuth return detected via hash
     let attempts = 0;
     const interval = setInterval(() => {
       attempts++;
@@ -103,14 +105,13 @@ export default function SignInScreen() {
             router.replace('/dashboard');
           });
       }
-      // Give up after 5 seconds
-      if (attempts >= 10) {
+      if (attempts >= 20) {
         clearInterval(interval);
       }
     }, 500);
 
     return () => clearInterval(interval);
-  }, [isOAuthReturn]);
+  }, []);
 
   useEffect(() => {
     Animated.timing(fadeIn, {
@@ -240,7 +241,10 @@ export default function SignInScreen() {
 
   // Show spinner while OAuth session
   // is being established
-  if (isOAuthReturn) {
+  if (Platform.OS === 'web' &&
+      typeof window !== 'undefined' &&
+      window.location.hash
+        .includes('access_token')) {
     return (
       <View style={{
         flex: 1,
