@@ -17,9 +17,10 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/store/authStore';
+import { useAppStore } from '@/store/appStore';
 import { signInWithGoogle } from '@/services/oauthService';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { getUIText } from '@/constants/languages';
@@ -65,6 +66,9 @@ export default function SignInScreen() {
   const [identifierError, setIdentifierError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [oauthError, setOauthError] = useState('');
+  const params = useLocalSearchParams();
+  const isOAuthReturn =
+    params.oauth === '1';
 
   const { signIn, clearError, error: authError } = useAuthStore();
   const { t, language } = useTranslation();
@@ -76,6 +80,37 @@ export default function SignInScreen() {
   const float3 = useRef(new Animated.Value(0)).current;
   const fadeIn = useRef(new Animated.Value(0)).current;
   const passwordRef = useRef<TextInput | null>(null);
+
+  useEffect(() => {
+    if (!isOAuthReturn) return;
+
+    // User just returned from Google OAuth
+    // Wait for _layout.tsx to set session
+    // from the URL hash, then redirect
+    let attempts = 0;
+    const interval = setInterval(() => {
+      attempts++;
+      const session =
+        useAuthStore.getState().session;
+      if (session) {
+        clearInterval(interval);
+        useAppStore.getState()
+          .loadUserProgress()
+          .then(() => {
+            router.replace('/dashboard');
+          })
+          .catch(() => {
+            router.replace('/dashboard');
+          });
+      }
+      // Give up after 5 seconds
+      if (attempts >= 10) {
+        clearInterval(interval);
+      }
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, [isOAuthReturn]);
 
   useEffect(() => {
     Animated.timing(fadeIn, {
@@ -201,6 +236,32 @@ export default function SignInScreen() {
     if (!result.success && result.error !== 'Auth cancelled') {
       setOauthError(result.error ?? 'Google sign in failed');
     }
+  }
+
+  // Show spinner while OAuth session
+  // is being established
+  if (isOAuthReturn) {
+    return (
+      <View style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#0A1628',
+      }}>
+        <ActivityIndicator
+          size="large"
+          color="#1a7a4a"
+        />
+        <Text style={{
+          color: '#FFFFFF',
+          marginTop: 16,
+          fontSize: 16,
+          fontFamily: 'Poppins-Regular',
+        }}>
+          Signing you in...
+        </Text>
+      </View>
+    );
   }
 
   return (
