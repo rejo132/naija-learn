@@ -20,7 +20,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/store/authStore';
-import { signInWithGoogle, signInWithMicrosoft } from '@/services/oauthService';
+import { signInWithGoogle } from '@/services/oauthService';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -200,17 +200,6 @@ export default function SignInScreen() {
     setIsLoading(false);
     if (!result.success && result.error !== 'Auth cancelled') {
       setOauthError(result.error ?? 'Google sign in failed');
-    }
-  }
-
-  async function handleMicrosoftSignIn() {
-    setIsLoading(true);
-    setOauthError('');
-    clearError();
-    const result = await signInWithMicrosoft();
-    setIsLoading(false);
-    if (!result.success && result.error !== 'Auth cancelled') {
-      setOauthError(result.error ?? 'Microsoft sign in failed');
     }
   }
 
@@ -479,28 +468,19 @@ export default function SignInScreen() {
 
               <Text style={styles.privacyNote}>{ui.privacyNote}</Text>
 
-              {/* OAuth — hidden until buyer
-                  configures providers in Supabase */}
-              {false && (
-                <View style={styles.divider}>
-                  <View style={styles.dividerLine} />
-                  <Text style={styles.dividerText}>{t('orSignInWith')}</Text>
-                  <View style={styles.dividerLine} />
-                </View>
-              )}
+              <View style={styles.divider}>
+                <View style={styles.dividerLine} />
+                <Text style={styles.dividerText}>{t('orSignInWith')}</Text>
+                <View style={styles.dividerLine} />
+              </View>
 
-              {false && (
-                <View style={{
-                  flexDirection: 'row',
-                  gap: 12,
-                  marginTop: 8,
-                }}>
-                  {/* Google and Microsoft buttons
-                      hidden — enable after configuring
-                      OAuth providers in Supabase
-                      Authentication settings */}
-                </View>
-              )}
+              <TouchableOpacity
+                style={styles.socialBtn}
+                onPress={handleGoogleSignIn}
+                disabled={isLoading}
+              >
+                <Text style={styles.socialBtnText}>G  Google</Text>
+              </TouchableOpacity>
 
               <TouchableOpacity
                 style={styles.signUpLink}
