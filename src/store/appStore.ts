@@ -467,9 +467,9 @@ export const useAppStore = create<AppState>()(
                   local.lessonsCompleted,
                   profile.lessons_completed ?? 0
                 ),
-            userName: profile.name || local.userName,
+            userName: profile.name?.trim() || local.userName,
             userGrade: gradeStr || local.userGrade,
-            userAvatar: profile.avatar || local.userAvatar,
+            userAvatar: profile.avatar?.trim() || local.userAvatar,
             selectedLanguage:
               (profile.language as LanguageCode) || local.selectedLanguage,
             selectedPersonalityId:

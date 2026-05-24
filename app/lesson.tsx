@@ -823,9 +823,6 @@ export default function LessonScreen() {
       if (isFirstLessonToday) {
         addXP(XP_REWARDS.FIRST_LESSON_OF_DAY);
       }
-      syncProfile().catch((err) =>
-        console.error('Sync after XP failed:', err)
-      );
 
       setLastSession(
         selectedSubject.label,
@@ -989,9 +986,6 @@ export default function LessonScreen() {
           }).catch((err) => console.error('saveProgress error:', err));
 
           useAppStore.getState().updateStreak();
-          syncProfile().catch((err) =>
-            console.error('Sync after XP failed:', err)
-          );
 
           updateSubjectProgress(selectedSubject.label, selectedGrade, finalScore);
           countLessonOnce();

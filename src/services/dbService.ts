@@ -283,16 +283,9 @@ export async function syncProfile(): Promise<void> {
     } = await supabase.auth.getUser();
     if (!user) return;
 
-    const updates = {
+    const updates: Record<string, unknown> = {
       id: user.id,
       email: user.email ?? '',
-      name: store.userName ?? '',
-      grade: store.userGrade
-        ? parseInt(store.userGrade.replace(/\D/g, ''), 10) || 0
-        : 0,
-      avatar: store.userAvatar ?? '🦁',
-      username:
-        store.userName?.toLowerCase().replace(/\s+/g, '_') ?? '',
       xp: store.xp ?? 0,
       streak: store.streak ?? 0,
       lessons_completed: store.lessonsCompleted ?? 0,
@@ -304,6 +297,26 @@ export async function syncProfile(): Promise<void> {
       unlocked_avatars: store.unlockedAvatars ?? [],
       updated_at: new Date().toISOString(),
     };
+
+    if (store.userName?.trim()) {
+      updates.name = store.userName.trim();
+      updates.username = store.userName
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, '_');
+    }
+
+    if (store.userAvatar) {
+      updates.avatar = store.userAvatar;
+    }
+
+    if (store.userGrade) {
+      const gradeNum =
+        parseInt(store.userGrade.replace(/\D/g, ''), 10) || 0;
+      if (gradeNum > 0) {
+        updates.grade = gradeNum;
+      }
+    }
 
     const { error } = await supabase.from('profiles').upsert(updates, {
       onConflict: 'id',

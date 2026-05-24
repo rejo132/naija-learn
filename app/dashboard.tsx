@@ -36,7 +36,6 @@ import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { useTheme } from '@/hooks/useTheme';
 import { Atmosphere } from '@/components/Atmosphere';
 import { PressableScale } from '@/components/PressableScale';
-import { syncProfile } from '@/services/dbService';
 import StreakCelebration from '@/components/StreakCelebration';
 import { playSound } from '@/services/soundService';
 import { toTitleCase } from '@/utils/format';
@@ -177,23 +176,6 @@ export default function DashboardScreen() {
     }),
     [effectiveGrade]
   );
-
-  const lastActiveDate = lastStudyDate;
-
-  useEffect(() => {
-    syncProfile().catch((err) =>
-      console.error('Sync after XP failed:', err)
-    );
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [xp, streak, effectiveGrade, selectedLanguage, selectedPersonalityId, displayName, userAvatar, lastActiveDate]);
-
-  useEffect(() => {
-    if (dailyChallengeCompleted) {
-      syncProfile().catch((err) =>
-        console.error('Sync after XP failed:', err)
-      );
-    }
-  }, [dailyChallengeCompleted]);
 
   const displayGrade =
     userGrade?.trim() ||

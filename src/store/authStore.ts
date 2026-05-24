@@ -180,20 +180,22 @@ export const useAuthStore = create<AuthState>((set) => ({
         throw new Error(msg);
       }
 
-      const role = await fetchUserRole();
-      set({
-        session: data.session,
-        user: data.session?.user ?? null,
-        userRole: role,
-      });
+      if (data.session) {
+        set({
+          session: data.session,
+          user: data.session.user,
+          userRole: await fetchUserRole(),
+          isLoading: false,
+        });
 
-      try {
-        await useAppStore.getState().loadUserProgress();
-      } catch (e) {
-        console.error('Load progress failed:', e);
+        try {
+          await useAppStore.getState().loadUserProgress();
+        } catch (e) {
+          console.error('loadUserProgress failed:', e);
+        }
+
+        useAppStore.getState().setIsSignedOut(false);
       }
-
-      useAppStore.getState().setIsSignedOut(false);
     } catch (err: unknown) {
       if (!(err instanceof Error && useAuthStore.getState().error)) {
         const message = err instanceof Error ? err.message : 'Sign in failed';
