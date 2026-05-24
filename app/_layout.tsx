@@ -285,6 +285,10 @@ export default function RootLayout() {
             <meta property="og:url"
               content="https://trylearnova.com"
             />
+            <meta
+              name="google-site-verification"
+              content="TB-Jzri_EEsMUsv04juzdKIWTLpwqnMgErZJp434F04"
+            />
             <link rel="icon"
               href="/favicon.png" />
             <link rel="apple-touch-icon"
