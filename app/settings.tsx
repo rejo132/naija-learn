@@ -329,7 +329,7 @@ export default function SettingsScreen() {
                       return;
                     }
                     setUserAvatar(avatar.emoji);
-                    syncProfile({ avatar: avatar.emoji }).catch(() => {});
+                    syncProfile().catch(() => {});
                   }}
                   onLongPress={() => {
                     if (!isUnlocked) setAvatarHint(avatar.hint);

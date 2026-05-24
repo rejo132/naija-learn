@@ -181,7 +181,7 @@ export default function SignUpScreen() {
       const { data: existing } = await supabase
         .from('profiles')
         .select('id')
-        .ilike('name', trimmedUsername)
+        .ilike('username', trimmedUsername)
         .maybeSingle();
 
       if (existing) {
@@ -241,17 +241,7 @@ export default function SignUpScreen() {
       });
 
       try {
-        await syncProfile({
-          name: username.trim(),
-          grade: selectedGradeNum,
-          avatar: selectedAvatar,
-          xp: 0,
-          streak: 0,
-          language: 'en',
-          personality_id: 'aunty_naija',
-          last_active_date: new Date().toISOString().split('T')[0],
-          role: 'student',
-        });
+        await syncProfile();
       } catch {
         // Non-blocking — proceed anyway
       }

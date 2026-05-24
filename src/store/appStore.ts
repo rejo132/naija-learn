@@ -304,7 +304,7 @@ const initialState: AppStateValues = {
 
 export const useAppStore = create<AppState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       ...initialState,
       setLanguage: (lang) => set({ selectedLanguage: lang }),
       // Resetting subject when grade changes prevents wrong content showing for the new grade
@@ -383,60 +383,60 @@ export const useAppStore = create<AppState>()(
           } = await supabase.auth.getUser();
           if (!user) return;
 
-          const { data: profile } = await supabase
+          const { data: profile, error } = await supabase
             .from('profiles')
             .select('*')
             .eq('id', user.id)
             .maybeSingle();
 
-          if (!profile) return;
+          if (error || !profile) {
+            console.error(
+              '[loadUserProgress] Error:',
+              error?.message
+            );
+            return;
+          }
 
           console.log(
-            '[loadUserProgress] Raw from DB:',
+            '[loadUserProgress] Raw DB:',
             JSON.stringify({
               xp: profile.xp,
               streak: profile.streak,
-              lessons_completed: profile.lessons_completed,
+              lessons: profile.lessons_completed,
               grade: profile.grade,
               name: profile.name,
+              avatar: profile.avatar,
             })
           );
 
-          const localState = useAppStore.getState();
-
+          const local = get();
           const isNewDevice =
-            localState.xp === 0 &&
-            localState.lessonsCompleted === 0 &&
-            !localState.setupComplete;
+            local.xp === 0 &&
+            local.lessonsCompleted === 0 &&
+            !local.setupComplete;
 
-          const mergedXP = isNewDevice
-            ? (profile.xp ?? 0)
-            : Math.max(localState.xp, profile.xp ?? 0);
+          const gradeStr = profile.grade
+            ? `Primary ${profile.grade}`
+            : '';
 
-          const mergedStreak = isNewDevice
-            ? (profile.streak ?? 0)
-            : Math.max(localState.streak, profile.streak ?? 0);
-
-          const remoteLessons = profile.lessons_completed ?? 0;
-          const mergedLessons = isNewDevice
-            ? remoteLessons
-            : Math.max(localState.lessonsCompleted, remoteLessons);
-
-          const localAchievements = localState.unlockedAchievements || [];
-          const remoteAchievements = profile.unlocked_achievements || [];
           const mergedAchievements = [
-            ...new Set([...localAchievements, ...remoteAchievements]),
+            ...new Set([
+              ...(local.unlockedAchievements ?? []),
+              ...(profile.unlocked_achievements ?? []),
+            ]),
           ];
 
           const mergedAvatars = [
             ...new Set([
-              ...(localState.unlockedAvatars || []),
-              ...(profile.unlocked_avatars || []),
+              ...(local.unlockedAvatars ?? []),
+              ...(profile.unlocked_avatars ?? []),
             ]),
           ];
 
-          const gradeStr = profile.grade ? String(profile.grade).trim() : '';
-          const gradeNum = parseInt(gradeStr.replace(/\D/g, ''), 10) || 0;
+          const gradeNum =
+            typeof profile.grade === 'number'
+              ? profile.grade
+              : parseInt(String(profile.grade ?? ''), 10) || 0;
 
           const { data: progressRows } = await supabase
             .from('progress')
@@ -454,25 +454,31 @@ export const useAppStore = create<AppState>()(
             }
           }
 
-          useAppStore.setState({
-            xp: mergedXP,
-            streak: mergedStreak,
-            lessonsCompleted: mergedLessons,
-            userName: profile.name || localState.userName,
-            userGrade:
-              gradeStr ||
-              localState.userGrade ||
-              (gradeNum > 0 ? `Primary ${gradeNum}` : localState.userGrade),
-            userAvatar: profile.avatar || localState.userAvatar,
+          set({
+            xp: isNewDevice
+              ? (profile.xp ?? 0)
+              : Math.max(local.xp, profile.xp ?? 0),
+            streak: isNewDevice
+              ? (profile.streak ?? 0)
+              : Math.max(local.streak, profile.streak ?? 0),
+            lessonsCompleted: isNewDevice
+              ? (profile.lessons_completed ?? 0)
+              : Math.max(
+                  local.lessonsCompleted,
+                  profile.lessons_completed ?? 0
+                ),
+            userName: profile.name || local.userName,
+            userGrade: gradeStr || local.userGrade,
+            userAvatar: profile.avatar || local.userAvatar,
             selectedLanguage:
-              (profile.language as LanguageCode) || localState.selectedLanguage,
+              (profile.language as LanguageCode) || local.selectedLanguage,
             selectedPersonalityId:
-              profile.personality_id || localState.selectedPersonalityId,
+              profile.personality_id || local.selectedPersonalityId,
             lastStudyDate:
-              profile.last_active_date || localState.lastStudyDate,
+              profile.last_active_date || local.lastStudyDate,
             unlockedAchievements: mergedAchievements,
             unlockedAvatars: mergedAvatars,
-            setupComplete: !!profile.grade || localState.setupComplete,
+            setupComplete: !!profile.grade || local.setupComplete,
             ...(gradeNum >= 1 && gradeNum <= 6
               ? { selectedGrade: gradeNum }
               : {}),
@@ -482,20 +488,21 @@ export const useAppStore = create<AppState>()(
                     ? remoteSubjectProgress
                     : {
                         ...remoteSubjectProgress,
-                        ...localState.subjectProgress,
+                        ...local.subjectProgress,
                       },
                 }
               : {}),
           });
 
-          console.log('[loadUserProgress] Restored:', {
-            xp: mergedXP,
-            streak: mergedStreak,
-            lessons: mergedLessons,
-            achievements: mergedAchievements.length,
+          console.log('[loadUserProgress] ✅ Restored:', {
+            xp: get().xp,
+            streak: get().streak,
+            lessons: get().lessonsCompleted,
+            grade: get().userGrade,
           });
-        } catch (e) {
-          console.error('loadUserProgress error:', e);
+        } catch (e: unknown) {
+          const message = e instanceof Error ? e.message : String(e);
+          console.error('[loadUserProgress] Exception:', message);
         }
       },
       syncProfile: async () => {

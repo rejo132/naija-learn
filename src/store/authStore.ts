@@ -143,7 +143,7 @@ export const useAuthStore = create<AuthState>((set) => ({
         const { data: profile } = await supabase
           .from('profiles')
           .select('email, id')
-          .ilike('name', identifier.trim())
+          .ilike('username', identifier.trim())
           .maybeSingle();
 
         if (!profile) {

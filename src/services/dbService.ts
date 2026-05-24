@@ -274,9 +274,8 @@ export async function verifySyncColumns(): Promise<void> {
 
 /**
  * Sync the user's profile and progress to Supabase.
- * Reads from the app store; optional overrides for sign-up etc.
  */
-export async function syncProfile(overrides?: Partial<ProfileUpdate>): Promise<void> {
+export async function syncProfile(): Promise<void> {
   try {
     const store = useAppStore.getState();
     const {
@@ -284,97 +283,46 @@ export async function syncProfile(overrides?: Partial<ProfileUpdate>): Promise<v
     } = await supabase.auth.getUser();
     if (!user) return;
 
-    const gradeValue =
-      overrides?.grade ??
-      (store.userGrade ||
-        (store.selectedGrade ? `Primary ${store.selectedGrade}` : ''));
-
-    const updates: Record<string, unknown> = {
+    const updates = {
       id: user.id,
-      email: user.email,
-      name: overrides?.name ?? (store.userName || ''),
-      grade: String(gradeValue),
-      avatar: overrides?.avatar ?? (store.userAvatar || '🦁'),
-      xp: overrides?.xp ?? store.xp ?? 0,
-      streak: overrides?.streak ?? store.streak ?? 0,
-      language: overrides?.language ?? (store.selectedLanguage || 'en'),
-      personality_id:
-        overrides?.personality_id ??
-        store.selectedPersonalityId ??
-        'aunty_naija',
+      email: user.email ?? '',
+      name: store.userName ?? '',
+      grade: store.userGrade
+        ? parseInt(store.userGrade.replace(/\D/g, ''), 10) || 0
+        : 0,
+      avatar: store.userAvatar ?? '🦁',
+      username:
+        store.userName?.toLowerCase().replace(/\s+/g, '_') ?? '',
+      xp: store.xp ?? 0,
+      streak: store.streak ?? 0,
+      lessons_completed: store.lessonsCompleted ?? 0,
+      language: store.selectedLanguage ?? 'en',
+      personality_id: store.selectedPersonalityId ?? 'aunty_naija',
       last_active_date:
-        overrides?.last_active_date ??
-        store.lastStudyDate ??
-        new Date().toISOString().split('T')[0],
-      lessons_completed:
-        overrides?.lessons_completed ?? store.lessonsCompleted ?? 0,
-      unlocked_achievements:
-        overrides?.unlocked_achievements ??
-        store.unlockedAchievements ??
-        [],
-      unlocked_avatars:
-        overrides?.unlocked_avatars ?? store.unlockedAvatars ?? [],
+        store.lastStudyDate ?? new Date().toISOString().split('T')[0],
+      unlocked_achievements: store.unlockedAchievements ?? [],
+      unlocked_avatars: store.unlockedAvatars ?? [],
       updated_at: new Date().toISOString(),
-      ...overrides,
     };
 
-    const safeUpdate = {
-      id: updates.id,
-      email: updates.email,
-      name: updates.name,
-      grade: updates.grade,
-      avatar: updates.avatar,
-      xp: updates.xp,
-      streak: updates.streak,
-      language: updates.language,
-      personality_id: updates.personality_id,
-      last_active_date: updates.last_active_date,
-      updated_at: updates.updated_at,
-    };
+    const { error } = await supabase.from('profiles').upsert(updates, {
+      onConflict: 'id',
+    });
 
-    const { error: safeError } = await supabase
-      .from('profiles')
-      .upsert(safeUpdate, {
-        onConflict: 'id',
-      });
-
-    if (safeError) {
-      console.error(
-        '[syncProfile] Safe upsert failed:',
-        safeError.message
-      );
-      captureError(safeError, { context: 'syncProfile error' });
-      throw safeError;
-    }
-
-    const extendedUpdate = {
-      id: updates.id,
-      lessons_completed: updates.lessons_completed,
-      unlocked_achievements: updates.unlocked_achievements,
-      unlocked_avatars: updates.unlocked_avatars,
-    };
-
-    const { error: extError } = await supabase
-      .from('profiles')
-      .upsert(extendedUpdate, {
-        onConflict: 'id',
-      });
-
-    if (extError) {
-      console.warn(
-        '[syncProfile] Extended upsert ' +
-          'failed (run SQL migration):',
-        extError.message
-      );
+    if (error) {
+      console.error('[syncProfile] Error:', error.message);
+      captureError(error, { context: 'syncProfile error' });
     } else {
-      console.log('[syncProfile] Full sync OK ✅', {
-        xp: safeUpdate.xp,
-        streak: safeUpdate.streak,
-        lessons: extendedUpdate.lessons_completed,
+      console.log('[syncProfile] ✅ Saved:', {
+        xp: updates.xp,
+        streak: updates.streak,
+        lessons: updates.lessons_completed,
+        name: updates.name,
       });
     }
-  } catch (err) {
-    captureError(err, { context: 'syncProfile exception' });
-    throw err;
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : String(e);
+    console.error('[syncProfile] Exception:', message);
+    captureError(e, { context: 'syncProfile exception' });
   }
 }
