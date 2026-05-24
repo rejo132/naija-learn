@@ -4,7 +4,6 @@
 import { create } from 'zustand';
 import { Session, User } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase';
-import { getProfile } from '@/services/dbService';
 import { useAppStore } from '@/store/appStore';
 
 export type UserRole = 'parent' | 'child';
@@ -22,7 +21,17 @@ export interface AuthProfile {
 }
 
 async function fetchUserRole(): Promise<UserRole | null> {
-  const profile = await getProfile();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return null;
+
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('role')
+    .eq('id', user.id)
+    .single();
+
   if (!profile) return null;
   if (profile.role === 'parent' || profile.role === 'child') {
     return profile.role;
@@ -73,7 +82,7 @@ export const useAuthStore = create<AuthState>((set) => ({
         .from('profiles')
         .select('*')
         .eq('id', user.id)
-        .maybeSingle();
+        .single();
 
       return (data as AuthProfile) ?? null;
     } catch {
@@ -113,7 +122,7 @@ export const useAuthStore = create<AuthState>((set) => ({
         password,
         options: {
           data: { name, phone },
-          emailRedirectTo: 'https://trylearnova.com/auth/callback',
+          emailRedirectTo: 'https://trylearnova.com/auth/sign-in',
         },
       });
       if (error) throw error;

@@ -63,7 +63,6 @@ export default function RootLayout() {
   const session = useAuthStore((s) => s.session);
   const userGrade = useAppStore((s) => s.userGrade);
   const setupComplete = useAppStore((s) => s.setupComplete);
-  const [isLayoutReady, setIsLayoutReady] = useState(false);
   const [isInitialising, setIsInitialising] = useState(true);
   const isDarkMode = useAppStore((s) => s.isDarkMode);
   const [fontsLoaded] = useFonts({
@@ -87,12 +86,6 @@ export default function RootLayout() {
     }
     init();
   }, []);
-
-  useEffect(() => {
-    if (isInitialising) return;
-    const timer = setTimeout(() => setIsLayoutReady(true), 0);
-    return () => clearTimeout(timer);
-  }, [isInitialising]);
 
   useEffect(() => {
     if (isInitialising || !fontsLoaded) return;

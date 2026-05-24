@@ -17,7 +17,7 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { router, useLocalSearchParams } from 'expo-router';
+import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/store/authStore';
 import { useAppStore } from '@/store/appStore';
@@ -28,23 +28,6 @@ import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import { TutorAvatar } from '@/components/TutorAvatar';
 import { useTheme } from '@/hooks/useTheme';
-
-function mapAuthErrorMessage(message: string): string {
-  const lower = message.toLowerCase();
-  if (lower.includes('invalid login credentials')) {
-    return 'Wrong email or password. Try again.';
-  }
-  if (lower.includes('email not confirmed')) {
-    return 'Please check your email and confirm your account first.';
-  }
-  if (lower.includes('too many requests')) {
-    return 'Too many attempts. Please wait a moment and try again.';
-  }
-  return message
-    .replace(/^AuthApiError:\s*/i, '')
-    .replace(/^Error:\s*/i, '')
-    .trim();
-}
 
 const FEATURES = [
   { emoji: '🧠', text: 'Claude AI Tutor' },
@@ -67,9 +50,6 @@ export default function SignInScreen() {
   const [identifierError, setIdentifierError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [oauthError, setOauthError] = useState('');
-  const params = useLocalSearchParams();
-  const isOAuthReturn =
-    params.oauth === '1';
 
   const { signIn, clearError, error: authError } = useAuthStore();
   const { t, language } = useTranslation();
@@ -84,42 +64,36 @@ export default function SignInScreen() {
 
   useEffect(() => {
     if (Platform.OS !== 'web') return;
-
     const hash = window.location.hash;
     if (!hash.includes('access_token'))
       return;
 
-    // Immediately try to get session
-    // from Supabase directly using
-    // the hash — don't wait for _layout
+    let interval: ReturnType<typeof setInterval> | null = null;
+
     supabase.auth.getSession().then(
       async ({ data: { session } }) => {
         if (session) {
-          // Set session in store
           useAuthStore.getState()
             .setSession(session);
-          // Load progress
           try {
             await useAppStore.getState()
               .loadUserProgress();
           } catch {}
-          // Clear hash from URL
           window.history.replaceState(
             {}, '', '/auth/sign-in');
           router.replace('/dashboard');
           return;
         }
 
-        // Session not ready yet —
-        // poll for it
         let attempts = 0;
-        const interval = setInterval(
+        interval = setInterval(
           async () => {
             attempts++;
             const s = useAuthStore
               .getState().session;
             if (s) {
-              clearInterval(interval);
+              if (interval)
+                clearInterval(interval);
               try {
                 await useAppStore
                   .getState()
@@ -128,11 +102,11 @@ export default function SignInScreen() {
               router.replace('/dashboard');
               return;
             }
-            // Also try getSession again
             const { data } = await
               supabase.auth.getSession();
             if (data.session) {
-              clearInterval(interval);
+              if (interval)
+                clearInterval(interval);
               useAuthStore.getState()
                 .setSession(data.session);
               try {
@@ -144,13 +118,16 @@ export default function SignInScreen() {
               return;
             }
             if (attempts >= 20) {
-              clearInterval(interval);
+              if (interval)
+                clearInterval(interval);
             }
           }, 500);
-
-        return () => clearInterval(interval);
       }
     );
+
+    return () => {
+      if (interval) clearInterval(interval);
+    };
   }, []);
 
   useEffect(() => {

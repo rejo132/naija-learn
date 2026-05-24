@@ -18,18 +18,21 @@ create table if not exists public.profiles (
   id                 uuid primary key references auth.users(id) on delete cascade,
   name               text,
   email              text,
+  username           text default '',
   phone              text,
   role               text default 'parent',
   avatar             text,
   xp                 integer default 0,
   streak             integer default 0,
-  grade              text,
+  grade              integer default 0,
   language           text default 'en',
   personality_id     text,
   last_active_date   text,
   created_at         timestamptz default now(),
   updated_at         timestamptz default now()
 );
+
+create index if not exists profiles_username_idx on public.profiles(username);
 
 
 -- ─────────────────────────────────────────────────────────
@@ -202,11 +205,13 @@ create policy "subscriptions_delete_own"
 create or replace function public.handle_new_user()
 returns trigger as $$
 begin
-  insert into public.profiles (id, email, name)
+  insert into public.profiles (id, email, username, name, grade)
   values (
     new.id,
     new.email,
-    coalesce(new.raw_user_meta_data->>'name', split_part(new.email, '@', 1))
+    coalesce(new.raw_user_meta_data->>'name', split_part(new.email, '@', 1)),
+    coalesce(new.raw_user_meta_data->>'name', split_part(new.email, '@', 1)),
+    0
   );
 
   insert into public.subscriptions (user_id, plan, status)
@@ -240,6 +245,16 @@ create or replace function public.upsert_progress(
   p_flow_completed   boolean
 ) returns void as $$
 begin
+  IF auth.uid() IS NULL THEN
+    RAISE EXCEPTION
+      'Not authenticated';
+  END IF;
+
+  IF auth.uid() != p_user_id THEN
+    RAISE EXCEPTION
+      'Not authorized';
+  END IF;
+
   insert into public.progress (
     user_id, child_id, subject, topic, score,
     grade, xp_earned, duration_seconds,
