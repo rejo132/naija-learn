@@ -46,7 +46,7 @@
       "output": "static",
       "name": "Learnova",
       "shortName": "Learnova",
-      "description": "AI-powered learning for Nigerian primary school students",
+      "description": "AI-powered learning app for Nigerian primary school students. Primary 1–6, 4 languages, NERDC curriculum.",
       "themeColor": "#008751",
       "backgroundColor": "#F9F6F0"
     },

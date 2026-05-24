@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Platform, View, Text } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Stack, usePathname, useRouter, useSegments } from 'expo-router';
+import Head from 'expo-router/head';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Sentry from '@sentry/react-native';
@@ -257,6 +258,40 @@ export default function RootLayout() {
   }
 
   return (
+    <>
+      {Platform.OS === 'web' && (
+        <>
+          <Head>
+            <title>Learnova — AI Learning
+              for Nigerian Students</title>
+            <meta
+              name="description"
+              content="AI-powered learning app
+          for Nigerian primary school
+          students. Primary 1–6, 4
+          languages, NERDC curriculum."
+            />
+            <meta property="og:title"
+              content="Learnova" />
+            <meta property="og:description"
+              content="AI-powered learning app
+          for Nigerian primary school
+          students. Primary 1–6, 4
+          languages, NERDC curriculum." />
+            <meta property="og:image"
+              content="/favicon.png" />
+            <meta property="og:type"
+              content="website" />
+            <meta property="og:url"
+              content="https://trylearnova.com"
+            />
+            <link rel="icon"
+              href="/favicon.png" />
+            <link rel="apple-touch-icon"
+              href="/favicon.png" />
+          </Head>
+        </>
+      )}
     <Sentry.ErrorBoundary fallback={<ErrorFallback />}>
       <GestureHandlerRootView style={{ flex: 1 }}>
         <SafeAreaProvider>
@@ -285,5 +320,6 @@ export default function RootLayout() {
         </SafeAreaProvider>
       </GestureHandlerRootView>
     </Sentry.ErrorBoundary>
+    </>
   );
 }
