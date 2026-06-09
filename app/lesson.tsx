@@ -1149,8 +1149,55 @@ export default function LessonScreen() {
     );
   }
 
+  function addStaticAssistantMessage(content: string) {
+    if (!content.trim()) return;
+    addMessage({ role: 'assistant', content });
+    setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 100);
+  }
+
+  function startStaticQuizIfNeeded() {
+    if (!staticLesson) return;
+    const questions = staticLesson.quiz_questions ?? [];
+    if (questions.length === 0 || staticQuizIndex >= 0) return;
+
+    isQuizModeRef.current = true;
+    setIsQuizMode(true);
+    quizStartTime.current = Date.now();
+    quizStatsRef.current = { correct: 0, answered: 0 };
+    setStaticQuizFeedback(null);
+    setStaticQuizIndex(0);
+  }
+
   function handleQuickAction(actionId: string) {
     if (!selectedGrade || isAILoading) return;
+
+    if (staticLesson) {
+      switch (actionId) {
+        case 'simpler':
+          addStaticAssistantMessage(staticLesson.summary ?? '');
+          break;
+        case 'example': {
+          const examples = staticLesson.nigerian_examples ?? [];
+          addStaticAssistantMessage(
+            examples.length > 0
+              ? examples.map((e) => `- ${e}`).join('\n')
+              : 'No examples available for this lesson.'
+          );
+          break;
+        }
+        case 'harder':
+          addStaticAssistantMessage('Try the quiz to test your understanding!');
+          startStaticQuizIfNeeded();
+          break;
+        case 'repeat':
+          addStaticAssistantMessage(staticLesson.content ?? '');
+          break;
+        case 'summary':
+          addStaticAssistantMessage(staticLesson.summary ?? '');
+          break;
+      }
+      return;
+    }
 
     switch (actionId) {
       case 'simpler':
