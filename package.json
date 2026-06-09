@@ -13,16 +13,19 @@
     "submit:android": "eas submit --platform android",
     "submit:ios": "eas submit --platform ios",
     "lint": "eslint . --ext .ts,.tsx",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "generate-lessons": "node scripts/generate-lessons.js"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.100.1",
     "@expo/metro-runtime": "~6.1.2",
     "@react-native-async-storage/async-storage": "3.0.2",
     "@react-native-community/netinfo": "11.4.1",
     "@react-navigation/drawer": "^7.10.2",
     "@sentry/react-native": "~7.2.0",
-    "@supabase/supabase-js": "^2.105.4",
+    "@supabase/supabase-js": "^2.107.0",
     "babel-plugin-module-resolver": "^5.0.3",
+    "dotenv": "^17.4.2",
     "expo": "~54.0.34",
     "expo-auth-session": "~7.0.11",
     "expo-av": "~16.0.8",

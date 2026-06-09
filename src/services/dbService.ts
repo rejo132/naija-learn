@@ -138,6 +138,54 @@ export async function saveProgress({
 }
 
 /**
+ * Fetch a pre-generated lesson and its quiz questions from Supabase.
+ */
+export async function getLessonFromDB(
+  grade: number,
+  subject: string,
+  topic: string,
+  language: string
+): Promise<{
+  content: string;
+  summary: string;
+  learning_objectives: string[];
+  nigerian_examples: string[];
+  quiz_questions: any[];
+} | null> {
+  try {
+    const { data, error } = await supabase
+      .from('lessons')
+      .select(`
+        content,
+        summary,
+        learning_objectives,
+        nigerian_examples,
+        quiz_questions (
+          id,
+          question_type,
+          question,
+          option_a,
+          option_b,
+          option_c,
+          option_d,
+          correct_answer,
+          explanation
+        )
+      `)
+      .eq('grade', grade)
+      .eq('subject', subject)
+      .eq('topic', topic)
+      .eq('language', language)
+      .single();
+
+    if (error || !data) return null;
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Load the user's saved progress from Supabase.
  * Called on app start to restore XP, streak, grade etc.
  */

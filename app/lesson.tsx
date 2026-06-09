@@ -34,7 +34,7 @@ import {
 } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppStore, type ChatMessage } from '@/store/appStore';
-import { saveProgress, syncProfile } from '@/services/dbService';
+import { getLessonFromDB, saveProgress, syncProfile } from '@/services/dbService';
 import { playSound } from '@/services/soundService';
 import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -231,6 +231,33 @@ function formatTime(timestamp: number): string {
   return `${h}:${m}`;
 }
 
+type DBLesson = NonNullable<Awaited<ReturnType<typeof getLessonFromDB>>>;
+
+type StaticQuizQuestion = DBLesson['quiz_questions'][number];
+
+type StaticQuizFeedback = {
+  selected: string;
+  correct: boolean;
+};
+
+function formatStaticLessonContent(lesson: DBLesson): string {
+  let text = lesson.content;
+  if (lesson.summary?.trim()) {
+    text += `\n\n**Summary:** ${lesson.summary}`;
+  }
+  if (lesson.learning_objectives?.length) {
+    text +=
+      '\n\n**What you will learn:**\n' +
+      lesson.learning_objectives.map((o) => `- ${o}`).join('\n');
+  }
+  if (lesson.nigerian_examples?.length) {
+    text +=
+      '\n\n**Nigerian examples:**\n' +
+      lesson.nigerian_examples.map((e) => `- ${e}`).join('\n');
+  }
+  return text;
+}
+
 function BounceDot({ delay, color }: { delay: number; color: string }) {
   const y = useSharedValue(0);
 
@@ -313,6 +340,99 @@ function TopicPickerCard({
         </Text>
       </TouchableOpacity>
     </RNAnimated.View>
+  );
+}
+
+function StaticQuizPanel({
+  question,
+  questionIndex,
+  totalQuestions,
+  feedback,
+  isDarkMode,
+  onAnswer,
+  onNext,
+}: {
+  question: StaticQuizQuestion;
+  questionIndex: number;
+  totalQuestions: number;
+  feedback: StaticQuizFeedback | null;
+  isDarkMode: boolean;
+  onAnswer: (choice: string) => void;
+  onNext: () => void;
+}) {
+  const { colors } = useTheme();
+  const options = [
+    { key: 'A', text: question.option_a },
+    { key: 'B', text: question.option_b },
+    { key: 'C', text: question.option_c },
+    { key: 'D', text: question.option_d },
+  ].filter((opt) => opt.text?.trim());
+
+  return (
+    <View
+      style={[
+        styles.staticQuizPanel,
+        {
+          backgroundColor: isDarkMode ? '#1A2420' : '#FFFFFF',
+          borderColor: colors.border,
+        },
+      ]}
+    >
+      <Text style={[styles.staticQuizMeta, { color: colors.textMuted }]}>
+        Quiz · Question {questionIndex + 1} of {totalQuestions}
+      </Text>
+      <Text style={[styles.staticQuizQuestion, { color: colors.textPrimary }]}>
+        {question.question}
+      </Text>
+
+      {!feedback ? (
+        <View style={styles.staticQuizOptions}>
+          {options.map((opt) => (
+            <PressableScale
+              key={opt.key}
+              style={[
+                styles.staticQuizOption,
+                {
+                  backgroundColor: isDarkMode ? '#0F1512' : '#F9F6F0',
+                  borderColor: colors.border,
+                },
+              ]}
+              onPress={() => onAnswer(opt.key)}
+              scaleTo={0.98}
+            >
+              <Text style={[styles.staticQuizOptionText, { color: colors.textPrimary }]}>
+                {opt.key}) {opt.text}
+              </Text>
+            </PressableScale>
+          ))}
+        </View>
+      ) : (
+        <View style={styles.staticQuizFeedback}>
+          <Text
+            style={[
+              styles.staticQuizResult,
+              { color: feedback.correct ? colors.success : '#E74C3C' },
+            ]}
+          >
+            {feedback.correct ? 'Correct! 🎉' : 'Not quite! 💪'}
+          </Text>
+          {question.explanation ? (
+            <Text style={[styles.staticQuizExplanation, { color: colors.textSecondary }]}>
+              {question.explanation}
+            </Text>
+          ) : null}
+          <PressableScale
+            style={[styles.staticQuizNextBtn, { backgroundColor: colors.primary }]}
+            onPress={onNext}
+            scaleTo={0.98}
+          >
+            <Text style={styles.staticQuizNextText}>
+              {questionIndex + 1 >= totalQuestions ? 'Finish Quiz' : 'Next Question'}
+            </Text>
+          </PressableScale>
+        </View>
+      )}
+    </View>
   );
 }
 
@@ -485,6 +605,9 @@ export default function LessonScreen() {
   const [isQuizMode, setIsQuizMode] = useState(false);
   const isQuizModeRef = useRef(false);
   const [quizScore, setQuizScore] = useState<number | null>(null);
+  const [staticLesson, setStaticLesson] = useState<DBLesson | null>(null);
+  const [staticQuizIndex, setStaticQuizIndex] = useState(-1);
+  const [staticQuizFeedback, setStaticQuizFeedback] = useState<StaticQuizFeedback | null>(null);
   const flatListRef = useRef<FlatList>(null);
   const quizStatsRef = useRef({ correct: 0, answered: 0 });
   const ui = getUIText(selectedLanguage);
@@ -844,6 +967,9 @@ export default function LessonScreen() {
           setTopicSelected(false);
           setSelectedTopic('');
         }
+        setStaticLesson(null);
+        setStaticQuizIndex(-1);
+        setStaticQuizFeedback(null);
         quizXpAwarded.current = false;
         quizStartTime.current = null;
         hadFailedQuizRef.current = false;
@@ -871,6 +997,73 @@ export default function LessonScreen() {
 
   if (!selectedGrade) return <Redirect href="/grade" />;
   if (!selectedSubject) return <Redirect href="/dashboard" />;
+
+  function completeQuizWithScore(finalScore: number) {
+    if (!selectedSubject || !selectedGrade) return;
+
+    setQuizScore(finalScore);
+
+    if (!quizXpAwarded.current) {
+      quizXpAwarded.current = true;
+      let quizXp = XP_REWARDS.QUIZ_COMPLETED;
+      if (finalScore === 100) {
+        quizXp += XP_REWARDS.PERFECT_QUIZ;
+      }
+      awardXP(quizXp);
+    }
+    updateBestQuizScore(finalScore);
+
+    const store = useAppStore.getState();
+    if (finalScore === 100) {
+      store.setConsecutivePerfectQuizzes(store.consecutivePerfectQuizzes + 1);
+    } else {
+      store.setConsecutivePerfectQuizzes(0);
+    }
+    if (quizStartTime.current) {
+      const secs = Math.round((Date.now() - quizStartTime.current) / 1000);
+      if (
+        store.fastestQuizSeconds === null ||
+        secs < store.fastestQuizSeconds
+      ) {
+        store.setFastestQuizSeconds(secs);
+      }
+    }
+    if (hadFailedQuizRef.current && finalScore >= 60) {
+      store.setRetriedAndPassedQuiz(true);
+    }
+    if (finalScore < 60) {
+      hadFailedQuizRef.current = true;
+    }
+
+    const newlyUnlocked = checkNewAchievements(
+      buildAchievementStats({ bestQuizScore: finalScore }),
+      unlockedAchievements
+    );
+    if (newlyUnlocked.length > 0) {
+      newlyUnlocked.forEach((a) => unlockAchievement(a.id));
+      setNewAchievement(newlyUnlocked[0]);
+    }
+
+    const durationSecs = Math.round(
+      (Date.now() - lessonStartRef.current) / 1000
+    );
+    const earnedXP = finalScore === 100 ? 75 : 25;
+    saveProgress({
+      subject: selectedSubject.label,
+      topic: selectedTopic || selectedSubject.label,
+      score: finalScore,
+      grade: selectedGrade,
+      xpEarned: earnedXP,
+      durationSeconds: durationSecs,
+      flowCompleted: true,
+      childId: null,
+    }).catch((err) => console.error('saveProgress error:', err));
+
+    useAppStore.getState().updateStreak();
+
+    updateSubjectProgress(selectedSubject.label, selectedGrade, finalScore);
+    countLessonOnce();
+  }
 
   async function handleSend(overrideText?: string, forceQuizMode?: boolean) {
     const text = (overrideText ?? inputText).trim();
@@ -927,68 +1120,7 @@ export default function LessonScreen() {
         if (correct) stats.correct += 1;
         if (stats.answered >= QUIZ_QUESTION_TARGET) {
           const finalScore = Math.round((stats.correct / stats.answered) * 100);
-          setQuizScore(finalScore);
-
-          if (!quizXpAwarded.current) {
-            quizXpAwarded.current = true;
-            let quizXp = XP_REWARDS.QUIZ_COMPLETED;
-            if (finalScore === 100) {
-              quizXp += XP_REWARDS.PERFECT_QUIZ;
-            }
-            awardXP(quizXp);
-          }
-          updateBestQuizScore(finalScore);
-
-          const store = useAppStore.getState();
-          if (finalScore === 100) {
-            store.setConsecutivePerfectQuizzes(store.consecutivePerfectQuizzes + 1);
-          } else {
-            store.setConsecutivePerfectQuizzes(0);
-          }
-          if (quizStartTime.current) {
-            const secs = Math.round((Date.now() - quizStartTime.current) / 1000);
-            if (
-              store.fastestQuizSeconds === null ||
-              secs < store.fastestQuizSeconds
-            ) {
-              store.setFastestQuizSeconds(secs);
-            }
-          }
-          if (hadFailedQuizRef.current && finalScore >= 60) {
-            store.setRetriedAndPassedQuiz(true);
-          }
-          if (finalScore < 60) {
-            hadFailedQuizRef.current = true;
-          }
-
-          const newlyUnlocked = checkNewAchievements(
-            buildAchievementStats({ bestQuizScore: finalScore }),
-            unlockedAchievements
-          );
-          if (newlyUnlocked.length > 0) {
-            newlyUnlocked.forEach((a) => unlockAchievement(a.id));
-            setNewAchievement(newlyUnlocked[0]);
-          }
-
-          const durationSecs = Math.round(
-            (Date.now() - lessonStartRef.current) / 1000
-          );
-          const earnedXP = finalScore === 100 ? 75 : 25;
-          saveProgress({
-            subject: selectedSubject?.label ?? 'Unknown',
-            topic: selectedTopic || (selectedSubject?.label ?? 'Unknown'),
-            score: finalScore,
-            grade: selectedGrade ?? 1,
-            xpEarned: earnedXP,
-            durationSeconds: durationSecs,
-            flowCompleted: true,
-            childId: null,
-          }).catch((err) => console.error('saveProgress error:', err));
-
-          useAppStore.getState().updateStreak();
-
-          updateSubjectProgress(selectedSubject.label, selectedGrade, finalScore);
-          countLessonOnce();
+          completeQuizWithScore(finalScore);
         }
       }
     } catch (error: unknown) {
@@ -1104,15 +1236,105 @@ export default function LessonScreen() {
     );
   }
 
-  function selectTopicAndStart(topic: string) {
-    if (!selectedSubject) return;
+  async function selectTopicAndStart(topic: string) {
+    if (!selectedSubject || !selectedGrade) return;
     playSound('tap');
     setSelectedTopic(topic);
     setTopicSelected(true);
-    if (selectedSubject && selectedGrade) {
-      markFlowCompleted(selectedSubject.label, selectedGrade);
+    markFlowCompleted(selectedSubject.label, selectedGrade);
+
+    setStaticLesson(null);
+    setStaticQuizIndex(-1);
+    setStaticQuizFeedback(null);
+    setQuizScore(null);
+    quizXpAwarded.current = false;
+    quizStatsRef.current = { correct: 0, answered: 0 };
+    hadFailedQuizRef.current = false;
+    clearMessages();
+
+    const userPrompt = `I want to learn about ${topic} in ${selectedSubject.label}`;
+    setAILoading(true);
+
+    const lesson = await getLessonFromDB(
+      selectedGrade,
+      selectedSubject.label,
+      topic,
+      selectedLanguage
+    );
+
+    setAILoading(false);
+
+    if (lesson) {
+      setStaticLesson(lesson);
+      addMessage({ role: 'user', content: userPrompt });
+      addMessage({ role: 'assistant', content: formatStaticLessonContent(lesson) });
+
+      const questions = lesson.quiz_questions ?? [];
+      if (questions.length > 0) {
+        isQuizModeRef.current = true;
+        setIsQuizMode(true);
+        quizStartTime.current = Date.now();
+        setStaticQuizIndex(0);
+        setStaticQuizFeedback(null);
+      }
+
+      setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 100);
+      return;
     }
-    handleSend(`I want to learn about ${topic} in ${selectedSubject.label}`);
+
+    setStaticLesson(null);
+    handleSend(userPrompt);
+  }
+
+  function handleStaticQuizAnswer(choice: string) {
+    if (!staticLesson || staticQuizIndex < 0 || staticQuizFeedback) return;
+    const questions = staticLesson.quiz_questions ?? [];
+    const question = questions[staticQuizIndex];
+    if (!question) return;
+
+    const correctAnswer = String(question.correct_answer ?? '')
+      .trim()
+      .toUpperCase()
+      .charAt(0);
+    const selected = choice.toUpperCase();
+    const correct = selected === correctAnswer;
+
+    playSound(correct ? 'correct' : 'wrong');
+    setStaticQuizFeedback({ selected, correct });
+
+    const stats = quizStatsRef.current;
+    stats.answered += 1;
+    if (correct) stats.correct += 1;
+
+    const feedbackText = correct
+      ? `✅ Correct! ${question.explanation ?? 'Well done!'}`
+      : `❌ Not quite. The correct answer is ${correctAnswer}. ${question.explanation ?? ''}`;
+    addMessage({ role: 'assistant', content: feedbackText });
+    setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 100);
+  }
+
+  function handleStaticQuizNext() {
+    if (!staticLesson || staticQuizIndex < 0) return;
+    const questions = staticLesson.quiz_questions ?? [];
+    const nextIndex = staticQuizIndex + 1;
+
+    if (nextIndex >= questions.length) {
+      const stats = quizStatsRef.current;
+      const finalScore =
+        stats.answered > 0
+          ? Math.round((stats.correct / stats.answered) * 100)
+          : 0;
+      completeQuizWithScore(finalScore);
+      setStaticQuizIndex(-1);
+      setStaticQuizFeedback(null);
+      isQuizModeRef.current = false;
+      setIsQuizMode(false);
+      return;
+    }
+
+    setStaticQuizIndex(nextIndex);
+    setStaticQuizFeedback(null);
+    setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 100);
   }
 
   function handleChangeTopic() {
@@ -1124,6 +1346,9 @@ export default function LessonScreen() {
     isQuizModeRef.current = false;
     setQuizScore(null);
     quizStatsRef.current = { correct: 0, answered: 0 };
+    setStaticLesson(null);
+    setStaticQuizIndex(-1);
+    setStaticQuizFeedback(null);
   }
 
   if (!topicSelected && !showOfflineMode && !isChallenge) {
@@ -1349,7 +1574,24 @@ export default function LessonScreen() {
                 </Text>
               </View>
             }
-            ListFooterComponent={isAILoading ? <ThinkingIndicator personality={personality} /> : null}
+            ListFooterComponent={
+              <>
+                {staticLesson &&
+                  staticQuizIndex >= 0 &&
+                  staticLesson.quiz_questions?.[staticQuizIndex] && (
+                    <StaticQuizPanel
+                      question={staticLesson.quiz_questions[staticQuizIndex]}
+                      questionIndex={staticQuizIndex}
+                      totalQuestions={staticLesson.quiz_questions.length}
+                      feedback={staticQuizFeedback}
+                      isDarkMode={isDarkMode}
+                      onAnswer={handleStaticQuizAnswer}
+                      onNext={handleStaticQuizNext}
+                    />
+                  )}
+                {isAILoading ? <ThinkingIndicator personality={personality} /> : null}
+              </>
+            }
           />
 
           {messages.length > 1 && (
@@ -1575,6 +1817,60 @@ const styles = StyleSheet.create({
   },
   chatContainerEmpty: {
     flexGrow: 1,
+  },
+  staticQuizPanel: {
+    marginTop: SPACING.md,
+    marginBottom: SPACING.lg,
+    padding: SPACING.lg,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1,
+    gap: SPACING.md,
+  },
+  staticQuizMeta: {
+    fontFamily: 'Poppins-Medium',
+    fontSize: FONT_SIZES.sm,
+  },
+  staticQuizQuestion: {
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: FONT_SIZES.md,
+    lineHeight: 24,
+  },
+  staticQuizOptions: {
+    gap: SPACING.sm,
+  },
+  staticQuizOption: {
+    paddingVertical: SPACING.md,
+    paddingHorizontal: SPACING.lg,
+    borderRadius: RADIUS.md,
+    borderWidth: 1,
+  },
+  staticQuizOptionText: {
+    fontFamily: 'Poppins-Medium',
+    fontSize: FONT_SIZES.md,
+    lineHeight: 22,
+  },
+  staticQuizFeedback: {
+    gap: SPACING.md,
+  },
+  staticQuizResult: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: FONT_SIZES.lg,
+  },
+  staticQuizExplanation: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: FONT_SIZES.md,
+    lineHeight: 22,
+  },
+  staticQuizNextBtn: {
+    alignSelf: 'flex-start',
+    paddingVertical: SPACING.sm,
+    paddingHorizontal: SPACING.lg,
+    borderRadius: RADIUS.md,
+  },
+  staticQuizNextText: {
+    color: '#FFFFFF',
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: FONT_SIZES.md,
   },
   aiRow: {
     flexDirection: 'row',
