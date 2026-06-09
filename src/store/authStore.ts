@@ -115,6 +115,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   },
 
   signUp: async (email, password, name, phone) => {
+    useAppStore.getState().resetAll();
     set({ isLoading: true, error: null });
     try {
       const { data, error } = await supabase.auth.signUp({
@@ -144,6 +145,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   },
 
   signIn: async (identifier, password) => {
+    useAppStore.getState().resetAll();
     set({ isLoading: true, error: null });
     try {
       let emailToUse = identifier.trim();

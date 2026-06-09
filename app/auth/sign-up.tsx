@@ -228,6 +228,7 @@ export default function SignUpScreen() {
   async function handleFinish() {
     if (selectedGradeNum === null) return;
 
+    useAppStore.getState().resetAll();
     setIsLoading(true);
     setLocalError('');
 
