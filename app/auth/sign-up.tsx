@@ -25,13 +25,11 @@ import { COLORS, SPACING, RADIUS, FONT_SIZES, FONT_FAMILY } from '@/constants/th
 import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useTheme } from '@/hooks/useTheme';
-import { TutorAvatar } from '@/components/TutorAvatar';
 import { supabase } from '@/lib/supabase';
 import { syncProfile } from '@/services/dbService';
 import { playSound } from '@/services/soundService';
 
 const FEATURES = [
-  { emoji: '🧠', text: 'Claude AI Tutor' },
   { emoji: '📚', text: 'NERDC Curriculum' },
   { emoji: '🌍', text: '4 Nigerian Languages' },
   { emoji: '📶', text: 'Works Offline' },
@@ -578,7 +576,6 @@ export default function SignUpScreen() {
             <View style={styles.decorCircle1} />
             <View style={styles.decorCircle2} />
             <View style={styles.leftLogo}>
-              <TutorAvatar size={56} />
               <Text style={styles.leftAppName}>Learnova</Text>
             </View>
             <View style={styles.featuresList}>
@@ -609,7 +606,6 @@ export default function SignUpScreen() {
           >
             {!isWide && (
               <View style={styles.mobileLogo}>
-                <TutorAvatar size={48} />
                 <Text style={[styles.mobileAppName, { color: colors.primary }]}>
                   Learnova
                 </Text>

@@ -21,7 +21,6 @@ interface AuthLayoutProps {
 }
 
 const FEATURES = [
-  '🧠 Claude AI Tutor',
   '📚 NERDC Curriculum',
   '🌍 4 Nigerian Languages',
   '📶 Works Offline',

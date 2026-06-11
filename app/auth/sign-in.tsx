@@ -26,11 +26,9 @@ import { signInWithGoogle } from '@/services/oauthService';
 import { COLORS, SPACING, RADIUS, FONT_SIZES } from '@/constants/theme';
 import { getUIText } from '@/constants/languages';
 import { useTranslation } from '@/hooks/useTranslation';
-import { TutorAvatar } from '@/components/TutorAvatar';
 import { useTheme } from '@/hooks/useTheme';
 
 const FEATURES = [
-  { emoji: '🧠', text: 'Claude AI Tutor' },
   { emoji: '📚', text: 'NERDC Curriculum' },
   { emoji: '🌍', text: '4 Nigerian Languages' },
   { emoji: '📊', text: 'Works Offline' },
@@ -324,7 +322,6 @@ export default function SignInScreen() {
             />
 
             <View style={styles.leftLogo}>
-              <TutorAvatar size={56} />
               <Text style={styles.leftAppName}>Learnova</Text>
             </View>
 
@@ -373,7 +370,6 @@ export default function SignInScreen() {
           >
             {!isWide && (
               <View style={styles.mobileLogo}>
-                <TutorAvatar size={48} />
                 <Text style={styles.mobileAppName}>Learnova</Text>
               </View>
             )}

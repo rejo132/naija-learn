@@ -38,7 +38,7 @@ const SCREEN = {
 };
 
 const FEATURES = [
-  '🤖 AI-Powered',
+  '🤖 Smart Learning',
   '📚 Nigerian Curriculum',
   '🛡️ Safe & Secure',
   '📶 Works Offline',
@@ -228,7 +228,7 @@ function WelcomeScreenContent({
               <Text style={styles.brandName}>{ui.appName}</Text>
             </View>
             <View style={styles.headerBadge}>
-              <Text style={styles.headerBadgeText}>AI-Powered Learning</Text>
+              <Text style={styles.headerBadgeText}>Smart Learning</Text>
             </View>
           </View>
 
@@ -239,7 +239,7 @@ function WelcomeScreenContent({
               {ui.appName}
             </Text>
             <Text style={styles.tagline}>
-              AI-Powered Learning for Nigerian Students
+              Smart Learning for Nigerian Students
             </Text>
             <View style={styles.languagePillsRow}>
               <Text style={styles.languagePills}>

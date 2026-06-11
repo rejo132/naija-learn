@@ -25,6 +25,7 @@ import {
   Subject,
   getLocalizedSubject,
   findSubjectByLabel,
+  getTopicsForSubject,
 } from '@/constants/subjects';
 import {
   getCurrentLevel,
@@ -184,7 +185,14 @@ export default function DashboardScreen() {
   function handleSubject(subject: Subject) {
     playSound('tap');
     setSubject(subject);
-    router.push('/lesson');
+    router.push({
+      pathname: '/lesson',
+      params: {
+        grade: String(selectedGrade),
+        subject: subject.label,
+        topic: getTopicsForSubject(subject.label)[0],
+      },
+    });
   }
 
   function handleStartChallenge() {
@@ -281,17 +289,15 @@ export default function DashboardScreen() {
                 },
               ]}
               onPress={() => {
-                const allSubjects = [
-                  ...tabContent.subjects,
-                  ...tabContent.languages,
-                  ...tabContent.softskills,
-                ];
-                const match = allSubjects.find(
-                  (s) => s.label.toLowerCase() === lastSubject.toLowerCase()
-                );
-                if (match) {
-                  handleSubject(getLocalizedSubject(match, selectedLanguage));
-                }
+                const lastTopic: string | undefined = undefined;
+                router.push({
+                  pathname: '/lesson',
+                  params: {
+                    grade: String(selectedGrade),
+                    subject: lastSubject,
+                    topic: lastTopic || getTopicsForSubject(lastSubject)[0],
+                  },
+                });
               }}
             >
               <View style={[styles.resumeLeft, { backgroundColor: colors.primaryLight }]}>
@@ -364,7 +370,7 @@ export default function DashboardScreen() {
                   textAlign: 'center',
                 }}
               >
-                Pick a subject below and your AI tutor will guide you! 🚀
+                Tap a subject to start learning!
               </Text>
             </View>
           )}

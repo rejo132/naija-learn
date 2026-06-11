@@ -17,7 +17,6 @@ import { router } from 'expo-router';
 import { goBack } from '@/utils/navigation';
 import { supabase } from '@/lib/supabase';
 import { COLORS, FONT_SIZES, SPACING, RADIUS } from '@/constants/theme';
-import { TutorAvatar } from '@/components/TutorAvatar';
 import { useTranslation } from '@/hooks/useTranslation';
 
 export default function ForgotPasswordScreen() {
@@ -56,8 +55,6 @@ export default function ForgotPasswordScreen() {
         </TouchableOpacity>
 
         <View style={styles.card}>
-          <TutorAvatar size={56} />
-
           <Text style={styles.title}>{t('forgotPasswordTitle')}</Text>
           <Text style={styles.subtitle}>
             {t('forgotPasswordSubtitle')}
