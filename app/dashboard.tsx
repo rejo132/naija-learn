@@ -190,7 +190,7 @@ export default function DashboardScreen() {
       params: {
         grade: String(selectedGrade),
         subject: subject.label,
-        topic: getTopicsForSubject(subject.label)[0],
+        topic: getTopicsForSubject(subject.label, effectiveGrade)[0],
       },
     });
   }
@@ -295,7 +295,7 @@ export default function DashboardScreen() {
                   params: {
                     grade: String(selectedGrade),
                     subject: lastSubject,
-                    topic: lastTopic || getTopicsForSubject(lastSubject)[0],
+                    topic: lastTopic || getTopicsForSubject(lastSubject, lastGrade ?? effectiveGrade)[0],
                   },
                 });
               }}

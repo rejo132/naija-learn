@@ -183,9 +183,9 @@ export default function LessonScreen() {
   const topic = useMemo(() => {
     const fromParam = typeof params.topic === 'string' ? params.topic : '';
     if (fromParam.trim()) return fromParam.trim();
-    const topics = getTopicsForSubject(subject);
+    const topics = getTopicsForSubject(subject, grade);
     return topics[0] ?? 'Introduction & Basics';
-  }, [params.topic, subject]);
+  }, [params.topic, subject, grade]);
 
   const [lesson, setLesson] = useState<DBLesson | null>(null);
   const [loading, setLoading] = useState(true);
@@ -444,7 +444,7 @@ export default function LessonScreen() {
   }
 
   function handleNextTopic() {
-    const topics = getTopicsForSubject(subject);
+    const topics = getTopicsForSubject(subject, grade);
     const idx = topics.indexOf(topic);
     const nextTopic =
       idx >= 0 && idx < topics.length - 1 ? topics[idx + 1] : topics[0] ?? topic;
