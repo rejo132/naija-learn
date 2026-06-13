@@ -14,7 +14,8 @@
     "submit:ios": "eas submit --platform ios",
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit",
-    "generate-lessons": "node scripts/generate-lessons.js"
+    "generate-lessons": "node scripts/generate-lessons.js",
+    "insert-static": "node scripts/insert-static-lessons.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.100.1",
