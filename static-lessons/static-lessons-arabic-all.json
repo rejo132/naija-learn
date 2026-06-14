@@ -1,0 +1,201 @@
+[
+  {
+    "grade": 4,
+    "subject": "Arabic (Optional)",
+    "topic": "Arabic Alphabet",
+    "language": "en",
+    "content": "The Arabic alphabet has 28 letters. It is written from right to left. The letters change shape depending on their position in a word (isolated, beginning, middle, end). Key letters: Alif (ا), Baa (ب), Taa (ت), Thaa (ث), Jeem (ج), Haa (ح), Khaa (خ), Daal (د), Thaal (ذ), Raa (ر), Zay (ز), Seen (س), Sheen (ش), Saad (ص), Daad (ض), Taa (ط), Dhaa (ظ), Ayn (ع), Ghayn (غ), Faa (ف), Qaaf (ق), Kaaf (ك), Laam (ل), Meem (م), Noon (ن), Ha (ه), Waw (و), Yaa (ي). Arabic has sounds not found in English like ع (Ayn) and غ (Ghayn). Practice writing and pronouncing each letter. Arabic is the language of the Quran and is spoken by millions in Nigeria, especially in northern states.",
+    "summary": "Arabic alphabet has 28 letters written right to left. Letters change shape based on position. Includes unique sounds like ع and غ. Important in northern Nigeria.",
+    "learning_objectives": [
+      "Recognize Arabic letters",
+      "Write letters in different positions",
+      "Pronounce Arabic sounds"
+    ],
+    "nigerian_examples": [
+      "Arabic used in Quranic schools in Kano and Borno",
+      "Arabic calligraphy in northern Nigerian mosques",
+      "Arabic names common among Nigerian Muslims"
+    ],
+    "quiz_questions": [
+      {"question": "How many letters are in the Arabic alphabet?", "options": ["26", "28", "30", "32"], "correct_answer": "28", "explanation": "The Arabic alphabet has 28 letters."},
+      {"question": "Which direction is Arabic written?", "options": ["Left to right", "Right to left", "Top to bottom", "Bottom to top"], "correct_answer": "Right to left", "explanation": "Arabic is written from right to left."},
+      {"question": "What is the first letter of Arabic alphabet?", "options": ["Baa", "Alif", "Jeem", "Daal"], "correct_answer": "Alif", "explanation": "Alif (ا) is the first letter."},
+      {"question": "Which letter represents the 'b' sound?", "options": ["Alif", "Baa", "Taa", "Jeem"], "correct_answer": "Baa", "explanation": "Baa (ب) makes the 'b' sound."},
+      {"question": "True or False: Arabic has sounds not found in English.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Sounds like ع (Ayn) and غ (Ghayn) are not in English."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Arabic (Optional)",
+    "topic": "Greetings in Arabic",
+    "language": "en",
+    "content": "Arabic greetings are important in Islamic culture. As-salamu alaykum (السلام عليكم) means 'Peace be upon you' - the most common greeting. Response: Wa alaykum as-salam (وعليكم السلام) - 'And upon you be peace'. Good morning: Sabah al-khayr (صباح الخير). Response: Sabah an-nur (صباح النور). Good evening: Masa al-khayr (مساء الخير). Response: Masa an-nur (مساء النور). Hello: Marhaba (مرحبا). How are you? (to male): Kayfa haluka? (كيف حالك؟), (to female): Kayfa haluki? (كيف حالك؟). Response: Ana bikhayr, shukran (أنا بخير شكرا) - 'I am fine, thank you'. Goodbye: Ma'a as-salamah (مع السلامة). Thank you: Shukran (شكرا). You're welcome: Afwan (عفوا). Yes: Na'am (نعم). No: La (لا). In Nigerian Muslim communities, these greetings are used daily.",
+    "summary": "Common Arabic greetings: As-salamu alaykum (Peace be upon you), Sabah al-khayr (Good morning), Shukran (Thank you), Ma'a as-salamah (Goodbye).",
+    "learning_objectives": [
+      "Use basic Arabic greetings",
+      "Respond appropriately",
+      "Practice common phrases"
+    ],
+    "nigerian_examples": [
+      "As-salamu alaykum used in northern Nigerian mosques",
+      "Shukran said after receiving gifts",
+      "Ma'a as-salamah when leaving"
+    ],
+    "quiz_questions": [
+      {"question": "What does 'As-salamu alaykum' mean?", "options": ["Good morning", "Peace be upon you", "Thank you", "Goodbye"], "correct_answer": "Peace be upon you", "explanation": "As-salamu alaykum is the standard Islamic greeting."},
+      {"question": "How do you say 'Thank you' in Arabic?", "options": ["Shukran", "Afwan", "Na'am", "La"], "correct_answer": "Shukran", "explanation": "Shukran means thank you."},
+      {"question": "What is the response to 'As-salamu alaykum'?", "options": ["Sabah al-khayr", "Wa alaykum as-salam", "Masa al-khayr", "Shukran"], "correct_answer": "Wa alaykum as-salam", "explanation": "Wa alaykum as-salam means 'And upon you be peace'."},
+      {"question": "How do you say 'Yes' in Arabic?", "options": ["La", "Na'am", "Shukran", "Afwan"], "correct_answer": "Na'am", "explanation": "Na'am means yes."},
+      {"question": "True or False: 'Ma'a as-salamah' means hello.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Ma'a as-salamah means goodbye."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Arabic (Optional)",
+    "topic": "Numbers 1-10 in Arabic",
+    "language": "en",
+    "content": "Learning Arabic numbers helps with counting and Islamic prayers. Numbers 1-10: 1 = Wahid (واحد), 2 = Ithnan (اثنان), 3 = Thalatha (ثلاثة), 4 = Arba'a (أربعة), 5 = Khamsa (خمسة), 6 = Sitta (ستة), 7 = Sab'a (سبعة), 8 = Thamaniya (ثمانية), 9 = Tis'a (تسعة), 10 = Ashara (عشرة). These numbers are used in daily life, telling time, and understanding ages. In Nigerian Quranic schools, children learn to count in Arabic alongside English. Practice counting objects, reciting numbers after prayers, and using them in simple sentences.",
+    "summary": "Arabic numbers 1-10: wahid, ithnan, thalatha, arba'a, khamsa, sitta, sab'a, thamaniya, tis'a, ashara.",
+    "learning_objectives": [
+      "Count from 1 to 10 in Arabic",
+      "Recognize written Arabic numbers",
+      "Use numbers in simple contexts"
+    ],
+    "nigerian_examples": [
+      "Counting raka'at (units) of prayer in Arabic",
+      "Counting students in Arabic class",
+      "Using Arabic numbers in Islamic school"
+    ],
+    "quiz_questions": [
+      {"question": "What is 1 in Arabic?", "options": ["Wahid", "Ithnan", "Thalatha", "Arba'a"], "correct_answer": "Wahid", "explanation": "Wahid means one."},
+      {"question": "What is 5 in Arabic?", "options": ["Arba'a", "Khamsa", "Sitta", "Sab'a"], "correct_answer": "Khamsa", "explanation": "Khamsa means five."},
+      {"question": "What is 10 in Arabic?", "options": ["Tis'a", "Ashara", "Thamaniya", "Sab'a"], "correct_answer": "Ashara", "explanation": "Ashara means ten."},
+      {"question": "What is 7 in Arabic?", "options": ["Sitta", "Sab'a", "Thamaniya", "Tis'a"], "correct_answer": "Sab'a", "explanation": "Sab'a means seven."},
+      {"question": "True or False: 'Thalatha' means three.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Thalatha is the Arabic word for three."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Arabic (Optional)",
+    "topic": "Family in Arabic",
+    "language": "en",
+    "content": "Family members in Arabic: father = Ab (أب), mother = Umm (أم), brother = Akh (أخ), sister = Ukht (أخت), son = Ibn (ابن), daughter = Bint (بنت), grandfather = Jadd (جد), grandmother = Jaddah (جدة), uncle = Amm or Kha (عم or خال), aunt = Ammah or Khala (عمة or خالة), cousin = Ibn Amm etc., husband = Zawj (زوج), wife = Zawjah (زوجة). Using possessive: Abi (my father), Ummi (my mother), Akhi (my brother), Ukhti (my sister). In Arabic culture, family is very important and extended family often lives together. In northern Nigeria, family terms are used not just for relatives but also for close community members as a sign of respect.",
+    "summary": "Family in Arabic: Ab (father), Umm (mother), Akh (brother), Ukht (sister), Ibn (son), Bint (daughter), Jadd (grandfather), Jaddah (grandmother).",
+    "learning_objectives": [
+      "Name family members in Arabic",
+      "Use possessive forms",
+      "Describe your family"
+    ],
+    "nigerian_examples": [
+      "Calling elders 'Alhaji' or 'Alhaja' as respect",
+      "Extended family gatherings during Eid in Kano",
+      "Using Arabic family terms in Hausa language"
+    ],
+    "quiz_questions": [
+      {"question": "What is 'father' in Arabic?", "options": ["Umm", "Ab", "Akh", "Ukht"], "correct_answer": "Ab", "explanation": "Ab means father."},
+      {"question": "What is 'brother' in Arabic?", "options": ["Akh", "Ukht", "Ibn", "Bint"], "correct_answer": "Akh", "explanation": "Akh means brother."},
+      {"question": "What does 'Ummi' mean?", "options": ["My father", "My mother", "My brother", "My sister"], "correct_answer": "My mother", "explanation": "Ummi adds the possessive suffix 'i' meaning my."},
+      {"question": "What is 'sister' in Arabic?", "options": ["Akh", "Ukht", "Ibn", "Bint"], "correct_answer": "Ukht", "explanation": "Ukht means sister."},
+      {"question": "True or False: 'Ibn' means daughter.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Ibn means son; Bint means daughter."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Arabic (Optional)",
+    "topic": "Colors in Arabic",
+    "language": "en",
+    "content": "Colors in Arabic: red = Ahmar (أحمر), blue = Azraq (أزرق), green = Akhdar (أخضر), yellow = Asfar (أصفر), black = Aswad (أسود), white = Abyad (أبيض), brown = Bunni (بني), pink = Wardiy (وردي), purple = Banafsaji (بنفسجي), orange = Burtuqali (برتقالي). Color agreement: In Arabic, colors change form depending on the gender of the noun. For masculine: Ahmar, Azraq, Akhdar. For feminine: Hamra, Zarqa, Khadra. Example: Bayt ahmar (red house - masculine), Sayyarah hamra (red car - feminine). Colors are used to describe objects, clothing, and nature. In Islamic art, green is a significant color representing paradise.",
+    "summary": "Arabic colors: Ahmar (red), Azraq (blue), Akhdar (green), Aswad (black), Abyad (white). Colors change for feminine nouns: Hamra, Zarqa, Khadra.",
+    "learning_objectives": [
+      "Name colors in Arabic",
+      "Use color agreement",
+      "Describe objects"
+    ],
+    "nigerian_examples": [
+      "Green (Akhdar) on Nigerian flag",
+      "White (Abyad) worn for Hajj",
+      "Black (Aswad) stone in Mecca"
+    ],
+    "quiz_questions": [
+      {"question": "What is 'red' in Arabic?", "options": ["Azraq", "Ahmar", "Akhdar", "Aswad"], "correct_answer": "Ahmar", "explanation": "Ahmar means red."},
+      {"question": "What is 'black' in Arabic?", "options": ["Abyad", "Aswad", "Ahmar", "Azraq"], "correct_answer": "Aswad", "explanation": "Aswad means black."},
+      {"question": "What is the feminine form of 'Ahmar' (red)?", "options": ["Ahmar", "Hamra", "Akhdar", "Khadra"], "correct_answer": "Hamra", "explanation": "Hamra is the feminine form of red."},
+      {"question": "What color is associated with paradise in Islam?", "options": ["Red", "Blue", "Green", "Yellow"], "correct_answer": "Green", "explanation": "Green (Akhdar) symbolizes paradise."},
+      {"question": "True or False: 'Abyad' means white.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Abyad is the Arabic word for white."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Arabic (Optional)",
+    "topic": "Daily Prayers Vocabulary",
+    "language": "en",
+    "content": "Arabic vocabulary for Islamic prayers. The five daily prayers: Fajr (dawn), Dhuhr (noon), Asr (afternoon), Maghrib (sunset), Isha (night). Prayer parts: Takbir (Allahu Akbar - God is greatest), Ruku (bowing), Sujud (prostration), Tashahhud (sitting testimony), Salam (greeting of peace). Common phrases: Bismillah (In the name of God), Alhamdulillah (Praise be to God), Subhanallah (Glory be to God), Astaghfirullah (I seek forgiveness from God), Insha'Allah (God willing), Masha'Allah (God has willed it). In Nigeria, Muslim children learn these phrases from a young age in Quranic schools (Tsangaya or Almajiri system).",
+    "summary": "Prayer vocabulary: Fajr, Dhuhr, Asr, Maghrib, Isha. Phrases: Allahu Akbar, Bismillah, Alhamdulillah, Subhanallah, Insha'Allah.",
+    "learning_objectives": [
+      "Name five daily prayers",
+      "Use common Islamic phrases",
+      "Understand prayer components"
+    ],
+    "nigerian_examples": [
+      "Fajr prayer before sunrise in northern Nigeria",
+      "Saying Alhamdulillah after sneezing",
+      "Insha'Allah used for future plans"
+    ],
+    "quiz_questions": [
+      {"question": "What is the dawn prayer called?", "options": ["Dhuhr", "Asr", "Fajr", "Isha"], "correct_answer": "Fajr", "explanation": "Fajr is performed before sunrise."},
+      {"question": "What does 'Allahu Akbar' mean?", "options": ["Praise be to God", "God is greatest", "In the name of God", "Glory be to God"], "correct_answer": "God is greatest", "explanation": "Allahu Akbar means God is greatest."},
+      {"question": "What does 'Alhamdulillah' mean?", "options": ["God willing", "Praise be to God", "Glory be to God", "I seek forgiveness"], "correct_answer": "Praise be to God", "explanation": "Alhamdulillah is said to thank God."},
+      {"question": "What does 'Bismillah' mean?", "options": ["In the name of God", "God willing", "Peace be upon you", "Thans 'God willing'; Masha'Allah means 'God has willed it'."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Arabic (Optional)",
+    "topic": "Days of the Week",
+    "language": "en",
+    "content": "Days of the week in Arabic: Monday = Al-Ithnayn (الاثنين), Tuesday = Al-Thulatha (الثلاثاء), Wednesday = Al-Arba'a (الأربعاء), Thursday = Al-Khamis (الخميس), Friday = Al-Jumu'ah (الجمعة), Saturday = Al-Sabt (السبت), Sunday = Al-Ahad (الأحد). Friday (Al-Jumu'ah) is the holy day for Muslims, when special congregational prayers are held. In Nigeria, many businesses close early on Fridays for Jumu'ah prayers. The Arabic week starts with Sunday (Al-Ahad) or Monday (Al-Ithnayn) depending on context. Practice saying the days and using them in sentences about weekly activities.",
+    "summary": "Days: Al-Ahad (Sun), Al-Ithnayn (Mon), Al-Thulatha (Tue), Al-Arba'a (Wed), Al-Khamis (Thu), Al-Jumu'ah (Fri), Al-Sabt (Sat). Friday is holy day.",
+    "learning_objectives": [
+      "Say days of week in Arabic",
+      "Understand Friday significance",
+      "Use days in sentences"
+    ],
+    "nigerian_examples": [
+      "Al-Jumu'ah prayers at Lagos Central Mosque",
+      "Half-day work on Fridays in northern Nigeria",
+      "School schedule with Arabic days"
+    ],
+    "quiz_questions": [
+      {"question": "What is Friday in Arabic?", "options": ["Al-Sabt", "Al-Jumu'ah", "Al-Ahad", "Al-Khamis"], "correct_answer": "Al-Jumu'ah", "explanation": "Al-Jumu'ah is Friday, the holy day."},
+      {"question": "What is Monday in Arabic?", "options": ["Al-Thulatha", "Al-Arba'a", "Al-Ithnayn", "Al-Khamis"], "correct_answer": "Al-Ithnayn", "explanation": "Al-Ithnayn means Monday."},
+      {"question": "Which day has special congregational prayers?", "options": ["Monday", "Wednesday", "Friday", "Sunday"], "correct_answer": "Friday", "explanation": "Friday (Al-Jumu'ah) is the day for Jumu'ah prayers."},
+      {"question": "What is Sunday in Arabic?", "options": ["Al-Ahad", "Al-Sabt", "Al-Ithnayn", "Al-Thulatha"], "correct_answer": "Al-Ahad", "explanation": "Al-Ahad means Sunday."},
+      {"question": "True or False: 'Al-Sabt' means Saturday.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Al-Sabt is the Arabic word for Saturday."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Arabic (Optional)",
+    "topic": "Common Arabic Phrases",
+    "language": "en",
+    "content": "Common Arabic phrases used daily by Muslims worldwide. Greetings: As-salamu alaykum (Peace be upon you), Response: Wa alaykum as-salam. Thank you: Shukran. You're welcome: Afwan. Please: Min fadlik (to male), Min fadliki (to female). Excuse me / Sorry: Afwan or Aasif. Yes: Na'am. No: La. OK: Hasan. Good: Jayyid. Very good: Jayyid jiddan. Congratulations: Mubarak. Blessings: Barakallah. In Nigeria, these phrases are commonly used among Muslims regardless of their native language. Learning these phrases helps in communicating with Arabic-speaking visitors and understanding Islamic culture.",
+    "summary": "Common Arabic phrases: Shukran (thank you), Afwan (you're welcome), Min fadlik (please), Na'am (yes), La (no), Mubarak (congratulations).",
+    "learning_objectives": [
+      "Use common Arabic phrases",
+      "Respond appropriately",
+      "Understand cultural context"
+    ],
+    "nigerian_examples": [
+      "Saying Mubarak during Eid celebrations",
+      "Using Afwan when someone says thank you",
+      "Min fadlik when asking for something"
+    ],
+    "quiz_questions": [
+      {"question": "What does 'Shukran' mean?", "options": ["Please", "Thank you", "Yes", "No"], "correct_answer": "Thank you", "explanation": "Shukran is Arabic for thank you."},
+      {"question": "What does 'Afwan' mean?", "options": ["Thank you", "Please", "You're welcome / Excuse me", "Goodbye"], "correct_answer": "You're welcome / Excuse me", "explanation": "Afwan can mean you're welcome or excuse me."},
+      {"question": "What does 'Na'am' mean?", "options": ["No", "Yes", "Good", "Maybe"], "correct_answer": "Yes", "explanation": "Na'am means yes."},
+      {"question": "What does 'Mubarak' mean?", "options": ["Good luck", "Congratulations", "Blessings", "Thank you"], "correct_answer": "Congratulations", "explanation": "Mubarak is said for celebrations like Eid or weddings."},
+      {"question": "True or False: 'La' means yes in Arabic.", "options": ["True", "False"], "correct_answer": "False", "explanation": "La means no; Na'am means yes."}
+    ]
+  }
+]

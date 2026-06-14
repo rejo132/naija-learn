@@ -1,0 +1,127 @@
+[
+  {
+    "grade": 4,
+    "subject": "French (Optional)",
+    "topic": "Greetings and Introductions",
+    "language": "en",
+    "content": "French greetings are essential for polite conversation. Bonjour (Good morning / Hello - used until evening), Bonsoir (Good evening - used after dark), Salut (Hi - informal, for friends), Bonne nuit (Good night - when going to sleep). Asking how someone is: Comment ça va? (How are you?), Ça va bien, merci (I'm fine, thank you), Et toi? (And you? informal), Et vous? (And you? formal). Introductions: Je m'appelle (My name is...), Comment tu t'appelles? (What is your name? informal), Comment vous appelez-vous? (What is your name? formal), Enchanté(e) (Nice to meet you). Saying goodbye: Au revoir (Goodbye), À bientôt (See you soon), À demain (See you tomorrow), Bonne journée (Have a good day), Bonne soirée (Have a good evening). In Francophone African countries (Benin, Senegal, Ivory Coast, Niger - all neighbours of Nigeria), these greetings are used daily. Learning French opens opportunities in business and travel.",
+    "summary": "French greetings: Bonjour (hello), Bonsoir (good evening), Salut (hi). Asking: Comment ça va? (How are you?). Introducing: Je m'appelle (My name is). Goodbye: Au revoir, À bientôt.",
+    "learning_objectives": [
+      "Greet people in French",
+      "Introduce yourself",
+      "Say goodbye appropriately"
+    ],
+    "nigerian_examples": [
+      "French is spoken in neighbouring Benin Republic",
+      "Many Nigerian schools offer French as a subject",
+      "ECOWAS encourages French language learning"
+    ],
+    "quiz_questions": [
+      {"question": "How do you say 'Good morning' in French?", "options": ["Bonsoir", "Bonjour", "Bonne nuit", "Salut"], "correct_answer": "Bonjour", "explanation": "Bonjour is used from morning until evening."},
+      {"question": "How do you say 'My name is' in French?", "options": ["Je m'appelle", "Comment ça va", "Au revoir", "Merci"], "correct_answer": "Je m'appelle", "explanation": "Je m'appelle followed by your name introduces yourself."},
+      {"question": "How do you ask 'How are you?' in French?", "options": ["Comment ça va?", "Qu'est-ce que c'est?", "Où est-ce?", "Pourquoi?"], "correct_answer": "Comment ça va?", "explanation": "Comment ça va? is the standard way to ask how someone is doing."},
+      {"question": "How do you say 'Goodbye' in French?", "options": ["Bonjour", "Au revoir", "Merci", "S'il vous plaît"], "correct_answer": "Au revoir", "explanation": "Au revoir is the standard goodbye."},
+      {"question": "True or False: French is an official language of ECOWAS.", "options": ["True", "False"], "correct_answer": "True", "explanation": "ECOWAS has English, French, and Portuguese as official languages."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "French (Optional)",
+    "topic": "Numbers 1-20",
+    "language": "en",
+    "content": "Learning numbers in French helps with telling time, counting money, and shopping. Numbers 1-10: un (1), deux (2), trois (3), quatre (4), cinq (5), six (6), sept (7), huit (8), neuf (9), dix (10). Numbers 11-20: onze (11), douze (12), treize (13), quatorze (14), quinze (15), seize (16), dix-sept (17), dix-huit (18), dix-neuf (19), vingt (20). Notice patterns: numbers 17-19 combine 'dix' (10) with 7-9. To say your age: J'ai ... ans (I am ... years old). Example: J'ai dix ans (I am 10 years old). To ask age: Quel âge as-tu? (How old are you?) In Nigerian markets near Benin border, knowing French numbers helps with bargaining. Practice counting objects in French.",
+    "summary": "French numbers 1-20: un, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, onze, douze, treize, quatorze, quinze, seize, dix-sept, dix-huit, dix-neuf, vingt.",
+    "learning_objectives": [
+      "Count from 1 to 20 in French",
+      "Say your age in French",
+      "Use numbers in simple transactions"
+    ],
+    "nigerian_examples": [
+      "Counting cedi (Benin currency) in French at border markets",
+      "French number songs in school",
+      "Asking age in French class"
+    ],
+    "quiz_questions": [
+      {"question": "What is 5 in French?", "options": ["quatre", "cinq", "six", "sept"], "correct_answer": "cinq", "explanation": "Cinq is the French word for five."},
+      {"question": "What is 10 in French?", "options": ["neuf", "onze", "dix", "huit"], "correct_answer": "dix", "explanation": "Dix is the French word for ten."},
+      {"question": "What is 15 in French?", "options": ["quinze", "seize", "dix-sept", "quatorze"], "correct_answer": "quinze", "explanation": "Quinze is the French word for fifteen."},
+      {"question": "How do you say 'I am 10 years old' in French?", "options": ["Je suis dix", "J'ai dix ans", "J'ai dix années", "Je dix ans"], "correct_answer": "J'ai dix ans", "explanation": "J'ai (I have) + number + ans (years) expresses age."},
+      {"question": "True or False: 'Vingt' means 20 in French.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Vingt is the French word for twenty."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "French (Optional)",
+    "topic": "Colors and Shapes",
+    "language": "en",
+    "content": "Colors (les couleurs) in French: rouge (red), bleu (blue), jaune (yellow), vert (green), orange (orange), violet (purple), rose (pink), marron (brown), noir (black), blanc (white), gris (grey). Note: colors agree with the noun they describe (feminine/masculine). Example: un stylo rouge (a red pen - masculine), une fleur rouge (a red flower - feminine). Shapes (les formes): cercle (circle), carré (square), triangle (triangle), rectangle (rectangle), ovale (oval), étoile (star), cœur (heart). Describing objects: C'est un cercle rouge (It's a red circle), C'est un carré bleu (It's a blue square). In French-speaking West Africa, knowing colors helps describe clothing in markets (une robe rouge - red dress, un t-shirt bleu - blue t-shirt). Colors are also used in art class and describing flags (le drapeau du Nigeria est vert, blanc, vert - Nigeria's flag is green, white, green).",
+    "summary": "French colors: rouge (red), bleu (blue), jaune (yellow), vert (green), noir (black), blanc (white). Shapes: cercle (circle), carré (square), triangle (triangle), rectangle (rectangle).",
+    "learning_objectives": [
+      "Name colors in French",
+      "Name shapes in French",
+      "Describe objects using colors and shapes"
+    ],
+    "nigerian_examples": [
+      "Describing traditional clothing colors",
+      "Nigerian flag colors in French (vert, blanc, vert)",
+      "School art class using French color names"
+    ],
+    "quiz_questions": [
+      {"question": "What is 'red' in French?", "options": ["bleu", "rouge", "jaune", "vert"], "correct_answer": "rouge", "explanation": "Rouge is the French word for red."},
+      {"question": "What is 'circle' in French?", "options": ["carré", "triangle", "cercle", "rectangle"], "correct_answer": "cercle", "explanation": "Cercle is the French word for circle."},
+      {"question": "What is 'green' in French?", "options": ["rouge", "bleu", "vert", "jaune"], "correct_answer": "vert", "explanation": "Vert is the French word for green."},
+      {"question": "What is 'square' in French?", "options": ["cercle", "triangle", "rectangle", "carré"], "correct_answer": "carré", "explanation": "Carré is the French word for square."},
+      {"question": "True or False: 'Blanc' means white in French.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Blanc is the French word for white."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "French (Optional)",
+    "topic": "Family Members",
+    "language": "en",
+    "content": "Family vocabulary in French helps you talk about your loved ones. La famille (family). Members: mère (mother), père (father), frère (brother), sœur (sister), grand-mère (grandmother), grand-père (grandfather), tante (aunt), oncle (uncle), cousin (cousin - male), cousine (cousin - female), bébé (baby). Using possessive: ma mère (my mother - feminine), mon père (my father - masculine), mes parents (my parents - plural). Talking about family: J'ai une sœur (I have one sister), J'ai deux frères (I have two brothers), C'est ma grand-mère (This is my grandmother). In Francophone Africa, family is very important, and extended family often lives together. Practice: draw your family tree and label members in French.",
+    "summary": "Family in French: mère (mother), père (father), frère (brother), sœur (sister), grand-mère (grandmother), grand-père (grandfather), tante (aunt), oncle (uncle), cousin/cousine.",
+    "learning_objectives": [
+      "Name family members in French",
+      "Use possessive adjectives (mon, ma, mes)",
+      "Describe your family"
+    ],
+    "nigerian_examples": [
+      "Describing your Nigerian family in French class",
+      "Extended family vocabulary relevant in African context",
+      "Family tree projects in French"
+    ],
+    "quiz_questions": [
+      {"question": "What is 'mother' in French?", "options": ["père", "mère", "sœur", "frère"], "correct_answer": "mère", "explanation": "Mère is the French word for mother."},
+      {"question": "What is 'brother' in French?", "options": ["sœur", "frère", "père", "mère"], "correct_answer": "frère", "explanation": "Frère is the French word for brother."},
+      {"question": "What does 'mon' mean?", "options": ["My (feminine)", "My (masculine)", "Your", "His"], "correct_answer": "My (masculine)", "explanation": "Mon is used before masculine nouns."},
+      {"question": "What does 'ma' mean?", "options": ["My (masculine)", "My (feminine)", "Your", "Her"], "correct_answer": "My (feminine)", "explanation": "Ma is used before feminine nouns."},
+      {"question": "True or False: 'Grand-mère' means grandfather.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Grand-mère means grandmother; grandfather is grand-père."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "French (Optional)",
+    "topic": "Days and Months",
+    "language": "en",
+    "content": "Days of the week in French: lundi (Monday), mardi (Tuesday), mercredi (Wednesday), jeudi (Thursday), vendredi (Friday), samedi (Saturday), dimanche (Sunday). Months of the year: janvier (January), février (February), mars (March), avril (April), mai (May), juin (June), juillet (July), août (August), septembre (September), octobre (October), novembre (November), décembre (December). Useful phrases: Quel jour sommes-nous? (What day is it?), Nous sommes lundi (It's Monday). Quelle est la date aujourd'hui? (What is today's date?), Aujourd'hui c'est le premier janvier (Today is January 1st). On ne travaille pas le dimanche (We don't work on Sunday - many countries observe Sunday rest). In Francophone Africa, the work week is Monday-Friday, with Saturday half-day in some places. Days are not capitalized in French unless starting a sentence.",
+    "summary": "French days: lundi (Monday), mardi (Tuesday), mercredi (Wednesday), jeudi (Thursday), vendredi (Friday), samedi (Saturday), dimanche (Sunday). Months: janvier to décembre.",
+    "learning_objectives": [
+      "Say days of the week in French",
+      "Say months of the year in French",
+      "Ask and tell the date"
+    ],
+    "nigerian_examples": [
+      "French calendars in classrooms",
+      "Planning events in French class",
+      "Comparing Nigerian and Francophone work weeks"
+    ],
+    "quiz_questions": [
+      {"question": "What is 'Monday' in French?", "options": ["mardi", "mercredi", "lundi", "jeudi"], "correct_answer": "lundi", "explanation": "Lundi is French for Monday."},
+      {"question": "What is 'Sunday' in French?", "options": ["samedi", "dimanche", "lundi", "vendredi"], "correct_answer": "dimanche", "explanation": "Dimanche is French for Sunday."},
+      {"question": "What is 'January' in French?", "options": ["février", "mars", "janvier", "avril"], "correct_answer": "janvier", "explanation": "Janvier is French for January."},
+      {"question": "What is 'December' in French?", "options": ["novembre", "octobre", "décembre", "septembre"], "correct_answer": "décembre", "explanation": "Décembre is French for December."},
+      {"question": "True or False: Days of the week are capitalized in French.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Days are not capitalized in French unless starting a sentence."}
+    ]
+  }
+]

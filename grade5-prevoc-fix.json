@@ -1,0 +1,54 @@
+[
+  {
+    "grade": 5,
+    "subject": "Pre-vocational Studies",
+    "topic": "Crop Farming",
+    "language": "en",
+    "content": "Crop farming is growing plants for food, materials, or sale. Types of crops: Cereals (maize, rice, millet, sorghum - staple foods), Root crops (cassava, yam, sweet potato - processed into garri, fufu, flour), Vegetables (tomatoes, onions, peppers, spinach - add nutrients to meals), Legumes (beans, groundnuts - protein source), Fruits (oranges, bananas, mangoes - vitamins), Cash crops (cocoa, rubber, oil palm, cotton - sold for export). Farming steps: land clearing, tilling, planting, weeding, fertilizing, watering, pest control, harvesting, storage, marketing. Farming zones: northern region (maize, millet, groundnuts), middle belt (yam, cassava), southern region (cocoa, oil palm).",
+    "summary": "Crop farming grows plants for food or sale. Types: cereals, root crops, vegetables, legumes, fruits, cash crops. Steps: clearing, tilling, planting, weeding, fertilizing, watering, pest control, harvesting, storage, marketing.",
+    "learning_objectives": [
+      "Identify crop types",
+      "Explain farming steps",
+      "Understand farming zones"
+    ],
+    "nigerian_examples": [
+      "Maize farming in Kaduna State",
+      "Cocoa farming in Ondo State",
+      "Cassava processing into garri in Imo State",
+      "Rice farming in Ebonyi State"
+    ],
+    "quiz_questions": [
+      {"question": "Which is a cash crop in Nigeria?", "options": ["Cassava", "Cocoa", "Yam", "Maize"], "correct_answer": "Cocoa", "explanation": "Cocoa is grown for export and processing."},
+      {"question": "What is the purpose of weeding?", "options": ["Add nutrients", "Remove competing plants", "Water crops", "Harvest crops"], "correct_answer": "Remove competing plants", "explanation": "Weeds compete with crops for water, nutrients, and sunlight."},
+      {"question": "Which region of Nigeria is known for cocoa farming?", "options": ["Northern", "Middle belt", "Southern", "Eastern"], "correct_answer": "Southern", "explanation": "Cocoa grows best in the humid southern rainforest zone."},
+      {"question": "What is crop rotation?", "options": ["Planting same crop every year", "Planting different crops each season", "Spinning crops around", "Rotating irrigation"], "correct_answer": "Planting different crops each season", "explanation": "Different crops use different nutrients, rotation prevents depletion."},
+      {"question": "True or False: Fertilizer adds nutrients to soil.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Fertilizer replaces nutrients crops remove from soil."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Pre-vocational Studies",
+    "topic": "Animal Rearing",
+    "language": "en",
+    "content": "Animal rearing is raising animals for food, materials, or work. Types: Poultry (chickens, turkeys - for eggs and meat), Goats and Sheep (for meat, milk, skin), Cattle (cows - for beef, milk, hides), Pigs (for pork - not eaten by Muslims), Fish (catfish, tilapia - aquaculture), Rabbits (for meat, fur). Animal housing: pens, coops, cages must be clean, dry, well-ventilated. Feeding: provide clean water, balanced feed. Health care: vaccinations, deworming, clean housing. Nigerian livestock: Fulani herders raise cattle, poultry farming near cities, catfish farming popular.",
+    "summary": "Animal rearing raises animals for food, materials, work. Types: poultry, goats, sheep, cattle, pigs, fish, rabbits. Housing, feeding, health care essential.",
+    "learning_objectives": [
+      "Identify livestock types",
+      "Understand animal care",
+      "Know animal products"
+    ],
+    "nigerian_examples": [
+      "Fulani cattle herding in northern Nigeria",
+      "Catfish farming in Lagos",
+      "Poultry farming for eggs",
+      "Snail farming in southwest"
+    ],
+    "quiz_questions": [
+      {"question": "Which animal is NOT eaten by Muslims?", "options": ["Chicken", "Cow", "Pig", "Goat"], "correct_answer": "Pig", "explanation": "Pork is forbidden (haram) in Islam."},
+      {"question": "What is the Fulani ethnic group known for?", "options": ["Fishing", "Cattle herding", "Cocoa farming", "Mining"], "correct_answer": "Cattle herding", "explanation": "Fulani are traditionally pastoralists raising cattle."},
+      {"question": "What is aquaculture?", "options": ["Farming crops", "Farming fish", "Farming trees", "Farming snails"], "correct_answer": "Farming fish", "explanation": "Aquaculture raises fish in ponds or cages."},
+      {"question": "Why is vaccination important for poultry?", "options": ["To grow faster", "To prevent diseases", "To lay more eggs", "To improve meat taste"], "correct_answer": "To prevent diseases", "explanation": "Vaccines protect birds from deadly diseases."},
+      {"question": "True or False: Manure from animals can be used as fertilizer.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Animal manure is rich in nutrients that fertilize soil."}
+    ]
+  }
+]

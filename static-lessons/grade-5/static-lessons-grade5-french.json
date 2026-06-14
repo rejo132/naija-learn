@@ -1,0 +1,126 @@
+[
+  {
+    "grade": 5,
+    "subject": "French (Optional)",
+    "topic": "Common Verbs and Conjugation",
+    "language": "en",
+    "content": "Verbs are action words. The three most common French verbs are être (to be), avoir (to have), and aller (to go). Conjugating être (to be): je suis (I am), tu es (you are - informal), il/elle/on est (he/she/one is), nous sommes (we are), vous êtes (you are - formal or plural), ils/elles sont (they are). Conjugating avoir (to have): j'ai (I have), tu as (you have), il/elle/on a (he/she/one has), nous avons (we have), vous avez (you have), ils/elles ont (they have). Conjugating aller (to go): je vais (I go), tu vas (you go), il/elle/on va (he/she/one goes), nous allons (we go), vous allez (you go), ils/elles vont (they go). These verbs are used in many common expressions: avoir faim (to be hungry - literally 'to have hunger'), avoir soif (to be thirsty), avoir peur (to be afraid), aller à l'école (to go to school), être fatigué(e) (to be tired). Practice conjugating regularly and using these verbs in sentences about your daily life.",
+    "summary": "Common French verbs: être (to be), avoir (to have), aller (to go). Conjugation patterns for je, tu, il/elle, nous, vous, ils/elles forms. Used in daily expressions.",
+    "learning_objectives": [
+      "Conjugate être, avoir, aller",
+      "Use verbs in simple sentences",
+      "Learn common expressions"
+    ],
+    "nigerian_examples": [
+      "Je vais à l'école à Lagos (I go to school in Lagos)",
+      "J'ai faim après l'école (I am hungry after school)",
+      "Nous sommes fatigués (We are tired)"
+    ],
+    "quiz_questions": [
+      {"question": "What is 'I am' in French?", "options": ["Je suis", "J'ai", "Je vais", "Je fais"], "correct_answer": "Je suis", "explanation": "Je suis is the first person singular of être (to be)."},
+      {"question": "What is 'I have' in French?", "options": ["Je suis", "J'ai", "Je vais", "Je fais"], "correct_answer": "J'ai", "explanation": "J'ai is the first person singular of avoir (to have)."},
+      {"question": "What is 'I go' in French?", "options": ["Je suis", "J'ai", "Je vais", "Je fais"], "correct_answer": "Je vais", "explanation": "Je vais is the first person singular of aller (to go)."},
+      {"question": "How do you say 'I am hungry' in French?", "options": ["J'ai faim", "Je suis faim", "J'ai soif", "Je suis fatigué"], "correct_answer": "J'ai faim", "explanation": "J'ai faim literally means 'I have hunger'."},
+      {"question": "True or False: 'Nous sommes' means 'we are'.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Nous sommes is the first person plural of être."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "French (Optional)",
+    "topic": "Food and Drinks",
+    "language": "en",
+    "content": "Food and drink vocabulary helps you order meals, shop at markets, and talk about preferences. Common foods: le pain (bread), le riz (rice), la viande (meat), le poisson (fish), le poulet (chicken), les légumes (vegetables), les fruits (fruits), la pomme (apple), la banane (banana), l'orange (orange), la tomate (tomato), l'oignon (onion). Drinks: l'eau (water), le lait (milk), le jus (juice), le café (coffee), le thé (tea), le chocolat chaud (hot chocolate). Meals: le petit déjeuner (breakfast), le déjeuner (lunch), le dîner (dinner). Useful phrases: J'aime... (I like...), Je n'aime pas... (I don't like...), S'il vous plaît (please), Merci (thank you), L'addition, s'il vous plaît (The bill, please). In Francophone Africa, street food is common - you might hear: Je voudrais du poisson braisé (I would like grilled fish). Nigerian-French relations make food vocabulary useful for travel.",
+    "summary": "French food vocabulary: le pain (bread), le riz (rice), le poisson (fish), le poulet (chicken), les légumes (vegetables), les fruits (fruits). Drinks: l'eau, le lait, le jus. Express likes and dislikes.",
+    "learning_objectives": [
+      "Name common foods in French",
+      "Name common drinks in French",
+      "Express food preferences"
+    ],
+    "nigerian_examples": [
+      "Je voudrais du riz au poisson (I would like rice with fish)",
+      "J'aime le jollof rice (I like jollof rice)",
+      "L'eau est importante (Water is important)"
+    ],
+    "quiz_questions": [
+      {"question": "What is 'bread' in French?", "options": ["le riz", "le pain", "le poisson", "le poulet"], "correct_answer": "le pain", "explanation": "Le pain is the French word for bread."},
+      {"question": "What is 'water' in French?", "options": ["le lait", "le jus", "l'eau", "le thé"], "correct_answer": "l'eau", "explanation": "L'eau is the French word for water."},
+      {"question": "How do you say 'I like chicken' in French?", "options": ["Je n'aime pas le poulet", "J'aime le poulet", "Je voudrais le poulet", "Je suis le poulet"], "correct_answer": "J'aime le poulet", "explanation": "J'aime means 'I like'."},
+      {"question": "What is 'apple' in French?", "options": ["la banane", "l'orange", "la pomme", "la tomate"], "correct_answer": "la pomme", "explanation": "La pomme is the French word for apple."},
+      {"question": "True or False: 'Le petit déjeuner' means lunch.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Le petit déjeuner means breakfast; lunch is le déjeuner."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "French (Optional)",
+    "topic": "School and Classroom",
+    "language": "en",
+    "content": "School vocabulary helps you talk about your classroom and subjects. L'école (school), la classe (classroom), le professeur (teacher - male), la professeure (teacher - female), l'élève (student), le tableau (board), la craie (chalk), le stylo (pen), le crayon (pencil), la gomme (eraser), la règle (ruler), le cahier (notebook), le livre (book), le sac à dos (backpack). Subjects: les mathématiques (math), les sciences (science), l'histoire (history), la géographie (geography), l'anglais (English), le français (French), l'éducation physique (physical education). Useful phrases: Je vais à l'école (I go to school), J'aime les maths (I like math), Le professeur explique la leçon (The teacher explains the lesson), Puis-je aller aux toilettes? (May I go to the bathroom?). In Francophone African schools, students often start French in primary grades. Many Nigerian schools now offer French as a compulsory subject.",
+    "summary": "School vocabulary: l'école (school), le professeur (teacher), l'élève (student), le tableau (board), le stylo (pen), le livre (book). Subjects: mathématiques, sciences, histoire, géographie.",
+    "learning_objectives": [
+      "Name school supplies in French",
+      "Name school subjects in French",
+      "Talk about school activities"
+    ],
+    "nigerian_examples": [
+      "J'étudie le français à l'école (I study French at school)",
+      "Le professeur de maths est gentil (The math teacher is kind)",
+      "Mon sac à dos est bleu (My backpack is blue)"
+    ],
+    "quiz_questions": [
+      {"question": "What is 'school' in French?", "options": ["la classe", "l'école", "le professeur", "l'élève"], "correct_answer": "l'école", "explanation": "L'école is the French word for school."},
+      {"question": "What is 'pen' in French?", "options": ["le crayon", "le stylo", "la gomme", "la règle"], "correct_answer": "le stylo", "explanation": "Le stylo is the French word for pen."},
+      {"question": "What is 'teacher' in French?", "options": ["l'élève", "le professeur", "le directeur", "le parent"], "correct_answer": "le professeur", "explanation": "Le professeur means teacher."},
+      {"question": "What is 'mathematics' in French?", "options": ["les sciences", "l'histoire", "les mathématiques", "la géographie"], "correct_answer": "les mathématiques", "explanation": "Les mathématiques is French for mathematics."},
+      {"question": "True or False: 'Le livre' means notebook in French.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Le livre means book; notebook is le cahier."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "French (Optional)",
+    "topic": "Telling Time",
+    "language": "en",
+    "content": "Telling time in French is an essential skill for daily life. Asking for time: Quelle heure est-il? (What time is it?). On the hour: Il est une heure (It is 1:00), Il est deux heures (2:00), Il est trois heures (3:00), up to Il est midi (12:00 noon), Il est minuit (12:00 midnight). Half past: Il est deux heures et demie (2:30). Quarter past: Il est trois heures et quart (3:15). Quarter to: Il est quatre heures moins le quart (3:45 - literally 'four hours minus quarter'). Minutes past: Il est cinq heures dix (5:10). Minutes to: Il est six heures moins vingt (5:40). Useful phrases: À quelle heure? (At what time?), Du matin (in the morning), De l'après-midi (in the afternoon), Du soir (in the evening). Example: Je me lève à six heures du matin (I wake up at 6:00 AM). In Francophone Africa, the 24-hour clock is often used (13h = 1 PM, 20h = 8 PM). Practice with your daily schedule.",
+    "summary": "Telling time: Quelle heure est-il? (What time is it?). On the hour: Il est deux heures (2:00). Half past: et demie. Quarter past: et quart. Quarter to: moins le quart. Minutes past/to.",
+    "learning_objectives": [
+      "Ask and tell time in French",
+      "Use hour and minute expressions",
+      "Understand 12-hour and 24-hour clocks"
+    ],
+    "nigerian_examples": [
+      "L'école commence à huit heures (School starts at 8:00)",
+      "Je mange à une heure de l'après-midi (I eat at 1:00 PM)",
+      "Le match de   ],
+    "quiz_questions": [
+      {"question": "How do you ask 'What time is it?' in French?", "options": ["Quel temps fait-il?", "Quelle heure est-il?", "Comment ça va?", "Où est-ce?"], "correct_answer": "Quelle heure est-il?", "explanation": "Quelle heure est-il? is the standard way to ask for the time."},
+      {"question": "How do you say '2:30' in French?", "options": ["Il est deux heures et quart", "Il est deux heures et demie", "Il est trois heures moins demie", "Il est deux heures"], "correct_answer": "Il est deux heures et demie", "explanation": "Et demie means half past."},
+      {"question": "How do you say '3:15' in French?", "options": ["Il est trois heures et demie", "Il est trois heures et quart", "Il est quatre heures moins quart", "Il est trois heures"], "correct_answer": "Il est trois heures et quart", "explanation": "Et quart means quarter past."},
+      {"question": "How do you say 'midi' in English?", "options": ["Midnight", "Noon", "Morning", "Evening"], "correct_answer": "Noon", "explanation": "Midi means 12:00 noon."},
+      {"question": "True or False: 'Minuit' means noon.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Minuit means midnight; noon is midi."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "French (Optional)",
+    "topic": "Clothing and Colors",
+    "language": "en",
+    "content": "Clothing vocabulary helps you shop and describe what you wear. Clothes: les vêtements (clothing), un t-shirt (t-shirt), une chemise (shirt), un pantalon (pants/trousers), un jean (jeans), une jupe (skirt), une robe (dress), un manteau (coat), une veste (jacket), des chaussures (shoes), des sandales (sandals), des baskets (trainers/sneakers). Accessories: un chapeau (hat), une ceinture (belt), un sac (bag), des lunettes (glasses), une montre (watch). Colors (les couleurs) review: rouge (red), bleu (blue), vert (green), jaune (yellow), noir (black), blanc (white), gris (grey), marron (brown), rose (pink), violet (purple), orange (orange). Describing what you wear: Je porte un t-shirt bleu (I am wearing a blue t-shirt), Elle porte une robe rouge (She is wearing a red dress), Nous portons des chaussures noires (We are wearing black shoes). Colors agree with nouns: masculine singular (un pantalon noir), feminine singular (une jupe noire), masculine plural (des pantalons noirs), feminine plural (des jupes noires). In Francophone Africa, colorful traditional clothing is common - you might describe une boubou verte (a green boubou) or un pagne coloré (a colorful wrap skirt).",
+    "summary": "Clothing vocabulary: un t-shirt, une chemise, un pantalon, une jupe, une robe, des chaussures. Describe what you wear: Je porte... Colors agree with nouns in gender and number.",
+    "learning_objectives": [
+      "Name clothing items in French",
+      "Describe what you are wearing",
+      "Use color agreement correctly"
+    ],
+    "nigerian_examples": [
+      "Je porte une robe traditionnelle (I am wearing a traditional dress)",
+      "Les chaussures sont marron (The shoes are brown)",
+      "Un chapeau pour le soleil (A hat for the sun)"
+    ],
+    "quiz_questions": [
+      {"question": "What is 'shirt' in French?", "options": ["un t-shirt", "un pantalon", "une jupe", "une robe"], "correct_answer": "un t-shirt", "explanation": "Un t-shirt is the word for t-shirt; une chemise is formal shirt."},
+      {"question": "How do you say 'I am wearing a red dress' in French?", "options": ["Je porte une robe rouge", "Je porte un robe rouge", "Je porte une robe rouge", "Je suis une robe rouge"], "correct_answer": "Je porte une robe rouge", "explanation": "Je porte means 'I am wearing'; robe is feminine so une robe."},
+      {"question": "What is 'shoes' in French?", "options": ["des chaussettes", "des chaussures", "des sandales", "des baskets"], "correct_answer": "des chaussures", "explanation": "Des chaussures is the general word for shoes."},
+      {"question": "How do you make 'noir' feminine?", "options": ["noire", "noirs", "noires", "noir"], "correct_answer": "noire", "explanation": "Noir becomes noire for feminine singular nouns."},
+      {"question": "True or False: 'Une jupe noire' is correct for 'a black skirt'.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Jupe is feminine, so noire agrees."}
+    ]
+  }
+]

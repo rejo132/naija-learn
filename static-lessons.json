@@ -1,75 +1,585 @@
 [
   {
-    "grade": 6,
-    "subject": "Physical & Health Education",
-    "topic": "Health Policy and Advocacy",
+    "grade": 4,
+    "subject": "Arabic (Optional)",
+    "topic": "Arabic Alphabet",
     "language": "en",
-    "content": "Health policy comprises decisions and actions to achieve health goals. Advocacy means speaking up for health policies that improve community well-being. Nigerian health policies: National Health Act (2014) - provides legal framework, establishes Basic Health Care Provision Fund (BHCPF) for primary care financing, mandates health insurance for all. National Health Insurance Authority (NHIA) Act (2022) - replaces NHIS, mandates health insurance for all Nigerians and legal residents. National Strategic Health Development Plan (NSHDP) - guides health sector priorities. Immunization policy - free routine vaccines for children (BCG, polio, measles, yellow fever, etc.). School health policy - health education, school feeding, deworming, sanitation. Advocacy strategies: educate community, write to officials, use media/social media, join health campaigns, participate in public meetings, vote for health-promoting candidates. Student health advocacy: promote handwashing, vaccination awareness, anti-malaria campaigns (bed nets), nutrition education. Citizen advocacy influences government to prioritize health.",
-    "summary": "Health policy = decisions for health goals. Nigerian policies: National Health Act (2014), NHIA Act (2022), immunization policy, school health policy. Advocacy: educate, write officials, join campaigns, vote.",
+    "content": "The Arabic alphabet has 28 letters. It is written from right to left. Letters change shape depending on position. Key letters: Alif, Baa, Taa, Thaa, Jeem, Haa, Khaa, Daal, Thaal, Raa, Zay, Seen, Sheen, Saad, Daad, Taa, Dhaa, Ayn, Ghayn, Faa, Qaaf, Kaaf, Laam, Meem, Noon, Ha, Waw, Yaa. Arabic has sounds not found in English. Arabic is spoken by millions in northern Nigeria.",
+    "summary": "Arabic alphabet has 28 letters written right to left. Letters change shape by position. Important in northern Nigeria.",
     "learning_objectives": [
-      "Understand health policy basics",
-      "Identify Nigerian health policies",
-      "Practice health advocacy"
+      "Recognize Arabic letters",
+      "Write letters",
+      "Pronounce Arabic sounds"
     ],
     "nigerian_examples": [
-      "National Health Act BHCPF funding",
-      "Free routine immunization",
-      "School feeding program",
-      "Health insurance expansion"
+      "Quranic schools in Kano",
+      "Arabic calligraphy in mosques",
+      "Arabic names among Nigerian Muslims"
     ],
     "quiz_questions": [
       {
-        "question": "What does the National Health Act establish?",
+        "question": "How many letters in Arabic alphabet?",
         "options": [
-          "Private hospitals only",
-          "Basic Health Care Provision Fund for primary care",
-          "Only teaching hospitals",
-          "Health ministry"
+          "26",
+          "28",
+          "30",
+          "32"
         ],
-        "correct_answer": "Basic Health Care Provision Fund for primary care",
-        "explanation": "BHCPF funds primary healthcare centers."
+        "correct_answer": "28",
+        "explanation": "Arabic has 28 letters."
       },
       {
-        "question": "What is health advocacy?",
+        "question": "Which direction is Arabic written?",
         "options": [
-          "Only medical treatment",
-          "Speaking up for health policies that improve well-being",
-          "Only research",
-          "Only hospital administration"
+          "Left to right",
+          "Right to left",
+          "Top to bottom",
+          "Bottom to top"
         ],
-        "correct_answer": "Speaking up for health policies that improve well-being",
-        "explanation": "Advocacy influences decision-makers."
+        "correct_answer": "Right to left",
+        "explanation": "Arabic is written right to left."
       },
       {
-        "question": "What vaccines are free in Nigeria?",
+        "question": "What is the first letter?",
         "options": [
-          "Only COVID-19",
-          "Routine childhood vaccines (BCG, polio, measles, yellow fever)",
-          "Only private vaccines",
-          "None"
+          "Baa",
+          "Alif",
+          "Jeem",
+          "Daal"
         ],
-        "correct_answer": "Routine childhood vaccines (BCG, polio, measles, yellow fever)",
-        "explanation": "Government provides free immunization."
+        "correct_answer": "Alif",
+        "explanation": "Alif is the first letter."
       },
       {
-        "question": "How can students do health advocacy?",
+        "question": "Which letter makes 'b' sound?",
         "options": [
-          "Nothing",
-          "Promote handwashing, vaccination awareness, anti-malaria campaigns",
-          "Only medical students",
-          "Only adults"
+          "Alif",
+          "Baa",
+          "Taa",
+          "Jeem"
         ],
-        "correct_answer": "Promote handwashing, vaccination awareness, anti-malaria campaigns",
-        "explanation": "Students can educate peers and community."
+        "correct_answer": "Baa",
+        "explanation": "Baa makes the b sound."
       },
       {
-        "question": "True or False: Health insurance is mandatory for all Nigerians under NHIA Act.",
+        "question": "True or False: Arabic has sounds not in English.",
         "options": [
           "True",
           "False"
         ],
         "correct_answer": "True",
-        "explanation": "NHIA Act 2022 mandates health insurance for all."
+        "explanation": "Sounds like Ayn and Ghayn are unique to Arabic."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Arabic (Optional)",
+    "topic": "Greetings in Arabic",
+    "language": "en",
+    "content": "Common Arabic greetings: As-salamu alaykum (Peace be upon you). Response: Wa alaykum as-salam. Good morning: Sabah al-khayr. Response: Sabah an-nur. Hello: Marhaba. Thank you: Shukran. You're welcome: Afwan. Goodbye: Ma'a as-salamah. Yes: Na'am. No: La.",
+    "summary": "Greetings: As-salamu alaykum, Sabah al-khayr, Shukran, Ma'a as-salamah.",
+    "learning_objectives": [
+      "Use Arabic greetings",
+      "Respond appropriately",
+      "Practice common phrases"
+    ],
+    "nigerian_examples": [
+      "Greetings in northern Nigerian mosques",
+      "Saying Shukran after receiving gifts",
+      "Ma'a as-salamah when leaving"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does 'As-salamu alaykum' mean?",
+        "options": [
+          "Good morning",
+          "Peace be upon you",
+          "Thank you",
+          "Goodbye"
+        ],
+        "correct_answer": "Peace be upon you",
+        "explanation": "Standard Islamic greeting."
+      },
+      {
+        "question": "How do you say 'Thank you'?",
+        "options": [
+          "Shukran",
+          "Afwan",
+          "Na'am",
+          "La"
+        ],
+        "correct_answer": "Shukran",
+        "explanation": "Shukran means thank you."
+      },
+      {
+        "question": "Response to 'As-salamu alaykum'?",
+        "options": [
+          "Sabah al-khayr",
+          "Wa alaykum as-salam",
+          "Shukran",
+          "Ma'a as-salamah"
+        ],
+        "correct_answer": "Wa alaykum as-salam",
+        "explanation": "Response returns the greeting."
+      },
+      {
+        "question": "How do you say 'Yes'?",
+        "options": [
+          "La",
+          "Na'am",
+          "Shukran",
+          "Afwan"
+        ],
+        "correct_answer": "Na'am",
+        "explanation": "Na'am means yes."
+      },
+      {
+        "question": "True or False: 'Ma'a as-salamah' means hello.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": "False",
+        "explanation": "Ma'a as-salamah means goodbye."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Arabic (Optional)",
+    "topic": "Numbers 1-10",
+    "language": "en",
+    "content": "Numbers 1-10: 1 Wahid, 2 Ithnan, 3 Thalatha, 4 Arba'a, 5 Khamsa, 6 Sitta, 7 Sab'a, 8 Thamaniya, 9 Tis'a, 10 Ashara. Used in daily life and Islamic prayers.",
+    "summary": "Arabic numbers 1-10: wahid, ithnan, thalatha, arba'a, khamsa, sitta, sab'a, thamaniya, tis'a, ashara.",
+    "learning_objectives": [
+      "Count 1-10 in Arabic",
+      "Recognize numbers",
+      "Use numbers in context"
+    ],
+    "nigerian_examples": [
+      "Counting prayer units",
+      "Arabic class counting",
+      "Islamic school numbers"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is 1 in Arabic?",
+        "options": [
+          "Wahid",
+          "Ithnan",
+          "Thalatha",
+          "Arba'a"
+        ],
+        "correct_answer": "Wahid",
+        "explanation": "Wahid means one."
+      },
+      {
+        "question": "What is 5 in Arabic?",
+        "options": [
+          "Arba'a",
+          "Khamsa",
+          "Sitta",
+          "Sab'a"
+        ],
+        "correct_answer": "Khamsa",
+        "explanation": "Khamsa means five."
+      },
+      {
+        "question": "What is 10 in Arabic?",
+        "options": [
+          "Tis'a",
+          "Ashara",
+          "Thamaniya",
+          "Sab'a"
+        ],
+        "correct_answer": "Ashara",
+        "explanation": "Ashara means ten."
+      },
+      {
+        "question": "What is 7 in Arabic?",
+        "options": [
+          "Sitta",
+          "Sab'a",
+          "Thamaniya",
+          "Tis'a"
+        ],
+        "correct_answer": "Sab'a",
+        "explanation": "Sab'a means seven."
+      },
+      {
+        "question": "True or False: 'Thalatha' means three.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": "True",
+        "explanation": "Thalatha is three."
+      }
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Arabic (Optional)",
+    "topic": "Family Members",
+    "language": "en",
+    "content": "Family in Arabic: Ab (father), Umm (mother), Akh (brother), Ukht (sister), Ibn (son), Bint (daughter), Jadd (grandfather), Jaddah (grandmother). Possessive: Abi (my father), Ummi (my mother), Akhi (my brother), Ukhti (my sister).",
+    "summary": "Family: Ab (father), Umm (mother), Akh (brother), Ukht (sister), Ibn (son), Bint (daughter).",
+    "learning_objectives": [
+      "Name family members",
+      "Use possessive forms",
+      "Describe family"
+    ],
+    "nigerian_examples": [
+      "Calling elders Alhaji",
+      "Extended family gatherings",
+      "Arabic terms in Hausa"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is 'father'?",
+        "options": [
+          "Umm",
+          "Ab",
+          "Akh",
+          "Ukht"
+        ],
+        "correct_answer": "Ab",
+        "explanation": "Ab means father."
+      },
+      {
+        "question": "What is 'brother'?",
+        "options": [
+          "Akh",
+          "Ukht",
+          "Ibn",
+          "Bint"
+        ],
+        "correct_answer": "Akh",
+        "explanation": "Akh means brother."
+      },
+      {
+        "question": "What does 'Ummi' mean?",
+        "options": [
+          "My father",
+          "My mother",
+          "My brother",
+          "My sister"
+        ],
+        "correct_answer": "My mother",
+        "explanation": "Ummi adds 'i' for my."
+      },
+      {
+        "question": "What is 'sister'?",
+        "options": [
+          "Akh",
+          "Ukht",
+          "Ibn",
+          "Bint"
+        ],
+        "correct_answer": "Ukht",
+        "explanation": "Ukht means sister."
+      },
+      {
+        "question": "True or False: 'Ibn' means daughter.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": "False",
+        "explanation": "Ibn means son; Bint means daughter."
+      }
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Arabic (Optional)",
+    "topic": "Colors in Arabic",
+    "language": "en",
+    "content": "Colors: Ahmar (red), Azraq (blue), Akhdar (green), Asfar (yellow), Aswad (black), Abyad (white), Bunni (brown). Color agreement: feminine forms: Hamra, Zarqa, Khadra.",
+    "summary": "Colors: Ahmar (red), Azraq (blue), Akhdar (green), Aswad (black), Abyad (white).",
+    "learning_objectives": [
+      "Name colors",
+      "Use color agreement",
+      "Describe objects"
+    ],
+    "nigerian_examples": [
+      "Green on Nigerian flag",
+      "White for Hajj",
+      "Black stone in Mecca"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is 'red'?",
+        "options": [
+          "Azraq",
+          "Ahmar",
+          "Akhdar",
+          "Aswad"
+        ],
+        "correct_answer": "Ahmar",
+        "explanation": "Ahmar means red."
+      },
+      {
+        "question": "What is 'black'?",
+        "options": [
+          "Abyad",
+          "Aswad",
+          "Ahmar",
+          "Azraq"
+        ],
+        "correct_answer": "Aswad",
+        "explanation": "Aswad means black."
+      },
+      {
+        "question": "Feminine of 'Ahmar'?",
+        "options": [
+          "Ahmar",
+          "Hamra",
+          "Akhdar",
+          "Khadra"
+        ],
+        "correct_answer": "Hamra",
+        "explanation": "Hamra is feminine red."
+      },
+      {
+        "question": "What color is paradise in Islam?",
+        "options": [
+          "Red",
+          "Blue",
+          "Green",
+          "Yellow"
+        ],
+        "correct_answer": "Green",
+        "explanation": "Green symbolizes paradise."
+      },
+      {
+        "question": "True or False: 'Abyad' means white.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": "True",
+        "explanation": "Abyad is white."
+      }
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Arabic (Optional)",
+    "topic": "Daily Prayers",
+    "language": "en",
+    "content": "Five daily prayers: Fajr (dawn), Dhuhr (noon), Asr (afternoon), Maghrib (sunset), Isha (night). Phrases: Allahu Akbar (God is greatest), Bismillah (In God's name), Alhamdulillah (Praise to God), Subhanallah (Glory to God), Insha'Allah (God willing).",
+    "summary": "Prayers: Fajr, Dhuhr, Asr, Maghrib, Isha. Phrases: Allahu Akbar, Bismillah, Alhamdulillah.",
+    "learning_objectives": [
+      "Name five prayers",
+      "Use Islamic phrases",
+      "Understand prayer terms"
+    ],
+    "nigerian_examples": [
+      "Fajr in northern Nigeria",
+      "Alhamdulillah after sneezing",
+      "Insha'Allah for future"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Dawn prayer name?",
+        "options": [
+          "Dhuhr",
+          "Asr",
+          "Fajr",
+          "Isha"
+        ],
+        "correct_answer": "Fajr",
+        "explanation": "Fajr is before sunrise."
+      },
+      {
+        "question": "'Allahu Akbar' means?",
+        "options": [
+          "Praise to God",
+          "God is greatest",
+          "In God's name",
+          "Glory to God"
+        ],
+        "correct_answer": "God is greatest",
+        "explanation": "Allahu Akbar means God is greatest."
+      },
+      {
+        "question": "'Alhamdulillah' means?",
+        "options": [
+          "God willing",
+          "Praise to God",
+          "Glory to God",
+          "I seek forgiveness"
+        ],
+        "correct_answer": "Praise to God",
+        "explanation": "Alhamdulillah thanks God."
+      },
+      {
+        "question": "'Bismillah' means?",
+        "options": [
+          "In God's name",
+          "God willing",
+          "Peace be upon you",
+          "Thank you"
+        ],
+        "correct_answer": "In God's name",
+        "explanation": "Bismillah is said before actions."
+      },
+      {
+        "question": "True or False: 'Insha'Allah' means God has willed it.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": "False",
+        "explanation": "Insha'Allah is 'God willing'; Masha'Allah is 'God has willed it'."
+      }
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Arabic (Optional)",
+    "topic": "Days of the Week",
+    "language": "en",
+    "content": "Days: Al-Ahad (Sunday), Al-Ithnayn (Monday), Al-Thulatha (Tuesday), Al-Arba'a (Wednesday), Al-Khamis (Thursday), Al-Jumu'ah (Friday), Al-Sabt (Saturday). Friday is the holy day for congregational prayers.",
+    "summary": "Days: Al-Ahad, Al-Ithnayn, Al-Thulatha, Al-Arba'a, Al-Khamis, Al-Jumu'ah, Al-Sabt.",
+    "learning_objectives": [
+      "Say days in Arabic",
+      "Understand Friday importance",
+      "Use days in sentences"
+    ],
+    "nigerian_examples": [
+      "Jumu'ah prayers at mosque",
+      "Friday half-day in north",
+      "Arabic calendar in Islamic schools"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is Friday?",
+        "options": [
+          "Al-Sabt",
+          "Al-Jumu'ah",
+          "Al-Ahad",
+          "Al-Khamis"
+        ],
+        "correct_answer": "Al-Jumu'ah",
+        "explanation": "Al-Jumu'ah is Friday."
+      },
+      {
+        "question": "What is Monday?",
+        "options": [
+          "Al-Thulatha",
+          "Al-Arba'a",
+          "Al-Ithnayn",
+          "Al-Khamis"
+        ],
+        "correct_answer": "Al-Ithnayn",
+        "explanation": "Al-Ithnayn is Monday."
+      },
+      {
+        "question": "Holy day for congregational prayer?",
+        "options": [
+          "Monday",
+          "Wednesday",
+          "Friday",
+          "Sunday"
+        ],
+        "correct_answer": "Friday",
+        "explanation": "Friday is Jumu'ah."
+      },
+      {
+        "question": "What is Sunday?",
+        "options": [
+          "Al-Ahad",
+          "Al-Sabt",
+          "Al-Ithnayn",
+          "Al-Thulatha"
+        ],
+        "correct_answer": "Al-Ahad",
+        "explanation": "Al-Ahad is Sunday."
+      },
+      {
+        "question": "True or False: 'Al-Sabt' means Saturday.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": "True",
+        "explanation": "Al-Sabt is Saturday."
+      }
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Arabic (Optional)",
+    "topic": "Common Phrases",
+    "language": "en",
+    "content": "Common phrases: Shukran (thank you), Afwan (you're welcome), Min fadlik (please), Na'am (yes), La (no), Jayyid (good), Mubarak (congratulations), Barakallah (blessings).",
+    "summary": "Phrases: Shukran, Afwan, Min fadlik, Na'am, La, Jayyid, Mubarak.",
+    "learning_objectives": [
+      "Use common phrases",
+      "Respond appropriately",
+      "Understand cultural context"
+    ],
+    "nigerian_examples": [
+      "Mubarak for Eid",
+      "Afwan after thanks",
+      "Min fadlik when asking"
+    ],
+    "quiz_questions": [
+      {
+        "question": "'Shukran' means?",
+        "options": [
+          "Please",
+          "Thank you",
+          "Yes",
+          "No"
+        ],
+        "correct_answer": "Thank you",
+        "explanation": "Shukran is thank you."
+      },
+      {
+        "question": "'Afwan' means?",
+        "options": [
+          "Thank you",
+          "Please",
+          "You're welcome",
+          "Goodbye"
+        ],
+        "correct_answer": "You're welcome",
+        "explanation": "Afwan also means excuse me."
+      },
+      {
+        "question": "'Na'am' means?",
+        "options": [
+          "No",
+          "Yes",
+          "Good",
+          "Maybe"
+        ],
+        "correct_answer": "Yes",
+        "explanation": "Na'am is yes."
+      },
+      {
+        "question": "'Mubarak' means?",
+        "options": [
+          "Good luck",
+          "Congratulations",
+          "Blessings",
+          "Thank you"
+        ],
+        "correct_answer": "Congratulations",
+        "explanation": "Mubarak is for celebrations."
+      },
+      {
+        "question": "True or False: 'La' means yes.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": "False",
+        "explanation": "La means no."
       }
     ]
   }

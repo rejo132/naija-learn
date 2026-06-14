@@ -1,0 +1,136 @@
+[
+  {
+    "grade": 4,
+    "subject": "Pre-vocational Studies",
+    "topic": "Introduction to Agriculture",
+    "language": "en",
+    "content": "Agriculture is the practice of growing crops and rearing animals for food and other products. Crops: yam, cassava, maize, rice, cocoa, groundnuts, palm oil. Animals: goats, sheep, chickens, cows, fish, rabbits. Agriculture provides food for families, jobs for people, and raw materials for industries. Simple farming tools: hoe (for digging and weeding), cutlass (for clearing bushes), rake (for gathering leaves), watering can (for watering plants), shovel (for digging), wheelbarrow (for carrying). Nigerian farmers work hard to feed the nation. You can start small: plant beans or maize in a container, water daily, watch it grow. Agriculture is the backbone of Nigeria's economy, providing employment for over 35% of Nigerians.",
+    "summary": "Agriculture = growing crops and rearing animals. Provides food, jobs, materials. Simple tools: hoe, cutlass, rake, watering can, shovel, wheelbarrow. Start with container gardening.",
+    "learning_objectives": [
+      "Define agriculture",
+      "Identify common Nigerian crops and animals",
+      "Name simple farming tools and their uses"
+    ],
+    "nigerian_examples": [
+      "Yam farming in Benue State (Yam Belt of Nigeria)",
+      "Cocoa farming in Ondo, Oyo, and Cross River States",
+      "Fish farming (aquaculture) in Lagos and Delta States",
+      "Goat and sheep rearing in northern Nigeria",
+      "Palm oil production in Imo and Akwa Ibom States"
+    ],
+    "quiz_questions": [
+      {"question": "What is agriculture?", "options": ["Building houses", "Growing crops and rearing animals", "Teaching students", "Driving vehicles"], "correct_answer": "Growing crops and rearing animals", "explanation": "Agriculture produces food and raw materials."},
+      {"question": "Which Nigerian state is known for yam farming?", "options": ["Lagos", "Benue", "Kano", "Rivers"], "correct_answer": "Benue", "explanation": "Benue State is called the Food Basket of the Nation."},
+      {"question": "Which tool is used for digging and weeding?", "options": ["Rake", "Hoe", "Cutlass", "Watering can"], "correct_answer": "Hoe", "explanation": "A hoe is used for digging soil and removing weeds."},
+      {"question": "What percentage of Nigerians work in agriculture?", "options": ["10%", "25%", "35%", "50%"], "correct_answer": "35%", "explanation": "Over 35% of Nigerians are employed in agriculture."},
+      {"question": "True or False: Agriculture only provides food, not jobs.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Agriculture creates many jobs like farming, processing, transportation, and selling."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Pre-vocational Studies",
+    "topic": "Simple Cooking Skills",
+    "language": "en",
+    "content": "Cooking is preparing food to eat using heat. Basic cooking methods: Boiling (cooking in water - rice, beans, yam, eggs, pasta), Frying (cooking in hot oil - plantains (dodo), yam, fish, eggs, meat), Steaming (cooking with steam - vegetables, fish, moi moi, okra), Roasting (cooking over fire or in oven - corn, yam, chicken, fish), Baking (cooking in oven - bread, cakes, biscuits). Kitchen safety rules: wash hands before cooking, tie back hair, use pot holders for hot pots, never leave cooking unattended, keep knives away from children, turn pot handles inward, clean spills immediately, know where fire extinguisher is. Simple recipes: Boiled egg (water boils, egg in 7-10 minutes), Jollof rice (fry tomatoes, peppers, onions, add rice, water, spices, simmer), Fried plantain (peel, slice, fry in hot oil). Cooking teaches patience, math (measuring), science (heat changes food), and creativity.",
+    "summary": "Cooking methods: boiling, frying, steaming, roasting, baking. Kitchen safety: clean hands, tie hair, use holders, stay nearby. Simple recipes: boiled egg, jollof rice, fried plantain.",
+    "learning_objectives": [
+      "Identify basic cooking methods",
+      "Practice kitchen safety rules",
+      "Follow simple recipes"
+    ],
+    "nigerian_examples": [
+      "Boiling yam for breakfast with egg sauce",
+      "Frying plantains (dodo) as a side dish",
+      "Steaming moi moi (bean pudding) in leaves",
+      "Roasting corn during harmattan season",
+      "Baking bread in local bakeries"
+    ],
+    "quiz_questions": [
+      {"question": "What method cooks food in hot oil?", "options": ["Boiling", "Frying", "Steaming", "Roasting"], "correct_answer": "Frying", "explanation": "Frying uses hot oil to cook food quickly."},
+      {"question": "Why tie back hair when cooking?", "options": ["To look nice", "To prevent hair falling into food", "To keep warm", "To follow tradition"], "correct_answer": "To prevent hair falling into food", "explanation": "Hair in food is unhygienic and can spread germs."},
+      {"question": "What should you use to hold a hot pot?", "options": ["Bare hands", "Pot holders or thick cloth", "Paper towel", "Plastic bag"], "correct_answer": "Pot holders or thick cloth", "explanation": "Pot holders protect your hands from burns."},
+      {"question": "How long to boil an egg for hard boiled?", "options": ["2-3 minutes", "7-10 minutes", "15-20 minutes", "30 minutes"], "correct_answer": "7-10 minutes", "explanation": "7-10 minutes gives a fully cooked hard-boiled egg."},
+      {"question": "True or False: You should wash hands before cooking.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Clean hands prevent germs from spreading to food."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Pre-vocational Studies",
+    "topic": "Basic Sewing Skills",
+    "language": "en",
+    "content": "Sewing is joining fabric using needle and thread. Basic stitches: Running stitch (in and out in a straight line - used for gathering, mending), Backstitch (stronger, overlaps each stitch - used for seams), Overcast stitch (wraps around fabric edge - prevents fraying), Chain stitch (loops together - decorative). Sewing tools: needles (different sizes for different fabrics), thread (colors, cotton/polyester), scissors (fabric scissors should not be used for paper), pins (hold fabric together), thimble (protects finger when pushing needle), measuring tape (measures fabric and body), seam ripper (removes stitches). Simple projects: sew a button (push through fabric, make several stitches, knot), mend torn seam, make a small pouch (fold fabric, sew sides, turn inside out). Nigerian traditional sewing: adire (tie-dye), embroidery (Hausa caps), beadwork (Yoruba crowns), Aso Oke weaving. Sewing saves money (repair clothes instead of buying new) and creates gifts. Always store needles safely in a pincushion.",
+    "summary": "Sewing joins fabric. Stitches: running, backstitch, overcast, chain. Tools: needles, thread, scissors, pins, thimble, measuring tape, seam ripper. Projects: sew button, mend tear, make pouch.",
+    "learning_objectives": [
+      "Identify basic sewing tools",
+      "Practice simple stitches",
+      "Sew a button"
+    ],
+    "nigerian_examples": [
+      "Sewing buttons on school uniform",
+      "Mending torn shorts or shirts",
+      "Traditional Hausa cap embroidery",
+      "Yoruba adire fabric design",
+      "Beadwork for traditional ceremonies"
+    ],
+    "quiz_questions": [
+      {"question": "What is a thimble used for?", "options": ["Cutting fabric", "Protecting finger while pushing needle", "Measuring fabric", "Storing needles"], "correct_answer": "Protecting finger while pushing needle", "explanation": "A thimble pushes needle through thick fabric without hurting your finger."},
+      {"question": "Which stitch is strongest for seams?", "options": ["Running stitch", "Backstitch", "Overcast stitch", "Chain stitch"], "correct_answer": "Backstitch", "explanation": "Backstitch overlaps each stitch, making it very strong."},
+      {"question": "What should you do after using needles?", "options": ["Leave on floor", "Store safely in a pin cushion", "Throw away", "Share immediately"], "correct_answer": "Store safely in a pin cushion", "explanation": "Needles can cause injury if left carelessly."},
+      {"question": "What tool measures fabric length?", "options": ["Scissors", "Thimble", "Measuring tape", "Pins"], "correct_answer": "Measuring tape", "explanation": "Measuring tape is flexible for measuring fabric and body."},
+      {"question": "True or False: Sewing can save you money by repairing clothes.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Repairing clothes costs less than buying new ones."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Pre-vocational Studies",
+    "topic": "Money Management",
+    "language": "en",
+    "content": "Money management is using money wisely to meet needs and wants. Steps: Earn (allowance, chores, gifts, small jobs), Save (piggy bank, savings account, keep for future), Spend (buy things you need and want), Budget (plan how to spend and save). Needs are essentials for survival: food, water, shelter, clothing, healthcare, school supplies. Wants are extras that are nice but not necessary: toys, sweets, games, movies, new shoes when old ones still work. The 50-30-20 rule: 50% of money for needs, 30% for wants, 20% for savings. Keep a money diary: write what you earn and spend each week. Nigerian banks offer savings accounts for children (FirstBank KidsFirst, UBA Kiddies Account, GTBank Smart Kids). Good money habits start young: save first before spending, avoid borrowing, compare prices, don't waste money on impulse buys. Setting savings goals (like buying a bicycle) helps you stay motivated.",
+    "summary": "Money management: earn, save, spend, budget. Needs vs wants (needs essential, wants extras). 50-30-20 rule. Keep money diary. Nigerian children's bank accounts available.",
+    "learning_objectives": [
+      "Distinguish needs from wants",
+      "Create a simple budget",
+      "Practice saving money"
+    ],
+    "nigerian_examples": [
+      "Saving allowance in piggy bank",
+      "Budgeting for school supplies (notebooks, pens, backpack)",
+      "FirstBank KidsFirst savings account",
+      "Choosing needs before wants at the market"
+    ],
+    "quiz_questions": [
+      {"question": "What is a need?", "options": ["Toy", "Candy", "Food", "Video game"], "correct_answer": "Food", "explanation": "Food is essential for survival. Toys and candy are wants."},
+      {"question": "What does budget mean?", "options": ["Spending all money", "Plan for spending and saving", "Borrowing money", "Hiding money"], "correct_answer": "Plan for spending and saving", "explanation": "A budget helps you track and control your money."},
+      {"question": "What is the 50-30-20 rule?", "options": ["50% needs, 30% wants, 20% savings", "50% wants, 30% needs, 20% savings", "50% savings, 30% needs, 20% wants", "50% tax, 30% needs, 20% wants"], "correct_answer": "50% needs, 30% wants, 20% savings", "explanation": "This rule helps balance spending and saving."},
+      {"question": "What is a piggy bank for?", "options": ["Buying toys", "Saving money", "Borrowing money", "Spending money"], "correct_answer": "Saving money", "explanation": "A piggy bank stores money for future use."},
+      {"question": "True or False: You should spend all your money as soon as you get it.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Saving helps you afford bigger things later."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Pre-vocational Studies",
+    "topic": "Simple Repairs",
+    "language": "en",
+    "content": "Simple repairs fix everyday items, saving money and reducing waste. Basic tools: Screwdriver (tightens/loosens screws - flathead or Phillips), Hammer (pounds nails, removes nails with claw), Pliers (grips wires, bends metal, cuts wires), Wrench (turns nuts and bolts - adjustable or fixed size), Glue (sticks broken items - wood glue, super glue, white glue), Tape (duct tape, masking tape, electrical tape). Common repairs: tighten loose screw on toy or furniture, fix leaking tap (replace washer), repair broken book spine with tape, fix bicycle chain (reconnect link), replace blown fuse (ask adult), fix loose handle (tighten screw), patch small hole in fabric (needle and thread). Safety rules: unplug appliances before any repair, wear gloves for sharp or dirty work, ask adult for help with electricity or heavy items, work in well-lit area, keep tools organized. Being handy builds confidence, self-reliance, and saves money. Nigerian technicians (mechanics, electricians, carpenters, plumbers) learn these skills in vocational training. Start with simple repairs and gradually try more complex ones.",
+    "summary": "Simple repairs fix items: tighten screws, fix leaks, repair books, fix chains. Tools: screwdriver, hammer, pliers, wrench, glue, tape. Safety: unplug appliances, ask adult for help.",
+    "learning_objectives": [
+      "Identify basic repair tools and their uses",
+      "Perform simple household repairs",
+      "Follow safety rules"
+    ],
+    "nigerian_examples": [
+      "Tightening loose desk screws at school",
+      "Fixing a leaking faucet at home",
+      "Repairing torn textbook with tape",
+      "Asking adult to replace blown fuse",
+      "Bicycle puncture repair at local vulcanizer"
+    ],
+    "quiz_questions": [
+      {"question": "What tool is used to turn screws?", "options": ["Hammer", "Screwdriver", "Pliers", "Wrench"], "correct_answer": "Screwdriver", "explanation": "Screwdrivers are made specifically for screws."},
+      {"question": "What should you do before repairing an electrical appliance?", "options": ["Unplug it", "Turn it on", "Get more electricity", "Call a friend"], "correct_answer": "Unplug it", "explanation": "Unplugging prevents electric shock."},
+      {"question": "What tool pounds and removes nails?", "options": ["Screwdriver", "Hammer", "Pliers", "Glue"], "correct_answer": "Hammer", "explanation": "Hammers drive nails into wood; the claw end removes nails."},
+      {"question": "What can fix a torn book page?", "options": ["Hammer", "Screwdriver", "Tape or glue", "Pliers"], "correct_answer": "Tape or glue", "explanation": "Tape or carefully applied glue can repair tears."},
+      {"question": "True or False: Always ask an adult for help when you are unsure about a repair.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Adults have experience and can prevent injuries."}
+    ]
+  }
+]

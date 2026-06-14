@@ -1,0 +1,76 @@
+[
+  {
+    "grade": 5,
+    "subject": "French (Optional)",
+    "topic": "Common Verbs and Conjugation",
+    "language": "en",
+    "content": "Verbs are action words. The three most common French verbs are etre (to be), avoir (to have), and aller (to go). Conjugating etre: je suis (I am), tu es (you are), il est (he is), nous sommes (we are), vous etes (you are), ils sont (they are). Conjugating avoir: j'ai (I have), tu as (you have), il a (he has), nous avons (we have), vous avez (you have), ils ont (they have). Conjugating aller: je vais (I go), tu vas (you go), il va (he goes), nous allons (we go), vous allez (you go), ils vont (they go). Common expressions: avoir faim (to be hungry), avoir soif (to be thirsty), avoir peur (to be afraid), aller a l'ecole (to go to school), etre fatigue (to be tired).",
+    "summary": "Common French verbs: etre (to be), avoir (to have), aller (to go). Conjugation patterns for je, tu, il, nous, vous, ils forms. Used in daily expressions.",
+    "learning_objectives": [
+      "Conjugate etre, avoir, aller",
+      "Use verbs in simple sentences",
+      "Learn common expressions"
+    ],
+    "nigerian_examples": [
+      "Je vais a l'ecole a Lagos (I go to school in Lagos)",
+      "J'ai faim apres l'ecole (I am hungry after school)",
+      "Nous sommes fatigues (We are tired)"
+    ],
+    "quiz_questions": [
+      {"question": "What is 'I am' in French?", "options": ["Je suis", "J'ai", "Je vais", "Je fais"], "correct_answer": "Je suis", "explanation": "Je suis is the first person singular of etre."},
+      {"question": "What is 'I have' in French?", "options": ["Je suis", "J'ai", "Je vais", "Je fais"], "correct_answer": "J'ai", "explanation": "J'ai is the first person singular of avoir."},
+      {"question": "What is 'I go' in French?", "options": ["Je suis", "J'ai", "Je vais", "Je fais"], "correct_answer": "Je vais", "explanation": "Je vais is the first person singular of aller."},
+      {"question": "How do you say 'I am hungry' in French?", "options": ["J'ai faim", "Je suis faim", "J'ai soif", "Je suis fatigue"], "correct_answer": "J'ai faim", "explanation": "J'ai faim literally means 'I have hunger'."},
+      {"question": "True or False: 'Nous sommes' means 'we are'.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Nous sommes is the first person plural of etre."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "French (Optional)",
+    "topic": "Food and Drinks",
+    "language": "en",
+    "content": "Food and drink vocabulary helps you order meals and shop at markets. Common foods: le pain (bread), le riz (rice), la viande (meat), le poisson (fish), le poulet (chicken), les legumes (vegetables), les fruits (fruits), la pomme (apple), la banane (banana), l'orange (orange). Drinks: l'eau (water), le lait (milk), le jus (juice), le cafe (coffee), le the (tea). Meals: le petit dejeuner (breakfast), le dejeuner (lunch), le diner (dinner). Useful phrases: J'aime (I like), Je n'aime pas (I don't like), S'il vous plait (please), Merci (thank you).",
+    "summary": "French food vocabulary: le pain (bread), le riz (rice), le poisson (fish). Drinks: l'eau, le lait, le jus. Express likes and dislikes.",
+    "learning_objectives": [
+      "Name common foods in French",
+      "Name common drinks in French",
+      "Express food preferences"
+    ],
+    "nigerian_examples": [
+      "Je voudrais du riz au poisson (I would like rice with fish)",
+      "J'aime le jollof rice (I like jollof rice)",
+      "L'eau est importante (Water is important)"
+    ],
+    "quiz_questions": [
+      {"question": "What is 'bread' in French?", "options": ["le riz", "le pain", "le poisson", "le poulet"], "correct_answer": "le pain", "explanation": "Le pain is the French word for bread."},
+      {"question": "What is 'water' in French?", "options": ["le lait", "le jus", "l'eau", "le the"], "correct_answer": "l'eau", "explanation": "L'eau is the French word for water."},
+      {"question": "How do you say 'I like chicken' in French?", "options": ["Je n'aime pas le poulet", "J'aime le poulet", "Je voudrais le poulet", "Je suis le poulet"], "correct_answer": "J'aime le poulet", "explanation": "J'aime means 'I like'."},
+      {"question": "What is 'apple' in French?", "options": ["la banane", "l'orange", "la pomme", "la tomate"], "correct_answer": "la pomme", "explanation": "La pomme is the French word for apple."},
+      {"question": "True or False: 'Le petit dejeuner' means lunch.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Le petit dejeuner means breakfast."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "French (Optional)",
+    "topic": "School and Classroom",
+    "language": "en",
+    "content": "School vocabulary helps you talk about your classroom. L'ecole (school), la classe (classroom), le professeur (teacher), l'eleve (student), le tableau (board), le stylo (pen), le crayon (pencil), la gomme (eraser), la regle (ruler), le cahier (notebook), le livre (book), le sac a dos (backpack). Subjects: les mathematiques (math), les sciences (science), l'histoire (history), la geographie (geography), l'anglais (English), le francais (French).",
+    "summary": "School vocabulary: l'ecole, le professeur, l'eleve, le stylo, le livre. Subjects: mathematiques, sciences, histoire, geographie.",
+    "learning_objectives": [
+      "Name school supplies in French",
+      "Name school subjects in French",
+      "Talk about school activities"
+    ],
+    "nigerian_examples": [
+      "J'etudie le francais a l'ecole (I study French at school)",
+      "Mon sac a dos est bleu (My backpack is blue)"
+    ],
+    "quiz_questions": [
+      {"question": "What is 'school' in French?", "options": ["la classe", "l'ecole", "le professeur", "l'eleve"], "correct_answer": "l'ecole", "explanation": "L'ecole is the French word for school."},
+      {"question": "What is 'pen' in French?", "options": ["le crayon", "le stylo", "la gomme", "la regle"], "correct_answer": "le stylo", "explanation": "Le stylo is the French word for pen."},
+      {"question": "What is 'teacher' in French?", "options": ["l'eleve", "le professeur", "le directeur", "le parent"], "correct_answer": "le professeur", "explanation": "Le professeur means teacher."},
+      {"question": "What is 'mathematics' in French?", "options": ["les sciences", "l'histoire", "les mathematiques", "la geographie"], "correct_answer": "les mathematiques", "explanation": "Les mathematiques is French for mathematics."},
+      {"question": "True or False: 'Le livre' means notebook.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Le livre means book."}
+    ]
+  }
+]

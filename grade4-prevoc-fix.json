@@ -1,0 +1,54 @@
+[
+  {
+    "grade": 4,
+    "subject": "Pre-vocational Studies",
+    "topic": "Simple Cooking Skills",
+    "language": "en",
+    "content": "Cooking is preparing food to eat using heat. Basic cooking methods: Boiling (cooking in water - rice, beans, yam, eggs), Frying (cooking in hot oil - plantains (dodo), yam, fish, eggs), Steaming (cooking with steam - vegetables, fish, moi moi), Roasting (cooking over fire or in oven - corn, yam, chicken). Kitchen safety rules: wash hands before cooking, tie back hair, use pot holders for hot pots, never leave cooking unattended, keep knives away from children, turn pot handles inward. Simple recipes: Boiled egg (water boils, egg in 7-10 minutes), Jollof rice (fry tomatoes, peppers, onions, add rice, water, spices, simmer), Fried plantain (peel, slice, fry in hot oil).",
+    "summary": "Cooking methods: boiling, frying, steaming, roasting. Kitchen safety: clean hands, tie hair, use holders, stay nearby. Simple recipes: boiled egg, jollof rice, fried plantain.",
+    "learning_objectives": [
+      "Identify basic cooking methods",
+      "Practice kitchen safety rules",
+      "Follow simple recipes"
+    ],
+    "nigerian_examples": [
+      "Boiling yam for breakfast",
+      "Frying plantains (dodo)",
+      "Steaming moi moi",
+      "Roasting corn during harmattan"
+    ],
+    "quiz_questions": [
+      {"question": "What method cooks food in hot oil?", "options": ["Boiling", "Frying", "Steaming", "Roasting"], "correct_answer": "Frying", "explanation": "Frying uses hot oil to cook food quickly."},
+      {"question": "Why tie back hair when cooking?", "options": ["To look nice", "To prevent hair falling into food", "To keep warm", "To follow tradition"], "correct_answer": "To prevent hair falling into food", "explanation": "Hair in food is unhygienic."},
+      {"question": "What should you use to hold a hot pot?", "options": ["Bare hands", "Pot holders or thick cloth", "Paper towel", "Plastic bag"], "correct_answer": "Pot holders or thick cloth", "explanation": "Pot holders protect your hands from burns."},
+      {"question": "How long to boil an egg for hard boiled?", "options": ["2-3 minutes", "7-10 minutes", "15-20 minutes", "30 minutes"], "correct_answer": "7-10 minutes", "explanation": "7-10 minutes gives a fully cooked hard-boiled egg."},
+      {"question": "True or False: You should wash hands before cooking.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Clean hands prevent germs from spreading to food."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Pre-vocational Studies",
+    "topic": "Basic Sewing Skills",
+    "language": "en",
+    "content": "Sewing is joining fabric using needle and thread. Basic stitches: Running stitch (in and out in a straight line), Backstitch (stronger, overlaps each stitch), Overcast stitch (prevents fraying). Sewing tools: needles (different sizes), thread (colors), scissors, pins, thimble (protects finger), measuring tape. Simple projects: sew a button (push through fabric, make several stitches, knot), mend torn seam, make a small pouch. Sewing saves money (repair clothes) and creates gifts. Always store needles safely after use.",
+    "summary": "Sewing joins fabric. Stitches: running, backstitch, overcast. Tools: needles, thread, scissors, pins, thimble, tape. Projects: sew button, mend tear, make pouch.",
+    "learning_objectives": [
+      "Identify basic sewing tools",
+      "Practice simple stitches",
+      "Sew a button"
+    ],
+    "nigerian_examples": [
+      "Sewing buttons on school uniform",
+      "Mending torn shorts",
+      "Traditional Hausa cap embroidery",
+      "Yoruba adire fabric design"
+    ],
+    "quiz_questions": [
+      {"question": "What is a thimble used for?", "options": ["Cutting fabric", "Protecting finger while pushing needle", "Measuring fabric", "Storing needles"], "correct_answer": "Protecting finger while pushing needle", "explanation": "A thimble pushes needle through thick fabric without hurting your finger."},
+      {"question": "Which stitch is strongest?", "options": ["Running stitch", "Backstitch", "Overcast stitch", "Chain stitch"], "correct_answer": "Backstitch", "explanation": "Backstitch overlaps each stitch, making it very strong."},
+      {"question": "What should you do after using needles?", "options": ["Leave on floor", "Store safely in a pin cushion", "Throw away", "Share immediately"], "correct_answer": "Store safely in a pin cushion", "explanation": "Needles can cause injury if left carelessly."},
+      {"question": "What tool measures fabric length?", "options": ["Scissors", "Thimble", "Measuring tape", "Pins"], "correct_answer": "Measuring tape", "explanation": "Measuring tape is flexible for measuring fabric and body."},
+      {"question": "True or False: Sewing can save you money by repairing clothes.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Repairing clothes costs less than buying new ones."}
+    ]
+  }
+]

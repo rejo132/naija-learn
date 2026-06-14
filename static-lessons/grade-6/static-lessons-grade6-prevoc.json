@@ -1,0 +1,132 @@
+[
+  {
+    "grade": 6,
+    "subject": "Pre-vocational Studies",
+    "topic": "Sustainable Agriculture",
+    "language": "en",
+    "content": "Sustainable agriculture produces food without harming the environment for future generations. Practices include: crop rotation (plant different crops each season to maintain soil nutrients and reduce pests), cover cropping (plant crops like cowpea between seasons to protect soil), composting (recycle plant waste into organic fertilizer), integrated pest management (use natural predators before pesticides), agroforestry (plant trees with crops for shade and erosion control), conservation tillage (minimum soil disturbance), and water conservation (drip irrigation, rainwater harvesting). Benefits include healthier soil, cleaner water, less pollution, biodiversity protection, and climate change resilience.",
+    "summary": "Sustainable agriculture produces food without harming environment. Practices: crop rotation, composting, integrated pest management, agroforestry, water conservation.",
+    "learning_objectives": [
+      "Understand sustainable practices",
+      "Apply conservation methods",
+      "Support local sustainable farms"
+    ],
+    "nigerian_examples": [
+      "FADAMA project supporting farmers",
+      "Agroforestry with cocoa and shade trees",
+      "Composting in school gardens",
+      "Rainwater harvesting for irrigation"
+    ],
+    "quiz_questions": [
+      {"question": "What is crop rotation?", "options": ["Same crop every year", "Different crops each season", "Planting in circles", "Rotating irrigation"], "correct_answer": "Different crops each season", "explanation": "Rotation maintains soil nutrients and reduces pests."},
+      {"question": "What is composting?", "options": ["Burning waste", "Recycling plant waste into fertilizer", "Burying plastic", "Watering plants"], "correct_answer": "Recycling plant waste into fertilizer", "explanation": "Compost returns nutrients to soil."},
+      {"question": "What is agroforestry?", "options": ["Farming only trees", "Planting trees with crops", "Cutting all trees", "Forest only"], "correct_answer": "Planting trees with crops", "explanation": "Trees provide shade, prevent erosion, add nutrients."},
+      {"question": "Which is a sustainable water practice?", "options": ["Flood irrigation", "Drip irrigation and rainwater harvesting", "Wasting water", "Polluting rivers"], "correct_answer": "Drip irrigation and rainwater harvesting", "explanation": "These methods use water efficiently."},
+      {"question": "True or False: Sustainable agriculture balances productivity with environmental protection.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Sustainability means meeting present needs without harming future generations."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Pre-vocational Studies",
+    "topic": "Food Processing and Preservation",
+    "language": "en",
+    "content": "Food processing transforms raw ingredients into finished food products. Traditional Nigerian processing includes: cassava to garri (peel, grate, ferment, press, roast), palm oil extraction (boil palm fruits, pound, press), groundnut to oil (roast, grind, press), cocoa to powder (ferment, dry, roast, grind), yam to flour (peel, slice, dry, grind). Modern methods include: canning (seal in airtight containers), freezing (store at low temperature), drying (remove moisture), pasteurization (heat to kill bacteria), and fermentation (use beneficial microbes for yogurt, cheese, ogi). Food processing benefits include longer shelf life, reduced waste, convenience, food safety, and year-round availability.",
+    "summary": "Food processing transforms raw ingredients. Traditional: cassava to garri, palm oil, cocoa. Modern: canning, freezing, drying, pasteurization, fermentation.",
+    "learning_objectives": [
+      "Identify processing methods",
+      "Understand value addition",
+      "Explore food careers"
+    ],
+    "nigerian_examples": [
+      "Cassava to garri processing",
+      "Palm oil extraction",
+      "Cocoa to chocolate processing",
+      "Groundnut to oil and cake"
+    ],
+    "quiz_questions": [
+      {"question": "What is cassava processed into?", "options": ["Rice", "Garri", "Wheat", "Sugar"], "correct_answer": "Garri", "explanation": "Cassava is fermented, pressed, and roasted into garri."},
+      {"question": "What method uses heat to kill bacteria in milk?", "options": ["Freezing", "Pasteurization", "Drying", "Fermentation"], "correct_answer": "Pasteurization", "explanation": "Pasteurization heats milk to kill harmful bacteria."},
+      {"question": "What is value addition?", "options": ["Reducing price", "Increasing product value through processing", "Throwing away", "Hiding quality"], "correct_answer": "Increasing product value through processing", "explanation": "Processing adds value to raw materials."},
+      {"question": "What is fermentation used for?", "options": ["Making yogurt, cheese, ogi", "Freezing food", "Canning food", "Drying food"], "correct_answer": "Making yogurt, cheese, ogi", "explanation": "Fermentation uses beneficial microbes to transform food."},
+      {"question": "True or False: Food processing increases food shelf life.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Processing methods preserve food and prevent spoilage."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Pre-vocational Studies",
+    "topic": "Career Exploration",
+    "language": "en",
+    "content": "Career exploration helps discover different jobs and find what interests you. Career clusters include: agriculture (farmer, agronomist), health (doctor, nurse), engineering (civil, mechanical), technology (software developer, data analyst), business (accountant, entrepreneur), education (teacher), arts (musician, actor), law (lawyer), construction (architect, builder), transportation (pilot, mechanic), hospitality (chef, hotel manager), and government (civil servant). Steps to choose a career: self-assessment (interests, strengths), research (education required, salary), gain experience (volunteer, intern), education plan (needed subjects), set goals (short and long term). Nigerian growth industries include technology (fintech, software), agriculture (processing, export), creative (Nollywood, music), renewable energy (solar), and healthcare.",
+    "summary": "Career exploration discovers jobs and interests. Career clusters: agriculture, health, technology, business, arts, construction, hospitality. Steps: self-assessment, research, experience, education, goals.",
+    "learning_objectives": [
+      "Identify career clusters",
+      "Explore career options",
+      "Plan career path"
+    ],
+    "nigerian_examples": [
+      "Tech careers in Lagos startups",
+      "Agriculture careers in mechanized farming",
+      "Creative careers in Nollywood",
+      "Healthcare careers in Nigerian hospitals"
+    ],
+    "quiz_questions": [
+      {"question": "What is career exploration?", "options": ["Choosing random job", "Discovering different careers and finding interests", "Waiting for opportunity", "Only one job forever"], "correct_answer": "Discovering different careers and finding interests", "explanation": "Exploration helps find the right fit."},
+      {"question": "What is a growth industry in Nigeria?", "options": ["Typewriter repair", "Technology (fintech, software)", "VHS rentals", "Fax machine sales"], "correct_answer": "Technology (fintech, software)", "explanation": "Tech sector is growing rapidly in Nigeria."},
+      {"question": "What is the first step in career planning?", "options": ["Choose salary", "Self-assessment (interests, strengths)", "Pick random job", "Follow friends"], "correct_answer": "Self-assessment (interests, strengths)", "explanation": "Know yourself before exploring options."},
+      {"question": "How can you gain career experience?", "options": ["Do nothing", "Volunteer, intern, job shadow", "Only read books", "Wait for job"], "correct_answer": "Volunteer, intern, job shadow", "explanation": "Practical experience teaches more than theory."},
+      {"question": "True or False: Career planning only starts in university.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Career exploration can start in primary school."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Pre-vocational Studies",
+    "topic": "Small Business Management",
+    "language": "en",
+    "content": "Small business management involves running a small enterprise successfully. Key functions include: marketing (identify customers, promote products, set prices), finance (track money, manage cash flow, get funding), operations (produce products, manage inventory, customer service), human resources (hire and train employees), and administration (record keeping, planning). A business plan includes executive summary, company description, market analysis, products, marketing strategy, operations plan, management team, and financial projections. The marketing mix (4 Ps) includes Product (what you sell), Price (how much), Place (where you sell), and Promotion (how you reach customers). Financial records include income statement (profit/loss), cash flow statement, and balance sheet.",
+    "summary": "Small business management: marketing, finance, operations, HR, administration. Business plan, marketing mix (4 Ps), financial records.",
+    "learning_objectives": [
+      "Understand business functions",
+      "Create simple business plan",
+      "Track basic finances"
+    ],
+    "nigerian_examples": [
+      "Small retail shop management",
+      "Street food vendor operations",
+      "Phone repair business",
+      "Hair salon management"
+    ],
+    "quiz_questions": [
+      {"question": "What are the 4 Ps of marketing?", "options": ["People, Process, Physical evidence, Promotion", "Product, Price, Place, Promotion", "Planning, Production, Pricing, Publicity", "Profit, Performance, Potential, Progress"], "correct_answer": "Product, Price, Place, Promotion", "explanation": "4 Ps are marketing mix elements."},
+      {"question": "What is profit?", "options": ["Money spent", "Revenue minus expenses", "Money borrowed", "Money saved"], "correct_answer": "Revenue minus expenses", "explanation": "Profit is what remains after paying all costs."},
+      {"question": "What does a business plan include?", "options": ["Only financials", "Executive summary, market analysis, products, marketing, operations, finances", "Only products", "Only marketing"], "correct_answer": "Executive summary, market analysis, products, marketing, operations, finances", "explanation": "Business plan covers all aspects of the venture."},
+      {"question": "What is cash flow?", "options": ["Profit only", "Money coming in vs going out", "Revenue only", "Expenses only"], "correct_answer": "Money coming in vs going out", "explanation": "Positive cash flow means more money in than out."},
+      {"question": "True or False: Customer focus is important for business success.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Happy customers return and recommend."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Pre-vocational Studies",
+    "topic": "Vocational Training Pathways",
+    "language": "en",
+    "content": "Vocational training pathways lead to skilled trades without a university degree. Vocational institutions include: technical colleges (government, 2-3 year programs), vocational enterprise institutions (private, shorter courses), innovation hubs (tech-focused), apprenticeship (learn from master craftsman for 1-3 years), and online courses (digital platforms). Popular vocational trades in Nigeria include: auto mechanic (repair cars, motorcycles), electrical installation (wire houses, install solar), plumbing (install pipes, fix toilets), carpentry (make furniture, doors), tailoring (sew clothes, fashion design), catering (cook for events, bake cakes), hairdressing (cut hair, braid, style), phone/computer repair, welding (join metal parts), and masonry (build houses, lay blocks).",
+    "summary": "Vocational pathways: technical colleges, apprenticeship, innovation hubs, online courses. Popular trades: mechanic, electrician, plumber, carpenter, tailor, caterer, hairdresser, phone repair, welder, mason.",
+    "learning_objectives": [
+      "Identify vocational pathways",
+      "Explore trades",
+      "Understand certification"
+    ],
+    "nigerian_examples": [
+      "Technical colleges across Nigeria",
+      "NABTEB examinations",
+      "Apprenticeship in mechanic villages",
+      "Innovation hubs in Lagos"
+    ],
+    "quiz_questions": [
+      {"question": "What is apprenticeship?", "options": ["University degree", "Learning trade from master craftsman", "Online course", "Primary school"], "correct_answer": "Learning trade from master craftsman", "explanation": "Apprenticeship involves hands-on training under an expert."},
+      {"question": "What does NABTEB stand for?", "options": ["National Business and Technical Examinations Board", "Nigerian Board for Technical Education", "National Association of Technical Businesses", "Nigerian Technical Board"], "correct_answer": "National Business and Technical Examinations Board", "explanation": "NABTEB certifies technical and vocational education."},
+      {"question": "Which trade fixes cars?", "options": ["Carpenter", "Auto mechanic", "Tailor", "Mason"], "correct_answer": "Auto mechanic", "explanation": "Mechanics repair and maintain vehicles."},
+      {"question": "Which trade sews clothes?", "options": ["Carpenter", "Plumber", "Tailor", "Welder"], "correct_answer": "Tailor", "explanation": "Tailors make and alter clothing."},
+      {"question": "True or False: Vocational training requires a university degree.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Vocational training focuses on practical skills, not university."}
+    ]
+  }
+]

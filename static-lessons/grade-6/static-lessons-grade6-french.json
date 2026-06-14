@@ -1,0 +1,71 @@
+[
+  {
+    "grade": 6,
+    "subject": "French (Optional)",
+    "topic": "Daily Routine",
+    "language": "en",
+    "content": "Describing daily routine uses reflexive verbs. Common verbs: se reveiller (to wake up), se laver (to wash), s'habiller (to get dressed), se brosser les dents (to brush teeth), se coucher (to go to bed). Conjugation: je me reveille, tu te reveilles, il se reveille, nous nous reveillons, vous vous reveillez, ils se reveillent.",
+    "summary": "Daily routine uses reflexive verbs: se reveiller, se laver, s'habiller, se coucher.",
+    "learning_objectives": [
+      "Use reflexive verbs",
+      "Describe daily routine",
+      "Conjugate reflexive verbs"
+    ],
+    "nigerian_examples": ["Je me reveille a six heures (I wake up at 6am)", "Je me couche a neuf heures (I go to bed at 9pm)"],
+    "quiz_questions": [
+      {"question": "What does 'se reveiller' mean?", "options": ["To go to bed", "To wake up", "To get dressed", "To wash"], "correct_answer": "To wake up", "explanation": "Se reveiller means to wake up."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "French (Optional)",
+    "topic": "Travel and Directions",
+    "language": "en",
+    "content": "Asking for directions: Ou est (Where is), Comment aller a (How to go to). Prepositions: a cote de (next to), en face de (across from), pres de (near), loin de (far), a gauche (left), a droite (right), tout droit (straight).",
+    "summary": "Directions: Ou est, a gauche, a droite, tout droit. Prepositions: a cote de, en face de, pres de.",
+    "learning_objectives": ["Ask for directions", "Give directions", "Use prepositions"],
+    "nigerian_examples": ["Ou est la gare? (Where is the station?)", "Tournez a gauche (Turn left)"],
+    "quiz_questions": [
+      {"question": "What does 'a gauche' mean?", "options": ["Right", "Left", "Straight", "Behind"], "correct_answer": "Left", "explanation": "A gauche means to the left."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "French (Optional)",
+    "topic": "Future Tense",
+    "language": "en",
+    "content": "The near future tense uses aller + infinitive. Je vais manger (I am going to eat), Tu vas etudier (You are going to study), Il va voyager (He is going to travel).",
+    "summary": "Near future tense: aller + infinitive. Je vais, tu vas, il va, nous allons, vous allez, ils vont.",
+    "learning_objectives": ["Form near future tense", "Talk about future plans", "Use aller with infinitives"],
+    "nigerian_examples": ["Je vais aller a Abuja demain (I will go to Abuja tomorrow)"],
+    "quiz_questions": [
+      {"question": "How to say 'I am going to eat'?", "options": ["Je mange", "Je vais manger", "Je mangerai", "Je suis mange"], "correct_answer": "Je vais manger", "explanation": "Je vais + infinitive expresses near future."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "French (Optional)",
+    "topic": "Shopping and Prices",
+    "language": "en",
+    "content": "Shopping phrases: Combien ca coute? (How much does it cost?), Je voudrais (I would like), C'est trop cher (It's too expensive). Numbers review: un, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, vingt, trente, quarante, cinquante, soixante.",
+    "summary": "Shopping: Combien ca coute?, Je voudrais, C'est trop cher. Numbers: un to soixante.",
+    "learning_objectives": ["Ask prices", "Understand numbers", "Make purchases"],
+    "nigerian_examples": ["Combien coute le pain? (How much is bread?)", "Je voudrais du riz (I would like rice)"],
+    "quiz_questions": [
+      {"question": "How to ask 'How much does it cost?'", "options": ["Ou est?", "Combien ca coute?", "Comment ca va?", "Quelle heure?"], "correct_answer": "Combien ca coute?", "explanation": "Combien ca coute? asks for price."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "French (Optional)",
+    "topic": "Francophone Africa",
+    "language": "en",
+    "content": "Francophone Africa includes countries where French is an official language: Benin, Senegal, Ivory Coast, Niger, Burkina Faso, Mali, Guinea, Togo, Cameroon, DR Congo, Madagascar, Rwanda, Burundi, Chad, Central African Republic, Gabon, Republic of Congo, Djibouti, Mauritania, Comoros, Seychelles. French connects Nigeria with its neighbours for trade and culture.",
+    "summary": "Francophone African countries: Benin, Senegal, Ivory Coast, Niger, Cameroon, DR Congo, and many others.",
+    "learning_objectives": ["Identify Francophone countries", "Understand French importance", "Appreciate cultural connections"],
+    "nigerian_examples": ["Benin Republic shares border with Nigeria", "French is used in ECOWAS business"],
+    "quiz_questions": [
+      {"question": "Which Nigerian neighbour speaks French?", "options": ["Benin", "Cameroon", "Niger", "All of these"], "correct_answer": "All of these", "explanation": "Benin, Cameroon, and Niger are all Francophone neighbours of Nigeria."}
+    ]
+  }
+]

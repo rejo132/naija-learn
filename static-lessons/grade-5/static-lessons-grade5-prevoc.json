@@ -1,0 +1,132 @@
+[
+  {
+    "grade": 5,
+    "subject": "Pre-vocational Studies",
+    "topic": "Crop Farming",
+    "language": "en",
+    "content": "Crop farming is growing plants for food, materials, or sale. Types of crops: Cereals (maize, rice, millet, sorghum - staple foods), Root crops (cassava, yam, sweet potato - processed into garri, fufu, flour), Vegetables (tomatoes, onions, peppers, spinach, ugwu, ewedu - add nutrients to meals), Legumes (beans, groundnuts, cowpea - protein source), Fruits (oranges, bananas, mangoes, pineapples, pawpaw - vitamins), Cash crops (cocoa, rubber, oil palm, cotton, groundnuts - sold for export or processing). Farming steps: land clearing (remove bushes, trees), tilling (break soil with hoe or tractor), planting (put seeds in ground at right depth and spacing), weeding (remove unwanted plants that compete for nutrients), fertilizing (add nutrients to soil - organic manure or chemical fertilizer), watering (irrigation during dry season), pest control (remove insects or use pesticides), harvesting (collect mature crops), storage (keep in dry place to prevent rot), marketing (sell to buyers). Nigerian crop zones: northern region (maize, millet, groundnuts, cowpea), middle belt (yam, cassava, vegetables), southern region (cocoa, oil palm, rubber, plantain). Sustainable farming: crop rotation (plant different crops each season to maintain soil health), mulching (cover soil with leaves to retain moisture), composting (recycle plant waste into fertilizer).",
+    "summary": "Crop farming grows plants for food or sale. Types: cereals, root crops, vegetables, legumes, fruits, cash crops. Steps: land clearing, tilling, planting, weeding, fertilizing, watering, pest control, harvesting, storage, marketing.",
+    "learning_objectives": [
+      "Identify crop types",
+      "Explain farming steps",
+      "Understand sustainable practices"
+    ],
+    "nigerian_examples": [
+      "Maize farming in Kaduna and Zamfara States",
+      "Cocoa farming in Ondo, Cross River, and Ekiti States",
+      "Cassava processing into garri in Imo and Benue States",
+      "Rice farming in Ebonyi and Kebbi States"
+    ],
+    "quiz_questions": [
+      {"question": "Which is a cash crop in Nigeria?", "options": ["Cassava", "Cocoa", "Yam", "Maize"], "correct_answer": "Cocoa", "explanation": "Cocoa is grown for export and processing, not just local consumption."},
+      {"question": "What is the purpose of weeding?", "options": ["Add nutrients", "Remove competing plants", "Water crops", "Harvest crops"], "correct_answer": "Remove competing plants", "explanation": "Weeds compete with crops for water, nutrients, and sunlight."},
+      {"question": "Which region of Nigeria is known for cocoa farming?", "options": ["Northern", "Middle belt", "Southern", "Eastern"], "correct_answer": "Southern", "explanation": "Cocoa grows best in the humid southern rainforest zone."},
+      {"question": "What is crop rotation?", "options": ["Planting same crop every year", "Planting different crops each season to maintain soil health", "Spinning crops around", "Rotating irrigation"], "correct_answer": "Planting different crops each season to maintain soil health", "explanation": "Different crops use different nutrients, rotation prevents depletion."},
+      {"question": "True or False: Fertilizer adds nutrients to soil.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Fertilizer replaces nutrients crops remove from soil."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Pre-vocational Studies",
+    "topic": "Animal Rearing",
+    "language": "en",
+    "content": "Animal rearing (livestock farming) is raising animals for food, materials, or work. Types of animals: Poultry (chickens, turkeys, ducks, guinea fowl - raised for eggs and meat), Goats and Sheep (raised for meat (mutton, chevon), milk, skin), Cattle (cows - raised for beef, milk, hides, manure), Pigs (raised for pork, bacon, ham - note: not eaten by Muslims), Rabbits (raised for meat, fur - can be kept in small spaces), Fish (catfish, tilapia, croaker - aquaculture in ponds or cages), Snails (heliculture - high demand in restaurants), Bees (apiculture - for honey, wax). Animal housing: pens, coops, cages, hutches, ponds (must be clean, dry, well-ventilated, predator-proof). Feeding: provide clean water, balanced feed (protein, carbohydrates, vitamins, minerals), pasture for grazing animals. Health care: vaccinations (prevent diseases like Newcastle in poultry), deworming (remove internal parasites), clean water and housing (prevent infections), quarantine new animals (prevent disease spread). Nigerian livestock: Fulani herders raise cattle across northern Nigeria, poultry farming is common near cities, catfish farming popular in Lagos and Ibadan. Products: meat (protein), milk (calcium), eggs (protein), leather (shoes, bags, belts), manure (fertilizer for crops). Animal rearing provides income, food, and employment for millions of Nigerians.",
+    "summary": "Animal rearing raises animals for food, materials, work. Types: poultry, goats, sheep, cattle, pigs, fish, snails, bees. Housing, feeding, health care essential. Products: meat, milk, eggs, leather, manure.",
+    "learning_objectives": [
+      "Identify livestock types",
+      "Understand animal care requirements",
+      "Know animal products"
+    ],
+    "nigerian_examples": [
+      "Fulani cattle herding across northern Nigeria",
+      "Catfish farming in Lagos, Ibadan, and Delta States",
+      "Poultry farming for eggs and meat near cities",
+      "Snail farming (heliculture) in southwestern Nigeria"
+    ],
+    "quiz_questions": [
+      {"question": "Which animal is NOT eaten by Muslims?", "options": ["Chicken", "Cow", "Pig", "Goat"], "correct_answer": "Pig", "explanation": "Pork is forbidden (haram) in Islam."},
+      {"question": "What is the Fulani ethnic group known for?", "options": ["Fishing", "Cattle herding", "Cocoa farming", "Mining"], "correct_answer": "Cattle herding", "explanation": "Fulani are traditionally pastoralists raising cattle."},
+      {"question": "What is aquaculture?", "options": ["Farming crops", "Farming fish", "Farming trees", "Farming snails"], "correct_answer": "Farming fish", "explanation": "Aquaculture raises fish, shrimp, and other aquatic animals."},
+      {"question": "Why is vaccination important for poultry?", "options": ["To grow faster", "To prevent diseases like Newcastle", "To lay more eggs", "To improve meat taste"], "correct_answer": "To prevent diseases like Newcastle", "explanation": "Vaccines protect birds from deadly diseases."},
+      {"question": "True or False: Manure from animals can be used as fertilizer for crops.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Animal manure is rich in nutrients that fertilize soil."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Pre-vocational Studies",
+    "topic": "Home Economics",
+    "language": "en",
+    "content": "Home economics is managing home resources efficiently and effectively. Areas: Food and nutrition (planning balanced meals, cooking healthy food, food preservation), Clothing and textiles (sewing, mending, laundry care, choosing fabrics), Housing and interior decoration (arranging furniture, cleaning, decorating, safety), Family resource management (budgeting, time management, consumer education). Meal planning: consider family size, budget, nutritional needs, food preferences, seasonal availability. Food preservation methods: drying (sun-dry fish, meat, vegetables), salting (preserve fish, meat), smoking (smoke fish, meat over fire), refrigeration (keep perishable foods cold), freezing (store food for longer period), canning (seal food in airtight containers). Household cleaning: kitchen (wash dishes, clean countertops, sweep floor), bathroom (scrub toilet, sink, bathtub, clean mirrors), bedroom (make bed, dust furniture, vacuum floor), living room (arrange cushions, dust, mop floor). Laundry: sort clothes by color (whites, lights, darks), wash (hand wash or machine), dry (hang in sun), iron (remove wrinkles), fold (store neatly), mend (sew torn items). Time management: create daily/weekly schedules, prioritize tasks, share chores among family members. Home economics prepares students for independent living and careers in hospitality, catering, fashion, and interior design.",
+    "summary": "Home economics = managing home resources. Areas: food/nutrition, clothing/textiles, housing, family resources. Meal planning, food preservation, cleaning, laundry, time management.",
+    "learning_objectives": [
+      "Understand home economics areas",
+      "Apply food preservation methods",
+      "Manage household tasks"
+    ],
+    "nigerian_examples": [
+      "Drying fish in coastal communities",
+      "Smoking meat for preservation during harmattan",
+      "Refrigerating leftover jollof rice",
+      "Family chore charts at home"
+    ],
+    "quiz_questions": [
+      {"question": "What is meal planning?", "options": ["Eating anything", "Planning healthy meals considering budget and family needs", "Skipping meals", "Only cooking for yourself"], "correct_answer": "Planning healthy meals considering budget and family needs", "explanation": "Meal planning saves money and ensures balanced nutrition."},
+      {"question": "Which is a food preservation method?", "options": ["Boiling", "Drying", "Frying", "Baking"], "correct_answer": "Drying", "explanation": "Drying removes moisture, preventing bacterial growth."},
+      {"question": "How should you sort laundry?", "options": ["By size", "By color (whites, lights, darks)", "By fabric type only", "Randomly"], "correct_answer": "By color (whites, lights, darks)", "explanation": "Sorting by color prevents dye transfer."},
+      {"question": "What should be in a weekly schedule?", "options": ["Only fun activities", "Work, chores, study, rest, play", "Only school", "Only chores"], "correct_answer": "Work, chores, study, rest, play", "explanation": "Balanced schedules include all activities."},
+      {"question": "True or False: Home economics only teaches cooking.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Home economics covers cooking, sewing, cleaning, budgeting, and more."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Pre-vocational Studies",
+    "topic": "Entrepreneurship Basics",
+    "language": "en",
+    "content": "Entrepreneurship is starting and running a business to make profit. Entrepreneurs: identify opportunities, take risks, create value, solve problems. Business types in Nigeria: Sole proprietorship (one owner - street food vendor, hairdresser, tailor), Partnership (two or more owners - law firm, accounting firm), Small business (employing few people - retail shop, bakery, transport service). Steps to start a business: Identify a need (what problem can you solve? What do people want?), Research market (who are your customers? What do competitors charge?), Develop product/service (create something people will buy), Calculate costs (materials, labor, rent, utilities, transportation), Set price (cover costs + make profit), Find location (market, shop, online, home), Market your business (tell people - word of mouth, social media, posters, flyers), Launch and sell, Track money (income, expenses, profit). Successful Nigerian entrepreneurs: Aliko Dangote (cement, flour, sugar), Folorunsho Alakija (fashion, oil), Tony Elumelu (banking, investment), Mo Abudu (media). Student entrepreneur ideas: sell snacks at school, make and sell crafts (beads, cards), bake and sell cookies, braid hair, wash cars, tutor younger students, create greeting cards. Profit = Income - Expenses. Reinvest some profit to grow business. Entrepreneurship builds leadership, creativity, financial literacy, and independence.",
+    "summary": "Entrepreneurship = starting business for profit. Steps: identify need, research market, develop product, calculate costs, set price, find location, market, sell, track money. Student business ideas.",
+    "learning_objectives": [
+      "Understand entrepreneurship",
+      "Identify business steps",
+      "Calculate profit"
+    ],
+    "nigerian_examples": [
+      "Aliko Dangote's business success story",
+      "Small snack sellers near schools",
+      "Craft makers at local markets",
+      "Young tech entrepreneurs in Lagos"
+    ],
+    "quiz_questions": [
+      {"question": "What is entrepreneurship?", "options": ["Working for someone else", "Starting and running a business", "Saving money", "Going to school"], "correct_answer": "Starting and running a business", "explanation": "Entrepreneurs create value by solving problems."},
+      {"question": "Who is Nigeria's richest entrepreneur?", "options": ["Tony Elumelu", "Aliko Dangote", "Mo Abudu", "Folorunsho Alakija"], "correct_answer": "Aliko Dangote", "explanation": "Dangote is Africa's richest person with businesses in cement, sugar, flour."},
+      {"question": "What is profit?", "options": ["Money spent", "Income minus expenses", "Money borrowed", "Money saved"], "correct_answer": "Income minus expenses", "explanation": "Profit is what remains after paying all costs."},
+      {"question": "What is a student business idea?", "options": ["Sell snacks at school", "Borrow money", "Skip school", "Do nothing"], "correct_answer": "Sell snacks at school", "explanation": "Students can start small businesses with minimal capital."},
+      {"question": "True or False: Entrepreneurs should track their income and expenses.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Tracking money helps know if business is profitable."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Pre-vocational Studies",
+    "topic": "Vocational Skills",
+    "language": "en",
+    "content": "Vocational skills are practical skills for specific trades or careers. These skills can lead to employment or self-employment without needing a university degree. Nigerian vocational trades: Carpentry (making furniture, doors, windows from wood - chairs, tables, beds, cabinets), Masonry (building houses, laying blocks, plastering walls, tiling floors), Plumbing (installing and repairing pipes, water systems, toilets, sinks), Electrical installation (wiring houses, fixing lights, installing fans, repairing appliances), Mechanics (repairing cars, motorcycles, generators, air conditioners), Tailoring and fashion design (sewing clothes, designing outfits, altering garments), Hairdressing and barbing (cutting hair, braiding, styling, making wigs), Catering and event planning (cooking for events, managing parties, baking cakes), Phone repair (fixing smartphones, replacing screens, repairing batteries), Computer repair (fixing laptops, desktops, installing software). Vocational training options: Technical colleges (government vocational schools), Apprenticeship (learning from a master craftsman for 1-3 years), Vocational training centers (private institutes), Online courses (learning through videos and tutorials). Vocational skills provide income, independence, and respect. Many successful Nigerians started with vocational training before building empires. You can explore vocational interests early: help a carpenter, watch a tailor sew, visit a mechanic shop. Vocational skills complement academic education.",
+    "summary": "Vocational skills = practical skills for specific trades. Trades: carpentry, masonry, plumbing, electrical, mechanics, tailoring, hairdressing, catering, phone repair, computer repair. Training: technical colleges, apprenticeship, training centers, online.",
+    "learning_objectives": [
+      "Identify vocational trades",
+      "Understand training options",
+      "Explore vocational interests"
+    ],
+    "nigerian_examples": [
+      "Carpenters making furniture in Onitsha market",
+      "Tailors creating Ankara outfits in Lagos",
+      "Phone repair technicians in computer villages",
+      "Mechanics fixing cars at roadside garages"
+    ],
+    "quiz_questions": [
+      {"question": "What does a carpenter do?", "options": ["Builds houses", "Makes furniture from wood", "Repairs cars", "Cuts hair"], "correct_answer": "Makes furniture from wood", "explanation": "Carpenters work with wood to create furniture, doors, windows."},
+      {"question": "What does a plumber install?", "options": ["Electric wires", "Pipes and water systems", "Blocks and cement", "Car engines"], "correct_answer": "Pipes and water systems", "explanation": "Plumbers work with water supply and drainage systems."},
+      {"question": "What is apprenticeship?", "options": ["Going to university", "Learning trade from a master craftsman", "Working in office", "Online learning"], "correct_answer": "Learning trade from a master craftsman", "explanation": "Apprenticeship involves hands-on training under an expert."},
+      {"question": "Which trade fixes smartphones?", "options": ["Carpentry", "Masonry", "Phone repair", "Mechanics"], "correct_answer": "Phone repair", "explanation": "Phone repair technicians fix broken screens, batteries, and software issues."},
+      {"question": "True or False: Vocational skills require a university degree.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Vocational skills are learned through practical training, not necessarily university."}
+    ]
+  }
+]
