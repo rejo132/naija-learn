@@ -1,0 +1,52 @@
+[
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Singing and Dancing",
+    "language": "en",
+    "content": "Singing and dancing are creative ways to express yourself. You can sing songs you know or make up your own. You can dance freely or learn dance steps. Nigerian music has many rhythms — try moving your body to the beat. Singing helps you remember things like the alphabet song. Dancing keeps your body healthy and strong. You don't need to be perfect — just have fun! Sing with family, at school, or in a choir. Dance at celebrations, parties, or just because you feel happy.",
+    "summary": "Singing and dancing express yourself. Sing known songs or make up your own. Dance to Nigerian rhythms. Have fun and be creative.",
+    "learning_objectives": [
+      "Explore singing and dancing as creative expression",
+      "Learn Nigerian rhythms",
+      "Build confidence in performing"
+    ],
+    "nigerian_examples": [
+      "Singing Nigerian children's songs",
+      "Dancing to Afrobeats music",
+      "Performing at school cultural day"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are two creative activities you can do with music?",
+        "options": ["Reading and writing", "Singing and dancing", "Eating and sleeping", "Running and jumping"],
+        "correct_answer": "Singing and dancing",
+        "explanation": "Singing and dancing are both creative musical activities."
+      },
+      {
+        "question": "Do you need to be perfect to sing or dance?",
+        "options": ["Yes, only perfect singers should sing", "No, just have fun", "Only professionals", "Only at competitions"],
+        "correct_answer": "No, just have fun",
+        "explanation": "Everyone can sing and dance for fun, no matter their skill level."
+      },
+      {
+        "question": "What is a benefit of singing?",
+        "options": ["It makes you sad", "It helps you remember things", "It hurts your voice", "It wastes time"],
+        "correct_answer": "It helps you remember things",
+        "explanation": "Putting information to music helps memory like the alphabet song."
+      },
+      {
+        "question": "What kind of music is popular in Nigeria?",
+        "options": ["Country music", "Afrobeats", "Opera", "Rock"],
+        "correct_answer": "Afrobeats",
+        "explanation": "Afrobeats is a popular Nigerian music genre."
+      },
+      {
+        "question": "True or False: Dancing keeps your body healthy.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Dancing is exercise that strengthens your body."
+      }
+    ]
+  }
+]

@@ -1,0 +1,129 @@
+[
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Fractions, Decimals and Percentages",
+    "language": "en",
+    "content": "Fractions, decimals, and percentages are different ways to represent parts of a whole. Fractions: addition and subtraction of fractions with different denominators (find LCM first). Example: 1/2 + 1/3 = 3/6 + 2/6 = 5/6. Multiplication of fractions: multiply numerators and denominators (2/3 × 4/5 = 8/15). Division of fractions: multiply by reciprocal (2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = 5/6). Decimals: converting fractions to decimals (1/4 = 0.25), adding and subtracting decimals, multiplying decimals (0.5 × 0.5 = 0.25). Percentages: converting fractions to percentages (3/4 = 75%), percentage of a quantity (25% of 80 = 20).",
+    "summary": "Fractions, decimals, percentages: find LCM for unlike denominators, multiply/divide fractions, convert between forms, calculate percentages.",
+    "learning_objectives": [
+      "Add and subtract fractions with different denominators",
+      "Multiply and divide fractions",
+      "Convert between fractions, decimals, and percentages",
+      "Calculate percentages of quantities"
+    ],
+    "nigerian_examples": [
+      "Adding 1/2 cup of rice to 1/3 cup of beans",
+      "Calculating 20% discount on school supplies",
+      "Converting test score 18/20 to percentage (90%)"
+    ],
+    "quiz_questions": [
+      {"question": "What is 1/2 + 1/4?", "options": ["1/6", "2/6", "3/4", "1/2"], "correct_answer": "3/4", "explanation": "1/2 = 2/4, plus 1/4 = 3/4."},
+      {"question": "What is 2/3 × 3/4?", "options": ["5/12", "6/12", "1/2", "5/7"], "correct_answer": "1/2", "explanation": "2×3=6, 3×4=12, simplify to 1/2."},
+      {"question": "What is 1/2 ÷ 1/4?", "options": ["1/8", "1/2", "2", "4"], "correct_answer": "2", "explanation": "1/2 × 4/1 = 4/2 = 2."},
+      {"question": "What is 25% of 120?", "options": ["20", "25", "30", "40"], "correct_answer": "30", "explanation": "25% = 1/4, 120 ÷ 4 = 30."},
+      {"question": "True or False: 3/4 = 75% = 0.75", "options": ["True", "False"], "correct_answer": "True", "explanation": "All three represent the same value."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Simple Equations",
+    "language": "en",
+    "content": "Simple equations have a variable representing an unknown number. The goal is to find the value of the variable. Basic equation: x + 5 = 12. Subtract 5 from both sides: x = 7. Multiplication equation: 3x = 15. Divide both sides by 3: x = 5. Two-step equation: 2x + 3 = 11. First subtract 3: 2x = 8, then divide by 2: x = 4. Word problems: 'A number plus 7 equals 15' becomes x + 7 = 15, so x = 8. 'Twice a number minus 4 equals 10' becomes 2x - 4 = 10, so 2x = 14, x = 7.",
+    "summary": "Simple equations: find unknown variable. Add/subtract same number from both sides. Multiply/divide both sides.",
+    "learning_objectives": [
+      "Solve one-step equations",
+      "Solve two-step equations",
+      "Translate word problems into equations"
+    ],
+    "nigerian_examples": [
+      "If 5 mangoes cost N200, find cost of one: 5x = 200, x = N40",
+      "If a number plus 8 equals 20: x + 8 = 20, x = 12",
+      "If twice your age minus 5 equals 21: 2x - 5 = 21, x = 13"
+    ],
+    "quiz_questions": [
+      {"question": "Solve: x + 7 = 15", "options": ["6", "7", "8", "22"], "correct_answer": "8", "explanation": "Subtract 7 from both sides: x = 8."},
+      {"question": "Solve: 4x = 24", "options": ["4", "5", "6", "7"], "correct_answer": "6", "explanation": "Divide both sides by 4: x = 6."},
+      {"question": "Solve: 3x + 2 = 14", "options": ["3", "4", "5", "6"], "correct_answer": "4", "explanation": "Subtract 2: 3x = 12, divide by 3: x = 4."},
+      {"question": "A number minus 5 equals 12. Find the number.", "options": ["7", "12", "17", "19"], "correct_answer": "17", "explanation": "x - 5 = 12, add 5: x = 17."},
+      {"question": "True or False: 2x = 10 has solution x = 5", "options": ["True", "False"], "correct_answer": "True", "explanation": "2 × 5 = 10, correct."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Geometry and Mensuration",
+    "language": "en",
+    "content": "Geometry studies shapes and their properties. Angle types: acute (less than 90°), right (90°), obtuse (greater than 90° but less than 180°), straight (180°). Complementary angles: sum to 90°. Supplementary angles: sum to 180°. Triangles: equilateral (all sides equal), isosceles (two sides equal), scalene (no sides equal). Quadrilaterals: square, rectangle, parallelogram, trapezoid. Perimeter: sum of all sides. Area: square (side²), rectangle (length × width), triangle (½ × base × height). Volume of cube: side³. Volume of cuboid: length × width × height.",
+    "summary": "Angle types: acute (<90), right (90), obtuse (>90). Triangle types: equilateral, isosceles, scalene. Area, perimeter, volume formulas.",
+    "learning_objectives": [
+      "Identify angle types",
+      "Classify triangles and quadrilaterals",
+      "Calculate perimeter, area, and volume"
+    ],
+    "nigerian_examples": [
+      "Right angles in classroom corners",
+      "Isosceles triangles in roof designs",
+      "Calculating area of a rectangular plot of land",
+      "Volume of a water tank"
+    ],
+    "quiz_questions": [
+      {"question": "What is a right angle?", "options": ["45°", "90°", "180°", "360°"], "correct_answer": "90°", "explanation": "A right angle is exactly 90 degrees."},
+      {"question": "What triangle has all sides equal?", "options": ["Isosceles", "Scalene", "Equilateral", "Right"], "correct_answer": "Equilateral", "explanation": "Equilateral triangles have three equal sides."},
+      {"question": "Area of rectangle length 8cm, width 5cm?", "options": ["13 cm²", "26 cm²", "40 cm²", "80 cm²"], "correct_answer": "40 cm²", "explanation": "Area = length × width = 8 × 5 = 40 cm²."},
+      {"question": "Perimeter of square with side 6m?", "options": ["12 m", "24 m", "36 m", "48 m"], "correct_answer": "24 m", "explanation": "Perimeter = 4 × side = 4 × 6 = 24 m."},
+      {"question": "True or False: Supplementary angles sum to 90°", "options": ["True", "False"], "correct_answer": "False", "explanation": "Supplementary angles sum to 180°."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Data Handling and Probability",
+    "language": "en",
+    "content": "Data handling involves collecting, organizing, and interpreting information. Mean (average) = sum of all values divided by number of values. Example: scores 70,80,80,90,100. Sum = 420, ÷5 = 84. Median = middle value when arranged in order. Mode = most frequent value. Range = highest - lowest. Probability = chance of event happening. Formula: Probability = favorable outcomes ÷ total possible outcomes. Example: probability of heads on coin = 1/2. Probability of rolling 6 on die = 1/6.",
+    "summary": "Mean = average, Median = middle, Mode = most frequent, Range = highest-lowest. Probability = favorable/total.",
+    "learning_objectives": [
+      "Calculate mean, median, mode, range",
+      "Interpret data sets",
+      "Calculate basic probability"
+    ],
+    "nigerian_examples": [
+      "Average score on common entrance exam",
+      "Most common shoe size in class",
+      "Probability of rain during rainy season"
+    ],
+    "quiz_questions": [
+      {"question": "Mean of 5,10,15?", "options": ["5", "10", "15", "30"], "correct_answer": "10", "explanation": "Sum=30, ÷3=10."},
+      {"question": "Median of 2,4,6,8,10?", "options": ["2", "4", "6", "8"], "correct_answer": "6", "explanation": "The middle value is 6."},
+      {"question": "Mode of 1,2,2,3,4?", "options": ["1", "2", "3", "4"], "correct_answer": "2", "explanation": "2 appears twice, most frequent."},
+      {"question": "Probability of heads on fair coin?", "options": ["1/4", "1/3", "1/2", "1"], "correct_answer": "1/2", "explanation": "One favorable out of two possible."},
+      {"question": "True or False: Probability ranges from 0 to 1", "options": ["True", "False"], "correct_answer": "True", "explanation": "0 = impossible, 1 = certain."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Everyday Arithmetic",
+    "language": "en",
+    "content": "Everyday arithmetic applies math to real-life money situations. Simple Interest = Principal × Rate × Time. Total = Principal + Interest. Example: N100,000 at 5% for 2 years: Interest = N10,000, Total = N110,000. Profit = Selling Price - Cost Price. Profit % = (Profit ÷ Cost Price) × 100%. Discount = Marked Price × Rate. Selling Price = Marked Price - Discount. VAT = Price × Rate. Nigeria's VAT is 7.5%. Example: N10,000 item + 7.5% VAT = N10,750.",
+    "summary": "Simple Interest = PRT. Profit, loss, discount, VAT calculations. Nigeria VAT = 7.5%.",
+    "learning_objectives": [
+      "Calculate simple interest",
+      "Compute profit and loss percentages",
+      "Apply discount and VAT"
+    ],
+    "nigerian_examples": [
+      "Bank interest on savings",
+      "Market trader profit calculation",
+      "VAT on school supplies"
+    ],
+    "quiz_questions": [
+      {"question": "Simple interest on N200,000 at 4% for 2 years?", "options": ["N8,000", "N16,000", "N20,000", "N40,000"], "correct_answer": "N16,000", "explanation": "200,000 × 0.04 × 2 = 16,000."},
+      {"question": "Cost N5,000, Sell N6,000, profit %?", "options": ["10%", "15%", "20%", "25%"], "correct_answer": "20%", "explanation": "Profit = N1,000; (1,000/5,000)×100 = 20%."},
+      {"question": "N10,000 with 20% discount = ?", "options": ["N2,000", "N8,000", "N10,000", "N12,000"], "correct_answer": "N8,000", "explanation": "Discount = N2,000, selling price = N8,000."},
+      {"question": "Nigeria's VAT rate?", "options": ["5%", "7.5%", "10%", "12.5%"], "correct_answer": "7.5%", "explanation": "VAT in Nigeria is 7.5%."},
+      {"question": "True or False: Simple interest earns interest on interest", "options": ["True", "False"], "correct_answer": "False", "explanation": "Simple interest is only on the original principal."}
+    ]
+  }
+]

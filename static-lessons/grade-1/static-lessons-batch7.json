@@ -1,0 +1,502 @@
+[
+  {
+    "grade": 1,
+    "subject": "Leadership",
+    "topic": "What is a Leader?",
+    "language": "en",
+    "content": "A leader is someone who guides and helps others. Leaders can be teachers, parents, or even you! Good leaders listen, care, and show others how to do things. You can be a leader by helping a friend or cleaning up without being asked.",
+    "summary": "A leader guides and helps others. Good leaders listen and care. Anyone can be a leader by helping friends or cleaning up without being asked.",
+    "learning_objectives": [
+      "Understand what a leader does",
+      "Identify qualities of good leaders",
+      "Learn that anyone can be a leader"
+    ],
+    "nigerian_examples": [
+      "In Nigerian schools, class prefects are young leaders who help teachers",
+      "Community leaders in Nigerian villages guide decision-making",
+      "Parents and teachers are everyday leaders children can look up to"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does a leader do?",
+        "options": ["Guides and helps others", "Plays alone", "Never listens", "Hides from friends"],
+        "correct_answer": "Guides and helps others",
+        "explanation": "Leaders help and guide people to do good things!"
+      },
+      {
+        "question": "Who can be a leader?",
+        "options": ["Only grown-ups", "Only teachers", "Anyone including you", "Only the president"],
+        "correct_answer": "Anyone including you",
+        "explanation": "Anyone can be a leader by helping others!"
+      },
+      {
+        "question": "What does a good leader do?",
+        "options": ["Ignores friends", "Listens and cares", "Bosses everyone", "Never helps"],
+        "correct_answer": "Listens and cares",
+        "explanation": "Good leaders listen to others and show they care."
+      },
+      {
+        "question": "How can YOU be a leader?",
+        "options": ["By being mean", "By hiding", "By helping a friend", "By ignoring rules"],
+        "correct_answer": "By helping a friend",
+        "explanation": "Even small acts of helping make you a leader!"
+      },
+      {
+        "question": "Which is an example of leadership?",
+        "options": ["Littering", "Cleaning up without being asked", "Pushing in line", "Not sharing"],
+        "correct_answer": "Cleaning up without being asked",
+        "explanation": "Taking initiative to help shows leadership."
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Leadership",
+    "topic": "Being Responsible",
+    "language": "en",
+    "content": "Responsibility means doing what you are supposed to do. When you are responsible, people can trust you. Examples: putting away your toys, doing your homework, and feeding your pet. Responsible people make good leaders.",
+    "summary": "Responsibility means doing your tasks. Responsible people earn trust and make good leaders. Examples include putting away toys and feeding pets.",
+    "learning_objectives": [
+      "Understand what responsibility means",
+      "Identify responsible behaviors",
+      "Learn why responsibility matters for leadership"
+    ],
+    "nigerian_examples": [
+      "Nigerian children who do their chores at home show responsibility",
+      "School monitors in Nigeria are responsible for keeping classrooms clean",
+      "Helping parents with market shopping teaches responsibility"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does responsibility mean?",
+        "options": ["Playing all day", "Doing what you're supposed to do", "Forgetting things", "Making excuses"],
+        "correct_answer": "Doing what you're supposed to do",
+        "explanation": "Responsibility means keeping your promises and doing your tasks."
+      },
+      {
+        "question": "Which shows responsibility?",
+        "options": ["Leaving toys on the floor", "Putting away your toys", "Losing your homework", "Ignoring your pet"],
+        "correct_answer": "Putting away your toys",
+        "explanation": "Cleaning up after yourself is responsible behavior."
+      },
+      {
+        "question": "Why is responsibility important for a leader?",
+        "options": ["So people can trust you", "So you can be bossy", "So you can ignore others", "So you can be lazy"],
+        "correct_answer": "So people can trust you",
+        "explanation": "Responsible leaders earn trust from others."
+      },
+      {
+        "question": "Which is a responsible choice?",
+        "options": ["Not doing homework", "Feeding your pet on time", "Breaking a toy and hiding it", "Forgetting chores"],
+        "correct_answer": "Feeding your pet on time",
+        "explanation": "Taking care of pets and chores shows responsibility."
+      },
+      {
+        "question": "What happens when you are responsible?",
+        "options": ["People don't trust you", "People see you as a leader", "You get in trouble", "Nobody notices"],
+        "correct_answer": "People see you as a leader",
+        "explanation": "Responsible actions help others see you as a leader."
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Leadership",
+    "topic": "Helping Others",
+    "language": "en",
+    "content": "Leaders help others. You can help by sharing, listening, or doing a chore for someone. When you help, you make people feel happy and loved. Small acts of kindness make you a great leader every day.",
+    "summary": "Leaders help others by sharing, listening, and doing chores. Helping makes people feel happy and loved. Small acts of kindness create great leaders.",
+    "learning_objectives": [
+      "Understand how leaders help others",
+      "Learn practical ways to help at home and school",
+      "See how helping builds leadership skills"
+    ],
+    "nigerian_examples": [
+      "Helping younger siblings with homework is a Nigerian leadership act",
+      "Assisting elderly neighbors with carrying goods shows community leadership",
+      "Sharing food during Ramadan or Christmas demonstrates helpful leadership"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How can leaders help others?",
+        "options": ["By being mean", "By sharing and listening", "By ignoring problems", "By playing alone"],
+        "correct_answer": "By sharing and listening",
+        "explanation": "Good leaders help by sharing and paying attention to others."
+      },
+      {
+        "question": "What happens when you help someone?",
+        "options": ["They feel sad", "They feel happy and loved", "They get angry", "They ignore you"],
+        "correct_answer": "They feel happy and loved",
+        "explanation": "Helping makes others feel cared for and happy."
+      },
+      {
+        "question": "Which is a helpful action?",
+        "options": ["Pushing in line", "Holding the door for someone", "Taking someone's toy", "Not sharing crayons"],
+        "correct_answer": "Holding the door for someone",
+        "explanation": "Small helpful actions show leadership and kindness."
+      },
+      {
+        "question": "Why should leaders help others?",
+        "options": ["To get rewards", "To make people feel good and build trust", "To show they are better", "To avoid work"],
+        "correct_answer": "To make people feel good and build trust",
+        "explanation": "Helping builds strong relationships and trust."
+      },
+      {
+        "question": "How can YOU help at home?",
+        "options": ["By making a mess", "By setting the table", "By ignoring your parents", "By watching TV all day"],
+        "correct_answer": "By setting the table",
+        "explanation": "Helping with chores at home is a great way to be a leader."
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Leadership",
+    "topic": "Listening Well",
+    "language": "en",
+    "content": "Good leaders listen. When you listen, you show others that you care about what they say. Look at the person who is talking, don't interrupt, and think about their words. Listening helps you understand and help others better.",
+    "summary": "Good leaders listen carefully. Show you care by looking at the speaker, not interrupting, and thinking about their words. Listening helps you understand others.",
+    "learning_objectives": [
+      "Learn why listening is important for leaders",
+      "Practice active listening techniques",
+      "Understand how listening builds trust"
+    ],
+    "nigerian_examples": [
+      "In Nigerian villages, elders are respected because they listen to community concerns",
+      "Teachers in Nigerian schools value students who listen attentively",
+      "Listening during family meetings shows respect in Nigerian homes"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What should a good leader do when someone talks?",
+        "options": ["Look away", "Interrupt", "Listen carefully", "Walk away"],
+        "correct_answer": "Listen carefully",
+        "explanation": "Good leaders pay attention when others speak."
+      },
+      {
+        "question": "Which shows good listening?",
+        "options": ["Looking at the speaker", "Playing with toys", "Talking over someone", "Not paying attention"],
+        "correct_answer": "Looking at the speaker",
+        "explanation": "Eye contact shows you are listening and care."
+      },
+      {
+        "question": "Why is listening important for leaders?",
+        "options": ["So they can ignore ideas", "So they understand others' needs", "So they can talk more", "So they don't have to help"],
+        "correct_answer": "So they understand others' needs",
+        "explanation": "Listening helps leaders know how to help others."
+      },
+      {
+        "question": "What should you NOT do when listening?",
+        "options": ["Look at the speaker", "Think about their words", "Interrupt", "Nod your head"],
+        "correct_answer": "Interrupt",
+        "explanation": "Interrupting shows you aren't really listening."
+      },
+      {
+        "question": "How does listening make others feel?",
+        "options": ["Ignored", "Angry", "Respected and valued", "Sad"],
+        "correct_answer": "Respected and valued",
+        "explanation": "When you listen, people feel important and respected."
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Leadership",
+    "topic": "Making Good Choices",
+    "language": "en",
+    "content": "Leaders make good choices. Good choices keep you and others safe and happy. Bad choices can hurt feelings or cause problems. Before you act, ask yourself: 'Is this kind? Is this safe? Would a leader do this?'",
+    "summary": "Leaders make good choices that keep people safe and happy. Always ask: Is this kind? Is this safe? Would a leader do this?",
+    "learning_objectives": [
+      "Understand the importance of good choices",
+      "Learn a decision-making framework",
+      "Connect good choices to leadership"
+    ],
+    "nigerian_examples": [
+      "Choosing to share snacks during break time shows leadership in Nigerian schools",
+      "Deciding not to litter in the community shows good leadership choices",
+      "Saying no to bullying friends shows brave leadership"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What do good leaders do?",
+        "options": ["Make bad choices", "Make good choices", "Copy others without thinking", "Do whatever they want"],
+        "correct_answer": "Make good choices",
+        "explanation": "Leaders think carefully and choose what is right."
+      },
+      {
+        "question": "Which is a good choice?",
+        "options": ["Taking a toy without asking", "Saying please and thank you", "Pushing in line", "Not sharing"],
+        "correct_answer": "Saying please and thank you",
+        "explanation": "Manners and kindness are signs of good choices."
+      },
+      {
+        "question": "What should you ask yourself before acting?",
+        "options": ["Is this fun only for me?", "Is this kind and safe?", "Can I get away with it?", "What will others think of me?"],
+        "correct_answer": "Is this kind and safe?",
+        "explanation": "Thinking about kindness and safety helps you make good choices."
+      },
+      {
+        "question": "What happens when you make good choices?",
+        "options": ["Others trust and respect you", "You get in trouble", "People avoid you", "You feel guilty"],
+        "correct_answer": "Others trust and respect you",
+        "explanation": "Good choices build trust and show leadership."
+      },
+      {
+        "question": "If you see someone being left out, what is a leader's choice?",
+        "options": ["Ignore them", "Invite them to play", "Laugh at them", "Walk away"],
+        "correct_answer": "Invite them to play",
+        "explanation": "Including others is a kind and brave leader's choice."
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Teamwork",
+    "topic": "What is Teamwork?",
+    "language": "en",
+    "content": "Teamwork means working together to get something done. When you work as a team, everyone helps. A team can be friends, family, or classmates. Together, you can do things that are hard to do alone.",
+    "summary": "Teamwork means working together. Everyone helps. Teams can be friends, family, or classmates. Together you can do hard things.",
+    "learning_objectives": [
+      "Understand what teamwork means",
+      "Identify examples of teamwork",
+      "Learn why teamwork is valuable"
+    ],
+    "nigerian_examples": [
+      "Nigerian football teams win by working together, not just one player",
+      "Families work as a team to prepare for festivals like Eid and Christmas",
+      "Classroom cleaning in Nigerian schools requires teamwork"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is teamwork?",
+        "options": ["Working alone", "Working together", "Watching others work", "Bossing everyone"],
+        "correct_answer": "Working together",
+        "explanation": "Teamwork means everyone helps each other."
+      },
+      {
+        "question": "Which is an example of teamwork?",
+        "options": ["Building a block tower with friends", "Playing video games alone", "Eating by yourself", "Drawing alone"],
+        "correct_answer": "Building a block tower with friends",
+        "explanation": "Building something together requires teamwork."
+      },
+      {
+        "question": "Why is teamwork helpful?",
+        "options": ["It makes things harder", "It makes big jobs easier", "It causes arguments", "It's slower"],
+        "correct_answer": "It makes big jobs easier",
+        "explanation": "Many hands make light work!"
+      },
+      {
+        "question": "Who can be on a team?",
+        "options": ["Only adults", "Only kids", "Anyone (friends, family, classmates)", "Only teachers"],
+        "correct_answer": "Anyone (friends, family, classmates)",
+        "explanation": "Teams can be made of all different people."
+      },
+      {
+        "question": "What can a team do that is hard alone?",
+        "options": ["Clean a whole classroom", "Eat a snack", "Watch TV", "Sleep"],
+        "correct_answer": "Clean a whole classroom",
+        "explanation": "Cleaning a big space is easier and faster with a team."
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Teamwork",
+    "topic": "Sharing in a Team",
+    "language": "en",
+    "content": "Sharing is very important in a team. When you share supplies, ideas, and turns, everyone can do their part. Sharing shows you care about the team's goal more than just yourself. Great teams share everything!",
+    "summary": "Sharing supplies, ideas, and turns helps everyone do their part. Sharing shows you care about the team's goal. Great teams share everything!",
+    "learning_objectives": [
+      "Understand why sharing matters in teams",
+      "Learn what to share in a team",
+      "See how sharing builds team success"
+    ],
+    "nigerian_examples": [
+      "Sharing pencils and erasers during Nigerian exams shows teamwork",
+      "During Nigerian group projects, sharing ideas creates better results",
+      "Taking turns with playground equipment shows good team sharing"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Why is sharing important in a team?",
+        "options": ["So everyone can do their part", "So one person has everything", "So nobody helps", "So people fight"],
+        "correct_answer": "So everyone can do their part",
+        "explanation": "Sharing helps everyone contribute to the team's goal."
+      },
+      {
+        "question": "What should you share in a team?",
+        "options": ["Only toys", "Supplies, ideas, and turns", "Only snacks", "Nothing"],
+        "correct_answer": "Supplies, ideas, and turns",
+        "explanation": "Good teams share materials, thoughts, and opportunities."
+      },
+      {
+        "question": "What does sharing show about you?",
+        "options": ["You are selfish", "You care about the team", "You want to be the boss", "You don't want to work"],
+        "correct_answer": "You care about the team",
+        "explanation": "Sharing proves you value the team's success."
+      },
+      {
+        "question": "If there's only one red crayon in your team, what should you do?",
+        "options": ["Keep it for yourself", "Take turns using it", "Hide it", "Break it"],
+        "correct_answer": "Take turns using it",
+        "explanation": "Taking turns is a fair way to share limited supplies."
+      },
+      {
+        "question": "What happens when teams share well?",
+        "options": ["They argue more", "They work better and finish faster", "Someone gets left out", "Nobody is happy"],
+        "correct_answer": "They work better and finish faster",
+        "explanation": "Good sharing leads to better teamwork and results."
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Teamwork",
+    "topic": "Listening to Teammates",
+    "language": "en",
+    "content": "In a team, everyone's ideas matter. When you listen to your teammates, you learn new ideas and make everyone feel important. Good listeners help teams make better decisions together. Always give your teammates a chance to speak.",
+    "summary": "Everyone's ideas matter in a team. Listening helps you learn new ideas and makes teammates feel important. Good listeners help teams make better decisions.",
+    "learning_objectives": [
+      "Learn why listening to teammates is important",
+      "Practice respectful listening in teams",
+      "Understand how listening improves team decisions"
+    ],
+    "nigerian_examples": [
+      "In Nigerian football teams, players listen to their captain's instructions",
+      "During school debates, team members listen before responding",
+      "Family meetings in Nigeria require everyone to listen to each other"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Why should you listen to teammates?",
+        "options": ["So you can ignore them", "So you learn new ideas", "So you can be the only speaker", "So you don't have to work"],
+        "correct_answer": "So you learn new ideas",
+        "explanation": "Listening helps you hear great ideas from others."
+      },
+      {
+        "question": "How does listening make teammates feel?",
+        "options": ["Ignored and sad", "Important and valued", "Angry", "Bored"],
+        "correct_answer": "Important and valued",
+        "explanation": "When you listen, others feel their ideas matter."
+      },
+      {
+        "question": "What do good listeners do?",
+        "options": ["Interrupt often", "Look away while someone speaks", "Pay attention and think about what's said", "Talk over others"],
+        "correct_answer": "Pay attention and think about what's said",
+        "explanation": "Active listening means focusing on the speaker."
+      },
+      {
+        "question": "What happens when everyone listens in a team?",
+        "options": ["They make better decisions", "Nobody gets along", "Nothing gets done", "Only one person decides"],
+        "correct_answer": "They make better decisions",
+        "explanation": "Teams that listen use everyone's best ideas."
+      },
+      {
+        "question": "If a teammate has an idea you don't like, what should you do?",
+        "options": ["Say it's terrible", "Listen anyway and be respectful", "Walk away", "Laugh at them"],
+        "correct_answer": "Listen anyway and be respectful",
+        "explanation": "Respecting all ideas builds a strong team."
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Teamwork",
+    "topic": "Doing Your Part",
+    "language": "en",
+    "content": "Every person in a team has a job to do. Doing your part means finishing your job so the team can succeed. If one person doesn't do their job, the whole team struggles. Be someone your teammates can count on!",
+    "summary": "Every team member has a job. Doing your part means finishing your job. If one person fails, the whole team struggles. Be reliable!",
+    "learning_objectives": [
+      "Understand what 'doing your part' means",
+      "Learn why each role matters in a team",
+      "Develop reliability as a team member"
+    ],
+    "nigerian_examples": [
+      "In Nigerian relay races, every runner must do their part to win",
+      "School group projects fail if one student doesn't do their assigned work",
+      "Each family member doing chores makes the home run smoothly"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does 'doing your part' mean?",
+        "options": ["Doing nothing", "Doing your assigned job", "Doing someone else's job", "Watching others work"],
+        "correct_answer": "Doing your assigned job",
+        "explanation": "Each team member has a role to complete."
+      },
+      {
+        "question": "What happens if one person doesn't do their part?",
+        "options": ["Nothing changes", "The whole team struggles", "It helps the team", "Someone else does double work"],
+        "correct_answer": "The whole team struggles",
+        "explanation": "Every role matters. Missing one hurts everyone."
+      },
+      {
+        "question": "What does doing your part show your team?",
+        "options": ["They can't trust you", "They can count on you", "You don't care", "You want to quit"],
+        "correct_answer": "They can count on you",
+        "explanation": "Reliable teammates are the best teammates."
+      },
+      {
+        "question": "In a school project team, what is doing your part?",
+        "options": ["Playing games instead", "Researching your assigned topic", "Doing nothing", "Making fun of others' work"],
+        "correct_answer": "Researching your assigned topic",
+        "explanation": "Completing your assigned task is doing your part."
+      },
+      {
+        "question": "If you finish your part early, what can you do?",
+        "options": ["Play while others work", "Ask if anyone needs help", "Leave the team", "Take a nap"],
+        "correct_answer": "Ask if anyone needs help",
+        "explanation": "Helping teammates shows great teamwork."
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Teamwork",
+    "topic": "Celebrating Together",
+    "language": "en",
+    "content": "When your team finishes something hard, celebrate together! Celebrating means saying 'good job' to each other, high-fiving, or feeling proud together. Celebrating makes everyone feel happy and want to work together again.",
+    "summary": "Celebrate team successes together! Say 'good job', give high-fives, and feel proud. Celebrating builds happiness and strengthens teams.",
+    "learning_objectives": [
+      "Learn why celebrating team success matters",
+      "Practice positive recognition of teammates",
+      "Understand how celebration builds team bonds"
+    ],
+    "nigerian_examples": [
+      "Nigerian football teams celebrate goals together as a team",
+      "After school competitions, Nigerian students cheer for their classmates",
+      "Families celebrate children's achievements with praise and encouragement"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What should a team do when they finish something hard?",
+        "options": ["Ignore it", "Celebrate together", "Complain", "Start fighting"],
+        "correct_answer": "Celebrate together",
+        "explanation": "Celebrating builds team spirit and happiness."
+      },
+      {
+        "question": "How can a team celebrate?",
+        "options": ["High-fives and saying 'good job'", "Arguing about who did more", "Ignoring each other", "Leaving without talking"],
+        "correct_answer": "High-fives and saying 'good job'",
+        "explanation": "Simple celebrations show appreciation for everyone's work."
+      },
+      {
+        "question": "Why is celebrating as a team important?",
+        "options": ["It makes everyone feel happy and proud", "It causes jealousy", "It wastes time", "It's not important"],
+        "correct_answer": "It makes everyone feel happy and proud",
+        "explanation": "Celebration recognizes effort and builds motivation."
+      },
+      {
+        "question": "What happens when teams celebrate together?",
+        "options": ["They don't want to work again", "They feel connected and want to work together more", "They become enemies", "They forget what they did"],
+        "correct_answer": "They feel connected and want to work together more",
+        "explanation": "Celebration strengthens team bonds."
+      },
+      {
+        "question": "If your team wins a race, what should you do?",
+        "options": ["Brag that you did the most", "Congratulate everyone on the team", "Ignore your teammates", "Run away"],
+        "correct_answer": "Congratulate everyone on the team",
+        "explanation": "Celebrate the whole team's success together."
+      }
+    ]
+  }
+]

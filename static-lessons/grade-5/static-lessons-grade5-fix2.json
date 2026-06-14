@@ -1,0 +1,104 @@
+[
+  {
+    "grade": 5,
+    "subject": "Communication",
+    "topic": "Executive Communication",
+    "language": "en",
+    "content": "Executive communication is how leaders convey vision, strategy, and decisions to various audiences. Key characteristics: clarity (use simple language, avoid jargon), brevity (be concise, respect time), authenticity (be genuine, admit uncertainty), audience awareness (tailor message to stakeholders), action-orientation (clearly state what needs to be done). Formats include: speeches, memos, emails, town halls, press conferences, annual reports. Nigerian executives like Aliko Dangote, Ngozi Okonjo-Iweala demonstrate effective executive communication. Students can practice: delivering class president speeches, writing project updates, leading team meetings. Effective executives listen more than they talk, give credit to teams, take responsibility for failures, and communicate consistently. Good executive communication builds trust, aligns organizations, and drives results.",
+    "summary": "Executive communication = leaders conveying vision, strategy, decisions. Characteristics: clarity, brevity, authenticity, audience awareness, action-orientation. Listen more, give credit, take blame.",
+    "learning_objectives": [
+      "Craft clear executive messages",
+      "Adapt communication to audiences",
+      "Lead through effective communication"
+    ],
+    "nigerian_examples": [
+      "Aliko Dangote's business communications",
+      "Ngozi Okonjo-Iweala's WTO speeches",
+      "CEO town hall meetings",
+      "Annual report presentations"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a key characteristic of executive communication?",
+        "options": ["Using complex jargon", "Being very wordy", "Clarity and brevity", "Avoiding audiences"],
+        "correct_answer": "Clarity and brevity",
+        "explanation": "Executives respect everyone's time by being clear and concise."
+      },
+      {
+        "question": "What should leaders do when things go wrong?",
+        "options": ["Blame others", "Hide mistakes", "Take responsibility", "Ignore the problem"],
+        "correct_answer": "Take responsibility",
+        "explanation": "Taking blame builds trust and credibility."
+      },
+      {
+        "question": "What does audience awareness mean?",
+        "options": ["Same message for everyone", "Tailoring message to different stakeholders", "Ignoring audience needs", "Speaking only to leaders"],
+        "correct_answer": "Tailoring message to different stakeholders",
+        "explanation": "Different groups need different information and approaches."
+      },
+      {
+        "question": "Which Nigerian leader is known for effective communication?",
+        "options": ["Ngozi Okonjo-Iweala", "Only politicians", "Only business leaders", "Only teachers"],
+        "correct_answer": "Ngozi Okonjo-Iweala",
+        "explanation": "She communicates effectively as WTO Director-General."
+      },
+      {
+        "question": "True or False: Good executives talk more than they listen.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Effective leaders listen to understand before speaking."
+      }
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Communication",
+    "topic": "Persuasion Science",
+    "language": "en",
+    "content": "Persuasion science studies how to influence others ethically and effectively. Dr. Robert Cialdini identified six principles of persuasion: Reciprocity (people feel obligated to return favors - give first, provide value), Scarcity (limited availability increases desire - highlight unique benefits, deadlines), Authority (expertise builds trust - share credentials, cite experts), Consistency (people honor commitments - get small yes first, public commitments), Liking (people say yes to those they like - find similarities, give genuine compliments), Social Proof (people follow peers - show testimonials, popularity). In Nigerian context, these principles appear in advertising (limited time offers), politics (endorsements from respected figures), fundraising (matching gifts). Ethical persuasion benefits both parties - avoid manipulation. Students can apply: convincing parents (explain benefits), leading group decisions (find common ground), influencing positive behavior (peer encouragement).",
+    "summary": "Persuasion science = ethical influence. Six principles: reciprocity, scarcity, authority, consistency, liking, social proof. Apply in advertising, politics, fundraising.",
+    "learning_objectives": [
+      "Understand six persuasion principles",
+      "Apply ethically to influence",
+      "Recognize persuasion attempts"
+    ],
+    "nigerian_examples": [
+      "Limited time offers in Lagos markets",
+      "Political endorsements from respected figures",
+      "Charity matching gift campaigns",
+      "Testimonials for products"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which principle says people return favors?",
+        "options": ["Scarcity", "Reciprocity", "Authority", "Liking"],
+        "correct_answer": "Reciprocity",
+        "explanation": "People feel obligated to give back when they receive."
+      },
+      {
+        "question": "Why do limited-time offers work?",
+        "options": ["Authority", "Scarcity", "Consistency", "Social Proof"],
+        "correct_answer": "Scarcity",
+        "explanation": "Limited availability increases perceived value."
+      },
+      {
+        "question": "How can students use persuasion ethically?",
+        "options": ["Manipulate friends", "Explain benefits and find common ground", "Lie to get what they want", "Pressure people"],
+        "correct_answer": "Explain benefits and find common ground",
+        "explanation": "Ethical persuasion focuses on mutual benefit."
+      },
+      {
+        "question": "What does social proof mean?",
+        "options": ["Proving you are social", "People follow what peers do", "Proof from authority", "Scarcity of social contact"],
+        "correct_answer": "People follow what peers do",
+        "explanation": "People look to others to decide what's correct."
+      },
+      {
+        "question": "True or False: Persuasion is always manipulative.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Ethical persuasion benefits both parties and respects autonomy."
+      }
+    ]
+  }
+]

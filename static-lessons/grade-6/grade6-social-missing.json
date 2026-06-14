@@ -1,0 +1,106 @@
+[
+  {
+    "grade": 6,
+    "subject": "Social & Citizenship Studies",
+    "topic": "International Relations",
+    "language": "en",
+    "content": "International relations is how countries interact through diplomacy, trade, treaties, and international organizations. Nigeria's foreign policy: Africa-centered (support for African unity, decolonization, anti-apartheid, conflict resolution), non-alignment (not taking sides in Cold War), peaceful coexistence (respect for other nations' sovereignty), economic diplomacy (attract investment, promote trade). Bilateral relations: Nigeria-UK (colonial history, economic ties, diaspora), Nigeria-US (trade, security cooperation, cultural exchange), Nigeria-China (infrastructure loans, trade, Belt and Road Initiative), Nigeria-South Africa (rivalry and cooperation, largest economies in Africa). Multilateral organizations: United Nations (UN), African Union (AU), Economic Community of West African States (ECOWAS), Commonwealth, Organisation of Islamic Cooperation (OIC), OPEC. Nigerian diplomats negotiate trade deals, represent Nigerian interests, promote peace. International relations careers: diplomat, international lawyer, NGO worker, trade specialist, UN official.",
+    "summary": "International relations: how countries interact. Nigeria's foreign policy: Africa-centered, non-alignment, economic diplomacy. Key partners: UK, US, China, South Africa. Organizations: UN, AU, ECOWAS.",
+    "learning_objectives": [
+      "Understand foreign policy principles",
+      "Identify major Nigerian bilateral relationships",
+      "Know international organizations"
+    ],
+    "nigerian_examples": [
+      "ECOWAS headquarters in Abuja",
+      "Nigerian peacekeeping missions",
+      "China-funded infrastructure projects",
+      "UK-Nigeria trade partnerships"
+    ],
+    "quiz_questions": [
+      {"question": "What does ECOWAS stand for?", "options": ["Economic Community of West African States", "European Community of West Africa", "East Central West African States", "Economic Council of West Africa"], "correct_answer": "Economic Community of West African States", "explanation": "ECOWAS promotes economic integration and peace in West Africa."},
+      {"question": "What is Nigeria's foreign policy focus?", "options": ["Isolation", "Africa-centered", "Only Europe", "Only Asia"], "correct_answer": "Africa-centered", "explanation": "Nigeria prioritizes African unity and development."},
+      {"question": "Which country is Nigeria's largest bilateral trade partner?", "options": ["China", "India", "UK", "US"], "correct_answer": "China", "explanation": "China is a major trading partner and infrastructure investor."},
+      {"question": "What is non-alignment?", "options": ["Joining all alliances", "Not taking sides in superpower conflicts", "Fighting all countries", "Only trading with Africa"], "correct_answer": "Not taking sides in superpower conflicts", "explanation": "During Cold War, Nigeria avoided US or Soviet alignment."},
+      {"question": "True or False: Diplomats only work in embassies abroad.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Diplomats also work in foreign ministries, international organizations, and consulates."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Development Economics",
+    "language": "en",
+    "content": "Development economics studies how countries improve living standards, reduce poverty, and achieve sustainable growth. Indicators: GDP per capita (average income), life expectancy (health), literacy rate (education), poverty rate (percentage below poverty line), infant mortality, access to clean water, electricity, internet. Nigeria's development challenges: poverty (over 40% below poverty line), inequality (rich-poor gap), unemployment (especially youth), infrastructure deficits (roads, electricity, internet), corruption, education quality, healthcare access. Development strategies: economic diversification (reduce oil dependence), invest in education and healthcare, improve infrastructure (roads, power, digital), fight corruption (EFCC, ICPC), attract foreign investment, promote agriculture, support small businesses. Sustainable Development Goals (SDGs): 17 goals for 2030 including no poverty, zero hunger, quality education, clean water, decent work, reduced inequalities, climate action. Nigeria's development requires government policy, private sector, civil society, and citizen participation.",
+    "summary": "Development economics: improving living standards. Indicators: GDP, life expectancy, literacy, poverty. Nigeria challenges: poverty, inequality, infrastructure. Strategies: diversify, invest in education/health, fight corruption.",
+    "learning_objectives": [
+      "Understand development indicators",
+      "Identify Nigeria's challenges",
+      "Evaluate development strategies"
+    ],
+    "nigerian_examples": [
+      "EFCC anti-corruption efforts",
+      "School feeding program",
+      "Social Investment Programme",
+      "Infrastructure projects (roads, rail, power)"
+    ],
+    "quiz_questions": [
+      {"question": "What percentage of Nigerians live below poverty line?", "options": ["10%", "20%", "Over 40%", "80%"], "correct_answer": "Over 40%", "explanation": "Poverty remains a major challenge despite economic growth."},
+      {"question": "What is GDP per capita?", "options": ["Total economy size", "Average income per person", "Government budget", "Trade balance"], "correct_answer": "Average income per person", "explanation": "GDP per capita divides total economic output by population."},
+      {"question": "What is a development strategy?", "options": ["Ignore problems", "Diversify economy, invest in education, fight corruption", "Only oil", "Only agriculture"], "correct_answer": "Diversify economy, invest in education, fight corruption", "explanation": "Multiple approaches needed for sustainable development."},
+      {"question": "How many Sustainable Development Goals are there?", "options": ["10", "12", "15", "17"], "correct_answer": "17", "explanation": "SDGs are global goals for 2030."},
+      {"question": "True or False: Development economics only focuses on money.", "options": ["True", "False"], "correct_answer": "False", "explanation": "It includes health, education, environment, and quality of life."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Environmental Policy",
+    "language": "en",
+    "content": "Environmental policy addresses pollution, resource depletion, climate change, and conservation. Nigerian environmental issues: oil pollution (Niger Delta spills, gas flaring), deforestation (logging, farming expansion), desertification (northern states losing farmland), erosion (southeastern gully erosion), flooding (coastal and riverine areas), waste management (plastic pollution, improper disposal). Environmental laws: National Environmental Standards and Regulations Enforcement Agency (NESREA) Act, Environmental Impact Assessment (EIA) Act, National Oil Spill Detection and Response Agency (NOSDRA) Act, Climate Change Act (2021). Policies: National Climate Change Policy, National Afforestation Programme, Great Green Wall (combat desertification), ban on single-use plastics (some states), renewable energy incentives. Citizen actions: reduce waste (reuse, recycle), save energy (turn off lights), plant trees, report pollution, support conservation groups (NCF, NESREA). Environmental policy protects resources for future generations.",
+    "summary": "Environmental policy addresses pollution, deforestation, desertification, erosion, flooding. Laws: NESREA Act, EIA Act, Climate Change Act. Citizen actions: reduce waste, plant trees, save energy.",
+    "learning_objectives": [
+      "Identify environmental issues",
+      "Understand environmental laws",
+      "Take environmental action"
+    ],
+    "nigerian_examples": [
+      "Niger Delta oil spills",
+      "Great Green Wall in northern Nigeria",
+      "Gully erosion in southeast",
+      "Lagos plastic bag ban"
+    ],
+    "quiz_questions": [
+      {"question": "Which agency enforces environmental standards in Nigeria?", "options": ["NAFDAC", "NESREA", "NDLEA", "NITDA"], "correct_answer": "NESREA", "explanation": "National Environmental Standards and Regulations Enforcement Agency."},
+      {"question": "What causes desertification in northern Nigeria?", "options": ["Too much rain", "Deforestation and over-farming", "Volcanoes", "Ocean currents"], "correct_answer": "Deforestation and over-farming", "explanation": "Removing trees and overusing land turns fertile soil to desert."},
+      {"question": "What is the Great Green Wall?", "options": ["A building", "Tree planting initiative to combat desertification", "Fence", "Road project"], "correct_answer": "Tree planting initiative to combat desertification", "explanation": "The Great Green Wall aims to stop Sahara desert expansion."},
+      {"question": "What causes oil pollution in Niger Delta?", "options": ["Natural seeps", "Oil spills and gas flaring", "Shipping accidents", "Pipelines only"], "correct_answer": "Oil spills and gas flaring", "explanation": "Oil extraction has caused extensive environmental damage."},
+      {"question": "True or False: Individuals cannot affect environmental policy.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Citizen actions like voting, activism, and reducing waste matter."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Civic Engagement",
+    "language": "en",
+    "content": "Civic engagement is participating in community and political life to improve conditions. Forms: voting (choosing leaders), volunteering (helping without pay), advocacy (speaking for causes), community organizing (working with neighbors), attending public meetings, contacting officials, protesting peacefully, serving on committees, joining civic organizations (Red Cross, Rotary, Lions Club, Junior Chamber International). Nigerian civic engagement examples: #EndSARS protests (youth demanding police reform), voter registration drives, community development associations (CDAs), town hall meetings, parent-teacher associations (PTA), neighborhood watch, environmental clean-ups. Civic engagement benefits: solves problems, builds community, influences policy, develops leadership skills, creates belonging. You can engage: join a school club, volunteer at local charity, attend community meetings, start a petition, write to officials, vote when eligible (18+). Democracy requires active citizens, not just voters.",
+    "summary": "Civic engagement = participating in community and political life. Forms: voting, volunteering, advocacy, organizing, attending meetings, protesting. Benefits: solve problems, influence policy, build skills.",
+    "learning_objectives": [
+      "Understand civic engagement forms",
+      "Identify engagement opportunities",
+      "Participate in community"
+    ],
+    "nigerian_examples": [
+      "#EndSARS youth activism",
+      "Community development associations",
+      "Voter registration campaigns",
+      "School PTA meetings"
+    ],
+    "quiz_questions": [
+      {"question": "What is civic engagement?", "options": ["Only voting", "Participating in community and political life", "Only working", "Only studying"], "correct_answer": "Participating in community and political life", "explanation": "Civic engagement includes voting, volunteering, advocacy, and organizing."},
+      {"question": "What did #EndSARS protesters demand?", "options": ["More police", "Police reform and accountability", "Higher taxes", "Less schools"], "correct_answer": "Police reform and accountability", "explanation": "Youth protested police brutality."},
+      {"question": "At what age can Nigerians vote?", "options": ["16", "18", "21", "25"], "correct_answer": "18", "explanation": "Voting age in Nigeria is 18."},
+      {"question": "What is a Community Development Association (CDA)?", "options": ["Political party", "Neighborhood group improving local area", "Business club", "Sports team"], "correct_answer": "Neighborhood group improving local area", "explanation": "CDAs address local issues like roads, security, and sanitation."},
+      {"question": "True or False: Civic engagement is only for adults.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Students can volunteer, join clubs, advocate for issues."}
+    ]
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Complex Sentences",
+    "language": "en",
+    "content": "Complex sentences contain one independent clause (complete thought) and at least one dependent clause (incomplete thought) connected by subordinating conjunctions (because, although, since, when, if, unless, while). Example independent clause: 'I finished my homework.' Dependent clause: 'Because I studied hard.' Combined: 'I finished my homework because I studied hard.' Other examples: 'Although it was raining, we went to school.' 'She smiled when she saw her friend.' Complex sentences add variety to writing and show relationships between ideas: cause-effect, contrast, time, condition. Nigerian students use complex sentences in essays and reports to express sophisticated thinking. Practice by taking two simple sentences and joining them with subordinating conjunctions.",
+    "summary": "Complex sentences = independent clause + dependent clause. Use subordinating conjunctions (because, although, when, if). Shows relationships between ideas.",
+    "learning_objectives": [
+      "Identify independent and dependent clauses",
+      "Use subordinating conjunctions correctly",
+      "Write complex sentences for essays"
+    ],
+    "nigerian_examples": [
+      "Although Lagos traffic is heavy, many people still live there",
+      "She passed her exams because she studied every day",
+      "When the harmattan comes, the weather becomes dry and dusty"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What makes a sentence complex?",
+        "options": ["Many commas", "One independent clause + one dependent clause", "Three independent clauses", "Short words only"],
+        "correct_answer": "One independent clause + one dependent clause",
+        "explanation": "Complex sentences combine a complete thought with an incomplete thought using subordinating conjunctions."
+      },
+      {
+        "question": "Which is a subordinating conjunction?",
+        "options": ["and", "because", "but", "or"],
+        "correct_answer": "because",
+        "explanation": "Because, although, since, when, if are subordinating conjunctions that connect clauses."
+      },
+      {
+        "question": "Identify the complex sentence:",
+        "options": ["I like rice and beans", "She laughed and cried", "When the bell rang, students rushed out", "He ran fast"],
+        "correct_answer": "When the bell rang, students rushed out",
+        "explanation": "This has a dependent clause 'When the bell rang' and independent clause 'students rushed out'."
+      },
+      {
+        "question": "What relationship does 'because' show?",
+        "options": ["Time", "Contrast", "Cause-effect", "Condition"],
+        "correct_answer": "Cause-effect",
+        "explanation": "'Because' explains why something happened (effect) due to a cause."
+      },
+      {
+        "question": "True or False: All complex sentences are long and wordy.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Complex sentences can be short and clear. 'Although tired, she worked' is a complex sentence."
+      }
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Punctuation Mastery",
+    "language": "en",
+    "content": "Mastering punctuation makes writing clear and professional. Semicolon (;) connects related independent clauses without a conjunction: 'She loves reading; he prefers movies.' Colon (:) introduces a list, explanation, or quote: 'Three things are needed: hard work, dedication, and patience.' Apostrophe shows possession ('Chidi's book') or contractions ('don't' for 'do not'). Quotation marks (\" \") enclose direct speech or titles of short works. Parentheses ( ) add extra information. Hyphen (-) connects compound words (mother-in-law, well-known). Dash (—) shows a strong break in thought. In Nigerian secondary school exams, proper punctuation affects essay scores significantly.",
+    "summary": "Semicolon (;) connects related clauses. Colon (:) introduces lists/explanations. Apostrophe (' ) shows possession or contractions. Punctuation affects essay scores.",
+    "learning_objectives": [
+      "Use semicolons and colons correctly",
+      "Master apostrophe usage",
+      "Apply quotation marks and dashes"
+    ],
+    "nigerian_examples": [
+      "Semicolon: 'The harmattan is dry; the rainy season is wet.'",
+      "Colon: 'My favorite Nigerian foods: jollof rice, egusi soup, and puff-puff.'",
+      "Apostrophe: 'Amina's achievement was celebrated by everyone.'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does a semicolon do?",
+        "options": ["Ends a sentence", "Connects related independent clauses", "Shows possession", "Introduces a list"],
+        "correct_answer": "Connects related independent clauses",
+        "explanation": "Semicolons join two complete sentences that are closely related without using a conjunction."
+      },
+      {
+        "question": "What punctuation introduces a list?",
+        "options": ["Semicolon", "Comma", "Colon", "Period"],
+        "correct_answer": "Colon",
+        "explanation": "Use a colon before a list: 'You need three things: paper, pen, and eraser.'"
+      },
+      {
+        "question": "Which sentence uses apostrophe correctly for possession?",
+        "options": ["The students' books were heavy", "The students books' were heavy", "The student's book's were heavy", "Students books were heavy"],
+        "correct_answer": "The students' books were heavy",
+        "explanation": "For plural nouns ending in s, add apostrophe after the s to show possession."
+      },
+      {
+        "question": "What does a hyphen do?",
+        "options": ["Shows strong emotion", "Connects compound words", "Ends a question", "Shows possession"],
+        "correct_answer": "Connects compound words",
+        "explanation": "Hyphens join words like 'well-known,' 'mother-in-law,' 'part-time.'"
+      },
+      {
+        "question": "True or False: Punctuation mistakes can lower your exam scores.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Examiners deduct marks for punctuation errors because they affect clarity."
+      }
+    ]
+  }
+]

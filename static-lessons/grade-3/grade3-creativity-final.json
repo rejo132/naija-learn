@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Alternative Solutions",
+    "language": "en",
+    "content": "Alternative solutions means finding different ways to solve a problem instead of just one way. Creative thinkers generate multiple options before choosing. Example: If you forgot your lunch, solutions could be: ask a friend to share, buy from school cafeteria, call parents, or eat later. Generate at least 3-5 options. Evaluate each: Is it possible? Is it allowed? Will it work? Choose the best. Looking for alternative solutions helps you become a better problem-solver.",
+    "summary": "Alternative solutions = different ways to solve problems. Generate 3-5 options, evaluate each, choose best.",
+    "learning_objectives": [
+      "Learn to generate multiple solutions",
+      "Evaluate options critically",
+      "Apply creative problem-solving"
+    ],
+    "nigerian_examples": [
+      "Finding different routes when a road is blocked",
+      "Substituting ingredients when cooking",
+      "Creative study methods when power is out"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are alternative solutions?",
+        "options": ["One solution", "Different ways to solve a problem", "No solution", "Only the first idea"],
+        "correct_answer": "Different ways to solve a problem",
+        "explanation": "Creative thinkers generate multiple options before choosing."
+      },
+      {
+        "question": "How many options should you generate?",
+        "options": ["1", "2", "At least 3-5", "As many as possible"],
+        "correct_answer": "At least 3-5",
+        "explanation": "Multiple options give you better choices."
+      },
+      {
+        "question": "What should you do after generating options?",
+        "options": ["Pick the first one", "Evaluate each option", "Ignore them", "Use all at once"],
+        "correct_answer": "Evaluate each option",
+        "explanation": "Consider which option works best for your situation."
+      },
+      {
+        "question": "Why are alternative solutions valuable?",
+        "options": ["They waste time", "They help you solve problems creatively", "They confuse you", "They never work"],
+        "correct_answer": "They help you solve problems creatively",
+        "explanation": "Having options gives you flexibility and better outcomes."
+      },
+      {
+        "question": "True or False: The first solution you think of is always the best.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "The first idea isn't always best. Consider other options."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Breaking Down Problems",
+    "language": "en",
+    "content": "Breaking down problems means dividing a big problem into smaller, manageable parts. This makes difficult tasks less overwhelming. Steps: identify the big problem, list all the parts, prioritize the parts, solve each part one by one, combine solutions. Example: Writing a book report - break into: read book, take notes, outline, write introduction, write body paragraphs, write conclusion, revise.",
+    "summary": "Breaking down problems = divide big problem into smaller parts. Makes hard tasks manageable.",
+    "learning_objectives": [
+      "Learn problem decomposition",
+      "Break complex tasks into steps",
+      "Reduce overwhelm"
+    ],
+    "nigerian_examples": [
+      "Breaking down a long exam into sections",
+      "Planning a school event step by step",
+      "Dividing a big cleaning task among team members"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does breaking down a problem mean?",
+        "options": ["Ignoring the problem", "Dividing a big problem into smaller parts", "Making it bigger", "Giving up"],
+        "correct_answer": "Dividing a big problem into smaller parts",
+        "explanation": "Small steps are easier to handle than one giant task."
+      },
+      {
+        "question": "What is the first step?",
+        "options": ["Start solving randomly", "Identify the big problem", "Skip to the end", "Ask someone else"],
+        "correct_answer": "Identify the big problem",
+        "explanation": "You need to know what you're solving before breaking it down."
+      },
+      {
+        "question": "Why does breaking down problems help?",
+        "options": ["It makes problems harder", "It makes big tasks less overwhelming", "It takes longer", "It doesn't help"],
+        "correct_answer": "It makes big tasks less overwhelming",
+        "explanation": "Small steps feel more achievable than one huge task."
+      },
+      {
+        "question": "What should you do after listing all the parts?",
+        "options": ["Do random parts", "Prioritize and solve each part one by one", "Do nothing", "Only do easy parts"],
+        "correct_answer": "Prioritize and solve each part one by one",
+        "explanation": "Order matters - do important parts first."
+      },
+      {
+        "question": "True or False: Breaking down problems is only for math.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "It works for any complex task - writing, projects, planning."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Designing Prototypes",
+    "language": "en",
+    "content": "A prototype is a simple first version of an idea or product used to test and improve. Designing prototypes means creating something simple to see if your idea works. Use cheap materials: paper, cardboard, clay, or digital tools. Don't worry about perfection - the goal is learning. Test your prototype, find problems, improve it, test again.",
+    "summary": "Prototype = simple first version to test ideas. Use cheap materials. Test, find problems, improve, repeat.",
+    "learning_objectives": [
+      "Understand what prototypes are",
+      "Create simple prototypes",
+      "Test and improve designs"
+    ],
+    "nigerian_examples": [
+      "Designing a new farming tool prototype",
+      "Creating a model of a school project",
+      "Building a simple machine prototype from cardboard"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a prototype?",
+        "options": ["The final product", "A simple first version to test ideas", "An expensive model", "A drawing only"],
+        "correct_answer": "A simple first version to test ideas",
+        "explanation": "Prototypes help you learn what works before building the final version."
+      },
+      {
+        "question": "What materials are good for prototypes?",
+        "options": ["Expensive metals", "Cheap materials like paper and cardboard", "Diamonds", "Gold"],
+        "correct_answer": "Cheap materials like paper and cardboard",
+        "explanation": "Use inexpensive materials so you can experiment freely."
+      },
+      {
+        "question": "What should you do after testing your prototype?",
+        "options": ["Throw it away", "Find problems and improve it", "Ignore feedback", "Call it finished"],
+        "correct_answer": "Find problems and improve it",
+        "explanation": "Prototypes are meant to be improved through testing."
+      },
+      {
+        "question": "Is a prototype supposed to be perfect?",
+        "options": ["Yes", "No, perfection isn't the goal - learning is", "Only if expensive", "Only for adults"],
+        "correct_answer": "No, perfection isn't the goal - learning is",
+        "explanation": "Prototypes help you discover problems early when they're cheap to fix."
+      },
+      {
+        "question": "True or False: Prototypes are only for engineers and adults.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Anyone can build prototypes for school projects or personal ideas."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Innovative Drawing",
+    "language": "en",
+    "content": "Innovative drawing means creating art in new and unusual ways beyond pencil and paper. Try: drawing with your non-dominant hand, drawing without looking at the paper, combining unexpected materials (coffee, tea, flowers), drawing on unusual surfaces (cardboard, fabric, leaves), making 3D drawings, or creating optical illusions.",
+    "summary": "Innovative drawing: new ways beyond pencil/paper. Try non-dominant hand, unusual materials, odd surfaces. Experiment and have fun.",
+    "learning_objectives": [
+      "Explore innovative art techniques",
+      "Experiment with unusual materials",
+      "Develop unique artistic voice"
+    ],
+    "nigerian_examples": [
+      "Drawing with charcoal from burnt wood",
+      "Painting with crushed leaves for natural colors",
+      "Creating art on recycled cardboard"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is innovative drawing?",
+        "options": ["Only using pencil", "Creating art in new and unusual ways", "Copying others", "Drawing the same thing every time"],
+        "correct_answer": "Creating art in new and unusual ways",
+        "explanation": "Innovation means trying something different."
+      },
+      {
+        "question": "What is one way to draw innovatively?",
+        "options": ["Always use the same hand", "Draw with your non-dominant hand", "Never experiment", "Only use white paper"],
+        "correct_answer": "Draw with your non-dominant hand",
+        "explanation": "Using your other hand changes your line quality and control."
+      },
+      {
+        "question": "What unusual materials can you use for art?",
+        "options": ["Only pencils", "Coffee, tea, flowers, charcoal", "Only markers", "Only computers"],
+        "correct_answer": "Coffee, tea, flowers, charcoal",
+        "explanation": "Natural materials create unique textures and colors."
+      },
+      {
+        "question": "What is the goal of innovative drawing?",
+        "options": ["To be perfect", "To experiment and have fun", "To copy exactly", "To use only expensive supplies"],
+        "correct_answer": "To experiment and have fun",
+        "explanation": "Exploration leads to new discoveries and personal style."
+      },
+      {
+        "question": "True or False: There's only one correct way to draw.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "There are infinite ways to create art. Find what works for you."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Creative Writing",
+    "language": "en",
+    "content": "Creative writing is expressing imagination through stories, poems, or plays. Unlike school essays, creative writing has no wrong answers. Use your five senses: describe how things look, sound, smell, feel, taste. Create interesting characters with names, personalities, and quirks. Build suspense. Use dialogue to show what characters are like. Read your work aloud. Keep a journal of ideas.",
+    "summary": "Creative writing: imagination through stories, poems, plays. Use senses, create characters, build suspense, use dialogue. Keep idea journal.",
+    "learning_objectives": [
+      "Learn creative writing techniques",
+      "Develop characters and plots",
+      "Express imagination freely"
+    ],
+    "nigerian_examples": [
+      "Writing a story about a clever tortoise",
+      "Creating a poem about Nigerian seasons",
+      "Writing a play about school life"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is creative writing?",
+        "options": ["Copying from books", "Expressing imagination through stories, poems, or plays", "Only writing facts", "Only school essays"],
+        "correct_answer": "Expressing imagination through stories, poems, or plays",
+        "explanation": "Creative writing values imagination over strict facts."
+      },
+      {
+        "question": "What should you use to make writing vivid?",
+        "options": ["Only sight", "Five senses - sight, sound, smell, feel, taste", "Only hearing", "Only touch"],
+        "correct_answer": "Five senses - sight, sound, smell, feel, taste",
+        "explanation": "Sensory details bring stories to life."
+      },
+      {
+        "question": "What is dialogue?",
+        "options": ["Long descriptions", "Characters talking to each other", "Setting description", "The ending"],
+        "correct_answer": "Characters talking to each other",
+        "explanation": "Dialogue shows personality and advances plot."
+      },
+      {
+        "question": "Does creative writing have strict rules like school essays?",
+        "options": ["Yes", "No, it allows more freedom", "Only for adults", "Only for poems"],
+        "correct_answer": "No, it allows more freedom",
+        "explanation": "Creative writing allows more imagination and flexibility."
+      },
+      {
+        "question": "True or False: You should keep a journal of story ideas.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Writing down ideas helps you remember them for later stories."
+      }
+    ]
+  }
+]

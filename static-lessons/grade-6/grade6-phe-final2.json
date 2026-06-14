@@ -1,0 +1,28 @@
+[
+  {
+    "grade": 6,
+    "subject": "Physical & Health Education",
+    "topic": "Health Policy and Advocacy",
+    "language": "en",
+    "content": "Health policy comprises decisions and actions to achieve health goals. Advocacy means speaking up for health policies that improve community well-being. Nigerian health policies: National Health Act (2014) - provides legal framework, establishes Basic Health Care Provision Fund (BHCPF) for primary care financing, mandates health insurance for all. National Health Insurance Authority (NHIA) Act (2022) - replaces NHIS, mandates health insurance for all Nigerians and legal residents. National Strategic Health Development Plan (NSHDP) - guides health sector priorities. Immunization policy - free routine vaccines for children (BCG, polio, measles, yellow fever, etc.). School health policy - health education, school feeding, deworming, sanitation. Advocacy strategies: educate community, write to officials, use media/social media, join health campaigns, participate in public meetings, vote for health-promoting candidates. Student health advocacy: promote handwashing, vaccination awareness, anti-malaria campaigns (bed nets), nutrition education. Citizen advocacy influences government to prioritize health.",
+    "summary": "Health policy = decisions for health goals. Nigerian policies: National Health Act (2014), NHIA Act (2022), immunization policy, school health policy. Advocacy: educate, write officials, join campaigns, vote.",
+    "learning_objectives": [
+      "Understand health policy basics",
+      "Identify Nigerian health policies",
+      "Practice health advocacy"
+    ],
+    "nigerian_examples": [
+      "National Health Act BHCPF funding",
+      "Free routine immunization",
+      "School feeding program",
+      "Health insurance expansion"
+    ],
+    "quiz_questions": [
+      {"question": "What does the National Health Act establish?", "options": ["Private hospitals only", "Basic Health Care Provision Fund for primary care", "Only teaching hospitals", "Health ministry"], "correct_answer": "Basic Health Care Provision Fund for primary care", "explanation": "BHCPF funds primary healthcare centers."},
+      {"question": "What is health advocacy?", "options": ["Only medical treatment", "Speaking up for health policies that improve well-being", "Only research", "Only hospital administration"], "correct_answer": "Speaking up for health policies that improve well-being", "explanation": "Advocacy influences decision-makers."},
+      {"question": "What vaccines are free in Nigeria?", "options": ["Only COVID-19", "Routine childhood vaccines (BCG, polio, measles, yellow fever)", "Only private vaccines", "None"], "correct_answer": "Routine childhood vaccines (BCG, polio, measles, yellow fever)", "explanation": "Government provides free immunization."},
+      {"question": "How can students do health advocacy?", "options": ["Nothing", "Promote handwashing, vaccination awareness, anti-malaria campaigns", "Only medical students", "Only adults"], "correct_answer": "Promote handwashing, vaccination awareness, anti-malaria campaigns", "explanation": "Students can educate peers and community."},
+      {"question": "True or False: Health insurance is mandatory for all Nigerians under NHIA Act.", "options": ["True", "False"], "correct_answer": "True", "explanation": "NHIA Act 2022 mandates health insurance for all."}
+    ]
+  }
+]

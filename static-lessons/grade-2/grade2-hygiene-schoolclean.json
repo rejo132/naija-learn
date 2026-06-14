@@ -1,0 +1,52 @@
+[
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "School Cleanliness",
+    "language": "en",
+    "content": "School cleanliness means keeping your classroom, playground, and school compound clean. Put rubbish in dustbins, not on the floor. Keep your desk and area tidy. During sanitation time, help sweep the classroom or pick up litter. Do not write or draw on desks or walls. Keep the toilet clean and wash your hands after using it. A clean school helps everyone stay healthy and learn better. When you help keep your school clean, you show pride in your school and respect for your classmates and teachers.",
+    "summary": "School cleanliness: put rubbish in bins, keep desk tidy, help sweep, keep toilet clean. Clean school = healthy students and pride.",
+    "learning_objectives": [
+      "Understand why school cleanliness matters",
+      "Learn how to keep school clean",
+      "Develop pride in school environment"
+    ],
+    "nigerian_examples": [
+      "Participating in weekly sanitation time at school",
+      "Using dustbins placed around the school compound",
+      "Forming cleaning groups to take turns tidying the classroom"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Where should you put rubbish at school?",
+        "options": ["On the floor", "Under the desk", "In a dustbin", "Out the window"],
+        "correct_answer": "In a dustbin",
+        "explanation": "Always put rubbish in dustbins to keep the school clean."
+      },
+      {
+        "question": "What should you do during sanitation time?",
+        "options": ["Go home", "Play outside", "Help sweep or pick up litter", "Sleep"],
+        "correct_answer": "Help sweep or pick up litter",
+        "explanation": "Sanitation time is when everyone works together to clean the school."
+      },
+      {
+        "question": "Why should you keep the school toilet clean?",
+        "options": ["So it smells bad", "So everyone can use it without getting sick", "So no one uses it", "So you don't have to wash hands"],
+        "correct_answer": "So everyone can use it without getting sick",
+        "explanation": "Clean toilets prevent germs from spreading and keep everyone healthy."
+      },
+      {
+        "question": "What shows pride in your school?",
+        "options": ["Drawing on walls", "Littering the playground", "Helping keep it clean", "Breaking desks"],
+        "correct_answer": "Helping keep it clean",
+        "explanation": "Taking care of your school shows you are proud to be a student there."
+      },
+      {
+        "question": "True or False: Only teachers are responsible for school cleanliness.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Everyone — students, teachers, and staff — is responsible for keeping the school clean."
+      }
+    ]
+  }
+]

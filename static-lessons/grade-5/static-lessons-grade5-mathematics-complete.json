@@ -1,0 +1,127 @@
+[
+  {
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Algebra Basics",
+    "language": "en",
+    "content": "Algebra uses letters (variables) to represent unknown numbers. A variable is a symbol (usually x, y, or z) that stands for a number. An expression combines numbers and variables: 3x + 5 means '3 times x plus 5'. An equation shows two expressions are equal: 3x + 5 = 14. To solve for x, isolate it: subtract 5 from both sides (3x = 9), then divide both sides by 3 (x = 3). Check: 3×3+5=9+5=14. Algebra helps solve real problems: If 5 bags of rice cost ₦15,000, how much does one cost? 5x = 15,000, so x = ₦3,000.",
+    "summary": "Algebra uses variables for unknown numbers. Solve equations by isolating the variable: subtract, then divide. Used in pricing and profit calculations.",
+    "learning_objectives": [
+      "Understand variables and expressions",
+      "Solve one-step and two-step equations",
+      "Apply algebra to real-world problems"
+    ],
+    "nigerian_examples": [
+      "If 4 yams cost ₦2,000, find cost of one yam: 4x = 2000, x = ₦500",
+      "A trader sells groundnuts for ₦300 per bag plus ₦50 delivery: cost = 300x + 50",
+      "If you save ₦500 weekly, how many weeks to reach ₦10,000? 500x = 10000, x = 20 weeks"
+    ],
+    "quiz_questions": [
+      {"question": "What is a variable?", "options": ["A number", "A letter representing an unknown number", "An equation", "A solution"], "correct_answer": "A letter representing an unknown number", "explanation": "Variables like x, y, or z stand for numbers we don't know yet."},
+      {"question": "Solve for x: x + 7 = 12", "options": ["3", "4", "5", "6"], "correct_answer": "5", "explanation": "Subtract 7 from both sides: x = 12 - 7 = 5."},
+      {"question": "Solve for x: 3x = 24", "options": ["6", "7", "8", "9"], "correct_answer": "8", "explanation": "Divide both sides by 3: x = 24 ÷ 3 = 8."},
+      {"question": "Solve for x: 2x + 5 = 15", "options": ["3", "4", "5", "6"], "correct_answer": "5", "explanation": "Subtract 5: 2x = 10; divide by 2: x = 5."},
+      {"question": "True or False: Algebra is only used in math class.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Algebra is used in shopping, budgeting, cooking, and many daily calculations."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Simple Equations",
+    "language": "en",
+    "content": "Simple equations have one variable and can be solved in two steps. Golden rule: whatever you do to one side of the equation, do to the other. Steps: simplify both sides (combine like terms), add/subtract to isolate variable term, multiply/divide to solve. Example: 2x - 5 = 9. Add 5 to both sides: 2x = 14. Divide both sides by 2: x = 7. Check: 2(7)-5=14-5=9. Word problems: 'A number divided by 4 plus 3 equals 8' → x/4 + 3 = 8 → x/4 = 5 → x = 20.",
+    "summary": "Simple equations: one variable. Keep equation balanced: same operation on both sides. Isolate variable by adding/subtracting, then multiply/divide.",
+    "learning_objectives": [
+      "Balance equations using inverse operations",
+      "Solve two-step equations",
+      "Translate word problems into equations"
+    ],
+    "nigerian_examples": [
+      "A farmer had 50 mangoes, sold some, had 18 left. How many sold? x + 18 = 50, x = 32",
+      "If you split ₦5,000 among x friends and each gets ₦1,250, how many friends? 1250x = 5000, x = 4",
+      "Temperature conversion: C = (F-32) × 5/9"
+    ],
+    "quiz_questions": [
+      {"question": "Golden rule for solving equations?", "options": ["Keep one side bigger", "Do same operation to both sides", "Only add numbers", "Only subtract"], "correct_answer": "Do same operation to both sides", "explanation": "Equations stay balanced when you do the same thing to both sides."},
+      {"question": "Solve: 3x + 4 = 19", "options": ["3", "4", "5", "6"], "correct_answer": "5", "explanation": "Subtract 4: 3x = 15; divide by 3: x = 5."},
+      {"question": "Solve: x/2 - 3 = 7", "options": ["10", "15", "20", "25"], "correct_answer": "20", "explanation": "Add 3: x/2 = 10; multiply by 2: x = 20."},
+      {"question": "Translate: 'A number times 5 minus 7 equals 18'", "options": ["5x + 7 = 18", "5x - 7 = 18", "5(x-7)=18", "x/5-7=18"], "correct_answer": "5x - 7 = 18", "explanation": "5x means number times 5; minus 7; equals 18."},
+      {"question": "True or False: You should check your answer by substituting back.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Checking ensures your solution is correct and catches errors."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Statistics",
+    "language": "en",
+    "content": "Statistics involves collecting, organizing, and interpreting data. Mean is the average: sum of all values divided by number of values. Median is the middle value when data is arranged in order. Mode is the most frequent value. Range is the difference between highest and lowest values. Example: test scores 70, 80, 80, 90, 100. Mean = (70+80+80+90+100)/5 = 84. Median = 80 (middle). Mode = 80 (appears twice). Range = 100-70 = 30. Statistics helps understand data in news, sports, and business.",
+    "summary": "Statistics: Mean (average), Median (middle), Mode (most frequent), Range (highest-lowest). Used to understand data.",
+    "learning_objectives": [
+      "Calculate mean, median, mode, range",
+      "Interpret data sets",
+      "Apply statistics to real situations"
+    ],
+    "nigerian_examples": [
+      "Average test scores in a Lagos classroom",
+      "Most common age in a football team",
+      "Range of prices for yams at the market"
+    ],
+    "quiz_questions": [
+      {"question": "What is the mean of 5, 10, 15?", "options": ["5", "10", "15", "30"], "correct_answer": "10", "explanation": "(5+10+15)/3 = 30/3 = 10."},
+      {"question": "What is the median of 3, 7, 9, 12, 15?", "options": ["3", "7", "9", "12"], "correct_answer": "9", "explanation": "The middle value when arranged in order is 9."},
+      {"question": "What is the mode of 2, 4, 4, 6, 8?", "options": ["2", "4", "6", "8"], "correct_answer": "4", "explanation": "4 appears twice, more than any other number."},
+      {"question": "What is the range of 10, 20, 30, 40, 50?", "options": ["10", "20", "40", "50"], "correct_answer": "40", "explanation": "Highest(50) - Lowest(10) = 40."},
+      {"question": "True or False: Statistics can help predict trends.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Analyzing data helps identify patterns and make predictions."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Probability",
+    "language": "en",
+    "content": "Probability measures how likely an event is to happen. Formula: Probability = (Number of favorable outcomes) / (Total number of possible outcomes). Probability ranges from 0 (impossible) to 1 (certain). Examples: flipping a coin - probability of heads = 1/2 (50%). Rolling a die - probability of 6 = 1/6 (about 16.7%). Drawing a red card from a deck - probability = 26/52 = 1/2. Probability can be written as fraction, decimal, or percentage. In Nigerian lotteries and betting, probability explains odds of winning.",
+    "summary": "Probability = favorable outcomes / total outcomes. Ranges 0 (impossible) to 1 (certain). Written as fraction, decimal, or percentage.",
+    "learning_objectives": [
+      "Calculate basic probabilities",
+      "Convert probability to percentages",
+      "Understand real-world applications"
+    ],
+    "nigerian_examples": [
+      "Probability of rain during rainy season in Lagos",
+      "Probability of picking a red bead from a jar of mixed colors",
+      "Probability of winning a raffle with 100 tickets"
+    ],
+    "quiz_questions": [
+      {"question": "What is probability of getting heads on a fair coin?", "options": ["1/4", "1/3", "1/2", "1"], "correct_answer": "1/2", "explanation": "One favorable outcome (heads) out of two possible outcomes."},
+      {"question": "Probability ranges from ___ to ___", "options": ["0 to 10", "0 to 1", "1 to 100", "1 to 10"], "correct_answer": "0 to 1", "explanation": "0 means impossible, 1 means certain."},
+      {"question": "What is probability of rolling a 4 on a die?", "options": ["1/2", "1/4", "1/6", "1/8"], "correct_answer": "1/6", "explanation": "One favorable outcome out of 6 possible outcomes."},
+      {"question": "If something is certain to happen, its probability is?", "options": ["0", "0.5", "1", "2"], "correct_answer": "1", "explanation": "Probability 1 means 100% chance of occurring."},
+      {"question": "True or False: Probability can be expressed as a percentage.", "options": ["True", "False"], "correct_answer": "True", "explanation": "50% = 0.5 = 1/2 probability."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Advanced Geometry",
+    "language": "en",
+    "content": "Advanced geometry explores properties of shapes and angles. Types of triangles: equilateral (3 equal sides, 3 equal angles 60°), isosceles (2 equal sides, base angles equal), scalene (no equal sides). Angle relationships: complementary angles (sum 90°), supplementary angles (sum 180°), vertically opposite angles (equal), corresponding angles (equal when lines parallel). Circle parts: radius (center to edge), diameter (2×radius, through center), circumference (distance around), area (π×radius²). Nigerian architects and engineers use geometry for building designs, bridges, and roads.",
+    "summary": "Triangles: equilateral, isosceles, scalene. Angle types: complementary (90°), supplementary (180°). Circle: radius, diameter, circumference, area.",
+    "learning_objectives": [
+      "Classify triangles by sides",
+      "Identify angle relationships",
+      "Calculate circle measurements"
+    ],
+    "nigerian_examples": [
+      "Isosceles triangles in roof designs",
+      "Complementary angles in wall corners",
+      "Circle calculations for roundabout designs"
+    ],
+    "quiz_questions": [
+      {"question": "What type of triangle has 3 equal sides?", "options": ["Isosceles", "Scalene", "Equilateral", "Right"], "correct_answer": "Equilateral", "explanation": "Equilateral triangles have three equal sides and three equal 60° angles."},
+      {"question": "What do complementary angles add up to?", "options": ["90°", "180°", "270°", "360°"], "correct_answer": "90°", "explanation": "Two angles that sum to 90° are complementary."},
+      {"question": "What is the radius of a circle with diameter 10 cm?", "options": ["2 cm", "5 cm", "10 cm", "20 cm"], "correct_answer": "5 cm", "explanation": "Radius = diameter ÷ 2 = 10 ÷ 2 = 5 cm."},
+      {"question": "What do supplementary angles add up to?", "options": ["90°", "180°", "270°", "360°"], "correct_answer": "180°", "explanation": "Two angles that sum to 180° are supplementary."},
+      {"question": "True or False: Vertically opposite angles are always equal.", "options": ["True", "False"], "correct_answer": "True", "explanation": "When two lines cross, opposite angles are equal in measure."}
+    ]
+  }
+]

@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 4,
+    "subject": "Physical & Health Education",
+    "topic": "Track and Field",
+    "language": "en",
+    "content": "Track and field is a sport that includes running, jumping, and throwing events. Track events include sprints (100m, 200m, 400m), middle distance (800m, 1500m), long distance (5000m, 10000m), hurdles (running over barriers), and relays (team races passing a baton). Field events include long jump (run and jump into sand pit), high jump (jump over a bar), triple jump (hop, step, jump), shot put (push a heavy ball), discus (throw a round plate), javelin (throw a spear), and hammer throw. In Nigeria, track and field is popular in schools during inter-house sports. Famous Nigerian athletes include Blessing Okagbare (long jump and sprints), Ese Brume (long jump), and Tobi Amusan (hurdles world champion).",
+    "summary": "Track events: running, hurdles, relays. Field events: long jump, high jump, shot put, discus, javelin. Nigeria has world champions like Tobi Amusan and Ese Brume.",
+    "learning_objectives": [
+      "Identify different track and field events",
+      "Know famous Nigerian athletes",
+      "Understand basic rules of each event"
+    ],
+    "nigerian_examples": [
+      "Tobi Amusan won World Championship gold in 100m hurdles",
+      "Ese Brume won Olympic bronze medal in long jump",
+      "Inter-house sports competitions showcase track and field in Nigerian schools"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which event is a track event?",
+        "options": ["Long jump", "Shot put", "100m hurdles", "Discus"],
+        "correct_answer": "100m hurdles",
+        "explanation": "Hurdles is a running event on the track."
+      },
+      {
+        "question": "Which event is a field event?",
+        "options": ["Relay race", "400m", "Long jump", "800m"],
+        "correct_answer": "Long jump",
+        "explanation": "Long jump is a jumping event on the field."
+      },
+      {
+        "question": "Which Nigerian athlete won World Championship gold in hurdles?",
+        "options": ["Blessing Okagbare", "Ese Brume", "Tobi Amusan", "Chinwe Okoro"],
+        "correct_answer": "Tobi Amusan",
+        "explanation": "Tobi Amusan became world champion in the 100m hurdles in 2022."
+      },
+      {
+        "question": "What is a relay race?",
+        "options": ["One runner running alone", "Team race where runners pass a baton", "Running with hurdles", "Long distance only"],
+        "correct_answer": "Team race where runners pass a baton",
+        "explanation": "Relay teams have 4 runners who pass a baton between each leg."
+      },
+      {
+        "question": "True or False: Only running events are part of track and field.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Track and field includes running, jumping, and throwing events."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Physical & Health Education",
+    "topic": "Ball Games Rules",
+    "language": "en",
+    "content": "Ball games have specific rules that players must follow. Football (soccer): 11 players per team, no hands except goalkeeper, goals scored by kicking ball into net, offside rule prevents cherry-picking, fouls result in free kicks or penalty kicks. Basketball: 5 players per team, score by shooting ball through hoop (2 points inside arc, 3 points outside, 1 point free throw), dribble to move, double-dribble is illegal. Volleyball: 6 players per team, hit ball over net, each team has 3 touches before sending ball back, ball cannot touch ground. Handball: 7 players, throw ball into goal, can hold ball for 3 seconds only. In Nigeria, football is most popular, followed by basketball and volleyball.",
+    "summary": "Football: 11 players, no hands (except GK), goals in net. Basketball: 5 players, shoot hoop, dribble. Volleyball: 6 players, 3 touches, ball over net. Handball: 7 players, throw to goal.",
+    "learning_objectives": [
+      "Learn basic rules of major ball games",
+      "Understand positions and scoring",
+      "Apply rules during gameplay"
+    ],
+    "nigerian_examples": [
+      "Nigerian Professional Football League (NPFL)",
+      "D'Tigers (Nigeria men's basketball team) winning AfroBasket titles",
+      "Volleyball played in Nigerian schools during sports festivals"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How many players are on a football team on the field?",
+        "options": ["5", "7", "11", "15"],
+        "correct_answer": "11",
+        "explanation": "Football teams have 11 players: goalkeeper, defenders, midfielders, forwards."
+      },
+      {
+        "question": "How many points is a basketball free throw worth?",
+        "options": ["1", "2", "3", "4"],
+        "correct_answer": "1",
+        "explanation": "Free throws are worth 1 point each."
+      },
+      {
+        "question": "How many touches does a volleyball team have to return the ball?",
+        "options": ["2", "3", "4", "5"],
+        "correct_answer": "3",
+        "explanation": "Each team can touch the ball up to 3 times before sending it over the net."
+      },
+      {
+        "question": "Which ball game is most popular in Nigeria?",
+        "options": ["Basketball", "Football", "Volleyball", "Handball"],
+        "correct_answer": "Football",
+        "explanation": "Football (soccer) is by far the most watched and played sport in Nigeria."
+      },
+      {
+        "question": "True or False: In basketball, you can run without dribbling the ball.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Players must dribble (bounce) the ball while moving. Walking without dribbling is traveling."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Physical & Health Education",
+    "topic": "Puberty and Body Changes",
+    "language": "en",
+    "content": "Puberty is the time when your body changes from a child to an adult. It usually happens between ages 9-14 for girls and 10-15 for boys. Changes for girls: breasts develop, hips widen, menstruation (period) starts, body hair grows. Changes for boys: voice deepens, shoulders widen, facial hair grows, testes produce sperm. Both: growth spurt (get taller), sweat glands become more active (use deodorant), skin may get oily (acne possible), emotions may feel stronger. These changes are normal and happen to everyone. Talk to a trusted adult (parent, teacher, doctor) if you have questions. Good hygiene during puberty is important: bathe daily, use deodorant, wash face, change sanitary products regularly.",
+    "summary": "Puberty = child to adult body changes. Girls ages 9-14, boys 10-15. Changes include growth, body hair, voice change (boys), menstruation (girls). Normal and happens to everyone.",
+    "learning_objectives": [
+      "Understand what puberty is",
+      "Identify physical changes during puberty",
+      "Learn hygiene practices for puberty"
+    ],
+    "nigerian_examples": [
+      "Schools in Lagos offer puberty education classes",
+      "Mothers teaching daughters about menstruation before it starts",
+      "Fathers explaining voice changes to sons"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is puberty?",
+        "options": ["A disease", "Body changes from child to adult", "A type of food", "A school subject"],
+        "correct_answer": "Body changes from child to adult",
+        "explanation": "Puberty is the natural process of becoming physically mature."
+      },
+      {
+        "question": "At what age does puberty typically begin for girls?",
+        "options": ["5-7", "9-14", "15-18", "19-21"],
+        "correct_answer": "9-14",
+        "explanation": "Girls usually start puberty between ages 9 and 14."
+      },
+      {
+        "question": "Which change happens during puberty for boys?",
+        "options": ["Menstruation", "Voice deepens", "Hips widen", "Breasts develop"],
+        "correct_answer": "Voice deepens",
+        "explanation": "The larynx (voice box) grows, causing the voice to deepen."
+      },
+      {
+        "question": "Which change happens during puberty for girls?",
+        "options": ["Facial hair growth", "Shoulders widen", "Menstruation begins", "Voice deepens"],
+        "correct_answer": "Menstruation begins",
+        "explanation": "Girls start having monthly periods during puberty."
+      },
+      {
+        "question": "True or False: Puberty changes are abnormal and should be hidden.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Puberty is normal and happens to everyone. Talk openly with trusted adults."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Physical & Health Education",
+    "topic": "Reproductive Health",
+    "language": "en",
+    "content": "Reproductive health means taking care of the body parts that allow reproduction (having babies). For girls: ovaries (produce eggs), fallopian tubes, uterus (womb where baby grows), vagina. For boys: testes (produce sperm), penis. Menstruation (period) is when the uterus lining sheds monthly - lasts 3-7 days, uses sanitary pads. Good reproductive hygiene: bathe daily, change underwear daily, change sanitary pads every 4-6 hours, wash hands after using toilet. See a doctor if you have pain or unusual symptoms. In Nigeria, reproductive health education helps prevent teenage pregnancy and sexually transmitted infections. Always respect your body and others' bodies.",
+    "summary": "Reproductive health = caring for body parts for reproduction. Girls: ovaries, uterus, vagina. Boys: testes, penis. Menstruation is monthly shedding of uterus lining.",
+    "learning_objectives": [
+      "Identify basic reproductive organs",
+      "Understand menstruation",
+      "Learn reproductive hygiene practices"
+    ],
+    "nigerian_examples": [
+      "Sanitary pads available in Nigerian pharmacies and markets",
+      "School nurses providing reproductive health information",
+      "Family planning clinics in cities across Nigeria"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is menstruation?",
+        "options": ["A disease", "Monthly shedding of uterus lining", "A type of medicine", "A food"],
+        "correct_answer": "Monthly shedding of uterus lining",
+        "explanation": "Menstruation (period) is when the uterus lining leaves the body as blood."
+      },
+      {
+        "question": "How often should sanitary pads be changed?",
+        "options": ["Every hour", "Every 4-6 hours", "Once a day", "Once a week"],
+        "correct_answer": "Every 4-6 hours",
+        "explanation": "Changing pads regularly prevents infection and odor."
+      },
+      {
+        "question": "What do the testes produce?",
+        "options": ["Eggs", "Sperm", "Blood", "Urine"],
+        "correct_answer": "Sperm",
+        "explanation": "Testes are male organs that produce sperm cells for reproduction."
+      },
+      {
+        "question": "Where does a baby grow during pregnancy?",
+        "options": ["Ovary", "Fallopian tube", "Uterus", "Vagina"],
+        "correct_answer": "Uterus",
+        "explanation": "The uterus (womb) expands to hold a growing baby."
+      },
+      {
+        "question": "True or False: Reproductive health education is important for preventing teenage pregnancy.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Understanding reproduction helps young people make informed, responsible decisions."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Physical & Health Education",
+    "topic": "Drug Awareness",
+    "language": "en",
+    "content": "Drugs are substances that change how your body works. Some drugs are medicines prescribed by doctors to help you heal. Others are illegal and dangerous. Illegal drugs include marijuana, cocaine, heroin, and non-prescribed codeine. Legal but dangerous when misused: alcohol, tobacco (cigarettes), and energy drinks. Effects of drug abuse: addiction (cannot stop using), health problems (lung disease, liver damage, brain damage), poor school performance, financial problems, family conflict, and legal trouble. Say NO to peer pressure: 'No, thank you,' 'I'm not interested,' or walk away. In Nigeria, NDLEA (National Drug Law Enforcement Agency) fights drug abuse. Choose healthy alternatives: sports, music, art, and positive friendships.",
+    "summary": "Drugs change how body works. Medicines help when prescribed. Illegal drugs: marijuana, cocaine, heroin. Drug abuse causes addiction, health problems, legal trouble. Say NO to peer pressure.",
+    "learning_objectives": [
+      "Distinguish between helpful and harmful drugs",
+      "Understand consequences of drug abuse",
+      "Learn refusal skills"
+    ],
+    "nigerian_examples": [
+      "NDLEA arrests drug traffickers at Lagos airport",
+      "Anti-drug campaigns in Nigerian schools",
+      "Rehabilitation centers helping addicts recover"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which is an illegal drug?",
+        "options": ["Paracetamol", "Marijuana", "Vitamin C", "Malaria medicine"],
+        "correct_answer": "Marijuana",
+        "explanation": "Marijuana is an illegal drug in Nigeria."
+      },
+      {
+        "question": "What is addiction?",
+        "options": ["Being able to stop anytime", "Not being able to stop using a drug", "Never using drugs", "Taking medicine as prescribed"],
+        "correct_answer": "Not being able to stop using a drug",
+        "explanation": "Addiction is a brain disease that makes it extremely hard to quit."
+      },
+      {
+        "question": "How can you say NO to peer pressure?",
+        "options": ["'No, thank you'", "'I'm not interested'", "Walk away", "All of these"],
+        "correct_answer": "All of these",
+        "explanation": "These are all effective ways to refuse drugs without conflict."
+      },
+      {
+        "question": "What does NDLEA stand for?",
+        "options": ["Nigerian Drug Life Enforcement Agency", "National Drug Law Enforcement Agency", "Nigeria Development Legal Agency", "New Drug Legal Association"],
+        "correct_answer": "National Drug Law Enforcement Agency",
+        "explanation": "NDLEA is Nigeria's agency fighting illegal drug trafficking and abuse."
+      },
+      {
+        "question": "True or False: Alcohol is safe in any amount for children.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Alcohol can damage children's developing brains and bodies. It is illegal for minors."
+      }
+    ]
+  }
+]

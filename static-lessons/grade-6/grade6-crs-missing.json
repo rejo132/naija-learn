@@ -1,0 +1,102 @@
+[
+  {
+    "grade": 6,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of Moses",
+    "language": "en",
+    "content": "Moses is a prophet in Judaism, Christianity, and Islam. He was born in Egypt when Hebrews were enslaved. His mother placed him in a basket on the Nile River; Pharaoh's daughter found and raised him. As an adult, Moses killed an Egyptian who was beating a Hebrew and fled to Midian. God spoke to him through a burning bush, commanding him to free the Hebrews. With his brother Aaron, Moses confronted Pharaoh. After ten plagues (water to blood, frogs, lice, flies, livestock death, boils, hail, locusts, darkness, death of firstborn), Pharaoh released the Hebrews. Moses led them through the Red Sea, parted by God. He received the Ten Commandments on Mount Sinai. Moses is called 'Kalim Allah' (one who spoke to God) in Islam.",
+    "summary": "Moses: prophet in Judaism, Christianity, Islam. Led Hebrews from Egypt, parted Red Sea, received Ten Commandments on Mount Sinai.",
+    "learning_objectives": [
+      "Understand Moses' story",
+      "Identify the ten plagues",
+      "Explain significance of Ten Commandments"
+    ],
+    "nigerian_examples": [
+      "Moses stories taught in Sunday school",
+      "Islamic studies teaching about Prophet Musa",
+      "Passover celebrations in Nigerian Christian homes"
+    ],
+    "quiz_questions": [
+      {"question": "Who found Moses in the basket?", "options": ["His mother", "Pharaoh's daughter", "His sister", "Pharaoh"], "correct_answer": "Pharaoh's daughter", "explanation": "Pharaoh's daughter found and raised Moses."},
+      {"question": "How did God speak to Moses at Mount Sinai?", "options": ["Through a dream", "Through a burning bush", "Through an angel", "Through thunder"], "correct_answer": "Through a burning bush", "explanation": "God appeared in a bush that burned but was not consumed."},
+      {"question": "What sea did Moses part?", "options": ["Red Sea", "Mediterranean Sea", "Dead Sea", "Nile River"], "correct_answer": "Red Sea", "explanation": "God parted the Red Sea for the Hebrews to escape."},
+      {"question": "How many plagues did God send to Egypt?", "options": ["5", "7", "10", "12"], "correct_answer": "10", "explanation": "Ten plagues persuaded Pharaoh to release the Hebrews."},
+      {"question": "True or False: Moses received the Ten Commandments on Mount Sinai.", "options": ["True", "False"], "correct_answer": "True", "explanation": "The Ten Commandments were given to Moses on Mount Sinai."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of David",
+    "language": "en",
+    "content": "David is a prophet and king in Judaism, Christianity, and Islam (known as Dawud). As a shepherd boy, he defeated the giant Goliath with a sling and stone when no soldier would fight. He became a great warrior and later King of Israel. David united the tribes of Israel, conquered Jerusalem, and brought the Ark of the Covenant there. He composed many Psalms (Zabur in Islam), which are songs and prayers. In Islam, Dawud is known for his beautiful voice and ability to melt iron. He is also known for his repentance after a mistake. David's son Solomon (Sulaiman) became the next king, known for wisdom.",
+    "summary": "David (Dawud): shepherd who defeated Goliath, became King of Israel. Composed Psalms, known for beautiful voice and repentance.",
+    "learning_objectives": [
+      "Understand David's story",
+      "Learn about Goliath battle",
+      "Appreciate David's legacy"
+    ],
+    "nigerian_examples": [
+      "David and Goliath story in Sunday school",
+      "Psalms sung in Nigerian churches",
+      "Dawud mentioned in Islamic classes"
+    ],
+    "quiz_questions": [
+      {"question": "What weapon did David use to defeat Goliath?", "options": ["Sword", "Spear", "Sling and stone", "Bow and arrow"], "correct_answer": "Sling and stone", "explanation": "David used a sling and a single stone to defeat the giant."},
+      {"question": "Who was David's son known for wisdom?", "options": ["Solomon", "Saul", "Abraham", "Moses"], "correct_answer": "Solomon", "explanation": "Solomon (Sulaiman) was known for great wisdom."},
+      {"question": "What book of the Bible did David write?", "options": ["Proverbs", "Psalms", "Genesis", "Exodus"], "correct_answer": "Psalms", "explanation": "David composed many of the Psalms."},
+      {"question": "What title is David given in Islam?", "options": ["Kalim Allah", "Khalil Allah", "Dawud", "Rasul"], "correct_answer": "Dawud", "explanation": "David is known as Dawud in Islam."},
+      {"question": "True or False: David was known for his beautiful voice.", "options": ["True", "False"], "correct_answer": "True", "explanation": "David's recitation of Psalms was known for its beauty."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of Solomon",
+    "language": "en",
+    "content": "Solomon (Sulaiman in Islam) was the son of King David and became king of Israel. God granted him extraordinary wisdom, knowledge, and the ability to understand animals. He could speak with birds, ants, and other creatures. He ruled justly and built the First Temple in Jerusalem. According to tradition, God also gave him control over the wind and spirits (jinn). In Islam, Sulaiman is known for his army of jinn, birds, and humans. He taught that true power comes from God. His most famous judgment: two women claimed to be mother of the same baby. Solomon proposed cutting the baby in half. The real mother said 'Give her the baby, don't hurt him.' Solomon gave the baby to her, knowing a real mother would sacrifice her claim to save her child.",
+    "summary": "Solomon (Sulaiman): son of David, known for wisdom, ability to understand animals, control wind and jinn. Built First Temple, famous for judgment of two mothers.",
+    "learning_objectives": [
+      "Understand Solomon's wisdom",
+      "Learn his famous judgment",
+      "Appreciate his legacy"
+    ],
+    "nigerian_examples": [
+      "Solomon's wisdom taught in religious classes",
+      "Building of churches/mosques reminiscent of Temple",
+      "Stories of Sulaiman in Islamic schools"
+    ],
+    "quiz_questions": [
+      {"question": "What was Solomon known for?", "options": ["Strength", "Wisdom", "Wealth", "Speed"], "correct_answer": "Wisdom", "explanation": "Solomon was famous for his exceptional wisdom."},
+      {"question": "What did Solomon build in Jerusalem?", "options": ["A palace", "A wall", "The First Temple", "A garden"], "correct_answer": "The First Temple", "explanation": "Solomon built the First Temple in Jerusalem."},
+      {"question": "How did Solomon identify the real mother?", "options": ["Asked witnesses", "Proposed cutting baby", "Used magic", "Both women lied"], "correct_answer": "Proposed cutting baby", "explanation": "The real mother revealed herself by giving up her claim to save the baby."},
+      {"question": "What animals could Solomon speak to?", "options": ["All animals", "Birds and ants", "Only dogs", "Only camels"], "correct_answer": "Birds and ants", "explanation": "Tradition says Solomon could understand birds and ants."},
+      {"question": "True or False: Solomon had control over wind and jinn.", "options": ["True", "False"], "correct_answer": "True", "explanation": "God granted Solomon power over wind and spirits (jinn)."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of Joseph",
+    "language": "en",
+    "content": "Joseph (Yusuf in Islam) was the beloved son of Jacob (Yaqub). His brothers were jealous and threw him into a well. Rescued by traders, he was sold into slavery in Egypt. He rose to become a trusted servant of Potiphar, an Egyptian official. After being falsely accused of wrongdoing, he was imprisoned. In prison, he interpreted dreams accurately. Eventually, Pharaoh had a dream that no one could interpret. Joseph interpreted it as seven years of plenty followed by seven years of famine. Pharaoh appointed Joseph as Egypt's treasurer. During the famine, his brothers came to Egypt for food. Joseph forgave them, and the family was reunited. Joseph's story teaches forgiveness, patience, and trust in God despite hardship.",
+    "summary": "Joseph (Yusuf): sold by jealous brothers, became Egyptian treasurer. Interpreted Pharaoh's dream of famine. Forgave brothers. Teaches forgiveness and patience.",
+    "learning_objectives": [
+      "Understand Joseph's story",
+      "Learn about forgiveness",
+      "Appreciate patience in hardship"
+    ],
+    "nigerian_examples": [
+      "Joseph's story taught in Sunday school",
+      "Islamic studies teaching Prophet Yusuf",
+      "Lessons of forgiveness in Nigerian families"
+    ],
+    "quiz_questions": [
+      {"question": "What did Joseph's brothers do to him?", "options": ["Sold him", "Killed him", "Set him free", "Made him king"], "correct_answer": "Sold him", "explanation": "Jealous brothers sold Joseph into slavery."},
+      {"question": "What did Joseph interpret for Pharaoh?", "options": ["A war", "A famine", "A flood", "An earthquake"], "correct_answer": "A famine", "explanation": "Joseph predicted seven years of plenty followed by seven years of famine."},
+      {"question": "What position did Joseph achieve in Egypt?", "options": ["General", "Treasurer", "Priest", "Carpenter"], "correct_answer": "Treasurer", "explanation": "Pharaoh made Joseph responsible for Egypt's food stores."},
+      {"question": "Did Joseph forgive his brothers?", "options": ["Yes", "No", "Only after punishment", "Only some"], "correct_answer": "Yes", "explanation": "Joseph forgave his brothers and reunited the family."},
+      {"question": "True or False: Joseph's story teaches revenge.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Joseph's story teaches forgiveness and patience."}
+    ]
+  }
+]

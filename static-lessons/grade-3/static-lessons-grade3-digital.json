@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "File Management",
+    "language": "en",
+    "content": "File management is organizing and storing files on a computer. A file is a document, picture, video, or program. Files are stored in folders (like digital file cabinets). You can create folders, name them, and move files into them. Good file management means: giving files clear names like 'Math_Homework.pdf' not 'Document1', creating folders for each subject, deleting files you don't need, and backing up important files to a USB drive or cloud. On most computers, you can right-click to create new folders, copy, paste, delete, or rename files. Organized files are easy to find when you need them.",
+    "summary": "File management = organizing files on computer. Files stored in folders. Name files clearly (Math_Homework.pdf). Create folders by subject. Delete unused files. Back up important files.",
+    "learning_objectives": [
+      "Understand what files and folders are",
+      "Learn to organize files clearly",
+      "Practice basic file operations"
+    ],
+    "nigerian_examples": [
+      "Creating folders for each school subject",
+      "Naming files with dates and topics",
+      "Saving homework to a USB drive"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a file on a computer?",
+        "options": ["A physical paper", "A document, picture, video, or program", "A desk drawer", "A printer"],
+        "correct_answer": "A document, picture, video, or program",
+        "explanation": "Files are digital items stored on a computer."
+      },
+      {
+        "question": "What are folders used for?",
+        "options": ["To delete files", "To organize and store related files", "To print files", "To name files"],
+        "correct_answer": "To organize and store related files",
+        "explanation": "Folders help group similar files together for easy access."
+      },
+      {
+        "question": "Which is a good file name?",
+        "options": ["Document1", "ddd", "Math_Homework_March.pdf", "file"],
+        "correct_answer": "Math_Homework_March.pdf",
+        "explanation": "Clear names help you find files later without opening them."
+      },
+      {
+        "question": "What does 'backing up' mean?",
+        "options": ["Deleting files", "Making copies of important files to a safe place", "Renaming files", "Moving files"],
+        "correct_answer": "Making copies of important files to a safe place",
+        "explanation": "Backups protect your files if your computer breaks or is lost."
+      },
+      {
+        "question": "True or False: You should keep every file you ever create, even if you don't need it.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Delete unneeded files to keep your computer organized and save space."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "Word Processing Basics",
+    "language": "en",
+    "content": "Word processing is using a computer to write and edit text. Popular word processors include Microsoft Word, Google Docs, and LibreOffice Writer. Basic features: typing text, changing font (style of letters), font size, bold (darkens text), italic (slants text), underline, changing text color, aligning text (left, center, right), bullet points, and numbering. You can also insert pictures, tables, and shapes. Save your work often (Ctrl+S). Use spell check to find errors. Word processing makes writing easier because you can edit mistakes without starting over. You can print your document when finished.",
+    "summary": "Word processing = writing/editing on computer. Features: font, size, bold, italic, underline, color, alignment, bullets, numbering. Save often (Ctrl+S). Use spell check.",
+    "learning_objectives": [
+      "Learn basic word processing features",
+      "Practice formatting text",
+      "Save and retrieve documents"
+    ],
+    "nigerian_examples": [
+      "Typing school essays in Microsoft Word",
+      "Using Google Docs for group projects",
+      "Formatting homework with headings and bullet points"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is word processing?",
+        "options": ["Playing games", "Using a computer to write and edit text", "Browsing the internet", "Sending emails"],
+        "correct_answer": "Using a computer to write and edit text",
+        "explanation": "Word processing programs help you create and edit documents."
+      },
+      {
+        "question": "What does bold do?",
+        "options": ["Slants text", "Makes text darker and thicker", "Underlines text", "Changes text color"],
+        "correct_answer": "Makes text darker and thicker",
+        "explanation": "Bold makes text stand out and emphasizes important words."
+      },
+      {
+        "question": "What does italic do?",
+        "options": ["Darkens text", "Underlines text", "Slants text", "Changes color"],
+        "correct_answer": "Slants text",
+        "explanation": "Italic slants text to the right, often used for titles or emphasis."
+      },
+      {
+        "question": "What is the keyboard shortcut to save a document?",
+        "options": ["Ctrl+P", "Ctrl+S", "Ctrl+C", "Ctrl+V"],
+        "correct_answer": "Ctrl+S",
+        "explanation": "Ctrl+S (or Command+S on Mac) saves your work quickly."
+      },
+      {
+        "question": "True or False: Word processing does not allow you to fix mistakes easily.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Word processing makes editing easy - you can delete, insert, and change text without retyping everything."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "Safe Internet Use",
+    "language": "en",
+    "content": "The internet is a powerful tool, but you must stay safe. Never share personal information online: full name, address, phone number, school name, or passwords. Only talk to people you know in real life. If a stranger messages you, tell a parent immediately. Don't click on pop-ups or ads - they might be scams. Use strong passwords (mix of letters, numbers, symbols). Remember that not everything online is true - learn to check facts with trusted adults. Before downloading anything, ask a parent. If something online makes you uncomfortable, tell an adult right away. Stay safe, think before you click!",
+    "summary": "Safe internet use: never share personal info, only talk to people you know, don't click pop-ups, use strong passwords, fact-check with adults, tell adults if uncomfortable.",
+    "learning_objectives": [
+      "Identify internet safety rules",
+      "Recognize online dangers",
+      "Know when to ask for help"
+    ],
+    "nigerian_examples": [
+      "Not sharing your home address in Lagos or Abuja online",
+      "Asking parents before using educational websites",
+      "Reporting suspicious messages to adults"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What personal information should you never share online?",
+        "options": ["Your favorite color", "Your home address", "Your favorite food", "Your pet's name"],
+        "correct_answer": "Your home address",
+        "explanation": "Your address can identify where you live. Never share it online."
+      },
+      {
+        "question": "What should you do if a stranger messages you online?",
+        "options": ["Reply to them", "Keep it secret", "Tell a parent immediately", "Meet them"],
+        "correct_answer": "Tell a parent immediately",
+        "explanation": "Always tell a trusted adult if someone you don't know contacts you online."
+      },
+      {
+        "question": "What is a strong password?",
+        "options": ["12345", "password", "Blue2Fish!", "yourname"],
+        "correct_answer": "Blue2Fish!",
+        "explanation": "Strong passwords mix uppercase, lowercase, numbers, and symbols."
+      },
+      {
+        "question": "What should you do if something online makes you uncomfortable?",
+        "options": ["Ignore it", "Keep looking", "Tell an adult", "Share with friends"],
+        "correct_answer": "Tell an adult",
+        "explanation": "Trusted adults can help you handle uncomfortable online situations."
+      },
+      {
+        "question": "True or False: Everything you read on the internet is true.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Not everything online is accurate. Always check facts with trusted adults or reliable sources."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "Digital Communication",
+    "language": "en",
+    "content": "Digital communication is sending messages electronically. Types: email (like electronic letters), instant messaging (quick chats), video calls (see and talk to people far away), and social media (sharing posts). When communicating online, always be polite and respectful - this is called 'netiquette' (internet etiquette). Don't type in ALL CAPS (it looks like yelling). Think before you post - once something is online, it can be hard to remove. Never share other people's photos or secrets without permission. For email, use a clear subject line and a polite greeting like 'Dear...' and closing like 'Sincerely.' Digital communication helps you stay connected, but use it responsibly.",
+    "summary": "Digital communication: email, instant messaging, video calls. Netiquette = polite online behavior. Don't use ALL CAPS. Think before posting. Get permission before sharing others' photos.",
+    "learning_objectives": [
+      "Identify types of digital communication",
+      "Learn netiquette rules",
+      "Practice responsible online communication"
+    ],
+    "nigerian_examples": [
+      "Emailing teachers about homework",
+      "Video calls with relatives in other countries",
+      "Using messaging apps respectfully with friends"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is netiquette?",
+        "options": ["A type of computer", "Polite online behavior", "Internet speed", "A social media app"],
+        "correct_answer": "Polite online behavior",
+        "explanation": "Netiquette is short for 'internet etiquette' - being respectful online."
+      },
+      {
+        "question": "Why should you avoid typing in ALL CAPS?",
+        "options": ["It's hard to read", "It looks like yelling", "It's not allowed", "It takes too long"],
+        "correct_answer": "It looks like yelling",
+        "explanation": "ALL CAPS ONLINE OFTEN MEANS SHOUTING. Use normal case for regular messages."
+      },
+      {
+        "question": "What should you include in an email?",
+        "options": ["Only emojis", "A clear subject line and polite greeting", "Only your name", "Only the message"],
+        "correct_answer": "A clear subject line and polite greeting",
+        "explanation": "Good emails have a subject line, greeting, clear message, and closing."
+      },
+      {
+        "question": "Should you share someone else's photo without permission?",
+        "options": ["Yes, if it's a good photo", "No, always ask first", "Only if they are famous", "Only if you like them"],
+        "correct_answer": "No, always ask first",
+        "explanation": "Always get permission before sharing photos of others online."
+      },
+      {
+        "question": "True or False: Once something is posted online, it can be removed completely forever.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "People can save, screenshot, or share your posts. Think carefully before posting anything."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "Introduction to Coding",
+    "language": "en",
+    "content": "Coding is giving instructions to a computer using a programming language. Computers follow these instructions exactly. Scratch is a beginner-friendly coding platform where you drag and drop blocks like puzzle pieces to create animations, games, and stories. Concepts include: sequence (steps in order), loops (repeat actions), conditionals (if-then decisions), and variables (store information). Example: 'When green flag clicked, move 10 steps, play sound, say Hello.' Coding teaches problem-solving, logic, and creativity. Many Nigerian schools now teach coding. You can start with Scratch online or apps like Lightbot and Kodable. Anyone can learn to code!",
+    "summary": "Coding = giving instructions to computers. Scratch: drag-and-drop block coding. Concepts: sequence, loops, conditionals, variables. Coding teaches problem-solving and logic.",
+    "learning_objectives": [
+      "Understand what coding is",
+      "Learn basic coding concepts",
+      "Explore Scratch platform"
+    ],
+    "nigerian_examples": [
+      "Nigerian students learning Scratch in computer labs",
+      "Coding clubs in Lagos and Abuja schools",
+      "Creating simple animations about Nigerian culture"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is coding?",
+        "options": ["Playing video games", "Giving instructions to computers", "Typing documents", "Browsing websites"],
+        "correct_answer": "Giving instructions to computers",
+        "explanation": "Coding is writing commands that tell computers what to do."
+      },
+      {
+        "question": "What is Scratch?",
+        "options": ["A video game", "A beginner coding platform with drag-and-drop blocks", "A type of computer", "A keyboard"],
+        "correct_answer": "A beginner coding platform with drag-and-drop blocks",
+        "explanation": "Scratch lets beginners code by connecting blocks like puzzle pieces."
+      },
+      {
+        "question": "What is a loop in coding?",
+        "options": ["A single instruction", "Repeating actions multiple times", "A decision", "Storing information"],
+        "correct_answer": "Repeating actions multiple times",
+        "explanation": "Loops let you repeat code without writing it many times."
+      },
+      {
+        "question": "What is a conditional in coding?",
+        "options": ["Repeating actions", "An if-then decision", "A sequence", "A variable"],
+        "correct_answer": "An if-then decision",
+        "explanation": "Conditionals like 'if...then' let computers make decisions."
+      },
+      {
+        "question": "True or False: Coding teaches problem-solving and logic skills.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Coding develops critical thinking and helps you break down problems."
+      }
+    ]
+  }
+]

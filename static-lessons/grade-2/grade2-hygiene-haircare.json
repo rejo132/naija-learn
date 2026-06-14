@@ -1,0 +1,52 @@
+[
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Hair Care",
+    "language": "en",
+    "content": "Hair care means keeping your hair clean, healthy, and neat. Wash your hair with shampoo at least once a week. Rinse out all the shampoo. After washing, dry your hair with a clean towel. Brush or comb your hair every day to remove tangles. Different hair types need different care. Ask your parents how to care for your hair type. If you have braids or cornrows, keep them neat. Do not share combs or brushes with others because germs can spread. Healthy hair looks shiny and feels soft.",
+    "summary": "Hair care: wash weekly with shampoo, rinse well, dry, brush daily. Don't share combs. Healthy hair is shiny and soft.",
+    "learning_objectives": [
+      "Learn proper hair washing and brushing",
+      "Understand why not to share hair tools",
+      "Appreciate different hair types"
+    ],
+    "nigerian_examples": [
+      "Washing hair on weekends before school week starts",
+      "Getting braids or cornrows done neatly",
+      "Using a personal comb or brush labeled with your name"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How often should you wash your hair?",
+        "options": ["Once a year", "Once a month", "At least once a week", "Every day"],
+        "correct_answer": "At least once a week",
+        "explanation": "Washing your hair weekly removes dirt, oil, and germs."
+      },
+      {
+        "question": "What product do you use to wash hair?",
+        "options": ["Soap", "Shampoo", "Toothpaste", "Lotion"],
+        "correct_answer": "Shampoo",
+        "explanation": "Shampoo is specially made to clean hair without damaging it."
+      },
+      {
+        "question": "Why should you not share combs or brushes?",
+        "options": ["They are expensive", "Germs can spread from person to person", "They break easily", "They don't work after sharing"],
+        "correct_answer": "Germs can spread from person to person",
+        "explanation": "Lice, dandruff, and other germs can spread through shared combs and brushes."
+      },
+      {
+        "question": "What should you do after washing your hair?",
+        "options": ["Leave it wet", "Put on a hat immediately", "Dry with a clean towel", "Go outside in the rain"],
+        "correct_answer": "Dry with a clean towel",
+        "explanation": "Drying your hair with a clean towel prevents dripping and keeps you comfortable."
+      },
+      {
+        "question": "True or False: All hair types need exactly the same care.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Different hair types (straight, curly, kinky) need different care routines."
+      }
+    ]
+  }
+]

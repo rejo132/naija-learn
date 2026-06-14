@@ -1,0 +1,28 @@
+[
+  {
+    "grade": 6,
+    "subject": "Hygiene Development",
+    "topic": "Food Safety and Hygiene",
+    "language": "en",
+    "content": "Food safety and hygiene prevent foodborne illness. Five keys: Keep clean (wash hands before handling food, clean utensils, surfaces), Separate raw and cooked food (different cutting boards for meat and vegetables, store separately), Cook thoroughly (meat, poultry, eggs fully cooked, no pink, use food thermometer), Keep food at safe temperatures (refrigerate leftovers within 2 hours, keep hot food hot above 60°C/140°F), Use safe water and raw materials (wash fruits/vegetables, check expiry dates, avoid damaged packaging). Common foodborne illnesses: salmonella (undercooked eggs, chicken), E. coli (contaminated vegetables, undercooked beef), listeria (unpasteurized dairy), norovirus (contaminated food handled by infected person). Nigerian food safety: NAFDAC regulates processed foods, street food vendor hygiene campaigns, food handlers' certificates. Home practices: wash produce, separate raw meat, refrigerate leftovers, check dates, avoid bulging cans. When in doubt, throw it out.",
+    "summary": "Food safety: clean, separate, cook, chill, safe water/raw materials. Prevent foodborne illness. NAFDAC regulates. When in doubt, throw it out.",
+    "learning_objectives": [
+      "Apply five food safety keys",
+      "Identify foodborne illness risks",
+      "Practice safe food handling"
+    ],
+    "nigerian_examples": [
+      "NAFDAC product approvals",
+      "Street food vendor hygiene training",
+      "Refrigerating leftover jollof rice",
+      "Checking expiration dates at markets"
+    ],
+    "quiz_questions": [
+      {"question": "How soon should leftovers be refrigerated?", "options": ["Within 2 hours", "Next day", "After 5 hours", "Never"], "correct_answer": "Within 2 hours", "explanation": "Bacteria grow rapidly at room temperature after 2 hours."},
+      {"question": "What should you do with bulging canned food?", "options": ["Eat it", "Throw it away", "Give to someone", "Cook it longer"], "correct_answer": "Throw it away", "explanation": "Bulging cans may indicate dangerous bacterial growth."},
+      {"question": "Which agency regulates processed foods in Nigeria?", "options": ["NCDC", "NAFDAC", "NDLEA", "NESREA"], "correct_answer": "NAFDAC", "explanation": "National Agency for Food and Drug Administration and Control."},
+      {"question": "Should you use the same cutting board for raw meat and vegetables?", "options": ["Yes", "No, separate to avoid cross-contamination", "Only if washed with water", "Doesn't matter"], "correct_answer": "No, separate to avoid cross-contamination", "explanation": "Raw meat juices can contaminate vegetables with harmful bacteria."},
+      {"question": "True or False: You should wash fruits before eating them.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Washing removes dirt, pesticides, and some bacteria."}
+    ]
+  }
+]

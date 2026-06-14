@@ -1,0 +1,106 @@
+[
+  {
+    "grade": 6,
+    "subject": "Hygiene Development",
+    "topic": "Infection Control",
+    "language": "en",
+    "content": "Infection control prevents spread of infectious diseases in healthcare and community settings. Key practices: hand hygiene (wash with soap/water or alcohol-based sanitizer), personal protective equipment (gloves, masks, gowns), respiratory etiquette (cover coughs/sneezes with elbow), cleaning and disinfection (surfaces, equipment), waste disposal (sharps containers, biohazard bags), isolation (separating infected people). Chain of infection: infectious agent → reservoir (where germ lives) → portal of exit → transmission → portal of entry → susceptible host. Breaking any link prevents infection. Nigerian hospitals follow infection control protocols. At home: wash hands, clean surfaces, handle food safely, stay home when sick. Infection control protects vulnerable people: elderly, pregnant, newborns, sick patients.",
+    "summary": "Infection control prevents disease spread. Practices: hand hygiene, PPE, respiratory etiquette, cleaning, waste disposal, isolation. Break chain of infection.",
+    "learning_objectives": [
+      "Understand infection control principles",
+      "Practice prevention methods",
+      "Protect vulnerable people"
+    ],
+    "nigerian_examples": [
+      "Handwashing stations at hospital entrances",
+      "COVID-19 mask mandates",
+      "Isolation wards for infectious diseases",
+      "Proper waste disposal in clinics"
+    ],
+    "quiz_questions": [
+      {"question": "What breaks the chain of infection?", "options": ["Ignoring hygiene", "Handwashing and cleaning surfaces", "Sharing utensils", "Coughing openly"], "correct_answer": "Handwashing and cleaning surfaces", "explanation": "Removing germs prevents transmission."},
+      {"question": "What is personal protective equipment (PPE)?", "options": ["Uniform only", "Gloves, masks, gowns to protect from germs", "Shoes", "Books"], "correct_answer": "Gloves, masks, gowns to protect from germs", "explanation": "PPE creates barrier between person and germs."},
+      {"question": "How should you cover a cough?", "options": ["With your hand", "With your elbow or tissue", "Don't cover", "Cough on others"], "correct_answer": "With your elbow or tissue", "explanation": "Elbow prevents spreading germs to hands and surfaces."},
+      {"question": "Who is most vulnerable to infections?", "options": ["Healthy adults", "Elderly, newborns, sick patients", "Athletes", "Teenagers"], "correct_answer": "Elderly, newborns, sick patients", "explanation": "Their immune systems may be weaker."},
+      {"question": "True or False: Cleaning surfaces removes germs.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Cleaning with soap and water or disinfectant reduces germs on surfaces."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Hygiene Development",
+    "topic": "Water, Sanitation and Hygiene (WASH)",
+    "language": "en",
+    "content": "WASH stands for Water, Sanitation, and Hygiene. Safe water: treated, boiled, or filtered water prevents waterborne diseases (cholera, typhoid). Sanitation: proper disposal of human waste through toilets, latrines, sewage systems prevents contamination of water sources. Hygiene: handwashing with soap, bathing, cleaning clothes prevents disease transmission. WASH is a global priority because millions lack access to clean water and toilets. In Nigeria, many communities lack piped water. Solutions: boreholes, wells (covered), water treatment (chlorine tablets, boiling), VIP latrines (ventilated improved pit), handwashing stations. Open defecation spreads disease. Nigeria is working to end open defecation by 2030. Everyone can practice WASH: boil water, use toilet, wash hands, keep environment clean.",
+    "summary": "WASH = Water, Sanitation, Hygiene. Safe water prevents waterborne diseases. Proper toilets prevent contamination. Handwashing prevents transmission. Nigeria working to end open defecation.",
+    "learning_objectives": [
+      "Understand WASH components",
+      "Practice safe water and sanitation",
+      "Support WASH initiatives"
+    ],
+    "nigerian_examples": [
+      "Boreholes providing clean water in villages",
+      "VIP latrines in schools",
+      "National handwashing campaigns",
+      "Clean Nigeria: Use the Toilet campaign"
+    ],
+    "quiz_questions": [
+      {"question": "What does WASH stand for?", "options": ["Water, Air, Soil, Health", "Water, Sanitation, Hygiene", "Waste, Sanitation, Health", "Water, Agriculture, Sanitation, Health"], "correct_answer": "Water, Sanitation, Hygiene", "explanation": "WASH addresses three interconnected areas."},
+      {"question": "How can you make water safe to drink?", "options": ["Add sugar", "Boil it", "Add salt", "Shake it"], "correct_answer": "Boil it", "explanation": "Boiling kills harmful germs."},
+      {"question": "What is open defecation?", "options": ["Using toilet", "Going to bathroom outside without proper toilet", "Washing hands", "Cleaning toilet"], "correct_answer": "Going to bathroom outside without proper toilet", "explanation": "Open defecation spreads diseases."},
+      {"question": "What is a VIP latrine?", "options": ["Toilet for important people", "Ventilated Improved Pit latrine", "Very Important Person latrine", "Village pit latrine"], "correct_answer": "Ventilated Improved Pit latrine", "explanation": "VIP latrines reduce odor and flies."},
+      {"question": "True or False: Handwashing prevents disease transmission.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Handwashing removes germs picked up from surfaces."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Hygiene Development",
+    "topic": "Vector Control",
+    "language": "en",
+    "content": "Vector control manages organisms that transmit diseases. Vectors: mosquitoes (malaria, dengue, yellow fever), rats (Lassa fever, leptospirosis), flies (typhoid, cholera), ticks (Lyme disease). Malaria prevention: sleep under insecticide-treated bed nets (ITNs), use window screens, remove standing water (where mosquitoes breed), use insect repellent, indoor residual spraying (IRS). Rat control: store food in closed containers, seal holes in walls, use traps, keep environment clean. Fly control: cover food, dispose of rubbish properly, use screens. Nigeria has high malaria burden; vector control saves lives. The National Malaria Elimination Program distributes bed nets. Everyone can help: empty containers, clear bushes, fix holes, dispose trash properly. Vector control prevents outbreaks.",
+    "summary": "Vector control manages disease-transmitting organisms: mosquitoes (malaria), rats (Lassa), flies (typhoid). Malaria prevention: bed nets, remove standing water, screens, repellent.",
+    "learning_objectives": [
+      "Identify disease vectors",
+      "Apply vector control methods",
+      "Prevent malaria and other diseases"
+    ],
+    "nigerian_examples": [
+      "Free bed net distribution campaigns",
+      "Environmental sanitation to remove breeding sites",
+      "Lassa fever awareness in rural areas",
+      "Indoor spraying for mosquitoes"
+    ],
+    "quiz_questions": [
+      {"question": "What vector transmits malaria?", "options": ["Flies", "Mosquitoes", "Rats", "Ticks"], "correct_answer": "Mosquitoes", "explanation": "Female Anopheles mosquitoes transmit malaria parasites."},
+      {"question": "How can you prevent mosquito breeding?", "options": ["Add more water", "Remove standing water (empty containers, cover tanks)", "Feed mosquitoes", "Ignore puddles"], "correct_answer": "Remove standing water (empty containers, cover tanks)", "explanation": "Mosquitoes lay eggs in stagnant water."},
+      {"question": "What is an insecticide-treated net (ITN)?", "options": ["Regular net", "Bed net treated with insecticide to kill mosquitoes", "Fishing net", "Sports net"], "correct_answer": "Bed net treated with insecticide to kill mosquitoes", "explanation": "ITNs protect while sleeping and kill mosquitoes."},
+      {"question": "What vector spreads Lassa fever?", "options": ["Mosquitoes", "Rats", "Flies", "Ticks"], "correct_answer": "Rats", "explanation": "Multimammate rats carry Lassa virus."},
+      {"question": "True or False: Flies can spread typhoid and cholera.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Flies contaminate food with germs from waste."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Hygiene Development",
+    "topic": "Public Health Emergency Preparedness",
+    "language": "en",
+    "content": "Public health emergency preparedness means planning for disease outbreaks, natural disasters, or other health crises. Steps: risk assessment (identify potential emergencies: epidemics, floods, chemical spills), planning (create response protocols, assign roles), stockpiling (medical supplies, PPE, medicines), training (health workers, volunteers), communication (public alerts, health education), coordination (government, NGOs, international partners). Nigerian experiences: COVID-19 pandemic, Ebola preparedness, Lassa fever outbreaks, cholera during floods, monkeypox. Community preparedness: have emergency contacts, prepare supply kit (water, food, mask, medicines, flashlight), know evacuation routes, follow official instructions, avoid misinformation. The Nigeria Centre for Disease Control (NCDC) coordinates responses. Preparedness saves lives.",
+    "summary": "Public health emergency preparedness: plan for outbreaks, disasters. Steps: risk assessment, planning, stockpiling, training, communication, coordination. NCDC coordinates Nigerian response.",
+    "bjectives": [
+      "Understand emergency preparedness",
+      "Prepare emergency supply kit",
+      "Follow official instructions during crises"
+    ],
+    "nigerian_examples": [
+      "COVID-19 response by NCDC",
+      "Cholera preparedness during flooding",
+      "Lassa fever outbreak management",
+      "Ebola preparedness despite no outbreak"
+    ],
+    "quiz_questions": [
+      {"question": "What is public health emergency preparedness?", "options": ["Waiting for emergencies", "Planning for outbreaks and disasters before they happen", "Only treating after", "Ignoring risks"], "correct_answer": "Planning for outbreaks and disasters before they happen", "explanation": "Preparation reduces impact of emergencies."},
+      {"question": "What should be in an emergency supply kit?", "options": ["Toys only", "Water, food, mask, medicines, flashlight", "Furniture", "Books"], "correct_answer": "Water, food, mask, medicines, flashlight", "explanation": "Essential supplies for staying safe during emergencies."},
+      {"question": "Which agency coordinates disease outbreaks in Nigeria?", "options": ["NAFDAC", "NCDC", "NDLEA", "NPA"], "correct_answer": "NCDC", "explanation": "Nigeria Centre for Disease Control leads outbreak response."},
+      {"question": "What should you do during a disease outbreak?", "options": ["Ignore instructions", "Follow official guidance from health authorities", "Spread rumors", "Panic"], "correct_answer": "Follow official guidance from health authorities", "explanation": "Trusted sources provide accurate information."},
+      {"question": "True or False: Preparedness only matters for governments, not individuals.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Individuals and families should also prepare for emergencies."}
+    ]
+  }
+]

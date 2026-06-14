@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 4,
+    "subject": "English Studies",
+    "topic": "Word Stress and Intonation",
+    "language": "en",
+    "content": "Word stress means emphasizing one syllable in a word more than others. When you stress a syllable, you say it louder, longer, and with higher pitch. For example, 'PHO-to-graph' stresses the first syllable, while 'pho-TO-graph-y' stresses the second. Intonation is the rise and fall of your voice when speaking. Rising intonation (voice goes up) usually asks questions: 'Are you coming?' Falling intonation (voice goes down) makes statements: 'I am coming.' In Nigerian English, stress patterns can be different from British or American English. Mastering stress and intonation makes your speech clearer and more natural to listeners.",
+    "summary": "Word stress emphasizes one syllable. Intonation is voice pitch changes (rising for questions, falling for statements). Practice makes speech clearer.",
+    "learning_objectives": [
+      "Identify stressed syllables in multi-syllable words",
+      "Use rising and falling intonation correctly",
+      "Apply stress patterns in Nigerian English contexts"
+    ],
+    "nigerian_examples": [
+      "Stress changes meaning: 'RE-cord' (noun) vs 're-CORD' (verb)",
+      "Rising intonation: 'You are going to Lagos?'",
+      "Falling intonation: 'I live in Abuja'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is word stress?",
+        "options": ["Saying all syllables equally", "Emphasizing one syllable more than others", "Whispering the word", "Shouting the whole word"],
+        "correct_answer": "Emphasizing one syllable more than others",
+        "explanation": "Stressed syllables are louder, longer, and higher in pitch."
+      },
+      {
+        "question": "Which intonation pattern usually asks a yes/no question?",
+        "options": ["Falling", "Rising", "Flat", "Stressed"],
+        "correct_answer": "Rising",
+        "explanation": "Your voice goes up at the end of yes/no questions."
+      },
+      {
+        "question": "What happens to your voice during falling intonation?",
+        "options": ["It goes up", "It goes down", "It stays the same", "It disappears"],
+        "correct_answer": "It goes down",
+        "explanation": "Falling intonation ends with lower pitch, used for statements."
+      },
+      {
+        "question": "In the word 'photography', which syllable is stressed?",
+        "options": ["PHO", "TO", "GRA", "PHY"],
+        "correct_answer": "TO",
+        "explanation": "pho-TO-graph-y stresses the second syllable."
+      },
+      {
+        "question": "True or False: Stress patterns are exactly the same in all English dialects.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Nigerian English, British English, and American English may stress words differently."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "English Studies",
+    "topic": "Eight Parts of Speech",
+    "language": "en",
+    "content": "The eight parts of speech are categories of words based on how they work in sentences. Noun: names a person, place, animal, or thing (Chidi, Lagos, dog, table). Pronoun: replaces a noun (I, you, he, she, it, we, they). Verb: shows action or state of being (run, eat, sleep, is, are). Adjective: describes a noun (big, red, happy, hot). Adverb: describes a verb, adjective, or another adverb (quickly, very, well, loudly). Preposition: shows relationship (in, on, under, between, at). Conjunction: connects words or groups (and, but, or, because). Interjection: expresses emotion (Wow! Oh! Ouch! Ah!). Understanding parts of speech helps you write better sentences and understand grammar.",
+    "summary": "Eight parts of speech: noun, pronoun, verb, adjective, adverb, preposition, conjunction, interjection. Each has a different job in sentences.",
+    "learning_objectives": [
+      "Identify all eight parts of speech",
+      "Understand the function of each part",
+      "Use parts of speech correctly in writing"
+    ],
+    "nigerian_examples": [
+      "Noun: 'Amina', Verb: 'teaches', Adjective: 'good', Adverb: 'patiently'",
+      "Preposition: 'in' as in 'in Kano State'",
+      "Interjection: 'Ehn!' to show surprise"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which part of speech names a person, place, or thing?",
+        "options": ["Verb", "Adjective", "Noun", "Adverb"],
+        "correct_answer": "Noun",
+        "explanation": "Nouns name people (doctor), places (market), or things (book)."
+      },
+      {
+        "question": "Which part of speech replaces a noun to avoid repetition?",
+        "options": ["Adjective", "Pronoun", "Preposition", "Conjunction"],
+        "correct_answer": "Pronoun",
+        "explanation": "Pronouns like 'he', 'she', 'it', 'they' stand in for nouns."
+      },
+      {
+        "question": "Which part of speech shows action?",
+        "options": ["Noun", "Adverb", "Verb", "Preposition"],
+        "correct_answer": "Verb",
+        "explanation": "Verbs show actions like run, eat, sleep, or states like is, are, was."
+      },
+      {
+        "question": "Which word in 'The tall boy ran quickly' is an adverb?",
+        "options": ["The", "tall", "boy", "quickly"],
+        "correct_answer": "quickly",
+        "explanation": "Quickly describes how the boy ran - it's an adverb."
+      },
+      {
+        "question": "True or False: 'Wow!' is an example of an interjection.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Interjections like 'Wow!', 'Oh!', 'Oops!' express sudden emotion."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "English Studies",
+    "topic": "Subject Verb Agreement",
+    "language": "en",
+    "content": "Subject-verb agreement means the subject and verb in a sentence must match in number (singular or plural). Singular subjects take singular verbs: 'He runs' (not 'He run'). Plural subjects take plural verbs: 'They run' (not 'They runs'). Be careful with tricky subjects. Words like 'each', 'everyone', 'someone' are singular: 'Everyone is here' (not 'are'). Subjects joined by 'and' are usually plural: 'Chidi and Amina are coming' (not 'is'). Subjects joined by 'or' or 'nor' take the verb of the closer subject: 'Neither the teacher nor the students are ready.' Mastering agreement makes your writing grammatically correct and professional.",
+    "summary": "Subjects and verbs must match in number. Singular subject = singular verb. Plural subject = plural verb. Watch for tricky subjects like 'everyone' (singular).",
+    "learning_objectives": [
+      "Match singular subjects with singular verbs",
+      "Match plural subjects with plural verbs",
+      "Handle tricky subject-verb agreement cases"
+    ],
+    "nigerian_examples": [
+      "Correct: 'She goes to school.' Incorrect: 'She go to school.'",
+      "Correct: 'My parents are home.' Incorrect: 'My parents is home.'",
+      "Correct: 'Everyone in Lagos loves jollof rice.'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which sentence has correct subject-verb agreement?",
+        "options": ["He run fast", "He runs fast", "He running fast", "He are fast"],
+        "correct_answer": "He runs fast",
+        "explanation": "Singular subject 'He' needs singular verb 'runs'."
+      },
+      {
+        "question": "Which sentence has correct subject-verb agreement?",
+        "options": ["They plays football", "They play football", "They playing football", "They is playing"],
+        "correct_answer": "They play football",
+        "explanation": "Plural subject 'They' needs plural verb 'play'."
+      },
+      {
+        "question": "What is the correct verb for 'Everyone'?",
+        "options": ["are", "is", "were", "have"],
+        "correct_answer": "is",
+        "explanation": "'Everyone' is singular, so use singular verb 'is'."
+      },
+      {
+        "question": "What is the correct verb for subjects joined by 'and'?",
+        "options": ["Singular verb", "Plural verb", "No verb", "Past tense"],
+        "correct_answer": "Plural verb",
+        "explanation": "When two subjects are joined by 'and', use a plural verb."
+      },
+      {
+        "question": "True or False: 'The dog and the cat is playing' is correct.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Two subjects (dog and cat) need plural verb 'are': 'The dog and the cat are playing.'"
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "English Studies",
+    "topic": "Narrative Essay Writing",
+    "language": "en",
+    "content": "A narrative essay tells a story based on personal experience or imagination. It has a clear beginning, middle, and end. The beginning introduces characters, setting, and the situation. The middle describes the main events, including a problem or conflict. The end resolves the problem and shares what you learned. Use first-person point of view ('I'), sensory details (how things looked, sounded, felt), and dialogue (characters talking). A good narrative essay has a theme or lesson. Examples: 'My First Day at a New School,' 'The Day I Helped a Neighbor.' Narrative essays entertain while sharing meaningful experiences.",
+    "summary": "Narrative essay tells a story with beginning, middle, end. Use first-person, sensory details, dialogue. Share a lesson or theme. Entertain and inform.",
+    "learning_objectives": [
+      "Structure a narrative essay correctly",
+      "Use sensory details and dialogue",
+      "Express a theme or lesson learned"
+    ],
+    "nigerian_examples": [
+      "Essay topic: 'My Experience During Lagos Traffic'",
+      "Essay topic: 'The Best Children's Day Celebration'",
+      "Essay topic: 'Learning to Make Jollof Rice with Grandma'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What point of view is typically used in narrative essays?",
+        "options": ["Second person (you)", "First person (I)", "Third person (he/she/it)", "No point of view"],
+        "correct_answer": "First person (I)",
+        "explanation": "Narrative essays usually use 'I' because they tell personal stories."
+      },
+      {
+        "question": "What are the three main parts of a narrative essay?",
+        "options": ["Introduction, body, conclusion", "Beginning, middle, end", "First, second, third", "Topic, details, summary"],
+        "correct_answer": "Beginning, middle, end",
+        "explanation": "Narratives have a clear beginning, middle, and end sequence."
+      },
+      {
+        "question": "What should the middle of a narrative essay include?",
+        "options": ["Only descriptions", "Main events and a problem", "Only the ending", "Only characters"],
+        "correct_answer": "Main events and a problem",
+        "explanation": "The middle develops the story through events and challenges."
+      },
+      {
+        "question": "What does the end of a narrative essay typically share?",
+        "options": ["A new character", "A lesson or what was learned", "Another problem", "The beginning again"],
+        "correct_answer": "A lesson or what was learned",
+        "explanation": "Good narratives show how the experience changed the writer."
+      },
+      {
+        "question": "True or False: Narrative essays must be completely true, never imagined.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Narrative essays can be based on real experiences OR imagination."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "English Studies",
+    "topic": "Formal and Informal Letters",
+    "language": "en",
+    "content": "Formal letters are written for official purposes: applying for a job, complaining to a company, or writing to a government office. Informal letters (friendly letters) are written to family and friends. Formal letters have: your address, date, recipient's address, formal greeting ('Dear Sir/Madam'), clear subject line, formal language (no slang), polite closing ('Yours faithfully' or 'Yours sincerely'), and signature. Informal letters have: your address, date, casual greeting ('Dear Uncle'), friendly language, personal news, casual closing ('Your friend' or 'Love'), and signature. Knowing both types helps you communicate appropriately in different situations.",
+    "summary": "Formal letters: official purposes, formal language, polite closings. Informal letters: to family/friends, casual language, friendly closings. Different situations need different styles.",
+    "learning_objectives": [
+      "Distinguish between formal and informal letters",
+      "Format both types correctly",
+      "Use appropriate language for each"
+    ],
+    "nigerian_examples": [
+      "Formal: Job application letter to a Lagos company",
+      "Formal: Complaint letter to NEPA/PHCN about electricity",
+      "Informal: Letter to a cousin in Port Harcourt"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Who is a formal letter typically written to?",
+        "options": ["A friend", "A family member", "A company or government office", "A classmate"],
+        "correct_answer": "A company or government office",
+        "explanation": "Formal letters are for official, professional communication."
+      },
+      {
+        "question": "Which greeting is appropriate for a formal letter?",
+        "options": ["Hey there", "Dear Sir/Madam", "What's up", "Hello friend"],
+        "correct_answer": "Dear Sir/Madam",
+        "explanation": "Use formal greetings like 'Dear Sir/Madam' when you don't know the person's name."
+      },
+      {
+        "question": "Which closing is appropriate for an informal letter to a friend?",
+        "options": ["Yours faithfully", "Your friend", "Respectfully", "Yours sincerely"],
+        "correct_answer": "Your friend",
+        "explanation": "Friendly closings like 'Your friend' or 'Love' are for informal letters."
+      },
+      {
+        "question": "Should you use slang in a formal letter?",
+        "options": ["Yes, it's fine", "No, use formal language", "Only in the greeting", "Only in the closing"],
+        "correct_answer": "No, use formal language",
+        "explanation": "Formal letters require professional, respectful language without slang."
+      },
+      {
+        "question": "True or False: Both formal and informal letters need a date.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Both types of letters include the date when they were written."
+      }
+    ]
+  }
+]

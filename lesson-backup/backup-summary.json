@@ -1,0 +1,127 @@
+{
+  "exportDate": "2026-06-14T19:18:05.754Z",
+  "totalLessons": 455,
+  "totalQuizQuestions": 0,
+  "byGrade": {
+    "1": {
+      "count": 75,
+      "subjects": {
+        "Basic Digital Literacy": 5,
+        "Basic Science & Technology": 5,
+        "Communication": 5,
+        "Confidence Building": 5,
+        "Creativity": 5,
+        "CRS / Islamic Studies": 5,
+        "Cultural & Creative Arts": 5,
+        "English Studies": 5,
+        "Hygiene Development": 5,
+        "Leadership": 5,
+        "Mathematics": 5,
+        "Nigerian History": 5,
+        "Physical & Health Education": 5,
+        "Social & Citizenship Studies": 5,
+        "Teamwork": 5
+      }
+    },
+    "2": {
+      "count": 75,
+      "subjects": {
+        "Basic Digital Literacy": 5,
+        "Basic Science & Technology": 5,
+        "Communication": 5,
+        "Confidence Building": 5,
+        "Creativity": 5,
+        "CRS / Islamic Studies": 5,
+        "Cultural & Creative Arts": 5,
+        "English Studies": 5,
+        "Hygiene Development": 5,
+        "Leadership": 5,
+        "Mathematics": 5,
+        "Nigerian History": 5,
+        "Physical & Health Education": 5,
+        "Social & Citizenship Studies": 5,
+        "Teamwork": 5
+      }
+    },
+    "3": {
+      "count": 75,
+      "subjects": {
+        "Basic Digital Literacy": 5,
+        "Basic Science & Technology": 5,
+        "Communication": 5,
+        "Confidence Building": 5,
+        "Creativity": 5,
+        "CRS / Islamic Studies": 5,
+        "Cultural & Creative Arts": 5,
+        "English Studies": 5,
+        "Hygiene Development": 5,
+        "Leadership": 5,
+        "Mathematics": 5,
+        "Nigerian History": 5,
+        "Physical & Health Education": 5,
+        "Social & Citizenship Studies": 5,
+        "Teamwork": 5
+      }
+    },
+    "4": {
+      "count": 80,
+      "subjects": {
+        "Basic Digital Literacy": 10,
+        "Basic Science & Technology": 5,
+        "Communication": 5,
+        "Confidence Building": 5,
+        "Creativity": 5,
+        "CRS / Islamic Studies": 5,
+        "Cultural & Creative Arts": 5,
+        "English Studies": 5,
+        "Hygiene Development": 5,
+        "Leadership": 5,
+        "Mathematics": 5,
+        "Nigerian History": 5,
+        "Physical & Health Education": 5,
+        "Social & Citizenship Studies": 5,
+        "Teamwork": 5
+      }
+    },
+    "5": {
+      "count": 75,
+      "subjects": {
+        "Basic Digital Literacy": 5,
+        "Basic Science & Technology": 5,
+        "Communication": 5,
+        "Confidence Building": 5,
+        "Creativity": 5,
+        "CRS / Islamic Studies": 5,
+        "Cultural & Creative Arts": 5,
+        "English Studies": 5,
+        "Hygiene Development": 5,
+        "Leadership": 5,
+        "Mathematics": 5,
+        "Nigerian History": 5,
+        "Physical & Health Education": 5,
+        "Social & Citizenship Studies": 5,
+        "Teamwork": 5
+      }
+    },
+    "6": {
+      "count": 75,
+      "subjects": {
+        "Basic Digital Literacy": 5,
+        "Basic Science & Technology": 5,
+        "Communication": 5,
+        "Confidence Building": 5,
+        "Creativity": 5,
+        "CRS / Islamic Studies": 5,
+        "Cultural & Creative Arts": 5,
+        "English Studies": 5,
+        "Hygiene Development": 5,
+        "Leadership": 5,
+        "Mathematics": 5,
+        "Nigerian History": 5,
+        "Physical & Health Education": 5,
+        "Social & Citizenship Studies": 5,
+        "Teamwork": 5
+      }
+    }
+  }
+}

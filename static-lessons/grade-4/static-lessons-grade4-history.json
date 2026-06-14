@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 4,
+    "subject": "Nigerian History",
+    "topic": "Oyo Empire",
+    "language": "en",
+    "content": "The Oyo Empire was one of the largest and most powerful empires in West Africa, existing from about 1300 to 1900 AD. It was located in what is now southwestern Nigeria, with its capital at Oyo-Ile (also called Old Oyo). The empire was ruled by the Alaafin (king) with the help of the Oyo Mesi (council of seven nobles). The Oyo Empire had a powerful cavalry (horsemen) that helped them conquer neighboring kingdoms. They traded slaves, cloth, salt, and horses. Oyo controlled trade routes to the coast, where they traded with Europeans. The empire declined in the 1800s due to internal conflicts and the rise of the Fon kingdom of Dahomey and the Fulani jihadists. Many Oyo traditions continue today in Yoruba culture.",
+    "summary": "Oyo Empire (1300-1900 AD) in southwestern Nigeria. Ruled by Alaafin with council. Powerful cavalry. Controlled trade routes. Influences Yoruba culture today.",
+    "learning_objectives": [
+      "Understand the rise and fall of the Oyo Empire",
+      "Identify the political structure (Alaafin, Oyo Mesi)",
+      "Appreciate Oyo's influence on Yoruba culture"
+    ],
+    "nigerian_examples": [
+      "The current Alaafin of Oyo still holds traditional authority",
+      "Oyo traditions at festivals like Sango festival",
+      "Yoruba proverbs and customs from Oyo times"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What was the capital of the Oyo Empire?",
+        "options": ["Ibadan", "Oyo-Ile (Old Oyo)", "Ife", "Lagos"],
+        "correct_answer": "Oyo-Ile (Old Oyo)",
+        "explanation": "The capital was called Oyo-Ile, also known as Old Oyo or Katunga."
+      },
+      {
+        "question": "What was the Oyo Empire known for militarily?",
+        "options": ["Navy ships", "Powerful cavalry (horsemen)", "War elephants", "Archers"],
+        "correct_answer": "Powerful cavalry (horsemen)",
+        "explanation": "The Oyo Empire's cavalry was the strongest in the region."
+      },
+      {
+        "question": "Who ruled the Oyo Empire?",
+        "options": ["Oba", "Alaafin", "Eze", "Emir"],
+        "correct_answer": "Alaafin",
+        "explanation": "The Alaafin was the king with the help of a council of nobles."
+      },
+      {
+        "question": "What caused the decline of the Oyo Empire?",
+        "options": ["European invasion", "Internal conflicts and external attacks", "Natural disaster", "Disease"],
+        "correct_answer": "Internal conflicts and external attacks",
+        "explanation": "Internal disputes and attacks by Dahomey and Fulani led to its fall."
+      },
+      {
+        "question": "True or False: The Oyo Empire only existed for 100 years.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "The Oyo Empire lasted about 600 years from 1300 to 1900 AD."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Nigerian History",
+    "topic": "Benin Kingdom",
+    "language": "en",
+    "content": "The Benin Kingdom was a powerful kingdom in what is now southern Nigeria, existing from around 900 AD to 1897 AD. The capital was Benin City (in present-day Edo State). The kingdom was ruled by the Oba (king). Benin is most famous for its incredible bronze plaques, ivory carvings, and brass sculptures. These artworks were made using the 'lost-wax' method and showed scenes of court life, warriors, and Portuguese traders. Benin had a strong army and controlled trade along the Niger River and the coast. The kingdom lasted until 1897 when the British invaded and burned Benin City. Many bronze plaques were taken and are now in museums in Europe and America. The Oba still holds traditional authority in Benin City today.",
+    "summary": "Benin Kingdom (900-1897 AD) in southern Nigeria. Famous for bronze plaques and ivory carvings using lost-wax method. Ruled by Oba. British invasion in 1897.",
+    "learning_objectives": [
+      "Learn about the Benin Kingdom's art and history",
+      "Understand the lost-wax bronze casting method",
+      "Know about the British invasion and its impact"
+    ],
+    "nigerian_examples": [
+      "Benin bronze plaques in the British Museum in London",
+      "Igue festival celebrated annually in Benin City",
+      "The current Oba of Benin still holds traditional court"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is the Benin Kingdom most famous for?",
+        "options": ["Warriors", "Bronze plaques and art", "Trading", "Farming"],
+        "correct_answer": "Bronze plaques and art",
+        "explanation": "Benin is world-famous for its bronze and ivory artworks."
+      },
+      {
+        "question": "What method was used to make Benin bronzes?",
+        "options": ["Hammering", "Lost-wax casting", "Welding", "Carving"],
+        "correct_answer": "Lost-wax casting",
+        "explanation": "Benin artists used the lost-wax method to create detailed metal sculptures."
+      },
+      {
+        "question": "Who ruled the Benin Kingdom?",
+        "options": ["Alaafin", "Oba", "Emir", "Eze"],
+        "correct_answer": "Oba",
+        "explanation": "The Oba was the king and spiritual leader of the Benin Kingdom."
+      },
+      {
+        "question": "What happened to the Benin Kingdom in 1897?",
+        "options": ["It became independent", "British invaded and burned Benin City", "It became a republic", "Peace treaty signed"],
+        "correct_answer": "British invaded and burned Benin City",
+        "explanation": "The British Punitive Expedition destroyed the kingdom and took many artworks."
+      },
+      {
+        "question": "True or False: The Oba of Benin still exists today.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "The Oba still holds traditional authority in Benin City, though without political power."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Nigerian History",
+    "topic": "Sokoto Caliphate",
+    "language": "en",
+    "content": "The Sokoto Caliphate was a powerful Islamic state in northern Nigeria from 1804 to 1903 AD. It was founded by Usman dan Fodio during a holy war (jihad) against the Hausa kings. He united many Hausa states into one caliphate with its capital at Sokoto. The caliphate was ruled by the Sultan of Sokoto, who was both political and religious leader. Islamic law (Sharia) was the basis of government. The caliphate promoted education, trade, and Islamic scholarship. At its peak, the Sokoto Caliphate was one of the largest empires in Africa. It fell to the British in 1903 but the Sultan still exists today as a spiritual leader. The caliphate's influence continues in northern Nigeria through Islam, the Fulani people, and the legacy of Usman dan Fodio.",
+    "summary": "Sokoto Caliphate (1804-1903) in northern Nigeria. Founded by Usman dan Fodio through jihad. Capital at Sokoto. Ruled by Sultan using Islamic law. Fell to British in 1903.",
+    "learning_objectives": [
+      "Learn about the Sokoto Caliphate's founding",
+      "Understand Islamic rule in northern Nigeria",
+      "Know Usman dan Fodio's legacy"
+    ],
+    "nigerian_examples": [
+      "The Sultan of Sokoto still advises northern Muslims",
+      "Sharia law exists in some northern states today",
+      "Usman dan Fodio's writings still studied"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Who founded the Sokoto Caliphate?",
+        "options": ["Ahmadu Bello", "Sultan Abubakar", "Usman dan Fodio", "Muhammad Rumfa"],
+        "correct_answer": "Usman dan Fodio",
+        "explanation": "Usman dan Fodio led the jihad that founded the Sokoto Caliphate."
+      },
+      {
+        "question": "What was the capital of the caliphate?",
+        "options": ["Kano", "Katsina", "Zaria", "Sokoto"],
+        "correct_answer": "Sokoto",
+        "explanation": "The capital was at Sokoto, which gave the caliphate its name."
+      },
+      {
+        "question": "What law was used in the Sokoto Caliphate?",
+        "options": ["Common law", "Roman law", "Sharia law", "Traditional law"],
+        "correct_answer": "Sharia law",
+        "explanation": "Islamic law (Sharia) was the basis of government and society."
+      },
+      {
+        "question": "When did the Sokoto Caliphate fall to the British?",
+        "options": ["1903", "1914", "1897", "1920"],
+        "correct_answer": "1903",
+        "explanation": "The British conquered the caliphate in 1903."
+      },
+      {
+        "question": "True or False: The Sultan of Sokoto no longer exists today.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "The Sultan of Sokoto remains an important spiritual leader for northern Muslims."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Nigerian History",
+    "topic": "Amalgamation of 1914",
+    "language": "en",
+    "content": "The Amalgamation of 1914 was when the British merged the Northern and Southern protectorates of Nigeria into one colony. Before 1914, Nigeria was divided into three parts: Lagos Colony (created 1861), Southern Protectorate, and Northern Protectorate. Sir Frederick Lugard, the Governor-General, united them on January 1, 1914. He chose the name 'Nigeria' (from the Niger River). The goal was to make administration easier and connect the resource-rich south with the labor-rich north. However, the North and South had very different cultures, religions, and systems of government. This merger caused tensions that continue today. The Amalgamation created modern Nigeria's borders but also challenges of uniting diverse peoples.",
+    "summary": "1914 Amalgamation: Northern and Southern protectorates merged by Britain. Sir Frederick Lugard named it 'Nigeria'. United resource-rich south with labor-rich north.",
+    "learning_objectives": [
+      "Understand what the Amalgamation of 1914 was",
+      "Identify Sir Frederick Lugard's role",
+      "Know the reasons and consequences of the merger"
+    ],
+    "nigerian_examples": [
+      "January 1st is Amalgamation Day (not widely celebrated)",
+      "The diversity of Nigeria today results from this merger",
+      "Regional tensions stem partly from the Amalgamation"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What happened on January 1, 1914?",
+        "options": ["Nigeria became independent", "The Amalgamation of Nigeria", "The first railway opened", "The first school opened"],
+        "correct_answer": "The Amalgamation of Nigeria",
+        "explanation": "The British merged the Northern and Southern protectorates into one Nigeria."
+      },
+      {
+        "question": "Who was the Governor-General who united Nigeria?",
+        "options": ["Lord Luggard", "Sir Frederick Lugard", "Sir John Robertson", "Lord Milner"],
+        "correct_answer": "Sir Frederick Lugard",
+        "explanation": "Sir Frederick Lugard was the Governor-General who created modern Nigeria."
+      },
+      {
+        "question": "Where did the name 'Nigeria' come from?",
+        "options": ["A local kingdom", "The Niger River", "A British official", "A Yoruba word"],
+        "correct_answer": "The Niger River",
+        "explanation": "The name 'Nigeria' was derived from the Niger River, the country's major river."
+      },
+      {
+        "question": "Why did Britain amalgamate Nigeria?",
+        "options": ["To help Nigerians", "To make administration easier", "To give independence", "To start a war"],
+        "correct_answer": "To make administration easier",
+        "explanation": "Britain wanted to rule Nigeria more efficiently as one colony."
+      },
+      {
+        "question": "True or False: The Northern and Southern protectorates had identical cultures and religions before 1914.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "The North was mostly Muslim with Hausa-Fulani culture; the South had various religions and cultures."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Nigerian History",
+    "topic": "Nigerian Independence 1960",
+    "language": "en",
+    "content": "Nigeria gained independence from Britain on October 1, 1960. After years of protest, political movements, and negotiations, Britain agreed to grant Nigeria self-rule. The independence ceremony was held in Lagos's Race Course (now Tafawa Balewa Square). The British Union Jack was lowered, and the Nigerian green-white-green flag was raised. Nnamdi Azikiwe became the first Governor-General (later first President). Abubakar Tafawa Balewa became the first Prime Minister. Independence meant Nigerians could now make their own laws, elect their own leaders, and control their own resources. October 1st is celebrated as Independence Day. Independence brought hope but also challenges: uniting diverse ethnic groups, building democracy, and developing the economy.",
+    "summary": "Independence: October 1, 1960. British Union Jack lowered, Nigerian flag raised. Nnamdi Azikiwe (President), Tafawa Balewa (Prime Minister). Independence Day celebrated annually.",
+    "learning_objectives": [
+      "Know Nigeria's Independence Day (October 1, 1960)",
+      "Identify key independence leaders",
+      "Understand what independence meant"
+    ],
+    "nigerian_examples": [
+      "Independence Day parades across Nigeria",
+      "The flag raising ceremony reenacted each October 1",
+      "Tafawa Balewa Square in Lagos where independence was declared"
+    ],
+    "quiz_questions": [
+      {
+        "question": "When did Nigeria gain independence?",
+        "options": ["October 1, 1914", "October 1, 1950", "October 1, 1960", "October 1, 1970"],
+        "correct_answer": "October 1, 1960",
+        "explanation": "Nigeria became independent from Britain on October 1, 1960."
+      },
+      {
+        "question": "Who was Nigeria's first Prime Minister?",
+        "options": ["Nnamdi Azikiwe", "Obafemi Awolowo", "Abubakar Tafawa Balewa", "Ahmadu Bello"],
+        "correct_answer": "Abubakar Tafawa Balewa",
+        "explanation": "Tafawa Balewa was the first Prime Minister of independent Nigeria."
+      },
+      {
+        "question": "Who was Nigeria's first President?",
+        "options": ["Nnamdi Azikiwe", "Obafemi Awolowo", "Abubakar Tafawa Balewa", "Ahmadu Bello"],
+        "correct_answer": "Nnamdi Azikiwe",
+        "explanation": "Nnamdi Azikiwe became the first President (first as Governor-General)."
+      },
+      {
+        "question": "Where did the independence ceremony take place?",
+        "options": ["Abuja", "Lagos", "Kano", "Port Harcourt"],
+        "correct_answer": "Lagos",
+        "explanation": "The ceremony was at the Race Course in Lagos, now Tafawa Balewa Square."
+      },
+      {
+        "question": "True or False: Independence Day is celebrated on October 1 every year.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "October 1 is Nigeria's Independence Day, celebrated with parades and ceremonies."
+      }
+    ]
+  }
+]

@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Delegating Tasks",
+    "language": "en",
+    "content": "Delegating means assigning tasks to team members instead of doing everything yourself. Good leaders delegate because they trust their team. Steps: know what needs to be done, match tasks to people's strengths, explain clearly what to do, provide needed resources, check progress without micromanaging, and thank them afterward. Delegating helps you focus on important tasks and helps team members develop new skills. In Nigerian schools, class monitors delegate cleaning duties. Leaders who delegate get more done and build stronger teams.",
+    "summary": "Delegating = assigning tasks to others. Match tasks to strengths, explain clearly, check progress, thank team. Helps everyone grow and get more done.",
+    "learning_objectives": [
+      "Understand what delegating means",
+      "Learn to assign tasks effectively",
+      "Build trust in team members"
+    ],
+    "nigerian_examples": [
+      "Class monitor assigning cleaning duties",
+      "Group project leader dividing research topics",
+      "Sports captain assigning positions"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is delegating?",
+        "options": ["Doing everything yourself", "Assigning tasks to team members", "Ignoring tasks", "Bossing people around"],
+        "correct_answer": "Assigning tasks to team members",
+        "explanation": "Delegating shares responsibility and develops team skills."
+      },
+      {
+        "question": "Why should leaders delegate?",
+        "options": ["To be lazy", "To focus on important tasks and help team grow", "To avoid work", "To confuse people"],
+        "correct_answer": "To focus on important tasks and help team grow",
+        "explanation": "Delegation makes teams more effective and develops members' abilities."
+      },
+      {
+        "question": "How should you match tasks to teammates?",
+        "options": ["Randomly", "By their strengths and abilities", "Give hardest tasks to new people", "Give all tasks to one person"],
+        "correct_answer": "By their strengths and abilities",
+        "explanation": "People perform better when tasks match their skills."
+      },
+      {
+        "question": "What should you do after someone completes a delegated task?",
+        "options": ["Ignore them", "Criticize their work", "Thank them", "Take credit yourself"],
+        "correct_answer": "Thank them",
+        "explanation": "Gratitude builds motivation and team spirit."
+      },
+      {
+        "question": "True or False: Delegating means you don't care about the task anymore.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "You still oversee progress and provide support, but trust others to do the work."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Managing Resources",
+    "language": "en",
+    "content": "Resource management means using time, money, materials, and people wisely. Good leaders plan ahead. For time: make to-do lists, prioritize important tasks, avoid wasting time. For materials: use supplies carefully, don't waste, share with others. For money: budget, save for important things, avoid unnecessary spending. For people: respect everyone's time, don't overload teammates. In Nigerian schools, leaders manage classroom supplies like books and chalk. Good resource management helps teams succeed without waste or stress.",
+    "summary": "Resource management: use time, money, materials, people wisely. Plan ahead, prioritize, avoid waste, respect others' time. Success without waste or stress.",
+    "learning_objectives": [
+      "Identify different types of resources",
+      "Learn to manage time effectively",
+      "Practice responsible resource use"
+    ],
+    "nigerian_examples": [
+      "Managing textbook distribution in class",
+      "Budgeting pocket money for the week",
+      "Using art supplies without waste"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are the main resources leaders manage?",
+        "options": ["Only money", "Time, money, materials, and people", "Only people", "Only materials"],
+        "correct_answer": "Time, money, materials, and people",
+        "explanation": "Leaders must manage all these resources effectively."
+      },
+      {
+        "question": "How can you manage time better?",
+        "options": ["Procrastinate", "Make to-do lists and prioritize", "Do nothing", "Only do easy tasks"],
+        "correct_answer": "Make to-do lists and prioritize",
+        "explanation": "Planning helps you focus on what's most important first."
+      },
+      {
+        "question": "What does prioritizing mean?",
+        "options": ["Doing random tasks", "Deciding what's most important and doing it first", "Delaying everything", "Only doing fun tasks"],
+        "correct_answer": "Deciding what's most important and doing it first",
+        "explanation": "Priority tasks have the biggest impact or earliest deadlines."
+      },
+      {
+        "question": "Why should you avoid wasting materials?",
+        "options": ["They're free", "They cost money and may run out", "It doesn't matter", "Waste is good"],
+        "correct_answer": "They cost money and may run out",
+        "explanation": "Wasting supplies means less available for future needs."
+      },
+      {
+        "question": "True or False: Good leaders overload teammates with too many tasks.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Good leaders respect teammates' limits and balance workloads."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Conflict Mediation",
+    "language": "en",
+    "content": "Conflict mediation is helping others resolve disagreements peacefully. As a leader, you may need to mediate between teammates. Steps: listen to each person without interrupting, stay neutral (don't take sides), help them express feelings using 'I feel' statements, find common ground, brainstorm solutions together, agree on a solution, and follow up. Never yell or blame. In Nigerian culture, community leaders and elders often mediate family and village disputes. Mediation builds peace and strengthens relationships. Good mediators are trusted and respected.",
+    "summary": "Mediation = helping others resolve conflicts. Listen to all sides, stay neutral, find common ground, brainstorm solutions, agree, follow up. Builds peace and trust.",
+    "learning_objectives": [
+      "Learn mediation steps",
+      "Practice neutral listening",
+      "Build peacemaking skills"
+    ],
+    "nigerian_examples": [
+      "Classroom prefect mediating between arguing students",
+      "Elders settling village disputes",
+      "Sports captain resolving team conflicts"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is conflict mediation?",
+        "options": ["Taking sides", "Helping others resolve disagreements peacefully", "Ignoring problems", "Making conflicts worse"],
+        "correct_answer": "Helping others resolve disagreements peacefully",
+        "explanation": "Mediators help people find their own solutions without forcing them."
+      },
+      {
+        "question": "What does it mean to stay neutral?",
+        "options": ["Take one person's side", "Take the other person's side", "Don't take sides, be fair to both", "Walk away"],
+        "correct_answer": "Don't take sides, be fair to both",
+        "explanation": "Neutral mediators listen equally to all parties."
+      },
+      {
+        "question": "What is the first step in mediation?",
+        "options": ["Yell at both", "Punish everyone", "Listen to each person without interrupting", "Blame someone"],
+        "correct_answer": "Listen to each person without interrupting",
+        "explanation": "Everyone needs to feel heard before solutions can be found."
+      },
+      {
+        "question": "Who often mediates disputes in Nigerian communities?",
+        "options": ["Children", "Elders and community leaders", "Strangers", "Police only"],
+        "correct_answer": "Elders and community leaders",
+        "explanation": "Respected elders traditionally help resolve conflicts."
+      },
+      {
+        "question": "True or False: A mediator should yell at both parties to stop fighting.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Calm, respectful communication works better than yelling."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Accountability",
+    "language": "en",
+    "content": "Accountability means taking responsibility for your actions and decisions. Good leaders hold themselves accountable - they admit mistakes, learn from them, and make things right. If you promised to do something, do it. If you can't, communicate early. When you make a mistake, say 'I was wrong' and 'What can I do to fix it?' Don't blame others or make excuses. Accountable leaders earn trust because people know they can rely on them. In Nigerian culture, keeping promises and owning your actions is a sign of good character and integrity.",
+    "summary": "Accountability = taking responsibility for actions. Admit mistakes, learn, fix problems. Don't blame others. Keep promises. Accountable leaders earn trust.",
+    "learning_objectives": [
+      "Understand what accountability means",
+      "Learn to admit mistakes gracefully",
+      "Build trust through reliability"
+    ],
+    "nigerian_examples": [
+      "Admitting you forgot to do your chore and doing it immediately",
+      "Owning up to breaking a classmate's pencil and replacing it",
+      "Apologizing when you say something hurtful"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is accountability?",
+        "options": ["Blaming others", "Taking responsibility for your actions", "Making excuses", "Ignoring mistakes"],
+        "correct_answer": "Taking responsibility for your actions",
+        "explanation": "Accountable people own their choices, good or bad."
+      },
+      {
+        "question": "What should you say when you make a mistake?",
+        "options": ["It's not my fault", "Someone else did it", "I was wrong. What can I do to fix it?", "It doesn't matter"],
+        "correct_answer": "I was wrong. What can I do to fix it?",
+        "explanation": "Admitting mistakes and offering to fix them shows maturity and accountability."
+      },
+      {
+        "question": "Why do people trust accountable leaders?",
+        "options": ["They never make mistakes", "They admit mistakes and keep promises", "They blame others", "They hide problems"],
+        "correct_answer": "They admit mistakes and keep promises",
+        "explanation": "Reliability and honesty build trust over time."
+      },
+      {
+        "question": "What should you do if you can't keep a promise?",
+        "options": ["Hide", "Lie", "Communicate early and explain", "Ignore it"],
+        "correct_answer": "Communicate early and explain",
+        "explanation": "Early communication shows respect and allows adjustments."
+      },
+      {
+        "question": "True or False: Accountable leaders make excuses when things go wrong.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Excuses avoid responsibility. Accountable people own their actions."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Inspiring Others",
+    "language": "en",
+    "content": "Inspiring others means motivating them to do their best. Leaders inspire by example - working hard, staying positive, and treating others with respect. Share your vision: 'We can do this together!' Recognize effort: 'Great job, keep going!' Show enthusiasm and belief in your team. Tell stories of success and persistence. In Nigerian history, leaders like Nnamdi Azikiwe and Funmilayo Ransome-Kuti inspired people to fight for independence and women's rights. You can inspire classmates by encouraging them, helping when they struggle, and celebrating their successes.",
+    "summary": "Inspire others: lead by example, share vision, recognize effort, show enthusiasm, tell success stories. Inspired teams achieve more together.",
+    "learning_objectives": [
+      "Learn to motivate teammates",
+      "Lead by positive example",
+      "Share encouraging words"
+    ],
+    "nigerian_examples": [
+      "MKO Abiola's inspiring speeches",
+      "Teachers motivating students to excel",
+      "Sports captains rallying the team"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How do leaders inspire others?",
+        "options": ["By being negative", "By example, enthusiasm, and encouragement", "By doing nothing", "By criticizing constantly"],
+        "correct_answer": "By example, enthusiasm, and encouragement",
+        "explanation": "Positive leadership motivates people to do their best."
+      },
+      {
+        "question": "What does 'lead by example' mean?",
+        "options": ["Tell others what to do while doing nothing", "Show the behavior you want others to follow", "Hide your actions", "Only talk about what to do"],
+        "correct_answer": "Show the behavior you want others to follow",
+        "explanation": "Your actions speak louder than your words."
+      },
+      {
+        "question": "What should you say to recognize someone's effort?",
+        "options": ["That was terrible", "Great job, keep going", "You could have done better", "It doesn't matter"],
+        "correct_answer": "Great job, keep going",
+        "explanation": "Recognition motivates continued effort."
+      },
+      {
+        "question": "Which Nigerian leader inspired the independence movement?",
+        "options": ["Only footballers", "Nnamdi Azikiwe", "Only musicians", "Only athletes"],
+        "correct_answer": "Nnamdi Azikiwe",
+        "explanation": "Azikiwe's speeches and leadership inspired Nigerians to fight for freedom."
+      },
+      {
+        "question": "True or False: Inspiring others means doing all the work yourself.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Inspiring others means motivating them to contribute their best."
+      }
+    ]
+  }
+]

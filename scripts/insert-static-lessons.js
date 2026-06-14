@@ -136,7 +136,7 @@ async function saveLesson(supabase, grade, subject, topic, language, parsed) {
     subject,
     topic,
     language,
-    question_type: q.question_type,
+    question_type: 'multiple_choice',
     question: q.question,
     option_a: q.option_a,
     option_b: q.option_b,

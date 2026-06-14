@@ -1,0 +1,1502 @@
+[
+  {
+    "id": "15989f78-870e-4d38-996e-2e509398d31f",
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Drawing on Computer",
+    "language": "en",
+    "content": "Computers have programs that let you draw and paint. A common drawing program is Paint (on Windows computers). You can use the mouse to draw lines, shapes, and pictures. Tools include: pencil (draws thin lines), brush (draws thick lines), eraser (removes mistakes), fill bucket (fills areas with color), and shape tools (draw circles, squares, triangles). You can also use a drawing tablet if available. Drawing on computer is different from drawing on paper because you can undo mistakes and try again without wasting paper. Have fun creating digital art!",
+    "summary": "Computer drawing programs have tools: pencil, brush, eraser, fill bucket, shapes. You can undo mistakes. Drawing on computer saves paper.",
+    "learning_objectives": [
+      "Learn basic computer drawing tools",
+      "Understand how digital drawing differs from paper",
+      "Create simple digital artwork"
+    ],
+    "nigerian_examples": [
+      "Nigerian children drawing the Nigerian flag on a computer",
+      "Creating birthday cards using Paint",
+      "Drawing animals and sharing with classmates"
+    ],
+    "created_at": "2026-06-13T19:09:57.754593+00:00"
+  },
+  {
+    "id": "1c501a2f-7861-47bb-8880-1b7be54dc2b9",
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Educational Games",
+    "language": "en",
+    "content": "Educational games are computer or tablet games that help you learn while having fun. They can teach math, reading, spelling, science, and other subjects. Examples include math games where you solve problems to earn points, spelling games where you type missing letters, and puzzle games that build thinking skills. Educational games are different from regular games because learning is the main goal. Ask your teacher or parents to recommend good educational games. Set a time limit so you balance playing with other activities like reading and outdoor play.",
+    "summary": "Educational games help you learn math, reading, spelling, and more while having fun. Ask adults for recommendations. Balance game time with other activities.",
+    "learning_objectives": [
+      "Understand what educational games are",
+      "Identify good learning games",
+      "Practice balanced screen time"
+    ],
+    "nigerian_examples": [
+      "Math games used in Nigerian computer labs",
+      "Spelling apps recommended by teachers",
+      "Educational games on tablets during breaks"
+    ],
+    "created_at": "2026-06-13T19:12:19.403731+00:00"
+  },
+  {
+    "id": "601fded9-9249-4216-8ed3-f6226ac19394",
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Internet Basics",
+    "language": "en",
+    "content": "The internet is a network that connects computers all over the world. It lets you find information, watch videos, play games, and talk to people far away. To use the internet, you need a device (computer, tablet, phone) and an internet connection (Wi-Fi or mobile data). A browser is a program that lets you visit websites. Examples: Chrome, Firefox, Safari. To go to a website, type its address in the bar at the top. The internet is a wonderful tool, but always use it with an adult's permission and supervision.",
+    "summary": "The internet connects computers worldwide. You need a device and connection. Browsers like Chrome let you visit websites. Always use with adult supervision.",
+    "learning_objectives": [
+      "Understand what the internet is",
+      "Learn about web browsers",
+      "Practice safe internet use with adults"
+    ],
+    "nigerian_examples": [
+      "Using the internet to learn about Nigerian history",
+      "Watching educational videos on YouTube with parent supervision",
+      "Accessing online learning platforms from home"
+    ],
+    "created_at": "2026-06-13T19:10:41.999738+00:00"
+  },
+  {
+    "id": "b08ce37f-1746-495f-8951-432a1ab09d84",
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Keyboard Skills",
+    "language": "en",
+    "content": "The keyboard is how you type letters, numbers, and symbols into a computer. The middle row of letters is called the home row: A, S, D, F, G, H, J, K, L. Your fingers should rest on these keys. Your left hand goes on A, S, D, F. Your right hand goes on J, K, L. Your thumbs rest on the spacebar. Practice typing with all fingers, not just one or two. The shift key makes capital letters. The enter key starts a new line. The more you practice, the faster you will type!",
+    "summary": "Keyboard has home row keys: A,S,D,F (left hand) and J,K,L (right hand). Thumbs on spacebar. Shift key for capitals. Enter key for new line.",
+    "learning_objectives": [
+      "Learn proper finger placement on home row",
+      "Identify important keyboard keys",
+      "Practice basic typing skills"
+    ],
+    "nigerian_examples": [
+      "Nigerian students typing on computers in school labs",
+      "Learning to type your name and address",
+      "Practicing typing on a laptop at home"
+    ],
+    "created_at": "2026-06-13T19:09:13.314588+00:00"
+  },
+  {
+    "id": "0b137643-a6f3-449a-a811-c5908b40794f",
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Password Safety",
+    "language": "en",
+    "content": "A password is a secret word or number that keeps your account safe. Never share your password with anyone except your parents. A good password is hard to guess. Do not use your name, birthday, or simple words like 'password' or '12345'. Use a mix of letters, numbers, and symbols. For example, 'Blue2Fish!' is a strong password. Change your password sometimes to keep it secure. If you think someone knows your password, tell a parent right away so they can help you change it.",
+    "summary": "Passwords keep accounts safe. Never share passwords except with parents. Use strong passwords with letters, numbers, symbols. Change passwords sometimes.",
+    "learning_objectives": [
+      "Understand what passwords are for",
+      "Learn how to create strong passwords",
+      "Practice password safety rules"
+    ],
+    "nigerian_examples": [
+      "Using a password to protect your tablet at home",
+      "Creating a password for educational apps",
+      "Asking parent before sharing any password"
+    ],
+    "created_at": "2026-06-13T19:11:26.090621+00:00"
+  },
+  {
+    "id": "2049dc4c-09ef-4375-9f97-b1344ccafcdc",
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "Air and Wind",
+    "language": "en",
+    "content": "Air is all around us even though we cannot see it. We breathe air to live. Wind is moving air. When air moves slowly, it feels like a gentle breeze. When air moves fast, it feels like strong wind. Wind can be helpful: it dries clothes, blows seeds to grow new plants, and cools us on hot days. Wind can also be powerful: strong winds can blow down trees or roofs during storms. You can feel air when you wave your hand or blow on your skin.",
+    "summary": "Air is invisible but all around us. Wind is moving air. Gentle wind is a breeze. Strong wind can be powerful. We breathe air to live.",
+    "learning_objectives": [
+      "Understand that air exists even though invisible",
+      "Explain what wind is",
+      "Describe helpful and powerful effects of wind"
+    ],
+    "nigerian_examples": [
+      "Flying kites during harmattan winds",
+      "Wind drying laundry in Nigerian compounds",
+      "Wind turbines in some Nigerian states producing electricity"
+    ],
+    "created_at": "2026-06-13T15:55:47.282674+00:00"
+  },
+  {
+    "id": "d00eae91-2239-48bd-b022-eb3a9c81d83b",
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "Simple Machines",
+    "language": "en",
+    "content": "Simple machines are tools that make work easier. They help us lift, move, or cut things with less effort. Some simple machines are: lever (see-saw, bottle opener), pulley (flag pole, well bucket), wheel and axle (bicycle, car), inclined plane (ramp, slide), wedge (knife, axe), and screw (lid on a bottle). Simple machines are everywhere around us. When you use a see-saw at the playground, you are using a lever. When you ride a bicycle, you use wheels and axles.",
+    "summary": "Simple machines make work easier: lever, pulley, wheel and axle, inclined plane, wedge, screw. They help us lift, move, and cut things.",
+    "learning_objectives": [
+      "Identify common simple machines",
+      "Understand how simple machines help us",
+      "Find examples of simple machines in daily life"
+    ],
+    "nigerian_examples": [
+      "Using a bottle opener (lever) to open soft drinks",
+      "Pulling water from a well using a pulley",
+      "Riding a bicycle (wheel and axle) in the neighborhood"
+    ],
+    "created_at": "2026-06-13T15:56:32.650138+00:00"
+  },
+  {
+    "id": "8ca05706-c1a0-4a36-9810-e1e624ccaf38",
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "Soil and Its Uses",
+    "language": "en",
+    "content": "Soil is the loose top layer of the earth where plants grow. Soil is made of tiny pieces of rock, dead leaves, and animal remains. There are different types of soil: sandy soil (feels rough, drains water fast), clay soil (feels sticky, holds water), and loamy soil (best for farming). Farmers need good soil to grow crops like yam, cassava, maize, and vegetables. Soil also provides homes for animals like earthworms, ants, and beetles.",
+    "summary": "Soil is where plants grow. Types: sandy (rough), clay (sticky), loamy (best for farming). Soil gives us food and homes for animals.",
+    "learning_objectives": [
+      "Identify what soil is made of",
+      "Describe different soil types",
+      "Understand why soil is important for farming"
+    ],
+    "nigerian_examples": [
+      "Yam farming in loamy soil in Benue State",
+      "Clay soil used for pottery in Abuja",
+      "Earthworms found in Nigerian garden soil"
+    ],
+    "created_at": "2026-06-13T15:55:01.459585+00:00"
+  },
+  {
+    "id": "0d12c5bc-cf32-4b67-a4ec-49e3f565f595",
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "The Human Senses",
+    "language": "en",
+    "content": "Your body has five special senses that help you understand the world around you. Sight (eyes) lets you see colors, shapes, and movements. Hearing (ears) lets you listen to sounds like music, voices, and birds. Touch (skin) lets you feel if something is hot, cold, soft, or hard. Taste (tongue) lets you enjoy sweet, sour, salty, and bitter foods. Smell (nose) lets you enjoy nice smells like food and flowers, and avoid bad smells. Your senses work together to keep you safe and happy every day!",
+    "summary": "Five senses: sight (eyes), hearing (ears), touch (skin), taste (tongue), smell (nose). Senses help you understand and stay safe in the world.",
+    "learning_objectives": [
+      "Identify the five senses and their body parts",
+      "Understand what each sense does",
+      "Explain how senses keep us safe"
+    ],
+    "nigerian_examples": [
+      "Using sight to read Nigerian road signs",
+      "Using smell to enjoy jollof rice cooking",
+      "Using touch to feel the texture of ankara fabric"
+    ],
+    "created_at": "2026-06-13T15:53:11.53335+00:00"
+  },
+  {
+    "id": "7c350956-170f-4ffe-8992-838cb2516629",
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "Weather and Seasons",
+    "language": "en",
+    "content": "Weather is what the air outside is like each day. In Nigeria, we have two main seasons: the dry season and the rainy season. The dry season has hot sun, little rain, and dusty winds called harmattan. The rainy season has lots of rain, cooler temperatures, and thunderstorms. Each season affects what we wear, what we eat, and what we do. During the rainy season, we wear raincoats and carry umbrellas. During the dry season, we drink more water and wear lighter clothes.",
+    "summary": "Nigeria has two seasons: dry season (hot, little rain) and rainy season (lots of rain). Weather affects our clothes, food, and activities.",
+    "learning_objectives": [
+      "Identify Nigeria's two main seasons",
+      "Describe weather in each season",
+      "Understand how seasons affect daily life"
+    ],
+    "nigerian_examples": [
+      "Harmattan dust from the Sahara during dry season",
+      "Heavy rains that fill rivers in Lagos and Port Harcourt",
+      "Farmers planting crops at the start of rainy season"
+    ],
+    "created_at": "2026-06-13T15:54:07.068401+00:00"
+  },
+  {
+    "id": "f5d00d77-8005-4baf-b74f-0454b03ec0bd",
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Asking Questions",
+    "language": "en",
+    "content": "Asking questions is how you learn new things. When you do not understand something, ask! Good questions start with words like who, what, where, when, why, and how. For example: 'Who wrote this book?' 'What time is lunch?' 'Why is the sky blue?' Raise your hand in class before asking. Be polite: say 'Excuse me' or 'May I ask a question?' There is no such thing as a silly question — if you are wondering, others probably are too. Asking questions shows you are curious and want to learn.",
+    "summary": "Asking questions helps you learn. Use who, what, where, when, why, how. Raise your hand. Say 'Excuse me.' No question is silly.",
+    "learning_objectives": [
+      "Learn how to ask good questions",
+      "Understand question words (who, what, where, when, why, how)",
+      "Build curiosity and learning skills"
+    ],
+    "nigerian_examples": [
+      "Asking a teacher 'Please can you explain that again?'",
+      "Asking a parent 'What is for dinner tonight?'",
+      "Asking a friend 'Where did you buy that book?'"
+    ],
+    "created_at": "2026-06-13T20:19:39.015173+00:00"
+  },
+  {
+    "id": "412077c5-fb27-4451-8bef-ae572a3a835f",
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Expressing Feelings",
+    "language": "en",
+    "content": "Expressing feelings means telling others how you feel inside. You might feel happy, sad, angry, scared, excited, worried, or loved. Use words to describe your feelings. Say 'I feel happy because...' or 'I feel sad when...' It is okay to have all kinds of feelings. When you are angry, take a deep breath before speaking. Say 'I feel angry because...' instead of shouting. Sharing your feelings helps others understand you. It also helps you feel better when you are upset. Your feelings are important and valid.",
+    "summary": "Express feelings with words: 'I feel happy/sad/angry/excited because...' Take a breath before speaking when angry. Sharing feelings helps others understand you.",
+    "learning_objectives": [
+      "Learn feeling vocabulary words",
+      "Practice expressing emotions appropriately",
+      "Understand that all feelings are valid"
+    ],
+    "nigerian_examples": [
+      "Telling a parent 'I feel sad that my friend moved away'",
+      "Saying 'I feel excited about the school trip'",
+      "Sharing 'I feel proud that I passed my test'"
+    ],
+    "created_at": "2026-06-13T20:21:11.847224+00:00"
+  },
+  {
+    "id": "0354d1ce-ebc7-41b6-a8b1-68dd93ec9fb9",
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Group Discussions",
+    "language": "en",
+    "content": "Group discussions are when a few people talk together about a topic. In a discussion, everyone gets a turn to speak. Listen when others talk. Do not interrupt. When it is your turn, share your idea clearly. You can agree with someone by saying 'I agree because...' You can disagree politely by saying 'I see it differently because...' Ask questions to understand others better. Group discussions help you learn from different perspectives. They also help you practice speaking and listening with others.",
+    "summary": "In group discussions: take turns, don't interrupt, listen to others. Agree politely: 'I agree because...' Disagree politely: 'I see it differently...'",
+    "learning_objectives": [
+      "Learn group discussion rules",
+      "Practice taking turns speaking",
+      "Learn to agree and disagree politely"
+    ],
+    "nigerian_examples": [
+      "Discussing a class project in small groups",
+      "Talking about what to do for Children's Day celebration",
+      "Sharing ideas about a story the class read together"
+    ],
+    "created_at": "2026-06-13T20:22:42.198502+00:00"
+  },
+  {
+    "id": "5d6be2c0-d8ce-45dd-8b3d-c86517430967",
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Polite Words",
+    "language": "en",
+    "content": "Polite words show respect and kindness to others. Always use 'please' when asking for something. Say 'thank you' when someone helps you or gives you something. Say 'sorry' or 'I apologize' when you make a mistake. Say 'excuse me' when you need to get past someone or interrupt politely. Say 'you're welcome' when someone thanks you. Using polite words makes people feel good. It also makes them want to help you again. Polite words cost nothing but mean everything. Make them a habit every day!",
+    "summary": "Polite words: please, thank you, sorry, excuse me, you're welcome. They show respect and kindness. Use them every day. They cost nothing but mean everything.",
+    "learning_objectives": [
+      "Learn key polite words and phrases",
+      "Know when to use each polite word",
+      "Practice politeness in daily interactions"
+    ],
+    "nigerian_examples": [
+      "Saying 'please may I have water?' at home",
+      "Saying 'thank you' to the school cleaner",
+      "Saying 's' when you accidentally bump someone"
+    ],
+    "created_at": "2026-06-13T20:21:57.551931+00:00"
+  },
+  {
+    "id": "e6892eaf-3ede-4868-ae88-1acc77f8db7b",
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Telling Stories",
+    "language": "en",
+    "content": "Telling stories is a wonderful way to share experiences and ideas. A good story has a beginning, middle, and end. The beginning introduces the characters and setting. The middle tells what happened (the problem or adventure). The end tells how things turned out. Use words like 'first,' 'next,' 'then,' and 'finally' to help your listener follow along. Speak clearly and use expression in your voice. You can tell stories about things that happened to you, stories you made up, or folk tales you heard. Practice telling stories to family and friends!",
+    "summary": "Good stories have beginning, middle, end. Use first, next, then, finally. Speak clearly with expression. Tell real or made-up stories.",
+    "learning_objectives": [
+      "Learn story structure (beginning, middle, end)",
+      "Practice using transition words",
+      "Build oral storytelling skills"
+    ],
+    "nigerian_examples": [
+      "Telling a story about your trip to visit grandparents",
+      "Sharing what happened at school during dinner",
+      "Retelling a Nigerian folk tale you heard"
+    ],
+    "created_at": "2026-06-13T20:20:26.358003+00:00"
+  },
+  {
+    "id": "9a4942f3-5301-4cbc-8aec-9535857c731f",
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Asking for Help",
+    "language": "en",
+    "content": "Asking for help is a sign of strength, not weakness. Everyone needs help sometimes — even teachers and parents! When you are stuck on a problem, don't know what to do, or feel confused, ask for help. You can ask a parent, teacher, older sibling, or friend. Say politely, 'Can you help me, please?' Tell them what you need help with. After they help, say 'Thank you.' Asking for help shows that you want to learn and get better. Confident people know when to ask for help.",
+    "summary": "Asking for help is strength, not weakness. Ask parents, teachers, or friends politely. Say what you need. Say thank you. Confident people ask for help.",
+    "learning_objectives": [
+      "Understand that asking for help is good",
+      "Learn how to ask for help politely",
+      "Build confidence through seeking support"
+    ],
+    "nigerian_examples": [
+      "Asking a teacher to explain a math problem again",
+      "Asking a friend to help find a lost item",
+      "Asking a parent for help with homework"
+    ],
+    "created_at": "2026-06-13T19:20:09.688635+00:00"
+  },
+  {
+    "id": "630481d5-ed08-48a2-a0cd-75dd9b86a804",
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Facing Fears",
+    "language": "en",
+    "content": "Everyone feels afraid sometimes. Fear is normal. But you can learn to face your fears and become braver. First, name your fear. Say, 'I am afraid of speaking in class.' Next, take small steps. If you fear speaking, practice at home first. Then speak in front of one friend. Then try in class. Remember that mistakes are okay — everyone makes them. Breathe deeply when you feel scared. Tell yourself, 'I can do this.' Every time you face a fear, you get braver and more confident.",
+    "summary": "Facing fears builds bravery. Name your fear, take small steps, practice. Breathe deeply, say 'I can do this.' Mistakes are okay.",
+    "learning_objectives": [
+      "Understand that fear is normal",
+      "Learn strategies to face fears",
+      "Build courage through small steps"
+    ],
+    "nigerian_examples": [
+      "Afraid of speaking in class? Practice answering at home first",
+      "Afraid of making friends? Smile and say hello to one person",
+      "Afraid of swimming? Start by putting your feet in the water"
+    ],
+    "created_at": "2026-06-13T19:18:38.372432+00:00"
+  },
+  {
+    "id": "5aa516b5-4d9c-461e-96ad-26411c52a09f",
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Positive Self Talk",
+    "language": "en",
+    "content": "Self-talk is what you say to yourself in your head. Positive self-talk means saying kind, encouraging things to yourself. Instead of thinking 'I can't do this,' say 'I will try my best.' Instead of 'I'm not good at math,' say 'I am getting better at math every day.' Positive self-talk makes you feel strong and confident. Negative self-talk makes you feel sad and weak. Listen to the words in your head. If they are mean, change them to kind words. You are your own best cheerleader!",
+    "summary": "Positive self-talk means saying kind words to yourself. Instead of 'I can't,' say 'I will try.' You are your own best cheerleader.",
+    "learning_objectives": [
+      "Understand what self-talk is",
+      "Learn to replace negative thoughts with positive ones",
+      "Practice encouraging yourself"
+    ],
+    "nigerian_examples": [
+      "Before a test, say 'I studied hard and I will do well'",
+      "Before a sports game, say 'I am strong and ready'",
+      "When something is hard, say 'I can learn this step by step'"
+    ],
+    "created_at": "2026-06-13T19:19:24.070469+00:00"
+  },
+  {
+    "id": "4146fed8-0c98-484e-8871-88ab29a4b8d4",
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Praising Effort",
+    "language": "en",
+    "content": "Praising effort means celebrating how hard someone tried, not just the result. When you try your best, be proud of yourself even if you didn't win. Say to yourself, 'I worked really hard on this.' Praise your friends when they try hard, even if they make mistakes. Praising effort teaches that trying is what matters most. When you focus on effort, you are not afraid of making mistakes. You keep trying until you succeed. Every time you try hard, you are growing your brain and your confidence.",
+    "summary": "Praise effort, not just results. Be proud when you try hard. Praise friends for trying. Effort helps you learn and grow. Trying matters most.",
+    "learning_objectives": [
+      "Understand the importance of effort",
+      "Learn to praise yourself and others for trying",
+      "Build growth mindset through effort focus"
+    ],
+    "nigerian_examples": [
+      "Praising a friend who tried their best in a spelling bee, even if they didn't win",
+      "Being proud of yourself for studying hard, even with a fair grade",
+      "Encouraging a sibling who is learning a new skill"
+    ],
+    "created_at": "2026-06-13T19:21:03.745721+00:00"
+  },
+  {
+    "id": "10a24f50-2428-4e63-8ef1-f6705ccb7aae",
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Setting Small Goals",
+    "language": "en",
+    "content": "Setting small goals helps you build confidence. A goal is something you want to achieve. Small goals are easy to reach, like reading one book, learning five new words, or tying your shoes by yourself. When you reach a small goal, you feel proud and want to try bigger goals. Write down your goals or tell them to a parent. Celebrate when you finish a goal. Every time you reach a goal, your confidence grows. Start with easy goals first, then try harder ones as you get better.",
+    "summary": "Small goals build confidence. Examples: read a book, learn five words, tie shoes. Reach goals, feel proud, then try bigger goals.",
+    "learning_objectives": [
+      "Understand what goals are",
+      "Learn to set achievable small goals",
+      "Experience success and build confidence"
+    ],
+    "nigerian_examples": [
+      "Goal: Learn to spell your full name correctly",
+      "Goal: Finish homework before dinner for one week",
+      "Goal: Help with one chore at home every day"
+    ],
+    "created_at": "2026-06-13T19:17:53.577462+00:00"
+  },
+  {
+    "id": "8a1ca6a4-6f68-44cd-96fa-5aa4b4f98179",
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Craft Making",
+    "language": "en",
+    "content": "Craft making is using your hands and imagination to create things. You can make crafts from paper, cardboard, cloth, beads, or recycled materials. Examples: paper animals, greeting cards, jewelry from beads, or models from cardboard boxes. Craft making helps you practice cutting, gluing, folding, and painting. Don't worry if your craft doesn't look perfect — your creation is special because you made it. Use safe scissors and ask an adult for help if needed. Display your crafts at home or give them as gifts to make others smile.",
+    "summary": "Craft making uses hands and imagination. Use paper, cardboard, beads, recycled items. Practice cutting, gluing, folding. Your creation is special because you made it.",
+    "learning_objectives": [
+      "Explore different craft materials",
+      "Practice fine motor skills",
+      "Build confidence in creating"
+    ],
+    "nigerian_examples": [
+      "Making paper beads from old magazines",
+      "Creating cards for Eid or Christmas",
+      "Building a model house from cardboard"
+    ],
+    "created_at": "2026-06-13T20:34:48.871029+00:00"
+  },
+  {
+    "id": "1e2fe53b-86fc-4415-9d8f-e5cf878076e2",
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Drawing Patterns",
+    "language": "en",
+    "content": "Patterns are designs that repeat. You can create patterns with shapes, lines, and colors. Examples: stripes (straight lines repeated), zigzags (up and down lines), dots (repeated circles), and checkerboards (squares of two colors). Nigerian fabrics like Ankara have beautiful patterns. You can draw patterns on paper, in your notebook, or on cards. Patterns help you practice drawing carefully and spotting repetition. Start with simple patterns, then try more complex ones. Pattern drawing is relaxing and creative.",
+    "summary": "Patterns repeat: stripes, zigzags, dots, checkerboards. Nigerian fabrics have beautiful patterns. Start simple, then try complex.",
+    "learning_objectives": [
+      "Understand what patterns are",
+      "Create repeating designs",
+      "Appreciate patterns in Nigerian fabrics"
+    ],
+    "nigerian_examples": [
+      "Drawing patterns inspired by Ankara fabric",
+      "Creating stripe patterns on a card",
+      "Making a checkerboard pattern with two colors"
+    ],
+    "created_at": "2026-06-13T20:51:55.350855+00:00"
+  },
+  {
+    "id": "eec39f53-090d-4487-a305-535dba40d8a0",
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Inventing Games",
+    "language": "en",
+    "content": "Inventing games means creating your own rules and activities. You can make up a new game with friends using things you have. First, decide the goal: How do you win? Next, make rules: What can players do? What can't they do? Then, try the game. If something isn't fun, change the rules. You can invent games with a ball, a rope, or just running. You can invent indoor games like board games or card games. Inventing games helps you think creatively, solve problems, and have fun with friends.",
+    "summary": "Invent games: decide goal and rules. Try it, then improve rules. Use a ball, rope, or nothing. Inventing games builds creativity and problem-solving.",
+    "learning_objectives": [
+      "Learn to create game rules",
+      "Practice problem-solving through play",
+      "Develop creativity with limited materials"
+    ],
+    "nigerian_examples": [
+      "Inventing a new street game with friends",
+      "Creating a ball game with different scoring rules",
+      "Making up a rain game to play indoors"
+    ],
+    "created_at": "2026-06-13T20:55:10.88467+00:00"
+  },
+  {
+    "id": "6f64dfd5-1588-46c6-ba6f-521056f69cc8",
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Singing and Dancing",
+    "language": "en",
+    "content": "Singing and dancing are creative ways to express yourself. You can sing songs you know or make up your own. You can dance freely or learn dance steps. Nigerian music has many rhythms — try moving your body to the beat. Singing helps you remember things like the alphabet song. Dancing keeps your body healthy and strong. You don't need to be perfect — just have fun! Sing with family, at school, or in a choir. Dance at celebrations, parties, or just because you feel happy.",
+    "summary": "Singing and dancing express yourself. Sing known songs or make up your own. Dance to Nigerian rhythms. Have fun and be creative.",
+    "learning_objectives": [
+      "Explore singing and dancing as creative expression",
+      "Learn Nigerian rhythms",
+      "Build confidence in performing"
+    ],
+    "nigerian_examples": [
+      "Singing Nigerian children's songs",
+      "Dancing to Afrobeats music",
+      "Performing at school cultural day"
+    ],
+    "created_at": "2026-06-13T20:53:28.258347+00:00"
+  },
+  {
+    "id": "e8e41a7b-c417-4cb9-b740-2321c8aabb13",
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Storytelling",
+    "language": "en",
+    "content": "Storytelling is creating and sharing stories. You can make up characters, places, and adventures. Start with 'Once upon a time...' or 'One day...' Give your characters names and personalities. Describe where the story happens — a forest, a city, or a magical land. Make a problem happen, then solve it at the end. Use your voice to make it exciting — speak loudly for giants, softly for mice. Tell stories to family, friends, or classmates. Every time you tell a story, you become a better storyteller.",
+    "summary": "Storytelling: create characters, places, adventures. Start with 'Once upon a time.' Describe setting. Create a problem, then solve it. Use your voice.",
+    "learning_objectives": [
+      "Learn story elements (characters, setting, problem, solution)",
+      "Practice voice expression",
+      "Build confidence in speaking"
+    ],
+    "nigerian_examples": [
+      "Creating a story about a clever tortoise",
+      "Telling a story about a child's adventure in Lagos",
+      "Making up a tale about animals in the forest"
+    ],
+    "created_at": "2026-06-13T20:35:32.521833+00:00"
+  },
+  {
+    "id": "c638898f-76a2-4d90-a849-0bfb5f82d452",
+    "grade": 2,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Five Pillars of Islam",
+    "language": "en",
+    "content": "The Five Pillars of Islam are the five most important acts of worship for Muslims. Shahada is believing there is only one God and Muhammad is His prophet. Salah is praying five times a day facing Mecca. Zakat is giving charity to help people in need. Sawm is fasting during the month of Ramadan. Hajj is making a pilgrimage to Mecca once in a lifetime if able. These pillars help Muslims grow closer to God and be good people. Learning about the pillars helps you understand Islamic faith and practice.",
+    "summary": "Five Pillars of Islam: Shahada (belief), Salah (prayer), Zakat (charity), Sawm (fasting), Hajj (pilgrimage). They help Muslims worship God and help others.",
+    "learning_objectives": [
+      "Learn the names of the Five Pillars",
+      "Understand what each pillar means",
+      "Appreciate the importance of worship and charity"
+    ],
+    "nigerian_examples": [
+      "Nigerian Muslims praying Salah at the mosque near their home",
+      "Families giving Zakat to poor neighbors during Ramadan",
+      "Children learning to fast for half-days during Ramadan"
+    ],
+    "created_at": "2026-06-13T16:12:22.712414+00:00"
+  },
+  {
+    "id": "1468f35f-7172-4577-a827-6a18d03f0577",
+    "grade": 2,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Honesty and Forgiveness",
+    "language": "en",
+    "content": "Honesty means telling the truth and not lying or stealing. Forgiveness means choosing not to be angry at someone who hurt you and giving them another chance. Both honesty and forgiveness are very important in Christianity and Islam. The Bible says, 'Do not lie to one another.' The Quran says, 'God loves those who are truthful.' When you make a mistake, say you are sorry and ask for forgiveness. When someone says sorry to you, forgive them just as you want God to forgive you.",
+    "summary": "Honesty is telling the truth. Forgiveness is letting go of anger and giving second chances. Both are valued in Christianity and Islam. Say sorry and forgive others.",
+    "learning_objectives": [
+      "Understand what honesty means",
+      "Learn what forgiveness means",
+      "Practice being honest and forgiving"
+    ],
+    "nigerian_examples": [
+      "Telling your teacher the truth even if you might be in trouble",
+      "Forgiving a friend who broke your toy after they say sorry",
+      "Admitting when you took something that wasn't yours"
+    ],
+    "created_at": "2026-06-13T16:13:13.48118+00:00"
+  },
+  {
+    "id": "0023a195-2580-409e-9303-059bb5a8187d",
+    "grade": 2,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of Abraham",
+    "language": "en",
+    "content": "Abraham was a prophet respected by Christians and Muslims. He believed in one God and taught people to worship only God. Abraham was known for his great faith and obedience. He left his home because God asked him to go to a new land. Abraham showed kindness to strangers and welcomed guests. He is called the 'Friend of God' in the Bible and a great prophet in the Quran. Children can learn from Abraham to trust God, be kind to others, and follow what is right even when it's hard.",
+    "summary": "Abraham was a prophet who believed in one God. He showed faith, obedience, and kindness. Christians and Muslims both respect Abraham as a great example.",
+    "learning_objectives": [
+      "Learn who Abraham was",
+      "Understand Abraham's faith and obedience",
+      "Apply Abraham's good qualities in daily life"
+    ],
+    "nigerian_examples": [
+      "Nigerian Christian children learning about Abraham in Sunday school",
+      "Muslim children hearing about Prophet Ibrahim (Abraham) during Islamic lessons",
+      "Families showing hospitality to guests like Abraham did"
+    ],
+    "created_at": "2026-06-13T16:11:32.469169+00:00"
+  },
+  {
+    "id": "0cfce483-202d-4327-921e-d9a8ca100e29",
+    "grade": 2,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Love and Service",
+    "language": "en",
+    "content": "Love means caring deeply for others and wanting what is best for them. Service means helping others without expecting anything in return. Jesus taught his followers to 'love your neighbor as yourself'. In Islam, helping others is a form of worship. You can show love and service by helping your parents at home, sharing with friends, visiting sick relatives, or helping a younger child with schoolwork. Small acts of kindness every day show love and service. When you help others, you make the world a better place.",
+    "summary": "Love is caring for others. Service is helping without expecting return. Help parents, share with friends, visit the sick. Small kindnesses make a big difference.",
+    "learning_objectives": [
+      "Understand love and service",
+      "Identify ways to help others",
+      "Practice daily acts of kindness"
+    ],
+    "nigerian_examples": [
+      "Helping your mother with chores after school",
+      "Sharing your lunch with a friend who forgot theirs",
+      "Visiting a grandparent who is feeling unwell"
+    ],
+    "created_at": "2026-06-13T16:13:57.332101+00:00"
+  },
+  {
+    "id": "4861d966-1204-455b-aa80-21359261fbf9",
+    "grade": 2,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Worship and Prayer",
+    "language": "en",
+    "content": "Worship means showing love, honor, and thanks to God. Prayer is one way to worship. Christians pray to God through Jesus. Muslims pray Salah five times a day facing Mecca. Both Christians and Muslims believe prayer helps you talk to God, say thank you, ask for help, and say sorry for mistakes. You can pray anywhere — at home, at school, or outside. Prayer can be spoken out loud or silent in your heart. Regular prayer helps you feel close to God and remember to be a good person every day.",
+    "summary": "Worship is showing love to God. Prayer is talking to God. Christians and Muslims both pray. You can pray anywhere, anytime. Prayer brings you closer to God.",
+    "learning_objectives": [
+      "Understand what worship means",
+      "Learn about prayer in Christianity and Islam",
+      "Develop personal prayer habits"
+    ],
+    "nigerian_examples": [
+      "Christian families praying before meals in Nigerian homes",
+      "Muslim children learning to pray Salah at the mosque",
+      "School morning assemblies with prayer"
+    ],
+    "created_at": "2026-06-13T16:14:45.616906+00:00"
+  },
+  {
+    "id": "d65ed6e7-7a70-4427-a6cb-aaf78039b474",
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Drama and Acting",
+    "language": "en",
+    "content": "Drama is a story acted out by people on a stage. Acting means pretending to be someone else. Nigerian drama includes traditional masquerade performances, village theatre, and modern Nollywood movies. Nollywood is Nigeria's movie industry, which is the second largest in the world after Hollywood. Actors and actresses in Nollywood tell Nigerian stories about family, love, and culture. Drama helps people understand different points of view, express feelings, and entertain others. You can do drama at school by acting out stories or playing pretend with friends.",
+    "summary": "Drama is acting out stories. Nollywood is Nigeria's movie industry, the world's second largest. Acting helps express feelings and tell Nigerian stories.",
+    "learning_objectives": [
+      "Understand what drama and acting are",
+      "Learn about Nollywood",
+      "Practice expressing emotions through acting"
+    ],
+    "nigerian_examples": [
+      "Nollywood movies watched in homes across Nigeria and Africa",
+      "School drama clubs performing plays",
+      "Traditional masquerade performances in villages"
+    ],
+    "created_at": "2026-06-13T18:55:00.044729+00:00"
+  },
+  {
+    "id": "63c12140-cdc3-4b93-9185-b7dcc547a586",
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Folk Tales",
+    "language": "en",
+    "content": "Folk tales are traditional stories passed down from grandparents to children. Many Nigerian folk tales teach lessons about honesty, kindness, and wisdom. A popular folk tale character is Tortoise, who is clever but often greedy and gets into trouble. Other animal characters include the hare, elephant, lion, and spider. Folk tales were traditionally told in the evening under the moonlight (called 'moonlight tales'). Grandparents would tell stories while children listened, learned, and sometimes sang along. Folk tales help preserve culture and teach good behavior.",
+    "summary": "Folk tales are traditional stories that teach lessons. Tortoise is a common character who is clever but greedy. Moonlight tales are told in the evening.",
+    "learning_objectives": [
+      "Understand what folk tales are",
+      "Learn about common folk tale characters",
+      "Identify lessons from stories"
+    ],
+    "nigerian_examples": [
+      "Tortoise and the birds story teaching not to be greedy",
+      "Why the tortoise has a cracked shell",
+      "Moonlight storytelling sessions in villages"
+    ],
+    "created_at": "2026-06-13T18:54:12.754019+00:00"
+  },
+  {
+    "id": "69299289-d65a-456b-a05b-44a5957b1e00",
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Nigerian Music",
+    "language": "en",
+    "content": "Music is an important part of Nigerian culture. Different ethnic groups have different musical instruments and styles. Yoruba music features talking drums (dùndún), bata drums, and shekere (a gourd with beads). Igbo music uses ogene (metal gong), ekwe (slit drum), and ubo (thumb piano). Hausa music features kalangu (talking drum), kakaki (long trumpet), and garaya (lute). Modern Nigerian music includes Afrobeats, made famous by artists like Fela Kuti and now Burna Boy, Wizkid, and Davido. Music is used for celebrations, ceremonies, storytelling, and entertainment.",
+    "summary": "Nigerian music includes traditional instruments: talking drums (Yoruba), ogene (Igbo), kalangu (Hausa). Modern Afrobeats is famous worldwide.",
+    "learning_objectives": [
+      "Identify traditional Nigerian musical instruments",
+      "Learn about Afrobeats music",
+      "Appreciate music's role in Nigerian culture"
+    ],
+    "nigerian_examples": [
+      "Talking drums used at Yoruba weddings and festivals",
+      "Ogene played during Igbo ceremonies",
+      "Listening to Afrobeats at parties and on the radio"
+    ],
+    "created_at": "2026-06-13T18:53:25.733337+00:00"
+  },
+  {
+    "id": "2c3f1f16-53ce-4853-9f4c-593690cf6de1",
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Pottery",
+    "language": "en",
+    "content": "Pottery is the art of making objects from clay. Clay is soft, wet dirt that can be shaped. After shaping, the clay is baked in a hot oven called a kiln. The baking makes the clay hard and strong. In Nigeria, pottery has been made for thousands of years. The Yoruba make pots for cooking and storing water. The Igbo make decorated pots for ceremonies. The Hausa make large pots for storing grains. Pottery is used for cooking, eating, storing food and water, and decoration. You can try simple pottery with modeling clay at school.",
+    "summary": "Pottery makes objects from clay. Clay is shaped, then baked in a kiln to harden. Nigerian pottery is used for cooking, storing water, and ceremonies.",
+    "learning_objectives": [
+      "Understand what pottery is",
+      "Learn how clay becomes pottery",
+      "Identify uses of Nigerian pottery"
+    ],
+    "nigerian_examples": [
+      "Yoruba water pots kept in homes",
+      "Igbo ceremonial pots with decorative patterns",
+      "Hausa grain storage pots (zana)"
+    ],
+    "created_at": "2026-06-13T18:56:36.050456+00:00"
+  },
+  {
+    "id": "0f3ec7cd-277c-49ec-a1a5-29260bf8195c",
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Weaving and Crafts",
+    "language": "en",
+    "content": "Weaving is making fabric by crossing threads together on a loom. In Nigeria, weaving is an ancient craft. The Yoruba weave Aso Oke fabric for special occasions like weddings and festivals. The Hausa weave traditional caps (hula) and blankets. The Igbo weave baskets from palm leaves. Other crafts include pottery (making pots from clay), beadwork (stringing beads to make jewelry), and carving (shaping wood into masks or statues). Crafts are made by hand and show the creativity of Nigerian artists. You can try simple weaving with paper or string at home.",
+    "summary": "Weaving makes fabric on a loom. Nigerian weaves: Aso Oke (Yoruba), hula caps (Hausa), baskets (Igbo). Other crafts: pottery, beadwork, carving.",
+    "learning_objectives": [
+      "Understand what weaving is",
+      "Identify Nigerian weaving traditions",
+      "Explore other Nigerian crafts"
+    ],
+    "nigerian_examples": [
+      "Aso Oke fabric worn at Yoruba weddings",
+      "Hausa embroidered caps (hula) worn by n",
+      "Igbo baskets used for carrying produce"
+    ],
+    "created_at": "2026-06-13T18:55:46.960807+00:00"
+  },
+  {
+    "id": "eb7b13b9-f0f7-436b-8cbd-a85936ada7c1",
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Nouns and Verbs",
+    "language": "en",
+    "content": "Nouns and verbs are two important types of words. A noun is a person, place, animal, or thing. Examples of nouns: teacher (person), school (place), dog (animal), book (thing). A verb is an action word — it tells what someone or something does. Examples of verbs: run, jump, eat, sleep, read, write. Every complete sentence needs at least one noun and one verb. For example: 'The cat (noun) sleeps (verb).' 'My mother (noun) cooks (verb).' Learning nouns and verbs helps you build good sentences!",
+    "summary": "Nouns are people, places, animals, or things. Verbs are action words (run, jump, eat). Every sentence needs at least one noun and one verb.",
+    "learning_objectives": [
+      "Identify nouns in sentences",
+      "Identify verbs in sentences",
+      "Understand that sentences need both nouns and verbs"
+    ],
+    "nigerian_examples": [
+      "The word 'Lagos' is a noun (place). 'Olu' is a noun (person).",
+      "In 'Children play football,' 'children' is a noun and 'play' is a verb.",
+      "In 'The trader sells yams,' 'trader' and 'yams' are nouns, 'sells' is a verb."
+    ],
+    "created_at": "2026-06-13T15:27:11.867429+00:00"
+  },
+  {
+    "id": "de3c49e1-0a91-4974-b032-76fafcd3c82b",
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Reading Short Stories",
+    "language": "en",
+    "content": "Reading short stories helps you learn new words and understand how sentences work. When you read a story, look at the pictures, sound out new words, and think about what is happening. After reading, ask yourself: Who was in the story? Where did it happen? What happened first, next, and last? Reading a little bit every day makes you a better reader. Start with stories that have big letters and colorful pictures. As you get better, you can read longer stories!",
+    "summary": "Reading short stories builds vocabulary. Look at pictures, sound out new words. Ask: Who? Where? What happened? Read a little every day to improve.",
+    "learning_objectives": [
+      "Practice reading short stories with comprehension",
+      "Learn to identify characters, setting, and plot",
+      "Build daily reading habits"
+    ],
+    "nigerian_examples": [
+      "Nigerian children's books like 'Chidi's New Home' are great for Grade 2 readers",
+      "School libraries in Lagos and Abuja have short story collections for young readers",
+      "Teachers read Nigerian folk tales aloud while students follow along"
+    ],
+    "created_at": "2026-06-13T15:26:12.740363+00:00"
+  },
+  {
+    "id": "72fbd8aa-c67d-4b45-a490-6af5a288df8e",
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Simple Sentences",
+    "language": "en",
+    "content": "A simple sentence is a group of words that tells a complete thought. Every sentence starts with a capital letter and ends with a period (.), question mark (?), or exclamation point (!). A simple sentence has one noun and one verb. Examples: 'The bird sings.' 'I like rice.' 'She runs fast.' 'We play together.' You can make a sentence longer by adding describing words: 'The big bird sings loudly.' But even a short sentence like 'Go!' can be a sentence if it has a verb and a complete thought.",
+    "summary": "A simple sentence is a complete thought. It starts with a capital letter and ends with . ? or ! Every sentence needs at least one verb and usually a noun.",
+    "learning_objectives": [
+      "Identify what makes a complete sentence",
+      "Write simple sentences with capital letters and correct punctuation",
+      "Distinguish between complete sentences and sentence fragments"
+    ],
+    "nigerian_examples": [
+      "I love jollof rice. (complete sentence)",
+      "The bus to Abuja leaves at 7am. (complete sentence)",
+      "Playing football after school. (not a complete sentence — missing who plays)"
+    ],
+    "created_at": "2026-06-13T15:28:02.331848+00:00"
+  },
+  {
+    "id": "e7c4b44d-e28e-4fb1-ac07-64c0c0656422",
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Spelling Common Words",
+    "language": "en",
+    "content": "Spelling means writing words correctly using the right letters in the right order. Some common words you use every day are: 'the', 'and', 'to', 'of', 'for', 'with', 'you', 'are', 'have', 'said'. A good way to learn spelling is to say the word slowly, write it down, check it, and try again. Practilling words like 'friend' (f-r-i-e-n-d), 'because' (b-e-c-a-u-s-e), and 'beautiful' (b-e-a-u-t-i-f-u-l). The more you read and write, the better your spelling becomes!",
+    "summary": "Spelling means writing words with the right letters in the right order. Learn common words: the, and, to, for, you, are, have, said. Practice makes perfect.",
+    "learning_objectives": [
+      "Learn to spell common Grade 2 words",
+      "Practice spelling strategies (say it, write it, check it)",
+      "Build spelling confidence through regular practice"
+    ],
+    "nigerian_examples": [
+      "Nigerian spelling bees help children practice common words",
+      "Teachers give weekly spelling tests in Nigerian primary schools",
+      "Writing words like 'Lagos', 'Benin', and 'Kano' helps with geography and spelling"
+    ],
+    "created_at": "2026-06-13T15:29:00.252235+00:00"
+  },
+  {
+    "id": "50b8a6dc-f371-4667-9849-c73c34671bb8",
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Vowels and Consonants",
+    "language": "en",
+    "content": "The English alphabet has 26 letters. These letters are divided into two groups: vowels and consonants. Vowels are the letters A, E, I, O, U (and sometimes Y). Consonants are all the other letters like B, C, D, F, and so on. Every word in English must have at least one vowel sound. Try saying the vowels: A (ah), E (eh), I (ee), O (oh), U (oo). Vowels let your breath flow freely from your mouth. Consonants block the air in different ways using your lips, tongue, or teeth. Understanding vowels and consonants helps you spell and pronounce words correctly!",
+    "summary": "Vowels: A, E, I, O, U. Consonants: all other 21 letters. Every word needs at least one vowel. Vowels let air flow freely; consonants block the air.",
+    "learning_objectives": [
+      "Identify the 5 vowel letters in English",
+      "Distinguish between vowels and consonants",
+      "Understand that every word needs a vowel"
+    ],
+    "nigerian_examples": [
+      "The word 'LAGOS' has vowels A and O, consonants L, G, S",
+      "The word 'ABUJA' has vowels A, U, A and consonants B, J",
+      "In Nigerian classrooms, students sing vowel songs to remember A, E, I, O, U"
+    ],
+    "created_at": "2026-06-13T15:25:05.015981+00:00"
+  },
+  {
+    "id": "9a8bde7b-0a8c-424c-a7d2-db70356004eb",
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Hair Care",
+    "language": "en",
+    "content": "Hair care means keeping your hair clean, healthy, and neat. Wash your hair with shampoo at least once a week. Rinse out all the shampoo. After washing, dry your hair with a clean towel. Brush or comb your hair every day to remove tangles. Different hair types need different care. Ask your parents how to care for your hair type. If you have braids or cornrows, keep them neat. Do not share combs or brushes with others because germs can spread. Healthy hair looks shiny and feels soft.",
+    "summary": "Hair care: wash weekly with shampoo, rinse well, dry, brush daily. Don't share combs. Healthy hair is shiny and soft.",
+    "learning_objectives": [
+      "Learn proper hair washing and brushing",
+      "Understand why not to share hair tools",
+      "Appreciate different hair types"
+    ],
+    "nigerian_examples": [
+      "Washing hair on weekends before school week starts",
+      "Getting braids or cornrows done neatly",
+      "Using a personal comb or brush labeled with your name"
+    ],
+    "created_at": "2026-06-13T20:13:59.25108+00:00"
+  },
+  {
+    "id": "d4a3ab89-fefd-49b8-9e63-0536ed32d801",
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Healthy Habits",
+    "language": "en",
+    "content": "Healthy habits are things you do every day to keep your body strong and well. They include washing hands before eating, brushing teeth twice a day, bathing daily, getting enough sleep, drinking water, and eating fruits and vegetables. Healthy habits prevent sickness and help you grow. Make a routine: wake up, brush teeth, wash face, eat breakfast, go to school. After school: wash hands, eat, play, do homework, bathe, brush teeth, sleep. Small habits every day keep you healthy and ready to learn and play.",
+    "summary": "Healthy habits: wash hands, brush teeth, bathe, sleep enough, drink water, eat fruits and vegetables. Daily routine keeps you strong.",
+    "learning_objectives": [
+      "Identify daily healthy habits",
+      "Create a personal healthy routine",
+      "Understand why habits matter"
+    ],
+    "nigerian_examples": [
+      "Drinking water from a clean bottle during school break",
+      "Eating oranges or bananas as snacks instead of sweets",
+      "Going to bed early to wake up fresh for school"
+    ],
+    "created_at": "2026-06-13T20:15:08.372913+00:00"
+  },
+  {
+    "id": "ce2f85e5-c5b4-4044-aec8-b3e96d5a4884",
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Nail Care",
+    "language": "en",
+    "content": "Nail care means keeping your fingernails and toenails clean and healthy. Dirt and germs can hide under long nails and make you sick. Use nail clippers to cut your nails straight across. Cut them every 1-2 weeks. Wash under your nails when you wash your hands. Do not bite your nails. Keep a nail brush by the sink to clean under nails. Healthy nails are smooth and pink. If your nails change color or hurt, tell a parent.",
+    "summary": "Nail care: cut nails every 1-2 weeks with clippers. Don't bite nails. Wash under nails. Healthy nails are smooth and pink.",
+    "learning_objectives": [
+      "Learn proper nail care techniques",
+      "Understand why nail hygiene matters",
+      "Avoid bad habits like nail biting"
+    ],
+    "nigerian_examples": [
+      "Using nail clippers bought from the market",
+      "Keeping a nail brush near the bathroom sink",
+      "Asking parents to help cut nails safely"
+    ],
+    "created_at": "2026-06-13T20:12:39.570729+00:00"
+  },
+  {
+    "id": "b524c3c8-0856-45c8-8d49-45a8931da252",
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Personal Grooming",
+    "language": "en",
+    "content": "Personal grooming means taking care of how you look and feel. It includes brushing your hair, keeping your nails clean and short, and wearing clean clothes. Brush your hair every morning to keep it tidy. Cut your fingernails and toenails regularly so dirt doesn't collect under them. Use a comb or brush that is clean. Grooming helps you look neat and feel confident. When you look good, you feel good! Good grooming also shows respect for yourself and others around you.",
+    "summary": "Personal grooming: brush hair, keep nails clean and short, wear clean clothes. Grooming helps you look neat, feel confident, and show respect.",
+    "learning_objectives": [
+      "Understand what personal grooming means",
+      "Learn daily grooming habits",
+      "Appreciate how grooming affects confidence"
+    ],
+    "nigerian_examples": [
+      "Brushing hair before going to school each morning",
+      "Cutting nails on weekends before the new school week",
+      "Looking neat for family gatherings and church or mosque"
+    ],
+    "created_at": "2026-06-13T19:35:06.552724+00:00"
+  },
+  {
+    "id": "0c5d2529-bc51-4923-8b3d-25adf6cb43fc",
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "School Cleanliness",
+    "language": "en",
+    "content": "School cleanliness means keeping your classroom, playground, and school compound clean. Put rubbish in dustbins, not on the floor. Keep your desk and area tidy. During sanitation time, help sweep the classroom or pick up litter. Do not write or draw on desks or walls. Keep the toilet clean and wash your hands after using it. A clean school helps everyone stay healthy and learn better. When you help keep your school clean, you show pride in your school and respect for your classmates and teachers.",
+    "summary": "School cleanliness: put rubbish in bins, keep desk tidy, help sweep, keep toilet clean. Clean school = healthy students and pride.",
+    "learning_objectives": [
+      "Understand why school cleanliness matters",
+      "Learn how to keep school clean",
+      "Develop pride in school environment"
+    ],
+    "nigerian_examples": [
+      "Participating in weekly sanitation time at school",
+      "Using dustbins placed around the school compound",
+      "Forming cleaning groups to take turns tidying the classroom"
+    ],
+    "created_at": "2026-06-13T20:17:34.23713+00:00"
+  },
+  {
+    "id": "0d0e1ec2-5ddf-431c-9058-213223037b6a",
+    "grade": 2,
+    "subject": "Leadership",
+    "topic": "Class Monitor Duties",
+    "language": "en",
+    "content": "A class monitor is a student leader who helps the teacher and classmates. Duties include: keeping the class quiet, arranging desks, collecting notebooks, leading the morning pledge, and helping younger students. A good monitor is responsible, polite, and fair. They do not boss others or pick favorites. If you are a monitor, set a good example by following rules yourself. If you are not a monitor, cooperate with the monitor and respect their role. Everyone can be a leader by helping in small ways, even without a title.",
+    "summary": "Class monitor duties: help teacher, keep class quiet, arrange desks, collect books. Good monitors are responsible, polite, fair.",
+    "learning_objectives": [
+      "Understand class monitor responsibilities",
+      "Learn qualities of good leaders",
+      "Practice leadership in small ways"
+    ],
+    "nigerian_examples": [
+      "Class monitors leading the morning pledge",
+      "Monitors collecting homework notebooks",
+      "Helping younger students find classrooms"
+    ],
+    "created_at": "2026-06-13T20:25:34.608716+00:00"
+  },
+  {
+    "id": "7d20919f-0545-47c1-b3fb-6be32a58445b",
+    "grade": 2,
+    "subject": "Leadership",
+    "topic": "Encouraging Friends",
+    "language": "en",
+    "content": "Encouraging means giving someone hope, confidence, or support. Good leaders encourage their friends. Say things like 'You can do it!' 'Keep trying!' 'I believe in you!' or 'Good job!' When a friend is struggling, encourage them instead of laughing. When a friend succeeds, celebrate with them. Encouragement helps people try harder and feel better about themselves. Be the friend who lifts others up.",
+    "summary": "Encouragement gives hope and support. Say 'You can do it!' 'Keep trying!' Encouraging others helps them try harder.",
+    "learning_objectives": [
+      "Understand what encouragement means",
+      "Learn encouraging phrases",
+      "Practice encouraging others daily"
+    ],
+    "nigerian_examples": [
+      "Cheering 'Keep going!' when a friend struggles",
+      "Saying 'Good try!' after a friend loses a race",
+      "Telling a shy classmate 'You can do it!'"
+    ],
+    "created_at": "2026-06-13T20:26:05.620059+00:00"
+  },
+  {
+    "id": "9ec2e634-9a4e-4edc-b32d-9f9e3cb4bb82",
+    "grade": 2,
+    "subject": "Leadership",
+    "topic": "Fairness",
+    "language": "en",
+    "content": "Fairness means treating everyone equally and following the same rules for everyone. A fair leader does not pick favorites. They listen to all sides before deciding. They share things equally. They take turns. Being fair means even when you don't like a rule, you follow it. If you see someone being treated unfairly, speak up kindly. Say 'That doesn't seem fair. Can we find a better way?' Fairness builds trust and respect. People trust leaders who are fair. Practice fairness every day.",
+    "summary": "Fairness means treating everyone equally. Don't pick favorites. Listen to all sides. Share equally. Take turns. Fair leaders earn trust.",
+    "learning_objectives": [
+      "Understand what fairness means",
+      "Learn to treat everyone equally",
+      "Practice fairness daily"
+    ],
+    "nigerian_examples": [
+      "Taking turns on the playground slide",
+      "Sharing snacks equally among friends",
+      "Listening to both sides when friends argue"
+    ],
+    "created_at": "2026-06-13T20:27:18.42614+00:00"
+  },
+  {
+    "id": "3818188a-c08e-4280-a67e-bfe2e3c6134c",
+    "grade": 2,
+    "subject": "Leadership",
+    "topic": "Following Rules",
+    "language": "en",
+    "content": "Rules tell us how to behave to keep everyone safe and happy. Good leaders follow rules and help others follow them too. Rules at school: walk quietly in the hallway, raise your hand to speak, share materials. Rules at home: do your chores, speak respectfully, finish homework. Rules in games: take turns, no cheating, play fairly. When you follow rules, you show respect for the people who made them and the people around you. Leaders don't break rules. They set an example by following them.",
+    "summary": "Rules keep everyone safe and happy. Good leaders follow rules and help others follow them. Following rules shows respect.",
+    "learning_objectives": [
+      "Understand why rules exist",
+      "Learn to follow rules willingly",
+      "Help others follow rules respectfully"
+    ],
+    "nigerian_examples": [
+      "Walking quietly in school hallways",
+      "Following road safety rules when crossing streets",
+      "Obeying home rules about screen time"
+    ],
+    "created_at": "2026-06-13T20:28:03.016602+00:00"
+  },
+  {
+    "id": "1bf64da4-d8b4-4057-9d2d-7a48b0eca016",
+    "grade": 2,
+    "subject": "Leadership",
+    "topic": "Leading Activities",
+    "language": "en",
+    "content": "Leading activities means guiding a group through a game, project, or task. A good activity leader plans ahead, explains instructions clearly, makes sure everyone gets a turn, and keeps everyone safe. Before starting, say what you will do and what rules to follow. During the activity, watch to see if everyone understands and is included. After, thank everyone for participating. You can lead games like football or board games. You can lead group work or cleaning time. Leading activities helps you practice speaking and helping others.",
+    "summary": "Leading activities: plan ahead, explain clearly, include everyone, keep safe. Thank participants. Lead games, group work, or cleaning.",
+    "learning_objectives": [
+      "Learn how to lead group activities",
+      "Practice clear communication",
+      "Develop inclusive leadership skills"
+    ],
+    "nigerian_examples": [
+      "Leading a football game during break time",
+      "Organizing a group to clean the classroom",
+      "Leading a song during school assembly"
+    ],
+    "created_at": "2026-06-13T20:28:45.669288+00:00"
+  },
+  {
+    "id": "dd27e7d1-1085-4a5b-9077-17520ce9ac19",
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Counting 1 to 500",
+    "language": "en",
+    "content": "Counting is the foundation of mathematics. In Grade 2, you will learn to count from 1 all the way to 500. You already know numbers 1 to 100. Now you will learn numbers 101 to 500. When counting, remember the pattern: after 199 comes 200, after 299 comes 300, after 399 comes 400, after 499 comes 500. You can count by ones, by tens, or by hundreds. Practice counting objects around you.",
+    "summary": "Count from 1 to 500. Numbers follow patterns: after 199 is 200, after 299 is 300.",
+    "learning_objectives": [
+      "Count from 1 to 500 fluently",
+      "Recognize number patterns",
+      "Count by ones, tens, and hundreds"
+    ],
+    "nigerian_examples": [
+      "Counting naira notes from 1 to 500 naira",
+      "Counting eggs in a market basket",
+      "Counting students in school assembly"
+    ],
+    "created_at": "2026-06-13T15:43:28.226925+00:00"
+  },
+  {
+    "id": "bab2b25a-72ab-45e2-807d-1ee749c1e255",
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Division Intro",
+    "language": "en",
+    "content": "Division is sharing equally. It is the opposite of multiplication. The division sign means divided by. If you have 12 sweets to share among 3 friends, each gets 4 sweets: 12 divided by 3 = 4. Division tells how many in each group when sharing equally. Start with dividing by 1, 2, 5, and 10. Any number divided by 1 equals itself.",
+    "summary": "Division is equal sharing. 12 sweets divided by 3 friends = 4 each. Division is the opposite of multiplication.",
+    "learning_objectives": [
+      "Understand division as equal sharing",
+      "Solve division problems with 1, 2, 5, 10",
+      "Recognize division as opposite of multiplication"
+    ],
+    "nigerian_examples": [
+      "20 oranges divided by 5 children = 4 oranges each",
+      "100 naira divided by 2 people = 50 naira each",
+      "15 buns divided by 3 friends = 5 buns each"
+    ],
+    "created_at": "2026-06-13T15:45:08.049641+00:00"
+  },
+  {
+    "id": "7aecc2e0-5215-4bd3-a383-cc84630cddaf",
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Fractions Half and Quarter",
+    "language": "en",
+    "content": "Fractions are parts of a whole. A half means one out of two equal parts. Cut an orange into 2 equal pieces, each is a half. A quarter means one out of four equal parts. Cut a cake into 4 equal slices, each is a quarter. Two quarters make a half. Four quarters make a whole.",
+    "summary": "Half = 1 of 2 equal parts. Quarter = 1 of 4 equal parts. Two quarters = one half.",
+    "learning_objectives": [
+      "Understand halves and quarters",
+      "Identify half and quarter of shapes",
+      "Relate fractions to real-life sharing"
+    ],
+    "nigerian_examples": [
+      "Cutting puff-puff into 2 halves to share",
+      "A quarter of a watermelon",
+      "Half an hour before school"
+    ],
+    "created_at": "2026-06-13T15:45:54.226352+00:00"
+  },
+  {
+    "id": "0b1b9b17-e7aa-4ae8-9e64-b48864d88a27",
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Money and Prices",
+    "language": "en",
+    "content": "Nigeria's currency is the naira. Notes: 5, 10, 20, 50, 100, 200, 500, 1000 naira. Learning to count money helps you buy things. If an orange costs 50 naira and you have 200 naira, you can buy 4 oranges because 200 divided by 50 = 4. Practice adding prices and finding change.",
+    "summary": "Nigerian currency is naira. Learn to add prices and calculate change.",
+    "learning_objectives": [
+      "Identify Nigerian naira notes",
+      "Add prices of items",
+      "Calculate change after payment"
+    ],
+    "nigerian_examples": [
+      "3 biscuits at 100 naira each = 300 naira total",
+      "Pay 500 naira for 250 naira snack = 250 naira change",
+      "Save 50 naira daily for 10 days = 500 naira"
+    ],
+    "created_at": "2026-06-13T15:46:41.362769+00:00"
+  },
+  {
+    "id": "049ab1bc-30ed-48f8-9e05-7b92b1697896",
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Multiplication Intro",
+    "language": "en",
+    "content": "Multiplication is a faster way to add the same number many times. For example, 3+3+3+3 = 12. Instead of adding 3 four times, you can multiply: 4 x 3 = 12. The x sign means times. If you have 5 bags with 2 oranges each, instead of 2+2+2+2+2=10, you can do 5 x 2 = 10. Start with tables for 1, 2, 5, and 10.",
+    "summary": "Multiplication is repeated addition. Example: 3+3+3+3 = 4x3 = 12. Learn tables for 1, 2, 5, and 10.",
+    "learning_objectives": [
+      "Understand multiplication as repeated addition",
+      "Learn multiplication tables for 1, 2, 5, and 10",
+      "Solve simple multiplication problems"
+    ],
+    "nigerian_examples": [
+      "4 packs of biscuits with 5 biscuits each = 4 x 5 = 20",
+      "3 rows of 10 chairs = 3 x 10 = 30 chairs",
+      "6 baskets with 2 yams each = 6 x 2 = 12 yams"
+    ],
+    "created_at": "2026-06-13T15:44:17.560278+00:00"
+  },
+  {
+    "id": "96d52dfb-58c4-4cd8-8943-0be7bd8d756b",
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Cultural Heritage",
+    "language": "en",
+    "content": "Cultural heritage means the traditions, customs, and art passed down from our ancestors. Nigeria has many cultural heritages because of its many ethnic groups. The Yoruba have beautiful beadwork, drumming, and the Gelede festival. The Igbo have masquerade festivals like the Mmanwu and the New Yam Festival. The Hausa have colorful embroidery, the Durbar festival with horses, and traditional architecture. Other groups like the Efik, Tiv, Nupe, and Ijaw have their own unique cultures. Protecting our cultural heritage means we keep these traditions alive for future generations.",
+    "summary": "Cultural heritage includes traditions and art from ancestors. Yoruba: drumming and beadwork. Igbo: Mmanwu and New Yam Festival. Hausa: Durbar festival and embroidery.",
+    "learning_objectives": [
+      "Understand what cultural heritage means",
+      "Learn about traditions of major ethnic groups",
+      "Appreciate the value of preserving culture"
+    ],
+    "nigerian_examples": [
+      "Yoruba Gelede festival celebrated in southwestern Nigeria",
+      "Igbo New Yam Festival (Iri Ji) at harvest time",
+      "Hausa Durbar festival with horse riding"
+    ],
+    "created_at": "2026-06-13T16:23:41.386876+00:00"
+  },
+  {
+    "id": "a5587c9c-5bc5-458b-903b-997128533b00",
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Famous Leaders",
+    "language": "en",
+    "content": "Nigeria has had many famous leaders who helped shape the country. Herbert Macaulay fought for Nigeria's independence from British rule. Nnamdi Azikiwe became Nigeria's first President. Obafemi Awolowo introduced free education in western Nigeria. Ahmadu Bello was a leader in northern Nigeria. Funmilayo Ransome-Kuti fought for women's rights. Other important leaders include Murtala Mohammed, Yakubu Gowon, and Goodluck Jonathan. Learning about these leaders teaches us about courage, service, and working for the good of the nation.",
+    "summary": "Famous Nigerian leaders: Herbert Macaulay (independence), Nnamdi Azikiwe (first President), Obafemi Awolowo (free education), Ahmadu Bello, Funmilayo Ransome-Kuti (women's rights).",
+    "learning_objectives": [
+      "Learn about important Nigerian leaders",
+      "Understand their contributions to Nigeria",
+      "Appreciate leadership qualities"
+    ],
+    "nigerian_examples": [
+      "Nnamdi Azikiwe's picture on the 500 naira note",
+      "Obafemi Awolowo's free education program still remembered",
+      "Funmilayo Ransome-Kuti's fight for women's voting rights"
+    ],
+    "created_at": "2026-06-13T16:24:33.604499+00:00"
+  },
+  {
+    "id": "ffab1ae5-fb0a-4666-922e-6aa082109f3a",
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Nigerian States",
+    "language": "en",
+    "content": "Nigeria is a big country made up of 36 states and one Federal Capital Territory called Abuja. Each state has its own capital city. Some states you may know: Lagos State (capital: Ikeja), Kano State (capital: Kano), Rivers State (capital: Port Harcourt), and Oyo State (capital: Ibadan). States are grouped into six geopolitical zones: North-West, North-East, North-Central, South-West, South-East, and South-South. Each state has different languages, foods, and cultures. Learning the states helps you understand how Nigeria is organized.",
+    "summary": "Nigeria has 36 states and Abuja (FCT). States have different capitals, languages, and cultures. States are grouped into six geopolitical zones.",
+    "learning_objectives": [
+      "Learn that Nigeria has 36 states plus Abuja",
+      "Identify some states and their capitals",
+      "Understand that states have different cultures"
+    ],
+    "nigerian_examples": [
+      "Lagos State is famous for business and entertainment",
+      "Kano State is known for traditional dye pits",
+      "Rivers State has oil and beautiful rivers"
+    ],
+    "created_at": "2026-06-13T16:21:00.842571+00:00"
+  },
+  {
+    "id": "1e40bc6e-13f5-477f-898c-73ad6370304b",
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Pre-Colonial Nigeria",
+    "language": "en",
+    "content": "Before European colonizers came, Nigeria had many powerful kingdoms and empires. The Hausa Kingdoms were in the north, with cities like Kano and Zaria. The Benin Kingdom in the south was famous for its beautiful bronze artwork. The Oyo Empire in the southwest was one of the largest empires in West Africa. The Igbo people in the southeast had communities with their own systems of government. These kingdoms traded with each other and with other parts of Africa. They had kings, queens, warriors, and rich cultures long before Nigeria became one country.",
+    "summary": "Before colonization, Nigeria had powerful kingdoms: Hausa Kingdoms (north), Benin Kingdom (south), Oyo Empire (southwest), Igbo communities (southeast). They had rich cultures and traded widely.",
+    "learning_objectives": [
+      "Learn about Nigerian kingdoms before colonization",
+      "Understand that Nigeria had advanced civilizations",
+      "Appreciate Nigerian cultural heritage"
+    ],
+    "nigerian_examples": [
+      "Benin bronze plaques displayed in museums",
+      "The ancient city walls of Kano",
+      "Oyo Empire's powerful cavalry warriors"
+    ],
+    "created_at": "2026-06-13T16:21:54.473987+00:00"
+  },
+  {
+    "id": "ce4fcd68-59e4-4252-be7f-89f4034bd3d2",
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Trade Routes",
+    "language": "en",
+    "content": "Trade routes were paths that traders used to carry goods from one place to another. The trans-Saharan trade route connected northern Nigeria to North Africa. Caravans of camels carried salt, cloth, and books from the north and brought gold, ivory, and slaves from the south. Important trading cities in Nigeria included Kano, Katsina, and Timbuktu (now in Mali). In the south, the Niger River was a major water route for trading. Canoes carried palm oil, yams, and fish. Trade brought different cultures together and made some cities very rich.",
+    "summary": "Trade routes connected Nigerian kingdoms. Trans-Saharan route used camels. Niger River route used canoes. Trading cities like Kano became rich from trade.",
+    "learning_objectives": [
+      "Understand what trade routes were",
+      "Identify major Nigerian trade routes",
+      "Learn what goods were traded"
+    ],
+    "nigerian_examples": [
+      "Kano's ancient city walls and market",
+      "Salt caravan arriving from the Sahara",
+      "Canoes trading on the Niger River"
+    ],
+    "created_at": "2026-06-13T16:22:54.122998+00:00"
+  },
+  {
+    "id": "9d52b584-3265-422e-8877-dc21a61f71a7",
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Jumping and Skipping",
+    "language": "en",
+    "content": "Jumping and skipping are fun activities that make your legs strong and your body fit. Jumping means pushing off the ground with both feet and landing. You can jump forward, backward, or straight up. Skipping is a hopping pattern where you step and hop on alternate feet. Jumping rope is a great exercise using a rope that you swing and jump over. These activities improve your balance, coordination, and bone strength. Start with small jumps and practice every day to get better.",
+    "summary": "Jumping and skipping build strong legs, balance, and coordination. Jumping rope is great exercise. Practice small jumps first, then try bigger ones.",
+    "learning_objectives": [
+      "Learn proper jumping and skipping techniques",
+      "Understand health benefits of jumping activities",
+      "Practice jumping rope safely"
+    ],
+    "nigerian_examples": [
+      "Children playing 'hopscotch' drawn on sand or concrete",
+      "Jumping rope games during break time at Nigerian schools",
+      "Traditional Nigerian jumping games during festivals"
+    ],
+    "created_at": "2026-06-13T16:02:47.279845+00:00"
+  },
+  {
+    "id": "ee11585d-256a-4d88-aca4-69e9a9a016ae",
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Nutrition Basics",
+    "language": "en",
+    "content": "Nutrition means eating the right foods to help your body grow strong and healthy. There are different food groups: grains (rice, bread, maize), proteins (meat, fish, eggs, beans), fruits and vegetables (oranges, bananas, spinach, carrots), and dairy (milk, yogurt). A balanced meal has foods from different groups. Junk food like sweets, chips, and soda taste good but should only be eaten sometimes. Drink plenty of water every day. Good nutrition helps you think better in school and have energy to play.",
+    "summary": "Eat balanced meals with grains, proteins, fruits, vegetables, and dairy. Drink water. Limit junk food. Good food helps you grow, think, and play.",
+    "learning_objectives": [
+      "Identify different food groups",
+      "Understand what makes a balanced meal",
+      "Learn healthy eating habits"
+    ],
+    "nigerian_examples": [
+      "Eating jollof rice with chicken and vegetables for a balanced meal",
+      "Snacking on oranges, bananas, or groundnuts instead of sweets",
+      "Drinking water from a clean bottle during school break"
+    ],
+    "created_at": "2026-06-13T16:03:36.275371+00:00"
+  },
+  {
+    "id": "33dfd03c-291a-42ac-b33a-8b491f5ee84d",
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Personal Hygiene",
+    "language": "en",
+    "content": "Personal hygiene means keeping your body clean to stay healthy and feel good. Wash your hands with soap and water before eating and after using the toilet. Bathe every day to remove sweat and dirt. Brush your teeth twice a day — morning and night — to prevent cavities. Wear clean clothes every day. Keep your nails short and clean. Cover your mouth when you cough or sneeze using your elbow or a tissue. Good hygiene prevents germs from spreading and keeps you and your friends healthy.",
+    "summary": "Personal hygiene keeps you healthy: wash hands, bathe daily, brush teeth twice daily, wear clean clothes, trim nails, cover coughs and sneezes.",
+    "learning_objectives": [
+      "Learn daily hygiene habits",
+      "Understand why hygiene prevents sickness",
+      "Practice proper handwashing and toothbrushing"
+    ],
+    "nigerian_examples": [
+      "Washing hands before eating school lunch",
+      "Brushing teeth after breakfast before going to school",
+      "Taking a bath after playing football"
+    ],
+    "created_at": "2026-06-13T16:04:08.872249+00:00"
+  },
+  {
+    "id": "f0620dde-070b-4557-b1b0-7465c0352d45",
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Running and Relay",
+    "language": "en",
+    "content": "Running is a fun way to exercise your body and stay healthy. When you run, your heart beats faster, your lungs work harder, and your leg muscles get stronger. A relay is a team running race where each person runs one part. In a relay, you must pass a baton (stick) to your teammate without dropping it. Running helps you build speed, endurance, and teamwork. Always warm up before running by stretching your legs and arms. Wear comfortable shoes and drink water before and after running.",
+    "summary": "Running makes your heart, lungs, and legs stronger. A relay is a team race where you pass a baton. Warm up, wear good shoes, and drink water.",
+    "learning_objectives": [
+      "Understand the health benefits of running",
+      "Learn how a relay race works",
+      "Practice running safely with proper warm-up"
+    ],
+    "nigerian_examples": [
+      "Inter-house sports competitions in Nigerian primary schools",
+      "Children running races during Children's Day celebrations",
+      "Relay races at school sports festivals across Lagos and Abuja"
+    ],
+    "created_at": "2026-06-13T16:02:00.920219+00:00"
+  },
+  {
+    "id": "2d20da1e-ffdb-411a-b862-8dc4f6d50887",
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Team Games",
+    "language": "en",
+    "content": "Team games are sports where players work together to win. Examples include football, basketball, volleyball, and relay races. In team games, every player has an important role. Good teamwork means sharing the ball, helping each other, and cheering for your teammates. Always follow the rules of the game. Be a good sport — congratulate the other team when they win and be gracious when you win. Team games teach you to cooperate, communicate, and show respect for others.",
+    "summary": "Team games like football and basketball teach cooperation and respect. Every player matters. Be a good sport: win nicely, lose gracefully.",
+    "learning_objectives": [
+      "Understand how team games work",
+      "Learn good sportsmanship",
+      "Practice cooperation and communication"
+    ],
+    "nigerian_examples": [
+      "Playing football on the school field during break",
+      "Nigerian children playing 'handball' in the compound",
+      "Inter-house sports competitions between school houses"
+    ],
+    "created_at": "2026-06-13T16:05:09.256771+00:00"
+  },
+  {
+    "id": "508a23ea-1a80-4b47-b28e-2f99161091b8",
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Festivals and Celebrations",
+    "language": "en",
+    "content": "Festivals are special celebrations that happen every year. Nigeria has many festivals. Religious festivals include Christmas (Christian), Easter (Christian), Eid al-Fitr (Muslim), and Eid al-Adha (Muslim). Cultural festivals include the Eyo Festival in Lagos, Durbar in Kano, Calabar Carnival in Cross River, and New Yam Festival among the Igbo. During festivals, people wear special clothes, eat special foods, sing, dance, and spend time with family and friends. Festivals bring communities together and help preserve culture.",
+    "summary": "Festivals are yearly celebrations. Religious: Christmas, Easter, Eid. Cultural: Eyo, Durbar, Calabar Carnival, New Yam Festival. Festivals bring people together.",
+    "learning_objectives": [
+      "Identify major Nigerian festivals",
+      "Distinguish between religious and cultural festivals",
+      "Understand why festivals are important"
+    ],
+    "nigerian_examples": [
+      "Eyo Festival with white-clad masquerades in Lagos",
+      "Calabar Carnival called 'Africa's Biggest Street Party'",
+      "Eid prayers at the Lagos Central Mosque"
+    ],
+    "created_at": "2026-06-13T18:50:31.239353+00:00"
+  },
+  {
+    "id": "16c11759-3d7e-44ed-bd40-0323ab928219",
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Nigerian Culture",
+    "language": "en",
+    "content": "Culture includes the food, language, music, dance, clothing, and traditions of a group of people. Nigeria has over 250 ethnic groups, each with its own culture. The three largest groups are Yoruba, Igbo, and Hausa. Yoruba culture includes amala and ewedu soup, talking drums, and the Gelede festival. Igbo culture includes pounded yam and egusi soup, the omu (a symbol of authority), and the Mmanwu festival. Hausa culture includes tuwo shinkafa and miyan kuka, the durbar festival, and embroidered caps called hula. Nigerian culture is rich and beautiful!",
+    "summary": "Culture includes food, language, music, dance, clothing. Nigeria has over 250 ethnic groups. Three largest: Yoruba, Igbo, Hausa. Each has unique food, music, and festivals.",
+    "learning_objectives": [
+      "Understand what culture means",
+      "Learn about Yoruba, Igbo, and Hausa cultures",
+      "Appreciate Nigeria's cultural diversity"
+    ],
+    "nigerian_examples": [
+      "Yoruba talking drums used for communication",
+      "Igbo masqueradesanwu) during festivals",
+      "Hausa embroidered caps (hula) worn by men"
+    ],
+    "created_at": "2026-06-13T18:49:35.998012+00:00"
+  },
+  {
+    "id": "c66c711b-90ce-4f64-88cc-4c7176769375",
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Our Government",
+    "language": "en",
+    "content": "Government is a group of people who make rules and decisions for the country. In Nigeria, we have three levels of government: federal (national), state, and local. The President is the leader of the federal government. Governors lead each state. Local government chairmen lead local areas. Government provides services like roads, schools, hospitals, and clean water. Government also makes laws to keep people safe. Voting is how citizens choose their leaders. When you grow up, you can vote too!",
+    "summary": "Government makes rules and provides services. Nigeria has three levels: federal (President), state (Governor), local (Chairman). Citizens vote for leaders.",
+    "learning_objectives": [
+      "Understand what government does",
+      "Identify three levels of Nigerian government",
+      "Learn about voting"
+    ],
+    "nigerian_examples": [
+      "The President lives and works in Abuja",
+      "Governors work in state capitals like Ikeja (Lagos) or Enugu",
+      "Local government chairmen help with local roads and markets"
+    ],
+    "created_at": "2026-06-13T18:47:49.472098+00:00"
+  },
+  {
+    "id": "3acdfc99-7d17-4e04-9510-2e524dc3ccce",
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Transportation",
+    "language": "en",
+    "content": "Transportation is how people and goods move from one place to another. In Nigeria, there are many types of transportation. On land, people use cars, buses, motorcycles (okadas), tricycles (keke napep), and trains. On water, people use boats and ferries on rivers and lagoons. In the air, airplanes fly between cities and countries. Transportation helps people go to school, work, market, and visit family. Different types of transportation are used for different distances and purposes. Always follow safety rules when using transportation.",
+    "summary": "Transportation moves people and goods. Land: cars, buses, okadas, keke, trains. Water: boats, ferries. Air: airplanes. Different types for different needs.",
+    "learning_objectives": [
+      "Identify different types of transportation",
+      "Understand how transportation helps people",
+      "Learn transportation safety"
+    ],
+    "nigerian_examples": [
+      "Okadas and keke napep common in Lagos and other cities",
+      "Ferries crossing the Lagos Lagoon",
+      "Trains running between Abuja and Kaduna"
+    ],
+    "created_at": "2026-06-13T18:48:43.246469+00:00"
+  },
+  {
+    "id": "15e6df11-6615-48e7-bf68-1893a59b3c3c",
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Types of Families",
+    "language": "en",
+    "content": "A family is a group of people who love and care for each other. There are different types of families. A nuclear family has parents and their children living together. An extended family includes grandparents, aunts, uncles, and cousins living nearby or together. A single-parent family has one parent raising the children. Some children live with grandparents or other relatives. All families are special, no matter how many people are in them. Families help each other, share meals, celebrate festivals, and take care of one another.",
+    "summary": "Family types: nuclear (parents and children), extended (includes grandparents, aunts, uncles), single-parent (one parent). All families are special and loving.",
+    "learning_objectives": [
+      "Identify different family types",
+      "Understand that all families are valuable",
+      "Appreciate how families care for each other"
+    ],
+    "nigerian_examples": [
+      "Nigerian extended families often living in the same compound",
+      "Children spending holidays with grandparents in the village",
+      "Aunts and uncles helping raise nieces and nephews"
+    ],
+    "created_at": "2026-06-13T18:46:53.307446+00:00"
+  },
+  {
+    "id": "9b79763c-2d2b-4c82-b1a9-e72010d2ff11",
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Celebrating Together",
+    "language": "en",
+    "content": "Celebrating together means sharing joy when the team succeeds. When your team wins, congratulate everyone. Say 'Great job, everyone!' High-five your teammates. Acknowledge each person's contribution: 'Thanks for that great pass!' 'You defended really well!' When you celebrate as a team, everyone feels valued. Even when you don't win, you can celebrate trying hard and improving. Teams that celebrate together want to keep playing and working together. Celebrating builds team spirit and makes everyone want to do their best next time.",
+    "summary": "Celebrate team success: congratulate everyone, high-five, acknowledge contributions. Celebrating builds team spirit and makes everyone feel valued.",
+    "learning_objectives": [
+      "Learn to celebrate team achievements",
+      "Practice acknowledging teammates' contributions",
+      "Build team spirit through celebration"
+    ],
+    "nigerian_examples": [
+      "High-fiving teammates after winning a football match",
+      "Saying 'Well done everyone' after a class presentation",
+      "Celebrating together at the end of sports day"
+    ],
+    "created_at": "2026-06-13T20:33:14.069257+00:00"
+  },
+  {
+    "id": "41b03c75-884c-42b6-8323-eb318d25fa18",
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Cooperating in Games",
+    "language": "en",
+    "content": "Cooperating in games means working together toward a common goal. In team games like football, pass the ball to others instead of keeping it yourself. In relay races, cheer for your teammates. In board games, take turns and play fairly. Cooperating means you care about the team's success, not just your own. When everyone cooperates, games are more fun for everyone. Even if you lose, you can be proud that you worked well as a team. Good cooperation makes winning better and losing easier to handle.",
+    "summary": "Cooperate in games: pass the ball, cheer for teammates, take turns, play fairly. Care about team success. Cooperation makes games more fun for everyone.",
+    "learning_objectives": [
+      "Learn cooperative game strategies",
+      "Practice putting team before self",
+      "Develop good sportsmanship"
+    ],
+    "nigerian_examples": [
+      "Passing the football to an open teammate",
+      "Cheering for your relay team members",
+      "Taking turns in a board game at home"
+    ],
+    "created_at": "2026-06-13T20:32:31.155834+00:00"
+  },
+  {
+    "id": "d1bb4112-57d8-4edb-8648-fdb563c84130",
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Group Projects",
+    "language": "en",
+    "content": "Group projects are when students work together to complete a task. Each person does a part. Some may draw, some may write, some may present. Good teamwork means sharing ideas, listening to others, doing your fair share, and helping teammates who struggle. If you have a problem, talk about it calmly. Say 'I think we should try this' instead of 'You're wrong.' Group projects teach you to cooperate and combine everyone's strengths. The best projects come from teams who work together well.",
+    "summary": "Group projects: everyone does a part. Share ideas, listen, do your share, help others. Talk calmly about problems. Combine everyone's strengths.",
+    "learning_objectives": [
+      "Understand how group projects work",
+      "Learn to cooperate and share tasks",
+      "Practice conflict resolution"
+    ],
+    "nigerian_examples": [
+      "Working on a poster about Nigerian states together",
+      "Creating a group presentation about Nigerian festivals",
+      "Building a model of a Nigerian landmark as a team"
+    ],
+    "created_at": "2026-06-13T20:30:18.87265+00:00"
+  },
+  {
+    "id": "84a0a0c8-d9f5-498d-9f53-ae9669c6c5a7",
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Sharing Ideas",
+    "language": "en",
+    "content": "In a team, everyone's ideas matter. Sharing your ideas helps the team find better solutions. When sharing an idea, say 'I think we could try...' or 'What if we...?' Listen to others' ideas with an open mind. You can build on someone's idea by saying 'I like that, and we could also...' If you disagree, say 'I see it differently because...' Never laugh at someone's idea. The best teams listen to all ideas and combine the best parts. Your idea might be the one that solves the problem!",
+    "summary": "Share ideas politely: 'I think we could try...' Listen to others. Build on ideas. Disagree respectfully. Never laugh at ideas. Your idea matters.",
+    "learning_objectives": [
+      "Learn to share ideas respectfully",
+      "Practice building on others' ideas",
+      "Understand that all ideas matter"
+    ],
+    "nigerian_examples": [
+      "Sharing ideas for a class project about Nigerian food",
+      "Suggesting a new game to play during break",
+      "Offering ideas for Children's Day celebration"
+    ],
+    "created_at": "2026-06-13T20:31:46.947121+00:00"
+  },
+  {
+    "id": "b8c552b0-c72f-49a8-a351-0d353a9ba368",
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Supporting Teammates",
+    "language": "en",
+    "content": "Supporting teammates means helping them and encouraging them. When a teammate makes a mistake, say 'It's okay. Try again.' When a teammate is stuck, offer help. When a teammate feels sad, listen and comfort them. A good teammate celebrates others' successes and does not get jealous. Supporting your teammates builds strong friendships and trust. Teams that support each other do better than teams where people are mean or ignore each other. Be the teammate who lifts others up.",
+    "summary": "Support teammates: say 'It's okay, try again.' Offer help. Listen when sad. Celebrate successes. Don't be jealous. Support builds trust.",
+    "learning_objectives": [
+      "Learn how to support teammates",
+      "Practice encouragement and empathy",
+      "Build trust within teams"
+    ],
+    "nigerian_examples": [
+      "Saying 'You'll get it next time' when a teammate misses a goal",
+      "Helping a teammate who doesn't understand the game rules",
+      "Celebrating when your team scores, even if you didn't score"
+    ],
+    "created_at": "2026-06-13T20:31:03.038608+00:00"
+  }
+]

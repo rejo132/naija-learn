@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Group Projects",
+    "language": "en",
+    "content": "Group projects are when students work together to complete a task. Each person does a part. Some may draw, some may write, some may present. Good teamwork means sharing ideas, listening to others, doing your fair share, and helping teammates who struggle. If you have a problem, talk about it calmly. Say 'I think we should try this' instead of 'You're wrong.' Group projects teach you to cooperate and combine everyone's strengths. The best projects come from teams who work together well.",
+    "summary": "Group projects: everyone does a part. Share ideas, listen, do your share, help others. Talk calmly about problems. Combine everyone's strengths.",
+    "learning_objectives": [
+      "Understand how group projects work",
+      "Learn to cooperate and share tasks",
+      "Practice conflict resolution"
+    ],
+    "nigerian_examples": [
+      "Working on a poster about Nigerian states together",
+      "Creating a group presentation about Nigerian festivals",
+      "Building a model of a Nigerian landmark as a team"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What should you do in a group project?",
+        "options": ["Do nothing", "Let others do all the work", "Do your fair share and help teammates", "Fight with teammates"],
+        "correct_answer": "Do your fair share and help teammates",
+        "explanation": "Everyone in a group should contribute and support each other."
+      },
+      {
+        "question": "How should you talk about problems in a group?",
+        "options": ["Yell at teammates", "Say 'I think we should try this' calmly", "Ignore the problem", "Blame others"],
+        "correct_answer": "Say 'I think we should try this' calmly",
+        "explanation": "Calm, respectful communication helps solve problems without hurting feelings."
+      },
+      {
+        "question": "What happens when a team works together well?",
+        "options": ["They get nothing done", "They create the best projects", "They fight more", "They waste time"],
+        "correct_answer": "They create the best projects",
+        "explanation": "Good teamwork combines everyone's best ideas and skills."
+      },
+      {
+        "question": "What should you do if a teammate is struggling?",
+        "options": ["Laugh at them", "Ignore them", "Help them", "Do their work without telling them"],
+        "correct_answer": "Help them",
+        "explanation": "Helping struggling teammates makes the whole group stronger."
+      },
+      {
+        "question": "True or False: In a group project, only the leader should share ideas.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Everyone in the group should share their ideas."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Supporting Teammates",
+    "language": "en",
+    "content": "Supporting teammates means helping them and encouraging them. When a teammate makes a mistake, say 'It's okay. Try again.' When a teammate is stuck, offer help. When a teammate feels sad, listen and comfort them. A good teammate celebrates others' successes and does not get jealous. Supporting your teammates builds strong friendships and trust. Teams that support each other do better than teams where people are mean or ignore each other. Be the teammate who lifts others up.",
+    "summary": "Support teammates: say 'It's okay, try again.' Offer help. Listen when sad. Celebrate successes. Don't be jealous. Support builds trust.",
+    "learning_objectives": [
+      "Learn how to support teammates",
+      "Practice encouragement and empathy",
+      "Build trust within teams"
+    ],
+    "nigerian_examples": [
+      "Saying 'You'll get it next time' when a teammate misses a goal",
+      "Helping a teammate who doesn't understand the game rules",
+      "Celebrating when your team scores, even if you didn't score"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What should you say when a teammate makes a mistake?",
+        "options": ["You're so bad", "It's okay. Try again.", "I told you so", "Give up"],
+        "correct_answer": "It's okay. Try again.",
+        "explanation": "Encouraging words help teammates keep trying after mistakes."
+      },
+      {
+        "question": "How should you react when a teammate succeeds?",
+        "options": ["Feel jealous", "Celebrate with them", "Ignore them", "Criticize them"],
+        "correct_answer": "Celebrate with them",
+        "explanation": "Celebrating teammates' successes builds team spirit."
+      },
+      {
+        "question": "What should you do if a teammate is sad?",
+        "options": ["Ignore them", "Make fun of them", "Listen and comfort them", "Walk away"],
+        "correct_answer": "Listen and comfort them",
+        "explanation": "Showing care and listening helps sad teammates feel better."
+      },
+      {
+        "question": "What happens when teammates support each other?",
+        "options": ["They fight more", "They build trust and do better", "They lose more games", "They stop talking"],
+        "correct_answer": "They build trust and do better",
+        "explanation": "Supportive teams are stronger and more successful."
+      },
+      {
+        "question": "True or False: You should only support teammates who are your best friends.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Support all your teammates, not just your closest friends."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Sharing Ideas",
+    "language": "en",
+    "content": "In a team, everyone's ideas matter. Sharing your ideas helps the team find better solutions. When sharing an idea, say 'I think we could try...' or 'What if we...?' Listen to others' ideas with an open mind. You can build on someone's idea by saying 'I like that, and we could also...' If you disagree, say 'I see it differently because...' Never laugh at someone's idea. The best teams listen to all ideas and combine the best parts. Your idea might be the one that solves the problem!",
+    "summary": "Share ideas politely: 'I think we could try...' Listen to others. Build on ideas. Disagree respectfully. Never laugh at ideas. Your idea matters.",
+    "learning_objectives": [
+      "Learn to share ideas respectfully",
+      "Practice building on others' ideas",
+      "Understand that all ideas matter"
+    ],
+    "nigerian_examples": [
+      "Sharing ideas for a class project about Nigerian food",
+      "Suggesting a new game to play during break",
+      "Offering ideas for Children's Day celebration"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How can you start sharing an idea politely?",
+        "options": ["You're wrong", "I think we could try...", "That's stupid", "My idea is best"],
+        "correct_answer": "I think we could try...",
+        "explanation": "Starting with 'I think' or 'What if' shares your idea without dismissing others."
+      },
+      {
+        "question": "How can you build on someone else's idea?",
+        "options": ["Ignore it", "Say it's terrible", "Say 'I like that, and we could also...'", "Change the subject"],
+        "correct_answer": "Say 'I like that, and we could also...'",
+        "explanation": "Building on ideas shows respect and improves the original idea."
+      },
+      {
+        "question": "How should you respond to an idea you disagree with?",
+        "options": ["Laugh", "Say 'I see it differently because...'", "Yell", "Walk away"],
+        "correct_answer": "Say 'I see it differently because...'",
+        "explanation": "Respectful disagreement keeps the discussion productive."
+      },
+      {
+        "question": "Why should you never laugh at someone's idea?",
+        "options": ["It might be funny", "It hurts feelings and stops others from sharing", "It saves time", "It is allowed"],
+        "correct_answer": "It hurts feelings and stops others from sharing",
+        "explanation": "Laughing at ideas makes people afraid to share in the future."
+      },
+      {
+        "question": "True or False: Only the smartest person in the team should share ideas.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Everyone in the team has valuable ideas to share."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Cooperating in Games",
+    "language": "en",
+    "content": "Cooperating in games means working together toward a common goal. In team games like football, pass the ball to others instead of keeping it yourself. In relay races, cheer for your teammates. In board games, take turns and play fairly. Cooperating means you care about the team's success, not just your own. When everyone cooperates, games are more fun for everyone. Even if you lose, you can be proud that you worked well as a team. Good cooperation makes winning better and losing easier to handle.",
+    "summary": "Cooperate in games: pass the ball, cheer for teammates, take turns, play fairly. Care about team success. Cooperation makes games more fun for everyone.",
+    "learning_objectives": [
+      "Learn cooperative game strategies",
+      "Practice putting team before self",
+      "Develop good sportsmanship"
+    ],
+    "nigerian_examples": [
+      "Passing the football to an open teammate",
+      "Cheering for your relay team members",
+      "Taking turns in a board game at home"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does cooperating in games mean?",
+        "options": ["Playing alone", "Working together toward a common goal", "Cheating to win", "Ignoring teammates"],
+        "correct_answer": "Working together toward a common goal",
+        "explanation": "Cooperation means everyone on the team helps each other."
+      },
+      {
+        "question": "In football, what is a cooperative action?",
+        "options": ["Keeping the ball for yourself", "Passing to a teammate", "Fighting for the ball", "Not playing defense"],
+        "correct_answer": "Passing to a teammate",
+        "explanation": "Passing shares the opportunity and makes the team stronger."
+      },
+      {
+        "question": "How should you treat teammates in a relay race?",
+        "options": ["Ignore them", "Cheer for them", "Blame them if you lose", "Push them"],
+        "correct_answer": "Cheer for them",
+        "explanation": "Cheering encourages teammates to do their best."
+      },
+      {
+        "question": "What happens when everyone cooperates in games?",
+        "options": ["Games are less fun", "Games are more fun for everyone", "Only one person has fun", "No one enjoys playing"],
+        "correct_answer": "Games are more fun for everyone",
+        "explanation": "Cooperation makes games enjoyable for all players."
+      },
+      {
+        "question": "True or False: Winning is the only thing that matters in games.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Having fun, learning, and cooperating are just as important as winning."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Celebrating Together",
+    "language": "en",
+    "content": "Celebrating together means sharing joy when the team succeeds. When your team wins, congratulate everyone. Say 'Great job, everyone!' High-five your teammates. Acknowledge each person's contribution: 'Thanks for that great pass!' 'You defended really well!' When you celebrate as a team, everyone feels valued. Even when you don't win, you can celebrate trying hard and improving. Teams that celebrate together want to keep playing and working together. Celebrating builds team spirit and makes everyone want to do their best next time.",
+    "summary": "Celebrate team success: congratulate everyone, high-five, acknowledge contributions. Celebrating builds team spirit and makes everyone feel valued.",
+    "learning_objectives": [
+      "Learn to celebrate team achievements",
+      "Practice acknowledging teammates' contributions",
+      "Build team spirit through celebration"
+    ],
+    "nigerian_examples": [
+      "High-fiving teammates after winning a football match",
+      "Saying 'Well done everyone' after a class presentation",
+      "Celebrating together at the end of sports day"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What should you do when your team wins?",
+        "options": ["Brag about yourself only", "Congratulate everyone on the team", "Ignore your teammates", "Blame someone who made mistakes"],
+        "correct_answer": "Congratulate everyone on the team",
+        "explanation": "Team wins belong to everyone on the team."
+      },
+      {
+        "question": "How can you celebrate a teammate's contribution?",
+        "options": ["Say nothing", "Say 'Thanks for that great pass!'", "Ignore them", "Take credit yourself"],
+        "correct_answer": "Say 'Thanks for that great pass!'",
+        "explanation": "Acknowledging specific contributions shows you noticed and appreciated their effort."
+      },
+      {
+        "question": "Should you celebrate only when you win?",
+        "options": ["Yes, only winning matters", "No, celebrate trying hard and improving too", "Only celebrate if you scored", "Never celebrate"],
+        "correct_answer": "No, celebrate trying hard and improving too",
+        "explanation": "Effort and improvement are also worth celebrating."
+      },
+      {
+        "question": "What does celebrating together build?",
+        "options": ["Jealousy", "Team spirit", "Arguments", "Loneliness"],
+        "correct_answer": "Team spirit",
+        "explanation": "Celebrating together makes teams want to keep working together."
+      },
+      {
+        "question": "True or False: Celebrating should only include the players who scored or did the most.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Celebrate everyone on the team, even those who played smaller roles."
+      }
+    ]
+  }
+]

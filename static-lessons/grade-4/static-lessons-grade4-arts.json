@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 4,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Secondary Color Mixing",
+    "language": "en",
+    "content": "Primary colors are red, blue, and yellow. These cannot be made by mixing other colors. Secondary colors are made by mixing two primary colors. Red + Yellow = Orange. Yellow + Blue = Green. Blue + Red = Purple (Violet). Mixing primary and secondary colors creates tertiary colors (like red-orange or yellow-green). Understanding color mixing helps artists create unlimited shades. In Nigeria, artists mix colors to paint traditional art, murals, and crafts. Color mixing is used in fabric design (Ankara, Adire), painting, and even cooking (mixing food colors for cakes and drinks).",
+    "summary": "Primary colors: red, blue, yellow. Secondary colors: orange (red+yellow), green (blue+yellow), purple (blue+red). Mixing primary+secondary creates tertiary colors.",
+    "learning_objectives": [
+      "Identify primary colors",
+      "Mix primary colors to create secondary colors",
+      "Apply color mixing to art projects"
+    ],
+    "nigerian_examples": [
+      "Mixing red and yellow to paint an orange sun in a landscape",
+      "Creating green from yellow and blue for painting leaves",
+      "Adire artists mixing indigo blue with other colors"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are the three primary colors?",
+        "options": ["Red, green, blue", "Red, blue, yellow", "Orange, purple, green", "Black, white, gray"],
+        "correct_answer": "Red, blue, yellow",
+        "explanation": "Primary colors cannot be made by mixing other colors."
+      },
+      {
+        "question": "What do you get when you mix red and yellow?",
+        "options": ["Green", "Purple", "Orange", "Brown"],
+        "correct_answer": "Orange",
+        "explanation": "Red + Yellow creates Orange."
+      },
+      {
+        "question": "What do you get when you mix blue and yellow?",
+        "options": ["Orange", "Green", "Purple", "Brown"],
+        "correct_answer": "Green",
+        "explanation": "Blue + Yellow creates Green."
+      },
+      {
+        "question": "What do you get when you mix blue and red?",
+        "options": ["Orange", "Green", "Purple", "Brown"],
+        "correct_answer": "Purple",
+        "explanation": "Blue + Red creates Purple (Violet)."
+      },
+      {
+        "question": "True or False: Primary colors are made by mixing secondary colors.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Primary colors cannot be made from other colors - they are the source."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Traditional Motifs",
+    "language": "en",
+    "content": "Traditional motifs are repeated patterns or designs that have cultural meaning. In Nigeria, different ethnic groups have unique motifs. Yoruba motifs include: the zigzag line (lightning - symbol of Sango, god of thunder), concentric circles (crown - royalty), and the lizard (good luck). Igbo motifs include: the ichi scarification patterns (bravery), nsibidi symbols (secret writing), and the omu (symbol of authority). Hausa motifs include: geometric patterns (stars, triangles), calligraphy (Islamic writing), and the knot (unity). Motifs appear on textiles, architecture, pottery, and body art. Understanding motifs helps preserve cultural heritage.",
+    "summary": "Traditional motifs = repeated patterns with meaning. Yoruba: lightning (Sango), circles (royalty). Igbo: ichi (bravery), nsibidi symbols. Hausa: geometric, calligraphy, knots.",
+    "learning_objectives": [
+      "Identify traditional motifs from major Nigerian groups",
+      "Understand the meaning behind motifs",
+      "Create art using traditional motifs"
+    ],
+    "nigerian_examples": [
+      "Adire fabric with Yoruba motifs",
+      "Nsibidi symbols on Igbo shrines",
+      "Hausa embroidery with geometric patterns"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does the Yoruba lightning motif represent?",
+        "options": ["Rain", "Sango (god of thunder)", "Peace", "Agriculture"],
+        "correct_answer": "Sango (god of thunder)",
+        "explanation": "The zigzag lightning pattern is associated with Sango, the Yoruba god of thunder."
+      },
+      {
+        "question": "What are nsibidi symbols?",
+        "options": ["Hausa calligraphy", "Igbo secret writing", "Yoruba patterns", "Benin bronze designs"],
+        "correct_answer": "Igbo secret writing",
+        "explanation": "Nsibidi is an ancient Igbo system of symbols used for communication."
+      },
+      {
+        "question": "What Hausa motif represents unity?",
+        "options": ["Star", "Triangle", "Knot", "Circle"],
+        "correct_answer": "Knot",
+        "explanation": "The knot motif in Hausa art symbolizes unity and connection."
+      },
+      {
+        "question": "Where do traditional motifs appear?",
+        "options": ["Textiles only", "Architecture and pottery only", "Textiles, architecture, pottery, body art", "Only on money"],
+        "correct_answer": "Textiles, architecture, pottery, body art",
+        "explanation": "Motifs appear on many different cultural objects and surfaces."
+      },
+      {
+        "question": "True or False: Motifs have no special meaning - they are just decoration.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Traditional motifs carry deep cultural, spiritual, or historical meanings."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Tie and Dye",
+    "language": "en",
+    "content": "Tie and dye is a method of coloring fabric by tying parts to resist dye. The tied areas stay original color while the rest absorbs dye. Nigerian tie-dye is called 'Adire' (Yoruba language). Types of Adire: Adire Eleko - starch painted through a stencil; Adire Alabere - raffia tied around fabric; Adire Oniko - tying with thread to create patterns. Tie-dye creates unique patterns: circles, stripes, spirals, and random designs. Colors come from natural sources (indigo plant for blue) or chemical dyes. Tie-dye is used for clothing, wall hangings, and accessories. Abeokuta is famous for Adire production.",
+    "summary": "Tie and dye = resist dye technique. Nigerian Adire types: Eleko (starch stencil), Alabere (raffia tie), Oniko (thread tie). Abeokuta is Adire capital.",
+    "learning_objectives": [
+      "Understand tie and dye technique",
+      "Identify Adire types",
+      "Create simple tie-dye patterns"
+    ],
+    "nigerian_examples": [
+      "Adire Eleko from Abeokuta",
+      "Tie-dye shirts sold in Lagos markets",
+      "Traditional indigo dye pits in Kano"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is tie and dye?",
+        "options": ["Painting on fabric", "Tying fabric to resist dye, creating patterns", "Weaving fabric", "Printing with machines"],
+        "correct_answer": "Tying fabric to resist dye, creating patterns",
+        "explanation": "Tie and dye uses tied sections to block dye, creating patterns."
+      },
+      {
+        "question": "What is Adire?",
+        "options": ["Nigerian tie-dye", "Nigerian weaving", "Nigerian pottery", "Nigerian sculpture"],
+        "correct_answer": "Nigerian tie-dye",
+        "explanation": "Adire is the Yoruba word for tie and dye fabric."
+      },
+      {
+        "question": "Which city is famous for Adire production?",
+        "options": ["Lagos", "Abeokuta", "Kano", "Enugu"],
+        "correct_answer": "Abeokuta",
+        "explanation": "Abeokuta in Ogun State is the center of Adire production."
+      },
+      {
+        "question": "What material is used for Adire Alabere?",
+        "options": ["Thread", "Raffia", "Starch", "Wax"],
+        "correct_answer": "Raffia",
+        "explanation": "Adire Alabere uses raffia palm fibers tied around fabric."
+      },
+      {
+        "question": "True or False: All tie-dye patterns are exactly the same.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Each tie-dye piece is unique because of how the fabric is tied."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Printmaking",
+    "language": "en",
+    "content": "Printmaking creates multiple copies of an artwork. The artist makes a master design on a surface, inks it, then presses paper onto it. Types: relief printing (carve away areas not to print - woodcut, linocut), intaglio (ink sits in carved lines), screen printing (ink pushed through mesh screen with stencil), and monotype (unique prints). Nigerian printmaker Bruce Onobrakpeya invented 'plastocast' - a unique method using plastic. Printmaking makes art affordable and reproducible. You can try simple printmaking at home: carve shapes into a potato or sponge, dip in paint, and stamp.",
+    "summary": "Printmaking = making multiple copies. Relief (woodcut, linocut), screen printing, monotype. Bruce Onobrakpeya invented plastocast. Try potato stamping at home.",
+    "learning_objectives": [
+      "Understand printmaking techniques",
+      "Know about Bruce Onobrakpeya",
+      "Create simple prints"
+    ],
+    "nigerian_examples": [
+      "Bruce Onobrakpeya's plastocast prints",
+      "Screen-printed fabrics in Nigerian markets",
+      "School art classes making potato prints"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is printmaking?",
+        "options": ["Drawing one picture", "Making multiple copies of an artwork", "Painting on canvas", "Sculpting"],
+        "correct_answer": "Making multiple copies of an artwork",
+        "explanation": "Printmaking creates editions of the same image."
+      },
+      {
+        "question": "Which Nigerian artist invented plastocast?",
+        "options": ["Ben Enwonwu", "Bruce Onobrakpeya", "Nike Okundaye", "Yinka Shonibare"],
+        "correct_answer": "Bruce Onobrakpeya",
+        "explanation": "Bruce Onobrakpeya invented plastocast, a unique printmaking technique."
+      },
+      {
+        "question": "What is relief printing?",
+        "options": ["Carving away areas not to print", "Ink in carved lines", "Ink through mesh screen", "Unique prints"],
+        "correct_answer": "Carving away areas not to print",
+        "explanation": "Relief printing raises the printing surface above non-printing areas."
+      },
+      {
+        "question": "What can you use for simple printmaking at home?",
+        "options": ["Expensive press", "Potato or sponge", "Professional tools", "Computer"],
+        "correct_answer": "Potato or sponge",
+        "explanation": "Potato or sponge stamps are easy home printmaking projects."
+      },
+      {
+        "question": "True or False: Printmaking only produces one copy of an artwork.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Printmaking is designed to create multiple copies (an edition)."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Graphic Design Intro",
+    "language": "en",
+    "content": "Graphic design is visual communication combining images, words, and colors. Examples: logos, posters, book covers, websites, packaging, signs, and social media graphics. Design elements: color (sets mood), typography (font style), shape, line, space, and texture. Good graphic design is clear, attractive, and effective. Nigerian graphic designers create logos for businesses, Nollywood movie posters, product labels, and political campaign materials. Software: Adobe Photoshop, Canva, Illustrator, CorelDRAW. You can practice graphic design: design a birthday card, create a poster for school event, or make your own logo. Graphic design is a valuable career skill.",
+    "summary": "Graphic design = visual communication with images, words, colors. Examples: logos, posters, websites. Elements: color, typography, shape, line, space. Practice with Canva.",
+    "learning_objectives": [
+      "Understand what graphic design is",
+      "Identify design elements",
+      "Create simple designs"
+    ],
+    "nigerian_examples": [
+      "Nollywood movie posters",
+      "Naija logo design contests",
+      "Canva workshops in Lagos"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is graphic design?",
+        "options": ["Only drawing", "Visual communication combining images, words, and colors", "Only writing", "Only photography"],
+        "correct_answer": "Visual communication combining images, words, and colors",
+        "explanation": "Graphic design creates visual content to communicate messages."
+      },
+      {
+        "question": "Which is an example of graphic design?",
+        "options": ["A sculpture", "A logo", "A ceramic pot", "A woven basket"],
+        "correct_answer": "A logo",
+        "explanation": "Logos are graphic designs that represent brands or organizations."
+      },
+      {
+        "question": "What software is used for graphic design?",
+        "options": ["Microsoft Word", "Adobe Photoshop and Canva", "Excel", "PowerPoint"],
+        "correct_answer": "Adobe Photoshop and Canva",
+        "explanation": "These are popular graphic design tools."
+      },
+      {
+        "question": "What does typography refer to?",
+        "options": ["Colors", "Fonts and text style", "Shapes", "Space"],
+        "correct_answer": "Fonts and text style",
+        "explanation": "Typography is the art of arranging type to make text attractive and readable."
+      },
+      {
+        "question": "True or False: Graphic design is only for professionals, not for beginners.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Beginners can use Canva and other easy tools to learn graphic design."
+      }
+    ]
+  }
+]

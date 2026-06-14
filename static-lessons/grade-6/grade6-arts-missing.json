@@ -1,0 +1,104 @@
+[
+  {
+    "grade": 6,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Contemporary Nigerian Art",
+    "language": "en",
+    "content": "Contemporary Nigerian art includes works by living artists addressing modern themes. Famous contemporary artists: Ben Enwonwu (painter, sculptor - 'Tutu' painting), Bruce Onobrakpeya (printmaker, invented plastocast), Nike Okundaye (textile artist, founded Nike Art Gallery), El Anatsui (sculptor using bottle caps, based in Ghana but Nigerian-born), Yinka Shonibare (British-Nigerian using Dutch wax fabric). Themes: identity, colonialism, independence, social justice, environmental issues, everyday Nigerian life. Media: painting, sculpture, photography, digital art, installation, performance. Nigerian art galleries: Nike Art Gallery (Lagos), Omenka Gallery, Rele Gallery, African Artists' Foundation. Contemporary art challenges viewers to think differently. You can create contemporary art using local materials, exploring your own experiences and concerns.",
+    "summary": "Contemporary Nigerian art: living artists addressing modern themes. Artists: Ben Enwonwu, Bruce Onobrakpeya, Nike Okundaye, El Anatsui, Yinka Shonibare. Galleries in Lagos.",
+    "learning_objectives": [
+      "Identify contemporary Nigerian artists",
+      "Understand themes in contemporary art",
+      "Create art addressing personal experiences"
+    ],
+    "nigerian_examples": [
+      "Ben Enwonwu's 'Tutu' painting",
+      "Nike Art Gallery in Lagos",
+      "Bruce Onobrakpeya's plastocast prints"
+    ],
+    "quiz_questions": [
+      {"question": "Who painted the famous 'Tutu' portrait?", "options": ["Bruce Onobrakpeya", "Ben Enwonwu", "Nike Okundaye", "El Anatsui"], "correct_answer": "Ben Enwonwu", "explanation": "Ben Enwonwu's 'Tutu' became one of Nigeria's most famous paintings."},
+      {"question": "What material does El Anatsui use?", "options": ["Oil paint", "Bottle caps and metal", "Wood only", "Watercolor"], "correct_answer": "Bottle caps and metal", "explanation": "El Anatsui creates large-scale sculptures from recycled bottle caps."},
+      {"question": "Where is Nike Art Gallery located?", "options": ["Abuja", "Lagos", "Kano", "Enugu"], "correct_answer": "Lagos", "explanation": "Nike Art Gallery in Lagos is one of Nigeria's largest art galleries."},
+      {"question": "What invention is Bruce Onobrakpeya known for?", "options": ["Oil painting", "Plastocast printmaking", "Sculpture", "Photography"], "correct_answer": "Plastocast printmaking", "explanation": "Onobrakpeya invented plastocast, a unique printmaking technique."},
+      {"question": "True or False: Contemporary art only includes paintings.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Contemporary art includes sculpture, photography, installation, performance, and digital art."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Curatorial Practice",
+    "language": "en",
+    "content": "Curatorial practice is selecting, organizing, and interpreting artworks for exhibitions. Curators choose which artworks to display, arrange them in meaningful order, write descriptions (labels), design the exhibition layout, and educate visitors. Exhibition planning steps: theme (central idea), selecting artworks (fit theme, variety of media), layout (flow, lighting, spacing), labels (artist, title, date, materials, description), promotion (posters, social media), opening event. Nigerian curators: Okwui Enwezor (first African curator of Venice Biennale), Bisi Silva (founded Centre for Contemporary Art, Lagos). You can curate: arrange art on your wall, organize a class art show, create a digital gallery. Curating teaches organization, storytelling, and appreciation of art.",
+    "summary": "Curatorial practice: selecting, organizing, interpreting artworks for exhibitions. Steps: theme, selection, layout, labels, promotion, opening. Nigerian curators: Enwezor, Bisi Silva.",
+    "learning_objectives": [
+      "Understand curatorial role",
+      "Plan an exhibition",
+      "Write artwork labels"
+    ],
+    "nigerian_examples": [
+      "Okwui Enwezor curating Venice Biennale",
+      "Centre for Contemporary Art in Lagos",
+      "School art exhibitions"
+    ],
+    "quiz_questions": [
+      {"question": "What does a curator do?", "options": ["Only paints", "Selects and organizes artworks for exhibitions", "Only sells art", "Only teaches art"], "correct_answer": "Selects and organizes artworks for exhibitions", "explanation": "Curators make decisions about what art is shown and how."},
+      {"question": "Who was the first African curator of Venice Biennale?", "options": ["Ben Enwonwu", "Okwui Enwezor", "Bruce Onobrakpeya", "Nike Okundaye"], "correct_answer": "Okwui Enwezor", "explanation": "Enwezor curated the prestigious Venice Biennale in 2015."},
+      {"question": "What is an exhibition label?", "options": ["Price tag", "Information about artwork (artist, title, materials)", "Advertisement", "Ticket"], "correct_answer": "Information about artwork (artist, title, materials)", "explanation": "Labels help visitors understand what they see."},
+      {"question": "What is the first step in planning an exhibition?", "options": ["Promotion", "Choose theme", "Open event", "Hire security"], "correct_answer": "Choose theme", "explanation": "Theme guides all other decisions."},
+      {"question": "True or False: Anyone can curate a small exhibition.", "options": ["True", "False"], "correct_answer": "True", "explanation": "You can curate a class art show or wall arrangement at home."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Creative Economy",
+    "language": "en",
+    "content": "The creative economy includes industries based on individual creativity, skill, and talent with potential to create wealth and jobs. Sectors: visual arts (painting, sculpture, photography), performing arts (music, dance, theater), film (Nollywood), fashion design, architecture, advertising, crafts (beadwork, weaving, pottery), publishing, software (video games, apps), design (graphic, product). Nigeria's creative economy contributes significantly to GDP and employment. Nollywood is the second largest film industry in the world (by number of films). Nigerian music (Afrobeats) has global stars: Burna Boy, Wizkid, Davido. Fashion designers showcase at Lagos Fashion Week. You can participate: sell crafts, perform at events, start a YouTube channel, design logos, write stories. The creative economy offers career paths beyond traditional jobs.",
+    "summary": "Creative economy = industries based on creativity, talent. Sectors: visual arts, performing arts, film (Nollywood), fashion, crafts, design, software. Nigerian music and film global.",
+    "learning_objectives": [
+      "Identify creative economy sectors",
+      "Understand Nollywood and Afrobeats impact",
+      "Explore creative career options"
+    ],
+    "nigerian_examples": [
+      "Nollywood second largest film industry",
+      "Burna Boy, Wizkid, Davido global Afrobeats stars",
+      "Lagos Fashion Week",
+      "Nike Art Gallery crafts"
+    ],
+    "quiz_questions": [
+      {"question": "What is the creative economy?", "options": ["Only oil industry", "Industries based on creativity and talent", "Only farming", "Only banking"], "correct_answer": "Industries based on creativity and talent", "explanation": "Creative industries generate wealth through artistic expression."},
+      {"question": "How large is Nollywood?", "options": ["Largest in world", "Second largest (by number of films)", "Third largest", "Small"], "correct_answer": "Second largest (by number of films)", "explanation": "Nollywood produces more films than Hollywood, behind India's Bollywood."},
+      {"question": "Which Nigerian music genre has global stars?", "options": ["Highlife", "Fuji", "Afrobeats", "Juju"], "correct_answer": "Afrobeats", "explanation": "Afrobeats artists like Burna Boy and Wizkid have international recognition."},
+      {"question": "What career is part of creative economy?", "options": ["Doctor", "Fashion designer", "Lawyer", "Engineer"], "correct_answer": "Fashion designer", "explanation": "Fashion design is a creative industry."},
+      {"question": "True or False: The creative economy only includes fine arts.", "options": ["True", "False"], "correct_answer": "False", "explanation": "It includes film, music, fashion, design, crafts, advertising, and more."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Multimedia Art",
+    "language": "en",
+    "content": "Multimedia art combines different media: video, sound, text, images, animation, interactivity. Digital tools allow artists to create immersive experiences. Examples: video installations (projected films), interactive websites, virtual reality art, sound sculptures, animated projections, social media art (Instagram filters, TikTok effects). Nigerian multimedia artists use technology to address social issues, preserve culture, and reach wider audiences. Software: Adobe Creative Suite (Photoshop, Premiere, After Effects), Blender (3D animation), Processing (coding for art), Unity (interactive art). You can create multimedia art: combine photos with music in video, animate drawings, create digital collages, design interactive stories. Multimedia art requires both artistic and technical skills.",
+    "summary": "Multimedia art combines video, sound, text, images, animation, interactivity. Digital tools create immersive experiences. Nigerian artists use technology for social issues and culture.",
+    "learning_objectives": [
+      "Understand multimedia art",
+      "Identify digital tools",
+      "Create simple multimedia projects"
+    ],
+    "nigerian_examples": [
+      "Video art about Lagos traffic",
+      "Digital animation of Nigerian folktales",
+      "Social media art campaigns",
+      "Interactive installations at Lagos Biennale"
+    ],
+    "quiz_questions": [
+      {"question": "What is multimedia art?", "options": ["Only painting", "Combines different media like video, sound, images, interactivity", "Only sculpture", "Only photography"], "correct_answer": "Combines different media like video, sound, images, interactivity", "explanation": "Multimedia integrates multiple forms."},
+      {"question": "Which software is used for video editing?", "options": ["Photoshop", "Premiere Pro", "Word", "Excel"], "correct_answer": "Premiere Pro", "explanation": "Premiere Pro is for video editing; Photoshop for images."},
+      {"question": "What is virtual reality art?", "options": ["Painting on canvas", "Art experienced through VR headset", "Sculpture", "Photography"], "correct_answer": "Art experienced through VR headset", "explanation": "VR immerses viewers in digital environments."},
+      {"question": "Can social media be used for art?", "options": ["No", "Yes, Instagram filters, TikTok effects, digital posts", "Only for business", "Only for friends"], "correct_answer": "Yes, Instagram filters, TikTok effects, digital posts", "explanation": "Many artists share and create art on social platforms."},
+      {"question": "True or False: Multimedia art requires only artistic skills, no technical skills.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Multimedia art requires both artistic vision and technical knowledge."}
+    ]
+  }
+]

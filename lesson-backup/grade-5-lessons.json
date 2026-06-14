@@ -1,0 +1,1545 @@
+[
+  {
+    "id": "06021d2a-5122-4eac-ba28-c0ccfb9b886c",
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "Cybersecurity",
+    "language": "en",
+    "content": "Cybersecurity protects computers, networks, and data from attack. Threats: malware (viruses), phishing (fake emails), hacking, identity theft. Protection: antivirus software, firewalls, updates, strong passwords, two-factor authentication (2FA). Nigerian agencies: NITDA, ngCERT. Report cybercrime.",
+    "summary": "Cybersecurity protects against malware, phishing, hacking. Use antivirus, updates, strong passwords, 2FA.",
+    "learning_objectives": [
+      "Identify cyber threats",
+      "Use security tools",
+      "Protect personal data"
+    ],
+    "nigerian_examples": [
+      "NITDA campaigns",
+      "Bank 2FA texts",
+      "Antivirus on computers",
+      "ngCERT reporting"
+    ],
+    "created_at": "2026-06-14T06:43:23.160499+00:00"
+  },
+  {
+    "id": "51da4db9-c7c3-492a-94e3-f82f51cbd790",
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "Digital Citizenship",
+    "language": "en",
+    "content": "Digital citizenship is responsible technology use. Nine elements: digital access (equal internet opportunity), digital commerce (online buying/selling legally), digital communication (respectful messaging), digital literacy (knowing how to use tech), digital etiquette (manners online), digital law (not stealing, hacking), digital rights/responsibilities (privacy, free speech), digital health/wellness (balance screen time, ergonomics), digital security (passwords, protection). Nigerian digital citizens: protect personal information, avoid cyberbullying, respect copyright (don't download illegal movies/music), think before posting, balance online/offline life, use strong passwords.",
+    "summary": "Digital citizenship = responsible technology use. Nine elements: access, commerce, communication, literacy, etiquette, law, rights/responsibilities, health, security.",
+    "learning_objectives": [
+      "Understand digital citizenship",
+      "Practice online safety",
+      "Balance screen time"
+    ],
+    "nigerian_examples": [
+      "Using social media respectfully",
+      "Not downloading pirated movies",
+      "Protecting privacy on WhatsApp",
+      "Limiting gaming time"
+    ],
+    "created_at": "2026-06-14T06:42:12.244682+00:00"
+  },
+  {
+    "id": "0a03c9ae-8620-4a95-a0d0-53c3485606a8",
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "HTML Introduction",
+    "language": "en",
+    "content": "HTML (HyperText Markup Language) is the code for webpages. Tags are instructions inside angle brackets < >. Most tags have opening <tagname> and closing </tagname>. Basic structure: <html> (entire page), <head> (metadata, title), <title> (tab name), <body> (visible content). Common tags: <h1> to <h6> (headings, h1 largest), <p> (paragraph), <img src='image.jpg'> (image), <a href='url'>link</a> (hyperlink), <ul><li>item</li></ul> (bullet list). Write HTML in any text editor, save as .html, open in browser. Nigerian students learn HTML in computer clubs to build simple webpages.",
+    "summary": "HTML = code for webpages. Tags in < > brackets. Basic structure: html, head, title, body. Common tags: h1, p, img, a, ul/li.",
+    "learning_objectives": [
+      "Understand HTML structure",
+      "Use common tags",
+      "Create simple webpage"
+    ],
+    "nigerian_examples": [
+      "School website projects",
+      "Personal portfolio page",
+      "Local business webpage",
+      "Classroom assignment webpage"
+    ],
+    "created_at": "2026-06-14T06:42:58.05777+00:00"
+  },
+  {
+    "id": "f2fa030b-f049-41c2-91ee-f690fd567396",
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "Presentation Software",
+    "language": "en",
+    "content": "Presentation software (PowerPoint, Google Slides) creates slide shows for speaking. Best practices: one idea per slide, minimal text (6x6 rule - max 6 words per line, 6 lines per slide), readable fonts (sans-serif like Arial), high-contrast colors (dark text on light background), relevant images, consistent design. Use transitions and animations sparingly (don't distract). Rehearse timing. Nigerian students use presentations for class projects, reports, and debates. Include title slide, agenda, content slides, conclusion, and references. Practice speaking while presenting, not reading slides. Engage audience with questions.",
+    "summary": "Presentation software: PowerPoint, Google Slides. One idea per slide, 6x6 rule (6 words/line, 6 lines). Readable fonts, high contrast, minimal animations.",
+    "learning_objectives": [
+      "Create effective slide presentations",
+      "Apply design principles",
+      "Deliver engaging presentations"
+    ],
+    "nigerian_examples": [
+      "School project presentations",
+      "Business pitches in Lagos",
+      "Classroom teaching slides",
+      "Debate presentations"
+    ],
+    "created_at": "2026-06-14T06:41:26.696735+00:00"
+  },
+  {
+    "id": "81bf5c2d-1ee6-4f26-8f75-1d73103a5360",
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "Spreadsheet Basics",
+    "language": "en",
+    "content": "Spreadsheet software (Excel, Google Sheets) organizes data in rows and columns. Cells are intersections of rows (numbers) and columns (letters) - example A1. Enter data: text, numbers, formulas. Formulas start with = sign: =A1+B1 adds cells, =SUM(A1:A10) adds range, =AVERAGE(B1:B20) calculates mean. Formatting: bold headers, number formats (currency, percentage), borders, colors. Charts: select data, insert chart (bar, line, pie). Nigerian uses: tracking expenses, budgeting, grading students, sales records. Spreadsheets save time and reduce errors.",
+    "summary": "Spreadsheets organize data in rows/columns. Cells (A1). Formulas start with =SUM, =AVERAGE. Charts visualize data. Excel, Google Sheets.",
+    "learning_objectives": [
+      "Enter data into cells",
+      "Use basic formulas",
+      "Create simple charts"
+    ],
+    "nigerian_examples": [
+      "School grade sheets",
+      "Market price tracking",
+      "Budget planning",
+      "Business sales records"
+    ],
+    "created_at": "2026-06-14T06:40:39.768105+00:00"
+  },
+  {
+    "id": "a1d51298-b149-43bd-a7de-4f1f11a35fae",
+    "grade": 5,
+    "subject": "Basic Science & Technology",
+    "topic": "Chemistry Basics",
+    "language": "en",
+    "content": "Chemistry studies matter, its properties, and changes. Atoms are smallest units; molecules form when atoms bond. Elements are pure substances (118 known). Periodic table organizes elements. Compounds are two+ elements bonded (water = H2O). Physical changes don't create new substances (melting, freezing). Chemical changes create new substances (burning, rusting). Nigerian chemistry applications: petroleum refining, pharmaceutical manufacturing, soap production, food preservation. Safety: read labels, wear gloves/goggles, work ventilated area. Chemistry explains everything around us.",
+    "summary": "Chemistry = study of matter. Atoms, molecules, elements, compounds. Physical vs chemical changes. Nigerian applications: petroleum, drugs, soap.",
+    "learning_objectives": [
+      "Understand matter basics",
+      "Distinguish physical/chemical changes",
+      "Apply chemistry safely"
+    ],
+    "nigerian_examples": [
+      "Soap making",
+      "Oil refining",
+      "Drug manufacturing",
+      "Food preservation"
+    ],
+    "created_at": "2026-06-14T07:01:12.885003+00:00"
+  },
+  {
+    "id": "165d91d4-3678-41fd-bee1-4502040e88e6",
+    "grade": 5,
+    "subject": "Basic Science & Technology",
+    "topic": "Circulatory System",
+    "language": "en",
+    "content": "The circulatory system transports blood, oxygen, and nutrients throughout the body. Main parts: heart (pump), blood vessels (arteries carry blood away from heart, veins carry blood back to heart, capillaries connect them), blood (carries oxygen, fights infection). The heart has four chambers: right atrium, right ventricle, left atrium, left ventricle. Blood flows: body → right atrium → right ventricle → lungs (get oxygen) → left atrium → left ventricle → body. Pulse rate is heartbeats per minute - normal for children 70-100 bpm. Exercise increases pulse. Healthy habits: eat less fat, exercise regularly, avoid smoking. Nigerian heart health organizations promote prevention of hypertension (high blood pressure).",
+    "summary": "Circulatory system: heart pumps blood through arteries, veins, capillaries. Blood carries oxygen and nutrients. Heart has 4 chambers. Pulse = heartbeats per minute.",
+    "learning_objectives": [
+      "Trace blood flow through the heart",
+      "Measure pulse rate",
+      "Identify heart-healthy habits"
+    ],
+    "nigerian_examples": [
+      "Nigerian Heart Foundation promotes heart health awareness",
+      "Walking for 30 minutes daily reduces heart disease risk",
+      "Reducing salt in jollof rice helps control blood pressure"
+    ],
+    "created_at": "2026-06-14T06:21:11.3054+00:00"
+  },
+  {
+    "id": "d4c01a8f-7fc7-4889-88ad-fd5f4d0c9c61",
+    "grade": 5,
+    "subject": "Basic Science & Technology",
+    "topic": "Genetics",
+    "language": "en",
+    "content": "Genetics is study of heredity - how traits pass from parents to offspring. DNA contains genes (instructions). Each parent contributes half. Dominant genes show trait; recessive require two copies. Examples: eye color, hair type, blood type. Gregor Mendel studied pea plants (father of genetics). Nigerian scientists apply genetics in agriculture (disease-resistant crops), medicine (genetic diseases like sickle cell), conservation. Ethics: genetic testing, modification. Understanding genetics explains why siblings resemble parents but are unique.",
+    "summary": "Genetics = heredity study. DNA has genes. Dominant/recessive traits. Mendel - father of genetics. Applications: agriculture, medicine.",
+    "learning_objectives": [
+      "Understand heredity basics",
+      "Distinguish dominant/recessive",
+      "Apply genetics to health"
+    ],
+    "nigerian_examples": [
+      "Sickle cell testing",
+      "Cassava disease resistance",
+      "Family resemblances",
+      "Crop breeding"
+    ],
+    "created_at": "2026-06-14T07:00:34.40291+00:00"
+  },
+  {
+    "id": "5de2bcad-c0af-4127-9061-33f665d31b6d",
+    "grade": 5,
+    "subject": "Basic Science & Technology",
+    "topic": "Physics Laws",
+    "language": "en",
+    "content": "Physics studies matter, energy, motion, forces. Newton's Laws: 1st (inertia - objects stay in motion/rest unless force acts), 2nd (F=ma - force = mass × acceleration), 3rd (action-reaction - equal opposite forces). Gravity pulls objects toward Earth (9.8 m/s²). Friction opposes motion. Nigerian physics applications: vehicle braking systems, building construction, rocket science (Nigeria has satellites!), renewable energy. Understanding physics helps engineers build safe structures, efficient machines. Everyday examples: seatbelts (inertia), kicking ball (action-reaction), brakes (friction).",
+    "summary": "Physics studies matter, energy, motion, forces. Newton's Laws: inertia, F=ma, action-reaction. Gravity, friction. Nigerian satellites.",
+    "learning_objectives": [
+      "Understand Newton's Laws",
+      "Apply physics concepts",
+      "Explain everyday examples"
+    ],
+    "nigerian_examples": [
+      "Satellite launches",
+      "Building construction",
+      "Vehicle brakes",
+      "Sports physics"
+    ],
+    "created_at": "2026-06-14T07:01:50.442952+00:00"
+  },
+  {
+    "id": "f53fa7cb-906c-4210-a26c-225f4ab8e3f9",
+    "grade": 5,
+    "subject": "Basic Science & Technology",
+    "topic": "Respiratory System",
+    "language": "en",
+    "content": "The respiratory system brings oxygen into the body and removes carbon dioxide. Main parts: nose/mouth (air enters), trachea (windpipe), bronchi (tubes to lungs), bronchioles (smaller tubes), alveoli (tiny air sacs where gas exchange happens), diaphragm (muscle that helps breathing). Inhalation: diaphragm contracts (moves down), ribcage expands, air rushes in. Exhalation: diaphragm relaxes (moves up), ribcage contracts, air pushed out. Smoking damages alveoli and causes lung disease. In Nigeria, air pollution from generators and bush burning harms lungs. Healthy lungs need exercise, clean air, and no smoking.",
+    "summary": "Respiratory system brings in oxygen, removes CO2. Air path: nose/mouth → trachea → bronchi → bronchioles → alveoli. Diaphragm controls breathing. Avoid smoking and pollution.",
+    "learning_objectives": [
+      "Trace the path of air through the respiratory system",
+      "Understand how the diaphragm works",
+      "Identify lung-healthy habits"
+    ],
+    "nigerian_examples": [
+      "Fumes from generators can damage lungs - use in open areas",
+      "Bush burning during dry season creates smoke pollution",
+      "Regular exercise improves lung capacity"
+    ],
+    "created_at": "2026-06-14T06:21:55.409322+00:00"
+  },
+  {
+    "id": "afe5cf60-e325-4628-a689-d3096d206aaf",
+    "grade": 5,
+    "subject": "Communication",
+    "topic": "Crisis Communication",
+    "language": "en",
+    "content": "Crisis communication manages information during emergencies (product failure, accidents, scandals, natural disasters). Principles: be first (don't let others tell your story), be right (accurate information), be credible (honest, transparent). Steps: gather facts, identify stakeholders, prepare statement (acknowledge problem, express concern, explain actions, promise updates), choose spokesperson (trained, calm), monitor response. Nigerian examples: COVID-19 briefings, bank security breaches, product recalls. Students practice: handling bullying incident, group project failure, sports injury communication. Crisis handled well preserves reputation.",
+    "summary": "Crisis communication manages emergencies. Principles: be first, right, credible. Steps: gather facts, identify stakeholders, prepare statement, choose spokesperson.",
+    "learning_objectives": [
+      "Understand crisis communication",
+      "Prepare statements",
+      "Handle emergencies"
+    ],
+    "nigerian_examples": [
+      "COVID-19 briefings",
+      "Bank security breaches",
+      "Product recalls",
+      "School incident response"
+    ],
+    "created_at": "2026-06-14T07:02:28.345321+00:00"
+  },
+  {
+    "id": "530ae097-459a-440d-bf71-d787693386cf",
+    "grade": 5,
+    "subject": "Communication",
+    "topic": "Digital Communication",
+    "language": "en",
+    "content": "Digital communication uses electronic tools: email, instant messaging, video calls, social media. Best practices: think before sending (can't unsend), use clear subject lines, be concise, respect privacy (don't share others' messages), avoid all caps (shouting), use proper grammar/spelling, respond in reasonable time, don't engage with trolls, remember digital footprint (everything online is permanent). Nigerian youth use WhatsApp, Instagram, Twitter, Zoom. Cyberbullying is harmful - report it. Balance online and offline relationships. Digital communication skills matter for school, work, and life.",
+    "summary": "Digital communication: email, messaging, video, social media. Think before sending, respect privacy, avoid all caps, remember permanent record.",
+    "learning_objectives": [
+      "Practice digital etiquette",
+      "Manage online presence",
+      "Handle cyberbullying"
+    ],
+    "nigerian_examples": [
+      "WhatsApp group for class",
+      "Zoom meetings",
+      "Twitter discussions",
+      "Instagram portfolios"
+    ],
+    "created_at": "2026-06-14T06:52:34.755822+00:00"
+  },
+  {
+    "id": "26f3e779-1836-4374-9c18-786eeec0601a",
+    "grade": 5,
+    "subject": "Communication",
+    "topic": "Executive Communication",
+    "language": "en",
+    "content": "Executive communication is how leaders convey vision, strategy, decisions. Characteristics: clarity (no jargon), brevity (concise), authenticity (genuine), audience awareness (tailor message), action-orientation (what to do). Formats: speeches, memos, emails, meetings, presentations. Nigerian executives communicate through town halls, annual reports, press conferences. Students practice executive communication: class president speeches, project updates, team decisions. Effective executives listen more than talk, admit uncertainty, give credit, take blame. Communication shapes organizational culture.",
+    "summary": "Executive communication = leaders conveying vision. Characteristics: clarity, brevity, authenticity, audience awareness, action-oriented. Listen more, give credit, take blame.",
+    "learning_objectives": [
+      "Develop executive presence",
+      "Craft clear messages",
+      "Lead through communication"
+    ],
+    "nigerian_examples": [
+      "CEO town halls",
+      "Annual reports",
+      "Press conferences",
+      "Leadership speeches"
+    ],
+    "created_at": "2026-06-14T07:03:05.425316+00:00"
+  },
+  {
+    "id": "63b9fc9b-8b7d-41a9-b773-d2701ee2b876",
+    "grade": 5,
+    "subject": "Communication",
+    "topic": "Persuasion Science",
+    "language": "en",
+    "content": "Persuasion science studies how to influence others ethically and effectively. Dr. Robert Cialdini identified six principles of persuasion: Reciprocity (people feel obligated to return favors - give first, provide value), Scarcity (limited availability increases desire - highlight unique benefits, deadlines), Authority (expertise builds trust - share credentials, cite experts), Consistency (people honor commitments - get small yes first, public commitments), Liking (people say yes to those they like - find similarities, give genuine compliments), Social Proof (people follow peers - show testimonials, popularity). In Nigerian context, these principles appear in advertising (limited time offers), politics (endorsements from respected figures), fundraising (matching gifts). Ethical persuasion benefits both parties - avoid manipulation. Students can apply: convincing parents (explain benefits), leading group decisions (find common ground), influencing positive behavior (peer encouragement).",
+    "summary": "Persuasion science = ethical influence. Six principles: reciprocity, scarcity, authority, consistency, liking, social proof. Apply in advertising, politics, fundraising.",
+    "learning_objectives": [
+      "Understand six persuasion principles",
+      "Apply ethically to influence",
+      "Recognize persuasion attempts"
+    ],
+    "nigerian_examples": [
+      "Limited time offers in Lagos markets",
+      "Political endorsements from respected figures",
+      "Charity matching gift campaigns",
+      "Testimonials for products"
+    ],
+    "created_at": "2026-06-14T16:38:12.390383+00:00"
+  },
+  {
+    "id": "ced1ddb6-5cc4-414c-9b62-9b86a13f34f0",
+    "grade": 5,
+    "subject": "Communication",
+    "topic": "Public Relations",
+    "language": "en",
+    "content": "Public relations (PR) manages communication between organizations and public. Goal: build positive reputation. PR tools: press releases (official announcements), media interviews, social media posts, events, crisis communication (handling problems). Nigerian PR practitioners work for companies, government, NGOs, celebrities. PR skills: writing, speaking, relationship building, problem-solving, ethics. Students practice PR in school: promoting events, writing newsletters, managing class reputation. Example: when a product fails, PR explains what happened and steps to fix. Honesty is essential - lying destroys trust.",
+    "summary": "PR manages communication between organizations and public. Tools: press releases, media, social media, events, crisis communication. Builds reputation.",
+    "learning_objectives": [
+      "Understand PR functions",
+      "Write press releases",
+      "Handle crisis communication"
+    ],
+    "nigerian_examples": [
+      "Company product launches",
+      "Government announcements",
+      "NGO awareness campaigns",
+      "Celebrity PR"
+    ],
+    "created_at": "2026-06-14T06:53:03.50818+00:00"
+  },
+  {
+    "id": "9dd10cdf-4bb0-4846-a1ad-c4b744c17034",
+    "grade": 5,
+    "subject": "Confidence Building",
+    "topic": "Handling Criticism",
+    "language": "en",
+    "content": "Criticism is feedback pointing out problems. Constructive (helpful, specific), destructive (mean, vague). Handling: listen without interrupting, thank the person, evaluate honestly, act on valid points, ignore destructive. Don't get defensive. Growth mindset sees criticism as opportunity.",
+    "summary": "Criticism = feedback. Constructive (helpful), destructive (mean). Listen, thank, evaluate, act. Don't get defensive.",
+    "learning_objectives": [
+      "Distinguish criticism types",
+      "Respond calmly",
+      "Use criticism to improve"
+    ],
+    "nigerian_examples": [
+      "Teacher feedback",
+      "Coach comments",
+      "Parent advice",
+      "Peer reviews"
+    ],
+    "created_at": "2026-06-14T06:44:31.497087+00:00"
+  },
+  {
+    "id": "70a5b343-d795-40d3-bb3b-b648663fd7ea",
+    "grade": 5,
+    "subject": "Confidence Building",
+    "topic": "Impromptu Speaking",
+    "language": "en",
+    "content": "Impromptu speaking is talking without preparation. PREP method: Point, Reason, Example, Point. Strategies: buy time ('That's interesting...'), use simple structure (first, second, third), stay calm, don't apologize, speak slowly. Regular practice reduces anxiety.",
+    "summary": "Impromptu speaking = talking without prep. PREP method. Buy time, simple structure, stay calm.",
+    "learning_objectives": [
+      "Use PREP method",
+      "Structure spontaneous responses",
+      "Reduce anxiety"
+    ],
+    "nigerian_examples": [
+      "Class questions",
+      "Job interviews",
+      "Debate rebuttals"
+    ],
+    "created_at": "2026-06-14T06:44:05.210404+00:00"
+  },
+  {
+    "id": "8f453fd4-6a6e-4ffd-bdd5-8a769b1124b2",
+    "grade": 5,
+    "subject": "Confidence Building",
+    "topic": "Leadership Presence",
+    "language": "en",
+    "content": "Leadership presence inspires confidence. Components: confidence, composure, connection, credibility. Body language: stand tall, purposeful gestures, eye contact. Voice: speak clearly with conviction, use pauses. Mindset: know values, prepare thoroughly, focus on serving others.",
+    "summary": "Leadership presence = inspire confidence. Confidence, composure, connection, credibility. Stand tall, eye contact, clear voice.",
+    "learning_objectives": [
+      "Develop leadership presence",
+      "Use confident body language",
+      "Command attention"
+    ],
+    "nigerian_examples": [
+      "Ngozi Okonjo-Iweala",
+      "School prefects",
+      "Debate captains"
+    ],
+    "created_at": "2026-06-14T06:45:00.696363+00:00"
+  },
+  {
+    "id": "a4231ae8-af5f-4937-a60d-ce047ef685a7",
+    "grade": 5,
+    "subject": "Confidence Building",
+    "topic": "Personal Branding",
+    "language": "en",
+    "content": "Personal branding is how you present yourself to the world. It's your reputation, values, and unique strengths. Steps: identify your strengths (what are you good at?), define your values (what matters to you?), be authentic (don't pretend), build online presence (LinkedIn for older teens, portfolios), deliver consistently. Nigerian young leaders build personal brands through volunteering, public speaking, and social media. A strong personal brand opens opportunities.",
+    "summary": "Personal branding = how you present yourself. Identify strengths, define values, be authentic, build presence, deliver consistently.",
+    "learning_objectives": [
+      "Understand personal branding",
+      "Identify unique strengths",
+      "Build positive reputation"
+    ],
+    "nigerian_examples": [
+      "Youth volunteer leaders",
+      "Student government portfolios",
+      "Social media influencers",
+      "Community organizers"
+    ],
+    "created_at": "2026-06-14T06:45:52.798031+00:00"
+  },
+  {
+    "id": "a1866e73-50da-493a-b5d9-50094ab56808",
+    "grade": 5,
+    "subject": "Confidence Building",
+    "topic": "Resilience Building",
+    "language": "en",
+    "content": "Resilience is bouncing back from setbacks. Resilient people: accept failures as learning, focus on controllables, maintain optimism, build support networks, practice self-care. Building resilience: reframe negative thoughts ('I failed' → 'I learned'), set small goals, celebrate progress, help others.",
+    "summary": "Resilience = bounce back from setbacks. Accept failure as learning, focus on controllables, reframe thoughts.",
+    "learning_objectives": [
+      "Understand resilience",
+      "Apply resilience strategies",
+      "Bounce back from failure"
+    ],
+    "nigerian_examples": [
+      "Rebuilding after Boko Haram",
+      "Flood victims starting over",
+      "Failed entrepreneurs"
+    ],
+    "created_at": "2026-06-14T06:45:27.209099+00:00"
+  },
+  {
+    "id": "be737054-8541-419c-8f04-2e6abce7175c",
+    "grade": 5,
+    "subject": "Creativity",
+    "topic": "Creative Confidence",
+    "language": "en",
+    "content": "Creative confidence is belief in ability to create, innovate, solve problems. Developed through: practice (creative muscles strengthen), failure (learn what doesn't work), feedback (improve), environment (safe spaces for ideas), role models (see others create). Overcoming blocks: fear of judgment, perfectionism, self-doubt, habits. Techniques: morning pages (write three pages daily), creative warm-ups, constraints (limitations boost creativity), quantity over quality. Nigerian creative confidence examples: young inventors, artists, entrepreneurs. Everyone is creative - confidence unlocks it.",
+    "summary": "Creative confidence = belief in creative ability. Develop through practice, failure, feedback, environment, role models. Overcome fear, perfectionism, self-doubt.",
+    "learning_objectives": [
+      "Build creative confidence",
+      "Overcome blocks",
+      "Practice creativity daily"
+    ],
+    "nigerian_examples": [
+      "Young inventors",
+      "Nollywood creators",
+      "Tech entrepreneurs",
+      "Artists"
+    ],
+    "created_at": "2026-06-14T07:04:55.888524+00:00"
+  },
+  {
+    "id": "f61edd91-bf5c-4ab2-b388-134eb783620b",
+    "grade": 5,
+    "subject": "Creativity",
+    "topic": "Creative Leadership",
+    "language": "en",
+    "content": "Creative leadership fosters innovation in teams and organizations. Behaviors: tolerates ambiguity, encourages experimentation, protects creative time, rewards risk-taking (even failures), builds psychological safety, connects diverse perspectives, removes barriers, champions ideas to stakeholders. Nigerian creative leaders: tech hub founders, design thinking facilitators, innovation directors. Students as creative leaders: encourage quiet classmates' ideas, prototype solutions, celebrate team creativity, challenge assumptions. Creative leadership differs from traditional command-control. Measure success by ideas generated, prototypes tested, problems solved.",
+    "summary": "Creative leadership fosters innovation. Behaviors: tolerate ambiguity, encourage experimentation, protect creative time, reward risk-taking, build psychological safety.",
+    "learning_objectives": [
+      "Develop creative leadership",
+      "Foster team innovation",
+      "Protect creative work"
+    ],
+    "nigerian_examples": [
+      "Tech hub founders",
+      "Innovation directors",
+      "Design facilators",
+      "Creative teachers"
+    ],
+    "created_at": "2026-06-14T07:06:12.009889+00:00"
+  },
+  {
+    "id": "d4515b09-240a-4987-a616-10f33180a21f",
+    "grade": 5,
+    "subject": "Creativity",
+    "topic": "Creative Strategy",
+    "language": "en",
+    "content": "Creative strategy plans how to develop innovative solutions. Steps: understand the challenge, research (gather inspiration), brainstorm many ideas (quantity over quality), select promising ideas, develop concept, test, refine. Tools: mind mapping (visual connections), SCAMPER (Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse), reverse thinking (opposite approach), random word association. Nigerian entrepreneurs use creative strategy to solve local problems: mobile payment (Paga, Flutterwave), solar solutions, waste recycling, agro-tech. Document your process. Creative strategy applies to business, art, science, daily life.",
+    "summary": "Creative strategy plans innovative solutions. Steps: understand, research, brainstorm, select, develop, test, refine. Tools: mind maps, SCAMPER, reverse thinking.",
+    "learning_objectives": [
+      "Use creative strategy tools",
+      "Develop innovative solutions",
+      "Document creative process"
+    ],
+    "nigerian_examples": [
+      "Paga mobile payments",
+      "Solar home systems",
+      "Recycling businesses",
+      "Agro-tech apps"
+    ],
+    "created_at": "2026-06-14T06:55:23.998708+00:00"
+  },
+  {
+    "id": "9a80959e-3089-4582-82a6-98a206226c92",
+    "grade": 5,
+    "subject": "Creativity",
+    "topic": "Divergent Thinking",
+    "language": "en",
+    "content": "Divergent thinking generates many possible solutions (vs convergent thinking finds single answer). Techniques: brainstorming (no judgment, quantity over quality, combine/improve ideas), mind mapping (visual connections), free association (word chains), forced connections (unrelated concepts). Nigerian examples: solving traffic problem (many solutions: more buses, ferries, trains, remote work). Practice: list 100 uses for brick, 30 ways to improve school, 50 business ideas. Divergent thinking precedes convergent (evaluation, selection). Schools often reward convergent thinking; deliberately practice divergent to boost creativity.",
+    "summary": "Divergent thinking = generating many solutions. Techniques: brainstorming, mind mapping, free association, forced connections. Quantity over quality, combine ideas.",
+    "learning_objectives": [
+      "Practice divergent thinking",
+      "Generate many ideas",
+      "Postpone judgment"
+    ],
+    "nigerian_examples": [
+      "Solving Lagos traffic",
+      "Improving education",
+      "Business innovation",
+      "Community solutions"
+    ],
+    "created_at": "2026-06-14T07:05:33.69383+00:00"
+  },
+  {
+    "id": "e67347fc-f1e4-4a65-89e9-abc8d1c3da19",
+    "grade": 5,
+    "subject": "Creativity",
+    "topic": "Innovation Management",
+    "language": "en",
+    "content": "Innovation management is systematically developing and implementing new ideas. Stages: idea generation (soliciting internal/external ideas), screening (select promising ideas), concept development (detailed plan), prototyping (build simple version), testing (get feedback), commercialization (launch). Intrapreneurship = employees acting like entrepreneurs within organizations. Nigerian companies invest in R&D (research & development). Innovation culture encourages: psychological safety (no punishment for failed experiments), time for creative work, rewards for good ideas, cross-functional collaboration. Managing innovation balances creativity with practical constraints.",
+    "summary": "Innovation management develops new ideas systematically. Stages: idea generation, screening, concept development, prototyping, testing, launch. Innovation culture: safety, time, rewards.",
+    "learning_objectives": [
+      "Understand innovation stages",
+      "Build innovation culture",
+      "Manage creative projects"
+    ],
+    "nigerian_examples": [
+      "Company R&D labs",
+      "Hackathons",
+      "Innovation hubs (CcHub)",
+      "Intrapreneurship programs"
+    ],
+    "created_at": "2026-06-14T06:55:52.361591+00:00"
+  },
+  {
+    "id": "553c77d2-5b5d-48f4-ba72-71ebe7b6695b",
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Hadith Studies",
+    "language": "en",
+    "content": "Hadith are collections of sayings, actions, and approvals of Prophet Muhammad (peace be upon him). They explain the Quran and guide Muslims on how to live. Authentic Hadith were carefully verified by scholars like Bukhari and Muslim. Example: 'None of you truly believes until he loves for his brother what he loves for himself' (teaches empathy). 'The strong person is not the one who can wrestle, but the one who controls himself when angry' (teaches self-control). 'Cleanliness is half of faith' (teaches hygiene). 'Seeking knowledge is an obligation upon every Muslim' (teaches education). Nigerian Muslims study Hadith in schools and apply them to daily life: controlling anger, keeping clean, pursuing education.",
+    "summary": "Hadith are Prophet Muhammad's sayings/actions. Teach empathy, self-control, cleanliness, education. Authenticated by scholars like Bukhari and Muslim.",
+    "learning_objectives": [
+      "Understand what Hadith are",
+      "Learn key prophetic teachings",
+      "Apply Hadith to daily life"
+    ],
+    "nigerian_examples": [
+      "Controlling anger during disagreements",
+      "Keeping wudhu for cleanliness",
+      "Seeking education in Nigerian schools"
+    ],
+    "created_at": "2026-06-14T06:30:01.39853+00:00"
+  },
+  {
+    "id": "3f1d5ef3-feea-41bf-a8e6-0fa75ecf820f",
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Interfaith Dialogue",
+    "language": "en",
+    "content": "Interfaith dialogue is respectful conversation between people of different religions. Nigeria has three main religious groups: Christianity, Islam, and traditional African religions. Interfaith dialogue promotes understanding, reduces prejudice, and prevents conflict. Principles: respect all participants, listen without interrupting, avoid stereotypes, focus on common values (love, peace, charity), agree to disagree politely. Examples of interfaith cooperation in Nigeria: Muslim-Christian prayer at national events, joint community service projects, interfaith youth camps. The Nigeria Inter-Religious Council (NIREC) brings Christian and Muslim leaders together. Dialogue builds peace in Nigeria's diverse society.",
+    "summary": "Interfaith dialogue = respectful conversation between different religions. Promotes understanding, reduces prejudice. Focus on common values (love, peace, charity).",
+    "learning_objectives": [
+      "Understand interfaith dialogue",
+      "Identify common religious values",
+      "Practice respectful conversation"
+    ],
+    "nigerian_examples": [
+      "NIREC meetings with Christian and Muslim leaders",
+      "Joint Christmas and Eid celebrations",
+      "Muslims and Christians rebuilding each other's places of worship"
+    ],
+    "created_at": "2026-06-14T06:31:27.582555+00:00"
+  },
+  {
+    "id": "38049aab-8b42-4f6b-ba84-657bba54b2c3",
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Moral Philosophy",
+    "language": "en",
+    "content": "Moral philosophy explores what is right and wrong, good and bad. Both Christianity and Islam share core moral principles: truthfulness (honesty in words and actions), justice (fair treatment of all), compassion (caring for suffering), forgiveness (letting go of resentment), humility (not being arrogant), courage (doing right despite fear), gratitude (thanking God and people). Nigerian society values these morals: respecting elders, helping neighbors, keeping promises, admitting mistakes. Moral dilemmas test these values: Should you tell the truth if it hurts someone? Should you break a promise for a greater good? Philosophy helps us think through these questions.",
+    "summary": "Moral philosophy studies right/wrong. Shared values: truthfulness, justice, compassion, forgiveness, humility, courage, gratitude. Helps navigate dilemmas.",
+    "learning_objectives": [
+      "Identify core moral values",
+      "Analyze moral dilemmas",
+      "Apply values to daily decisions"
+    ],
+    "nigerian_examples": [
+      "Keeping promises to family members",
+      "Showing compassion to street children",
+      "Admitting mistakes honestly"
+    ],
+    "created_at": "2026-06-14T06:30:43.985925+00:00"
+  },
+  {
+    "id": "3d644a9b-7ee4-4b2a-8c5e-e1c47d16d3af",
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Parables of Jesus",
+    "language": "en",
+    "content": "Parables are short stories Jesus told to teach moral and spiritual lessons. The Good Samaritan teaches loving neighbors regardless of differences - a man robbed and beaten was helped by a Samaritan (enemy) when religious leaders passed by. The Prodigal Son teaches forgiveness - a son wasted his inheritance, returned home sorry, and his father welcomed him joyfully. The Sower teaches that people respond differently to God's word - some understand, some give up, some are distracted. The Mustard Seed teaches that small beginnings can grow into something great. Nigerian Christians learn these parables in Sunday school and apply them to daily life: helping strangers, forgiving family, starting small.",
+    "summary": "Jesus' parables: Good Samaritan (help strangers), Prodigal Son (forgiveness), Sower (different responses), Mustard Seed (small starts). Each teaches a moral lesson.",
+    "learning_objectives": [
+      "Summarize key parables",
+      "Explain their meanings",
+      "Apply lessons to daily life"
+    ],
+    "nigerian_examples": [
+      "Good Samaritan lesson: helping accident victims on Lagos-Ibadan road",
+      "Prodigal Son lesson: forgiving a sibling who made mistakes",
+      "Mustard Seed lesson: starting a small business that grows"
+    ],
+    "created_at": "2026-06-14T06:29:18.532387+00:00"
+  },
+  {
+    "id": "b37350de-0dac-4e2b-a72e-ecf1ef191b40",
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Social Justice",
+    "language": "en",
+    "content": "Social justice means ensuring everyone has equal rights, opportunities, and fair treatment regardless of background. Both Christianity and Islam emphasize social justice: feed the hungry, shelter the homeless, care for orphans, defend the oppressed, treat workers fairly, oppose corruption. In Nigeria, social justice issues include poverty, unequal education, healthcare access, and corruption. Religious organizations run feeding programs, schools, and clinics. Individuals can practice social justice: sharing with less fortunate, speaking against bullying, volunteering, paying fair wages. The prophets all advocated for the poor and vulnerable. Social justice is faith in action.",
+    "summary": "Social justice = equal rights and fair treatment for all. Feed hungry, shelter homeless, care for orphans, oppose corruption. Faith in action.",
+    "learning_objectives": [
+      "Understand social justice",
+      "Identify injustice examples",
+      "Take action to help others"
+    ],
+    "nigerian_examples": [
+      "Church feeding programs in Lagos slums",
+      "Mosque charity for orphans",
+      "Speaking against exam malpractice"
+    ],
+    "created_at": "2026-06-14T06:32:10.21553+00:00"
+  },
+  {
+    "id": "bb94eabd-5c23-455f-bc9d-a98a5e0207f4",
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Art Criticism",
+    "language": "en",
+    "content": "Art criticism is evaluating and interpreting art using four steps: Description (what do you see? subject, colors, shapes, materials), Analysis (how is it organized? balance, contrast, proportion, rhythm), Interpretation (what does it mean? message, feeling, symbolism), Judgment (is it successful? personal evaluation based on criteria). Art criticism helps you appreciate art more deeply. Nigerian art critics write reviews for newspapers and magazines. Practice: look at a painting or sculpture, describe objectively, analyze composition, interpret meaning, then judge. No single right answer - different people may interpret differently. Art criticism develops visual literacy.",
+    "summary": "Art criticism four steps: Description (what you see), Analysis (composition), Interpretation (meaning), Judgment (evaluation). Develops visual literacy. No single right answer.",
+    "learning_objectives": [
+      "Learn art criticism steps",
+      "Analyze artwork objectively",
+      "Formulate interpretations"
+    ],
+    "nigerian_examples": [
+      "Reviewing Ben Enwonwu paintings",
+      "Critiquing Nollywood posters",
+      "Evaluating public art in Lagos"
+    ],
+    "created_at": "2026-06-14T06:40:06.606005+00:00"
+  },
+  {
+    "id": "03595d8b-4afe-4b30-abe1-717974b33984",
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Digital Art",
+    "language": "en",
+    "content": "Digital art uses computer technology to create artwork. Types: digital painting (drawing with tablet and stylus), vector art (math-based shapes - resizes without losing quality), pixel art (blocky style like old video games), 3D modeling, photo manipulation (editing photos in software), and AI-generated art (using artificial intelligence). Tools: Procreate (iPad), Adobe Photoshop, Krita (free), GIMP (free), Canva. Nigerian digital artists create illustrations, animations, NFTs (digital art sold as cryptocurrency), and graphic novels. Digital art careers: game design, animation, web design, advertising. You can start with free apps on phone or tablet.",
+    "summary": "Digital art uses computer technology. Types: digital painting, vector art, pixel art, 3D modeling, photo manipulation. Tools: Procreate, Photoshop, GIMP, Canva.",
+    "learning_objectives": [
+      "Identify digital art types",
+      "Explore digital art tools",
+      "Create simple digital artwork"
+    ],
+    "nigerian_examples": [
+      "Nigerian digital illustrators on Instagram",
+      "Nollywood poster design",
+      "Nigerian NFT artists",
+      "Animated logos for businesses"
+    ],
+    "created_at": "2026-06-14T06:37:41.532835+00:00"
+  },
+  {
+    "id": "78e60f08-91a1-4158-ac4d-4c61bbf1cacd",
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Mixed Media Art",
+    "language": "en",
+    "content": "Mixed media art combines different materials and techniques in one artwork. Examples: collage (paper, fabric, photos glued to surface), assemblage (found objects like bottle caps, buttons, sticks attached together), digital mixed media (drawing + photography + digital editing). Nigerian mixed media artists use traditional materials (adire, beads, wood) with modern elements (paint, plastic, metal). Mixed media allows unlimited creativity - no rules! Try: magazine collage self-portrait, nature assemblage using leaves and twigs, painting with coffee or tea. Mixed media teaches resourcefulness and creative problem-solving. The only limit is your imagination.",
+    "summary": "Mixed media art combines different materials and techniques. Collage, assemblage, digital mixed media. Nigerian artists mix traditional and modern materials. No rules!",
+    "learning_objectives": [
+      "Understand mixed media concepts",
+      "Create collages and assemblages",
+      "Experiment with unconventional materials"
+    ],
+    "nigerian_examples": [
+      "Nike Art Gallery mixed media pieces",
+      "Recycled material sculptures in Lagos",
+      "Adire fabric in modern paintings"
+    ],
+    "created_at": "2026-06-14T06:36:59.564059+00:00"
+  },
+  {
+    "id": "89b0e869-f02b-454c-9435-50d3a5b35757",
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Performance Art",
+    "language": "en",
+    "content": "Performance art is live art where the artist's actions, body, and presence are the medium. Combines theater, dance, music, visual art. Different from traditional theater - no script, may not tell linear story. Examples: living sculptures (artist poses as statue), durational performances (artist performs same action for hours), site-specific (performance responds to location), interactive (audience participates). Nigerian performance artists address social issues: corruption, women's rights, environmental pollution. Famous Nigerian performance artists include Otobong Nkanga, Jelili Atiku. Performance art challenges viewers to think differently. Videos document ephemeral (temporary) performances.",
+    "summary": "Performance art = live art using artist's actions/body. No script, non-linear. Types: living sculptures, durational, site-specific, interactive. Nigerian artists address social issues.",
+    "learning_objectives": [
+      "Understand performance art",
+      "Distinguish from theater",
+      "Analyze performance art meaning"
+    ],
+    "nigerian_examples": [
+      "Jelili Atiku's social justice performances",
+      "Durbar festival as traditional performance",
+      "Living statues at Lagos Carnival"
+    ],
+    "created_at": "2026-06-14T06:39:12.404613+00:00"
+  },
+  {
+    "id": "711dacce-9461-47df-b080-c6a8c85f7c67",
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Sculpture Techniques",
+    "language": "en",
+    "content": "Sculpture is 3D art created by carving, modeling, or assembling materials. Carving: subtractive (removing material from wood, stone, or ice). Nigerian wood carvers make masks, figures, doors. Modeling: additive (adding material like clay, paper mache, or wax). Clay is shaped then fired in kiln. Casting: pouring liquid material (bronze, plaster, resin) into mold. Benin bronze casters used lost-wax method for detailed plaques. Assembling: joining found objects. Contemporary Nigerian sculptors use recycled materials: scrap metal, plastic bottles, car parts. Safety: use protective gear for carving; adult supervision for sharp tools.",
+    "summary": "Sculpture techniques: carving (remove), modeling (add), casting (pour into mold), assembling (join). Lost-wax method for bronze. Recycled materials.",
+    "learning_objectives": [
+      "Identify sculpture techniques",
+      "Understand lost-wax casting",
+      "Create simple sculptures"
+    ],
+    "nigerian_examples": [
+      "Benin bronze plaques",
+      "Nok terracotta sculptures",
+      "Recycled metal sculptures in Lagos",
+      "Wooden masks for festivals"
+    ],
+    "created_at": "2026-06-14T06:38:27.328502+00:00"
+  },
+  {
+    "id": "bc6b0172-ab22-424e-a6ad-618de8d5ab11",
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Complex Sentences",
+    "language": "en",
+    "content": "Complex sentences contain one independent clause (complete thought) and at least one dependent clause (incomplete thought) connected by subordinating conjunctions (because, although, since, when, if, unless, while). Example independent clause: 'I finished my homework.' Dependent clause: 'Because I studied hard.' Combined: 'I finished my homework because I studied hard.' Other examples: 'Although it was raining, we went to school.' 'She smiled when she saw her friend.' Complex sentences add variety to writing and show relationships between ideas: cause-effect, contrast, time, condition. Nigerian students use complex sentences in essays and reports to express sophisticated thinking. Practice by taking two simple sentences and joining them with subordinating conjunctions.",
+    "summary": "Complex sentences = independent clause + dependent clause. Use subordinating conjunctions (because, although, when, if). Shows relationships between ideas.",
+    "learning_objectives": [
+      "Identify independent and dependent clauses",
+      "Use subordinating conjunctions correctly",
+      "Write complex sentences for essays"
+    ],
+    "nigerian_examples": [
+      "Although Lagos traffic is heavy, many people still live there",
+      "She passed her exams because she studied every day",
+      "When the harmattan comes, the weather becomes dry and dusty"
+    ],
+    "created_at": "2026-06-14T06:17:28.975389+00:00"
+  },
+  {
+    "id": "f31a4763-5d41-4817-95fa-101351066c45",
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Essay Structure",
+    "language": "en",
+    "content": "A well-structured essay has three parts: introduction (hook, background, thesis statement), body paragraphs (topic sentence, evidence, explanation, concluding sentence), and conclusion (restate thesis, summarize main points, final thought). Each body paragraph focuses on ONE main idea. Use transition words (first, next, however, therefore, in conclusion) to connect ideas. In Nigerian secondary school exams, essay structure affects grades significantly. Practice writing five-paragraph essays on topics like 'The Importance of Education' or 'My Role Model.'",
+    "summary": "Essay structure: introduction (thesis), body paragraphs (topic sentence + evidence), conclusion (restate + summarize). Each paragraph has one main idea.",
+    "learning_objectives": [
+      "Structure a five-paragraph essay",
+      "Write effective thesis statements",
+      "Use transition words smoothly"
+    ],
+    "nigerian_examples": [
+      "Essay topic: 'The Importance of Independence Day'",
+      "Essay topic: 'My Career Aspiration'",
+      "Essay topic: 'How to Improve Nigerian Schools'"
+    ],
+    "created_at": "2026-06-14T06:24:43.730156+00:00"
+  },
+  {
+    "id": "90500b23-fa92-4b7a-a3be-86c2c83ff145",
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Literary Devices",
+    "language": "en",
+    "content": "Literary devices are techniques writers use to create meaning and effect. Simile compares using 'like' or 'as': 'as brave as a lion'. Metaphor compares directly: 'Time is a thief'. Personification gives human qualities to objects: 'The wind whispered'. Hyperbole exaggerates: 'I've told you a million times'. Alliteration repeats initial sounds: 'Peter picked pickled peppers'. Onomatopoeia uses sound words: 'buzz, hiss, boom'. Imagery uses sensory details. Nigerian writers like Chinua Achebe and Chimamanda Adichie use these devices effectively. Identifying literary devices improves reading comprehension and writing quality.",
+    "summary": "Literary devices: simile (like/as), metaphor (direct comparison), personification, hyperbole (exaggeration), alliteration, onomatopoeia, imagery.",
+    "learning_objectives": [
+      "Identify common literary devices",
+      "Explain their effects",
+      "Use devices in writing"
+    ],
+    "nigerian_examples": [
+      "Simile: 'The harmattan wind blew like a thousand fans'",
+      "Personification: 'The sun smiled down on Lagos'",
+      "Metaphor: 'Education is the key to success'"
+    ],
+    "created_at": "2026-06-14T06:25:09.828448+00:00"
+  },
+  {
+    "id": "2e1b3c43-0a56-4deb-aa1a-17343f2d378a",
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Punctuation Mastery",
+    "language": "en",
+    "content": "Mastering punctuation makes writing clear and professional. Semicolon (;) connects related independent clauses without a conjunction: 'She loves reading; he prefers movies.' Colon (:) introduces a list, explanation, or quote: 'Three things are needed: hard work, dedication, and patience.' Apostrophe shows possession ('Chidi's book') or contractions ('don't' for 'do not'). Quotation marks (\" \") enclose direct speech or titles of short works. Parentheses ( ) add extra information. Hyphen (-) connects compound words (mother-in-law, well-known). Dash (—) shows a strong break in thought. In Nigerian secondary school exams, proper punctuation affects essay scores significantly.",
+    "summary": "Semicolon (;) connects related clauses. Colon (:) introduces lists/explanations. Apostrophe (' ) shows possession or contractions. Punctuation affects essay scores.",
+    "learning_objectives": [
+      "Use semicolons and colons correctly",
+      "Master apostrophe usage",
+      "Apply quotation marks and dashes"
+    ],
+    "nigerian_examples": [
+      "Semicolon: 'The harmattan is dry; the rainy season is wet.'",
+      "Colon: 'My favorite Nigerian foods: jollof rice, egusi soup, and puff-puff.'",
+      "Apostrophe: 'Amina's achievement was celebrated by everyone.'"
+    ],
+    "created_at": "2026-06-14T06:18:11.898865+00:00"
+  },
+  {
+    "id": "12851ed2-e4c0-4140-9979-4534227ceeb1",
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Summary Writing",
+    "language": "en",
+    "content": "Summary writing means condensing a longer text into the main points. Steps: read the entire text, identify the main idea, find key supporting points, write in your own words, keep it brief (about 1/3 original length), do NOT add opinions. A good summary includes: who, what, when, where, why, how. Avoid copying phrases directly from the original. In Nigerian exams, summary questions test reading comprehension. Practice by summarizing news articles, short stories, or textbook chapters.",
+    "summary": "Summary writing = condense main points in your own words. Steps: read, find main idea, write briefly, no opinions. Include who, what, when, where, why, how.",
+    "learning_objectives": [
+      "Identify main ideas in a text",
+      "Paraphrase effectively",
+      "Write concise summaries"
+    ],
+    "nigerian_examples": [
+      "Summarizing a news article about Nigerian elections",
+      "Condensing a chapter on Nigerian history",
+      "Summarizing a folk tale in one paragraph"
+    ],
+    "created_at": "2026-06-14T06:25:34.885722+00:00"
+  },
+  {
+    "id": "d478c648-5702-4c85-9156-7696b2c26ffd",
+    "grade": 5,
+    "subject": "Hygiene Development",
+    "topic": "Community Hygiene",
+    "language": "en",
+    "content": "Community hygiene means keeping shared spaces clean: markets, schools, parks, water sources, public toilets. Everyone's responsibility. Actions: dispose trash properly, don't litter, keep drains clear, report sanitation issues, participate in community clean-ups, protect water sources from contamination. In Nigeria, community hygiene prevents diseases like cholera (from contaminated water) and malaria (from stagnant water). Many communities have monthly sanitation days. Youth environmental clubs lead hygiene campaigns. Good community hygiene shows respect for neighbors and future generations.",
+    "summary": "Community hygiene = keeping shared spaces clean. Dispose trash, clear drains, participate in clean-ups, protect water. Prevents cholera, malaria.",
+    "learning_objectives": [
+      "Understand community hygiene importance",
+      "Take collective action",
+      "Prevent disease spread"
+    ],
+    "nigerian_examples": [
+      "Monthly sanitation days",
+      "Youth clean-up campaigns",
+      "Market waste management",
+      "School hygiene clubs"
+    ],
+    "created_at": "2026-06-14T06:51:08.827827+00:00"
+  },
+  {
+    "id": "d89502ae-2722-4c9a-9808-986ee19cda14",
+    "grade": 5,
+    "subject": "Hygiene Development",
+    "topic": "Environmental Health",
+    "language": "en",
+    "content": "Environmental health studies how surroundings affect human health. Hazards: air pollution (generator fumes, bush burning), water pollution (industrial waste, sewage), soil contamination (chemicals, improper waste), noise pollution, climate change (flooding, heat waves). Protection: use clean cookstoves, don't burn trash, boil water, plant trees, recycle, support clean energy. Nigerian environmental agencies: NESREA (National Environmental Standards). Individual actions matter. Healthy environment = healthy people. Future careers: environmental health officer, pollution control specialist.",
+    "summary": "Environmental health = how surroundings affect health. Hazards: air, water, noise pollution, climate change. Protection: clean cookstoves, boil water, plant trees.",
+    "learning_objectives": [
+      "Identify environmental hazards",
+      "Understand health impacts",
+      "Take protective actions"
+    ],
+    "nigerian_examples": [
+      "Generator placement outdoors",
+      "Water boiling",
+      "Tree planting campaigns",
+      "Recycling programs"
+    ],
+    "created_at": "2026-06-14T06:52:06.734285+00:00"
+  },
+  {
+    "id": "9bdeed7e-3fb6-4e5b-aa76-90c05b822b50",
+    "grade": 5,
+    "subject": "Hygiene Development",
+    "topic": "Global Health Issues",
+    "language": "en",
+    "content": "Global health issues affect multiple countries requiring international cooperation. Current issues: pandemics (COVID-19), antibiotic resistance, vaccine hesitancy, non-communicable diseases (diabetes, heart disease), maternal/child mortality, neglected tropical diseases (river blindness, lymphatic filariasis - common in Nigeria). Organizations: WHO, UNICEF, World Bank, Gates Foundation. Nigerian contributions: polio eradication (wild polio eliminated 2020), research centers (Ibadan, Lagos). Individual actions: get vaccinated, practice hygiene, support health campaigns, pursue health careers. Global health connects everyone - disease anywhere threatens everywhere. Sustainable Development Goal 3: good health and well-being.",
+    "summary": "Global health issues affect multiple countries. Issues: pandemics, antibiotic resistance, NCDs, neglected tropical diseases. Nigeria eliminated wild polio. SDG 3.",
+    "learning_objectives": [
+      "Identify global health issues",
+      "Understand international cooperation",
+      "Take individual action"
+    ],
+    "nigerian_examples": [
+      "Polio eradication",
+      "River blindness program",
+      "Maternal health initiatives",
+      "Research centers"
+    ],
+    "created_at": "2026-06-14T07:07:28.747125+00:00"
+  },
+  {
+    "id": "ab938198-e703-4cda-8cd3-19758ec39dba",
+    "grade": 5,
+    "subject": "Hygiene Development",
+    "topic": "Hygiene Advocacy",
+    "language": "en",
+    "content": "Hygiene advocacy promotes sanitation and hygiene practices to communities, governments, organizations. Methods: awareness campaigns (school assemblies, social media, radio), community mobilization (clean-ups, demonstrations), policy advocacy (meeting officials, writing letters), partnership building (schools, businesses, NGOs). Nigerian hygiene advocates: WaterAid, UNICEF Nigeria, grassroots volunteers. Student advocates: start hygiene club, create awareness posters, lead handwashing demonstrations, petition for better toilets. Advocacy requires: credible information, compelling stories, clear asks, persistence. Successes: more toilets in schools, handwashing stations, hygiene in curriculum.",
+    "summary": "Hygiene advocacy promotes sanitation practices. Methods: campaigns, mobilization, policy advocacy, partnerships. Students can lead clubs, posters, demonstrations.",
+    "learning_objectives": [
+      "Advocate for hygiene",
+      "Lead campaigns",
+      "Influence decision-makers"
+    ],
+    "nigerian_examples": [
+      "WaterAid programs",
+      "UNICEF campaigns",
+      "Student hygiene clubs",
+      "Community advocates"
+    ],
+    "created_at": "2026-06-14T07:06:51.279432+00:00"
+  },
+  {
+    "id": "db87e8c1-41c1-485d-88aa-ec56b2bf772e",
+    "grade": 5,
+    "subject": "Hygiene Development",
+    "topic": "Mental Hygiene",
+    "language": "en",
+    "content": "Mental hygiene means taking care of your emotional and psychological health. Practices: talk about feelings with trusted people, manage stress (deep breathing, exercise, sleep), set boundaries (say no when needed), practice gratitude, limit screen time, spend time in nature, pursue hobbies, ask for help when struggling. Mental hygiene prevents anxiety, depression, burnout. Nigerian proverb: 'Health is not valued until sickness comes.' Mental health equals physical health. Reduce stigma by speaking openly. Schools increasingly have counselors. You are not alone.",
+    "summary": "Mental hygiene = emotional/psychological health. Talk about feelings, manage stress, set boundaries, practice gratitude, get help. Reduce stigma.",
+    "learning_objectives": [
+      "Understand mental hygiene",
+      "Manage stress",
+      "Seek help when needed"
+    ],
+    "nigerian_examples": [
+      "School counselors",
+      "Family support",
+      "Exercise groups",
+      "Hobby clubs"
+    ],
+    "created_at": "2026-06-14T06:51:38.82424+00:00"
+  },
+  {
+    "id": "eaff76aa-53fd-451e-8597-023f4cb86c50",
+    "grade": 5,
+    "subject": "Leadership",
+    "topic": "Change Management",
+    "language": "en",
+    "content": "Change management helps people and organizations transition from current state to desired future. Kotter's 8 steps: create urgency, build guiding coalition, form strategic vision, enlist volunteers, remove barriers, generate short-term wins, sustain acceleration, institute change. People resist change due to: fear of unknown, loss of control, comfort with status quo, distrust. Leaders overcome resistance through: communication (explain why), participation (involve in planning), support (training, resources), fairness. Nigerian examples: digital transformation, curriculum changes, organizational restructuring. Student leaders: changing club rules, introducing new activities, improving class routines. Change successful when people feel heard, prepared, rewarded.",
+    "summary": "Change management transitions people to new state. Kotter's 8 steps: urgency, coalition, vision, volunteers, barriers, wins, accelerate, institute.",
+    "learning_objectives": [
+      "Lead change effectively",
+      "Overcome resistance",
+      "Apply Kotter's steps"
+    ],
+    "nigerian_examples": [
+      "Digital transformation",
+      "Curriculum changes",
+      "Organizational restructuring",
+      "Process improvements"
+    ],
+    "created_at": "2026-06-14T07:08:03.834203+00:00"
+  },
+  {
+    "id": "5244873c-bd14-4c94-972f-efde54fccdc5",
+    "grade": 5,
+    "subject": "Leadership",
+    "topic": "Legacy Building",
+    "language": "en",
+    "content": "Legacy building creates lasting positive impact beyond your lifetime. Questions: What do you want to be remembered for? What problems did you help solve? Whose lives did you improve? Nigerian legacy builders: Nnamdi Azikiwe (independence), Chinua Achebe (literature), Fela Kuti (music, activism), Dora Akunyili (public health). Students build legacy through: starting initiatives (tutoring, recycling, clubs), mentoring younger students, documenting knowledge, creating resources, inspiring others. Legacy doesn't require fame - every person affects those around them. Think long-term, act today. Reflect: what change can you make that outlasts you?",
+    "summary": "Legacy building = lasting positive impact. Nigerian legacy builders: Azikiwe, Achebe, Fela, Akunyili. Students: start initiatives, mentor, document knowledge, inspire.",
+    "learning_objectives": [
+      "Define personal legacy",
+      "Take legacy-building actions",
+      "Inspire others"
+    ],
+    "nigerian_examples": [
+      "Independence heroes",
+      "Literary giants",
+      "Music activists",
+      "Public health crusaders"
+    ],
+    "created_at": "2026-06-14T07:09:19.961386+00:00"
+  },
+  {
+    "id": "7593bcea-186a-4d19-999e-9ec2f2979a08",
+    "grade": 5,
+    "subject": "Leadership",
+    "topic": "Mentorship",
+    "language": "en",
+    "content": "Mentorship is relationship where experienced person (mentor) guides less experienced (mentee). Benefits for mentees: career advice, skill development, networking, confidence, perspective. Benefits for mentors: fulfillment, fresh perspectives, leadership practice, legacy. Effective mentoring: set expectations, meet regularly, listen actively, ask questions (not just answer), challenge supportively, maintain confidentiality, celebrate progress. Nigerian mentorship programs: Women in Technology, Youth Enterprise, professional associations. Students can mentor younger children (peer mentoring), seek mentors (teachers, coaches, family friends). Reverse mentoring (young teach old about technology, trends).",
+    "summary": "Mentorship = experienced guides less experienced. Benefits: advice, skills, networking, confidence. Effective mentoring: regular meetings, active listening, challenge supportively.",
+    "learning_objectives": [
+      "Seek mentors effectively",
+      "Mentor others",
+      "Build mentoring relationships"
+    ],
+    "nigerian_examples": [
+      "Women in Technology",
+      "Youth Enterprise",
+      "Professional associations",
+      "Peer mentoring programs"
+    ],
+    "created_at": "2026-06-14T07:08:41.598488+00:00"
+  },
+  {
+    "id": "936fdca9-41fd-496f-8635-c9cb86c82d29",
+    "grade": 5,
+    "subject": "Leadership",
+    "topic": "Servant Leadership",
+    "language": "en",
+    "content": "Servant leadership prioritizes serving others first, then leading. Ten principles: listening, empathy, healing (helping resolve conflicts), awareness, persuasion (not coercion), conceptualization (big picture thinking), foresight, stewardship (responsibility for organization), commitment to growth, building community. Nigerian traditional leaders (Obas, Emirs, Igwes) often embody servant leadership - they serve their communities. Modern examples: teachers who support students, coaches who develop players. Servant leaders ask: 'How can I help you succeed?' Leadership is not about power - it's about service.",
+    "summary": "Servant leadership serves others first. Ten principles: listening, empathy, healing, awareness, persuasion, foresight, stewardship, growth, community.",
+    "learning_objectives": [
+      "Understand servant leadership",
+      "Serve others",
+      "Build community"
+    ],
+    "nigerian_examples": [
+      "Traditional Obas",
+      "Community teachers",
+      "Youth mentors",
+      "Religious leaders"
+    ],
+    "created_at": "2026-06-14T06:53:59.020655+00:00"
+  },
+  {
+    "id": "1d8be9a7-dab3-4fe8-b2ec-4d0e631a24ee",
+    "grade": 5,
+    "subject": "Leadership",
+    "topic": "Transformational Leadership",
+    "language": "en",
+    "content": "Transformational leadership inspires people to achieve extraordinary outcomes. Four components: idealized influence (leading by example, ethics), inspirational motivation (articulating compelling vision), intellectual stimulation (encouraging innovation, creativity), individualized consideration (coaching, mentoring). Transformational leaders: Martin Luther King Jr., Nelson Mandela, Nigerian leaders like Ngozi Okonjo-Iweala. Unlike transactional leadership (rewards/punishments), transformational changes organizations. You can practice: share vision, praise creativity, mentor younger students, lead by example. Transformational leadership creates positive change.",
+    "summary": "Transformational leadership inspires extraordinary outcomes. Four components: idealized influence, inspirational motivation, intellectual stimulation, individualized consideration.",
+    "learning_objectives": [
+      "Understand transformational leadership",
+      "Inspire others",
+      "Mentor team members"
+    ],
+    "nigerian_examples": [
+      "Ngozi Okonjo-Iweala",
+      "MLK-style speeches",
+      "Student change-makers"
+    ],
+    "created_at": "2026-06-14T06:53:33.138094+00:00"
+  },
+  {
+    "id": "5c3963d9-18e5-4052-b91b-e9bbc5a8f8d9",
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Advanced Geometry",
+    "language": "en",
+    "content": "Advanced geometry explores properties of shapes and angles. Types of triangles: equilateral (3 equal sides, 3 equal angles 60°), isosceles (2 equal sides, base angles equal), scalene (no equal sides). Angle relationships: complementary angles (sum 90°), supplementary angles (sum 180°), vertically opposite angles (equal), corresponding angles (equal when lines parallel). Circle parts: radius (center to edge), diameter (2×radius, through center), circumference (distance around), area (π×radius²). Nigerian architects and engineers use geometry for building designs, bridges, and roads.",
+    "summary": "Triangles: equilateral, isosceles, scalene. Angle types: complementary (90°), supplementary (180°). Circle: radius, diameter, circumference, area.",
+    "learning_objectives": [
+      "Classify triangles by sides",
+      "Identify angle relationships",
+      "Calculate circle measurements"
+    ],
+    "nigerian_examples": [
+      "Isosceles triangles in roof designs",
+      "Complementary angles in wall corners",
+      "Circle calculations for roundabout designs"
+    ],
+    "created_at": "2026-06-14T06:27:19.694072+00:00"
+  },
+  {
+    "id": "3e0b6e8e-c183-4d0f-897a-cc2f23b68fc4",
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Algebra Basics",
+    "language": "en",
+    "content": "Algebra uses letters (variables) to represent unknown numbers. A variable is a symbol (usually x, y, or z) that stands for a number. An expression combines numbers and variables: 3x + 5 means '3 times x plus 5'. An equation shows two expressions are equal: 3x + 5 = 14. To solve for x, isolate it: subtract 5 from both sides (3x = 9), then divide both sides by 3 (x = 3). Check: 3×3+5=9+5=14. Algebra helps solve real problems: If 5 bags of rice cost ₦15,000, how much does one cost? 5x = 15,000, so x = ₦3,000. In Nigerian market trading, algebra helps calculate profits and pricing.",
+    "summary": "Algebra uses variables (letters) for unknown numbers. Solve equations by isolating the variable: subtract, then divide. Used in pricing, profit calculations, everyday math.",
+    "learning_objectives": [
+      "Understand variables and expressions",
+      "Solve one-step and two-step equations",
+      "Apply algebra to real-world problems"
+    ],
+    "nigerian_examples": [
+      "If 4 yams cost ₦2,000, find cost of one yam: 4x = 2000, x = ₦500",
+      "A trader sells groundnuts for ₦300 per bag plus ₦50 delivery: cost = 300x + 50",
+      "If you save ₦500 weekly, how many weeks to reach ₦10,000? 500x = 10000, x = 20 weeks"
+    ],
+    "created_at": "2026-06-14T06:17:45.732019+00:00"
+  },
+  {
+    "id": "70d990d7-04d1-4dde-bec5-489318cad4d3",
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Probability",
+    "language": "en",
+    "content": "Probability measures how likely an event is to happen. Formula: Probability = (Number of favorable outcomes) / (Total number of possible outcomes). Probability ranges from 0 (impossible) to 1 (certain). Examples: flipping a coin - probability of heads = 1/2 (50%). Rolling a die - probability of 6 = 1/6 (about 16.7%). Drawing a red card from a deck - probability = 26/52 = 1/2. Probability can be written as fraction, decimal, or percentage. In Nigerian lotteries and betting, probability explains odds of winning.",
+    "summary": "Probability = favorable outcomes / total outcomes. Ranges 0 (impossible) to 1 (certain). Written as fraction, decimal, or percentage.",
+    "learning_objectives": [
+      "Calculate basic probabilities",
+      "Convert probability to percentages",
+      "Understand real-world applications"
+    ],
+    "nigerian_examples": [
+      "Probability of rain during rainy season in Lagos",
+      "Probability of picking a red bead from a jar of mixed colors",
+      "Probability of winning a raffle with 100 tickets"
+    ],
+    "created_at": "2026-06-14T06:26:36.486456+00:00"
+  },
+  {
+    "id": "f38a9dd3-c59b-4195-9ff2-659c926e4d88",
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Simple Equations",
+    "language": "en",
+    "content": "Simple equations have one variable and can be solved in two steps. Golden rule: whatever you do to one side of the equation, do to the other. Steps: simplify both sides (combine like terms), add/subtract to isolate variable term, multiply/divide to solve. Example: 2x - 5 = 9. Add 5 to both sides: 2x = 14. Divide both sides by 2: x = 7. Check: 2(7)-5=14-5=9. Word problems: 'A number divided by 4 plus 3 equals 8' → x/4 + 3 = 8 → x/4 = 5 → x = 20. In Nigerian businesses, equations calculate break-even points, profit margins, and loan payments.",
+    "summary": "Simple equations: one variable. Keep equation balanced: same operation on both sides. Isolate variable by adding/subtracting, then multiply/divide.",
+    "learning_objectives": [
+      "Balance equations using inverse operations",
+      "Solve two-step equations",
+      "Translate word problems into equations"
+    ],
+    "nigerian_examples": [
+      "A farmer had 50 mangoes, sold some, had 18 left. How many sold? x + 18 = 50, x = 32",
+      "If you split ₦5,000 among x friends and each gets ₦1,250, how many friends? 1250x = 5000, x = 4",
+      "Temperature in Celsius to Fahrenheit: C = (F-32) × 5/9"
+    ],
+    "created_at": "2026-06-14T06:18:29.405128+00:00"
+  },
+  {
+    "id": "17847473-7856-445b-8529-c7cbd4e6ea88",
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Statistics",
+    "language": "en",
+    "content": "Statistics involves collecting, organizing, and interpreting data. Mean is the average: sum of all values divided by number of values. Median is the middle value when data is arranged in order. Mode is the most frequent value. Range is the difference between highest and lowest values. Example: test scores 70, 80, 80, 90, 100. Mean = (70+80+80+90+100)/5 = 84. Median = 80 (middle). Mode = 80 (appears twice). Range = 100-70 = 30. Statistics helps understand data in news, sports, and business.",
+    "summary": "Statistics: Mean (average), Median (middle), Mode (most frequent), Range (highest-lowest). Used to understand data.",
+    "learning_objectives": [
+      "Calculate mean, median, mode, range",
+      "Interpret data sets",
+      "Apply statistics to real situations"
+    ],
+    "nigerian_examples": [
+      "Average test scores in a Lagos classroom",
+      "Most common age in a football team",
+      "Range of prices for yams at the market"
+    ],
+    "created_at": "2026-06-14T06:25:51.903017+00:00"
+  },
+  {
+    "id": "3dc60340-0fb5-4aa5-8082-9757f4907370",
+    "grade": 5,
+    "subject": "Nigerian History",
+    "topic": "Civil War Analysis",
+    "language": "en",
+    "content": "The Nigerian Civil War (1967-1970) was fought between Nigeria and the breakaway state of Biafra (eastern region). Causes: ethnic tensions after 1966 coup, Igbo massacres in north, Eastern Region's declaration of independence as Biafra. Key events: Biafran leader Colonel Ojukwu declared independence May 30, 1967. Nigerian forces blockaded Biafra, causing starvation. Over one million civilians died, mostly from hunger and disease. Biafra surrendered January 15, 1970. The war ended with 'No victor, no vanquished' policy. Effects: reconciliation efforts, property loss, population displacement. Lessons: war is devastating; negotiation better than conflict; Nigeria's unity must be preserved peacefully.",
+    "summary": "Civil War (1967-1970): Nigeria vs Biafra. Causes: ethnic tensions, massacres. Over 1 million died, mostly from starvation. Ended with 'No victor, no vanquished.'",
+    "learning_objectives": [
+      "Understand civil war causes",
+      "Know human toll",
+      "Appreciate importance of peace"
+    ],
+    "nigerian_examples": [
+      "Reconciliation monuments",
+      "War memorials in the east",
+      "Federal character policy"
+    ],
+    "created_at": "2026-06-14T06:32:10.902825+00:00"
+  },
+  {
+    "id": "2ac10aa7-464a-4e85-8dee-d8ff38709e90",
+    "grade": 5,
+    "subject": "Nigerian History",
+    "topic": "Colonial Resistance",
+    "language": "en",
+    "content": "Colonial resistance means Nigerians fought against British rule. Examples: Queen Amina of Zazzau resisted Fulani and European influence in the 1500s. King Jaja of Opobo (1821-1891) was a successful trader who resisted British control of palm oil trade - he was captured and exiled. Queen Nanny of the Maroons led resistance in Jamaica but was of Igbo descent. In 1929, the Aba Women's War (Women's Riot) - thousands of Igbo women protested against British taxation and warrant chiefs. Over 50 women were killed. These resistance movements delayed colonial control and inspired future independence leaders. Nigerian heroes who resisted colonialism are remembered today for their courage.",
+    "summary": "Colonial resistance: Nigerians fought British rule. King Jaja of Opobo, Aba Women's War (1929) against taxation. Heroes remembered for courage.",
+    "learning_objectives": [
+      "Identify resistance leaders",
+      "Understand the Aba Women's War",
+      "Appreciate resistance sacrifices"
+    ],
+    "nigerian_examples": [
+      "Statues of Queen Amina and King Jaja",
+      "Aba Women's War memorials",
+      "History lessons in Nigerian schools"
+    ],
+    "created_at": "2026-06-14T06:30:00.795034+00:00"
+  },
+  {
+    "id": "12023d66-639f-4696-af67-96db13b079b2",
+    "grade": 5,
+    "subject": "Nigerian History",
+    "topic": "Democratic Transitions",
+    "language": "en",
+    "content": "Nigeria has alternated between military and civilian rule. Military periods: 1966-1979 (13 years), 1983-1999 (16 years). Civilian periods: First Republic (1960-1966), Second Republic (1979-1983), Third Republic (aborted 1993), Fourth Republic (1999-present). The Second Republic under President Shehu Shagari ended by military coup December 31, 1983. General Ibrahim Babangida annulled June 12, 1993 election (won by MKO Abiola), causing crisis. General Sani Abacha (1993-1998) was a harsh dictator. After Abacha's death, transition to civilian rule began. Olusegun Obasanjo (former military head of state) was elected President in 1999, beginning the Fourth Republic. Nigeria has had democratic elections every four years since 1999.",
+    "summary": "Democratic transitions: 1960-1966 (First), 1979-1983 (Second), 1993 (aborted), 1999-present (Fourth). Military vs civilian rule alternated.",
+    "learning_objectives": [
+      "Identify republic periods",
+      "Understand June 12 significance",
+      "Know current Fourth Republic"
+    ],
+    "nigerian_examples": [
+      "June 12 now Democracy Day",
+      "MKO Abiola's legacy",
+      "1999 Obasanjo election"
+    ],
+    "created_at": "2026-06-14T06:32:53.960096+00:00"
+  },
+  {
+    "id": "8f783c9f-5b2e-4534-9dc5-c6a3552612f8",
+    "grade": 5,
+    "subject": "Nigerian History",
+    "topic": "First Republic",
+    "language": "en",
+    "content": "The First Republic (1960-1966) was Nigeria's first democratic government after independence. Structure: Prime Minister Tafawa Balewa (head of government), President Nnamdi Azikiwe (ceremonial head of state), Parliament, and regional governments. Three major regions: Northern (leader Ahmadu Bello), Western (leader Obafemi Awolowo), Eastern (leader Michael Okpara). Challenges: ethnic tensions, corruption, census disputes, election rigging. The 1965 Western Region election crisis led to violence. On January 15, 1966, a military coup killed the Prime Minister and regional premiers. The military took over, ending the First Republic. The coup began an era of military rule.",
+    "summary": "First Republic (1960-1966): democratic government. PM Tafawa Balewa, President Azikiwe. Challenges: ethnic tensions, corruption. Ended by 1966 military coup.",
+    "learning_objectives": [
+      "Understand First Republic structure",
+      "Identify key leaders",
+      "Know why it ended"
+    ],
+    "nigerian_examples": [
+      "Tafawa Balewa Square in Lagos",
+      "Nigerian independence monuments",
+      "History of military rule in schools"
+    ],
+    "created_at": "2026-06-14T06:31:27.594109+00:00"
+  },
+  {
+    "id": "49ecf4d6-8cdf-4b9f-9a6a-cf2b7d1522cf",
+    "grade": 5,
+    "subject": "Nigerian History",
+    "topic": "Independence Movements",
+    "language": "en",
+    "content": "Independence movements were organized efforts to end British rule. Key leaders: Herbert Macaulay (father of Nigerian nationalism), Nnamdi Azikiwe (Zik), Obafemi Awolowo (Awo), Ahmadu Bello (Sardauna). Major political parties: NCNC (National Council of Nigeria and the Cameroons) led by Azikiwe, Action Group led by Awolowo, NPC (Northern People's Congress) led by Ahmadu Bello. These parties demanded self-government. Constitutional conferences in London and Lagos in the 1950s negotiated independence timeline. October 1, 1960, Nigeria became independent. The independence movement used newspapers, rallies, strikes, and diplomacy. Many leaders were lawyers and journalists who argued for freedom.",
+    "summary": "Independence movements ended British rule. Key leaders: Macaulay, Azikiwe, Awolowo, Bello. Political parties demanded self-government. Independence achieved October 1, 1960.",
+    "learning_objectives": [
+      "Identify independence leaders",
+      "Understand political parties",
+      "Know independence date"
+    ],
+    "nigerian_examples": [
+      "October 1 Independence Day celebrations",
+      "Statues of independence heroes",
+      "Museums with independence documents"
+    ],
+    "created_at": "2026-06-14T06:30:43.986424+00:00"
+  },
+  {
+    "id": "417b420e-fb48-486a-add7-91d02c360dec",
+    "grade": 5,
+    "subject": "Physical & Health Education",
+    "topic": "Fitness Planning",
+    "language": "en",
+    "content": "Fitness planning creates structured exercise program. Components: cardio (heart/lungs: running, swimming, cycling), strength (muscles: push-ups, squats, weight training), flexibility (stretching, yoga), balance (prevents falls). FITT principle: Frequency (how often - 3-5x/week), Intensity (how hard - moderate to vigorous), Time (duration - 30-60 min), Type (activity variety). Sample weekly plan: Mon cardio, Tue strength, Wed rest, Thu cardio, Fri strength, Sat flexibility, Sun active rest. Nigerian youth fitness: sports, dance, walking, home workouts. Set SMART fitness goals, track progress, adjust for injuries/plateaus, find enjoyable activities (increases adherence). Always consult healthcare before starting new program.",
+    "summary": "Fitness planning creates structured exercise. Components: cardio, strength, flexibility, balance. FITT: Frequency, Intensity, Time, Type. SMART goals, enjoyable activities.",
+    "learning_objectives": [
+      "Design fitness plan",
+      "Apply FITT principle",
+      "Set SMART fitness goals"
+    ],
+    "nigerian_examples": [
+      "Weekly sports schedule",
+      "Home workout videos",
+      "Dance fitness classes",
+      "School physical education"
+    ],
+    "created_at": "2026-06-14T07:10:26.016059+00:00"
+  },
+  {
+    "id": "98982f68-4e5f-482d-8fd5-05c4fb0bb839",
+    "grade": 5,
+    "subject": "Physical & Health Education",
+    "topic": "Injury Prevention",
+    "language": "en",
+    "content": "Injury prevention means taking steps to avoid getting hurt during physical activity. Key strategies: warm up before exercise (5-10 minutes light activity like jogging, dynamic stretches), cool down after exercise (light activity + static stretches), use proper equipment (sports shoes, shin guards, helmets, knee pads), follow rules (no dangerous play), stay hydrated (drink water before, during, after), listen to your body (stop if you feel pain), build strength gradually (don't do too much too soon). Common injuries: sprains (stretched ligaments), strains (pulled muscles), fractures (broken bones), concussions (brain injury). In Nigerian schools, warm-ups before sports day prevent injuries. RICE treatment for minor injuries: Rest, Ice, Compression, Elevation.",
+    "summary": "Injury prevention: warm up, cool down, proper equipment, follow rules, hydrate, listen to body, gradual training. RICE for minor injuries: Rest, Ice, Compression, Elevation.",
+    "learning_objectives": [
+      "Perform proper warm-up and cool-down",
+      "Use safety equipment correctly",
+      "Apply RICE for minor injuries"
+    ],
+    "nigerian_examples": [
+      "Football players wearing shin guards during matches",
+      "Dynamic stretches before inter-house sports",
+      "Cyclists wearing helmets on Nigerian roads"
+    ],
+    "created_at": "2026-06-14T06:22:09.266679+00:00"
+  },
+  {
+    "id": "0f20d533-15c5-4b3d-bb46-431712df63a5",
+    "grade": 5,
+    "subject": "Physical & Health Education",
+    "topic": "Mental Health",
+    "language": "en",
+    "content": "Mental health includes emotional, psychological, social well-being. Affects thinking, feeling, acting. Common conditions: anxiety (excessive worry), depression (persistent sadness, loss of interest), eating disorders, ADHD (attention difficulty), bipolar disorder, schizophrenia. Causes: genetics, brain chemistry, trauma, environment, stress. Warning signs: mood changes, social withdrawal, extreme feelings, sleep/appetite changes, substance use, thoughts of self-harm. Help: talk to trusted adult, therapist, counselor, doctor; call helplines. Nigerian mental health: Nigerian Mental Health Association, Mentally Aware Nigeria Initiative. Reduce stigma by speaking openly, educating others. Self-care: sleep, exercise, healthy food, stress management, hobbies, connection. Mental health equals physical health.",
+    "summary": "Mental health = emotional, psychological, social well-being. Common conditions: anxiety, depression, ADHD. Seek help from trusted adults, professionals. Reduce stigma.",
+    "learning_objectives": [
+      "Understand mental health",
+      "Recognize warning signs",
+      "Seek help appropriately"
+    ],
+    "nigerian_examples": [
+      "Nigerian Mental Health Association",
+      "Mentally Aware Nigeria Initiative",
+      "School counselors",
+      "Helplines"
+    ],
+    "created_at": "2026-06-14T07:10:53.443552+00:00"
+  },
+  {
+    "id": "e4698d5d-42b5-48a7-af7f-fa9888781c20",
+    "grade": 5,
+    "subject": "Physical & Health Education",
+    "topic": "Sports Medicine",
+    "language": "en",
+    "content": "Sports medicine prevents, diagnoses, treats sports injuries. Professionals: athletic trainers, physical therapists, sports doctors. Common injuries: sprains (ligaments), strains (muscles), fractures (bones), concussions (brain), shin splints, ACL tears. Treatment: RICE (Rest, Ice, Compression, Elevation), physical therapy, surgery for severe cases, rehabilitation. Prevention: proper warm-up/cool-down, strength training, flexibility, equipment, technique, rest days. Nigerian sports medicine: football clubs have medical teams, Olympic athletes receive care. Student athletes: listen to body, report pain, follow rehab protocols, don't rush return. Sports medicine also covers nutrition (performance), psychology (resilience), biomechanics (efficient movement).",
+    "summary": "Sports medicine prevents/treats injuries. Professionals: athletic trainers, physical therapists, doctors. Common injuries: sprains, strains, fractures, concussions. Prevention: warm-up, strength, equipment, rest.",
+    "learning_objectives": [
+      "Identify common injuries",
+      "Apply RICE",
+      "Prevent sports injuries"
+    ],
+    "nigerian_examples": [
+      "Football club medical teams",
+      "Olympic athlete care",
+      "School sports first aid",
+      "Rehab programs"
+    ],
+    "created_at": "2026-06-14T07:09:56.877991+00:00"
+  },
+  {
+    "id": "2c5e5e28-a36f-4807-ac8c-4b375fe77849",
+    "grade": 5,
+    "subject": "Physical & Health Education",
+    "topic": "Sports Psychology",
+    "language": "en",
+    "content": "Sports psychology is the study of how mindset affects athletic performance. Key concepts: goal setting (SMART goals - Specific, Measurable, Achievable, Relevant, Time-bound), visualization (imagining successful performance), self-talk (positive internal dialogue), concentration (focusing on task, ignoring distractions), arousal control (managing nervousness), and resilience (bouncing back from failure). Nigerian athletes like Blessing Okagbare use sports psychology to prepare for competitions. Before a match, visualize success: 'I see myself scoring the winning goal.' Use positive self-talk: 'I am strong, I am prepared, I can do this.' Sports psychology works for any performance: exams, presentations, music recitals.",
+    "summary": "Sports psychology: mindset affects performance. Tools: SMART goals, visualization, positive self-talk, concentration, resilience. Used by Nigerian athletes. Works for exams and presentations too.",
+    "learning_objectives": [
+      "Use visualization to improve performance",
+      "Practice positive self-talk",
+      "Set SMART performance goals"
+    ],
+    "nigerian_examples": [
+      "Nigerian footballers visualizing penalty kicks before matches",
+      "Sprinter imagining the race before starting",
+      "Student visualizing successful exam performance"
+    ],
+    "created_at": "2026-06-14T06:21:24.507485+00:00"
+  },
+  {
+    "id": "6a8c6ccd-f29e-4f64-ac90-5f387db0a479",
+    "grade": 5,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Constitutional Democracy",
+    "language": "en",
+    "content": "Constitutional democracy means government based on a written constitution that limits power and protects citizens' rights. Nigeria's 1999 Constitution is the supreme law. Features: separation of powers among Executive, Legislative, Judicial; federalism (shared power between national and state governments); fundamental rights (freedom of speech, religion, assembly); regular elections; rule of law (no one above law). Democratic principles include consent of governed, majority rule with minority rights, accountability, transparency, checks and balances. Nigerian democracy faces challenges: voter apathy, electoral fraud, corruption. Citizens strengthen democracy by voting, obeying laws, participating in governance, and holding leaders accountable.",
+    "summary": "Constitutional democracy = government limited by constitution. Features: separation of powers, federalism, fundamental rights, elections, rule of law.",
+    "learning_objectives": [
+      "Understand constitutional democracy",
+      "Identify democratic principles",
+      "Know 1999 Constitution features"
+    ],
+    "nigerian_examples": [
+      "1999 Constitution",
+      "National Assembly checks Executive",
+      "INEC conducting elections"
+    ],
+    "created_at": "2026-06-14T06:36:11.451514+00:00"
+  },
+  {
+    "id": "6e0525e1-5800-4fa9-ac6e-fc4ef220d8a3",
+    "grade": 5,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Economic Systems",
+    "language": "en",
+    "content": "Nigeria has a mixed economy combining private enterprise and government control. Economic systems: capitalism (private ownership, profit motive, competition), socialism (government ownership, equality focus), mixed (both). Nigerian economy sectors: primary (agriculture, oil, mining - extraction), secondary (manufacturing, processing), tertiary (services, banking, telecom). Key institutions: Central Bank of Nigeria (CBN) controls money supply, interest rates; Nigerian Stock Exchange (NSE) for company shares. Economic challenges: over-reliance on oil, unemployment, inflation, infrastructure deficits. Economic opportunities: agriculture, technology, manufacturing, creative industries (Nollywood, music). Understanding economics helps citizens make financial decisions and hold government accountable.",
+    "summary": "Nigeria has mixed economy (private + government). Sectors: primary (oil), secondary (manufacturing), tertiary (services). CBN controls money.",
+    "learning_objectives": [
+      "Understand economic systems",
+      "Identify Nigerian economic sectors",
+      "Know CBN role"
+    ],
+    "nigerian_examples": [
+      "CBN sets interest rates",
+      "Dangote Group (private manufacturing)",
+      "Government-owned refineries",
+      "Nollywood generates revenue"
+    ],
+    "created_at": "2026-06-14T06:37:37.965388+00:00"
+  },
+  {
+    "id": "35a25d30-7b20-4764-8c37-a7107fa82d46",
+    "grade": 5,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Foreign Policy",
+    "language": "en",
+    "content": "Foreign policy is how Nigeria interacts with other countries. Key principles: African-centered (support for African unity, decolonization, anti-apartheid), non-alignment (not choosing superpower sides during Cold War), peaceful conflict resolution (diplomacy, not war), economic cooperation, respect for international law, protection of citizens abroad. Nigerian foreign policy under ECOWAS (Economic Community of West African States) promotes regional stability. Nigeria has contributed troops to UN peacekeeping missions (Liberia, Sierra Leone, Sudan, Somalia). Foreign policy achievements: ending apartheid in South Africa, leading ECOWAS peacekeeping, hosting African Union summits. Challenges: balancing relationships with China, US, UK; protecting Nigerians in diaspora; fighting terrorism with international partners.",
+    "summary": "Foreign policy = Nigeria's relations with other countries. Principles: African-centered, peaceful conflict resolution, economic cooperation. ECOWAS, UN peacekeeping.",
+    "learning_objectives": [
+      "Understand Nigerian foreign policy principles",
+      "Know ECOWAS role",
+      "Identify peacekeeping contributions"
+    ],
+    "nigerian_examples": [
+      "ECOWAS headquarters in Abuja",
+      "Nigerian troops in Liberia",
+      "Diplomatic relations with 190+ countries",
+      "President chairs AU summits"
+    ],
+    "created_at": "2026-06-14T06:38:23.30108+00:00"
+  },
+  {
+    "id": "8e77e413-adbe-4719-b743-b86479a94d53",
+    "grade": 5,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Human Rights",
+    "language": "en",
+    "content": "Human rights are basic freedoms and protections every person deserves regardless of nationality, religion, gender, or status. Universal Declaration of Human Rights (1948) outlines 30 rights. Key rights: right to life, liberty, security; freedom from slavery, torture; right to fair trial; freedom of expression, religion, assembly; right to education, work, healthcare. In Nigeria, Chapter IV of Constitution guarantees fundamental rights. Rights limitations: rights can be limited for public safety, national security, or others' rights. Rights violations in Nigeria: police brutality, extrajudicial killings, child abuse, discrimination. Defend rights by: speaking against injustice, reporting violations, supporting human rights organizations.",
+    "summary": "Human rights = basic freedoms for all. Universal Declaration (1948). Nigerian Constitution Chapter IV guarantees rights. Defend rights by speaking against injustice.",
+    "learning_objectives": [
+      "Identify fundamental human rights",
+      "Know Nigerian rights provisions",
+      "Respond to rights violations"
+    ],
+    "nigerian_examples": [
+      "Right to education for all children",
+      "Freedom of religion (Christianity, Islam, traditional)",
+      "Freedom of press (newspapers reporting)",
+      "Voting rights at 18"
+    ],
+    "created_at": "2026-06-14T06:36:54.651516+00:00"
+  },
+  {
+    "id": "a1a587e6-db35-41c4-bb42-58e89d2377c8",
+    "grade": 5,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Sustainable Development",
+    "language": "en",
+    "content": "Sustainable development meets present needs without harming future generations. Three pillars: economic (growth, jobs, fair wages), social (education, healthcare, equality), environmental (protecting nature, reducing pollution). UN Sustainable Development Goals (SDGs) - 17 goals for 2030 including: no poverty, zero hunger, quality education, clean water, affordable clean energy, climate action. Nigeria's challenges: poverty (40% live below poverty line), out-of-school children (10+ million), water pollution, deforestation, climate change impacts (flooding, desertification). Individual actions for sustainability: reduce waste (recycle, reuse), save water/electricity, plant trees, educate others, support green businesses. Nigeria's future depends on balancing growth with environmental care.",
+    "summary": "Sustainable development = meet present needs without harming future. Three pillars: economic, social, environmental. UN SDGs 17 goals for 2030.",
+    "learning_objectives": [
+      "Understand sustainable development",
+      "Know SDGs",
+      "Take sustainability actions"
+    ],
+    "nigerian_examples": [
+      "Recycling plastic bottles",
+      "Planting trees against desertification",
+      "Solar panels for electricity",
+      "Poverty reduction programs"
+    ],
+    "created_at": "2026-06-14T06:39:09.133309+00:00"
+  },
+  {
+    "id": "c033639b-f45f-4073-b5f1-54654cf3f2a8",
+    "grade": 5,
+    "subject": "Teamwork",
+    "topic": "Cross-Functional Teams",
+    "language": "en",
+    "content": "Cross-functional teams include members from different departments or skills working toward common goal. Example: launching new product needs marketing, design, engineering, finance. Benefits: diverse perspectives, faster problem-solving, innovation. Challenges: different priorities, communication barriers, turf wars. Success factors: clear shared goal, mutual respect, good facilitation, regular communication. Nigerian businesses use cross-functional teams for projects. In school, science projects need research, writing, art, presentation skills - each student contributes different strengths. Cross-functional experience valuable for future careers.",
+    "summary": "Cross-functional teams have members from different skills/departments. Benefits: diverse perspectives, innovation. Challenges: different priorities. Success: clear goal, respect.",
+    "learning_objectives": [
+      "Value diverse skills",
+      "Collaborate across functions",
+      "Achieve shared goals"
+    ],
+    "nigerian_examples": [
+      "Product launch teams",
+      "School project groups",
+      "Event planning committees",
+      "Community development teams"
+    ],
+    "created_at": "2026-06-14T06:54:55.433056+00:00"
+  },
+  {
+    "id": "bb6aa8b7-f2fb-4273-811f-165397bf4120",
+    "grade": 5,
+    "subject": "Teamwork",
+    "topic": "Performance Metrics",
+    "language": "en",
+    "content": "Performance metrics measure team effectiveness. Quantitative metrics: output (units produced, tasks completed), quality (defect rate, customer satisfaction), speed (cycle time, response time), efficiency (cost per unit). Qualitative metrics: communication effectiveness, collaboration, innovation, morale. Balanced scorecard approach: financial, customer, internal processes, learning/growth. Nigerian teams use metrics: school projects (grades, completion time), sports (points, assists), business (sales, profit, retention). For students: track assignments completed on time, group meeting attendance, peer feedback scores, learning outcomes. Metrics should be: specific, measurable, achievable, relevant, time-bound. Use data to improve, not punish.",
+    "summary": "Performance metrics measure team effectiveness. Quantitative: output, quality, speed, efficiency. Qualitative: communication, collaboration, morale. Balanced scorecard.",
+    "learning_objectives": [
+      "Choose appropriate metrics",
+      "Track team performance",
+      "Use data for improvement"
+    ],
+    "nigerian_examples": [
+      "School project grades",
+      "Sports statistics",
+      "Business KPIs",
+      "Club attendance"
+    ],
+    "created_at": "2026-06-14T07:11:50.432476+00:00"
+  },
+  {
+    "id": "d4642bd1-a52c-4f31-8af4-e40fced14cf7",
+    "grade": 5,
+    "subject": "Teamwork",
+    "topic": "Team Culture",
+    "language": "en",
+    "content": "Team culture = shared values, beliefs, behaviors. Elements: psychological safety (safe to take risks, admit mistakes), accountability (members deliver commitments), clarity (roles, goals, processes), meaning (work matters), impact (results matter). Building positive culture: model desired behaviors, celebrate wins (big/small), address problems quickly, gather feedback, invest in relationships. Toxic culture signs: blame, secrets, cliques, fear, burnout. Nigerian examples: successful football teams (Super Eagles culture), business teams, school clubs. Students build team culture: inclusive language, share credit, help struggling teammates, resolve conflicts respectfully. Culture predicts performance - good culture helps good results, even with average talent.",
+    "summary": "Team culture = shared values, beliefs, behaviors. Elements: psychological safety, accountability, clarity, meaning, impact. Build through modeling, celebrating, addressing problems.",
+    "learning_objectives": [
+      "Understand team culture",
+      "Build positive culture",
+      "Identify toxic signs"
+    ],
+    "nigerian_examples": [
+      "Super Eagles culture",
+      "Business teams",
+      "School clubs",
+      "Community groups"
+    ],
+    "created_at": "2026-06-14T07:11:21.456867+00:00"
+  },
+  {
+    "id": "b6b823ac-2979-433d-9938-6469c4919306",
+    "grade": 5,
+    "subject": "Teamwork",
+    "topic": "Team Learning",
+    "language": "en",
+    "content": "Team learning develops collective knowledge and capability. Processes: after-action reviews (what happened? what worked? what didn't? what will change?), retrospectives (regular reflection), knowledge sharing sessions, cross-training (learn each other's roles), learning from failures (blameless post-mortems). Benefits: avoids repeating mistakes, spreads best practices, builds shared mental models, increases adaptability. Nigerian examples: medical teams reviewing cases, engineering teams analyzing failures, sports teams watching game film. Student teams: debrief after projects, share study techniques, rotate roles. Learning teams outperform those that don't learn. Create psychological safety for honest reflection. Document lessons for future teams.",
+    "summary": "Team learning develops collective knowledge. Processes: after-action reviews, retrospectives, knowledge sharing, cross-training, learning from failures. Avoids repeated mistakes.",
+    "learning_objectives": [
+      "Implement learning processes",
+      "Reflect honestly",
+      "Document lessons"
+    ],
+    "nigerian_examples": [
+      "Medical case reviews",
+      "Engineering failure analysis",
+      "Sports game film",
+      "Project debriefs"
+    ],
+    "created_at": "2026-06-14T07:12:18.006747+00:00"
+  },
+  {
+    "id": "174638d5-a6cb-4a2c-8a04-e74d42f54cf9",
+    "grade": 5,
+    "subject": "Teamwork",
+    "topic": "Virtual Teams",
+    "language": "en",
+    "content": "Virtual teams work together online from different locations. Tools: Zoom, Slack, Google Docs, Trello, WhatsApp. Challenges: time zones, technology issues, less personal connection, miscommunication. Success strategies: clear communication (over-communicate), use video (builds trust), document decisions, set meeting times, respect time zones, use shared calendars, celebrate wins virtually. Nigerian students collaborate online for group projects using Google Docs and WhatsApp. Virtual teamwork skills are essential for future jobs. Practice: agree on communication tools, assign roles, meet regularly, update each other.",
+    "summary": "Virtual teams work online from different locations. Tools: Zoom, Slack, Google Docs. Challenges: time zones, tech issues. Strategies: clear communication, video, documentation.",
+    "learning_objectives": [
+      "Use virtual collaboration tools",
+      "Overcome distance challenges",
+      "Build trust online"
+    ],
+    "nigerian_examples": [
+      "Google Docs group projects",
+      "WhatsApp study groups",
+      "Zoom presentations",
+      "Trello task tracking"
+    ],
+    "created_at": "2026-06-14T06:54:26.772367+00:00"
+  }
+]

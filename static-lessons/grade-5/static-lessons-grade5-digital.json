@@ -1,0 +1,87 @@
+[
+  {
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "Spreadsheet Basics",
+    "language": "en",
+    "content": "Spreadsheet software (Excel, Google Sheets) organizes data in rows and columns. Cells are intersections of rows (numbers) and columns (letters) - example A1. Enter data: text, numbers, formulas. Formulas start with = sign: =A1+B1 adds cells, =SUM(A1:A10) adds range, =AVERAGE(B1:B20) calculates mean. Formatting: bold headers, number formats (currency, percentage), borders, colors. Charts: select data, insert chart (bar, line, pie). Nigerian uses: tracking expenses, budgeting, grading students, sales records. Spreadsheets save time and reduce errors.",
+    "summary": "Spreadsheets organize data in rows/columns. Cells (A1). Formulas start with =SUM, =AVERAGE. Charts visualize data. Excel, Google Sheets.",
+    "learning_objectives": ["Enter data into cells", "Use basic formulas", "Create simple charts"],
+    "nigerian_examples": ["School grade sheets", "Market price tracking", "Budget planning", "Business sales records"],
+    "quiz_questions": [
+      {"question": "What is a spreadsheet cell?", "options": ["Entire sheet", "Intersection of row and column (e.g., A1)", "Chart", "Formula"], "correct_answer": "Intersection of row and column (e.g., A1)", "explanation": "Cells are individual data entry points."},
+      {"question": "What symbol starts a formula?", "options": ["+", "=", "*", "/"], "correct_answer": "=", "explanation": "Formulas begin with = sign."},
+      {"question": "What does =SUM(A1:A10) do?", "options": ["Finds average", "Adds all values in A1 to A10", "Counts cells", "Finds maximum"], "correct_answer": "Adds all values in A1 to A10", "explanation": "SUM calculates total."},
+      {"question": "Which chart shows trends over time?", "options": ["Pie chart", "Bar chart", "Line chart", "Scatter plot"], "correct_answer": "Line chart", "explanation": "Line charts connect data points to show change over time."},
+      {"question": "True or False: Spreadsheets can only do simple addition.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Spreadsheets can do complex calculations, statistics, and data analysis."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "Presentation Software",
+    "language": "en",
+    "content": "Presentation software (PowerPoint, Google Slides) creates slide shows for speaking. Best practices: one idea per slide, minimal text (6x6 rule - max 6 words per line, 6 lines per slide), readable fonts (sans-serif like Arial), high-contrast colors (dark text on light background), relevant images, consistent design. Use transitions and animations sparingly (don't distract). Rehearse timing. Nigerian students use presentations for class projects, reports, and debates. Include title slide, agenda, content slides, conclusion, and references. Practice speaking while presenting, not reading slides. Engage audience with questions.",
+    "summary": "Presentation software: PowerPoint, Google Slides. One idea per slide, 6x6 rule (6 words/line, 6 lines). Readable fonts, high contrast, minimal animations.",
+    "learning_objectives": ["Create effective slide presentations", "Apply design principles", "Deliver engaging presentations"],
+    "nigerian_examples": ["School project presentations", "Business pitches in Lagos", "Classroom teaching slides", "Debate presentations"],
+    "quiz_questions": [
+      {"question": "What is the 6x6 rule?", "options": ["6 slides, 6 minutes", "6 words per line, 6 lines per slide", "6 images, 6 animations", "6 fonts, 6 colors"], "correct_answer": "6 words per line, 6 lines per slide", "explanation": "Limits text to keep slides readable."},
+      {"question": "What font type is best for presentations?", "options": ["Serif (Times New Roman)", "Sans-serif (Arial)", "Script (Brush Script)", "Decorative (Comic Sans)"], "correct_answer": "Sans-serif (Arial)", "explanation": "Sans-serif fonts are easier to read on screens."},
+      {"question": "Should you read slides word-for-word?", "options": ["Yes always", "No, talk naturally and use slides as cues", "Only on first slide", "Only on last slide"], "correct_answer": "No, talk naturally and use slides as cues", "explanation": "Reading slides bores audiences. Speak naturally."},
+      {"question": "What should be on a title slide?", "options": ["Only name", "Topic, presenter name, date", "Only date", "Only images"], "correct_answer": "Topic, presenter name, date", "explanation": "Title slide introduces the presentation."},
+      {"question": "True or False: More animations make presentations better.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Too many animations are distracting. Use sparingly."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "Digital Citizenship",
+    "language": "en",
+    "content": "Digital citizenship is responsible technology use. Nine elements: digital access (equal internet opportunity), digital commerce (online buying/selling legally), digital communication (respectful messaging), digital literacy (knowing how to use tech), digital etiquette (manners online), digital law (not stealing, hacking), digital rights/responsibilities (privacy, free speech), digital health/wellness (balance screen time, ergonomics), digital security (passwords, protection). Nigerian digital citizens: protect personal information, avoid cyberbullying, respect copyright (don't download illegal movies/music), think before posting, balance online/offline life, use strong passwords.",
+    "summary": "Digital citizenship = responsible technology use. Nine elements: access, commerce, communication, literacy, etiquette, law, rights/responsibilities, health, security.",
+    "learning_objectives": ["Understand digital citizenship", "Practice online safety", "Balance screen time"],
+    "nigerian_examples": ["Using social media respectfully", "Not downloading pirated movies", "Protecting privacy on WhatsApp", "Limiting gaming time"],
+    "quiz_questions": [
+      {"question": "What is digital citizenship?", "options": ["Using computers", "Responsible technology use", "Playing video games", "Internet browsing"], "correct_answer": "Responsible technology use", "explanation": "Digital citizenship covers rights, responsibilities, and safety online."},
+      {"question": "Should you share your passwords with friends?", "options": ["Yes always", "Never share with anyone except parents", "Only best friends", "Only classmates"], "correct_answer": "Never share with anyone except parents", "explanation": "Passwords protect your accounts from unauthorized access."},
+      {"question": "What is cyberbullying?", "options": ["Online gaming", "Harassing others online", "Watching videos", "Sending emails"], "correct_answer": "Harassing others online", "explanation": "Cyberbullying includes mean messages, spreading rumors, or excluding others online."},
+      {"question": "Why respect copyright?", "options": ["Because it's fun", "Creators deserve payment/credit, it's the law", "No reason", "Only for music"], "correct_answer": "Creators deserve payment/credit, it's the law", "explanation": "Illegal downloading hurts artists and is punishable."},
+      {"question": "True or False: You can post anything online without consequences.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Posts affect your reputation, friendships, and future opportunities."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "HTML Introduction",
+    "language": "en",
+    "content": "HTML (HyperText Markup Language) is the code for webpages. Tags are instructions inside angle brackets < >. Most tags have opening <tagname> and closing </tagname>. Basic structure: <html> (entire page), <head> (metadata, title), <title> (tab name), <body> (visible content). Common tags: <h1> to <h6> (headings, h1 largest), <p> (paragraph), <img src='image.jpg'> (image), <a href='url'>link</a> (hyperlink), <ul><li>item</li></ul> (bullet list). Write HTML in any text editor, save as .html, open in browser. Nigerian students learn HTML in computer clubs to build simple webpages.",
+    "summary": "HTML = code for webpages. Tags in < > brackets. Basic structure: html, head, title, body. Common tags: h1, p, img, a, ul/li.",
+    "learning_objectives": ["Understand HTML structure", "Use common tags", "Create simple webpage"],
+    "nigerian_examples": ["School website projects", "Personal portfolio page", "Local business webpage", "Classroom assignment webpage"],
+    "quiz_questions": [
+      {"question": "What does HTML stand for?", "options": ["HyperText Markup Language", "High Tech Modern Language", "Home Tool Markup Language", "Hyper Transfer Main Language"], "correct_answer": "HyperText Markup Language", "explanation": "HTML structures web content."},
+      {"question": "What tag creates a paragraph?", "options": ["<h1>", "<p>", "<div>", "<span>"], "correct_answer": "<p>", "explanation": "<p> defines a paragraph."},
+      {"question": "What does <a> tag do?", "options": ["Adds image", "Creates link", "Makes heading", "Adds line break"], "correct_answer": "Creates link", "explanation": "<a> with href attribute creates hyperlinks."},
+      {"question": "What extension saves HTML files?", "options": [".txt", ".doc", ".html", ".pdf"], "correct_answer": ".html", "explanation": "Browsers open .html files."},
+      {"question": "True or False: HTML tags are case-sensitive.", "options": ["True", "False"], "correct_answer": "False", "explanation": "HTML tags can be uppercase or lowercase, but lowercase is standard."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "Cybersecurity",
+    "language": "en",
+    "content": "Cybersecurity protects computers, networks, and data from attack. Common threats: malware (malicious software like viruses, worms, ransomware), phishing (fake emails tricking you to share info), hacking (unauthorized access), identity theft (stealing personal info). Protection: use antivirus software (Norton, Kaspersky, free Avast), enable firewalls, update software regularly (patches security holes), use strong unique passwords, enable two-factor authentication (2FA - requires code from phone), don't click suspicious links, backup important files. Nigerian cybersecurity agencies: NITDA, Nigeria Computer Emergency Response Team (ngCERT). Report cybercrime to police.",
+    "summary": "Cybersecurity protects against threats: malware, phishing, hacking. Protection: antivirus, firewall, updates, strong passwords, 2FA. Report to ngCERT.",
+    "learning_objectives": ["Identify cyber threats", "Use security tools", "Protect personal data"],
+    "nigerian_examples": ["NITDA cybersecurity campaigns", "Bank 2FA text messages", "Antivirus on school computers", "ngCERT reporting portal"],
+    "quiz_questions": [
+      {"question": "What is malware?", "options": ["Good software", "Malicious software like viruses", "Game software", "Education software"], "correct_answer": "Malicious software like viruses", "explanation": "Malware damages or disables computers."},
+      {"question": "What is phishing?", "options": ["Fishing hobby", "Fake emails tricking you to share info", "Computer game", "Antivirus program"], "correct_answer": "Fake emails tricking you to share info", "explanation": "Phishing impersonates real companies to steal passwords or money."},
+      {"question": "What does 2FA stand for?", "options": ["Two-Factor Authentication", "Two-File Access", "Transfer-File Authorization", "Time-Frame Agreement"], "correct_answer": "Two-Factor Authentication", "explanation": "2FA requires password plus code from phone for login."},
+      {"question": "Why update software regularly?", "options": ["New features only", "Fixes security holes", "Changes design", "Fills storage"], "correct_answer": "Fixes security holes", "explanation": "Updates patch vulnerabilities that hackers exploit."},
+      {"question": "True or False: You only need cybersecurity on computers, not phones.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Phones also need protection from malware and phishing."}
+    ]
+  }
+]

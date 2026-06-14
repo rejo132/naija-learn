@@ -1,0 +1,253 @@
+[
+  {
+    "grade": 6,
+    "subject": "English Studies",
+    "topic": "Advanced Grammar",
+    "language": "en",
+    "content": "Advanced grammar includes complex structures for sophisticated writing. The subjunctive mood expresses wishes, hypotheticals, or demands contrary to fact: 'If I were president, I would reform education' (not 'If I was'). Conditional sentences have four types: Zero conditional for universal truths ('If you heat ice, it melts'), First conditional for real possibilities ('If you study, you will pass'), Second conditional for unreal present ('If I had a million naira, I would travel'), Third conditional for unreal past ('If you had studied, you would have passed'). Passive voice shifts focus from doer to receiver ('The book was written by Achebe' vs 'Achebe wrote the book'). Reported speech quotes indirectly ('He said that he was tired' vs 'He said, I am tired'). Gerunds (verbs acting as nouns - 'Swimming is exercise') versus infinitives ('To swim is exercise'). Understanding these structures elevates your writing for secondary school, exams, and beyond.",
+    "summary": "Advanced grammar: subjunctive mood (wishes, hypotheticals), four conditionals (zero, first, second, third), passive voice, reported speech, gerunds vs infinitives. Essential for secondary school and exams.",
+    "learning_objectives": [
+      "Use subjunctive mood correctly",
+      "Construct all four conditional types",
+      "Convert active to passive voice and direct to reported speech"
+    ],
+    "nigerian_examples": [
+      "Subjunctive: 'If I were Governor, I would fix our roads'",
+      "Passive voice: 'Jollof rice is cooked by my mother'",
+      "Reported speech: 'The teacher said that we should study hard'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which sentence uses correct subjunctive mood?",
+        "options": ["If I was rich", "If I were rich", "If I am rich", "If I be rich"],
+        "correct_answer": "If I were rich",
+        "explanation": "Use 'were' for all subjects in hypothetical subjunctive."
+      },
+      {
+        "question": "Which conditional expresses unreal past?",
+        "options": ["If you study, you will pass", "If you studied, you would pass", "If you had studied, you would have passed", "If you study, you pass"],
+        "correct_answer": "If you had studied, you would have passed",
+        "explanation": "Third conditional: if + past perfect, would have + past participle."
+      },
+      {
+        "question": "Convert 'Chinua Achebe wrote Things Fall Apart' to passive voice:",
+        "options": ["Things Fall Apart wrote Chinua Achebe", "Things Fall Apart was written by Chinua Achebe", "Chinua Achebe was written by Things Fall Apart", "Things Fall Apart is written by Chinua Achebe"],
+        "correct_answer": "Things Fall Apart was written by Chinua Achebe",
+        "explanation": "Passive voice: object becomes subject + 'was/were written' + 'by' + original subject."
+      },
+      {
+        "question": "What is the correct reported speech for: 'I love Lagos'",
+        "options": ["He said I love Lagos", "He said he loves Lagos", "He said he loved Lagos", "He said he is loving Lagos"],
+        "correct_answer": "He said he loved Lagos",
+        "explanation": "Reported speech shifts present tense to past tense."
+      },
+      {
+        "question": "True or False: Gerunds always end in -ing and function as nouns.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Gerunds are verb forms ending in -ing used as nouns (e.g., 'Swimming is fun')."
+      }
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "English Studies",
+    "topic": "Critical Reading",
+    "language": "en",
+    "content": "Critical reading goes beyond understanding to analyzing and evaluating text. It involves questioning the author's purpose (to inform, persuade, entertain, or sell), identifying bias (one-sided presentation), detecting logical fallacies (flawed reasoning like ad hominem - attacking person instead of argument, straw man - misrepresenting opponent's position, false dilemma - presenting only two options when more exist), evaluating evidence (facts, statistics, expert opinions, anecdotes), recognizing tone (sarcastic, serious, humorous, angry), and drawing inferences (reading between the lines). Steps: preview text, read actively (annotate, highlight), ask questions, summarize, analyze arguments, evaluate credibility, connect to prior knowledge, reflect. Critical reading is essential for research, current events (Nigerian news, political speeches), and avoiding manipulation by media or politicians.",
+    "summary": "Critical reading analyzes and evaluates text: author's purpose, bias, logical fallacies, evidence, tone, inferences. Essential for research and avoiding manipulation.",
+    "learning_objectives": [
+      "Identify author's purpose and bias",
+      "Detect logical fallacies",
+      "Evaluate evidence credibility"
+    ],
+    "nigerian_examples": [
+      "Analyzing political speeches during Nigerian elections",
+      "Evaluating news reports about economic policies",
+      "Identifying bias in product advertisements"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is an ad hominem fallacy?",
+        "options": ["Attacking the person instead of the argument", "Presenting only two options", "Misrepresenting opponent's position", "Using irrelevant authority"],
+        "correct_answer": "Attacking the person instead of the argument",
+        "explanation": "Ad hominem attacks character rather than engaging with ideas."
+      },
+      {
+        "question": "What does it mean to 'read between the lines'?",
+        "options": ["Reading upside down", "Drawing inferences not explicitly stated", "Skipping difficult words", "Reading very fast"],
+        "correct_answer": "Drawing inferences not explicitly stated",
+        "explanation": "Inferences are conclusions based on evidence and reasoning, not direct statements."
+      },
+      {
+        "question": "A political leader says: 'You either support my policy or you hate this country.' Which fallacy is this?",
+        "options": ["Ad hominem", "Straw man", "False dilemma", "Hasty generalization"],
+        "correct_answer": "False dilemma",
+        "explanation": "False dilemma presents only two extreme options when others exist."
+      },
+      {
+        "question": "Which source is most credible for scientific information?",
+        "options": ["Random blog", "Peer-reviewed journal", "Social media post", "Celebrity endorsement"],
+        "correct_answer": "Peer-reviewed journal",
+        "explanation": "Peer-reviewed journals have experts verify research before publication."
+      },
+      {
+        "question": "True or False: Critical readers accept everything at face value.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Critical readers question, analyze, and evaluate before accepting claims."
+      }
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "English Studies",
+    "topic": "Research Papers",
+    "language": "en",
+    "content": "A research paper presents original argument based on evidence from multiple sources. Structure: Title page, Abstract (summary), Introduction (hook, background, thesis statement), Literature Review (what others have said), Methodology (how you researched), Results (what you found), Discussion (what results mean), Conclusion (summary, implications, future research), References (cited sources). The writing process: choose topic (focused, arguable), develop research question, locate sources (books, journals, credible websites), evaluate sources (authority, currency, accuracy), take notes (paraphrase, quote, summarize), create outline, write draft, revise for clarity/argument/evidence, edit for grammar/punctuation, proofread. Nigerian students write research papers for WAEC/NECO exams, university applications, and academic competitions. Avoid plagiarism by citing all sources (APA, MLA, or Chicago style).",
+    "summary": "Research paper presents original argument with evidence. Structure: title, abstract, introduction, lit review, methodology, results, discussion, conclusion, references. Follow writing process: topic, research, sources, notes, outline, draft, revise, edit.",
+    "learning_objectives": [
+      "Structure a research paper correctly",
+      "Evaluate and cite sources properly",
+      "Avoid plagiarism"
+    ],
+    "nigerian_examples": [
+      "Researching 'Impact of Social Media on Nigerian Youth'",
+      "WAEC/NECO project topics",
+      "Junior secondary research competitions"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What section summarizes the entire paper?",
+        "options": ["Introduction", "Abstract", "Conclusion", "Literature Review"],
+        "correct_answer": "Abstract",
+        "explanation": "Abstract provides brief overview of purpose, methods, results, conclusions."
+      },
+      {
+        "question": "What is plagiarism?",
+        "options": ["Citing sources", "Using someone else's work without credit", "Paraphrasing correctly", "Quoting with citations"],
+        "correct_answer": "Using someone else's work without credit",
+        "explanation": "Plagiarism is academic theft - always credit original authors."
+      },
+      {
+        "question": "What does APA stand for?",
+        "options": ["American Publishing Association", "American Psychological Association", "Academic Paper Association", "Author Publication Authority"],
+        "correct_answer": "American Psychological Association",
+        "explanation": "APA citation style is common in social sciences."
+      },
+      {
+        "question": "Where should you list all sources cited in your paper?",
+        "options": ["Introduction", "Abstract", "References/Works Cited", "Conclusion"],
+        "correct_answer": "References/Works Cited",
+        "explanation": "References section lists every source mentioned in the paper."
+      },
+      {
+        "question": "True or False: A research paper must have a clear thesis statement.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Thesis statement presents the paper's main argument or claim."
+      }
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "English Studies",
+    "topic": "Poetry Analysis",
+    "language": "en",
+    "content": "Poetry analysis examines how poets use language to create meaning, emotion, and beauty. Key elements: Speaker (persona speaking - not necessarily the poet), Tone (attitude: joyful, sorrowful, sarcastic, reverent), Theme (central idea or message), Imagery (vivid sensory descriptions: visual, auditory, olfactory, tactile, gustatory), Figurative language: Simile (comparison using 'like' or 'as' - 'My love is like a red rose'), Metaphor (direct comparison - 'The world is a stage'), Personification (giving human qualities to objects - 'The wind whispered'), Hyperbole (exaggeration - 'I've told you a million times'), Symbolism (object representing idea - 'eagle' = freedom, 'chains' = oppression). Sound devices: Rhyme (end rhymes, internal rhymes), Rhythm (meter - pattern of stressed/unstressed syllables), Alliteration (repetition of initial consonant sounds - 'Peter picked pickled peppers'), Assonance (repeated vowel sounds), Consonance (repeated consonant sounds), Onomatopoeia (words that sound like their meaning - 'buzz, hiss, boom'). Form: Sonnet (14 lines), Haiku (3 lines, 5-7-5 syllables), Free verse (no set meter/rhyme). Analyze Nigerian poets: Chinua Achebe, Niyi Osundare, Christopher Okigbo, Gabriel Okara. Poetry analysis deepens language appreciation.",
+    "summary": "Poetry analysis examines speaker, tone, theme, imagery, figurative language (simile, metaphor, personification, hyperbole, symbolism), sound devices (rhyme, rhythm, alliteration, onomatopoeia), and form.",
+    "learning_objectives": [
+      "Identify poetic devices",
+      "Analyze meaning and effect",
+      "Appreciate Nigerian poets"
+    ],
+    "nigerian_examples": [
+      "Chinua Achebe's 'Benin Road'",
+      "Niyi Osundare's 'The Eye of the Earth'",
+      "Gabriel Okara's 'Piano and Drums'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a metaphor?",
+        "options": ["Comparison using like or as", "Direct comparison without like/as", "Giving human qualities to objects", "Exaggeration"],
+        "correct_answer": "Direct comparison without like/as",
+        "explanation": "Metaphor says something IS something else ('Time is a thief')."
+      },
+      {
+        "question": "'The Nigerian flag is a symbol of unity' uses which device?",
+        "options": ["Simile", "Personification", "Symbolism", "Hyperbole"],
+        "correct_answer": "Symbolism",
+        "explanation": "The flag represents abstract ideas like unity and peace."
+      },
+      {
+        "question": "What is alliteration?",
+        "options": ["Repeated vowel sounds", "Repeated consonant sounds at word beginnings", "Words that sound like their meaning", "Repeated end sounds"],
+        "correct_answer": "Repeated consonant sounds at word beginnings",
+        "explanation": "Alliteration example: 'She sells sea shells' repeats 's' sound."
+      },
+      {
+        "question": "Which Nigerian poet wrote 'Piano and Drums'?",
+        "options": ["Chinua Achebe", "Niyi Osundare", "Gabriel Okara", "Christopher Okigbo"],
+        "correct_answer": "Gabriel Okara",
+        "explanation": "Okara's poem contrasts Western and African culture."
+      },
+      {
+        "question": "True or False: The speaker in a poem is always the poet.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Poets often create fictional personas as speakers."
+      }
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "English Studies",
+    "topic": "Drama and Playwriting",
+    "language": "en",
+    "content": "Drama is literature meant to be performed. Key elements: Plot (sequence of events: exposition, rising action, climax, falling action, resolution), Character (protagonist - main character, antagonist - opposes protagonist, round/complex characters, flat/simple characters), Dialogue (conversation between characters), Monologue (long speech by one character to others), Soliloquy (character speaks thoughts aloud alone), Stage directions (instructions for movement, tone, setting), Conflict (struggle: person vs person, person vs self, person vs society, person vs nature, person vs technology), Theme (central idea). Types of drama: Tragedy (serious, protagonist falls due to flaw), Comedy (humorous, happy ending), Tragicomedy (blends both). Nigerian drama: Wole Soyinka (Nobel laureate - 'The Lion and the Jewel', 'Death and the King's Horseman'), Ola Rotimi ('The Gods Are Not to Blame'), Femi Osofisan ('Morountodun'), Zulu Sofola. Playwriting steps: brainstorm idea, develop characters, outline plot, write dialogue, revise, stage read (perform aloud). Drama explores human experience, social issues, and cultural identity.",
+    "summary": "Drama is performed literature. Elements: plot, character, dialogue, monologue, soliloquy, stage directions, conflict, theme. Types: tragedy, comedy, tragicomedy. Nigerian playwrights: Soyinka, Rotimi, Osofisan, Sofola.",
+    "learning_objectives": [
+      "Identify dramatic elements",
+      "Analyze plays",
+      "Write short scenes"
+    ],
+    "nigerian_examples": [
+      "Wole Soyinka's 'The Lion and the Jewel'",
+      "Ola Rotimi's 'The Gods Are Not to Blame'",
+      "School drama competitions",
+      "Nollywood scripts"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is the climax of a play?",
+        "options": ["Beginning", "Turning point of highest tension", "Ending", "Introduction of characters"],
+        "correct_answer": "Turning point of highest tension",
+        "explanation": "Climax is the most intense moment where conflict peaks."
+      },
+      {
+        "question": "Which Nigerian playwright won the Nobel Prize?",
+        "options": ["Ola Rotimi", "Femi Osofisan", "Wole Soyinka", "Zulu Sofola"],
+        "correct_answer": "Wole Soyinka",
+        "explanation": "Soyinka won the Nobel Prize in Literature in 1986."
+      },
+      {
+        "question": "What is a soliloquy?",
+        "options": ["Conversation between two characters", "Long speech to other characters", "Character speaking thoughts aloud alone", "Stage direction"],
+        "correct_answer": "Character speaking thoughts aloud alone",
+        "explanation": "Soliloquy reveals inner thoughts directly to audience."
+      },
+      {
+        "question": "What type of drama has a happy ending?",
+        "options": ["Tragedy", "Comedy", "Tragicomedy", "Melodrama"],
+        "correct_answer": "Comedy",
+        "explanation": "Comedy typically ends with marriage, reunion, or celebration."
+      },
+      {
+        "question": "True or False: Stage directions are never performed aloud.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Stage directions are instructions for actors and directors, not spoken dialogue."
+      }
+    ]
+  }
+]

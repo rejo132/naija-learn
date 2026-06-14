@@ -1,0 +1,106 @@
+[
+  {
+    "grade": 6,
+    "subject": "Physical & Health Education",
+    "topic": "Sports Medicine",
+    "language": "en",
+    "content": "Sports medicine prevents, diagnoses, and treats sports injuries. Professionals: athletic trainers, physical therapists, sports doctors, massage therapists. Common injuries: sprains (ligaments stretched or torn), strains (muscles or tendons pulled), fractures (broken bones), concussions (brain injury from impact), shin splints (pain in lower leg), ACL tear (knee ligament). Treatment: RICE (Rest, Ice, Compression, Elevation) for acute injuries, physical therapy (exercises to restore function), surgery for severe cases, rehabilitation (gradual return to activity). Prevention: proper warm-up, cool-down, strength training, flexibility, proper equipment (shin guards, helmets, mouth guards), technique training, adequate rest, hydration. Nigerian sports medicine: football clubs have medical teams, Olympic athletes receive care, National Sports Medicine Center in Lagos. Student athletes: listen to your body, report pain, follow rehab protocols, don't rush return.",
+    "summary": "Sports medicine prevents/treats injuries. Common: sprains, strains, fractures, concussions. RICE treatment. Prevention: warm-up, equipment, proper technique, rest.",
+    "learning_objectives": [
+      "Identify common sports injuries",
+      "Apply RICE treatment",
+      "Prevent injuries through warm-up and equipment"
+    ],
+    "nigerian_examples": [
+      "Football club medical teams",
+      "National Sports Medicine Center in Lagos",
+      "School sports first aid",
+      "Olympic athlete care"
+    ],
+    "quiz_questions": [
+      {"question": "What does RICE stand for?", "options": ["Run, Ice, Compress, Exercise", "Rest, Ice, Compression, Elevation", "Race, Intensity, Core, Endurance", "Rehab, Injury, Care, Evaluation"], "correct_answer": "Rest, Ice, Compression, Elevation", "explanation": "RICE reduces swelling and pain from acute injuries."},
+      {"question": "What is a concussion?", "options": ["Broken bone", "Brain injury from impact", "Pulled muscle", "Sprained ankle"], "correct_answer": "Brain injury from impact", "explanation": "Concussions require medical evaluation and rest."},
+      {"question": "How can you prevent sports injuries?", "options": ["Skip warm-up", "Proper warm-up, equipment, and technique", "Play when injured", "Ignore pain"], "correct_answer": "Proper warm-up, equipment, and technique", "explanation": "Prevention reduces injury risk."},
+      {"question": "What is a sprain?", "options": ["Pulled muscle", "Stretched or torn ligament", "Broken bone", "Head injury"], "correct_answer": "Stretched or torn ligament", "explanation": "Sprains affect the bands connecting bones."},
+      {"question": "True or False: Playing through pain is always good.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Pain is a warning; ignoring it can worsen injury."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Physical & Health Education",
+    "topic": "Fitness Planning",
+    "language": "en",
+    "content": "Fitness planning creates structured exercise program to achieve health goals. Components: cardiovascular endurance (heart and lungs: running, swimming, cycling), muscular strength (force muscles can produce: push-ups, squats, weight lifting), muscular endurance (how long muscles can work: planks, sit-ups, lunges), flexibility (range of motion: stretching, yoga), body composition (ratio of fat to muscle). FITT principle: Frequency (how often - 3-5 times per week), Intensity (how hard - moderate to vigorous), Time (duration - 30-60 minutes per session), Type (activity variety). Sample weekly plan: Monday cardio, Tuesday strength, Wednesday rest, Thursday cardio, Friday strength, Saturday flexibility, Sunday active rest. Set SMART fitness goals (Specific, Measurable, Achievable, Relevant, Time-bound). Track progress with journal or app. Nigerian youth fitness: football, basketball, dance, walking, home workouts. Always consult healthcare before starting new program.",
+    "summary": "Fitness planning: components (cardio, strength, endurance, flexibility). FITT: Frequency, Intensity, Time, Type. Set SMART goals. Track progress.",
+    "learning_objectives": [
+      "Design fitness plan",
+      "Apply FITT principle",
+      "Set SMART fitness goals"
+    ],
+    "nigerian_examples": [
+      "Weekly sports schedule in school",
+      "Home workout videos",
+      "Dance fitness classes (afrobeats)",
+      "Morning runs before school"
+    ],
+    "quiz_questions": [
+      {"question": "What does FITT stand for?", "options": ["Fast, Intense, Tough, Training", "Frequency, Intensity, Time, Type", "Flexible, Individual, Targeted, Timed", "Fitness, Interval, Track, Test"], "correct_answer": "Frequency, Intensity, Time, Type", "explanation": "FITT variables adjustable for fitness progress."},
+      {"question": "What is cardiovascular endurance?", "options": ["Muscle size", "Heart and lung efficiency", "Flexibility", "Speed"], "correct_answer": "Heart and lung efficiency", "explanation": "Cardio improves stamina for prolonged activity."},
+      {"question": "How many times per week should you exercise?", "options": ["Once", "3-5 times", "7 days no rest", "Once per month"], "correct_answer": "3-5 times", "explanation": "Regular exercise, with rest days, is most effective."},
+      {"question": "What is a SMART goal?", "options": ["Simple goal", "Specific, Measurable, Achievable, Relevant, Time-bound", "Same goal every time", "Short goal"], "correct_answer": "Specific, Measurable, Achievable, Relevant, Time-bound", "explanation": "SMART goals are clear and trackable."},
+      {"question": "True or False: Rest days are not important.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Rest allows muscles to recover and prevents injury."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Physical & Health Education",
+    "topic": "Mental Health",
+    "language": "en",
+    "content": "Mental health includes emotional, psychological, and social well-being. It affects thinking, feeling, acting, handling stress, relating to others, and making choices. Common mental health conditions: anxiety disorders (excessive worry, panic), depression (persistent sadness, loss of interest), eating disorders, ADHD (attention difficulty, hyperactivity), bipolar disorder, schizophrenia. Warning signs: mood changes (irritability, sadness), social withdrawal, extreme feelings (fear, guilt, hopelessness), sleep/appetite changes, substance use, thoughts of self-harm. Help resources: talk to trusted adult (parent, teacher, counselor), call helplines (Nigeria's NIMR mental health line). Self-care: sleep (8-10 hours), exercise (reduces anxiety/depression), healthy eating, stress management (deep breathing, mindfulness, hobbies), connection (talk to friends/family), limit screen time, help others. Nigerian mental health: Nigerian Mental Health Association, Mentally Aware Nigeria Initiative, school counselors. Reduce stigma by speaking openly, educating others. Mental health equals physical health.",
+    "summary": "Mental health = emotional, psychological, social well-being. Conditions: anxiety, depression, ADHD. Warning signs: mood changes, withdrawal. Help: trusted adult, helplines, self-care.",
+    "learning_objectives": [
+      "Understand mental health",
+      "Recognize warning signs",
+      "Seek help appropriately"
+    ],
+    "nigerian_examples": [
+      "School counselors",
+      "Nigerian Mental Health Association",
+      "Mentally Aware Nigeria Initiative",
+      "Youth mental health first aid"
+    ],
+    "quiz_questions": [
+      {"question": "What is mental health?", "options": ["No emotions", "Emotional, psychological, social well-being", "Only brain function", "Only happiness"], "correct_answer": "Emotional, psychological, social well-being", "explanation": "Mental health affects thinking, feeling, acting, and relationships."},
+      {"question": "What is a warning sign of depression?", "options": ["Excitement", "Persistent sadness, loss of interest", "Increased energy", "Better sleep"], "correct_answer": "Persistent sadness, loss of interest", "explanation": "Depression involves lasting negative changes."},
+      {"question": "Who can you talk to about mental health?", "options": ["No one", "Trusted adult (parent, teacher, counselor)", "Only strangers", "Only online friends"], "correct_answer": "Trusted adult (parent, teacher, counselor)", "explanation": "Trusted adults can help find resources."},
+      {"question": "What is a mental health self-care practice?", "options": ["Isolation", "Sleep, exercise, stress management, connection", "Excessive screen time", "Avoiding help"], "correct_answer": "Sleep, exercise, stress management, connection", "explanation": "Self-care supports mental well-being."},
+      {"question": "True or False: Mental health problems are rare.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Mental health conditions are common and treatable."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Physical & Health Education",
+    "topic": "Substance Abuse Prevention",
+    "language": "en",
+    "content": "Substance abuse prevention stops harmful use of drugs, alcohol, and tobacco. Substances: illegal drugs (marijuana, cocaine, heroin, tramadol), legal but dangerous when misused (alcohol, cigarettes/cigarettes, energy drinks, prescription drugs). Prevention at individual level: refusal skills ('No, thank you'), stress management (exercise, hobbies, talking), goal setting (focus on future), healthy friendships, self-esteem, education (know risks). School level: drug education in curriculum, counseling services, peer mentoring, random testing, positive alternatives (sports, clubs, arts). Community level: awareness campaigns, treatment access, law enforcement (NDLEA), support groups (Alcoholics Anonymous), youth programs. Nigerian context: codeine syrup abuse (former crisis), cannabis (Indian hemp) use, tramadol misuse, alcohol abuse. Prevention reduces addiction, accidents, crime, health costs. Students can be prevention leaders: educate peers, model healthy choices, report concerns to adults.",
+    "summary": "Substance abuse prevention at individual, school, community levels. Refusal skills, education, treatment, enforcement. Nigerian issues: codeine, cannabis, tramadol, alcohol.",
+    "learning_objectives": [
+      "Develop refusal skills",
+      "Identify prevention strategies",
+      "Lead prevention efforts"
+    ],
+    "nigerian_examples": [
+      "NDLEA drug busts",
+      "School anti-drug clubs",
+      "Peer education programs",
+      "Rehabilitation centers"
+    ],
+    "quiz_questions": [
+      {"question": "What is a refusal skill?", "options": ["Saying yes", "Saying 'No, thank you'", "Ignoring", "Running away"], "correct_answer": "Saying 'No, thank you'", "explanation": "Polite, firm refusal works well without conflict."},
+      {"question": "Which substance caused a Nigerian health crisis?", "options": ["Vitamins", "Codeine syrup", "Paracetamol", "Orange juice"], "correct_answer": "Codeine syrup", "explanation": "Codeine cough syrup was widely abused, leading to government crackdown."},
+      {"question": "How can schools prevent substance abuse?", "options": ["Ignore it", "Drug education, counseling, positive alternatives", "Punish only", "Encourage use"], "correct_answer": "Drug education, counseling, positive alternatives", "explanation": "Multiple strategies work together."},
+      {"question": "What does NDLEA do?", "options": ["Regulate drugs", "Fight drug trafficking and abuse", "Sell drugs", "Promote drug use"], "correct_answer": "Fight drug trafficking and abuse", "explanation": "National Drug Law Enforcement Agency enforces drug laws."},
+      {"question": "True or False: Alcohol is safe for children.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Alcohol damages developing brains and is illegal for minors."}
+    ]
+  }
+]

@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 4,
+    "subject": "Creativity",
+    "topic": "Innovation Process",
+    "language": "en",
+    "content": "The innovation process is a step-by-step way to turn ideas into real solutions. Steps: Empathize (understand the problem from users' perspective), Define (clearly state the problem), Ideate (brainstorm many solutions), Prototype (create a simple version), Test (try it out with real users), Iterate (improve based on feedback). This is called Design Thinking. Nigerian innovators use this process to solve local problems: affordable solar panels, mobile money, cassava processing machines. You can use it: design a better pencil holder, organize your room, or plan a school event. Innovation is creativity with purpose.",
+    "summary": "Innovation process: Empathize, Define, Ideate, Prototype, Test, Iterate. Design Thinking. Turn ideas into real solutions.",
+    "learning_objectives": [
+      "Learn design thinking steps",
+      "Apply innovation process to problems",
+      "Create and test prototypes"
+    ],
+    "nigerian_examples": [
+      "Designing affordable solar lamps for rural areas",
+      "Creating mobile apps for farmers",
+      "Improving cassava processing machines"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is the first step in the innovation process?",
+        "options": ["Prototype", "Empathize", "Test", "Define"],
+        "correct_answer": "Empathize",
+        "explanation": "Understand users' needs before designing solutions."
+      },
+      {
+        "question": "What does 'iterate' mean in innovation?",
+        "options": ["Stop working", "Improve based on feedback", "Start over completely", "Ignore feedback"],
+        "correct_answer": "Improve based on feedback",
+        "explanation": "Iteration means making changes to improve the design."
+      },
+      {
+        "question": "What is a prototype?",
+        "options": ["Final product", "Simple first version to test", "Expensive model", "Drawing only"],
+        "correct_answer": "Simple first version to test",
+        "explanation": "Prototypes help you learn what works before building final version."
+      },
+      {
+        "question": "What is the ideate step?",
+        "options": ["Build something", "Brainstorm many solutions", "Test with users", "Define problem"],
+        "correct_answer": "Brainstorm many solutions",
+        "explanation": "Ideate means generating creative ideas without judgment."
+      },
+      {
+        "question": "True or False: Innovation is only for adults with degrees.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Anyone can innovate. Many child inventors have created useful products."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Creativity",
+    "topic": "Design Thinking",
+    "language": "en",
+    "content": "Design thinking is a human-centered approach to creative problem-solving. Five phases: Empathize (understand users), Define (frame the problem), Ideate (generate ideas), Prototype (build simple versions), Test (get feedback). Design thinking is used by companies like Apple, Google, and Nigerian startups to create products people love. Example: designing a school bag - empathize with students (heavy bags), define problem (back pain), ideate (wheels? straps?), prototype (make model), test (ask students). Design thinking puts people first. It works for any problem, not just products.",
+    "summary": "Design thinking: Empathize, Define, Ideate, Prototype, Test. Human-centered problem solving. Used by Apple, Google, Nigerian startups.",
+    "learning_objectives": [
+      "Understand five design thinking phases",
+      "Apply design thinking to everyday problems",
+      "Create user-centered solutions"
+    ],
+    "nigerian_examples": [
+      "Nigerian fintech apps designed for user needs",
+      "School furniture designed for student comfort",
+      "Market solutions for small traders"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does 'human-centered' mean in design thinking?",
+        "options": ["Design for yourself", "Design for real user needs", "Design for animals", "Design for profit only"],
+        "correct_answer": "Design for real user needs",
+        "explanation": "Solutions should solve actual problems people have."
+      },
+      {
+        "question": "Which phase comes after Ideate?",
+        "options": ["Empathize", "Define", "Prototype", "Test"],
+        "correct_answer": "Prototype",
+        "explanation": "After generating ideas, build simple versions to test."
+      },
+      {
+        "question": "What do you do in the Test phase?",
+        "options": ["Sell product", "Get user feedback", "Start over", "Celebrate"],
+        "correct_answer": "Get user feedback",
+        "explanation": "Testing reveals what works and what needs improvement."
+      },
+      {
+        "question": "Why is Design Thinking called 'iterative'?",
+        "options": ["It's a straight line", "You repeat phases based on feedback", "You never finish", "It's random"],
+        "correct_answer": "You repeat phases based on feedback",
+        "explanation": "Feedback leads to refining and improving through repetition."
+      },
+      {
+        "question": "True or False: Design thinking only works for technology products.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Design thinking works for services, spaces, systems, and everyday problems too."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Creativity",
+    "topic": "Creative Risk Taking",
+    "language": "en",
+    "content": "Creative risk taking means trying new ideas even when you might fail. Every great inventor failed many times. Thomas Edison failed 1,000 times before inventing the light bulb. Creative risks: trying a new art style, sharing an unusual idea in class, starting a new hobby, writing a different type of story. In Nigerian culture, successful entrepreneurs took risks. Benefits: learn from failure, discover new talents, build courage, achieve breakthroughs. To take creative risks: start small, prepare as much as possible, learn from what happens, try again. Fear of failure kills creativity. Courage fuels it.",
+    "summary": "Creative risk taking = try new ideas despite possible failure. Learn from failure. Start small, prepare, try again. Fear kills creativity.",
+    "learning_objectives": [
+      "Overcome fear of failure",
+      "Take calculated creative risks",
+      "Learn from mistakes"
+    ],
+    "nigerian_examples": [
+      "Nigerian tech founders who started small",
+      "Artists trying new styles",
+      "Students sharing unusual ideas in class"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is creative risk taking?",
+        "options": ["Being careless", "Trying new ideas despite possible failure", "Never trying anything new", "Only safe ideas"],
+        "correct_answer": "Trying new ideas despite possible failure",
+        "explanation": "Great achievements often require risking failure."
+      },
+      {
+        "question": "How many times did Edison fail before inventing the light bulb?",
+        "options": ["10", "100", "1,000", "Never"],
+        "correct_answer": "1,000",
+        "explanation": "Edison viewed failures as learning, not defeats."
+      },
+      {
+        "question": "What kills creativity?",
+        "options": ["Failure", "Learning", "Fear of failure", "Practice"],
+        "correct_answer": "Fear of failure",
+        "explanation": "Fear stops people from trying new things."
+      },
+      {
+        "question": "How can you take creative risks?",
+        "options": ["Jump without thinking", "Start small, prepare, learn, try again", "Never try", "Only safe choices"],
+        "correct_answer": "Start small, prepare, learn, try again",
+        "explanation": "Calculated risks balance courage with preparation."
+      },
+      {
+        "question": "True or False: Successful people never fail.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Successful people fail often but learn from failures."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Creativity",
+    "topic": "Artistic Expression",
+    "language": "en",
+    "content": "Artistic expression is using art to express feelings, ideas, and experiences. Forms: drawing, painting, sculpture, photography, dance, music, poetry, creative writing, drama. No wrong way to express yourself. Nigerian artists use traditional and modern forms: Adire fabric, bronze sculpture, Afrobeat music, Nollywood films, contemporary painting. Artistic expression benefits: releases emotions, builds confidence, communicates without words, preserves culture. Try different forms: write a poem about your day, draw how you feel, make up a dance, create a collage from magazines. Art doesn't have to be perfect - it has to be yours.",
+    "summary": "Artistic expression = using art to express feelings and ideas. Forms: drawing, music, dance, poetry, drama. No wrong way. Art preserves culture.",
+    "learning_objectives": [
+      "Explore artistic forms",
+      "Express emotions through art",
+      "Appreciate Nigerian art"
+    ],
+    "nigerian_examples": [
+      "Adire fabric as artistic expression",
+      "Afrobeat music conveying messages",
+      "Nollywood films telling Nigerian stories"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is artistic expression?",
+        "options": ["Copying others' art", "Using art to express feelings and ideas", "Only professional art", "Only painting"],
+        "correct_answer": "Using art to express feelings and ideas",
+        "explanation": "Art is a language for emotions and experiences."
+      },
+      {
+        "question": "Which is a form of artistic expression?",
+        "options": ["Math homework", "Dance", "Science experiment", "History report"],
+        "correct_answer": "Dance",
+        "explanation": "Dance expresses emotions through movement."
+      },
+      {
+        "question": "Does art need to be perfect?",
+        "options": ["Yes", "No, it needs to be yours", "Only for museums", "Only for professionals"],
+        "correct_answer": "No, it needs to be yours",
+        "explanation": "Personal expression matters more than technical perfection."
+      },
+      {
+        "question": "What Nigerian art form expresses cultural identity?",
+        "options": ["Adire fabric", "Sushi", "Ballet", "Opera"],
+        "correct_answer": "Adire fabric",
+        "explanation": "Adire patterns carry cultural meanings and stories."
+      },
+      {
+        "question": "True or False: Artistic expression has rules you must follow.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Art has techniques but no fixed rules for expression."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Creativity",
+    "topic": "Inventive Problem Solving",
+    "language": "en",
+    "content": "Inventive problem solving means finding new solutions to problems. Use SCAMPER technique: Substitute (what can replace?), Combine (combine with something else?), Adapt (change for new use?), Modify (change size, shape, color?), Put to other use (new application?), Eliminate (remove something?), Reverse (opposite direction?). Example: problem - carrying heavy water. Solutions: combine wheel with bucket (wheelbarrow), adapt jerrycan with tap, modify shape for rolling. Nigerian inventors use SCAMPER: converting abandoned oil drums into stoves, turning plastic bottles into building materials. Be curious. Ask 'What if?'",
+    "summary": "Inventive problem solving = new solutions. SCAMPER: Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse. Ask 'What if?'",
+    "learning_objectives": [
+      "Use SCAMPER technique",
+      "Generate inventive solutions",
+      "Apply to everyday problems"
+    ],
+    "nigerian_examples": [
+      "Oil drums converted to stoves",
+      "Plastic bottles as building bricks",
+      "Old tires turned into sandals"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does SCAMPER stand for?",
+        "options": ["Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse", "Stop, Create, Ask, Make, Plan, Execute, Review", "Start, Change, Adjust, Move, Process, End, Repeat", "Simple, Creative, Artistic, Musical, Playful, Expressive, Rhythmic"],
+        "correct_answer": "Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse",
+        "explanation": "SCAMPER is a creativity tool for generating new ideas."
+      },
+      {
+        "question": "What question does 'Substitute' ask?",
+        "options": ["What can I add?", "What can replace this?", "What can I remove?", "What can I reverse?"],
+        "correct_answer": "What can replace this?",
+        "explanation": "Substitution finds alternative materials or processes."
+      },
+      {
+        "question": "What Nigerian invention uses 'Put to other use'?",
+        "options": ["Oil drums as stoves", "Regular pot", "New car", "Factory machine"],
+        "correct_answer": "Oil drums as stoves",
+        "explanation": "Waste oil drums found new life as cooking stoves."
+      },
+      {
+        "question": "What does 'Combine' mean in SCAMPER?",
+        "options": ["Take apart", "Put together with something else", "Make smaller", "Change color"],
+        "correct_answer": "Put together with something else",
+        "explanation": "Combining features can create better solutions."
+      },
+      {
+        "question": "True or False: Inventive problem solving requires expensive tools.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Creativity and curiosity matter more than tools or money."
+      }
+    ]
+  }
+]

@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 4,
+    "subject": "Confidence Building",
+    "topic": "Vocal Projection",
+    "language": "en",
+    "content": "Vocal projection is speaking loudly and clearly enough to be heard without shouting. Good posture helps: stand straight, shoulders back, chin up. Breathe from your diaphragm (belly) not your chest. Open your mouth fully when speaking. Project your voice to the back of the room, not just the front. Practice with tongue twisters: 'She sells sea shells by the sea shore.' Record yourself and listen. Vocal projection shows confidence and ensures your message reaches everyone. In Nigerian classrooms, students with good projection can answer questions without repeating.",
+    "summary": "Vocal projection = speak clearly and loudly enough to be heard. Good posture, belly breathing, open mouth, practice tongue twisters. Shows confidence.",
+    "learning_objectives": [
+      "Practice diaphragmatic breathing",
+      "Speak with appropriate volume",
+      "Articulate words clearly"
+    ],
+    "nigerian_examples": [
+      "Presenting a class project without a microphone",
+      "Leading morning assembly announcements",
+      "Speaking at a school debate"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is vocal projection?",
+        "options": ["Whispering", "Shouting", "Speaking clearly and loudly enough to be heard", "Mumbling"],
+        "correct_answer": "Speaking clearly and loudly enough to be heard",
+        "explanation": "Projection ensures your message reaches everyone without straining."
+      },
+      {
+        "question": "Where should you breathe from for good projection?",
+        "options": ["Chest", "Diaphragm (belly)", "Shoulders", "Throat"],
+        "correct_answer": "Diaphragm (belly)",
+        "explanation": "Diaphragmatic breathing gives you more breath support and volume."
+      },
+      {
+        "question": "What posture helps with vocal projection?",
+        "options": ["Slouching", "Standing straight with shoulders back", "Leaning on a desk", "Looking at the floor"],
+        "correct_answer": "Standing straight with shoulders back",
+        "explanation": "Good posture opens your airways and improves voice projection."
+      },
+      {
+        "question": "What is a tongue twister?",
+        "options": ["A dancing move", "A phrase hard to say quickly", "A song", "A game"],
+        "correct_answer": "A phrase hard to say quickly",
+        "explanation": "Tongue twisters improve articulation and clarity."
+      },
+      {
+        "question": "True or False: Shouting is the same as good vocal projection.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Projection is clear, controlled loudness. Shouting strains your voice."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Confidence Building",
+    "topic": "Eye Contact",
+    "language": "en",
+    "content": "Eye contact is looking at someone's eyes when speaking or listening. It shows confidence, honesty, and respect. When speaking to a group, scan the room looking at different people. Don't stare at one person too long (3-5 seconds, then move). If direct eye contact feels intense, look at the bridge of their nose or between their eyes. In Nigerian culture, avoiding eye contact with an elder can be respectful in some contexts, but in presentations, eye contact with the audience is expected. Practice eye contact with family and friends. Good eye contact makes you more persuasive and trustworthy.",
+    "summary": "Eye contact = looking at eyes while speaking/listening. Shows confidence, honesty, respect. Scan the room, 3-5 seconds per person. Practice with family.",
+    "learning_objectives": [
+      "Understand importance of eye contact",
+      "Practice appropriate eye contact",
+      "Adapt to cultural contexts"
+    ],
+    "nigerian_examples": [
+      "Looking at your teacher when answering a question",
+      "Scanning the audience during a presentation",
+      "Respecting elders by moderating eye contact"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does eye contact communicate?",
+        "options": ["Fear", "Confidence and honesty", "Anger", "Boredom"],
+        "correct_answer": "Confidence and honesty",
+        "explanation": "People who make eye contact appear more trustworthy and confident."
+      },
+      {
+        "question": "How long should you look at one person before moving on?",
+        "options": ["30 seconds", "1 minute", "3-5 seconds", "The whole presentation"],
+        "correct_answer": "3-5 seconds",
+        "explanation": "Brief eye contact feels natural; too long feels intense."
+      },
+      {
+        "question": "What can you do if direct eye contact feels hard?",
+        "options": ["Look at the floor", "Look at the bridge of the nose", "Close your eyes", "Look away completely"],
+        "correct_answer": "Look at the bridge of the nose",
+        "explanation": "Looking near the eyes gives the same effect without direct contact."
+      },
+      {
+        "question": "In some Nigerian contexts, avoiding eye contact with whom shows respect?",
+        "options": ["Children", "Elders", "Friends", "Classmates"],
+        "correct_answer": "Elders",
+        "explanation": "In some Nigerian cultures, direct eye contact with elders can be seen as challenging."
+      },
+      {
+        "question": "True or False: Eye contact is only important when speaking, not when listening.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Eye contact when listening shows you are paying attention and engaged."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Confidence Building",
+    "topic": "Strengths Identification",
+    "language": "en",
+    "content": "Strengths are things you are good at. Everyone has unique strengths. Types of strengths: academic (math, reading, science), creative (drawing, music, writing), social (making friends, helping others, leading), physical (sports, dancing), personal (honesty, patience, kindness). Identify your strengths by: thinking about what you enjoy, asking trusted adults or friends what they notice, trying new activities, reflecting on past successes. Knowing your strengths builds confidence and helps you choose activities that fit you. In Nigerian culture, community members often recognize each other's strengths. Celebrate your strengths and use them to help others.",
+    "summary": "Strengths = things you are good at. Types: academic, creative, social, physical, personal. Ask others for feedback. Knowing strengths builds confidence.",
+    "learning_objectives": [
+      "Identify personal strengths",
+      "Understand different strength categories",
+      "Use strengths to build confidence"
+    ],
+    "nigerian_examples": [
+      "Discovering you are good at settling arguments between friends",
+      "Realizing you have a talent for drawing African patterns",
+      "Being known as reliable and honest in your community"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are strengths?",
+        "options": ["Weaknesses", "Things you are good at", "Things you dislike", "Mistakes"],
+        "correct_answer": "Things you are good at",
+        "explanation": "Strengths are your natural talents and learned skills."
+      },
+      {
+        "question": "Which is a personal strength?",
+        "options": ["Honesty", "Math skills", "Drawing", "Sports"],
+        "correct_answer": "Honesty",
+        "explanation": "Personal strengths relate to character, like honesty, kindness, and patience."
+      },
+      {
+        "question": "How can you identify your strengths?",
+        "options": ["Only guess", "Ask trusted adults for feedback", "Ignore all feedback", "Never try new things"],
+        "correct_answer": "Ask trusted adults for feedback",
+        "explanation": "Others often see strengths we miss in ourselves."
+      },
+      {
+        "question": "Why is knowing your strengths important?",
+        "options": ["To brag", "To build confidence and choose fitting activities", "To hide them", "To ignore them"],
+        "correct_answer": "To build confidence and choose fitting activities",
+        "explanation": "Knowing your strengths helps you pursue activities you'll enjoy and succeed at."
+      },
+      {
+        "question": "True or False: Everyone has unique strengths.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Every person has different talents and abilities."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Confidence Building",
+    "topic": "Emotion Management",
+    "language": "en",
+    "content": "Emotion management means understanding and controlling your feelings appropriately. Steps: Recognize what you are feeling (happy, sad, angry, scared, excited, frustrated). Name the emotion: 'I feel angry because...' Pause before reacting - take deep breaths. Choose a healthy response: talk to someone, write in a journal, go for a walk, count to ten, squeeze a stress ball. Avoid unhealthy responses: yelling, hitting, breaking things, withdrawing. All emotions are okay - what matters is how you express them. Practice emotion management daily. In Nigerian families, children learn to manage emotions through proverbs, stories, and family guidance.",
+    "summary": "Emotion management = understand and control feelings. Steps: recognize, name, pause, choose healthy response. All emotions are okay, expression matters.",
+    "learning_objectives": [
+      "Identify different emotions",
+      "Learn calming techniques",
+      "Respond appropriately to strong feelings"
+    ],
+    "nigerian_examples": [
+      "Taking deep breaths when angry at a sibling",
+      "Talking to a parent when feeling sad",
+      "Writing down frustrations before responding"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is the first step in emotion management?",
+        "options": ["Act immediately", "Recognize what you are feeling", "Ignore the feeling", "Blame someone"],
+        "correct_answer": "Recognize what you are feeling",
+        "explanation": "You can't manage an emotion you don't recognize."
+      },
+      {
+        "question": "What is a healthy response to anger?",
+        "options": ["Yelling", "Breaking things", "Taking deep breaths", "Hitting"],
+        "correct_answer": "Taking deep breaths",
+        "explanation": "Deep breathing calms your nervous system."
+      },
+      {
+        "question": "Are all emotions acceptable?",
+        "options": ["No, some emotions are bad", "Yes, all emotions are normal", "Only happy emotions", "Only sad emotions"],
+        "correct_answer": "Yes, all emotions are normal",
+        "explanation": "All emotions are natural. What matters is how you act on them."
+      },
+      {
+        "question": "What should you do before reacting to a strong emotion?",
+        "options": ["Act immediately", "Yell", "Pause and take deep breaths", "Run away"],
+        "correct_answer": "Pause and take deep breaths",
+        "explanation": "Pausing gives you time to choose a thoughtful response."
+      },
+      {
+        "question": "True or False: Writing in a journal can help manage emotions.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Writing helps you process and release emotions."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Confidence Building",
+    "topic": "Public Speaking Techniques",
+    "language": "en",
+    "content": "Public speaking is speaking to a group. Techniques to improve: Prepare your content (know your topic well). Structure your speech: opening (hook attention), body (main points), conclusion (summarize, call to action). Practice out loud - time yourself. Use notes (not full script). Warm up your voice with humming or tongue twisters. Use gestures (hand movements) to emphasize points. Pause between ideas - silence is powerful. Make eye contact with the audience. Speak slowly - nervous speakers rush. Arrive early to set up. Remember: the audience wants you to succeed. Every great speaker started as a beginner.",
+    "summary": "Public speaking techniques: prepare, structure (opening, body, conclusion), practice, use notes, gestures, pauses, eye contact, speak slowly. Audience wants you to succeed.",
+    "learning_objectives": [
+      "Structure a speech effectively",
+      "Use delivery techniques (gestures, pauses, eye contact)",
+      "Reduce speaking anxiety"
+    ],
+    "nigerian_examples": [
+      "Giving a speech at school assembly",
+      "Presenting at Children's Day celebration",
+      "Speaking at a school debate championship"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are the three parts of a speech structure?",
+        "options": ["First, second, third", "Opening, body, conclusion", "Introduction only", "Middle and end"],
+        "correct_answer": "Opening, body, conclusion",
+        "explanation": "Every good speech has a clear beginning, middle, and end."
+      },
+      {
+        "question": "What should you do to warm up your voice?",
+        "options": ["Shout loudly", "Hum or do tongue twisters", "Stay silent", "Whisper"],
+        "correct_answer": "Hum or do tongue twisters",
+        "explanation": "Warm-ups prevent vocal strain and improve clarity."
+      },
+      {
+        "question": "Why should you pause during a speech?",
+        "options": ["To catch your breath", "To let ideas sink in", "To look more confident", "All of these"],
+        "correct_answer": "All of these",
+        "explanation": "Pauses have multiple benefits for both speaker and audience."
+      },
+      {
+        "question": "What do most nervous speakers do?",
+        "options": ["Speak slowly", "Speak too fast", "Pause often", "Use gestures"],
+        "correct_answer": "Speak too fast",
+        "explanation": "Nerves often make people rush. Consciously slow down."
+      },
+      {
+        "question": "True or False: The audience wants you to fail.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Most audiences are supportive and want you to do well."
+      }
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Healthy Habits",
+    "language": "en",
+    "content": "Healthy habits are things you do every day to keep your body strong and well. They include washing hands before eating, brushing teeth twice a day, bathing daily, getting enough sleep, drinking water, and eating fruits and vegetables. Healthy habits prevent sickness and help you grow. Make a routine: wake up, brush teeth, wash face, eat breakfast, go to school. After school: wash hands, eat, play, do homework, bathe, brush teeth, sleep. Small habits every day keep you healthy and ready to learn and play.",
+    "summary": "Healthy habits: wash hands, brush teeth, bathe, sleep enough, drink water, eat fruits and vegetables. Daily routine keeps you strong.",
+    "learning_objectives": [
+      "Identify daily healthy habits",
+      "Create a personal healthy routine",
+      "Understand why habits matter"
+    ],
+    "nigerian_examples": [
+      "Drinking water from a clean bottle during school break",
+      "Eating oranges or bananas as snacks instead of sweets",
+      "Going to bed early to wake up fresh for school"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which is a healthy habit?",
+        "options": ["Staying up late every night", "Eating only sweets", "Brushing teeth twice a day", "Never washing hands"],
+        "correct_answer": "Brushing teeth twice a day",
+        "explanation": "Brushing teeth twice daily prevents cavities and keeps your mouth healthy."
+      },
+      {
+        "question": "Why is drinking water important?",
+        "options": ["It makes you sleepy", "It keeps your body hydrated and healthy", "It replaces food", "It makes you dirty"],
+        "correct_answer": "It keeps your body hydrated and healthy",
+        "explanation": "Water helps all your body parts work properly."
+      },
+      {
+        "question": "How much sleep do children need each night?",
+        "options": ["10-12 hours", "3-4 hours", "15 hours", "20 hours"],
+        "correct_answer": "10-12 hours",
+        "explanation": "Children need plenty of sleep to grow, learn, and stay healthy."
+      },
+      {
+        "question": "What should you eat for a healthy snack?",
+        "options": ["Candy", "Chips", "Soda", "Fruits or vegetables"],
+        "correct_answer": "Fruits or vegetables",
+        "explanation": "Fruits and vegetables give your body vitamins and energy."
+      },
+      {
+        "question": "True or False: Healthy habits only matter when you are sick.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Healthy habits prevent sickness and keep you strong every day."
+      }
+    ]
+  }
+]

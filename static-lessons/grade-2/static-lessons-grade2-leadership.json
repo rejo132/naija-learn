@@ -1,0 +1,66 @@
+[
+  {
+    "grade": 2,
+    "subject": "Leadership",
+    "topic": "Class Monitor Duties",
+    "language": "en",
+    "content": "A class monitor is a student leader who helps the teacher and classmates. Duties include: keeping the class quiet, arranging desks, collecting notebooks, leading the morning pledge, and helping younger students. A good monitor is responsible, polite, and fair. They do not boss others or pick favorites. If you are a monitor, set a good example by following rules yourself. If you are not a monitor, cooperate with the monitor and respect their role. Everyone can be a leader by helping in small ways, even without a title.",
+    "summary": "Class monitor duties: help teacher, keep class quiet, arrange desks, collect books. Good monitors are responsible, polite, fair.",
+    "learning_objectives": [
+      "Understand class monitor responsibilities",
+      "Learn qualities of good leaders",
+      "Practice leadership in small ways"
+    ],
+    "nigerian_examples": [
+      "Class monitors leading the morning pledge",
+      "Monitors collecting homework notebooks",
+      "Helping younger students find classrooms"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is one duty of a class monitor?",
+        "options": ["Fight with classmates", "Keep the class quiet", "Ignore the teacher", "Draw on desks"],
+        "correct_answer": "Keep the class quiet",
+        "explanation": "Class monitors help maintain order so everyone can learn."
+      },
+      {
+        "question": "How should a good monitor treat classmates?",
+        "options": ["Boss them around", "Pick favorites", "Be fair and respectful", "Ignore them"],
+        "correct_answer": "Be fair and respectful",
+        "explanation": "Good leaders treat everyone equally with respect."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Leadership",
+    "topic": "Encouraging Friends",
+    "language": "en",
+    "content": "Encouraging means giving someone hope, confidence, or support. Good leaders encourage their friends. Say things like 'You can do it!' 'Keep trying!' 'I believe in you!' or 'Good job!' When a friend is struggling, encourage them instead of laughing. When a friend succeeds, celebrate with them. Encouragement helps people try harder and feel better about themselves. Be the friend who lifts others up.",
+    "summary": "Encouragement gives hope and support. Say 'You can do it!' 'Keep trying!' Encouraging others helps them try harder.",
+    "learning_objectives": [
+      "Understand what encouragement means",
+      "Learn encouraging phrases",
+      "Practice encouraging others daily"
+    ],
+    "nigerian_examples": [
+      "Cheering 'Keep going!' when a friend struggles",
+      "Saying 'Good try!' after a friend loses a race",
+      "Telling a shy classmate 'You can do it!'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does encouragement mean?",
+        "options": ["Making fun of someone", "Giving someone hope and support", "Ignoring someone", "Fighting with someone"],
+        "correct_answer": "Giving someone hope and support",
+        "explanation": "Encouragement helps people feel confident and keep trying."
+      },
+      {
+        "question": "Which is an encouraging phrase?",
+        "options": ["You are terrible", "Give up now", "You can do it!", "That's useless"],
+        "correct_answer": "You can do it!",
+        "explanation": "Positive phrases like 'You can do it!' build confidence."
+      }
+    ]
+  }
+]

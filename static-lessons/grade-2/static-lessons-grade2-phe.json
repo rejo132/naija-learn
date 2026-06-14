@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Running and Relay",
+    "language": "en",
+    "content": "Running is a fun way to exercise your body and stay healthy. When you run, your heart beats faster, your lungs work harder, and your leg muscles get stronger. A relay is a team running race where each person runs one part. In a relay, you must pass a baton (stick) to your teammate without dropping it. Running helps you build speed, endurance, and teamwork. Always warm up before running by stretching your legs and arms. Wear comfortable shoes and drink water before and after running.",
+    "summary": "Running makes your heart, lungs, and legs stronger. A relay is a team race where you pass a baton. Warm up, wear good shoes, and drink water.",
+    "learning_objectives": [
+      "Understand the health benefits of running",
+      "Learn how a relay race works",
+      "Practice running safely with proper warm-up"
+    ],
+    "nigerian_examples": [
+      "Inter-house sports competitions in Nigerian primary schools",
+      "Children running races during Children's Day celebrations",
+      "Relay races at school sports festivals across Lagos and Abuja"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What happens to your heart when you run?",
+        "options": ["It slows down", "It beats faster", "It stops", "It stays the same"],
+        "correct_answer": "It beats faster",
+        "explanation": "Running makes your heart beat faster to pump more blood to your muscles."
+      },
+      {
+        "question": "What do you pass to your teammate in a relay race?",
+        "options": ["A ball", "A baton (stick)", "A flag", "A water bottle"],
+        "correct_answer": "A baton (stick)",
+        "explanation": "In a relay race, each runner passes a baton to the next teammate."
+      },
+      {
+        "question": "What should you do before running?",
+        "options": ["Eat a big meal", "Warm up by stretching", "Go to sleep", "Drink only soda"],
+        "correct_answer": "Warm up by stretching",
+        "explanation": "Warming up with stretches prepares your muscles for running and prevents injury."
+      },
+      {
+        "question": "What kind of shoes are best for running?",
+        "options": ["School shoes", "Comfortable sports shoes", "Slippers", "Boots"],
+        "correct_answer": "Comfortable sports shoes",
+        "explanation": "Comfortable sports shoes give your feet support and protect them while running."
+      },
+      {
+        "question": "True or False: Running is only for professional athletes.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Anyone can run for exercise and fun! You don't need to be a professional."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Jumping and Skipping",
+    "language": "en",
+    "content": "Jumping and skipping are fun activities that make your legs strong and your body fit. Jumping means pushing off the ground with both feet and landing. You can jump forward, backward, or straight up. Skipping is a hopping pattern where you step and hop on alternate feet. Jumping rope is a great exercise using a rope that you swing and jump over. These activities improve your balance, coordination, and bone strength. Start with small jumps and practice every day to get better.",
+    "summary": "Jumping and skipping build strong legs, balance, and coordination. Jumping rope is great exercise. Practice small jumps first, then try bigger ones.",
+    "learning_objectives": [
+      "Learn proper jumping and skipping techniques",
+      "Understand health benefits of jumping activities",
+      "Practice jumping rope safely"
+    ],
+    "nigerian_examples": [
+      "Children playing 'hopscotch' drawn on sand or concrete",
+      "Jumping rope games during break time at Nigerian schools",
+      "Traditional Nigerian jumping games during festivals"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does jumping help strengthen?",
+        "options": ["Your arms only", "Your legs and bones", "Your ears", "Your hair"],
+        "correct_answer": "Your legs and bones",
+        "explanation": "Jumping makes your leg muscles stronger and helps build strong bones."
+      },
+      {
+        "question": "What equipment is used for jumping rope?",
+        "options": ["A ball", "A rope", "A stick", "A hoop"],
+        "correct_answer": "A rope",
+        "explanation": "Jumping rope uses a rope that you swing over your head and jump over."
+      },
+      {
+        "question": "What skill does skipping help improve?",
+        "options": ["Balance and coordination", "Singing", "Drawing", "Reading"],
+        "correct_answer": "Balance and coordination",
+        "explanation": "Skipping requires you to coordinate your steps and maintain balance."
+      },
+      {
+        "question": "How should beginners start jumping?",
+        "options": ["With very high jumps", "With small jumps first", "Only on one leg", "Jumping off tables"],
+        "correct_answer": "With small jumps first",
+        "explanation": "Start with small jumps to learn proper form and avoid injury. You can jump higher as you get better."
+      },
+      {
+        "question": "True or False: Jumping rope can be done alone or with friends.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "You can jump rope by yourself or take turns with friends. Both are fun and healthy!"
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Nutrition Basics",
+    "language": "en",
+    "content": "Nutrition means eating the right foods to help your body grow strong and healthy. There are different food groups: grains (rice, bread, maize), proteins (meat, fish, eggs, beans), fruits and vegetables (oranges, bananas, spinach, carrots), and dairy (milk, yogurt). A balanced meal has foods from different groups. Junk food like sweets, chips, and soda taste good but should only be eaten sometimes. Drink plenty of water every day. Good nutrition helps you think better in school and have energy to play.",
+    "summary": "Eat balanced meals with grains, proteins, fruits, vegetables, and dairy. Drink water. Limit junk food. Good food helps you grow, think, and play.",
+    "learning_objectives": [
+      "Identify different food groups",
+      "Understand what makes a balanced meal",
+      "Learn healthy eating habits"
+    ],
+    "nigerian_examples": [
+      "Eating jollof rice with chicken and vegetables for a balanced meal",
+      "Snacking on oranges, bananas, or groundnuts instead of sweets",
+      "Drinking water from a clean bottle during school break"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which food group gives you energy to run and play?",
+        "options": ["Sweets only", "Grains like rice and bread", "Only soda", "Only candy"],
+        "correct_answer": "Grains like rice and bread",
+        "explanation": "Grains provide carbohydrates that give your body energy."
+      },
+      {
+        "question": "Which foods help build strong muscles?",
+        "options": ["Chips", "Proteins like meat, fish, eggs, and beans", "Sweets", "Soda"],
+        "correct_answer": "Proteins like meat, fish, eggs, and beans",
+        "explanation": "Protein foods help build and repair your muscles."
+      },
+      {
+        "question": "What should you drink most of every day?",
+        "options": ["Soda", "Juice only", "Water", "Tea"],
+        "correct_answer": "Water",
+        "explanation": "Water keeps your body hydrated and helps all your organs work properly."
+      },
+      {
+        "question": "What is junk food?",
+        "options": ["Fruits and vegetables", "Foods that are healthy", "Foods with little nutrition like sweets and chips", "Home-cooked meals"],
+        "correct_answer": "Foods with little nutrition like sweets and chips",
+        "explanation": "Junk food tastes good but has few nutrients. It should only be eaten sometimes."
+      },
+      {
+        "question": "True or False: Eating fruits and vegetables helps fight sickness.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Fruits and vegetables have vitamins that help your immune system fight sickness."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Personal Hygiene",
+    "language": "en",
+    "content": "Personal hygiene means keeping your body clean to stay healthy and feel good. Wash your hands with soap and water before eating and after using the toilet. Bathe every day to remove sweat and dirt. Brush your teeth twice a day — morning and night — to prevent cavities. Wear clean clothes every day. Keep your nails short and clean. Cover your mouth when you cough or sneeze using your elbow or a tissue. Good hygiene prevents germs from spreading and keeps you and your friends healthy.",
+    "summary": "Personal hygiene keeps you healthy: wash hands, bathe daily, brush teeth twice daily, wear clean clothes, trim nails, cover coughs and sneezes.",
+    "learning_objectives": [
+      "Learn daily hygiene habits",
+      "Understand why hygiene prevents sickness",
+      "Practice proper handwashing and toothbrushing"
+    ],
+    "nigerian_examples": [
+      "Washing hands before eating school lunch",
+      "Brushing teeth after breakfast before going to school",
+      "Taking a bath after playing football"
+    ],
+    "quiz_questions": [
+      {
+        "question": "When should you wash your hands?",
+        "options": ["Only when they  dirty", "Before eating and after using the toilet", "Once a week", "Only after playing"],
+        "correct_answer": "Before eating and after using the toilet",
+        "explanation": "Always wash hands before eating and after using the toilet to stop germs from spreading."
+      },
+      {
+        "question": "How many times a day should you brush your teeth?",
+        "options": ["Once a week", "Once a day", "Twice a day", "Only when they hurt"],
+        "correct_answer": "Twice a day",
+        "explanation": "Brush your teeth in the morning and at night to prevent cavities."
+      },
+      {
+        "question": "How should you cover your mouth when coughing?",
+        "options": ["With your hand", "With your elbow or a tissue", "Don't cover it", "With your friend's hand"],
+        "correct_answer": "With your elbow or a tissue",
+        "explanation": "Cough into your elbow or a tissue to prevent germs from spreading to your hands."
+      },
+      {
+        "question": "Why should you wear clean clothes every day?",
+        "options": ["To look fancy", "To prevent germs and skin problems", "To match your friends", "To be warm"],
+        "correct_answer": "To prevent germs and skin problems",
+        "explanation": "Dirty clothes can carry germs and cause skin irritation. Clean clothes keep you healthy."
+      },
+      {
+        "question": "True or False: You should bathe every day.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Daily bathing removes sweat, dirt, and bacteria from your skin."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Team Games",
+    "language": "en",
+    "content": "Team games are sports where players work together to win. Examples include football, basketball, volleyball, and relay races. In team games, every player has an important role. Good teamwork means sharing the ball, helping each other, and cheering for your teammates. Always follow the rules of the game. Be a good sport — congratulate the other team when they win and be gracious when you win. Team games teach you to cooperate, communicate, and show respect for others.",
+    "summary": "Team games like football and basketball teach cooperation and respect. Every player matters. Be a good sport: win nicely, lose gracefully.",
+    "learning_objectives": [
+      "Understand how team games work",
+      "Learn good sportsmanship",
+      "Practice cooperation and communication"
+    ],
+    "nigerian_examples": [
+      "Playing football on the school field during break",
+      "Nigerian children playing 'handball' in the compound",
+      "Inter-house sports competitions between school houses"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is an example of a team game?",
+        "options": ["Football", "Solo drawing", "Eating alone", "Reading by yourself"],
+        "correct_answer": "Football",
+        "explanation": "Football is a team sport where players work together to score goals."
+      },
+      {
+        "question": "What does good sportsmanship mean?",
+        "options": ["Cheating to win", "Congratulating the other team and following rules", "Arguing with the referee", "Refusing to play"],
+        "correct_answer": "Congratulating the other team and following rules",
+        "explanation": "Good sportsmanship means playing fair, following rules, and respecting all players."
+      },
+      {
+        "question": "What should you do if the other team wins?",
+        "options": ["Cry and complain", "Congratulate them", "Blame your teammates", "Walk away angrily"],
+        "correct_answer": "Congratulate them",
+        "explanation": "Shake hands and say 'good game' to show respect, even when you lose."
+      },
+      {
+        "question": "What does teamwork require?",
+        "options": ["One person doing everything", "Sharing and helping teammates", "Ignoring your teammates", "Playing alone"],
+        "correct_answer": "Sharing and helping teammates",
+        "explanation": "Good teammates share the ball, help each other, and work toward the same goal."
+      },
+      {
+        "question": "True or False: Only the best player matters in a team game.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Every player on the team is important. Team success depends on everyone doing their part."
+      }
+    ]
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Complex Sentences",
+    "language": "en",
+    "content": "Complex sentences contain one independent clause (complete thought) and at least one dependent clause (incomplete thought) connected by subordinating conjunctions (because, although, since, when, if, unless, while). Complex sentences add variety to writing and show relationships between ideas. Nigerian students use complex sentences in essays to express sophisticated thinking.",
+    "summary": "Complex sentences = independent clause + dependent clause. Use subordinating conjunctions (because, although, when, if).",
+    "learning_objectives": ["Identify independent and dependent clauses", "Use subordinating conjunctions correctly", "Write complex sentences for essays"],
+    "nigerian_examples": ["Although Lagos traffic is heavy, many people still live there", "She passed her exams because she studied every day"],
+    "quiz_questions": [{"question": "What makes a sentence complex?", "options": ["Many commas", "One independent + one dependent clause", "Three independent clauses", "Short words only"], "correct_answer": "One independent + one dependent clause", "explanation": "Complex sentences combine a complete thought with an incomplete thought."}]
+  },
+  {
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Punctuation Mastery",
+    "language": "en",
+    "content": "Mastering punctuation makes writing clear and professional. Semicolon (;) connects related independent clauses. Colon (:) introduces lists, explanations, or quotes. Apostrophe shows possession ('Chidi's book') or contractions ('don't'). Quotation marks enclose direct speech. Parentheses add extra information. Hyphen connects compound words. Dash shows strong break in thought.",
+    "summary": "Semicolon (;) connects clauses. Colon (:) introduces lists. Apostrophe (') shows possession. Punctuation affects essay scores.",
+    "learning_objectives": ["Use semicolons and colons correctly", "Master apostrophe usage", "Apply quotation marks and dashes"],
+    "nigerian_examples": ["The harmattan is dry; the rainy season is wet.", "My favorite Nigerian foods: jollof rice, egusi soup, and puff-puff."],
+    "quiz_questions": [{"question": "What does a semicolon do?", "options": ["Ends a sentence", "Connects related independent clauses", "Shows possession", "Introduces a list"], "correct_answer": "Connects related independent clauses", "explanation": "Semicolons join two complete sentences that are closely related."}]
+  },
+  {
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Essay Structure",
+    "language": "en",
+    "content": "A well-structured essay has three parts: introduction (hook, background, thesis statement), body paragraphs (topic sentence, evidence, explanation, concluding sentence), and conclusion (restate thesis, summarize main points, final thought). Each body paragraph focuses on ONE main idea. Use transition words (first, next, however, therefore, in conclusion) to connect ideas. In Nigerian secondary school exams, essay structure affects grades significantly. Practice writing five-paragraph essays on topics like 'The Importance of Education' or 'My Role Model.'",
+    "summary": "Essay structure: introduction (thesis), body paragraphs (topic sentence + evidence), conclusion (restate + summarize). Each paragraph has one main idea.",
+    "learning_objectives": ["Structure a five-paragraph essay", "Write effective thesis statements", "Use transition words smoothly"],
+    "nigerian_examples": ["Essay topic: 'The Importance of Independence Day'", "Essay topic: 'My Career Aspiration'", "Essay topic: 'How to Improve Nigerian Schools'"],
+    "quiz_questions": [{"question": "What are the three main parts of an essay?", "options": ["Title, author, date", "Introduction, body, conclusion", "First, second, third", "Paragraphs only"], "correct_answer": "Introduction, body, conclusion", "explanation": "All essays have a beginning, middle, and end."}]
+  },
+  {
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Literary Devices",
+    "language": "en",
+    "content": "Literary devices are techniques writers use to create meaning and effect. Simile compares using 'like' or 'as': 'as brave as a lion'. Metaphor compares directly: 'Time is a thief'. Personification gives human qualities to objects: 'The wind whispered'. Hyperbole exaggerates: 'I've told you a million times'. Alliteration repeats initial sounds: 'Peter picked pickled peppers'. Onomatopoeia uses sound words: 'buzz, hiss, boom'. Imagery uses sensory details. Nigerian writers like Chinua Achebe and Chimamanda Adichie use these devices effectively. Identifying literary devices improves reading comprehension and writing quality.",
+    "summary": "Literary devices: simile (like/as), metaphor (direct comparison), personification, hyperbole (exaggeration), alliteration, onomatopoeia, imagery.",
+    "learning_objectives": ["Identify common literary devices", "Explain their effects", "Use devices in writing"],
+    "nigerian_examples": ["Simile: 'The harmattan wind blew like a thousand fans'", "Personification: 'The sun smiled down on Lagos'", "Metaphor: 'Education is the key to success'"],
+    "quiz_questions": [{"question": "What is a simile?", "options": ["Direct comparison without 'like'", "Comparison using 'like' or 'as'", "Exaggeration", "Sound words"], "correct_answer": "Comparison using 'like' or 'as'", "explanation": "Similes use 'like' or 'as' to compare two different things."}]
+  },
+  {
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Summary Writing",
+    "language": "en",
+    "content": "Summary writing means condensing a longer text into the main points. Steps: read the entire text, identify the main idea, find key supporting points, write in your own words, keep it brief (about 1/3 original length), do NOT add opinions. A good summary includes: who, what, when, where, why, how. Avoid copying phrases directly from the original. In Nigerian exams, summary questions test reading comprehension. Practice by summarizing news articles, short stories, or textbook chapters.",
+    "summary": "Summary writing = condense main points in your own words. Steps: read, find main idea, write briefly, no opinions. Include who, what, when, where, why, how.",
+    "learning_objectives": ["Identify main ideas in a text", "Paraphrase effectively", "Write concise summaries"],
+    "nigerian_examples": ["Summarizing a news article about Nigerian elections", "Condensing a chapter on Nigerian history", "Summarizing a folk tale in one paragraph"],
+    "quiz_questions": [{"question": "How long should a summary be compared to the original?", "options": ["Same length", "Half length", "About 1/3 length or shorter", "Double length"], "correct_answer": "About 1/3 length or shorter", "explanation": "Summaries are much shorter than the original text."}]
+  }
+]

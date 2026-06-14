@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Nigerian Geography",
+    "language": "en",
+    "content": "Nigeria is located in West Africa. It has 36 states and the Federal Capital Territory (Abuja). Nigeria has diverse geographical features. In the north, there are savanna grasslands and the Sahel region near the Sahara Desert. In the south, there are rainforests, mangroves, and the Atlantic Ocean coastline. Major rivers include the Niger River (West Africa's longest) and the Benue River. They meet at Lokoja (Kogi State). Nigeria also has plateaus (like Jos Plateau), hills, and mountains. This diversity affects the climate, plants, animals, and how people live in different regions.",
+    "summary": "Nigeria in West Africa: 36 states + Abuja. North: savanna, Sahel. South: rainforest, mangroves, ocean. Rivers: Niger and Benue meet at Lokoja. Diverse geography.",
+    "learning_objectives": [
+      "Locate Nigeria on a map of Africa",
+      "Describe Nigeria's geographical regions",
+      "Identify major rivers"
+    ],
+    "nigerian_examples": [
+      "Niger River flowing through Lokoja",
+      "Jos Plateau's cool climate",
+      "Mangrove forests in the Niger Delta"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Where is Nigeria located?",
+        "options": ["East Africa", "North Africa", "West Africa", "Southern Africa"],
+        "correct_answer": "West Africa",
+        "explanation": "Nigeria is in West Africa, bordering the Atlantic Ocean."
+      },
+      {
+        "question": "Which two major rivers meet at Lokoja?",
+        "options": ["Niger and Benue", "Niger and Senegal", "Benue and Congo", "Nile and Niger"],
+        "correct_answer": "Niger and Benue",
+        "explanation": "The Niger and Benue rivers meet at Lokoja in Kogi State."
+      },
+      {
+        "question": "What geographical feature is found in northern Nigeria?",
+        "options": ["Rainforest", "Mangroves", "Savanna grassland", "Swamp"],
+        "correct_answer": "Savanna grassland",
+        "explanation": "Northern Nigeria has savanna grasslands and the Sahel region."
+      },
+      {
+        "question": "How many states does Nigeria have?",
+        "options": ["30", "36", "37", "40"],
+        "correct_answer": "36",
+        "explanation": "Nigeria has 36 states plus the Federal Capital Territory, Abuja."
+      },
+      {
+        "question": "True or False: Nigeria has both rainforests and deserts.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Nigeria has rainforests in the south and the Sahel (semi-desert) in the north."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Agriculture in Nigeria",
+    "language": "en",
+    "content": "Agriculture is farming and growing food. It is very important in Nigeria. Many Nigerians are farmers. Major crops include: yam (grown in the east and middle belt), cassava (grown everywhere, made into garri and fufu), cocoa (grown in the southwest for chocolate), oil palm (grown in the south for palm oil), groundnuts (grown in the north for oil and snacks), and rice (grown in many states). Farmers also raise animals: goats, sheep, chickens, cows, and fish. Agriculture provides food for families and jobs for millions of Nigerians. It also earns money when crops are exported to other countries.",
+    "summary": "Agriculture is farming. Nigerian crops: yam, cassava, cocoa, oil palm, groundnuts, rice. Animals: goats, sheep, chickens, cows, fish. Provides food and jobs.",
+    "learning_objectives": [
+      "Identify major Nigerian crops",
+      "Understand agriculture's importance",
+      "Know where different crops are grown"
+    ],
+    "nigerian_examples": [
+      "Yam festivals in the east",
+      "Cocoa farms in Ondo and Oyo States",
+      "Groundnut pyramids in Kano"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which crop is used to make garri?",
+        "options": ["Yam", "Cassava", "Cocoa", "Rice"],
+        "correct_answer": "Cassava",
+        "explanation": "Cassava is processed into garri, which is a staple food in Nigeria."
+      },
+      {
+        "question": "Which crop is grown for chocolate?",
+        "options": ["Groundnuts", "Oil palm", "Cocoa", "Yam"],
+        "correct_answer": "Cocoa",
+        "explanation": "Cocoa beans are used to make chocolate and cocoa powder."
+      },
+      {
+        "question": "Which northern state is famous for groundnut pyramids?",
+        "options": ["Lagos", "Kano", "Enugu", "Port Harcourt"],
+        "correct_answer": "Kano",
+        "explanation": "Kano was famous for groundnut pyramids, stacks of groundnut bags awaiting export."
+      },
+      {
+        "question": "What is oil palm used for?",
+        "options": ["Making garri", "Palm oil and palm kernel oil", "Bread", "Chocolate"],
+        "correct_answer": "Palm oil and palm kernel oil",
+        "explanation": "Oil palm fruit produces red palm oil used in cooking and palm kernel oil for other products."
+      },
+      {
+        "question": "True or False: Agriculture only provides food, not jobs.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Agriculture provides both food for families and jobs for millions of Nigerians."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Trade and Markets",
+    "language": "en",
+    "content": "Trade is buying and selling goods. Markets are places where trade happens. In Nigeria, markets are very important. There are daily markets, weekly markets (different days in different villages), and large city markets. Famous markets include: Onitsha Main Market (largest in West Africa), Alaba International Market (Lagos, for electronics), Kano Kurmi Market (ancient market, over 500 years old), and Ariaria Market (Aba, for shoes and clothes). People sell food, clothes, electronics, building materials, and traditional crafts. Markets are lively places with bargaining (negotiating prices). Trade connects farmers to city people and Nigeria to other countries through exports.",
+    "summary": "Trade = buying/selling. Markets: Onitsha (largest), Alaba (electronics), Kurmi (ancient), Ariaria (shoes/clothes). Bargaining happens. Trade connects Nigeria to the world.",
+    "learning_objectives": [
+      "Understand what trade is",
+      "Identify major Nigerian markets",
+      "Learn about bargaining"
+    ],
+    "nigerian_examples": [
+      "Onitsha Main Market in Anambra State",
+      "Kurmi Market in Kano operating since the 1500s",
+      "Ariaria Market in Aba known for shoes"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is trade?",
+        "options": ["Only selling", "Only buying", "Buying and selling goods", "Farming only"],
+        "correct_answer": "Buying and selling goods",
+        "explanation": "Trade involves exchanging goods for money or other goods."
+      },
+      {
+        "question": "Which is the largest market in West Africa?",
+        "options": ["Alaba Market", "Kurmi Market", "Onitsha Main Market", "Ariaria Market"],
+        "correct_answer": "Onitsha Main Market",
+        "explanation": "Onitsha Main Market in Anambra State is the largest market in West Africa."
+      },
+      {
+        "question": "How old is Kano's Kurmi Market?",
+        "options": ["50 years", "Over 500 years", "100 years", "20 years"],
+        "correct_answer": "Over 500 years",
+        "explanation": "Kurmi Market has been operating since the 1500s, over 500 years ago."
+      },
+      {
+        "question": "What does bargaining mean?",
+        "options": ["Paying full price", "Negotiating or discussing prices", "Stealing goods", "Not buying anything"],
+        "correct_answer": "Negotiating or discussing prices",
+        "explanation": "Bargaining is when buyer and seller discuss to agree on a fair price."
+      },
+      {
+        "question": "True or False: Markets exist only in big cities, not villages.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Markets exist everywhere in Nigeria - in villages, towns, and big cities."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Transport Systems",
+    "language": "en",
+    "content": "Transportation moves people and goods. In Nigeria, there are several transport systems: roads (cars, buses, lorries, okadas, keke napep), railways (passenger and cargo trains), waterways (boats and ferries on rivers and lagoons), and air (airplanes at airports). Major roads connect cities: Lagos-Ibadan Expressway, Abuja-Kaduna Road. Rail lines: Lagos to Kano (standard gauge) and Abuja to Kaduna (modern train). Water transport: ferries on Lagos Lagoon, boats on Niger River. Airports: Murtala Muhammed (Lagos), Nnamdi Azikiwe (Abuja), Mallam Aminu Kano (Kano). Transport helps people travel to work, school, markets, and visit family.",
+    "summary": "Transport systems: roads (cars, buses, okadas), railways (trains), waterways (boats, ferries), air (airplanes). Connects cities: Lagos-Ibadan expressway, Lagos-Kano railway.",
+    "learning_objectives": [
+      "Identify four transport systems",
+      "Learn major transport routes",
+      "Understand how transport helps people"
+    ],
+    "nigerian_examples": [
+      "Lagos-Ibadan Expressway carrying thousands daily",
+      "Abuja-Kaduna train service",
+      "Ferries crossing Lagos Lagoon"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are the four types of transport systems in Nigeria?",
+        "options": ["Roads, railways, waterways, air", "Cars, bikes, walking, running", "Buses, trains, planes, ships", "Okada, keke, boat, car"],
+        "correct_answer": "Roads, railways, waterways, air",
+        "explanation": "These four systems move people and goods across Nigeria."
+      },
+      {
+        "question": "Which major road connects Lagos and Ibadan?",
+        "options": ["Abuja-Kaduna Road", "Lagos-Ibadan Expressway", "Port Harcourt-Enugu Road", "Kano-Katsina Road"],
+        "correct_answer": "Lagos-Ibadan Expressway",
+        "explanation": "The Lagos-Ibadan Expressway is one of Nigeria's busiest roads."
+      },
+      {
+        "question": "Which cities are connected by the modern train service?",
+        "options": ["Lagos and Kano", "Abuja and Kaduna", "Port Harcourt and Enugu", "Kano and Katsina"],
+        "correct_answer": "Abuja and Kaduna",
+        "explanation": "The Abuja-Kaduna railway is a modern standard-gauge train service."
+      },
+      {
+        "question": "What is the name of Lagos's main airport?",
+        "options": ["Nnamdi Azikiwe Airport", "Mallam Aminu Kano Airport", "Murtala Muhammed Airport", "Port Harcourt Airport"],
+        "correct_answer": "Murtala Muhammed Airport",
+        "explanation": "Murtala Muhammed International Airport serves Lagos."
+      },
+      {
+        "question": "True or False: Water transport is not used in Nigeria.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Water transport is used on the Niger River, Benue River, Lagos Lagoon, and coastal areas."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "National Symbols",
+    "language": "en",
+    "content": "National symbols represent Nigeria's identity and values. The flag: green-white-green stripes - green represents agriculture and forests, white represents peace. The coat of arms: a black shield (fertile soil) with a white Y-shaped band (Niger and Benue rivers), two horses (dignity), eagle (strength), and the motto 'Unity and Faith, Peace and Progress.' The national anthem: 'Arise, O Compatriots' - we stand to sing it. The national pledge: 'I pledge to Nigeria my country...' - we recite it at school. Other symbols: the black-crowned crane (national bird), the drum (national instrument), and the national flower (Costus spectabilis). These symbols unite Nigerians.",
+    "summary": "National symbols: flag (green-white-green), coat of arms (shield, horses, eagle), anthem (Arise O Compatriots), pledge, national bird (crane). Symbols unite Nigeria.",
+    "learning_objectives": [
+      "Identify major national symbols",
+      "Understand what each symbol means",
+      "Learn the national anthem and pledge"
+    ],
+    "nigerian_examples": [
+      "Standing for the national anthem at school assembly",
+      "The coat of arms on official documents",
+      "The green-white-green flag flown everywhere"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What do the green stripes on the Nigerian flag represent?",
+        "options": ["Peace and unity", "Agriculture and forests", "Rivers and oceans", "Strength and courage"],
+        "correct_answer": "Agriculture and forests",
+        "explanation": "Green represents Nigeria's rich agricultural land and forests."
+      },
+      {
+        "question": "What does the white stripe on the Nigerian flag represent?",
+        "options": ["Agriculture", "Forests", "Peace", "Strength"],
+        "correct_answer": "Peace",
+        "explanation": "White represents peace and unity among Nigerians."
+      },
+      {
+        "question": "What is the national motto on the coat of arms?",
+        "options": ["Freedom and Justice", "Unity and Faith, Peace and Progress", "One Nigeria", "God and Country"],
+        "correct_answer": "Unity and Faith, Peace and Progress",
+        "explanation": "This is the official national motto on the coat of arms."
+      },
+      {
+        "question": "What is the national bird of Nigeria?",
+        "options": ["Eagle", "Parrot", "Black-crowned crane", "Peacock"],
+        "correct_answer": "Black-crowned crane",
+        "explanation": "The black-crowned crane is Nigeria's national bird."
+      },
+      {
+        "question": "True or False: The national anthem is only sung by adults.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "All Nigerians, including children, stand and sing the national anthem at ceremonies and school assemblies."
+      }
+    ]
+  }
+]

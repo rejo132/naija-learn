@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Personal Grooming",
+    "language": "en",
+    "content": "Personal grooming means taking care of how you look and feel. It includes brushing your hair, keeping your nails clean and short, and wearing clean clothes. Brush your hair every morning to keep it tidy. Cut your fingernails and toenails regularly so dirt doesn't collect under them. Use a comb or brush that is clean. Grooming helps you look neat and feel confident. When you look good, you feel good! Good grooming also shows respect for yourself and others around you.",
+    "summary": "Personal grooming: brush hair, keep nails clean and short, wear clean clothes. Grooming helps you look neat, feel confident, and show respect.",
+    "learning_objectives": [
+      "Understand what personal grooming means",
+      "Learn daily grooming habits",
+      "Appreciate how grooming affects confidence"
+    ],
+    "nigerian_examples": [
+      "Brushing hair before going to school each morning",
+      "Cutting nails on weekends before the new school week",
+      "Looking neat for family gatherings and church or mosque"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is personal grooming?",
+        "options": ["Only eating healthy", "Taking care of how you look and feel", "Only exercising", "Only sleeping"],
+        "correct_answer": "Taking care of how you look and feel",
+        "explanation": "Grooming includes brushing hair, cleaning nails, and wearing clean clothes."
+      },
+      {
+        "question": "Why should you keep your nails short?",
+        "options": ["To look pretty only", "So dirt doesn't collect under them", "To paint them", "To make them grow faster"],
+        "correct_answer": "So dirt doesn't collect under them",
+        "explanation": "Dirt and germs can hide under long nails. Short nails are cleaner."
+      },
+      {
+        "question": "How often should you brush your hair?",
+        "options": ["Once a month", "Once a week", "Every morning", "Never"],
+        "correct_answer": "Every morning",
+        "explanation": "Brushing your hair daily keeps it tidy and healthy."
+      },
+      {
+        "question": "How does good grooming make you feel?",
+        "options": ["Sad", "Shy", "Confident", "Tired"],
+        "correct_answer": "Confident",
+        "explanation": "When you look neat and clean, you feel good about yourself and more confident."
+      },
+      {
+        "question": "True or False: Grooming shows respect for yourself and others.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Being neat and clean shows that you respect yourself and the people around you."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Nail Care",
+    "language": "en",
+    "content": "Nail care means keeping your fingernails and toenails clean and healthy. Dirt and germs can hide under long nails and make you sick. Use nail clippers to cut your nails straight across. Cut them every 1-2 weeks. Wash under your nails when you wash your hands. Do not bite your nails — it can hurt your fingers and put germs in your mouth. Keep a nail brush by the sink to clean under nails. Healthy nails are smooth and pink. If your nails change color or hurt, tell a parent.",
+    "summary": "Nail care keeps nails clean and healthy. Cut nails every 1-2 weeks with clippers. Don't bite nails. Wash under nails. Healthy nails are smooth and pink.",
+    "learning_objectives": [
+      "Learn proper nail care techniques",
+      "Understand why nail hygiene matters",
+      "Avoid bad habits like nail biting"
+    ],
+    "nigerian_examples": [
+      "Using nail clippers bought from the market",
+      "Keeping a nail brush near the bathroom sink",
+      "Asking parents to help cut nails safely"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How often should you cut your nails?",
+        "options": ["Once a year", "Every 1-2 weeks", "Every day", "Never"],
+        "correct_answer": "Every 1-2 weeks",
+        "explanation": "Nails grow continuously, so cut them every week or two to keep them clean."
+      },
+      {
+        "question": "What tool is used to cut nails?",
+        "options": ["Scissors", "Nail clippers", "Knife", "Pencil"],
+        "correct_answer": "Nail clippers",
+        "explanation": "Nail clippers are the safe, proper tool for cutting fingernails and toenails."
+      },
+      {
+        "question": "Why is nail biting bad?",
+        "options": ["It makes nails grow faster", "It hurts fingers and puts germs in your mouth", "It makes nails stronger", "It cleans nails"],
+        "correct_answer": "It hurts fingers and puts germs in your mouth",
+        "explanation": "Nail biting can damage your fingers and transfer germs from under your nails into your mouth."
+      },
+      {
+        "question": "What color are healthy nails?",
+        "options": ["Yellow", "Blue", "Pink", "Black"],
+        "correct_answer": "Pink",
+        "explanation": "Healthy nails are smooth and pink. Changes in color may mean a problem."
+      },
+      {
+        "question": "True or False: You never need to clean under your nails.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Dirt and germs hide under nails. You should clean under them when washing your hands."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Hair Care",
+    "language": "en",
+    "content": "Hair care means keeping your hair clean, healthy, and neat. Wash your hair with shampoo at least once a week. Rinse out all the shampoo. After washing, dry your hair with a clean towel. Brush or comb your hair every day to remove tangles. Different hair types need different care. Ask your parents how to care for your hair type. If you have braids or cornrows, keep them neat. Do not share combs or brushes with others because germs can spread. Healthy hair looks shiny and feels soft.",
+    "summary": "Hair care: wash weekly with shampoo, rinse well, dry, brush daily. Don't share combs. Ask parents about your hair type. Healthy hair is shiny and soft.",
+    "learning_objectives": [
+      "Learn proper hair washing and brushing",
+      "Understand why not to share hair tools",
+      "Appreciate different hair types"
+    ],
+    "nigerian_examples": [
+      "Washing hair on weekends before school week starts",
+      "Getting braids or cornrows done neatly",
+      "Using a personal comb or brush labeled with your name"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How often should you wash your hair?",
+        "options": ["Once a year", "Once a month", "At least once a week", "Every day"],
+        "correct_answer": "At least once a week",
+        "explanation": "Washing your hair weekly removes dirt, oil, and germs."
+      },
+      {
+        "question": "What product do you use to wash hair?",
+        "options": ["Soap", "Shampoo", "Toothpaste", "Lotion"],
+        "correct_answer": "Shampoo",
+        "explanation": "Shampoo is specially made to clean hair without damaging it."
+      },
+      {
+        "question": "Why should you not share combs or brushes?",
+        "options": ["They are expensive", "Germs can spread from person to person", "They break easily", "They don't work after sharing"],
+        "correct_answer": "Germs can spread from person to person",
+        "explanation": "Lice, dandruff, and other germs can spread through shared combs and brushes."
+      },
+      {
+        "question": "What should you do after washing your hair?",
+        "options": ["Leave it wet", "Put on a hat immediately", "Dry with a clean towel", "Go outside in the rain"],
+        "correct_answer": "Dry with a clean towel",
+        "explanation": "Drying your hair with a clean towel prevents dripping and keeps you comfortable."
+      },
+      {
+        "question": "True or False: All hair types need exactly the same care.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Different hair types (straight, curly, kinky) need different care routines."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Healthy Habits",
+    "language": "en",
+    "content": "Healthy habits are things you do every day to keep your body strong and well. They include washing hands before eating, brushing teeth twice a day, bathing daily, getting enough sleep, drinking water, and eating fruits and vegetables. Healthy habits prevent sickness and help you grow. Make a routine: wake up, brush teeth, wash face, eat breakfast, go to school. After school: wash hands, eat, play, do homework, bathe, brush teeth, sleep. Small habits every day keep you healthy and ready to learn and play.",
+    "summary": "Healthy habits: wash hands, brush teeth, bathe, sleep enough, drink water, eat fruits and vegetables. Daily routine keeps you strong and ready to learn.",
+    "learning_objectives": [
+      "Identify daily healthy habits",
+      "Create a personal healthy routine",
+      "Understand why habits matter"
+    ],
+    "nigerian_examples": [
+      "Drinking water from a clean bottle during school break",
+      "Eating oranges or bananas as snacks instead of sweets",
+      "Going to bed early to wake up fresh for school"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which is a healthy habit?",
+        "options": ["Staying up late every night", "Eating only sweets", "Brushing teeth twice a day", "Never washing hands"],
+        "correct_answer": "Brushing teeth twice a day",
+        "explanation": "Brushing teeth twice daily prevents cavities and keeps your mouth healthy."
+      },
+      {
+        "question": "Why is drinking water important?",
+        "options": ["It makes you sleepy", "It keeps your body hydrated and healthy", "It replaces food", "It makes you dirty"],
+        "correct_answer": "It keeps your body hydrated and healthy",
+        "explanation": "Water helps all your body parts work properly."
+      },
+      {
+        "question": "How much sleep do children need each night?",
+        "options": ["10-12 hours", "3-4 hours", "15 hours", "20 hours"],
+        "correct_answer": "10-12 hours",
+        "explanation": "Children need plenty of sleep to grow, learn, and stay healthy."
+      },
+      {
+        "question": "What should you eat for a healthy snack?",
+        "options": ["Candy", "Chips", "Soda", "Fruits or vegetables"],
+        "correct_answer": "Fruits or vegetables",
+        "explanation": "Fruits and vegetables give your body vitamins and energy."
+      },
+      {
+        "question": "True or False: Healthy habits only matter when you are sick.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Healthy habits prevent sickness and keep you strong every day, not just when ill."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "School Cleanliness",
+    "language": "en",
+    "content": "School cleanliness means keeping your classroom, playground, and school compound clean. Put rubbish in dustbins, not on the floor. Keep your desk and area tidy. During sanitation time, help sweep the classroom or pick up litter. Do not write or draw on desks or walls. Keep the toilet clean — flush after use and wash your hands. A clean school helps everyone stay healthy and learn better. When you help keep your school clean, you show pride in your school and respect for your classmates and teachers.",
+    "summary": "School cleanliness: put rubbish in bins, keep desk tidy, help sweep, don't draw on walls, keep toiclean. Clean school = healthy students and pride.",
+    "learning_objectives": [
+      "Understand why school cleanliness matters",
+      "Learn how to keep school clean",
+      "Develop pride in school environment"
+    ],
+    "nigerian_examples": [
+      "Participating in weekly sanitation time at school",
+      "Using dustbins placed around the school compound",
+      "Forming cleaning groups to take turns tidying the classroom"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Where should you put rubbish at school?",
+        "options": ["On the floor", "Under the desk", "In a dustbin", "Out the window"],
+        "correct_answer": "In a dustbin",
+        "explanation": "Always put rubbish in dustbins to keep the school clean."
+      },
+      {
+        "question": "What should you do during sanitation time?",
+        "options": ["Go home", "Play outside", "Help sweep or pick up litter", "Sleep"],
+        "correct_answer": "Help sweep or pick up litter",
+        "explanation": "Sanitation time is when everyone works together to clean the school."
+      },
+      {
+        "question": "Why should you keep the school toilet clean?",
+        "options": ["So it smells bad", "So everyone can use it without getting sick", "So no one uses it", "So you don't have to wash hands"],
+        "correct_answer": "So everyone can use it without getting sick",
+        "explanation": "Clean toilets prevent germs from spreading and keep everyone healthy."
+      },
+      {
+        "question": "What shows pride in your school?",
+        "options": ["Drawing on walls", "Littering the playground", "Helping keep it clean", "Breaking desks"],
+        "correct_answer": "Helping keep it clean",
+        "explanation": "Taking care of your school shows you are proud to be a student there."
+      },
+      {
+        "question": "True or False: Only teachers are responsible for school cleanliness.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Everyone — students, teachers, and staff — is responsible for keeping the school clean."
+      }
+    ]
+  }
+]

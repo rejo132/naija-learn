@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 1,
+    "subject": "Creativity",
+    "topic": "What is Creativity?",
+    "language": "en",
+    "content": "Creativity is using your imagination to make something new or solve problems in a different way. When you draw a picture, build with blocks, tell a story, or find a new way to do a chore, you are being creative! Every person has creativity inside them. You just need to let it out!",
+    "summary": "Creativity means using your imagination to make new things or solve problems in different ways. Everyone is creative! Drawing, storytelling, and building are all creative activities.",
+    "learning_objectives": [
+      "Understand what creativity means",
+      "Recognize that everyone has creative abilities",
+      "Identify everyday creative activities"
+    ],
+    "nigerian_examples": [
+      "Nigerian children creating toys from recycled materials like tin cans and plastic bottles",
+      "Making patterns with traditional Adire or Ankara fabric designs",
+      "Creating new games using local materials like stones and sticks"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is creativity?",
+        "options": ["Only drawing pictures", "Using your imagination to make something new or solve problems", "Copying what others do", "Watching television"],
+        "correct_answer": "Using your imagination to make something new or solve problems",
+        "explanation": "Creativity is about using your imagination to create something new or find different ways to solve problems."
+      },
+      {
+        "question": "Which of these is a creative activity?",
+        "options": ["Sleeping", "Eating", "Drawing a picture from your imagination", "Watching the same show again"],
+        "correct_answer": "Drawing a picture from your imagination",
+        "explanation": "Drawing from your imagination lets you create something new that comes from your own mind."
+      },
+      {
+        "question": "Who can be creative?",
+        "options": ["Only artists", "Only adults", "Everyone including you", "Only teachers"],
+        "correct_answer": "Everyone including you",
+        "explanation": "Every single person has creativity inside them — including you! You just need to use it."
+      },
+      {
+        "question": "How can Nigerian children show creativity with recycled materials?",
+        "options": ["Throwing everything away", "Making toys from tin cans and plastic bottles", "Burning rubbish", "Burying waste"],
+        "correct_answer": "Making toys from tin cans and plastic bottles",
+        "explanation": "Creative Nigerian children turn recycled materials like tin cans and plastic bottles into wonderful toys."
+      },
+      {
+        "question": "True or False: Creativity is only about art and drawing.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Creativity is not just art! You can be creative in how you solve problems, tell stories, build things, organize your room, and much more."
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Creativity",
+    "topic": "Using Your Imagination",
+    "language": "en",
+    "content": "Imagination is your brain's power to create pictures, ideas, and stories that aren't right in front of you. When you pretend to be a superhero, imagine flying to the moon, or think of a magical world, you are using your imagination. Imagination is where all creativity begins!",
+    "summary": "Imagination is your brain's power to create pictures and ideas that aren't real yet. Pretending, dreaming, and thinking of magical worlds all use imagination. Creativity starts with imagination!",
+    "learning_objectives": [
+      "Understand what imagination means",
+      "Learn how imagination leads to creativity",
+      "Practice using imagination in daily life"
+    ],
+    "nigerian_examples": [
+      "Imagining being a Nollywood actor or actress while playing with friends",
+      "Creating pretend markets like real Nigerian markets with imaginary goods",
+      "Imagining flying like the birds seen across Nigeria's skies"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is imagination?",
+        "options": ["A type of food", "Your brain's power to create pictures and ideas that aren't real yet", "A school subject", "A type of music"],
+        "correct_answer": "Your brain's power to create pictures and ideas that aren't real yet",
+        "explanation": "Imagination lets you see things in your mind that aren't actually in front of you."
+      },
+      {
+        "question": "Which of these uses imagination?",
+        "options": ["Copying from a book", "Pretending to be a superhero", "Eating lunch", "Sharpening a pencil"],
+        "correct_answer": "Pretending to be a superhero",
+        "explanation": "Pretending requires you to imagine being someone or something different from who you really are."
+      },
+      {
+        "question": "Where does creativity begin?",
+        "options": ["With money", "With imagination", "With a teacher", "With a computer"],
+        "correct_answer": "With imagination",
+        "explanation": "All creative ideas start in your imagination first. You imagine something, then you create it!"
+      },
+      {
+        "question": "How can Nigerian children use imagination at play?",
+        "options": ["Only playing video games", "Creating pretend markets with imaginary goods", "Staring at walls", "Sleeping"],
+        "correct_answer": "Creating pretend markets with imaginary goods",
+        "explanation": "Playing pretend market lets you imagine being a trader, counting imaginary money, and selling make-believe goods."
+      },
+      {
+        "question": "True or False: You should stop using imagination when you grow up.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Imagination is important for everyone, including adults! Grown-ups use imagination to solve problems, invent things, and create art."
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Creativity",
+    "topic": "Creative Problem Solving",
+    "language": "en",
+    "content": "Creative problem solving means finding new and clever ways to fix problems. When something doesn't work the usual way, creative thinkers try different ideas until they find a solution. Instead of giving up, ask yourself: 'What else could I try?' Being a creative problem solver makes you strong and smart!",
+    "summary": "Creative problem solving means finding new ways to fix problems. When something doesn't work, try different ideas. Don't give up — ask 'What else could I try?'",
+    "learning_objectives": [
+      "Learn what creative problem solving means",
+      "Practice finding multiple solutions to problems",
+      "Develop persistence when facing challenges"
+    ],
+    "nigerian_examples": [
+      "Finding ways to carry water from a distant well using creative containers",
+      "Making a fan from cardboard when the electricity goes out",
+      "Creating a game with limited toys so everyone can play"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is creative problem solving?",
+        "options": ["Asking an adult for help every time", "Finding new and clever ways to fix problems", "Ignoring problems", "Crying when things go wrong"],
+        "correct_answer": "Finding new and clever ways to fix problems",
+        "explanation": "Creative problem solvers find clever solutions that others might not think of."
+      },
+      {
+        "question": "What should you ask yourself when facing a problem?",
+        "options": ["Why me?", "What else could I try?", "Who can I blame?", "Should I give up?"],
+        "correct_answer": "What else could I try?",
+        "explanation": "Asking 'What else could I try?' opens your mind to new possibilities and solutions."
+      },
+      {
+        "question": "If your toy breaks, what is a creative solution?",
+        "options": ["Throw it away and cry", "Try to fix it with tape or string", "Break it more", "Hide it"],
+        "correct_answer": "Try to fix it with tape or string",
+        "explanation": "Creative thinkers try to repair broken things using materials they have at home."
+      },
+      {
+        "question": "In Nigeria when electricity goes out, how can children be creative?",
+        "options": ["Just sit in the dark", "Make a fan from cardboard to stay cool", "Complain loudly", "Go to sleep at 4pm"],
+        "correct_answer": "Make a fan from cardboard to stay cool",
+        "explanation": "Creative Nigerian children make hand fans from cardboard or paper when there's no electricity for electric fans."
+      },
+      {
+        "question": "True or False: If your first idea doesn't work, you should give up.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Creative thinkers don't give up after one try. They keep trying different ideas until something works!"
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Creativity",
+    "topic": "Art and Crafts",
+    "language": "en",
+    "content": "Art and crafts are wonderful ways to express your creativity. You can draw, paint, cut paper, glue things together, mold clay, or make models. The best part about art is there are no wrong answers — your creation is special because YOU made it. Use colors, shapes, and materials to bring your ideas to life!",
+    "summary": "Art and crafts let you express creativity through drawing, painting, cutting, gluing, and molding. There are no wrong answers in art. Your creation is special because you made it!",
+    "learning_objectives": [
+      "Explore different art and activities",
+      "Understand that art has no wrong answers",
+      "Build confidence in creative expression"
+    ],
+    "nigerian_examples": [
+      "Making paper beads from old magazines to create jewelry",
+      "Drawing Adire or Ankara patterns using crayons",
+      "Creating masks using paper plates inspired by Nigerian festivals"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which of these is an art or craft activity?",
+        "options": ["Doing math homework", "Drawing and painting", "Eating breakfast", "Brushing teeth"],
+        "correct_answer": "Drawing and painting",
+        "explanation": "Drawing and painting are art activities where you can express your creativity."
+      },
+      {
+        "question": "Is there a wrong way to make art?",
+        "options": ["Yes, you must follow rules exactly", "No, art has no wrong answers", "Only if you use the wrong colors", "Only adults make real art"],
+        "correct_answer": "No, art has no wrong answers",
+        "explanation": "Art is about expressing yourself. There is no 'wrong' way to be creative with art!"
+      },
+      {
+        "question": "What makes your art special?",
+        "options": ["The expensive materials", "That YOU made it", "How big it is", "What others think"],
+        "correct_answer": "That YOU made it",
+        "explanation": "Your art is special because it comes from YOUR imagination and YOUR hands. No one else can make exactly what you make."
+      },
+      {
+        "question": "What can Nigerian children make from old magazines?",
+        "options": ["Paper airplanes only", "Paper beads for jewelry", "Hats only", "Nothing useful"],
+        "correct_answer": "Paper beads for jewelry",
+        "explanation": "Creative Nigerian children roll strips of old magazine pages into colorful beads to make necklaces and bracelets."
+      },
+      {
+        "question": "True or False: You need expensive supplies to make good art.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Great art can be made with simple, cheap, or even recycled materials. Creativity matters more than expensive supplies!"
+      }
+    ]
+  },
+  {
+    "grade": 1,
+    "subject": "Creativity",
+    "topic": "Storytelling and Music",
+    "language": "en",
+    "content": "Stories and music are powerful ways to share creativity. You can make up your own stories with characters, places, and adventures. You can sing songs, make rhythms by clapping or tapping, or even create your own simple instruments. Nigeria has rich traditions of storytelling and music — and you can add your own voice to them!",
+    "summary": "Stories and music let you share creativity. Make up stories with characters and adventures. Create rhythms by clapping or tapping. Nigeria has rich storytelling and music traditions you can add to!",
+    "learning_objectives": [
+      "Learn how storytelling expresses creativity",
+      "Explore making music and rhythms",
+      "Connect to Nigerian storytelling traditions"
+    ],
+    "nigerian_examples": [
+      "Telling moonlight tales like grandmothers share in Nigerian villages",
+      "Making a shaker from a plastic bottle filled with beans or rice",
+      "Creating new verses to popular Nigerian children's songs"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What can you include in a story you make up?",
+        "options": ["Only real things", "Characters, places, and adventures you imagine", "Only your name", "Only things from television"],
+        "correct_answer": "Characters, places, and adventures you imagine",
+        "explanation": "Your imagination can create any characters, any places, and any adventures you want!"
+      },
+      {
+        "question": "How can you make music without real instruments?",
+        "options": ["You can't make music without instruments", "Clapping, tapping, and singing", "Only by humming", "Only by whistling"],
+        "correct_answer": "Clapping, tapping, and singing",
+        "explanation": "Your body can make music too! Clapping rhythms, tapping your feet, and singing all create music."
+      },
+      {
+        "question": "What are Nigerian moonlight tales?",
+        "options": ["Stories told only at midday", "Traditional stories told to children in the evening", "Songs about the moon", "Dances performed at night"],
+        "correct_answer": "Traditional stories told to children in the evening",
+        "explanation": "Moonlight tales are traditional Nigerian stories that grandmothers and elders tell children in the evening, often under the moonlight."
+      },
+      {
+        "question": "How can you make a simple musical shaker at home?",
+        "options": ["Fill a plastic bottle with beans or rice", "Use a metal pot as a drum", "Both of these are good ideas", "None of these work"],
+        "correct_answer": "Both of these are good ideas",
+        "explanation": "A plastic bottle filled with beans or rice makes a shaker, and a metal pot turned over makes a drum. Both are creative homemade instruments!"
+      },
+      {
+        "question": "True or False: You should only repeat stories exactly as you heard them.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Part of storytelling creativity is adding your own ideas, changing characters, or creating new endings to make the story your own!"
+      }
+    ]
+  }
+]

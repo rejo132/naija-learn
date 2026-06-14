@@ -1,0 +1,127 @@
+[
+  {
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Parables of Jesus",
+    "language": "en",
+    "content": "Parables are short stories Jesus told to teach moral and spiritual lessons. The Good Samaritan teaches loving neighbors regardless of differences - a man robbed and beaten was helped by a Samaritan (enemy) when religious leaders passed by. The Prodigal Son teaches forgiveness - a son wasted his inheritance, returned home sorry, and his father welcomed him joyfully. The Sower teaches that people respond differently to God's word - some understand, some give up, some are distracted. The Mustard Seed teaches that small beginnings can grow into something great. Nigerian Christians learn these parables in Sunday school and apply them to daily life: helping strangers, forgiving family, starting small.",
+    "summary": "Jesus' parables: Good Samaritan (help strangers), Prodigal Son (forgiveness), Sower (different responses), Mustard Seed (small starts). Each teaches a moral lesson.",
+    "learning_objectives": [
+      "Summarize key parables",
+      "Explain their meanings",
+      "Apply lessons to daily life"
+    ],
+    "nigerian_examples": [
+      "Good Samaritan lesson: helping accident victims on Lagos-Ibadan road",
+      "Prodigal Son lesson: forgiving a sibling who made mistakes",
+      "Mustard Seed lesson: starting a small business that grows"
+    ],
+    "quiz_questions": [
+      {"question": "Who helped the robbed man in the Good Samaritan parable?", "options": ["Priest", "Levite", "Samaritan", "Policeman"], "correct_answer": "Samaritan", "explanation": "The Samaritan, considered an enemy, showed true compassion while religious leaders passed by."},
+      {"question": "What does the Prodigal Son parable teach?", "options": ["Revenge", "Forgiveness", "Greed", "Pride"], "correct_answer": "Forgiveness", "explanation": "The father forgave his son who wasted his inheritance and returned home sorry."},
+      {"question": "What does the Mustard Seed parable teach?", "options": ["Big starts are best", "Small beginnings can grow great", "Seeds are useless", "Only large plants matter"], "correct_answer": "Small beginnings can grow great", "explanation": "A tiny mustard seed grows into a large plant, representing faith and potential."},
+      {"question": "What does the Sower parable teach about different responses to teaching?", "options": ["Everyone understands", "Some understand, some give up, some get distracted", "No one understands", "Everyone forgets"], "correct_answer": "Some understand, some give up, some get distracted", "explanation": "Different soils represent different hearts and their responses to God's word."},
+      {"question": "True or False: Parables are meant to confuse listeners.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Parables use everyday stories to make spiritual truths easier to understand."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Hadith Studies",
+    "language": "en",
+    "content": "Hadith are collections of sayings, actions, and approvals of Prophet Muhammad (peace be upon him). They explain the Quran and guide Muslims on how to live. Authentic Hadith were carefully verified by scholars like Bukhari and Muslim. Example: 'None of you truly believes until he loves for his brother what he loves for himself' (teaches empathy). 'The strong person is not the one who can wrestle, but the one who controls himself when angry' (teaches self-control). 'Cleanliness is half of faith' (teaches hygiene). 'Seeking knowledge is an obligation upon every Muslim' (teaches education). Nigerian Muslims study Hadith in schools and apply them to daily life: controlling anger, keeping clean, pursuing education.",
+    "summary": "Hadith are Prophet Muhammad's sayings/actions. Teach empathy, self-control, cleanliness, education. Authenticated by scholars like Bukhari and Muslim.",
+    "learning_objectives": [
+      "Understand what Hadith are",
+      "Learn key prophetic teachings",
+      "Apply Hadith to daily life"
+    ],
+    "nigerian_examples": [
+      "Controlling anger during disagreements",
+      "Keeping wudhu for cleanliness",
+      "Seeking education in Nigerian schools"
+    ],
+    "quiz_questions": [
+      {"question": "What are Hadith?", "options": ["Quran chapters", "Prophet's sayings and actions", "Prayer times", "Fasting rules"], "correct_answer": "Prophet's sayings and actions", "explanation": "Hadith record the teachings and example of Prophet Muhammad."},
+      {"question": "Who authenticated major Hadith collections?", "options": ["Imam Malik", "Imam Bukhari and Imam Muslim", "Imam Abu Hanifa", "Imam Shafi"], "correct_answer": "Imam Bukhari and Imam Muslim", "explanation": "Bukhari and Muslim compiled the most authentic Hadith collections."},
+      {"question": "What does 'love for your brother what you love for yourself' teach?", "options": ["Selfishness", "Empathy and fairness", "Competition", "Ignoring others"], "correct_answer": "Empathy and fairness", "explanation": "This Hadith teaches treating others as you want to be treated."},
+      {"question": "What does 'Cleanliness is half of faith' emphasize?", "options": ["Prayer", "Hygiene", "Fasting", "Charity"], "correct_answer": "Hygiene", "explanation": "This Hadith highlights the importance of physical and spiritual purity."},
+      {"question": "True or False: Seeking knowledge is optional in Islam.", "options": ["True", "False"], "correct_answer": "False", "explanation": "The Prophet said seeking knowledge is obligatory for every Muslim."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Moral Philosophy",
+    "language": "en",
+    "content": "Moral philosophy explores what is right and wrong, good and bad. Both Christianity and Islam share core moral principles: truthfulness (honesty in words and actions), justice (fair treatment of all), compassion (caring for suffering), forgiveness (letting go of resentment), humility (not being arrogant), courage (doing right despite fear), gratitude (thanking God and people). Nigerian society values these morals: respecting elders, helping neighbors, keeping promises, admitting mistakes. Moral dilemmas test these values: Should you tell the truth if it hurts someone? Should you break a promise for a greater good? Philosophy helps us think through these questions.",
+    "summary": "Moral philosophy studies right/wrong. Shared values: truthfulness, justice, compassion, forgiveness, humility, courage, gratitude. Helps navigate dilemmas.",
+    "learning_objectives": [
+      "Identify core moral values",
+      "Analyze moral dilemmas",
+      "Apply values to daily decisions"
+    ],
+    "nigerian_examples": [
+      "Keeping promises to family members",
+      "Showing compassion to street children",
+      "Admitting mistakes honestly"
+    ],
+    "quiz_questions": [
+      {"question": "What is a core moral value in both Christianity and Islam?", "options": ["Revenge", "Truthfulness", "Greed", "Pride"], "correct_answer": "Truthfulness", "explanation": "Both religions emphasize honesty in words and actions."},
+      {"question": "What is a moral dilemma?", "options": ["An easy choice", "A situation with conflicting moral values", "A fun game", "A math problem"], "correct_answer": "A situation with conflicting moral values", "explanation": "Dilemmas occur when values conflict, like honesty vs kindness."},
+      {"question": "What does justice mean?", "options": ["Favoring friends", "Fair treatment for all", "Punishing everyone", "Ignoring wrongs"], "correct_answer": "Fair treatment for all", "explanation": "Justice ensures everyone receives what they deserve fairly."},
+      {"question": "What does compassion involve?", "options": ["Ignoring suffering", "Caring for those who suffer", "Causing suffering", "Celebrating suffering"], "correct_answer": "Caring for those who suffer", "explanation": "Compassion means feeling others' pain and wanting to help."},
+      {"question": "True or False: Moral values are only for religious people.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Moral values like honesty and fairness are universal human values, not limited to religion."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Interfaith Dialogue",
+    "language": "en",
+    "content": "Interfaith dialogue is respectful conversation between people of different religions. Nigeria has three main religious groups: Christianity, Islam, and traditional African religions. Interfaith dialogue promotes understanding, reduces prejudice, and prevents conflict. Principles: respect all participants, listen without interrupting, avoid stereotypes, focus on common values (love, peace, charity), agree to disagree politely. Examples of interfaith cooperation in Nigeria: Muslim-Christian prayer at national events, joint community service projects, interfaith youth camps. The Nigeria Inter-Religious Council (NIREC) brings Christian and Muslim leaders together. Dialogue builds peace in Nigeria's diverse society.",
+    "summary": "Interfaith dialogue = respectful conversation between different religions. Promotes understanding, reduces prejudice. Focus on common values (love, peace, charity).",
+    "learning_objectives": [
+      "Understand interfaith dialogue",
+      "Identify common religious values",
+      "Practice respectful conversation"
+    ],
+    "nigerian_examples": [
+      "NIREC meetings with Christian and Muslim leaders",
+      "Joint Christmas and Eid celebrations",
+      "Muslims and Christians rebuilding each other's places of worship"
+    ],
+    "quiz_questions": [
+      {"question": "What is interfaith dialogue?", "options": ["Converting others", "Respectful conversation between religions", "Avoiding other religions", "Fighting over beliefs"], "correct_answer": "Respectful conversation between religions", "explanation": "Dialogue aims to understand, not to convert."},
+      {"question": "Which Nigerian organization brings religious leaders together?", "options": ["NITDA", "NIREC", "NDLEA", "NPA"], "correct_answer": "NIREC", "explanation": "Nigeria Inter-Religious Council promotes Christian-Muslim cooperation."},
+      {"question": "What is a common value shared by most religions?", "options": ["War", "Charity and peace", "Greed", "Hatred"], "correct_answer": "Charity and peace", "explanation": "Most religions teach helping others and living peacefully."},
+      {"question": "What should you do in interfaith dialogue?", "options": ["Interrupt others", "Listen respectfully", "Mock other beliefs", "Shout"], "correct_answer": "Listen respectfully", "explanation": "Listening shows respect and helps understanding."},
+      {"question": "True or False: Interfaith dialogue is only for religious leaders.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Everyone can practice respectful interfaith conversation."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Social Justice",
+    "language": "en",
+    "content": "Social justice means ensuring everyone has equal rights, opportunities, and fair treatment regardless of background. Both Christianity and Islam emphasize social justice: feed the hungry, shelter the homeless, care for orphans, defend the oppressed, treat workers fairly, oppose corruption. In Nigeria, social justice issues include poverty, unequal education, healthcare access, and corruption. Religious organizations run feeding programs, schools, and clinics. Individuals can practice social justice: sharing with less fortunate, speaking against bullying, volunteering, paying fair wages. The prophets all advocated for the poor and vulnerable. Social justice is faith in action.",
+    "summary": "Social justice = equal rights and fair treatment for all. Feed hungry, shelter homeless, care for orphans, oppose corruption. Faith in action.",
+    "learning_objectives": [
+      "Understand social justice",
+      "Identify injustice examples",
+      "Take action to help others"
+    ],
+    "nigerian_examples": [
+      "Church feeding programs in Lagos slums",
+      "Mosque charity for orphans",
+      "Speaking against exam malpractice"
+    ],
+    "quiz_questions": [
+      {"question": "What is social justice?", "options": ["Only legal justice", "Equal rights and fair treatment for all", "Punishing everyone", "Helping only family"], "correct_answer": "Equal rights and fair treatment for all", "explanation": "Social justice ensures everyone has opportunities regardless of background."},
+      {"question": "Which is a social justice issue in Nigeria?", "options": ["Football scores", "Poverty and unequal education", "Weather", "Music preferences"], "correct_answer": "Poverty and unequal education", "explanation": "Social justice addresses inequalities in resources and opportunities."},
+      {"question": "How can individuals practice social justice?", "options": ["Ignore problems", "Share with less fortunate", "Hoard resources", "Take advantage of others"], "correct_answer": "Share with less fortunate", "explanation": "Small acts of sharing and helping make a difference."},
+      {"question": "What does 'faith in action' mean?", "options": ["Only praying", "Putting beliefs into practice by helping others", "Only reading scripture", "Only attending services"], "correct_answer": "Putting beliefs into practice by helping others", "explanation": "True faith shows through actions that help people."},
+      {"question": "True or False: Speaking against bullying is a form of social justice.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Standing up for victims promotes fairness and protection."}
+    ]
+  }
+]

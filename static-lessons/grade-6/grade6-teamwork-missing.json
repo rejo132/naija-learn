@@ -1,0 +1,105 @@
+[
+  {
+    "grade": 6,
+    "subject": "Teamwork",
+    "topic": "High-Performance Teams",
+    "language": "en",
+    "content": "High-performance teams consistently achieve exceptional results. Characteristics: clear common purpose, shared goals, mutual accountability, complementary skills, trust, psychological safety, effective communication, constructive conflict resolution, continuous learning, external support. Development stages: Forming (getting acquainted, polite, uncertain), Storming (conflict over roles, disagreements), Norming (establishing rules, cohesion developing), Performing (high productivity, synergy), Adjourning (project end, celebration). Building high-performance teams: select for skills AND attitude, define expectations clearly, provide resources, foster psychological safety (no fear of speaking up), celebrate wins, learn from losses, rotate leadership, invest in relationships. Nigerian examples: Super Eagles (when performing well), successful business teams, championship debate teams, surgical teams. High-performance teams achieve more than individuals working alone.",
+    "summary": "High-performance teams achieve exceptional results. Characteristics: clear purpose, trust, psychological safety, effective communication. Stages: forming, storming, norming, performing, adjourning.",
+    "learning_objectives": [
+      "Identify high-performance characteristics",
+      "Understand team development stages",
+      "Build effective teams"
+    ],
+    "nigerian_examples": [
+      "Super Eagles football team",
+      "Successful business teams",
+      "Championship debate teams",
+      "Hospital surgical teams"
+    ],
+    "quiz_questions": [
+      {"question": "What is psychological safety?", "options": ["Safe physically", "Safe to speak up, take risks, admit mistakes without fear", "No disagreements", "Strict rules"], "correct_answer": "Safe to speak up, take risks, admit mistakes without fear", "explanation": "Psychological safety enables learning and innovation."},
+      {"question": "Which stage involves conflict over roles?", "options": ["Forming", "Storming", "Norming", "Performing"], "correct_answer": "Storming", "explanation": "Storming includes disagreements as members assert positions."},
+      {"question": "What is mutual accountability?", "options": ["Blame others", "Everyone responsible for team results, not just own tasks", "One person responsible", "No responsibility"], "correct_answer": "Everyone responsible for team results, not just own tasks", "explanation": "High-performance teams hold each other accountable."},
+      {"question": "What happens in the performing stage?", "options": ["High productivity and synergy", "Conflict", "Forming rules", "Project ending"], "correct_answer": "High productivity and synergy", "explanation": "The team works smoothly and efficiently."},
+      {"question": "True or False: Only skills matter in team selection, not attitude.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Attitude (cooperativeness, reliability) is equally important."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Teamwork",
+    "topic": "Team Dynamics",
+    "language": "en",
+    "content": "Team dynamics are unconscious psychological forces influencing team behavior and performance. Positive dynamics: trust (reliance on each other), cohesion (sense of unity, 'we' feeling), collaboration (working together willingly), healthy competition (within team to improve), psychological safety, shared mental models (common understanding). Negative dynamics: social loafing (some members do less work), groupthink (pressure to conform, suppressing dissent), conflict (personal attacks, not task-focused), cliques (subgroups excluding others), diffusion of responsibility ('someone else will do it'). Managing dynamics: clarify roles, establish norms, encourage participation, address issues early, rotate tasks, give feedback, celebrate diversity of thought, intervene in destructive conflict. Leaders monitor dynamics and adjust. Nigerian teams: family units, student project groups, workplace departments. Understanding dynamics improves team effectiveness.",
+    "summary": "Team dynamics = unconscious forces affecting team behavior. Positive: trust, cohesion, collaboration. Negative: social loafing, groupthink, conflict, cliques. Manage by clarifying roles, encouraging participation.",
+    "learning_objectives": [
+      "Identify positive and negative dynamics",
+      "Manage team dynamics",
+      "Build healthy team culture"
+    ],
+    "nigerian_examples": [
+      "Family teamwork dynamics",
+      "Student project group challenges",
+      "Workplace department collaboration",
+      "Community group effectiveness"
+    ],
+    "quiz_questions": [
+      {"question": "What is social loafing?", "options": ["Working extra hard", "Some members doing less work because others will cover", "Taking breaks", "Working alone"], "correct_answer": "Some members doing less work because others will cover", "explanation": "Social loafing reduces team productivity."},
+      {"question": "What is groupthink?", "options": ["Thinking together", "Pressure to conform, suppressing dissent", "Individual thinking", "Creative thinking"], "correct_answer": "Pressure to conform, suppressing dissent", "explanation": "Groupthink leads to poor decisions because alternatives aren't considered."},
+      {"question": "What builds team cohesion?", "options": ["Conflict", "Shared goals, mutual respect, positive interactions", "Competition within team", "Ignoring each other"], "correct_answer": "Shared goals, mutual respect, positive interactions", "explanation": "Cohesion creates sense of unity."},
+      {"question": "How can leaders manage negative dynamics?", "options": ["Ignore them", "Clarify roles, encourage participation, address issues early", "Punish everyone", "Encourage conflict"], "correct_answer": "Clarify roles, encourage participation, address issues early", "explanation": "Proactive management prevents escalation."},
+      {"question": "True or False: All conflict is bad for teams.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Task-focused conflict can improve decisions; personal attacks are harmful."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Teamwork",
+    "topic": "Conflict Mastery",
+    "language": "en",
+    "content": "Conflict mastery is handling disagreements constructively to strengthen relationships and improve outcomes. Sources: different goals, limited resources, values clashes, communication breakdowns, role ambiguity, personality differences. Conflict styles: competing (assertive, uncooperative - win-lose), accommodating (unassertive, cooperative - lose-win), avoiding (unassertive, uncooperative - lose-lose), compromising (moderate both - split difference), collaborating (assertive, cooperative - win-win; best for important issues). Conflict resolution steps: pause (calm down, breathe), listen actively (understand their perspective), express using 'I feel' statements ('I feel frustrated when...'), identify interests (what each really needs), brainstorm options (multiple solutions), agree on solution, follow up. Nigerian traditional conflict resolution: elders mediate family and community disputes (village councils, family heads). Practice at school, home, community. Mastering conflict builds respect and trust.",
+    "summary": "Conflict mastery = handling disagreements constructively. Styles: competing, accommodating, avoiding, compromising, collaborating (win-win). Steps: pause, listen, I feel statements, interests, brainstorm, agree, follow up.",
+    "learning_objectives": [
+      "Understand conflict styles",
+      "Apply resolution steps",
+      "Build win-win outcomes"
+    ],
+    "nigerian_examples": [
+      "Elders mediating community disputes",
+      "Classmates resolving group project conflicts",
+      "Family members discussing resource sharing"
+    ],
+    "quiz_questions": [
+      {"question": "What is win-win conflict resolution?", "options": ["One person wins", "Both sides satisfied, solution benefits everyone", "Neither wins", "Fight to end"], "correct_answer": "Both sides satisfied, solution benefits everyone", "explanation": "Collaborating seeks mutual gain."},
+      {"question": "What is the first step in conflict resolution?", "options": ["Argue", "Pause and calm down", "Blame", "Walk away"], "correct_answer": "Pause and calm down", "explanation": "Emotions must be managed before solving problems."},
+      {"question": "What is an 'I feel' statement?", "options": ["You are wrong", "I feel frustrated when...", "It's your fault", "Never mind"], "correct_answer": "I feel frustrated when...", "explanation": "I feel statements express emotions without blaming."},
+      {"question": "Who traditionally mediates conflicts in Nigerian communities?", "options": ["Police", "Elders", "Strangers", "Children"], "correct_answer": "Elders", "explanation": "Elders are respected for wisdom and fairness."},
+      {"question": "True or False: Avoiding conflict always solves it.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Avoiding often makes problems worse; they resurface."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Teamwork",
+    "topic": "Global Teams",
+    "language": "en",
+    "content": "Global teams have members from different countries, cultures, and time zones. Challenges: time zones (scheduling meetings difficult), language barriers (accents, vocabulary differences), cultural differences (communication styles, hierarchy, decision-making), technology issues (internet reliability, software compatibility). Success strategies: asynchronous communication (email, recorded messages, shared documents - doesn't require simultaneous presence), synchronous meetings (schedule rotating times), common language (English often), cultural awareness training, clear protocols (decision-making, escalation), relationship building (virtual coffee breaks, team rituals), document decisions, use collaborative tools (Slack, Zoom, Google Workspace, Trello). Nigerian global teams: diaspora collaborates with home, remote work for international companies, multinational corporations, international NGOs. Virtual teamwork skills are essential for future careers. Practice: online group projects, international pen pals, virtual exchanges.",
+    "summary": "Global teams: members from different countries, cultures, time zones. Challenges: time zones, language, culture, technology. Strategies: asynchronous communication, synchronous meetings, cultural awareness, collaborative tools.",
+    "learning_objectives": [
+      "Understand global team challenges",
+      "Use asynchronous communication",
+      "Collaborate across differences"
+    ],
+    "nigerian_examples": [
+      "Nigerian diaspora collaborating with home",
+      "Remote work for international companies",
+      "Multinational corporation teams",
+      "Virtual student exchanges"
+    ],
+    "quiz_questions": [
+      {"question": "What is asynchronous communication?", "options": ["Live video call", "Messages that don't require simultaneous presence (email, recorded)", "Phone call", "In-person meeting"], "correct_answer": "Messages that don't require simultaneous presence (email, recorded)", "explanation": "Asynchronous communication allows flexibility across time zones."},
+      {"question": "What is a challenge of global teams?", "options": ["Same time zone", "Time zone differences, language barriers, cultural differences", "No communication needed", "One location"], "correct_answer": "Time zone differences, language barriers, cultural differences", "explanation": "Global teams navigate diversity daily."},
+      {"question": "What tool is used for global team collaboration?", "options": ["Typewriter", "Slack, Zoom, Google Workspace", "Fax machine", "Postal mail"], "correct_answer": "Slack, Zoom, Google Workspace", "explanation": "Digital tools enable remote collaboration."},
+      {"question": "Why is cultural awareness important in global teams?", "options": ["No reason", "Different cultures have different communication styles, expectations", "Everyone same", "Culture doesn't matter"], "correct_answer": "Different cultures have different communication styles, expectations", "explanation": "Awareness prevents misunderstandings."},
+      {"question": "True or False: Global teams only work for large companies.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Students, small organizations, and individuals can collaborate globally."}
+    ]
+  }
+]

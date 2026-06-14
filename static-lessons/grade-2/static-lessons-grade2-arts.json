@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Nigerian Music",
+    "language": "en",
+    "content": "Music is an important part of Nigerian culture. Different ethnic groups have different musical instruments and styles. Yoruba music features talking drums (dùndún), bata drums, and shekere (a gourd with beads). Igbo music uses ogene (metal gong), ekwe (slit drum), and ubo (thumb piano). Hausa music features kalangu (talking drum), kakaki (long trumpet), and garaya (lute). Modern Nigerian music includes Afrobeats, made famous by artists like Fela Kuti and now Burna Boy, Wizkid, and Davido. Music is used for celebrations, ceremonies, storytelling, and entertainment.",
+    "summary": "Nigerian music includes traditional instruments: talking drums (Yoruba), ogene (Igbo), kalangu (Hausa). Modern Afrobeats is famous worldwide.",
+    "learning_objectives": [
+      "Identify traditional Nigerian musical instruments",
+      "Learn about Afrobeats music",
+      "Appreciate music's role in Nigerian culture"
+    ],
+    "nigerian_examples": [
+      "Talking drums used at Yoruba weddings and festivals",
+      "Ogene played during Igbo ceremonies",
+      "Listening to Afrobeats at parties and on the radio"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a shekere?",
+        "options": ["A drum", "A gourd with beads used as a shaker", "A trumpet", "A thumb piano"],
+        "correct_answer": "A gourd with beads used as a shaker",
+        "explanation": "A shekere is a dried gourd covered with a net of beads that is shaken to make music."
+      },
+      {
+        "question": "Which musician is famous for starting Afrobeats?",
+        "options": ["Davido", "Wizkid", "Fela Kuti", "Burna Boy"],
+        "correct_answer": "Fela Kuti",
+        "explanation": "Fela Kuti created the Afrobeat sound in the 1970s, which influenced today's Afrobeats."
+      },
+      {
+        "question": "What is the Igbo metal gong called?",
+        "options": ["Shekere", "Ogene", "Kalangu", "Kakaki"],
+        "correct_answer": "Ogene",
+        "explanation": "Ogene is a metal gong used in Igbo traditional music."
+      },
+      {
+        "question": "What is the Hausa long trumpet called?",
+        "options": ["Garaya", "Kalangu", "Kakaki", "Ogene"],
+        "correct_answer": "Kakaki",
+        "explanation": "Kakaki is a long metal trumpet used in Hausa traditional music."
+      },
+      {
+        "question": "True or False: Music is only for entertainment, not for ceremonies.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Music is used for ceremonies, festivals, storytelling, and celebrations, not just entertainment."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Folk Tales",
+    "language": "en",
+    "content": "Folk tales are traditional stories passed down from grandparents to children. Many Nigerian folk tales teach lessons about honesty, kindness, and wisdom. A popular folk tale character is Tortoise, who is clever but often greedy and gets into trouble. Other animal characters include the hare, elephant, lion, and spider. Folk tales were traditionally told in the evening under the moonlight (called 'moonlight tales'). Grandparents would tell stories while children listened, learned, and sometimes sang along. Folk tales help preserve culture and teach good behavior.",
+    "summary": "Folk tales are traditional stories that teach lessons. Tortoise is a common character who is clever but greedy. Moonlight tales are told in the evening.",
+    "learning_objectives": [
+      "Understand what folk tales are",
+      "Learn about common folk tale characters",
+      "Identify lessons from stories"
+    ],
+    "nigerian_examples": [
+      "Tortoise and the birds story teaching not to be greedy",
+      "Why the tortoise has a cracked shell",
+      "Moonlight storytelling sessions in villages"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are folk tales?",
+        "options": ["New stories written yesterday", "Traditional stories passed down from grandparents", "Songs only", "Dances"],
+        "correct_answer": "Traditional stories passed down from grandparents",
+        "explanation": "Folk tales are old stories that have been told for many generations."
+      },
+      {
+        "question": "What is a common character in Nigerian folk tales?",
+        "options": ["Lion", "Tortoise", "Elephant", "Snake"],
+        "correct_answer": "Tortoise",
+        "explanation": "Tortoise is a very common character in Nigerian folk tales, known for being clever."
+      },
+      {
+        "question": "When were folk tales traditionally told?",
+        "options": ["In the morning", "At noon", "In the evening under moonlight", "At midnight only"],
+        "correct_answer": "In the evening under moonlight",
+        "explanation": "Folk tales were told in the evening, called 'moonlight tales'."
+      },
+      {
+        "question": "What do folk tales often teach?",
+        "options": ["How to cook", "Lessons about honesty, kindness, and wisdom", "How to build houses", "How to farm"],
+        "correct_answer": "Lessons about honesty, kindness, and wisdom",
+        "explanation": "Folk tales teach important moral lessons about how to behave."
+      },
+      {
+        "question": "True or False: Tortoise is always a hero who never makes mistakes.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Tortoise is often clever but also greedy or selfish, which gets him into trouble."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Drama and Acting",
+    "language": "en",
+    "content": "Drama is a story acted out by people on a stage. Acting means pretending to be someone else. Nigerian drama includes traditional masquerade performances, village theatre, and modern Nollywood movies. Nollywood is Nigeria's movie industry, which is the second largest in the world after Hollywood. Actors and actresses in Nollywood tell Nigerian stories about family, love, and culture. Drama helps people understand different points of view, express feelings, and entertain others. You can do drama at school by acting out stories or playing pretend with friends.",
+    "summary": "Drama is acting out stories. Nollywood is Nigeria's movie industry, the world's second largest. Acting helps express feelings and tell Nigerian stories.",
+    "learning_objectives": [
+      "Understand what drama and acting are",
+      "Learn about Nollywood",
+      "Practice expressing emotions through acting"
+    ],
+    "nigerian_examples": [
+      "Nollywood movies watched in homes across Nigeria and Africa",
+      "School drama clubs performing plays",
+      "Traditional masquerade performances in villages"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is Nollywood?",
+        "options": ["A type of Nigerian food", "Nigeria's movie industry", "A Nigerian dance", "A Nigerian song"],
+        "correct_answer": "Nigeria's movie industry",
+        "explanation": "Nollywood is Nigeria's movie industry and the second largest movie industry in the world."
+      },
+      {
+        "question": "What does acting mean?",
+        "options": ["Singing a song", "Pretending to be someone else", "Dancing", "Drawing a picture"],
+        "correct_answer": "Pretending to be someone else",
+        "explanation": "Acting means taking on a character and pretending to be that person."
+      },
+      {
+        "question": "How does drama help people?",
+        "options": ["Only to make money", "To understand different views, express feelings, and entertain", "Only to sleep", "Only to eat"],
+        "correct_answer": "To understand different views, express feelings, and entertain",
+        "explanation": "Drama helps people see different perspectives, share emotions, and have fun."
+      },
+      {
+        "question": "What is drama?",
+        "options": ["A story acted out by people", "A painting", "A sculpture", "A photograph"],
+        "correct_answer": "A story acted out by people",
+        "explanation": "Drama is a story performed by actors on a stage."
+      },
+      {
+        "question": "True or False: Nollywood is larger than Hollywood.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Nollywood is the second largest after Hollywood. Hollywood is still the largest."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Weaving and Crafts",
+    "language": "en",
+    "content": "Weaving is making fabric by crossing threads together on a loom. In Nigeria, weaving is an ancient craft. The Yoruba weave Aso Oke fabric for special occasions like weddings and festivals. The Hausa weave traditional caps (hula) and blankets. The Igbo weave baskets from palm leaves. Other crafts include pottery (making pots from clay), beadwork (stringing beads to make jewelry), and carving (shaping wood into masks or statues). Crafts are made by hand and show the creativity of Nigerian artists. You can try simple weaving with paper or string at home.",
+    "summary": "Weaving makes fabric on a loom. Nigerian weaves: Aso Oke (Yoruba), hula caps (Hausa), baskets (Igbo). Other crafts: pottery, beadwork, carving.",
+    "learning_objectives": [
+      "Understand what weaving is",
+      "Identify Nigerian weaving traditions",
+      "Explore other Nigerian crafts"
+    ],
+    "nigerian_examples": [
+      "Aso Oke fabric worn at Yoruba weddings",
+      "Hausa embroidered caps (hula) worn by n",
+      "Igbo baskets used for carrying produce"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is weaving?",
+        "options": ["Painting on canvas", "Making fabric by crossing threads on a loom", "Carving wood", "Making pots from clay"],
+        "correct_answer": "Making fabric by crossing threads on a loom",
+        "explanation": "Weaving is the craft of making cloth by crossing threads together."
+      },
+      {
+        "question": "What is Aso Oke?",
+        "options": ["A Hausa cap", "A Yoruba woven fabric", "An Igbo basket", "A type of pot"],
+        "correct_answer": "A Yoruba woven fabric",
+        "explanation": "Aso Oke is a hand-woven fabric made by the Yoruba people for special occasions."
+      },
+      {
+        "question": "What is pottery?",
+        "options": ["Weaving fabric", "Making pots from clay", "Stringing beads", "Carving wood"],
+        "correct_answer": "Making pots from clay",
+        "explanation": "Pottery is the craft of shaping clay into pots, bowls, and other objects."
+      },
+      {
+        "question": "What do the Igbo weave from palm leaves?",
+        "options": ["Fabric", "Caps", "Baskets", "Carpets"],
+        "correct_answer": "Baskets",
+        "explanation": "The Igbo are known for weaving baskets from palm leaves."
+      },
+      {
+        "question": "True or False: Crafts are made by machines, not by hand.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Crafts are made by hand using traditional skills passed down through generations."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Pottery",
+    "language": "en",
+    "content": "Pottery is the art of making objects from clay. Clay is soft, wet dirt that can be shaped. After shaping, the clay is baked in a hot oven called a kiln. The baking makes the clay hard and strong. In Nigeria, pottery has been made for thousands of years. The Yoruba make pots for cooking and storing water. The Igbo make decorated pots for ceremonies. The Hausa make large pots for storing grains. Pottery is used for cooking, eating, storing food and water, and decoration. You can try simple pottery with modeling clay at school.",
+    "summary": "Pottery makes objects from clay. Clay is shaped, then baked in a kiln to harden. Nigerian pottery is used for cooking, storing water, and ceremonies.",
+    "learning_objectives": [
+      "Understand what pottery is",
+      "Learn how clay becomes pottery",
+      "Identify uses of Nigerian pottery"
+    ],
+    "nigerian_examples": [
+      "Yoruba water pots kept in homes",
+      "Igbo ceremonial pots with decorative patterns",
+      "Hausa grain storage pots (zana)"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What material is used for pottery?",
+        "options": ["Wood", "Clay", "Metal", "Plastic"],
+        "correct_answer": "Clay",
+        "explanation": "Pottery is made from clay, which is soft dirt that hardens when baked."
+      },
+      {
+        "question": "What is a kiln?",
+        "options": ["A type of clay", "A hot oven for baking pottery", "A pottery tool", "A type of pot"],
+        "correct_answer": "A hot oven for baking pottery",
+        "explanation": "A kiln is a special oven that gets very hot to harden clay into pottery."
+      },
+      {
+        "question": "What do the Yoruba use pottery for?",
+        "options": ["Only decoration", "Cooking and storing water", "Only eating", "Only playing"],
+        "correct_answer": "Cooking and storing water",
+        "explanation": "Yoruba pots are used for cooking food and storing drinking water."
+      },
+      {
+        "question": "What happens when clay is baked in a kiln?",
+        "options": ["It melts", "It becomes hard and strong", "It turns into plastic", "It becomes soft"],
+        "correct_answer": "It becomes hard and strong",
+        "explanation": "Baking clay in a kiln makes it hard, strong, and permanent."
+      },
+      {
+        "question": "True or False: Pottery is a modern invention in Nigeria.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Pottery has been made in Nigeria for thousands of years, since ancient times."
+      }
+    ]
+  }
+]

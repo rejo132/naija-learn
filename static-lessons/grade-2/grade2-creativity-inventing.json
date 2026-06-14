@@ -1,0 +1,52 @@
+[
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Inventing Games",
+    "language": "en",
+    "content": "Inventing games means creating your own rules and activities. You can make up a new game with friends using things you have. First, decide the goal: How do you win? Next, make rules: What can players do? What can't they do? Then, try the game. If something isn't fun, change the rules. You can invent games with a ball, a rope, or just running. You can invent indoor games like board games or card games. Inventing games helps you think creatively, solve problems, and have fun with friends.",
+    "summary": "Invent games: decide goal and rules. Try it, then improve rules. Use a ball, rope, or nothing. Inventing games builds creativity and problem-solving.",
+    "learning_objectives": [
+      "Learn to create game rules",
+      "Practice problem-solving through play",
+      "Develop creativity with limited materials"
+    ],
+    "nigerian_examples": [
+      "Inventing a new street game with friends",
+      "Creating a ball game with different scoring rules",
+      "Making up a rain game to play indoors"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What should you decide first when inventing a game?",
+        "options": ["The color of the ball", "The goal (how to win)", "The music", "The snacks"],
+        "correct_answer": "The goal (how to win)",
+        "explanation": "Knowing how to win gives players something to aim for."
+      },
+      {
+        "question": "What should you do if your game isn't fun?",
+        "options": ["Give up", "Change the rules", "Get angry", "Blame your friends"],
+        "correct_answer": "Change the rules",
+        "explanation": "Good inventors improve their games by testing and changing rules."
+      },
+      {
+        "question": "What can you use to invent a game?",
+        "options": ["Only a ball", "Only a rope", "A ball, rope, or nothing at all", "Only a computer"],
+        "correct_answer": "A ball, rope, or nothing at all",
+        "explanation": "You can invent games with many different materials or none at all."
+      },
+      {
+        "question": "What skill does inventing games build?",
+        "options": ["Only running", "Creativity and problem-solving", "Only jumping", "Only sleeping"],
+        "correct_answer": "Creativity and problem-solving",
+        "explanation": "Inventing games exercises your brain's creative and problem-solving muscles."
+      },
+      {
+        "question": "True or False: Only adults can invent games.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Children can invent wonderful games too!"
+      }
+    ]
+  }
+]

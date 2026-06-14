@@ -1,0 +1,127 @@
+[
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Computer Parts and Functions",
+    "language": "en",
+    "content": "A computer has many parts that work together. The monitor is the screen that shows pictures and words. The CPU (Central Processing Unit) is the brain that processes information. The keyboard is used for typing letters and numbers. The mouse helps you point, click, and select items. The speakers let you hear sounds. The printer produces paper copies of your work. Understanding computer parts helps you use technology effectively. In Nigerian schools, computer labs have these parts arranged for students to use during ICT classes.",
+    "summary": "Computer parts: monitor (screen), CPU (brain), keyboard (typing), mouse (pointing), speakers (sound), printer (paper copies).",
+    "learning_objectives": [
+      "Identify computer hardware components",
+      "Explain the function of each part",
+      "Demonstrate basic computer use"
+    ],
+    "nigerian_examples": [
+      "School computer lab in Lagos",
+      "Typing your name using the keyboard",
+      "Using a mouse to play educational games"
+    ],
+    "quiz_questions": [
+      {"question": "What is the monitor?", "options": ["The brain", "The screen", "The typing device", "The pointing device"], "correct_answer": "The screen", "explanation": "The monitor displays all visual information."},
+      {"question": "What does CPU stand for?", "options": ["Computer Personal Unit", "Central Processing Unit", "Central Program Utility", "Computer Processing Unit"], "correct_answer": "Central Processing Unit", "explanation": "The CPU is the brain that processes instructions."},
+      {"question": "Which part is used for typing?", "options": ["Mouse", "Monitor", "Keyboard", "Speaker"], "correct_answer": "Keyboard", "explanation": "The keyboard has letters, numbers, and symbols for typing."},
+      {"question": "What does a printer do?", "options": ["Displays images", "Makes paper copies", "Plays sound", "Points and clicks"], "correct_answer": "Makes paper copies", "explanation": "Printers produce physical copies of digital documents."},
+      {"question": "True or False: Computers are only used for playing games.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Computers are used for learning, working, and many other purposes."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Basic Computer Operations",
+    "language": "en",
+    "content": "Basic computer operations are the essential actions you perform on a computer. Starting up: press the power button and wait for the computer to load. Logging in: enter your username and password if required. Using the desktop: the main screen with icons for programs and files. Opening programs: double-click on icons or use the Start menu (Windows) or Applications folder (Mac). Saving files: click File > Save or press Ctrl+S, name your file, choose a location. Closing programs: click the X button or press Alt+F4. Shutting down: click Start > Power > Shut Down. Always shut down properly – never just unplug the computer.",
+    "summary": "Basic operations: start up, log in, desktop navigation, open programs, save files (Ctrl+S), shut down properly.",
+    "learning_objectives": [
+      "Start and shut down a computer properly",
+      "Open and close programs",
+      "Save files correctly"
+    ],
+    "nigerian_examples": [
+      "Starting computers in the school ICT lab",
+      "Saving homework to a USB drive",
+      "Turning off computers properly after lessons"
+    ],
+    "quiz_questions": [
+      {"question": "What should you do before turning off a computer?", "options": ["Unplug it", "Close the monitor", "Use Shut Down option", "Press power button twice"], "correct_answer": "Use Shut Down option", "explanation": "Proper shutdown prevents data loss."},
+      {"question": "What is the keyboard shortcut for saving a file?", "options": ["Ctrl+C", "Ctrl+V", "Ctrl+S", "Ctrl+P"], "correct_answer": "Ctrl+S", "explanation": "Ctrl+S quickly saves your current work."},
+      {"question": "How do you open a program?", "options": ["Press power button", "Double-click its icon", "Unplug computer", "Shut down first"], "correct_answer": "Double-click its icon", "explanation": "Double-clicking is the standard way to open programs."},
+      {"question": "What is the desktop?", "options": ["Physical desk", "Main screen with icons", "Type of computer", "Program for typing"], "correct_answer": "Main screen with icons", "explanation": "The desktop is the primary screen you see after logging in."},
+      {"question": "True or False: It is safe to unplug the computer without shutting down.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Unplugging can corrupt files and damage the computer."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Introduction to Typing",
+    "language": "en",
+    "content": "Typing is the skill of entering text using a keyboard. Proper hand placement: left hand on A,S,D,F; right hand on J,K,L,; thumbs on spacebar. Home row keys are where your fingers rest. Each finger is responsible for specific keys. Practice exercises: type 'the quick brown fox jumps over the lazy dog' (uses every letter). Typing techniques: sit up straight, keep wrists straight, look at screen not keys, use all fingers equally. Speed and accuracy improve with practice. Free typing games online help make practice fun. Good typing skills help you complete schoolwork faster and prepare for future jobs.",
+    "summary": "Typing: proper hand placement on home row (A,S,D,F,J,K,L). Practice daily. Sit straight, look at screen, use all fingers. Speed improves with practice.",
+    "learning_objectives": [
+      "Place hands correctly on home row",
+      "Type without looking at keys",
+      "Improve typing speed and accuracy"
+    ],
+    "nigerian_examples": [
+      "Typing school assignments on computers",
+      "Practicing with typing tutors in ICT class",
+      "Writing emails to pen pals"
+    ],
+    "quiz_questions": [
+      {"question": "Where do your index fingers rest on the home row?", "options": ["A and J", "F and J", "D and K", "S and L"], "correct_answer": "F and J", "explanation": "F and J have small bumps to help locate home row without looking."},
+      {"question": "What is the home row?", "options": ["Top row of keyboard", "Middle row where fingers rest", "Bottom row", "Number row"], "correct_answer": "Middle row where fingers rest", "explanation": "Home row keys: A,S,D,F,J,K,L."},
+      {"question": "What sentence uses every letter of the alphabet?", "options": ["Hello world", "The quick brown fox jumps over the lazy dog", "Typing is fun", "Practice makes perfect"], "correct_answer": "The quick brown fox jumps over the lazy dog", "explanation": "This pangram contains all 26 letters."},
+      {"question": "Should you look at your fingers while typing?", "options": ["Yes always", "No, look at the screen", "Only sometimes", "Only when making mistakes"], "correct_answer": "No, look at the screen", "explanation": "Looking at the screen helps you catch errors and type faster."},
+      {"question": "True or False: Typing speed is more important than accuracy.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Accuracy matters first; speed comes with practice."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Word Processing for Beginners",
+    "language": "en",
+    "content": "Word processing software (Microsoft Word, Google Docs) helps you create documents like letters, stories, and reports. Basic features: typing text, changing font (style of letters), font size (small to large), bold (darkens text), italic (slants text), underline. Alignment options: left, center, right. Bullet points and numbering for lists. Inserting pictures: click Insert > Picture > choose image. Saving your document: Ctrl+S or File > Save. Printing: Ctrl+P or File > Print. Spell check: underlines misspelled words in red; right-click for suggestions. Word processing makes writing look professional. Nigerian students use word processors for assignments, essays, and projects.",
+    "summary": "Word processing features: typing, bold, italic, underline, font changes, alignment, bullet points, insert pictures, spell check. Save with Ctrl+S, print with Ctrl+P.",
+    "learning_objectives": [
+      "Format text using bold, italic, underline",
+      "Insert pictures into documents",
+      "Use spell check to correct errors"
+    ],
+    "nigerian_examples": [
+      "Typing a story about Nigerian culture",
+      "Creating a poster for Children's Day",
+      "Writing a letter to a grandparent"
+    ],
+    "quiz_questions": [
+      {"question": "What does bold do to text?", "options": ["Slants it", "Makes it darker", "Underlines it", "Changes color"], "correct_answer": "Makes it darker", "explanation": "Bold makes text stand out and emphasizes important words."},
+      {"question": "What is the shortcut for saving a document?", "options": ["Ctrl+C", "Ctrl+V", "Ctrl+S", "Ctrl+P"], "correct_answer": "Ctrl+S", "explanation": "Ctrl+S saves your work quickly."},
+      {"question": "What does spell check do?", "options": ["Checks grammar only", "Underlines misspelled words", "Changes font", "Adds pictures"], "correct_answer": "Underlines misspelled words", "explanation": "Red underline indicates possible spelling errors."},
+      {"question": "How do you center text?", "options": ["Use alignment tool", "Press space bar", "Type in middle", "Use bold"], "correct_answe: "Use alignment tool", "explanation": "Center alignment puts text in the middle of the page."},
+      {"question": "True or False: You cannot add pictures to word processing documents.", "options": ["True", "False"], "correct_answer": "False", "explanation": "You can insert images from files or online."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Internet Safety",
+    "language": "en",
+    "content": "Internet safety means protecting yourself while online. Never share personal information: full name, address, phone number, school name, passwords. Use strong passwords (mix of uppercase, lowercase, numbers, symbols). Don't click on pop-up ads or suspicious links – they may be scams. Only talk to people you know in real life. If a stranger messages you, tell a parent immediately. Be careful what you post – once online, it stays there forever. Cyberbullying (mean messages online) should be reported to an adult. Nigerian parents and teachers help children stay safe online. Remember: not everything on the internet is true – verify with trusted adults.",
+    "summary": "Internet safety: no personal info online, strong passwords, no suspicious links, tell adults about strangers, report cyberbullying, verify information with adults.",
+    "learning_objectives": [
+      "Identify online risks",
+      "Create strong passwords",
+      "Respond to cyberbullying appropriately"
+    ],
+    "nigerian_examples": [
+      "Asking a parent before using a new website",
+      "Reporting strange messages to teachers",
+      "Not sharing your home address in Lagos with strangers"
+    ],
+    "quiz_questions": [
+      {"question": "What personal information should you NEVER share online?", "options": ["Favorite color", "Home address", "Favorite food", "Pet's name"], "correct_answer": "Home address", "explanation": "Your address can identify where you live – keep it private."},
+      {"question": "What makes a strong password?", "options": ["123456", "password", "Blue2Fish!", "yourname"], "correct_answer": "Blue2Fish!", "explanation": "Strong passwords mix letters, numbers, and symbols."},
+      {"question": "What should you do if a stranger messages you online?", "options": ["Reply to them", "Keep it secret", "Tell a parent immediately", "Send them a photo"], "correct_answer": "Tell a parent immediately", "explanation": "Adults can help keep you safe online."},
+      {"question": "What is cyberbullying?", "options": ["Playing games online", "Mean messages or behavior online", "Watching videos", "Making friends online"], "correct_answer": "Mean messages or behavior online", "explanation": "Cyberbullying harms others and should be reported."},
+      {"question": "True or False: Everything you read on the internet is true.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Anyone can post anything – always verify with trusted adults."}
+    ]
+  }
+]

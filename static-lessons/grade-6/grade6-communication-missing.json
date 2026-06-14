@@ -1,0 +1,102 @@
+[
+  {
+    "grade": 6,
+    "subject": "Communication",
+    "topic": "Public Speaking Mastery",
+    "language": "en",
+    "content": "Public speaking mastery means delivering speeches with confidence and impact. Key elements: Preparation (research topic, know audience, organize content), Practice (rehearse aloud, time yourself, get feedback), Delivery (speak clearly, use pauses, vary tone, make eye contact), Body language (stand tall, use gestures, don't fidget), Handling nerves (breathe deeply, visualize success, start strong). Speech structure: Opening (hook attention: question, story, fact), Body (3 main points with evidence), Conclusion (summarize, call to action). Nigerian students practice public speaking in debates, assemblies, and competitions. Famous Nigerian speakers: Ngozi Okonjo-Iweala, Chimamanda Adichie, Wole Soyinka.",
+    "summary": "Public speaking mastery: preparation, practice, delivery, body language, handling nerves. Structure: opening, body, conclusion. Nigerian speakers: Adichie, Soyinka.",
+    "learning_objectives": [
+      "Prepare effective speeches",
+      "Deliver with confidence",
+      "Handle nervousness"
+    ],
+    "nigerian_examples": [
+      "School assembly announcements",
+      "Inter-house debate competitions",
+      "Ngozi Okonjo-Iweala's WTO speeches"
+    ],
+    "quiz_questions": [
+      {"question": "What is the first step in speech preparation?", "options": ["Practice", "Research and know audience", "Write conclusion", "Add gestures"], "correct_answer": "Research and know audience", "explanation": "Understand your topic and who you are speaking to before writing."},
+      {"question": "How can you handle nervousness before speaking?", "options": ["Run away", "Breathe deeply and visualize success", "Ignore it", "Speak faster"], "correct_answer": "Breathe deeply and visualize success", "explanation": "Deep breathing calms nerves; visualization builds confidence."},
+      {"question": "What should the opening of a speech do?", "options": ["Summarize", "Hook attention", "List sources", "Thank everyone"], "correct_answer": "Hook attention", "explanation": "Start with a question, story, or surprising fact to engage listeners."},
+      {"question": "How many main points should a speech body have?", "options": ["1", "3", "5", "7"], "correct_answer": "3", "explanation": "Three main points is ideal for audience retention."},
+      {"question": "True or False: You should look at your audience when speaking.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Eye contact connects you with listeners and shows confidence."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Communication",
+    "topic": "Listening Comprehension",
+    "language": "en",
+    "content": "Listening comprehension is understanding spoken information accurately. Types of listening: Discriminative (distinguishing sounds), Informational (understanding facts), Critical (evaluating arguments), Empathetic (understanding feelings). Strategies: Focus attention (eliminate distractions), Predict content (anticipate what you'll hear), Identify main ideas, Take notes (key words, not everything), Ask clarifying questions, Summarize what you heard. Active listening body language: eye contact, nod, lean forward, don't interrupt. Nigerian students use listening comprehension in lectures, instructions, news, and conversations. Good listening improves grades, relationships, and job performance.",
+    "summary": "Listening comprehension = understanding spoken information. Types: discriminative, informational, critical, empathetic. Strategies: focus, predict, identify main ideas, take notes, summarize.",
+    "learning_objectives": [
+      "Identify listening types",
+      "Apply active listening strategies",
+      "Improve note-taking skills"
+    ],
+    "nigerian_examples": [
+      "Understanding teacher instructions",
+      "Following news reports on NTA",
+      "Comprehending sermons in church or mosque"
+    ],
+    "quiz_questions": [
+      {"question": "What is critical listening?", "options": ["Hearing sounds", "Understanding facts", "Evaluating arguments", "Feeling emotions"], "correct_answer": "Evaluating arguments", "explanation": "Critical listening assesses logic, bias, and evidence."},
+      {"question": "What should you do while listening to a lecture?", "options": ["Daydream", "Take notes on key words", "Talk to neighbor", "Close eyes"], "correct_answer": "Take notes on key words", "explanation": "Notes help you remember and review main points."},
+      {"question": "What body language shows active listening?", "options": ["Looking away", "Crossing arms", "Leaning forward, eye contact, nodding", "Slouching"], "correct_answer": "Leaning forward, eye contact, nodding", "explanation": "These signals show you are engaged and understanding."},
+      {"question": "What should you do after listening to a message?", "options": ["Forget it", "Summarize what you heard", "Ignore it", "Repeat word-for-word"], "correct_answer": "Summarize what you heard", "explanation": "Summarizing checks your understanding and reinforces memory."},
+      {"question": "True or False: Predicting content before listening is helpful.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Prediction activates prior knowledge and prepares your brain."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Communication",
+    "topic": "Negotiation Skills",
+    "language": "en",
+    "content": "Negotiation is discussing to reach agreement when people have different interests. Steps: Prepare (know your goal, know their likely goal, find common ground), Discuss (state your position clearly, listen to theirs), Propose (suggest solutions), Bargain (give and take, compromise), Agree (confirm understanding, shake hands). Principles: Separate people from problem (don't attack person), Focus on interests not positions (why they want what they want), Invent options for mutual gain (creative solutions), Use objective criteria (fair standards). In Nigerian culture, negotiation is common in markets (buying and selling), family decisions, and business. Win-win is best (both satisfied), not win-lose (one winner).",
+    "summary": "Negotiation: discuss to reach agreement. Steps: prepare, discuss, propose, bargain, agree. Separate people from problem, focus on interests, invent options, use objective criteria.",
+    "learning_objectives": [
+      "Understand negotiation steps",
+      "Practice win-win outcomes",
+      "Apply to school and home situations"
+    ],
+    "nigerian_examples": [
+      "Bargaining at Onitsha market",
+      "Deciding whose turn to use computer",
+      "Splitting chores with siblings"
+    ],
+    "quiz_questions": [
+      {"question": "What does win-win mean?", "options": ["One person wins", "Both people satisfied", "Neither wins", "Fight to the end"], "correct_answer": "Both people satisfied", "explanation": "Win-win negotiations leave all parties feeling good about the outcome."},
+      {"question": "What is the first step in negotiation?", "options": ["Argue", "Prepare (know your goal)", "Walk away", "Demand everything"], "correct_answer": "Prepare (know your goal)", "explanation": "Knowing what you want before starting is essential."},
+      {"question": "What does 'separate people from problem' mean?", "options": ["Attack the person", "Address the issue, not personally attack", "Ignore the problem", "Blame others"], "correct_answer": "Address the issue, not personally attack", "explanation": "Focus on solving the problem, not blaming the person."},
+      {"question": "What is a common Nigerian negotiation setting?", "options": ["Church", "School exam", "Market", "Hospital"], "correct_answer": "Market", "explanation": "Bargaining for goods is a daily negotiation in Nigerian markets."},
+      {"question": "True or False: Compromise means both sides give something.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Compromise involves each side making concessions to reach agreement."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Communication",
+    "topic": "Media Literacy",
+    "language": "en",
+    "content": "Media literacy is ability to access, analyze, evaluate, and create media. Types of media: news, social media, advertising, entertainment, educational. Critical questions: Who created this message? Why? Who is the target audience? What techniques attract attention? What values are represented? What is omitted? How might different people interpret this? Media literacy helps you: distinguish facts from opinions, recognize bias and propaganda, identify fake news, understand advertising persuasion, avoid misinformation. Nigerian media landscape: NTA, Channels TV, Arise TV, Punch newspaper, Premium Times, social media (WhatsApp, Twitter, Facebook, TikTok). Always verify information with multiple sources before sharing.",
+    "summary": "Media literacy = analyze and evaluate media. Ask who created, why, target audience, techniques, values, omissions. Distinguish facts from opinions. Verify with multiple sources.",
+    "learning_objectives": [
+      "Analyze media messages critically",
+      "Identify bias and fake news",
+      "Evaluate source credibility"
+    ],
+    "nigerian_examples": [
+      "Comparing news reports from different Nigerian stations",
+      "Fact-checking viral WhatsApp messages",
+      "Analyzing political advertisements during elections"
+    ],
+    "quiz_questions": [
+      {"question": "What is media literacy?", "options": ["Reading newspapers", "Analyzing and evaluating media critically", "Watching TV only", "Using social media"], "correct_answer": "Analyzing and evaluating media critically", "explanation": "Media literacy helps you think critically about messages."},
+      {"question": "What should you do before sharing news online?", "options": ["Share immediately", "Verify with multiple sources", "Believe everything", "Add your opinion"], "correct_answer": "Verify with multiple sources", "explanation": "Check facts from reliable sources before sharing."},
+      {"question": "What is fake news?", "options": ["True news", "False information presented as news", "Old news", "Entertainment news"], "correct_answer": "False information presented as news", "explanation": "Fake news is deliberately false information."},
+      {"question": "What question helps analyze media bias?", "options": ["Who created this and why?", "Is it colorful?", "How long is it?", "Is it popular?"], "correct_answer": "Who created this and why?", "explanation": "Understanding creator's purpose reveals potential bias."},
+      {"question": "True or False: Social media posts are always accurate.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Anyone can post anything; verify before trusting."}
+    ]
+  }
+]

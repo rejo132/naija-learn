@@ -1,0 +1,106 @@
+[
+  {
+    "grade": 6,
+    "subject": "Leadership",
+    "topic": "Global Leadership",
+    "language": "en",
+    "content": "Global leadership involves leading across cultures, countries, and international systems. Global leaders understand diverse perspectives, adapt communication styles, respect cultural differences, and address transnational issues (climate change, poverty, health pandemics, peace). Characteristics: cultural intelligence (ability to work effectively across cultures), global mindset (curiosity about other countries), empathy, patience, second language skills. Nigerian global leaders: Ngozi Okonjo-Iweala (WTO Director-General, first African and first woman), Akinwumi Adesina (African Development Bank President), Mo Ibrahim (philanthropist, cell phone pioneer). You can develop global leadership: learn about other cultures, study world history, consider international issues, practice foreign languages (French, Arabic, Chinese). The world needs leaders who can unite rather than divide.",
+    "summary": "Global leadership: leading across cultures and countries. Characteristics: cultural intelligence, global mindset, empathy. Nigerian global leaders: Okonjo-Iweala, Adesina, Mo Ibrahim.",
+    "learning_objectives": [
+      "Understand global leadership",
+      "Develop cultural intelligence",
+      "Learn from Nigerian global leaders"
+    ],
+    "nigerian_examples": [
+      "Ngozi Okonjo-Iweala at World Trade Organization",
+      "Akinwumi Adesina at African Development Bank",
+      "Mo Ibrahim's governance prize",
+      "Nigerian diplomats at UN"
+    ],
+    "quiz_questions": [
+      {"question": "Who is Nigeria's Director-General of World Trade Organization?", "options": ["Akinwumi Adesina", "Ngozi Okonjo-Iweala", "Mo Ibrahim", "Aliko Dangote"], "correct_answer": "Ngozi Okonjo-Iweala", "explanation": "She is the first African and first woman to lead WTO."},
+      {"question": "What is cultural intelligence?", "options": ["IQ score", "Ability to work effectively across cultures", "Language test", "Math ability"], "correct_answer": "Ability to work effectively across cultures", "explanation": "CQ helps leaders navigate cultural differences."},
+      {"question": "What global issue do leaders address?", "options": ["Only local traffic", "Climate change, poverty, health pandemics", "Only school schedules", "Only sports"], "correct_answer": "Climate change, poverty, health pandemics", "explanation": "Global problems require global cooperation."},
+      {"question": "How can you develop global leadership?", "options": ["Stay in one place", "Learn about other cultures, study world history, learn languages", "Ignore news", "Only speak English"], "correct_answer": "Learn about other cultures, study world history, learn languages", "explanation": "Broad knowledge enables global perspective."},
+      {"question": "True or False: Global leaders only lead entire countries.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Global leaders lead organizations, companies, and movements worldwide."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Leadership",
+    "topic": "Organizational Culture",
+    "language": "en",
+    "content": "Organizational culture is the shared values, beliefs, and behaviors that shape how people work together. Elements: values (what matters: integrity, innovation, customer focus), norms (unwritten rules: how people treat each other), rituals (regular practices: meetings, celebrations), symbols (logos, office layout), stories (legends about founders or heroes). Strong cultures improve performance, attract talent, retain employees. Weak cultures cause confusion, low morale, high turnover. Leaders shape culture by: modeling desired behaviors, rewarding aligned actions, hiring for cultural fit, communicating values repeatedly, addressing toxic behaviors. Nigerian organizations: banks (customer service culture), NGOs (mission-driven culture), tech startups (innovation culture). You shape culture in your groups: class, family, sports team. Be the culture you want.",
+    "summary": "Organizational culture = shared values, beliefs, behaviors. Elements: values, norms, rituals, symbols, stories. Leaders shape culture by modeling, rewarding, communicating.",
+    "learning_objectives": [
+      "Understand organizational culture",
+      "Identify culture elements",
+      "Shape positive culture"
+    ],
+    "nigerian_examples": [
+      "Bank customer service culture",
+      "Tech startup innovation culture",
+      "School club teamwork culture",
+      "Family traditions and values"
+    ],
+    "quiz_questions": [
+      {"question": "What is organizational culture?", "options": ["Office furniture", "Shared values, beliefs, behaviors", "Company logo only", "Salary only"], "correct_answer": "Shared values, beliefs, behaviors", "explanation": "Culture is 'how we do things around here.'"},
+      {"question": "How do leaders shape culture?", "options": ["Ignore behavior", "Model desired behaviors and reward aligned actions", "Only give speeches", "Punish everyone"], "correct_answer": "Model desired behaviors and reward aligned actions", "explanation": "Actions speak louder than words."},
+      {"question": "What is a norm?", "options": ["Written law", "Unwritten rule about behavior", "Building", "Salary"], "correct_answer": "Unwritten rule about behavior", "explanation": "Norms are expectations of how people should act."},
+      {"question": "Why does culture matter?", "options": ["No reason", "Strong culture improves performance and retains talent", "Only for big companies", "Only for schools"], "correct_answer": "Strong culture improves performance and retains talent", "explanation": "Culture affects motivation and productivity."},
+      {"question": "True or False: Only CEOs shape organizational culture.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Everyone influences culture through their behavior."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Leadership",
+    "topic": "Leadership Ethics",
+    "language": "en",
+    "content": "Leadership ethics are moral principles guiding leaders' decisions and actions. Ethical principles: honesty (tell truth, even when hard), integrity (align actions with values, do right even when no one watches), fairness (treat everyone equally, avoid favoritism), responsibility (own decisions and consequences, admit mistakes), respect (value all people regardless of status, listen to dissenting views), transparency (share information openly, explain decisions), accountability (answer for results, accept feedback). Unethical leadership examples: corruption, lying, favoritism, bullying, taking credit for others' work, covering up mistakes. Nigerian ethical leaders: Ngozi Okonjo-Iweala (anti-corruption), Dora Akunyili (fighting fake drugs), Simi Nwogugu (educational integrity). Ethical dilemmas: Should you report a friend's cheating? Should you accept a gift that might influence your decision? Ethics requires courage.",
+    "summary": "Leadership ethics: moral principles for leaders. Principles: honesty, integrity, fairness, responsibility, respect, transparency, accountability. Requires courage to do right.",
+    "learning_objectives": [
+      "Identify ethical principles",
+      "Recognize unethical behavior",
+      "Navigate ethical dilemmas"
+    ],
+    "nigerian_examples": [
+      "Dora Akunyili fighting fake drugs at NAFDAC",
+      "Ngozi Okonjo-Iweala's anti-corruption stance",
+      "Reporting exam malpractice",
+      "Declining inappropriate gifts"
+    ],
+    "quiz_questions": [
+      {"question": "What is integrity?", "options": ["Doing right only when watched", "Aligning actions with values, even when no one watches", "Getting credit", "Being popular"], "correct_answer": "Aligning actions with values, even when no one watches", "explanation": "Integrity means consistency between values and behavior."},
+      {"question": "What is corruption?", "options": ["Hard work", "Misusing position for personal gain", "Honesty", "Transparency"], "correct_answer": "Misusing position for personal gain", "explanation": "Corruption includes bribery, embezzlement, favoritism."},
+      {"question": "Who fought fake drugs in Nigeria?", "options": ["Ngozi Okonjo-Iweala", "Dora Akunyili", "Simi Nwogugu", "Aliko Dangote"], "correct_answer": "Dora Akunyili", "explanation": "As NAFDAC director, she cleaned up the drug market."},
+      {"question": "What should you do if you see a friend cheating?", "options": ["Ignore", "Join them", "Report it or talk to them about why it's wrong", "Cheat more"], "correct_answer": "Report it or talk to them about why it's wrong", "explanation": "Ethical leaders address wrongdoing, not ignore it."},
+      {"question": "True or False: Ethical leadership requires courage.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Doing right is often harder than doing wrong."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Leadership",
+    "topic": "Future of Leadership",
+    "language": "en",
+    "content": "The future of leadership requires adapting to rapid change: technology (AI, automation, remote work), demographics (diverse workforce), environment (climate change, sustainability), globalization (interconnected economies), social change (equity, inclusion, purpose-driven work). Future leader skills: adaptability (learn continuously, embrace change), digital literacy (use technology effectively), empathy (understand diverse perspectives), resilience (bounce back from setbacks), systems thinking (see interconnections), collaboration (work across boundaries), creativity (generate novel solutions), emotional intelligence (manage self and relationships). Nigerian future leaders: young entrepreneurs, tech founders, social innovators, climate activists. You can prepare now: learn coding, practice remote collaboration, study global issues, develop empathy, lead projects, embrace failure as learning. The best leaders will be lifelong learners.",
+    "summary": "Future leadership requires adapting to change. Skills: adaptability, digital literacy, empathy, resilience, systems thinking, collaboration, creativity, emotional intelligence.",
+    "learning_objectives": [
+      "Identify future leadership skills",
+      "Prepare for changing world",
+      "Embrace lifelong learning"
+    ],
+    "nigerian_examples": [
+      "Young tech founders in Lagos",
+      "Social entrepreneurs addressing poverty",
+      "Youth climate activists",
+      "Remote work pioneers"
+    ],
+    "quiz_questions": [
+      {"question": "What is a key future leadership skill?", "options": ["Knowing everything", "Adaptability and lifelong learning", "Resisting change", "Doing same thing always"], "correct_answer": "Adaptability and lifelong learning", "explanation": "Change is constant; leaders must evolve."},
+      {"question": "Why is digital literacy important?", "options": ["No reason", "Technology transforms work; leaders must understand it", "Only for programmers", "Optional"], "correct_answer": "Technology transforms work; leaders must understand it", "explanation": "Leaders need to leverage technology effectively."},
+      {"question": "What is emotional intelligence?", "options": ["IQ score", "Managing own emotions and understanding others'", "Math skill", "Writing skill"], "correct_answer": "Managing own emotions and understanding others'", "explanation": "EQ is crucial for relationships and teamwork."},
+      {"question": "How can you prepare for future leadership?", "options": ["Stop learning", "Learn coding, practice collaboration, study global issues", "Ignore technology", "Only focus on grades"], "correct_answer": "Learn coding, practice collaboration, study global issues", "explanation": "Broad skills prepare for uncertain future."},
+      {"question": "True or False: Future leaders will need to collaborate across countries and cultures.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Globalization requires cross-border cooperation."}
+    ]
+  }
+]

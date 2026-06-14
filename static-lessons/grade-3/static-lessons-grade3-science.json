@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Food Chains",
+    "language": "en",
+    "content": "A food chain shows how energy moves from one living thing to another. Plants are producers - they make their own food using sunlight. Animals that eat plants are called herbivores (primary consumers). Animals that eat other animals are called carnivores (secondary consumers). Some animals eat both plants and animals - they are omnivores. A simple food chain: Grass (producer) → Grasshopper (herbivore) → Frog (carnivore) → Snake (carnivore) → Eagle (carnivore). The arrow means 'is eaten by'. All food chains start with the sun, which gives energy to plants. Understanding food chains helps us see how all living things are connected.",
+    "summary": "Food chains show energy flow: Sun → Plants (producers) → Herbivores → Carnivores. Arrows mean 'is eaten by'. All living things are connected in food chains.",
+    "learning_objectives": [
+      "Understand what a food chain is",
+      "Identify producers, herbivores, and carnivores",
+      "Create simple food chains"
+    ],
+    "nigerian_examples": [
+      "Grass → Goat → Human (in Nigerian villages)",
+      "Plankton → Fish → Human (in Nigerian rivers)",
+      "Leaves → Caterpillar → Chicken → Human (on Nigerian farms)"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are producers in a food chain?",
+        "options": ["Animals that eat plants", "Animals that eat meat", "Plants that make their own food", "Animals that eat both"],
+        "correct_answer": "Plants that make their own food",
+        "explanation": "Producers like grass and trees make their own food using sunlight."
+      },
+      {
+        "question": "What do the arrows in a food chain mean?",
+        "options": ["Is eaten by", "Is bigger than", "Is faster than", "Is friends with"],
+        "correct_answer": "Is eaten by",
+        "explanation": "The arrow points from the food to the animal that eats it."
+      },
+      {
+        "question": "What is an herbivore?",
+        "options": ["An animal that eats only plants", "An animal that eats only meat", "An animal that eats both", "A plant"],
+        "correct_answer": "An animal that eats only plants",
+        "explanation": "Herbivores like goats and cows eat only plants."
+      },
+      {
+        "question": "What is a carnivore?",
+        "options": ["An animal that eats only plants", "An animal that eats only meat", "An animal that eats both", "A plant"],
+        "correct_answer": "An animal that eats only meat",
+        "explanation": "Carnivores like lions and eagles eat only other animals."
+      },
+      {
+        "question": "True or False: All food chains start with the sun.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "The sun gives energy to plants, which starts every food chain."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Ecosystems",
+    "language": "en",
+    "content": "An ecosystem is a community of living things and their environment. All parts of an ecosystem work together. Living parts (biotic) include plants, animals, and tiny organisms. Non-living parts (abiotic) include water, soil, air, sunlight, and temperature. Examples of ecosystems: forest, grassland, desert, river, ocean, and pond. In a pond ecosystem, fish eat insects, frogs eat fish, birds eat frogs, and when they die, bacteria break them down into nutrients for plants. If one part of an ecosystem changes, it affects everything else. Protecting ecosystems means protecting all the living and non-living parts together.",
+    "summary": "Ecosystems = living things + environment. Biotic: plants, animals. Abiotic: water, soil, sun. Forest, grassland, desert, pond, ocean are examples. Everything is connected.",
+    "learning_objectives": [
+      "Define ecosystem",
+      "Distinguish between biotic and abiotic factors",
+      "Identify different Nigerian ecosystems"
+    ],
+    "nigerian_examples": [
+      "Niger Delta mangrove forest ecosystem",
+      "Savanna grassland ecosystem in northern Nigeria",
+      "Yankari National Park ecosystem with wildlife"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is an ecosystem?",
+        "options": ["Only animals in one place", "Living things and their environment together", "Only plants in one place", "Only water in one place"],
+        "correct_answer": "Living things and their environment together",
+        "explanation": "An ecosystem includes both living things and the non-living things around them."
+      },
+      {
+        "question": "Which is a biotic (living) part of an ecosystem?",
+        "options": ["Water", "Soil", "Plant", "Sunlight"],
+        "correct_answer": "Plant",
+        "explanation": "Plants are living, so they are biotic. Water, soil, and sunlight are non-living (abiotic)."
+      },
+      {
+        "question": "Which is an abiotic (non-living) part of an ecosystem?",
+        "options": ["Bird", "Tree", "Fish", "Water"],
+        "correct_answer": "Water",
+        "explanation": "Water is non-living (abiotic). Birds, trees, and fish are living (biotic)."
+      },
+      {
+        "question": "Which ecosystem is found in northern Nigeria?",
+        "options": ["Mangrove forest", "Rainforest", "Savanna grassland", "Ocean"],
+        "correct_answer": "Savanna grassland",
+        "explanation": "Northern Nigeria is known for savanna grassland ecosystems."
+      },
+      {
+        "question": "True or False: If one part of an ecosystem changes, it affects other parts.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "All parts of an ecosystem are connected. Changes affect the whole system."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Rocks and Soil",
+    "language": "en",
+    "content": "Rocks are natural solid materials made of minerals. There are three types of rocks: igneous (formed from cooled lava/magma), sedimentary (formed from pressed layers of sand and shells), and metamorphic (changed by heat and pressure). Soil is made from broken-down rocks mixed with dead plants and animals. Different soil types: sandy (loose, drains fast), clay (sticky, holds water), loamy (best for farming). Nigeria has valuable rocks: granite, limestone, coal, and even gold. Rocks and soil are important for building, farming, and making things we use every day.",
+    "summary": "Three rock types: igneous (cooled lava), sedimentary (pressed layers), metamorphic (changed by heat/pressure). Soil types: sandy, clay, loamy. Nigeria has granite, limestone, coal.",
+    "learning_objectives": [
+      "Identify three types of rocks",
+      "Describe different soil types",
+      "Recognize Nigerian rocks and minerals"
+    ],
+    "nigerian_examples": [
+      "Granite rocks in Abuja for building",
+      "Limestone used for cement in Ewekoro",
+      "Coal found in Enugu (formerly called Coal City)"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which type of rock is formed from cooled lava?",
+        "options": ["Sedimentary", "Metamorphic", "Igneous", "Limestone"],
+        "correct_answer": "Igneous",
+        "explanation": "Igneous rocks form when hot lava or magma cools and hardens."
+      },
+      {
+        "question": "Which type of rock is formed from pressed layers of sand and shells?",
+        "options": ["Igneous", "Sedimentary", "Metamorphic", "Granite"],
+        "correct_answer": "Sedimentary",
+        "explanation": "Sedimentary rocks form when layers of sediment are pressed together over time."
+      },
+      {
+        "question": "Which soil type is best for farming?",
+        "options": ["Sandy", "Clay", "Loamy", "Rocky"],
+        "correct_answer": "Loamy",
+        "explanation": "Loamy soil has the perfect mix of sand, clay, and nutrients for growing crops."
+      },
+      {
+        "question": "Which Nigerian city is famous for coal?",
+        "options": ["Lagos", "Abuja", "Enugu", "Kano"],
+        "correct_answer": "Enugu",
+        "explanation": "Enugu was called 'Coal City' because of its large coal deposits."
+      },
+      {
+        "question": "True or False: Soil is made only of rocks, not dead plants or animals.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Soil is made of broken rocks AND decayed plants and animals."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Forces and Motion",
+    "language": "en",
+    "content": "A force is a push or a pull that can make things move, stop, or change direction. Gravity is a force that pulls objects toward the Earth - that's why things fall down, not up. Friction is a force that slows things down when they rub against each other - that's why your shoes grip the ground. Magnetism is a force that pulls certain metals (like iron) toward a magnet. Pushing a door open, pulling a wagon, kicking a ball - all use forces. Understanding forces helps us know why things move the way they do.",
+    "summary": "Forces are pushes or pulls. Gravity pulls things down. Friction slows things down. Magnetism pulls certain metals. Forces make things move, stop, or change direction.",
+    "learning_objectives": [
+      "Define force as push or pull",
+      "Explain gravity and friction",
+      "Identify forces in everyday life"
+    ],
+    "nigerian_examples": [
+      "Gravity pulling a mango down from a tree",
+      "Friction helping you walk on a dusty road",
+      "Magnetismriments"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a force?",
+        "options": ["A type of food", "A push or a pull", "A color", "A sound"],
+        "correct_answer": "A push or a pull",
+        "explanation": "Forces are pushes or pulls that affect how objects move."
+      },
+      {
+        "question": "What does gravity do?",
+        "options": ["Pulls things up", "Pulls things down to Earth", "Pushes things sideways", "Makes things float"],
+        "correct_answer": "Pulls things down to Earth",
+        "explanation": "Gravity is the force that pulls everything toward the center of the Earth."
+      },
+      {
+        "question": "What does friction do?",
+        "options": ["Makes things go faster", "Slows things down when they rub together", "Pulls things up", "Makes things invisible"],
+        "correct_answer": "Slows things down when they rub together",
+        "explanation": "Friction is a force that opposes motion when two surfaces touch."
+      },
+      {
+        "question": "Which force pulls certain metals toward a magnet?",
+        "options": ["Gravity", "Friction", "Magnetism", "Wind"],
+        "correct_answer": "Magnetism",
+        "explanation": "Magnetism is the force that attracts iron and other magnetic metals."
+      },
+      {
+        "question": "True or False: Forces can only make things move, not stop them.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Forces can make things move, stop moving, speed up, slow down, or change direction."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Simple Machines",
+    "language": "en",
+    "content": "Simple machines are tools that make work easier. The six simple machines are: lever (see-saw, bottle opener), pulley (flagpole, well bucket), wheel and axle (bicycle, car wheels), inclined plane (ramp, slide), wedge (knife, axe), and screw (lid on a jar). Simple machines help us lift heavy things, cut, or move objects with less force. For example, a lever helps lift a heavy rock using a long stick and a pivot point. A ramp (inclined plane) lets you roll a heavy box up instead of lifting it straight up. Simple machines are everywhere around us.",
+    "summary": "Six simple machines: lever, pulley, wheel and axle, inclined plane, wedge, screw. They make work easier by changing force or direction. Examples: see-saw, flagpole, ramp, knife.",
+    "learning_objectives": [
+      "Identify the six simple machines",
+      "Explain how each makes work easier",
+      "Find examples of simple machines"
+    ],
+    "nigerian_examples": [
+      "Using a lever to open a bottle of soft drink",
+      "Pulley system to lift water from a well",
+      "Wedge (knife) to cut yam"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How many simple machines are there?",
+        "options": ["Four", "Five", "Six", "Seven"],
+        "correct_answer": "Six",
+        "explanation": "There are six simple machines: lever, pulley, wheel and axle, inclined plane, wedge, screw."
+      },
+      {
+        "question": "Which simple machine is a see-saw an example of?",
+        "options": ["Pulley", "Lever", "Wedge", "Screw"],
+        "correct_answer": "Lever",
+        "explanation": "A see-saw is a lever that balances on a pivot point called a fulcrum."
+      },
+      {
+        "question": "Which simple machine uses a rope and wheel to lift things?",
+        "options": ["Lever", "Pulley", "Wedge", "Inclined plane"],
+        "correct_answer": "Pulley",
+        "explanation": "A pulley uses a rope that moves over a wheel to change the direction of force."
+      },
+      {
+        "question": "Which simple machine is a knife an example of?",
+        "options": ["Lever", "Screw", "Wedge", "Wheel and axle"],
+        "correct_answer": "Wedge",
+        "explanation": "A wedge is a sharp edge that cuts or splits objects."
+      },
+      {
+        "question": "True or False: Simple machines can help you lift heavy things with less force.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "That's exactly what simple machines do - they make work easier by changing the amount or direction of force."
+      }
+    ]
+  }
+]

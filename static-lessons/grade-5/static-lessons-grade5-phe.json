@@ -1,0 +1,102 @@
+[
+  {
+    "grade": 5,
+    "subject": "Physical & Health Education",
+    "topic": "Sports Psychology",
+    "language": "en",
+    "content": "Sports psychology is the study of how mindset affects athletic performance. Key concepts: goal setting (SMART goals - Specific, Measurable, Achievable, Relevant, Time-bound), visualization (imagining successful performance), self-talk (positive internal dialogue), concentration (focusing on task, ignoring distractions), arousal control (managing nervousness), and resilience (bouncing back from failure). Nigerian athletes like Blessing Okagbare use sports psychology to prepare for competitions. Before a match, visualize success: 'I see myself scoring the winning goal.' Use positive self-talk: 'I am strong, I am prepared, I can do this.' Sports psychology works for any performance: exams, presentations, music recitals.",
+    "summary": "Sports psychology: mindset affects performance. Tools: SMART goals, visualization, positive self-talk, concentration, resilience. Used by Nigerian athletes. Works for exams and presentations too.",
+    "learning_objectives": [
+      "Use visualization to improve performance",
+      "Practice positive self-talk",
+      "Set SMART performance goals"
+    ],
+    "nigerian_examples": [
+      "Nigerian footballers visualizing penalty kicks before matches",
+      "Sprinter imagining the race before starting",
+      "Student visualizing successful exam performance"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is visualization in sports psychology?",
+        "options": ["Watching videos", "Imagining successful performance", "Looking at opponents", "Reading playbooks"],
+        "correct_answer": "Imagining successful performance",
+        "explanation": "Visualization creates mental rehearsal that improves actual performance."
+      },
+      {
+        "question": "What is an example of positive self-talk?",
+        "options": ["I'm terrible at this", "I can't do it", "I am prepared and strong", "Everyone is better than me"],
+        "correct_answer": "I am prepared and strong",
+        "explanation": "Positive self-talk builds confidence and reduces anxiety."
+      },
+      {
+        "question": "What does SMART stand for in goal setting?",
+        "options": ["Simple, Mad, Angry, Rough, Tough", "Specific, Measurable, Achievable, Relevant, Time-bound", "Slow, Medium, Average, Rapid, Timely", "Strong, Mighty, Athletic, Ready, Trained"],
+        "correct_answer": "Specific, Measurable, Achievable, Relevant, Time-bound",
+        "explanation": "SMART goals are clear, trackable, realistic, meaningful, and have deadlines."
+      },
+      {
+        "question": "What is resilience?",
+        "options": ["Never failing", "Bouncing back from failure", "Always winning", "Ignoring mistakes"],
+        "correct_answer": "Bouncing back from failure",
+        "explanation": "Resilient athletes learn from losses and come back stronger."
+      },
+      {
+        "question": "True or False: Sports psychology only helps professional athletes, not students.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Sports psychology techniques help with any performance: exams, speeches, music, job interviews."
+      }
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Physical & Health Education",
+    "topic": "Injury Prevention",
+    "language": "en",
+    "content": "Injury prevention means taking steps to avoid getting hurt during physical activity. Key strategies: warm up before exercise (5-10 minutes light activity like jogging, dynamic stretches), cool down after exercise (light activity + static stretches), use proper equipment (sports shoes, shin guards, helmets, knee pads), follow rules (no dangerous play), stay hydrated (drink water before, during, after), listen to your body (stop if you feel pain), build strength gradually (don't do too much too soon). Common injuries: sprains (stretched ligaments), strains (pulled muscles), fractures (broken bones), concussions (brain injury). In Nigerian schools, warm-ups before sports day prevent injuries. RICE treatment for minor injuries: Rest, Ice, Compression, Elevation.",
+    "summary": "Injury prevention: warm up, cool down, proper equipment, follow rules, hydrate, listen to body, gradual training. RICE for minor injuries: Rest, Ice, Compression, Elevation.",
+    "learning_objectives": [
+      "Perform proper warm-up and cool-down",
+      "Use safety equipment correctly",
+      "Apply RICE for minor injuries"
+    ],
+    "nigerian_examples": [
+      "Football players wearing shin guards during matches",
+      "Dynamic stretches before inter-house sports",
+      "Cyclists wearing helmets on Nigerian roads"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How long should a warm-up last?",
+        "options": ["30 seconds", "2 minutes", "5-10 minutes", "30 minutes"],
+        "correct_answer": "5-10 minutes",
+        "explanation": "A proper warm-up raises body temperature and prepares muscles for activity."
+      },
+      {
+        "question": "What does RICE stand for?",
+        "options": ["Run, Ice, Compress, Exercise", "Rest, Ice, Compression, Elevation", "Race, Intensity, Control, Endurance", "Relax, Inhale, Calm, Exhale"],
+        "correct_answer": "Rest, Ice, Compression, Elevation",
+        "explanation": "RICE is first aid for sprains and strains to reduce swelling and pain."
+      },
+      {
+        "question": "What should you do if you feel pain during exercise?",
+        "options": ["Keep going", "Ignore it", "Stop and rest", "Run faster"],
+        "correct_answer": "Stop and rest",
+        "explanation": "Pain is your body's warning signal. Continuing could worsen the injury."
+      },
+      {
+        "question": "Which equipment protects football players' shins?",
+        "options": ["Helmets", "Shin guards", "Gloves", "Elbow pads"],
+        "correct_answer": "Shin guards",
+        "explanation": "Shin guards protect the front of the lower leg from impacts."
+      },
+      {
+        "question": "True or False: Cooling down after exercise is optional, not necessary.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Cool-downs help remove waste products from muscles and reduce soreness."
+      }
+    ]
+  }
+]

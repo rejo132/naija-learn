@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "Athletics",
+    "language": "en",
+    "content": "Athletics includes running, jumping, and throwing events. Track events include sprints (short fast runs), middle distance, long distance, and relays (team races passing a baton). Field events include long jump (run and jump into sand pit), high jump (jump over a bar), shot put (push a heavy ball), and javelin (throw a spear-like object). Always warm up before athletics with stretching and light jogging. Wear proper sports shoes and clothing. Athletics builds speed, strength, endurance, and discipline. It's fun to compete and try to beat your personal best!",
+    "summary": "Athletics: track events (running, relays) and field events (jumping, throwing). Warm up before events. Builds speed, strength, endurance. Try to beat personal bests.",
+    "learning_objectives": [
+      "Identify track and field events",
+      "Learn proper warm-up techniques",
+      "Understand athletic competition"
+    ],
+    "nigerian_examples": [
+      "Nigerian athletes competing at the National Sports Festival",
+      "Inter-house sports competitions in schools",
+      "Famous Nigerian athletes like Blessing Okagbare"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which event is a track event?",
+        "options": ["Long jump", "Shot put", "100-meter sprint", "High jump"],
+        "correct_answer": "100-meter sprint",
+        "explanation": "Sprints are track events run on a running track."
+      },
+      {
+        "question": "Which event is a field event?",
+        "options": ["Relay race", "Long jump", "400 meters", "800 meters"],
+        "correct_answer": "Long jump",
+        "explanation": "Field events include jumps and throws like long jump, high jump, shot put."
+      },
+      {
+        "question": "What should you do before athletics events?",
+        "options": ["Eat a big meal", "Warm up with stretching and light jogging", "Go to sleep", "Drink only soda"],
+        "correct_answer": "Warm up with stretching and light jogging",
+        "explanation": "Warming up prevents injury and prepares your muscles for activity."
+      },
+      {
+        "question": "What do relay teams pass to each other?",
+        "options": ["A ball", "A baton", "A flag", "A shoe"],
+        "correct_answer": "A baton",
+        "explanation": "A baton is a hollow tube passed between runners in a relay race."
+      },
+      {
+        "question": "True or False: Athletics builds speed, strength, and endurance.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Regular athletics training improves all these physical qualities."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "Team Sports",
+    "language": "en",
+    "content": "Team sports involve groups working together to achieve a goal. Popular team sports include football (soccer), basketball, volleyball, and handball. In football, 11 players per team try to score goals by kicking the ball into the net. In basketball, 5 players per team score by throwing the ball through a hoop. In volleyball, 6 players per team hit a ball over a net without letting it touch the ground. Team sports teach cooperation, communication, sportsmanship, and strategy. Every player has a position and important role. The best teams work together, not just rely on one star player.",
+    "summary": "Team sports: football (11 players), basketball (5), volleyball (6). Players work together, communicate, show sportsmanship. Every position matters. Teams win together.",
+    "learning_objectives": [
+      "Identify popular team sports",
+      "Understand basic rules",
+      "Learn teamwork and cooperation"
+    ],
+    "nigerian_examples": [
+      "Football is the most popular sport in Nigeria",
+      "Nigerian Basketball League (NBBF)",
+      "School volleyball teams competing"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How many players are on a football team on the field?",
+        "options": ["5", "7", "11", "15"],
+        "correct_answer": "11",
+        "explanation": "Football teams have 11 players on the field: goalkeeper, defenders, midfielders, forwards."
+      },
+      {
+        "question": "How do you score in basketball?",
+        "options": ["Kick the ball into a net", "Throw the ball through a hoop", "Hit a ball over a net", "Pass a baton"],
+        "correct_answer": "Throw the ball through a hoop",
+        "explanation": "Basketball players score by shooting the ball into the opponent's hoop."
+      },
+      {
+        "question": "What do team sports teach?",
+        "options": ["Only individual skills", "Cooperation, communication, and sportsmanship", "Only winning", "Only running fast"],
+        "correct_answer": "Cooperation, communication, and sportsmanship",
+        "explanation": "Team sports develop these important life skills."
+      },
+      {
+        "question": "What is the most popular sport in Nigeria?",
+        "options": ["Basketball", "Football", "Volleyball", "Tennis"],
+        "correct_answer": "Football",
+        "explanation": "Football (soccer) is by far the most watched and played sport in Nigeria."
+      },
+      {
+        "question": "True or False: Only the star player matters on a team.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Every player on the team has an important role. Teams win when everyone contributes."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "First Aid Basics",
+    "language": "en",
+    "content": "First aid is the immediate help given to an injured person before professional medical help arrives. For cuts and scrapes: clean with water, apply antiseptic, cover with bandage. For burns: run cool water over the burn for 10-15 minutes, don't apply ice or cream. For nosebleeds: lean forward slightly, pinch nostrils for 10 minutes. For sprains: rest the injured part, apply ice wrapped in cloth, compress with bandage, elevate above heart. Always tell an adult about any injury. Never move someone who is seriously injured. Keep a first aid kit at home and school.",
+    "summary": "First aid: immediate help for injuries. Cuts: clean, antiseptic, bandage. Burns: cool water 10-15 min. Nosebleeds: lean forward, pinch. Always tell an adult.",
+    "learning_objectives": [
+      "Learn basic first aid for common injuries",
+      "Know when to get an adult",
+      "Understand what's in a first aid kit"
+    ],
+    "nigerian_examples": [
+      "School first aid kits in the principal's office",
+      "Nigerian Red Cross teaching first aid",
+      "Keeping a first aid box at home"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is first aid?",
+        "options": ["Medical surgery", "Immediate help before professional care", "Long-term treatment", "Medicine only"],
+        "correct_answer": "Immediate help before professional care",
+        "explanation": "First aid is the first help given before a doctor or nurse arrives."
+      },
+      {
+        "question": "What should you do for a minor cut?",
+        "options": ["Ignore it", "Clean with water, use antiseptic, cover with bandage", "Rub dirt on it", "Put ice directly on it"],
+        "correct_answer": "Clean with water, use antiseptic, cover with bandage",
+        "explanation": "Cleaning prevents infection. Covering protects while it heals."
+      },
+      {
+        "question": "What should you do for a minor burn?",
+        "options": ["Put ice on it", "Run cool water over it for 10-15 minutes", "Apply butter", "Pop any blisters"],
+        "correct_answer": "Run cool water over it for 10-15 minutes",
+        "explanation": "Cool water stops the burning process and reduces pain."
+      },
+      {
+        "question": "What should you do for a nosebleed?",
+        "options": ["Lean head back", "Lean forward slightly and pinch nostrils", "Lie down", "Put tissue up nose"],
+        "correct_answer": "Lean forward slightly and pinch nostrils",
+        "explanation": "Leaning forward prevents blood from going down the throat. Pinching stops the bleeding."
+      },
+      {
+        "question": "True or False: You should move someone who is seriously injured.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Moving a seriously injured person can make injuries worse. Wait for medical professionals."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "Disease Prevention",
+    "language": "en",
+    "content": "Disease prevention means taking steps to avoid getting sick. Wash hands regularly with soap and water, especially before eating and after using the toilet. Get vaccinated - vaccines protect you from serious diseases like measles, polio, and tetanus. Cover your mouth when coughing or sneezing (use your elbow, not your hand). Don't share personal items like toothbrushes or combs. Eat healthy foods, drink clean water, get enough sleep, and exercise regularly. Stay home when you are sick to avoid spreading germs to others. Small daily habits prevent big illnesses.",
+    "summary": "Disease prevention: wash hands, get vaccines, cover coughs/sneezes, don't share personal items, eat healthy, sleep enough, stay home when sick.",
+    "learning_objectives": [
+      "Learn daily habits that prevent disease",
+      "Understand why vaccines are important",
+      "Know how to avoid spreading germs"
+    ],
+    "nigerian_examples": [
+      "Polio vaccination campaigns in Nigeria",
+      "Handwashing stations at school",
+      "National Immunization Days"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Why should you get vaccinated?",
+        "options": ["To feel pain", "To prevent serious diseases", "To get a prize", "To miss school"],
+        "correct_answer": "To prevent serious diseases",
+        "explanation": "Vaccines train your body to fight diseases like polio, measles, and tetanus."
+      },
+      {
+        "question": "How should you cover a cough?",
+        "options": ["With your hand", "With your elbow or a tissue", "Don't cover it", "Cough on others"],
+        "correct_answer": "With your elbow or a tissue",
+        "explanation": "Using your elbow prevents spreading germs to your hands and to surfaces you touch."
+      },
+      {
+        "question": "Why should you stay home when sick?",
+        "options": ["To sleep more", "To avoid spreading germs to others", "To watch TV", "To eat more food"],
+        "correct_answer": "To avoid spreading germs to others",
+        "explanation": "Staying home when sick protects your classmates and teachers from getting sick too."
+      },
+      {
+        "question": "Which is a personal item you should not share?",
+        "options": ["Pencils", "Books", "Toothbrush", "Balls"],
+        "correct_answer": "Toothbrush",
+        "explanation": "Toothbrushes can spread germs and blood-borne diseases. Never share them."
+      },
+      {
+        "question": "True or False: Washing hands helps prevent disease.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Handwashing removes germs you picked up from touching surfaces, people, or animals."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "Growth and Development",
+    "language": "en",
+    "content": "Growth and development is how your body changes as you get older. From birth to adulthood, your body grows taller and stronger. Your bones grow, your muscles develop, and your brain learns new things every day. To grow well, you need: nutritious food (proteins, fruits, vegetables, grains), regular exercise (running, playing, sports), enough sleep (9-11 hours for children), and plenty of water. Growth happens at different speeds for different people - some grow faster, some grow slower, and that's normal. Taking care of your body now helps you become a strong, healthy adult.",
+    "summary": "Growth and development = body changes as you age. Need: good food, exercise, sleep (9-11 hours), water. Everyone grows at their own pace. That's normal.",
+    "learning_objectives": [
+      "Understand how bodies grow and develop",
+      "Learn what helps healthy growth",
+      "Accept that everyone grows at different rates"
+    ],
+    "nigerian_examples": [
+      "Measuring height at school each term",
+      "Eating balanced Nigerian meals for growth",
+      "Playing sports to develop muscles"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What helps your body grow well?",
+        "options": ["Only sleeping", "Nutritious food, exercise, sleep, and water", "Only eating", "Only playing"],
+        "correct_answer": "Nutritious food, exercise, sleep, and water",
+        "explanation": "Healthy growth requires all four: good food, physical activity, rest, and hydration."
+      },
+      {
+        "question": "How many hours of sleep do children need?",
+        "options": ["5-6 hours", "7-8 hours", "9-11 hours", "12-14 hours"],
+        "correct_answer": "9-11 hours",
+        "explanation": "Children need 9-11 hours of sleep each night for healthy growth and learning."
+      },
+      {
+        "question": "Is it normal for some children to grow faster than others?",
+        "options": ["No, everyone must grow at the same speed", "Yes, everyone grows at their own pace", "Only boys grow faster", "Only girls grow faster"],
+        "correct_answer": "Yes, everyone grows at their own pace",
+        "explanation": "Growth rates vary from person to person. That's completely normal."
+      },
+      {
+        "question": "What happens to your brain as you grow?",
+        "options": ["It stays the same", "It learns new things every day", "It gets smaller", "It stops working"],
+        "correct_answer": "It learns new things every day",
+        "explanation": "Your brain develops as you learn, read, solve problems, and have new experiences."
+      },
+      {
+        "question": "True or False: Only food matters for growth. Exercise is not important.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Exercise is also essential. It builds strong muscles, bones, and a healthy heart."
+      }
+    ]
+  }
+]

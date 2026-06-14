@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 4,
+    "subject": "Basic Science & Technology",
+    "topic": "Human Skeletal System",
+    "language": "en",
+    "content": "The skeletal system is the framework of bones that supports your body. An adult has 206 bones. Bones give your body shape, protect organs, allow movement, and make blood cells. The skull protects your brain. The rib cage protects your heart and lungs. The spine (backbone) supports your body and contains nerves. Bones are connected by joints like the hinge joint (knee, elbow) that moves like a door hinge, and the ball-and-socket joint (shoulder, hip) that allows rotation. To keep bones strong, eat calcium-rich foods like milk, cheese, and green vegetables. Exercise like running and jumping also strengthens bones. Nigerian foods like ewedu, ugwu (pumpkin leaves), and crayfish are good for bones.",
+    "summary": "Skeletal system = 206 bones. Skull protects brain. Ribs protect heart/lungs. Spine supports body. Joints allow movement. Calcium and exercise build strong bones.",
+    "learning_objectives": [
+      "Identify major bones and their functions",
+      "Understand how joints work",
+      "Learn how to keep bones healthy"
+    ],
+    "nigerian_examples": [
+      "Ugwu (pumpkin leaves) are rich in calcium for strong bones",
+      "Children in Nigeria play football to strengthen their leg bones",
+      "Elderly Nigerians eat bone broth soup for joint health"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How many bones does an adult human have?",
+        "options": ["106", "206", "306", "406"],
+        "correct_answer": "206",
+        "explanation": "Adults have exactly 206 bones in their bodies."
+      },
+      {
+        "question": "What does the skull protect?",
+        "options": ["Heart", "Lungs", "Brain", "Stomach"],
+        "correct_answer": "Brain",
+        "explanation": "The skull is a hard bone case that protects your brain from injury."
+      },
+      {
+        "question": "What do the ribs protect?",
+        "options": ["Brain and spine", "Heart and lungs", "Stomach and liver", "Knees and elbows"],
+        "correct_answer": "Heart and lungs",
+        "explanation": "The rib cage forms a protective cage around the heart and lungs."
+      },
+      {
+        "question": "What type of joint is the knee?",
+        "options": ["Ball-and-socket", "Hinge joint", "Pivot joint", "Gliding joint"],
+        "correct_answer": "Hinge joint",
+        "explanation": "The knee bends like a door hinge, allowing back-and-forth movement."
+      },
+      {
+        "question": "True or False: Eating ewedu and ugwu helps strengthen bones.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "These Nigerian leafy vegetables are rich in calcium, which builds strong bones."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Science & Technology",
+    "topic": "Digestive System",
+    "language": "en",
+    "content": "The digestive system breaks down food into nutrients your body can use. It starts in the mouth, where teeth chew food and saliva begins breaking it down. Food travels down the esophagus (food pipe) to the stomach. The stomach churns food with acid to break it further. Then food moves to the small intestine, where nutrients are absorbed into the blood. The large intestine absorbs water and forms waste (feces). The whole process takes about 24-72 hours. To keep your digestive system healthy, eat fiber-rich foods like vegetables, fruits, and whole grains. Drink plenty of water. Nigerian foods like beans, ogbono, and okra are good for digestion.",
+    "summary": "Digestive system breaks down food. Path: mouth → esophagus → stomach → small intestine → large intestine. Fiber and water keep it healthy.",
+    "learning_objectives": [
+      "Trace the path of food through the digestive system",
+      "Understand the function of each organ",
+      "Learn healthy habits for digestion"
+    ],
+    "nigerian_examples": [
+      "Ogbono soup has fiber that helps digestion",
+      "Eating groundnuts provides protein and healthy fats",
+      "Drinking water after eating eba helps with digestion"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Where does digestion begin?",
+        "options": ["Stomach", "Mouth", "Small intestine", "Large intestine"],
+        "correct_answer": "Mouth",
+        "explanation": "Chewing and saliva in the mouth start breaking down food."
+      },
+      {
+        "question": "What is the tube that connects the mouth to the stomach?",
+        "options": ["Trachea", "Esophagus", "Intestine", "Artery"],
+        "correct_answer": "Esophagus",
+        "explanation": "The esophagus carries food from your throat down to your stomach."
+      },
+      {
+        "question": "Where are most nutrients absorbed into the blood?",
+        "options": ["Stomach", "Small intestine", "Large intestine", "Liver"],
+        "correct_answer": "Small intestine",
+        "explanation": "The small intestine absorbs vitamins, minerals, and other nutrients."
+      },
+      {
+        "question": "What does the large intestine absorb?",
+        "options": ["Protein", "Sugar", "Water", "Fat"],
+        "correct_answer": "Water",
+        "explanation": "The large intestine removes water from waste before it leaves the body."
+      },
+      {
+        "question": "True or False: Eating fiber-rich foods like vegetables helps digestion.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Fiber helps move food through your digestive system and prevents constipation."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Science & Technology",
+    "topic": "Forms of Energy",
+    "language": "en",
+    "content": "Energy is the ability to do work or cause change. There are many forms of energy. Light energy comes from the sun, light bulbs, and fire - it helps us see. Heat energy (thermal) comes from fire, the sun, and friction - it warms things up. Sound energy comes from vibrations - talking, music, thunder. Electrical energy powers our devices - from batteries and generators. Mechanical energy is moving energy - a rolling ball, a spinning fan. Potential energy is stored energy - a ball on a shelf, a stretched rubber band. Kinetic energy is moving energy - a running child, a falling coconut. Energy can change from one form to another. In Nigeria, solar panels convert light energy to electrical energy. Generators convert chemical energy (fuel) to electrical energy.",
+    "summary": "Energy types: light, heat, sound, electrical, mechanical, potential (stored), kinetic (moving). Energy can change forms. Solar panels convert light to electricity.",
+    "learning_objectives": [
+      "Identify different forms of energy",
+      "Distinguish between potential and kinetic energy",
+      "Understand energy conversion"
+    ],
+    "nigerian_examples": [
+      "Solar panels in Lagos convert sunlight to electricity",
+      "A generator converts fuel to electrical energy",
+      "Falling coconut has kinetic energy; a coconut on the tree has potential energy"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What type of energy does the sun provide?",
+        "options": ["Sound energy", "Light and heat energy", "Electrical energy", "Mechanical energy"],
+        "correct_answer": "Light and heat energy",
+        "explanation": "The sun produces both light (for seeing) and heat (for warmth)."
+      },
+      {
+        "question": "What is potential energy?",
+        "options": ["Moving energy", "Stored energy", "Sound energy", "Heat energy"],
+        "correct_answer": "Stored energy",
+        "explanation": "Potential energy is energy waiting to be used, like a ball held above the ground."
+      },
+      {
+        "question": "What is kinetic energy?",
+        "options": ["Stored energy", "Moving energy", "Light energy", "Sound energy"],
+        "correct_answer": "Moving energy",
+        "explanation": "Kinetic energy is energy of motion - anything moving has kinetic energy."
+      },
+      {
+        "question": "What do solar panels do?",
+        "options": ["Create heat", "Convert light energy to electrical energy", "Produce sound", "Store water"],
+        "correct_answer": "Convert light energy to electrical energy",
+        "explanation": "Solar panels capture sunlight and turn it into electricity for homes and schools."
+      },
+      {
+        "question": "True or False: Energy cannot be created or destroyed, only changed from one form to another.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "This is the Law of Conservation of Energy - energy transforms but never disappears."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Science & Technology",
+    "topic": "Simple Electrical Circuits",
+    "language": "en",
+    "content": "An electrical circuit is a path that electricity flows through. A simple circuit needs three things: a power source (like a battery), a conductor (wires that carry electricity), and a load (like a bulb that uses electricity). When the circuit is complete (closed), electricity flows and the bulb lights. When the circuit is broken (open), electricity stops and the bulb goes off. A switch controls whether the circuit is open or closed. Circuits can be series (one path - if one bulb breaks, all go off) or parallel (multiple paths - if one breaks, others stay on). In Nigerian homes, parallel circuits are used so one broken bulb doesn't darken the whole house. Always be careful with electricity - never touch wires with wet hands.",
+    "summary": "Circuits need: power(battery), conductor (wire), load (bulb). Closed circuit = electricity flows. Open circuit = stops. Series (one path) vs parallel (multiple paths).",
+    "learning_objectives": [
+      "Identify components of a simple circuit",
+      "Distinguish between open and closed circuits",
+      "Compare series and parallel circuits"
+    ],
+    "nigerian_examples": [
+      "A torch (flashlight) uses a simple circuit with batteries and bulb",
+      "Christmas lights on a Nigerian street may be wired in parallel",
+      "The national power grid is a giant circuit bringing electricity to homes"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are the three essential parts of a simple circuit?",
+        "options": ["Battery, light, fan", "Power source, conductor, load", "Switch, wire, plug", "Generator, meter, outlet"],
+        "correct_answer": "Power source, conductor, load",
+        "explanation": "You need a battery (power), wire (conductor), and bulb (load) to make electricity flow."
+      },
+      {
+        "question": "What happens in an open circuit?",
+        "options": ["Electricity flows", "Electricity stops", "The bulb gets brighter", "The battery explodes"],
+        "correct_answer": "Electricity stops",
+        "explanation": "When the path is broken (open), electrons cannot flow through the circuit."
+      },
+      {
+        "question": "What does a switch do?",
+        "options": ["Creates electricity", "Opens or closes the circuit", "Stores electricity", "Makes sound"],
+        "correct_answer": "Opens or closes the circuit",
+        "explanation": "A switch lets you control whether the circuit is open (off) or closed (on)."
+      },
+      {
+        "question": "In a series circuit, if one bulb breaks, what happens?",
+        "options": ["Other bulbs stay on", "All bulbs go off", "The battery explodes", "The circuit becomes parallel"],
+        "correct_answer": "All bulbs go off",
+        "explanation": "Series circuits have only one path, so a break anywhere stops all electricity."
+      },
+      {
+        "question": "True or False: You should never touch electrical wires with wet hands.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Water conducts electricity and can cause a dangerous shock."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Science & Technology",
+    "topic": "Engineering Materials",
+    "language": "en",
+    "content": "Engineering materials are substances used to build structures and products. Metals (iron, steel, aluminum) are strong, conduct electricity and heat, and can be shaped. They're used for cars, bridges, and pots. Wood is strong, lightweight, and renewable - used for furniture, houses, and tools. Plastics are lightweight, waterproof, and cheap - used for bottles, bags, and toys. Glass is transparent and hard - used for windows and bottles. Ceramics are heat-resistant - used for bricks, tiles, and plates. In Nigeria, local materials like bamboo, palm fronds, and mud bricks are also used. Engineers choose materials based on strength, cost, weight, and purpose. A bridge needs strong steel, a water bottle needs waterproof plastic, a cooking pot needs heat-resistant metal or ceramic.",
+    "summary": "Engineering materials: metals (strong), wood (renewable), plastics (waterproof), glass (transparent), ceramics (heat-resistant). Choose based on strength, cost, and purpose.",
+    "learning_objectives": [
+      "Identify common engineering materials",
+      "Understand properties of each material",
+      "Match materials to appropriate uses"
+    ],
+    "nigerian_examples": [
+      "Third Mainland Bridge in Lagos uses steel and concrete",
+      "Nigerian homes use mud bricks in villages and cement blocks in cities",
+      "Traditional Nigerian pots are made from ceramic clay"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which material is best for building a bridge?",
+        "options": ["Plastic", "Wood", "Steel", "Glass"],
+        "correct_answer": "Steel",
+        "explanation": "Steel is very strong and can support heavy weights without breaking."
+      },
+      {
+        "question": "What property makes plastic good for water bottles?",
+        "options": ["Transparent", "Waterproof", "Heavy", "Conducts electricity"],
+        "correct_answer": "Waterproof",
+        "explanation": "Plastic does not absorb water and keeps liquids inside."
+      },
+      {
+        "question": "Why is glass used for windows?",
+        "options": ["It is waterproof", "It is transparent", "It is strong", "It is cheap"],
+        "correct_answer": "It is transparent",
+        "explanation": "Glass lets light through while keeping out wind and rain."
+      },
+      {
+        "question": "Which traditional Nigerian material is used for making pots?",
+        "options": ["Plastic", "Steel", "Ceramic clay", "Rubber"],
+        "correct_answer": "Ceramic clay",
+        "explanation": "Traditional Nigerian pots are made from clay that is shaped and fired in a kiln."
+      },
+      {
+        "question": "True or False: All materials have the same properties.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Different materials have different strengths, weights, costs, and other properties."
+      }
+    ]
+  }
+]

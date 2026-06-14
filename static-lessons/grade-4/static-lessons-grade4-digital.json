@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Desktop Operations",
+    "language": "en",
+    "content": "Desktop operations are basic tasks on a computer. Creating folders: right-click > New > Folder. Name folders clearly (e.g., 'School Work'). Copy/Cut/Paste: select file > right-click > Copy (or Cut) > go to destination > right-click > Paste. Rename: right-click file > Rename. Delete: right-click > Delete (files go to Recycle Bin). Search: use search bar to find files. File Explorer (Windows) or Finder (Mac) helps you navigate. Create shortcuts for frequently used programs. Learn keyboard shortcuts: Ctrl+C (copy), Ctrl+V (paste), Ctrl+X (cut), Ctrl+Z (undo), Ctrl+S (save). Good desktop organization saves time.",
+    "summary": "Desktop operations: create folders, copy/cut/paste, rename, delete, search. Keyboard shortcuts: Ctrl+C (copy), Ctrl+V (paste), Ctrl+S (save). Organization saves time.",
+    "learning_objectives": [
+      "Perform basic file operations",
+      "Use keyboard shortcuts",
+      "Organize desktop efficiently"
+    ],
+    "nigerian_examples": [
+      "Creating folders for each school subject on a school computer",
+      "Using Ctrl+S to save exam essays",
+      "Organizing photos from Children's Day celebration"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does Ctrl+C do?",
+        "options": ["Paste", "Copy", "Cut", "Save"],
+        "correct_answer": "Copy",
+        "explanation": "Ctrl+C copies selected items to the clipboard."
+      },
+      {
+        "question": "What does Ctrl+V do?",
+        "options": ["Copy", "Cut", "Paste", "Save"],
+        "correct_answer": "Paste",
+        "explanation": "Ctrl+V pastes items from the clipboard."
+      },
+      {
+        "question": "What does Ctrl+Z do?",
+        "options": ["Save", "Undo", "Copy", "Paste"],
+        "correct_answer": "Undo",
+        "explanation": "Ctrl+Z undoes your last action."
+      },
+      {
+        "question": "Where do deleted files go first?",
+        "options": ["Permanently deleted", "Recycle Bin (Windows) or Trash (Mac)", "Desktop", "Downloads"],
+        "correct_answer": "Recycle Bin (Windows) or Trash (Mac)",
+        "explanation": "Deleted files go to Recycle Bin/Trash where they can be restored."
+      },
+      {
+        "question": "True or False: You should name files clearly so you can find them later.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Clear file names like 'Math_Homework_Week3' help you find files easily."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Web Safety",
+    "language": "en",
+    "content": "Web safety means protecting yourself online. Never share personal information: full name, address, phone, school name, passwords, or photos with strangers. Use strong passwords (mix of uppercase, lowercase, numbers, symbols). Enable two-factor authentication when possible. Don't click suspicious links or pop-ups - they might be scams (phishing). Only download files from trusted sources. Keep privacy settings on social media. Think before you post - once online, it's permanent. Report cyberbullying to an adult. In Nigeria, the NITDA (National Information Technology Development Agency) works on cybersecurity awareness.",
+    "summary": "Web safety: no personal info online, strong passwords, don't click suspicious links, think before posting, report cyberbullying. What you post is permanent.",
+    "learning_objectives": [
+      "Identify online risks",
+      "Create strong passwords",
+      "Respond to cyberbullying"
+    ],
+    "nigerian_examples": [
+      "NITDA cybersecurity campaigns in schools",
+      "Avoiding 'you won a prize' scams",
+      "Reporting online bullying to parents or teachers"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is phishing?",
+        "options": ["Fishing online", "Scams that trick you into sharing information", "A type of game", "A social media platform"],
+        "correct_answer": "Scams that trick you into sharing information",
+        "explanation": "Phishing uses fake emails or messages to steal your information."
+      },
+      {
+        "question": "What makes a strong password?",
+        "options": ["123456", "password", "Blue2Fish!", "yourname"],
+        "correct_answer": "Blue2Fish!",
+        "explanation": "Strong passwords mix uppercase, lowercase, numbers, and symbols."
+      },
+      {
+        "question": "What should you do if someone cyberbullies you?",
+        "options": ["Respond angrily", "Ignore and tell an adult", "Fight back", "Delete everything"],
+        "correct_answer": "Ignore and tell an adult",
+        "explanation": "Save evidence, don't respond, and report to a trusted adult."
+      },
+      {
+        "question": "Who promotes cybersecurity in Nigeria?",
+        "options": ["NAFDAC", "NITDA", "NDLEA", "NPA"],
+        "correct_answer": "NITDA",
+        "explanation": "The National Information Technology Development Agency (NITDA) handles cybersecurity."
+      },
+      {
+        "question": "True or False: You should share your password with friends.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Never share your password with anyone except your parents."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Constructing Emails",
+    "language": "en",
+    "content": "Email (electronic mail) sends messages online. Parts of an email: To (recipient's address), Subject (topic line), Body (message), Attachments (files like photos). Good email etiquette: use a clear subject line, start with a greeting ('Dear Mr. Ade'), write clearly in full sentences, use polite words (please, thank you), end with closing ('Sincerely', 'Best regards'), include your name. Never type in ALL CAPS (looks like shouting). Check spelling before sending. Don't share private information. Reply within a reasonable time. In Nigeria, email is used for school communication, business, and personal messages.",
+    "summary": "Email parts: To, Subject, Body, Attachments. Etiquette: clear subject, greeting, polite language, closing. No ALL CAPS. Check spelling before sending.",
+    "learning_objectives": [
+      "Structure a proper email",
+      "Practice email etiquette",
+      "Attach files correctly"
+    ],
+    "nigerian_examples": [
+      "Emailing a teacher about homework",
+      "Sending a thank-you email to a guest speaker",
+      "Applying for a program via email"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What should you put in the Subject line?",
+        "options": ["Your name only", "A clear topic of the message", "The full message", "Nothing"],
+        "correct_answer": "A clear topic of the message",
+        "explanation": "Subject lines help recipients understand the email's purpose quickly."
+      },
+      {
+        "question": "What is a proper email greeting?",
+        "options": ["Hey", "Dear Mr. Ade", "What's up", "Yo"],
+        "correct_answer": "Dear Mr. Ade",
+        "explanation": "Formal greetings show respect and professionalism."
+      },
+      {
+        "question": "Why avoid typing in ALL CAPS?",
+        "options": ["Harder to read", "Looks like shouting", "Seems aggressive", "All of these"],
+        "correct_answer": "All of these",
+        "explanation": "All caps is considered rude in digital communication."
+      },
+      {
+        "question": "What should you do before sending an email?",
+        "options": ["Ignore spelling", "Check spelling and grammar", "Add random words", "Send immediately"],
+        "correct_answer": "Check spelling and grammar",
+        "explanation": "Proofreading shows professionalism and respect."
+      },
+      {
+        "question": "True or False: Attachments allow you to send files with your email.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Attachments let you share documents, photos, and other files."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Scratch Coding Basics",
+    "language": "en",
+    "content": "Scratch is a free coding platform for beginners. You drag and drop code blocks like puzzle pieces to create animations, games, and stories. Code blocks are color-coded by category: Motion (blue - move, rotate), Looks (purple - say, change costume), Sound (pink - play sounds), Events (yellow - when green flag clicked), Control (orange - repeat, if-then), Sensing (light blue - touching edges? key pressed?), Operators (green - math, compare), Variables (red - store data). To make a sprite (character) move: 'when green flag clicked' + 'move 10 steps' + 'if on edge, bounce'. Scratch teaches programming logic without complex syntax. Create an account at scratch.mit.edu.",
+    "summary": "Scratch = drag-and-drop coding. Code blocks: Motion, Looks, Sound, Events, Control, Sensing, Operators, Variables. Create animations and games. Free at scratch.mit.edu.",
+    "learning_objectives": [
+      "Navigate Scratch interface",
+      "Use basic code blocks",
+      "Create simple animations"
+    ],
+    "nigerian_examples": [
+      "Scratch clubs in Lagos schools",
+      "Creating a game about Nigerian wildlife",
+      "Animating a story about a clever tortoise"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is Scratch?",
+        "options": ["A video game", "A coding platform for beginners", "A type of computer", "A programming language only for experts"],
+        "correct_answer": "A coding platform for beginners",
+        "explanation": "Scratch uses drag-and-drop blocks to teach coding concepts."
+      },
+      {
+        "question": "Which color are Motion blocks?",
+        "options": ["Purple", "Pink", "Blue", "Yellow"],
+        "correct_answer": "Blue",
+        "explanation": "Motion blocks (move, rotate) are blue."
+      },
+      {
+        "question": "What block starts a Scratch program?",
+        "options": ["move 10 steps", "say hello", "when green flag clicked", "forever"],
+        "correct_answer": "when green flag clicked",
+        "explanation": "This Event block starts the program when you click the green flag."
+      },
+      {
+        "question": "What is a sprite?",
+        "options": ["A type of block", "A character or object in Scratch", "A background", "A sound"],
+        "correct_answer": "A character or object in Scratch",
+        "explanation": "Sprites are the characters or objects that perform actions."
+      },
+      {
+        "question": "True or False: Scratch requires you to type code manually.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Scratch uses visual drag-and-drop blocks, no typing needed."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Introduction to AI",
+    "language": "en",
+    "content": "AI (Artificial Intelligence) is when computers perform tasks that normally require human intelligence. Examples: Siri/Alexa (voice assistants), Netflix recommendations, Google Search, self-driving cars, facial recognition, ChatGPT. AI learns from data. Machine learning is a type of AI where computers learn patterns from examples. In Nigeria, AI is used in agriculture (predicting crop diseases), healthcare (diagnosing illnesses), finance (detecting fraud), and education (personalized learning). AI can be helpful but also raises concerns about privacy and jobs. You can explore AI through tools like QuickDraw, Google Teachable Machine, or ChatGPT with adult supervision.",
+    "summary": "AI = computers doing human-like tasks. Examples: voice assistants, recommendations, self-driving cars. Used in Nigerian agriculture, healthcare, finance. Machine learning learns from data.",
+    "learning_objectives": [
+      "Define artificial intelligence",
+      "Identify AI applications",
+      "Consider ethical issues"
+    ],
+    "nigerian_examples": [
+      "AI detecting crop diseases for Nigerian farmers",
+      "ChatGPT helping students with research",
+      "Fraud detection by Nigerian banks"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is AI?",
+        "options": ["A type of robot", "Computers performing human-like tasks", "A programming language", "A video game"],
+        "correct_answer": "Computers performing human-like tasks",
+        "explanation": "AI enables computers to think and learn like humans."
+      },
+      {
+        "question": "Which is an example of AI?",
+        "options": ["Calculator", "Siri voice assistant", "Pencil", "Notebook"],
+        "correct_answer": "Siri voice assistant",
+        "explanation": "Voice assistants use AI to understand and respond to speech."
+      },
+      {
+        "question": "What is machine learning?",
+        "options": ["Computers learning from data", "Computers playing music", "Computers printing", "Computers storing files"],
+        "correct_answer": "Computers learning from data",
+        "explanation": "Machine learning algorithms learn patterns from examples."
+      },
+      {
+        "question": "How is AI used in Nigerian agriculture?",
+        "options": ["Planting seeds", "Predicting crop diseases", "Harvesting", "Watering"],
+        "correct_answer": "Predicting crop diseases",
+        "explanation": "AI can analyze images to detect plant diseases early."
+      },
+      {
+        "question": "True or False: AI can only do simple tasks, not complex ones.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "AI can perform complex tasks like driving cars and diagnosing diseases."
+      }
+    ]
+  }
+]

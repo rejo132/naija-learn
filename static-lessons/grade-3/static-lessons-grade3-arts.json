@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Nigerian Art",
+    "language": "en",
+    "content": "Nigerian art is famous worldwide. Traditional art includes sculpture, mask making, pottery, weaving, and beadwork. The Nok culture (500 BC - 200 AD) made terracotta sculptures, the oldest known in West Africa. The Benin Kingdom is famous for bronze plaques and ivory carvings. The Yoruba make carved wooden masks and statues of gods and ancestors. The Igbo make elaborate masks for festivals like Mmanwu. The Hausa make colorful embroidery and leather crafts. Modern Nigerian artists include Ben Enwonwu (painter and sculptor), Bruce Onobrakpeya (printmaker), and Nike Okundaye (textile artist). Nigerian art expresses culture, history, and spirituality.",
+    "summary": "Nigerian art: Nok terracotta (oldest), Benin bronze, Yoruba wood carvings, Igbo masks, Hausa embroidery. Modern artists: Ben Enwonwu, Bruce Onobrakpeya, Nike Okundaye.",
+    "learning_objectives": [
+      "Identify traditional Nigerian art forms",
+      "Learn about famous Nigerian artists",
+      "Appreciate Nigeria's artistic heritage"
+    ],
+    "nigerian_examples": [
+      "Benin bronze plaques in the British Museum",
+      "Nok terracotta sculptures in Nigerian museums",
+      "Nike Art Gallery in Lagos"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which ancient culture made the oldest terracotta sculptures in West Africa?",
+        "options": ["Benin", "Nok", "Ife", "Oyo"],
+        "correct_answer": "Nok",
+        "explanation": "The Nok culture from 500 BC to 200 AD created famous terracotta sculptures."
+      },
+      {
+        "question": "What is the Benin Kingdom famous for?",
+        "options": ["Leather crafts", "Embroidered caps", "Bronze plaques and ivory carvings", "Textile art"],
+        "correct_answer": "Bronze plaques and ivory carvings",
+        "explanation": "Benin is world-famous for its bronze plaques depicting court life and history."
+      },
+      {
+        "question": "Who is a famous modern Nigerian artist?",
+        "options": ["Ben Enwonwu", "Wole Soyinka", "Chinua Achebe", "Fela Kuti"],
+        "correct_answer": "Ben Enwonwu",
+        "explanation": "Ben Enwonwu was a famous Nigerian painter and sculptor."
+      },
+      {
+        "question": "What do Yoruba artists carve?",
+        "options": ["Bronze plaques", "Wooden masks and statues", "Leather bags", "Embroidered caps"],
+        "correct_answer": "Wooden masks and statues",
+        "explanation": "Yoruba artists are known for wooden carvings of gods, ancestors, and royalty."
+      },
+      {
+        "question": "True or False: Nigerian art is only traditional, not modern.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Nigeria has both traditional and contemporary artists creating modern art."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Sculpture and Crafts",
+    "language": "en",
+    "content": "Sculpture is art made by carving, modeling, or casting materials like wood, stone, clay, or metal. Nigerian sculpture is famous worldwide. Wood carving: Yoruba sculptors carve masks, figures, and doors. Stone carving: ancient sculptures from the Nok and Ife cultures. Bronze casting: Benin artists used the 'lost-wax' method to create detailed plaques and heads. Modern sculptors use new materials like metal scraps and cement. Crafts include pottery (making pots from clay), beadwork (stringing beads for jewelry and crowns), weaving (making cloth on looms), and leather work (bags, shoes, caps). Crafts are often passed down through families.",
+    "summary": "Sculpture: carving wood, stone, or casting bronze. Lost-wax method for bronze. Crafts: pottery, beadwork, weaving, leather work. Skills passed through generations.",
+    "learning_objectives": [
+      "Understand sculpture techniques",
+      "Learn traditional crafts",
+      "Appreciate handmade art"
+    ],
+    "nigerian_examples": [
+      "Ife bronze heads",
+      "Yoruba carved doors",
+      "Hausa leather sandals"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is sculpture?",
+        "options": ["Painting on canvas", "Art made by carving or modeling materials", "Drawing with pencil", "Taking photographs"],
+        "correct_answer": "Art made by carving or modeling materials",
+        "explanation": "Sculpture is three-dimensional art made from materials like wood, stone, clay, or metal."
+      },
+      {
+        "question": "What method did Benin artists use to make bronze?",
+        "options": ["Carving", "Lost-wax casting", "Weaving", "Pottery"],
+        "correct_answer": "Lost-wax casting",
+        "explanation": "Benin artists used the lost-wax method to create detailed bronze sculptures."
+      },
+      {
+        "question": "Which craft involves making cloth on a loom?",
+        "options": ["Pottery", "Beadwork", "Weaving", "Leather work"],
+        "correct_answer": "Weaving",
+        "explanation": "Weaving is the craft of making cloth by crossing threads on a loom."
+      },
+      {
+        "question": "Which people are known for leather work in Nigeria?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Benin"],
+        "correct_answer": "Hausa",
+        "explanation": "The Hausa are famous for leather crafts, including bags, sandals, and caps."
+      },
+      {
+        "question": "True or False: Craft skills are only learned in schools, not from families.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Many craft skills are passed down from parents to children for generations."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Batik and Tie Dye",
+    "language": "en",
+    "content": "Batik and tie dye are methods of decorating fabric with patterns and colors. Batik uses wax to resist dye. Hot wax is painted on fabric in patterns, then the fabric is dipped in dye. The wax resists the dye, leaving the pattern. In tie dye, fabric is tied, twisted, or folded before dyeing. The tied parts resist the dye, creating patterns. Nigerian tie dye is called 'Adire' (Yoruba for 'tie and dye'). Adire Eleko uses starch painted through a stencil. Adire Alabere uses raffia tied around fabric. Adire is used for clothing, wall hangings, and accessories. These techniques create beautiful, unique patterns.",
+    "summary": "Batik uses wax to resist dye. Tie dye uses tying/folding to resist dye. Nigerian Adire (tie dye) has types: Eleko (starch stencil), Alabere (raffia tie). Unique patterns.",
+    "learning_objectives": [
+      "Understand batik and tie dye techniques",
+      "Learn about Nigerian Adire",
+      "Identify different Adire methods"
+    ],
+    "nigerian_examples": [
+      "Adire Eleko fabric from Abeokuta",
+      "Tie-dye shirts popular everywhere",
+      "Adire workshops in Lagos and Ogun States"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does batik use to resist dye?",
+        "options": ["Tying", "Wax", "Starch", "Raffia"],
+        "correct_answer": "Wax",
+        "explanation": "Batik uses hot wax painted on fabric to stop dye from reaching certain areas."
+      },
+      {
+        "question": "What is Adire?",
+        "options": ["A type of sculpture", "Nigerian tie dye fabric", "A dance", "A song"],
+        "correct_answer": "Nigerian tie dye fabric",
+        "explanation": "Adire is the Yoruba word for tie and dye fabric."
+      },
+      {
+        "question": "Which Adire method uses starch painted through a stencil?",
+        "options": ["Adire Alabere", "Adire Eleko", "Adire Oniko", "Batik"],
+        "correct_answer": "Adire Eleko",
+        "explanation": "Adire Eleko uses cassava starch painted through a stencil to resist dye."
+      },
+      {
+        "question": "Which Adire method uses raffia tied around fabric?",
+        "options": ["Adire Eleko", "Adire Oniko", "Adire Alabere", "Batik"],
+        "correct_answer": "Adire Alabere",
+        "explanation": "Adire Alabere uses raffia palm fibers tied around fabric to create patterns."
+      },
+      {
+        "question": "True or False: Tie dye creates random, unpredictable patterns.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Because of how fabric is folded or tied, each tie-dyed piece is unique."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Printmaking",
+    "language": "en",
+    "content": "Printmaking is making multiple copies of an artwork. The artist creates a master design on a surface (wood, rubber, linoleum), inks it, then presses paper onto it to make prints. Types of printmaking: woodcut (carving into wood), linocut (carving into linoleum), screen printing (using a mesh screen), and collagraph (gluing textures onto a surface). Nigerian printmakers include Bruce Onobrakpeya, who invented a new method called 'plastocast.' Printmaking allows artists to make many copies of their work, making art more affordable. You can try simple printmaking at home using potatoes or sponges cut into shapes and dipped in paint.",
+    "summary": "Printmaking creates multiple copies of artwork. Types: woodcut, linocut, screen printing. Nigerian artist Bruce Onobrakpeya invented 'plastocast.' Try potato or sponge prints at home.",
+    "learning_objectives": [
+      "Understand what printmaking is",
+      "Identify printmaking methods",
+      "Learn about Nigerian printmakers"
+    ],
+    "nigerian_examples": [
+      "Bruce Onobrakpeya's plastocast prints",
+      "School art classes making potato prints",
+      "Printed fabrics using screen printing"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is printmaking?",
+        "options": ["Drawing one picture", "Making multiple copies of an artwork", "Painting on canvas", "Sculpting clay"],
+        "correct_answer": "Making multiple copies of an artwork",
+        "explanation": "Printmaking allows artists to create many copies of the same image."
+      },
+      {
+        "question": "Which method uses a carved piece of linoleum?",
+        "options": ["Woodcut", "Linocut", "Screen printing", "Collagraph"],
+        "correct_answer": "Linocut",
+        "explanation": "Linocut involves carving into linoleum, then inking and printing."
+      },
+      {
+        "question": "Which Nigerian artist invented plastocast?",
+        "options": ["Ben Enwonwu", "Nike Okundaye", "Bruce Onobrakpeya", "Yinka Shonibare"],
+        "correct_answer": "Bruce Onobrakpeya",
+        "explanation": "Bruce Onobrakpeya invented plastocast, a unique printmaking technique."
+      },
+      {
+        "question": "What can you use at home for simple printmaking?",
+        "options": ["Only expensive tools", "Potatoes or sponges cut into shapes", "A printing press", "Only paper"],
+        "correct_answer": "Potatoes or sponges cut into shapes",
+        "explanation": "You can cut shapes into potatoes or sponges, dip in paint, and stamp onto paper."
+      },
+      {
+        "question": "True or False: Printmaking only makes one copy of an artwork.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Printmaking is designed to create multiple copies, called prints."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Graphic Design Intro",
+    "language": "en",
+    "content": "Graphic design is creating visual content for communication. It combines images, words, and colors to send a message. Examples: logos (company symbols), posters, book covers, websites, packaging, and signs. Graphic designers use elements like color, shape, line, texture, space, and typography (the style of letters). Popular graphic design software includes Adobe Photoshop, Canva, and Illustrator. Nigerian graphic designers create logos for businesses, posters for Nollywood movies, labels for products, and social media graphics. You can practice graphic design by making birthday cards, posters for school events, or designing your own logo.",
+    "summary": "Graphic design combines images, words, colors for communication. Examples: logos, posters, book covers. Elements: color, shape, line, typography. Practice making cards and posters.",
+    "learning_objectives": [
+      "Understand what graphic design is",
+      "Identify graphic design examples",
+      "Create simple designs"
+    ],
+    "nigerian_examples": [
+      "Nollywood movie posters",
+      "Naija logo design contest winners",
+      "Product labels in Nigerian markets"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is graphic design?",
+        "options": ["Painting on canvas", "Creating visual content for communication", "Sculpting statues", "Writing stories"],
+        "correct_answer": "Creating visual content for communication",
+        "explanation": "Graphic design combines images, words, and colors to share messages."
+      },
+      {
+        "question": "Which is an example of graphic design?",
+        "options": ["A sculpture", "A logo", "A ceramic pot", "A woven basket"],
+        "correct_answer": "A logo",
+        "explanation": "Logos are graphic designs that represent companies or organizations."
+      },
+      {
+        "question": "What is typography in graphic design?",
+        "options": ["The style of letters and fonts", "The use of colors", "Shapes and lines", "Texture and space"],
+        "correct_answer": "The style of letters and fonts",
+        "explanation": "Typography is about how letters look - their size, font, spacing, and style."
+      },
+      {
+        "question": "What software can be used for graphic design?",
+        "options": ["Microsoft Word only", "Adobe Photoshop and Canva", "Excel only", "PowerPoint only"],
+        "correct_answer": "Adobe Photoshop and Canva",
+        "explanation": "These programs help designers create digital graphics."
+      },
+      {
+        "question": "True or False: You can practice graphic design by making birthday cards.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Making cards, posters, and signs is a great way to practice graphic design."
+      }
+    ]
+  }
+]

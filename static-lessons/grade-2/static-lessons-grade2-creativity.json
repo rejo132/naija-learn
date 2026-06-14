@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Craft Making",
+    "language": "en",
+    "content": "Craft making is using your hands and imagination to create things. You can make crafts from paper, cardboard, cloth, beads, or recycled materials. Examples: paper animals, greeting cards, jewelry from beads, or models from cardboard boxes. Craft making helps you practice cutting, gluing, folding, and painting. Don't worry if your craft doesn't look perfect — your creation is special because you made it. Use safe scissors and ask an adult for help if needed. Display your crafts at home or give them as gifts to make others smile.",
+    "summary": "Craft making uses hands and imagination. Use paper, cardboard, beads, recycled items. Practice cutting, gluing, folding. Your creation is special because you made it.",
+    "learning_objectives": [
+      "Explore different craft materials",
+      "Practice fine motor skills",
+      "Build confidence in creating"
+    ],
+    "nigerian_examples": [
+      "Making paper beads from old magazines",
+      "Creating cards for Eid or Christmas",
+      "Building a model house from cardboard"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What can you use for craft making?",
+        "options": ["Only new paper", "Paper, cardboard, beads, recycled materials", "Only glue", "Only scissors"],
+        "correct_answer": "Paper, cardboard, beads, recycled materials",
+        "explanation": "Many materials can be used for crafts, including recycled items."
+      },
+      {
+        "question": "What skills does craft making practice?",
+        "options": ["Only reading", "Cutting, gluing, folding, painting", "Only math", "Only writing"],
+        "correct_answer": "Cutting, gluing, folding, painting",
+        "explanation": "Crafts help develop many hand skills."
+      },
+      {
+        "question": "What should you do if your craft doesn't look perfect?",
+        "options": ["Throw it away", "Cry", "Be proud because you made it", "Blame someone else"],
+        "correct_answer": "Be proud because you made it",
+        "explanation": "Your creation is special because it came from you, not because it's perfect."
+      },
+      {
+        "question": "Who should you ask for help with scissors?",
+        "options": ["A stranger", "An adult", "No one", "A baby"],
+        "correct_answer": "An adult",
+        "explanation": "Always ask an adult for help with scissors to stay safe."
+      },
+      {
+        "question": "True or False: Crafts should only be kept for yourself, never given away.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Giving crafts as gifts can make others happy."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Storytelling",
+    "language": "en",
+    "content": "Storytelling is creating and sharing stories. You can make up characters, places, and adventures. Start with 'Once upon a time...' or 'One day...' Give your characters names and personalities. Describe where the story happens — a forest, a city, or a magical land. Make a problem happen, then solve it at the end. Use your voice to make it exciting — speak loudly for giants, softly for mice. Tell stories to family, friends, or classmates. Every time you tell a story, you become a better storyteller.",
+    "summary": "Storytelling: create characters, places, adventures. Start with 'Once upon a time.' Describe setting. Create a problem, then solve it. Use your voice.",
+    "learning_objectives": [
+      "Learn story elements (characters, setting, problem, solution)",
+      "Practice voice expression",
+      "Build confidence in speaking"
+    ],
+    "nigerian_examples": [
+      "Creating a story about a clever tortoise",
+      "Telling a story about a child's adventure in Lagos",
+      "Making up a tale about animals in the forest"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a good way to start a story?",
+        "options": ["The end", "Once upon a time", "Goodbye", "Maybe"],
+        "correct_answer": "Once upon a time",
+        "explanation": "Traditional story openings like 'Once upon a time' tell listeners a story is beginning."
+      },
+      {
+        "question": "What should a story include?",
+        "options": ["Only characters", "Only a setting", "Characters, setting, problem, solution", "Only a problem"],
+        "correct_answer": "Characters, setting, problem, solution",
+        "explanation": "Good stories have all these elements."
+      },
+      {
+        "question": "How can you make your story exciting?",
+        "options": ["Speak in one tone", "Use your voice — loud for giants, soft for mice", "Whisper the whole story", "Shout the whole story"],
+        "correct_answer": "Use your voice — loud for giants, soft for mice",
+        "explanation": "Changing your voice makes characters come alive."
+      },
+      {
+        "question": "What happens at the end of a story?",
+        "options": ["The problem gets worse", "Nothing", "The problem gets solved", "A new problem starts"],
+        "correct_answer": "The problem gets solved",
+        "explanation": "Stories usually end with the problem being resolved."
+      },
+      {
+        "question": "True or False: You should only tell stories that really happened to you.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "You can make up imaginary stories from your imagination."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Drawing Patterns",
+    "language": "en",
+    "content": "Patterns are designs that repeat. You can create patterns with shapes, lines, and colors. Examples: stripes (straight lines repeated), zigzags (up and down lines), dots (repeated circles), and checkerboards (squares of two colors). Nigerian fabrics like Ankara have beautiful patterns. You can draw patterns on paper, in your notebook, or on cards. Patterns help you practice drawing carefully and spotting repetition. Start with simple patterns, then try more complex ones. Pattern drawing is relaxing and creative.",
+    "summary": "Patterns repeat: stripes, zigzags, dots, checkerboards. Nigerian fabrics have beautiful patterns. Start simple, then try more complex patterns.",
+    "learning_objectives": [
+      "Understand what patterns are",
+      "Create repeating designs",
+      "Appreciate patterns in Nigerian fabrics"
+    ],
+    "nigerian_examples": [
+      "Drawing patterns inspired by Ankara fabric",
+      "Creating stripe patterns on a card",
+      "Making a checkerboard pattern with two colors"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are patterns?",
+        "options": ["Random scribbles", "Designs that repeat", "A single color", "A blank page"],
+        "correct_answer": "Designs that repeat",
+        "explanation": "Patterns have elements that repeat in a predictable way."
+      },
+      {
+        "question": "Which is an example of a pattern?",
+        "options": ["A single dot", "Stripes (repeating lines)", "A blank page", "Random marks"],
+        "correct_answer": "Stripes (repeating lines)",
+        "explanation": "Stripes repeat the same line shape over and over."
+      },
+      {
+        "question": "What Nigerian fabric is known for patterns?",
+        "options": ["Plain white fabric", "Ankara", "Burlap", "Denim"],
+        "correct_answer": "Ankara",
+        "explanation": "Ankara fabric has many colorful repeating patterns."
+      },
+      {
+        "question": "What is a checkerboard pattern?",
+        "options": ["Dots only", "Squares of two colors repeating", "Zigzag lines", "Stripes"],
+        "correct_answer": "Squares of two colors repeating",
+        "explanation": "Checkerboard alternates two colors in a grid of squares."
+      },
+      {
+        "question": "True or False: Patterns are only made with colors, not shapes.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Patterns can use shapes, lines, or colors."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Singing and Dancing",
+    "language": "en",
+    "content": "Singing and dancing are creative ways to express yourself. You can sing songs you know or make up your own. You can dance freely or learn dance steps. Nigerian music has many rhythms — try moving your body to the beat. Singing helps you remember things (like the alphabet song). Dancing keeps your body healthy and strong. You don't need to be perfect — just have fun! Sing with family, at school, or in a choir. Dance at celebrations, parties, or just because you feel happy.",
+    "summary": "Singing and dancing express yourself. Sing known songs or make up your own. Dance to Nigerian rhythms. Have fun and be creative.",
+    "learning_objectives": [
+      "Explore singing and dancing as creative expression",
+      "Learn Nigerian rhythms",
+      "Build confidence in performing"
+    ],
+    "nigerian_examples": [
+      "Singing Nigerian children's songs",
+      "Dancing to Afrobeats music",
+      "Performing at school cultural day"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are two creative activities you can do with music?",
+        "options": ["Reading and writing", "Singing and dancing", "Eating and sleeping", "Running and jumping"],
+        "correct_answer": "Singing and dancing",
+        "explanation": "Singing and dancing are both creative musical activities."
+      },
+      {
+        "question": "Do you need to be perfect to sing or dance?",
+        "options": ["Yes, only perfect singers should sing", "No, just have fun", "Only professionals", "Only at competitions"],
+        "correct_answer": "No, just have fun",
+        "explanation": "Everyone can sing and dance for fun, no matter their skill level."
+      },
+      {
+        "question": "What is a benefit of singing?",
+        "options": ["It makes you sad", "It helps you remember things", "It hurts your voice", "It wastes time"],
+        "correct_answer": "It helps you remember things",
+        "explanation": "Putting information to music helps memory (like the alphabet song)."
+      },
+      {
+        "question": "What kind of music is popular in Nigeria?",
+        "options": ["Country music", "Afrobeats", "Opera", "Rock"],
+        "correct_answer": "Afrobeats",
+        "explanation": "Afrobeats is a popular Nigerian music genre."
+      },
+      {
+        "question": "True or False: Dancing keeps your body healthy.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Dancing is exercise that strengthens your body."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Inventing Games",
+    "language": "en",
+    "content": "Inventing games means creating your own rules and activities. You can make up a new game with friends using things you have. First, decide the goal: How do you win? Next, make rules: What can players do? What can't they do? Then, try the game. If something isn't fun, change the rules. You can invent games with a ball, a rope, or just running. You can invent indoor games like board games or card games. Inventing games helps you think creatively, solve problems, and have fun with friends.",
+    "summary": "Invent games: decide goal and rules. Try it, then improve rules. Use a ball, rope, or nothing. Inventing games builds creativity and problem-solving.",
+    "learning_objectives": [
+      "Learn to create game rules",
+      "Practice problem-solving through play",
+      "Develop creativity with limited materials"
+    ],
+    "nigerian_examples": [
+      "Inventing a new street game with friends",
+      "Creating a ball game with different scoring rules",
+      "Making up a rain game to play indoors"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What should you decide first when inventing a game?",
+        "options": ["The color of the ball", "The goal (how to win)", "The music", "The snacks"],
+        "correct_answer": "The goal (how to win)",
+        "explanation": "Knowing how to win gives players something to aim for."
+      },
+      {
+        "question": "What should you do if your game isn't fun?",
+        "options": ["Give up", "Change the rules", "Get angry", "Blame your friends"],
+        "correct_answer": "Change the rules",
+        "explanation": "Good inventors improve their games by testing and changing rules."
+      },
+      {
+        "question": "What can you use to invent a game?",
+        "options": ["Only a ball", "Only a rope", "A ball, rope, or nothing at all", "Only a computer"],
+        "correct_answer": "A ball, rope, or nothing at all",
+        "explanation": "You can invent games with many different materials or none at all."
+      },
+      {
+        "question": "What skill does inventing games build?",
+        "options": ["Only running", "Creativity and problem-solving", "Only jumping", "Only sleeping"],
+        "correct_answer": "Creativity and problem-solving",
+        "explanation": "Inventing games exercises your brain's creative and problem-solving muscles."
+      },
+      {
+        "question": " Only adults can invent games.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Children can invent wonderful games too!"
+      }
+    ]
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "grade": 6,
+    "subject": "Creativity",
+    "topic": "Design for Change",
+    "language": "en",
+    "content": "Design for Change is a framework for solving problems creatively. Four steps: Feel (identify problems in your community), Imagine (brainstorm solutions without judgment), Do (take action to implement solution), Share (tell others so they can replicate). This framework empowers students to be change-makers. Nigerian students have used Design for Change to: reduce plastic waste in schools, start community libraries, improve road safety near schools, plant trees to fight deforestation. The process works for any problem: identify what bothers you, imagine possibilities, take small action, share results. You don't need permission to make a difference - just start. Every big change started with a small step.",
+    "summary": "Design for Change: Feel (identify problems), Imagine (brainstorm solutions), Do (take action), Share (tell others). Students as change-makers. Start small.",
+    "learning_objectives": [
+      "Apply Design for Change framework",
+      "Identify community problems",
+      "Take action to solve them"
+    ],
+    "nigerian_examples": [
+      "Students reducing plastic waste in Lagos schools",
+      "Starting community libraries in rural areas",
+      "Tree planting campaigns in northern Nigeria"
+    ],
+    "quiz_questions": [
+      {"question": "What are the four steps of Design for Change?", "options": ["Plan, Do, Check, Act", "Feel, Imagine, Do, Share", "Think, Write, Speak, Listen", "Start, Stop, Continue, Change"], "correct_answer": "Feel, Imagine, Do, Share", "explanation": "These steps guide creative problem-solving."},
+      {"question": "What happens in the 'Feel' step?", "options": ["Take action", "Identify problems in your community", "Share results", "Brainstorm solutions"], "correct_answer": "Identify problems in your community", "explanation": "Feel what bothers you or others around you."},
+      {"question": "Why share your solution?", "options": ["To brag", "So others can replicate it", "To get money", "To stop working"], "correct_answer": "So others can replicate it", "explanation": "Sharing multiplies impact."},
+      {"question": "Do you need permission to start?", "options": ["Yes always", "No, just start small", "Only from government", "Only from teachers"], "correct_answer": "No, just start small", "explanation": "Change often starts with individual initiative."},
+      {"question": "True or False: Only adults can be change-makers.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Students have solved real community problems worldwide."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Creativity",
+    "topic": "Creative Problem Solving",
+    "language": "en",
+    "content": "Creative problem solving generates novel solutions to challenges. Steps: Clarify (identify the real problem, gather information), Ideate (generate many ideas without judgment), Develop (evaluate ideas, select promising ones, refine), Implement (plan action, execute, evaluate results). Techniques: Brainstorming (quantity over quality, build on others' ideas), Mind mapping (visual connections), SCAMPER (Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse), Reverse thinking (opposite approach), Random input (unrelated word triggers ideas). Nigerian problem solvers use these techniques to address electricity outages, transportation issues, waste management. Creative problem solving works for school projects, family decisions, community challenges.",
+    "summary": "Creative problem solving: Clarify, Ideate, Develop, Implement. Techniques: brainstorming, mind mapping, SCAMPER, reverse thinking, random input.",
+    "learning_objectives": [
+      "Apply creative problem-solving steps",
+      "Use SCAMPER technique",
+      "Generate multiple solutions"
+    ],
+    "nigerian_examples": [
+      "Solving Lagos traffic using multiple approaches",
+      "Finding alternatives during fuel scarcity",
+      "Creating solutions for waste management"
+    ],
+    "quiz_questions": [
+      {"question": "What is the first step in creative problem solving?", "options": ["Implement", "Ideate", "Clarify", "Develop"], "correct_answer": "Clarify", "explanation": "Understand the real problem before solving."},
+      {"question": "What does SCAMPER help with?", "options": ["Calculations", "Generating ideas", "Writing essays", "Memorizing facts"], "correct_answer": "Generating ideas", "explanation": "SCAMPER prompts different thinking directions."},
+      {"question": "What is brainstorming rule?", "options": ["Criticize ideas", "No judgment, quantity over quality", "Only good ideas", "Only one person speaks"], "correct_answer": "No judgment, quantity over quality", "explanation": "Judgment stops idea flow during brainstorming."},
+      {"question": "What does 'Reverse' mean in SCAMPER?", "options": ["Do opposite", "Make smaller", "Combine", "Eliminate"], "correct_answer": "Do opposite", "explanation": "Reverse thinking can reveal new approaches."},
+      {"question": "True or False: Creative problem solving only works for big problems.", "options": ["True", "False"], "correct_answer": "False", "explanation": "It works for everyday challenges too."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Creativity",
+    "topic": "Innovation Ecosystems",
+    "language": "en",
+    "content": "An innovation ecosystem is the network of people, organizations, and resources that support creativity and new ideas. Components: Education (schools teaching creativity), Research (universities, labs), Funding (grants, investors, loans), Mentors (experienced guides), Entrepreneurs (risk-takers starting ventures), Support services (legal, accounting, marketing), Infrastructure (internet, electricity, workspace), Culture (acceptance of failure, celebration of success). Nigerian innovation hubs: CcHub (Lagos), Wennovation (Lagos), Ventures Park (Abuja), Co-Creation Hub, Ennovate Lab. These hubs provide workspace, mentorship, and connections for innovators. You can participate: join coding clubs, attend workshops, share ideas, collaborate with others.",
+    "summary": "Innovation ecosystem: network supporting creativity. Components: education, research, funding, mentors, entrepreneurs, support, infrastructure, culture. Nigerian hubs: CcHub, Ventures Park.",
+    "learning_objectives": [
+      "Understand innovation ecosystem",
+      "Identify Nigerian innovation hubs",
+      "Participate in innovation activities"
+    ],
+    "nigerian_examples": [
+      "CcHub in Lagos supporting tech startups",
+      "Ventures Park in Abuja for entrepreneurs",
+      "School innovation clubs and competitions"
+    ],
+    "quiz_questions": [
+      {"question": "What is an innovation ecosystem?", "options": ["Only money", "Network supporting creativity and new ideas", "Only schools", "Only government"], "correct_answer": "Network supporting creativity and new ideas", "explanation": "Many elements work together to support innovation."},
+      {"question": "Which is a Nigerian innovation hub?", "options": ["Harvard", "CcHub", "Cambridge", "Oxford"], "correct_answer": "CcHub", "explanation": "Co-Creation Hub in Lagos supports tech entrepreneurs."},
+      {"question": "Why is culture important for innovation?", "options": ["It doesn't matter", "Culture accepting failure encourages risk-taking", "Only money matters", "Only education matters"], "correct_answer": "Culture accepting failure encourages risk-taking", "explanation": "Fear of failure kills creativity."},
+      {"question": "What does mentorship provide?", "options": ["Money only", "Guidance and experience", "Office space", "Customers"], "correct_answer": "Guidance and experience", "explanation": "Mentors share knowledge and connections."},
+      {"question": "True or False: Anyone can participate in innovation ecosystems.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Students, entrepreneurs, researchers, and mentors all play roles."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Creativity",
+    "topic": "Creative Leadership",
+    "language": "en",
+    "content": "Creative leadership fosters innovation in teams and organizations. Behaviors: tolerate ambiguity (comfortable with uncertainty), encourage experimentation (try new approaches), protect creative time (space for thinking), reward risk-taking (even failed attempts), build psychological safety (safe to share unconventional ideas), connect diverse perspectives (mix different backgrounds), remove barriers (fix obstacles), champion ideas to stakeholders (advocate for innovation). Creative leaders ask 'What if?' and 'Why not?' instead of 'That won't work.' Nigerian creative leaders: tech hub founders, design thinking facilitators, innovation directors. You can practice creative leadership: encourage quiet classmates' ideas, prototype solutions, celebrate team creativity, challenge assumptions.",
+    "summary": "Creative leadership fosters innovation. Behaviors: tolerate ambiguity, encourage experimentation, protect creative time, reward risk-taking, build safety, connect diversity, remove barriers.",
+    "learning_objectives": [
+      "Understand creative leadership",
+      "Foster team innovation",
+      "Protect creative work"
+    ],
+    "nigerian_examples": [
+      "Tech hub founders in Lagos",
+      "Innovation directors in Nigerian companies",
+      "Creative teachers who encourage student ideas"
+    ],
+    "quiz_questions": [
+      {"question": "What does 'tolerate ambiguity' mean?", "options": ["Need clear answers", "Comfortable with uncertainty", "Avoid problems", "Follow rules strictly"], "correct_answer": "Comfortable with uncertainty", "explanation": "Creative work often has unclear outcomes."},
+      {"question": "How should leaders respond to failed experiments?", "options": ["Punish", "Reward risk-taking and learning", "Ignore", "Hide failures"], "correct_answer": "Reward risk-taking and learning", "explanation": "Learning from failures leads to eventual success."},
+      {"question": "What is psychological safety?", "options": ["Safe physically", "Safe to share unusual ideas without fear", "No emotions", "Strict rules"], "correct_answer": "Safe to share unusual ideas without fear", "explanation": "People need to feel safe being vulnerable."},
+      {"question": "What question do creative leaders ask?", "options": ["That won't work", "What if and why not?", "Follow the rules", "Don't try new things"], "correct_answer": "What if and why not?", "explanation": "These questions open possibilities."},
+      {"question": "True or False: Creative leadership is only for managers.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Anyone can practice creative leadership in groups."}
+    ]
+  }
+]

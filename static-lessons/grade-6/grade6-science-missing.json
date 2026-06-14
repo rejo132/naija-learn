@@ -1,0 +1,105 @@
+[
+  {
+    "grade": 6,
+    "subject": "Basic Science & Technology",
+    "topic": "Reproductive System",
+    "language": "en",
+    "content": "The reproductive system enables reproduction (creating offspring). Male reproductive system: testes (produce sperm), penis, sperm ducts. Female reproductive system: ovaries (produce eggs), fallopian tubes, uterus (where baby grows), vagina. Fertilization occurs when sperm meets egg in fallopian tube. The fertilized egg implants in uterus and grows into a baby over 9 months (pregnancy). Puberty is when reproductive system matures (ages 9-14 for girls, 10-15 for boys). Changes include body growth, hair growth, menstruation (girls), voice deepening (boys). Understanding reproduction helps young people make informed health decisions.",
+    "summary": "Reproductive system enables reproduction. Male: testes, penis. Female: ovaries, uterus. Fertilization creates baby. Puberty matures system.",
+    "learning_objectives": [
+      "Identify male and female reproductive organs",
+      "Explain fertilization and pregnancy",
+      "Understand puberty changes"
+    ],
+    "nigerian_examples": [
+      "Puberty education in Nigerian schools",
+      "Family planning discussions",
+      "Menstrual hygiene management"
+    ],
+    "quiz_questions": [
+      {"question": "Where does a baby grow during pregnancy?", "options": ["Ovary", "Uterus", "Fallopian tube", "Vagina"], "correct_answer": "Uterus", "explanation": "The uterus expands to hold the growing baby."},
+      {"question": "What is fertilization?", "options": ["When sperm meets egg", "When baby is born", "When period starts", "When voice deepens"], "correct_answer": "When sperm meets egg", "explanation": "Fertilization creates a zygote that develops into a baby."},
+      {"question": "What produces eggs in females?", "options": ["Testes", "Ovaries", "Uterus", "Vagina"], "correct_answer": "Ovaries", "explanation": "Ovaries release eggs during the menstrual cycle."},
+      {"question": "What produces sperm in males?", "options": ["Testes", "Ovaries", "Uterus", "Penis"], "correct_answer": "Testes", "explanation": "Testes produce sperm cells for reproduction."},
+      {"question": "True or False: Puberty happens at the same age for everyone.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Puberty starts at different ages for different people."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Science & Technology",
+    "topic": "Ecology and Ecosystems",
+    "language": "en",
+    "content": "Ecology studies how living things interact with each other and their environment. An ecosystem includes all living (biotic: plants, animals, bacteria) and non-living (abiotic: water, soil, air, sunlight) components. Food chains show energy flow: grass → grasshopper → frog → snake → eagle. Food webs are interconnected food chains. Energy pyramids show decreasing energy at each level. Biomes: forest, grassland, desert, aquatic. Nigerian ecosystems: rainforest (south), savanna (middle), Sahel (north), mangrove (Niger Delta). Humans impact ecosystems through pollution, deforestation, and climate change. Conservation protects ecosystems for future generations.",
+    "summary": "Ecology studies living/non-living interactions. Ecosystems have biotic and abiotic parts. Food chains show energy flow. Nigerian ecosystems: rainforest, savanna, Sahel, mangrove.",
+    "learning_objectives": [
+      "Define ecosystem components",
+      "Explain food chains and webs",
+      "Identify Nigerian ecosystems"
+    ],
+    "nigerian_examples": [
+      "Rainforest in Cross River State",
+      "Savanna grassland in Kaduna",
+      "Mangrove forest in Niger Delta",
+      "Yankari National Park wildlife"
+    ],
+    "quiz_questions": [
+      {"question": "What are biotic factors?", "options": ["Living things", "Non-living things", "Water and soil", "Sunlight"], "correct_answer": "Living things", "explanation": "Biotic means living: plants, animals, bacteria."},
+      {"question": "Which Nigerian ecosystem has mangroves?", "options": ["North", "Niger Delta", "Sahara", "Jos Plateau"], "correct_answer": "Niger Delta", "explanation": "Mangroves grow in coastal brackish water of the Niger Delta."},
+      {"question": "What shows energy flow in an ecosystem?", "options": ["Food chain", "Water cycle", "Rock cycle", "Carbon cycle"], "correct_answer": "Food chain", "explanation": "Food chains show who eats whom and energy transfer."},
+      {"question": "What is an example of human impact on ecosystems?", "options": ["Planting trees", "Recycling", "Deforestation", "Conservation"], "correct_answer": "Deforestation", "explanation": "Cutting forests destroys habitats and reduces biodiversity."},
+      {"question": "True or False: A food web is a single path of energy flow.", "options": ["True", "False"], "correct_answer": "False", "explanation": "A food web shows many interconnected food chains."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Science & Technology",
+    "topic": "Environmental Conservation",
+    "language": "en",
+    "content": "Environmental conservation protects natural resources for future generations. Renewable resources: forests, water, wind, solar (can replenish). Non-renewable resources: oil, coal, minerals (cannot replenish). Conservation methods: reduce waste, reuse items, recycle materials, plant trees, save water, use renewable energy. Nigerian conservation efforts: National Parks (Yankari, Gashaka-Gumti), afforestation programs (planting trees in Sahel), anti-deforestation laws, wildlife protection (endangered species). Individual actions: turn off lights, take short showers, use both sides of paper, pick up litter, plant a tree. Conservation saves money and protects the planet.",
+    "summary": "Conservation protects natural resources. Renewable (trees, water) vs non-renewable (oil, coal). Reduce, reuse, recycle. Nigerian parks and laws.",
+    "learning_objectives": [
+      "Distinguish renewable and non-renewable resources",
+      "Practice conservation methods",
+      "Identify Nigerian conservation efforts"
+    ],
+    "nigerian_examples": [
+      "Yankari National Park protecting wildlife",
+      "Tree planting campaigns in northern Nigeria",
+      "Recycling programs in Lagos",
+      "Ban on single-use plastics in some states"
+    ],
+    "quiz_questions": [
+      {"question": "Which is a renewable resource?", "options": ["Oil", "Coal", "Trees", "Natural gas"], "correct_answer": "Trees", "explanation": "Trees can be replanted and regrow."},
+      {"question": "What does 'reduce' mean in conservation?", "options": ["Use less", "Use again", "Make something new", "Throw away"], "correct_answer": "Use less", "explanation": "Reducing consumption prevents waste."},
+      {"question": "Which Nigerian park protects wildlife?", "options": ["Yankari", "Tafawa Balewa Square", "National Stadium", "Lagos Lagoon"], "correct_answer": "Yankari", "explanation": "Yankari National Park in Bauchi protects elephants, baboons, and other wildlife."},
+      {"question": "What is recycling?", "options": ["Using less", "Turning waste into new products", "Burning trash", "Burying waste"], "correct_answer": "Turning waste into new products", "explanation": "Recycling saves resources and energy."},
+      {"question": "True or False: Non-renewable resources can be replaced naturally.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Non-renewable resources take millions of years to form."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Science & Technology",
+    "topic": "Disease Transmission",
+    "language": "en",
+    "content": "Disease transmission is how illnesses spread. Direct contact: touching infected person (COVID-19, flu). Indirect contact: touching contaminated surfaces (doorknobs, phones). Airborne: breathing droplets from coughs/sneezes (tuberculosis, measles). Vector-borne: through mosquitoes (malaria), ticks (Lyme disease), rats (Lassa fever). Waterborne: drinking contaminated water (cholera, typhoid). Foodborne: eating contaminated food (salmonella). Prevention: wash hands, cover cough, clean surfaces, use mosquito nets, boil water, cook food thoroughly, get vaccinated. Nigerian diseases: malaria (leading cause of death), Lassa fever, cholera outbreaks, COVID-19. Understanding transmission helps you protect yourself and others.",
+    "summary": "Disease transmission: direct contact, indirect contact, airborne, vector-borne, waterborne, foodborne. Prevention: handwashing, mosquito nets, clean water, vaccines.",
+    "learning_objectives": [
+      "Identify transmission routes",
+      "Explain prevention methods",
+      "Understand Nigerian disease patterns"
+    ],
+    "nigerian_examples": [
+      "Malaria prevention with bed nets",
+      "Cholera outbreaks during rainy season",
+      "COVID-19 handwashing campaigns",
+      "Lassa fever awareness in rural areas"
+    ],
+    "quiz_questions": [
+      {"question": "How is malaria transmitted?", "options": ["Through air", "Through mosquitoes", "Through water", "Through food"], "correct_answer": "Through mosquitoes", "explanation": "Malaria parasites spread when infected mosquitoes bite humans."},
+      {"question": "How can cholera be prevented?", "options": ["Mosquito nets", "Boiling drinking water", "Vaccination only", "Covering coughs"], "correct_answer": "Boiling drinking water", "explanation": "Cholera spreads through contaminated water."},
+      {"question": "What is a vector in disease transmission?", "options": ["Germ", "Carrier organism (mosquito, tick, rat)", "Vaccine", "Medicine"], "correct_answer": "Carrier organism (mosquito, tick, rat)", "explanation": "Vectors carry diseases between hosts."},
+      {"question": "How should you cover a cough?", "options": ["With your hand", "With your elbow or tissue", "Don't cover", "Cough loudly"], "correct_answer": "With your elbow or tissue", "explanation": "Elbow prevents spreading germs to hands and surfaces."},
+      {"question": "True or False: Washing hands prevents disease transmission.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Handwashing removes germs picked up from surfaces."}
+    ]
+  }
+]

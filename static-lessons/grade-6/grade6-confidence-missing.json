@@ -1,0 +1,102 @@
+[
+  {
+    "grade": 6,
+    "subject": "Confidence Building",
+    "topic": "Authentic Leadership",
+    "language": "en",
+    "content": "Authentic leadership means leading with genuine values, honesty, and transparency. Authentic leaders: know their strengths and weaknesses, act consistently with their beliefs, admit mistakes, listen openly to feedback, build trust through integrity. They don't pretend to be someone else or hide their true selves. Characteristics: self-awareness (knowing yourself), relational transparency (being genuine with others), balanced processing (considering all views before deciding), internalized moral perspective (acting on values despite pressure). Nigerian authentic leaders: Ngozi Okonjo-Iweala, Tony Elumelu. You can practice authentic leadership: be honest about your feelings, admit when you're wrong, stand up for what's right, treat everyone with respect. Authenticity builds lasting trust.",
+    "summary": "Authentic leadership: lead with genuine values, honesty, transparency. Characteristics: self-awareness, relational transparency, balanced processing, internalized moral perspective.",
+    "learning_objectives": [
+      "Understand authentic leadership",
+      "Practice self-awareness",
+      "Lead with integrity"
+    ],
+    "nigerian_examples": [
+      "Ngozi Okonjo-Iweala's WTO leadership",
+      "Tony Elumelu's business philosophy",
+      "School prefects who treat all students fairly"
+    ],
+    "quiz_questions": [
+      {"question": "What is authentic leadership?", "options": ["Pretending to be perfect", "Leading with genuine values and honesty", "Always being popular", "Never admitting mistakes"], "correct_answer": "Leading with genuine values and honesty", "explanation": "Authentic leaders are true to themselves and transparent with others."},
+      {"question": "What should authentic leaders do when they make mistakes?", "options": ["Hide them", "Blame others", "Admit and learn from them", "Ignore them"], "correct_answer": "Admit and learn from them", "explanation": "Admitting mistakes builds trust and credibility."},
+      {"question": "What is self-awareness?", "options": ["Knowing yourself (strengths, weaknesses, values)", "Knowing everyone else", "Being perfect", "Never changing"], "correct_answer": "Knowing yourself (strengths, weaknesses, values)", "explanation": "Self-awareness is foundation of authentic leadership."},
+      {"question": "Why is authenticity important in leadership?", "options": ["It builds trust", "It looks good", "It's easy", "It's popular"], "correct_answer": "It builds trust", "explanation": "People trust leaders who are genuine and consistent."},
+      {"question": "True or False: Authentic leaders pretend to be someone else.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Authentic leaders are genuine and don't pretend."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Confidence Building",
+    "topic": "Influencing Skills",
+    "language": "en",
+    "content": "Influencing skills help you persuade others ethically and effectively. Principles: Reciprocity (give first - help others, they'll help you), Scarcity (highlight unique benefits - limited time/availability), Authority (demonstrate expertise - share knowledge, cite sources), Consistency (get small commitments first, people honor promises), Liking (find common ground, give genuine compliments, be friendly), Social Proof (show others are doing it - testimonials, popularity). Influencing is not manipulation (which deceives). Ethical influencing benefits everyone. Students influence teachers (ask respectfully), parents (explain reasoning), peers (share benefits). Practice: explain why, listen to concerns, propose win-win solutions, be patient.",
+    "summary": "Influencing skills: persuade ethically. Principles: reciprocity, scarcity, authority, consistency, liking, social proof. Not manipulation. Win-win solutions.",
+    "learning_objectives": [
+      "Apply ethical influence principles",
+      "Distinguish influence from manipulation",
+      "Persuade respectfully"
+    ],
+    "nigerian_examples": [
+      "Convincing parents to allow extra study time",
+      "Persuading friends to join a study group",
+      "Influencing classmates to participate in cleanup"
+    ],
+    "quiz_questions": [
+      {"question": "What is ethical influence?", "options": ["Forcing others", "Deceiving people", "Persuading with honesty and respect", "Ignoring others' needs"], "correct_answer": "Persuading with honesty and respect", "explanation": "Ethical influence respects others' autonomy and benefits both sides."},
+      {"question": "What does reciprocity mean?", "options": ["Give nothing", "Give first, people help you back", "Take everything", "Ignore others"], "correct_answer": "Give first, people help you back", "explanation": "People naturally want to return favors."},
+      {"question": "How can you use authority in influence?", "options": ["Lie about credentials", "Share knowledge and cite sources", "Yell louder", "Ignore facts"], "correct_answer": "Share knowledge and cite sources", "explanation": "Demonstrating expertise builds credibility."},
+      {"question": "What is the difference between influence and manipulation?", "options": ["Same thing", "Influence is honest, manipulation deceives", "Manipulation is better", "Influence is lying"], "correct_answer": "Influence is honest, manipulation deceives", "explanation": "Manipulation tricks people; influence respects them."},
+      {"question": "True or False: Getting a small 'yes' first makes people more likely to say 'yes' to a bigger request.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Consistency principle: people want to act consistently with prior commitments."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Confidence Building",
+    "topic": "Personal Mastery",
+    "language": "en",
+    "content": "Personal mastery is continuous self-improvement and growth. Five disciplines: Personal vision (what do you want to achieve?), Creative tension (gap between current reality and vision motivates action), Commitment to truth (honest about strengths and weaknesses), Using subconscious (practice until skills become automatic), Systems thinking (seeing how all parts connect). Strategies: set learning goals (not just performance goals), reflect daily (what worked? what didn't?), seek feedback, learn from mistakes, practice deliberately (focus on weak areas), read widely, find mentors. Nigerian success stories: Aliko Dangote (continuous learning), Chimamanda Adichie (mastered writing craft). Personal mastery is a lifelong journey, not a destination.",
+    "summary": "Personal mastery = continuous self-improvement. Disciplines: vision, creative tension, truth, subconscious, systems thinking. Set learning goals, reflect daily, seek feedback.",
+    "learning_objectives": [
+      "Understand personal mastery",
+      "Set learning goals",
+      "Practice continuous improvement"
+    ],
+    "nigerian_examples": [
+      "Aliko Dangote's continuous business learning",
+      "Chimamanda Adichie's writing mastery",
+      "Students improving weak subjects deliberately"
+    ],
+    "quiz_questions": [
+      {"question": "What is personal mastery?", "options": ["Being perfect", "Continuous self-improvement", "Never changing", "Knowing everything"], "correct_answer": "Continuous self-improvement", "explanation": "Personal mastery is a lifelong commitment to growth."},
+      {"question": "What is a learning goal?", "options": ["Winning a prize", "Improving a specific skill", "Comparing to others", "Being the best"], "correct_answer": "Improving a specific skill", "explanation": "Learning goals focus on growth, not comparison."},
+      {"question": "Why seek feedback?", "options": ["To feel bad", "To know blind spots and improve", "To argue", "To ignore"], "correct_answer": "To know blind spots and improve", "explanation": "Others often see things we miss."},
+      {"question": "What is deliberate practice?", "options": ["Doing easy things", "Focusing on weak areas with full attention", "Practicing without thinking", "Never practicing"], "correct_answer": "Focusing on weak areas with full attention", "explanation": "Deliberate practice targets specific improvements."},
+      {"question": "True or False: Personal mastery ends when you finish school.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Learning continues throughout life."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Confidence Building",
+    "topic": "Legacy Thinking",
+    "language": "en",
+    "content": "Legacy thinking asks: 'What do I want to be remembered for?' and 'What impact will I leave?' Your legacy is the difference you make in others' lives. Nigerian legacy builders: Nnamdi Azikiwe (independence, education), Chinua Achebe (literature), Fela Kuti (music, activism), Funmilayo Ransome-Kuti (women's rights), Dora Akunyili (public health). You can build legacy now: start a project, mentor younger students, help your community, pursue excellence, live your values. Legacy questions: What problem am I solving? Whose life am I improving? What change will outlast me? Legacy thinking gives purpose and direction. Start small: be kind, work hard, help others. Small actions accumulate into lasting impact.",
+    "summary": "Legacy thinking: what impact will you leave? Nigerian legacy builders: Azikiwe, Achebe, Fela, Akunyili. Start small: be kind, help others, pursue excellence.",
+    "learning_objectives": [
+      "Define personal legacy",
+      "Identify legacy builders",
+      "Take legacy-building actions"
+    ],
+    "nigerian_examples": [
+      "Nnamdi Azikiwe's education legacy",
+      "Chinua Achebe's literary legacy",
+      "Dora Akunyili's public health legacy"
+    ],
+    "quiz_questions": [
+      {"question": "What is legacy?", "options": ["Money only", "Impact and difference you make", "Fame only", "Property only"], "correct_answer": "Impact and difference you make", "explanation": "Legacy is about lasting positive impact."},
+      {"question": "Who fought for Nigerian independence?", "options": ["Chinua Achebe", "Nnamdi Azikiwe", "Fela Kuti", "Dora Akunyili"], "correct_answer": "Nnamdi Azikiwe", "explanation": "Azikiwe was a key independence leader and first President."},
+      {"question": "What question helps legacy thinking?", "options": ["What's for lunch?", "Whose life am I improving?", "How much money?", "What's popular?"], "correct_answer": "Whose life am I improving?", "explanation": "Legacy focuses on impact on others."},
+      {"question": "Can children build legacy?", "options": ["No, only adults", "Yes, through kindness, helping, leadership", "Only rich people", "Only famous people"], "correct_answer": "Yes, through kindness, helping, leadership", "explanation": "Everyday actions create lasting impact."},
+      {"question": "True or False: Legacy only matters after death.", "options": ["True", "False"], "correct_answer": "False", "explanation": "You can build legacy throughout your life."}
+    ]
+  }
+]

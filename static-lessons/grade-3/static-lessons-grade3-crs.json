@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "The Ten Commandments",
+    "language": "en",
+    "content": "The Ten Commandments are rules given by God to Moses for people to live good lives. They include: worship only one God, don't worship idols, respect God's name, keep the Sabbath day holy, honor your parents, do not murder, do not commit adultery, do not steal, do not lie, and do not be jealous of others. These rules teach respect for God and respect for other people. Many of these rules are found in other religions too, like not stealing and not lying. Following these commandments helps create peace and fairness in families and communities.",
+    "summary": "The Ten Commandments are rules from God: worship one God, honor parents, don't steal, don't lie, don't murder, don't be jealous. They teach respect for God and others.",
+    "learning_objectives": [
+      "Learn the Ten Commandments",
+      "Understand why rules matter",
+      "Apply commandments to daily life"
+    ],
+    "nigerian_examples": [
+      "Honoring parents by helping at home",
+      "Not stealing from classmates",
+      "Telling the truth to teachers and parents"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Who received the Ten Commandments from God?",
+        "options": ["Abraham", "Moses", "David", "Solomon"],
+        "correct_answer": "Moses",
+        "explanation": "God gave the Ten Commandments to Moses on Mount Sinai."
+      },
+      {
+        "question": "Which commandment says to honor your parents?",
+        "options": ["First", "Third", "Fifth", "Tenth"],
+        "correct_answer": "Fifth",
+        "explanation": "The fifth commandment tells us to honor our father and mother."
+      },
+      {
+        "question": "What does 'do not steal' mean?",
+        "options": ["Take things without permission", "Don't take what isn't yours", "Borrow without asking", "Share everything"],
+        "correct_answer": "Don't take what isn't yours",
+        "explanation": "Stealing means taking something that belongs to someone else without permission."
+      },
+      {
+        "question": "Why were the Ten Commandments given?",
+        "options": ["To make life hard", "To help people live good lives and respect God and others", "Only for ancient times", "Only for adults"],
+        "correct_answer": "To help people live good lives and respect God and others",
+        "explanation": "The commandments guide people to live righteously and treat others well."
+      },
+      {
+        "question": "True or False: The Ten Commandments are only for Christians.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Many of the Ten Commandments are also important in Judaism and Islam."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Wudhu and Cleanliness",
+    "language": "en",
+    "content": "Wudhu is the Islamic ritual of washing before prayer (Salah). Muslims perform wudhu before each of the five daily prayers. The steps are: wash hands three times, rinse mouth three times, rinse nose three times, wash face three times, wash arms to elbows three times (right then left), wipe head once, wipe ears once, wash feet to ankles three times (right then left). Wudhu teaches cleanliness and prepares the heart for prayer. Being clean is important in Islam - 'Cleanliness is half of faith.' Muslims also keep their bodies, clothes, and homes clean at all times.",
+    "summary": "Wudhu is washing before Islamic prayer. Steps: wash hands, mouth, nose, face, arms, wipe head/ears, wash feet. Cleanliness is half of faith.",
+    "learning_objectives": [
+      "Learn the steps of wudhu",
+      "Understand the importance of cleanliness in Islam",
+      "Practice proper washing order"
+    ],
+    "nigerian_examples": [
+      "Muslim children learning wudhu at home",
+      "Washing areas near mosques for wudhu",
+      "Performing wudhu before Friday prayers"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is wudhu?",
+        "options": ["A type of prayer", "Ritual washing before Islamic prayer", "A festival", "A holy book"],
+        "correct_answer": "Ritual washing before Islamic prayer",
+        "explanation": "Wudhu is the purification washing performed before Salah (prayer)."
+      },
+      {
+        "question": "How many times are the hands washed in wudhu?",
+        "options": ["Once", "Twice", "Three times", "Four times"],
+        "correct_answer": "Three times",
+        "explanation": "Each washing step in wudhu is performed three times."
+      },
+      {
+        "question": "What body parts are washed in wudhu?",
+        "options": ["Only hands", "Only feet", "Hands, mouth, nose, face, arms, head, ears, feet", "Only face"],
+        "correct_answer": "Hands, mouth, nose, face, arms, head, ears, feet",
+        "explanation": "Wudhu involves washing multiple body parts in a specific order."
+      },
+      {
+        "question": "What did Prophet Muhammad say about cleanliness?",
+        "options": ["Cleanliness is difficult", "Cleanliness is half of faith", "Cleanliness is optional", "Cleanliness is only for adults"],
+        "correct_answer": "Cleanliness is half of faith",
+        "explanation": "This hadith emphasizes how important cleanliness is in Islam."
+      },
+      {
+        "question": "True or False: Wudhu is performed before each of the five daily prayers.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Muslims perform wudhu before each prayer unless they are already in a state of purity."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Prophets and Heroes",
+    "language": "en",
+    "content": "Prophets are special messengers sent by God to teach people how to live righteously. In Christianity, important prophets include Moses, Elijah, Isaiah, and John the Baptist. Jesus is considered the Son of God and Savior. In Islam, important prophets include Adam, Noah, Abraham, Moses, Jesus, and Muhammad (peace be upon them all). Muslims believe Muhammad is the last prophet. Heroes of faith are people who showed great courage and trust in God. Examples: David who defeated Goliath, Daniel in the lion's den, and Esther who saved her people. These prophets and heroes inspire us to be brave and faithful.",
+    "summary": "Prophets are God's messengers. Christian prophets: Moses, Elijah, Isaiah. Islamic prophets: Adam, Noah, Abraham, Moses, Jesus, Muhammad. Heroes show courage and faith.",
+    "learning_objectives": [
+      "Identify important prophets in Christianity and Islam",
+      "Learn stories of faith heroes",
+      "Apply lessons of courage and faith"
+    ],
+    "nigerian_examples": [
+      "Children learning prophet stories in Sunday school",
+      "Islamic school teaching about the prophets",
+      "Stories of faith heroes told during religious classes"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a prophet?",
+        "options": ["A king", "A messenger sent by God", "A soldier", "A farmer"],
+        "correct_answer": "A messenger sent by God",
+        "explanation": "Prophets were chosen by God to deliver His messages to people."
+      },
+      {
+        "question": "Which prophet defeated Goliath?",
+        "options": ["Moses", "David", "Solomon", "Abraham"],
+        "correct_answer": "David",
+        "explanation": "David, as a young shepherd, defeated the giant Goliath with a sling and stone."
+      },
+      {
+        "question": "Who is the last prophet in Islam?",
+        "options": ["Jesus", "Moses", "Muhammad", "Abraham"],
+        "correct_answer": "Muhammad",
+        "explanation": "Muslims believe Muhammad is the final prophet sent by God."
+      },
+      {
+        "question": "Who was thrown into the lion's den but was protected by God?",
+        "options": ["David", "Daniel", "Joseph", "Jonah"],
+        "correct_answer": "Daniel",
+        "explanation": "Daniel was thrown into a den of lions because he prayed to God, but God protected him."
+      },
+      {
+        "question": "True or False: Only men can be prophets and heroes of faith.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Women like Esther, Mary, and Ruth are also heroes of faith."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Charity and Giving",
+    "language": "en",
+    "content": "Charity means giving to help others in need. In Christianity, giving is called 'tithing' (giving 10% of what you earn) or offerings. Jesus taught 'It is more blessed to give than to receive.' In Islam, charity includes Zakat (obligatory 2.5% of savings given yearly) and Sadaqah (voluntary giving). Both religions teach that helping the poor, feeding the hungry, caring for orphans, and visiting the sick are important acts of worship. You don't need to be rich to give - you can give time, kindness, a smile, or help with small tasks. Every act of giving pleases God.",
+    "summary": "Charity is giving to help others. Christianity: tithing (10%). Islam: Zakat (2.5%), Sadaqah (voluntary). Giving time, kindness, and help also counts. Giving pleases God.",
+    "learning_objectives": [
+      "Understand charity in Christianity and Islam",
+      "Learn forms of giving beyond money",
+      "Practice generosity daily"
+    ],
+    "nigerian_examples": [
+      "Churches collecting offerings to help community members",
+      "Mosques distributing Zakat during Ramadan",
+      "Sharing food with neighbors during holidays"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What did Jesus say about giving?",
+        "options": ["Giving is not important", "It is more blessed to give than to receive", "Only rich people should give", "Giving is only for adults"],
+        "correct_answer": "It is more blessed to give than to receive",
+        "explanation": "Jesus taught that giving brings more happiness than receiving."
+      },
+      {
+        "question": "What is Zakat in Islam?",
+        "options": ["Voluntary giving", "Obligatory charity of 2.5% of savings", "A type of prayer", "A festival"],
+        "correct_answer": "Obligatory charity of 2.5% of savings",
+        "explanation": "Zakat is one of the Five Pillars of Islam - required charity for those who can afford it."
+      },
+      {
+        "question": "What is Sadaqah?",
+        "options": ["Required charity", "Voluntary charity given anytime", "A prayer", "A fast"],
+        "correct_answer": "Voluntary charity given anytime",
+        "explanation": "Sadaqah is extra charity given freely beyond the required Zakat."
+      },
+      {
+        "question": "How can you give if you don't have money?",
+        "options": ["You can't give anything", "Give time, kindness, a smile, or help", "Only money counts", "Giving is not for children"],
+        "correct_answer": "Give time, kindness, a smile, or help",
+        "explanation": "Acts of service and kindness are also forms of charity."
+      },
+      {
+        "question": "True or False: Only rich people should give charity.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Everyone can give something - time, effort, kindness, or small amounts of money."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Fasting and Sacrifice",
+    "language": "en",
+    "content": "Fasting means not eating or drinking for a period of time. In Christianity, some people fast during Lent (40 days before Easter) to remember Jesus's sacrifice. In Islam, fasting during Ramadan (one lunar month) is obligatory for adult Muslims. Muslims wake early to eat (suhoor), fast from dawn to sunset, then break fast (iftar). Fasting teaches self-control, empathy for the hungry, and gratitude. Sacrifice means giving up something valuable. Muslims celebrate Eid al-Adha by sacrificing an animal (like a sheep or goat) to remember Prophet Abraham's willingness to sacrifice his son for God. The meat is shared with family, friends, and the poor.",
+    "summary": "Fasting: Christianity (Lent), Islam (Ramadan). Teaches self-control and empathy. Sacrifice: Eid al-Adha remembers Abraham's willingness to sacrifice for God.",
+    "learning_objectives": [
+      "Understand fasting in Christianity and Islam",
+      "Learn about Eid al-Adha",
+      "Appreciate self-control and sharing"
+    ],
+    "nigerian_examples": [
+      "Nigerian Christians fasting during Lent",
+      "Muslims fasting from dawn to sunset during Ramadan",
+      "Eid al-Adha celebrations with meat shared among family and poor"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is the Islamic month of fasting called?",
+        "options": ["Eid", "Ramadan", "Hajj", "Muharram"],
+        "correct_answer": "Ramadan",
+        "explanation": "Ramadan is the ninth month of the Islamic calendar when Muslims fast from dawn to sunset."
+      },
+      {
+        "question": "What is the Christian fasting period before Easter called?",
+        "options": ["Advent", "Lent", "Christmas", "Pentecost"],
+        "correct_answer": "Lent",
+        "explanation": "Lent is the 40-day period of fasting and prayer before Easter Sunday."
+      },
+      {
+        "question": "What does fasting teach?",
+        "options": ["How to be hungry", "Self-control and empathy for the poor", "How to cook", "How to sleep"],
+        "correct_answer": "Self-control and empathy for the poor",
+        "explanation": "Fasting helps people understand what hungry people feel and practice discipline."
+      },
+      {
+        "question": "What does Eid al-Adha commemorate?",
+        "options": ["End of Ramadan", "Abraham's willingness to sacrifice his son", "Muhammad's birthday", "New Year"],
+        "correct_answer": "Abraham's willingness to sacrifice his son",
+        "explanation": "Eid al-Adha honors Abraham's obedience to God and his willingness to sacrifice his son."
+      },
+      {
+        "question": "True or False: During Ramadan, Muslims fast from food and drink from dawn to sunset.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Muslims abstain from food, drink, and other physical needs during daylight hours in Ramadan."
+      }
+    ]
+  }
+]

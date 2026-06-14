@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Dental Hygiene",
+    "language": "en",
+    "content": "Dental hygiene means keeping your teeth and gums healthy. Brush your teeth twice a day for two minutes each time. Use fluoride toothpaste and a soft-bristled brush. Hold the brush at a 45-degree angle and use small circles. Brush all surfaces: front, back, and chewing surfaces. Don't forget to brush your tongue. Floss once a day to clean between teeth where brushes can't reach. Limit sugary foods and drinks like sweets, soda, and candy. Visit a dentist every six months. Healthy teeth help you eat, speak, and smile with confidence. Cavities are preventable with good habits.",
+    "summary": "Dental hygiene: brush twice daily for 2 minutes, use fluoride toothpaste, brush all tooth surfaces, floss daily, limit sugar, visit dentist every 6 months.",
+    "learning_objectives": [
+      "Learn proper toothbrushing technique",
+      "Understand importance of flossing",
+      "Identify foods that harm teeth"
+    ],
+    "nigerian_examples": [
+      "Brushing after breakfast before school",
+      "Using chewing stick (orin/miswak) as traditional alternative",
+      "Dental checkups during school health programs"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How many times a day should you brush your teeth?",
+        "options": ["Once", "Twice", "Three times", "Once a week"],
+        "correct_answer": "Twice",
+        "explanation": "Brush morning and night for best protection against cavities."
+      },
+      {
+        "question": "How long should you brush each time?",
+        "options": ["30 seconds", "1 minute", "2 minutes", "5 minutes"],
+        "correct_answer": "2 minutes",
+        "explanation": "Two minutes ensures you clean all tooth surfaces properly."
+      },
+      {
+        "question": "What should you do to clean between your teeth?",
+        "options": ["Use a toothpick", "Use dental floss", "Use more toothpaste", "Rinse with water"],
+        "correct_answer": "Use dental floss",
+        "explanation": "Floss reaches areas between teeth that toothbrushes cannot."
+      },
+      {
+        "question": "Which food is bad for teeth?",
+        "options": ["Apple", "Carrot", "Sweets and candy", "Milk"],
+        "correct_answer": "Sweets and candy",
+        "explanation": "Sugary foods feed bacteria that cause cavities."
+      },
+      {
+        "question": "True or False: You should visit the dentist only when your teeth hurt.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Regular checkups prevent problems before they start."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Skin Care",
+    "language": "en",
+    "content": "Skin care means keeping your skin clean and healthy. Your skin is your body's largest organ - it protects you from germs. Bathe daily with soap and water to remove sweat, dirt, and bacteria. Pay attention to areas like armpits, feet, and groin where sweat collects. Dry your skin completely with a clean towel. Use lotion if your skin gets dry. Protect your skin from the sun by wearing hats and clothes. Avoid touching your face with dirty hands. If you get a cut or scrape, clean it with water, apply antiseptic, and cover with a bandage. Healthy skin looks smooth and clear.",
+    "summary": "Skin care: bathe daily, wash all body parts, dry completely, use lotion for dry skin, protect from sun, clean cuts with antiseptic and bandage.",
+    "learning_objectives": [
+      "Learn daily skin care habits",
+      "Understand how to care for cuts and scrapes",
+      "Recognize signs of healthy skin"
+    ],
+    "nigerian_examples": [
+      "Using African black soap (ose dudu) for bathing",
+      "Applying shea butter for dry skin",
+      "Wearing hats to protect from Nigerian sun"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How often should you bathe?",
+        "options": ["Once a week", "Every day", "Once a month", "Only when dirty"],
+        "correct_answer": "Every day",
+        "explanation": "Daily bathing removes sweat, dirt, and bacteria from your skin."
+      },
+      {
+        "question": "What is your body's largest organ?",
+        "options": ["Heart", "Brain", "Skin", "Lungs"],
+        "correct_answer": "Skin",
+        "explanation": "Skin covers your entire body and protects you from germs."
+      },
+      {
+        "question": "What should you put on a minor cut?",
+        "options": ["Nothing", "Antiseptic and a bandage", "Butter", "Soap only"],
+        "correct_answer": "Antiseptic and a bandage",
+        "explanation": "Antiseptic kills germs; bandage keeps dirt out while healing."
+      },
+      {
+        "question": "How can you protect your skin from the sun?",
+        "options": ["Stay inside forever", "Wear hats and clothes", "Use more soap", "Drink more water"],
+        "correct_answer": "Wear hats and clothes",
+        "explanation": "Clothing and hats block harmful UV rays."
+      },
+      {
+        "question": "True or False: You should avoid washing areas where sweat collects.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Armpits, feet, and groin collect sweat and bacteria - wash them thoroughly."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Waste Management",
+    "language": "en",
+    "content": "Waste management means handling rubbish properly to keep the environment clean. Types of waste: organic (food scraps, leaves - can compost), recyclable (paper, plastic bottles, glass, metal), and non-recyclable (things that can't be reused). At home, separate waste into different bins. Recycle items like plastic bottles, cans, and paper. Compost food scraps to make fertilizer for plants. Never burn rubbish - it pollutes the air. Don't dump waste in drains or gutters - it causes flooding. Proper waste management prevents disease, keeps neighborhoods clean, and protects the environment. Reduce, reuse, recycle!",
+    "summary": "Waste management: separate organic, recyclable, non-recyclable. Recycle plastic, paper, metal. Compost food scraps. Don't burn rubbish or dump in drains. Reduce, reuse, recycle.",
+    "learning_objectives": [
+      "Identify different types of waste",
+      "Learn recycling and composting",
+      "Understand proper waste disposal"
+    ],
+    "nigerian_examples": [
+      "Separating plastic bottles for recycling",
+      "Using food scraps to compost for gardens",
+      "Participating in community cleanup days"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is composting?",
+        "options": ["Burning trash", "Turning food scraps into fertilizer", "Burying plastic", "Recycling paper"],
+        "correct_answer": "Turning food scraps into fertilizer",
+        "explanation": "Composting breaks down organic waste into nutrient-rich soil."
+      },
+      {
+        "question": "Why shouldn't you dump waste in drains?",
+        "options": ["It smells bad", "It causes flooding", "It looks ugly", "It's too much work"],
+        "correct_answer": "It causes flooding",
+        "explanation": "Blocked drains cannot carry rainwater, leading to floods."
+      },
+      {
+        "question": "What does 'recycle' mean?",
+        "options": ["Throw away", "Burn", "Turn old items into new products", "Bury in ground"],
+        "correct_answer": "Turn old items into new products",
+        "explanation": "Recycling transforms used materials into new items."
+      },
+      {
+        "question": "Which material can be recycled?",
+        "options": ["Food scraps", "Plastic bottles", "Batteries", "Paint"],
+        "correct_answer": "Plastic bottles",
+        "explanation": "Plastic bottles can be melted and made into new plastic products."
+      },
+      {
+        "question": "True or False: Burning rubbish is good for the environment.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Burning releases toxic smoke that harms lungs and the environment."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Study Space Cleanliness",
+    "language": "en",
+    "content": "A clean study space helps you focus and learn better. Keep your desk organized - pencils, books, and supplies in their places. Wipe your desk surface regularly to remove dust and germs. Don't eat at your desk - crumbs attract pests and make mess. Put away materials after each study session. Keep your room or study area well-ventilated (open window for fresh air). Good lighting prevents eye strain. A clean, organized space reduces stress and helps you find what you need quickly. Take 5 minutes at the end of each day to tidy up. Your study space affects your learning!",
+    "summary": "Clean study space improves focus: organize desk, wipe surfaces, no eating, put away materials, good lighting, tidy 5 minutes daily. Less stress, better learning.",
+    "learning_objectives": [
+      "Learn to organize study space",
+      "Understand why cleanliness helps learning",
+      "Develop daily tidying habit"
+    ],
+    "nigerian_examples": [
+      "Arranging textbooks and notebooks by subject",
+      "Cleaning desk before homework time",
+      "Using natural light from window during daytime"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Why should you keep your study space clean?",
+        "options": ["To make it look nice", "To focus and learn better", "To impress visitors", "To avoid chores"],
+        "correct_answer": "To focus and learn better",
+        "explanation": "Clutter is distracting. A clean space helps concentration."
+      },
+      {
+        "question": "What should you do at the end of each study day?",
+        "options": ["Leave everything out", "Tidy up for 5 minutes", "Throw everything away", "Ignore the mess"],
+        "correct_answer": "Tidy up for 5 minutes",
+        "explanation": "A quick tidy prevents clutter from building up."
+      },
+      {
+        "question": "Why shouldn't you eat at your desk?",
+        "options": ["Food tastes bad", "Crumbs attract pests and make mess", "Food is unhealthy", "It's against rules"],
+        "correct_answer": "Crumbs attract pests and make mess",
+        "explanation": "Food crumbs attract ants, cockroaches, and other pests."
+      },
+      {
+        "question": "What does good lighting do?",
+        "options": ["Creates shadows", "Prevents eye strain", "Makes room hot", "Wastes electricity"],
+        "correct_answer": "Prevents eye strain",
+        "explanation": "Proper lighting reduces squinting and eye fatigue while studying."
+      },
+      {
+        "question": "True or False: You should wipe your desk surface regularly.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Wiping removes dust, germs, and food residue."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Disease Prevention",
+    "language": "en",
+    "content": "Disease prevention means taking action to avoid getting sick. Wash hands frequently with soap and water, especially before eating, after toilet, after coughing/sneezing. Get all recommended vaccines (immunizations) - they protect you from serious diseases like measles, polio, and tetanus. Cover your mouth with your elbow when coughing or sneezing (not your hand). Stay home when you are sick to avoid spreading germs to others. Eat a balanced diet with fruits and vegetables. Drink clean, boiled or filtered water. Keep your environment clean - no stagnant water where mosquitoes breed. Small actions prevent big illnesses.",
+    "summary": "Disease prevention: wash hands, get vaccines, cover coughs/sneezes (elbow), stay home when sick, eat healthy, drink clean water, no stagnant water for mosquitoes.",
+    "learning_objectives": [
+      "Identify disease prevention methods",
+      "Understand importance of vaccines",
+      "Practice healthy habits daily"
+    ],
+    "nigerian_examples": [
+      "Getting polio vaccine during National Immunization Days",
+      "Sleeping under insecticide-treated mosquito nets",
+      "Boiling drinking water before use"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is the best way to cover a cough?",
+        "options": ["With your hand", "With your elbow", "With nothing", "With a book"],
+        "correct_answer": "With your elbow",
+        "explanation": "Elbow catches germs without spreading them to your hands."
+      },
+      {
+        "question": "Why should you get vaccines?",
+        "options": ["They cure all diseases", "They prevent serious diseases", "They make you stronger", "They taste good"],
+        "correct_answer": "They prevent serious diseases",
+        "explanation": "Vaccines train your body to fight off specific diseases."
+      },
+      {
+        "question": "Why should you stay home when sick?",
+        "options": ["To sleep more", "To avoid spreading germs", "To watch TV", "To play games"],
+        "correct_answer": "To avoid spreading germs",
+        "explanation": "Staying home protects classmates and teachers from getting sick."
+      },
+      {
+        "question": "What disease do mosquitoes spread?",
+        "options": ["Measles", "Malaria", "Polio", "Chickenpox"],
+        "correct_answer": "Malaria",
+        "explanation": "Mosquitoes carrying malaria parasites spread the disease when they bite."
+      },
+      {
+        "question": "True or False: Drinking clean water prevents waterborne diseases.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Contaminated water can cause cholera, typhoid, and diarrhea."
+      }
+    ]
+  }
+]

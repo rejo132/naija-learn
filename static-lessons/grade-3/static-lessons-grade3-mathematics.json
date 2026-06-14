@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Multiplication Tables",
+    "language": "en",
+    "content": "Multiplication tables help you multiply numbers quickly. You should memorize tables from 1 to 10. The 1 times table is easy: any number times 1 equals itself. The 2 times table doubles the number. The 5 times table ends with 0 or 5. The 10 times table adds a zero. Practice each table until you know it by heart. For example: 3 × 4 = 12, 6 × 7 = 42, 8 × 9 = 72. Use tricks to remember: 9 × 6 = 54 (the tens digit is one less than 6, and 5+4=9). Learning multiplication tables makes math much faster and easier.",
+    "summary": "Memorize multiplication tables 1-10. 1×n=n, 2×n doubles, 5×n ends in 0/5, 10×n adds zero. Use tricks like 9×6=54 (tens digit one less than 6, digits sum to 9).",
+    "learning_objectives": [
+      "Memorize multiplication tables 1-10",
+      "Use tricks to remember facts",
+      "Apply multiplication to solve problems"
+    ],
+    "nigerian_examples": [
+      "4 packs of biscuits with 6 each = 4 × 6 = 24 biscuits",
+      "7 rows of 8 chairs = 56 chairs in a hall",
+      "5 students each bringing 9 books = 45 books total"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is 6 × 7?",
+        "options": ["36", "42", "48", "49"],
+        "correct_answer": "42",
+        "explanation": "6 groups of 7 equals 42. Remember: 6 × 7 = 42."
+      },
+      {
+        "question": "What is 8 × 9?",
+        "options": ["64", "72", "81", "56"],
+        "correct_answer": "72",
+        "explanation": "8 × 9 = 72. Think: 8 × 10 = 80, minus 8 = 72."
+      },
+      {
+        "question": "What is 9 × 8?",
+        "options": ["72", "81", "63", "56"],
+        "correct_answer": "72",
+        "explanation": "9 × 8 = 72 (same as 8 × 9)."
+      },
+      {
+        "question": "What trick helps with 9 × 6?",
+        "options": ["6+5=11", "Tens digit is 5, ones digit is 4, sum is 9", "6×10=60", "9+6=15"],
+        "correct_answer": "Tens digit is 5, ones digit is 4, sum is 9",
+        "explanation": "For 9×6, the tens digit is 5 (one less than 6), the ones digit is 4 (5+4=9), so 54."
+      },
+      {
+        "question": "True or False: 10 × 7 = 700",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "10 × 7 = 70 (add one zero, not two zeros)."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Long Division",
+    "language": "en",
+    "content": "Long division helps you divide larger numbers. Remember the steps: Divide, Multiply, Subtract, Bring down. Example: 84 ÷ 3. Step 1: Divide 8 by 3 = 2 (write 2 above). Step 2: Multiply 2 × 3 = 6 (write under 8). Step 3: Subtract 8 - 6 = 2. Step 4: Bring down the 4 to make 24. Then repeat: Divide 24 by 3 = 8, Multiply 8 × 3 = 24, Subtract 24 - 24 = 0. Answer: 28. Practice with numbers that divide evenly first, then try harder problems.",
+    "summary": "Long division steps: Divide, Multiply, Subtract, Bring down. Example: 84÷3 = 28. Practice with even division first.",
+    "learning_objectives": [
+      "Learn the four steps of long division",
+      "Divide three-digit numbers by one-digit numbers",
+      "Check division by multiplying"
+    ],
+    "nigerian_examples": [
+      "Dividing 96 mangoes among 4 children = 24 each",
+      "96 ÷ 4 = 24",
+      "75 naira divided by 5 people = 15 naira each"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are the four steps of long division?",
+        "options": ["Add, Subtract, Multiply, Divide", "Divide, Multiply, Subtract, Bring down", "Multiply, Divide, Add, Subtract", "Bring down, Add, Subtract, Multiply"],
+        "correct_answer": "Divide, Multiply, Subtract, Bring down",
+        "explanation": "Remember: Dad, Mother, Sister, Brother - Divide, Multiply, Subtract, Bring down."
+      },
+      {
+        "question": "What is 84 ÷ 3?",
+        "options": ["26", "27", "28", "29"],
+        "correct_answer": "28",
+        "explanation": "3 × 28 = 84, so 84 ÷ 3 = 28."
+      },
+      {
+        "question": "What is 96 ÷ 4?",
+        "options": ["22", "23", "24", "25"],
+        "correct_answer": "24",
+        "explanation": "96 ÷ 4 = 24 because 4 × 24 = 96."
+      },
+      {
+        "question": "What is 75 ÷ 5?",
+        "options": ["13", "14", "15", "16"],
+        "correct_answer": "15",
+        "explanation": "75 ÷ 5 = 15 because 5 × 15 = 75."
+      },
+      {
+        "question": "True or False: After long division, you can multiply the quotient by the divisor to check your answer.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Division and multiplication are opposites. If 84 ÷ 3 = 28, then 3 × 28 should equal 84."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Fractions",
+    "language": "en",
+    "content": "Fractions represent parts of a whole. The top number is the numerator (how many parts you have). The bottom number is the denominator (how many equal parts make a whole). Examples: 1/2 (half), 1/4 (quarter), 3/4 (three quarters). Equivalent fractions are different fractions that mean the same amount: 1/2 = 2/4 = 3/6 = 4/8. To compare fractions with the same denominator, look at the numerator: 3/4 > 1/4. To add fractions with the same denominator, add the numerators: 1/4 + 2/4 = 3/4. Fractions help you measure, cook, and share things fairly.",
+    "summary": "Fractions show parts of a whole. Numerator/denominator. Equivalent fractions: 1/2 = 2/4 = 3/6. Add same denominators by adding numerators.",
+    "learning_objectives": [
+      "Understand numerator and denominator",
+      "Identify equivalent fractions",
+      "Add and compare fractions"
+    ],
+    "nigerian_examples": [
+      "Cutting a watermelon into 8 slices, eating 3 slices = 3/8",
+      "1/2 of an hour = 30 minutes before school",
+      "3/4 of a cake after sharing"
+    ],
+    "quiz_questions": [
+      {
+        "question": "In the fraction 3/4, what is the numerator?",
+        "options": ["1", "3", "4", "7"],
+        "correct_answer": "3",
+        "explanation": "The numerator is the top number, showing how many parts you have."
+      },
+      {
+        "question": "In the fraction 3/4, what is the denominator?",
+        "options": ["1", "3", "4", "7"],
+        "correct_answer": "4",
+        "explanation": "The denominator is the bottom number, showing how many total equal parts."
+      },
+      {
+        "question": "Which fraction is equivalent to 1/2?",
+        "options": ["1/4", "2/3", "2/4", "3/4"],
+        "correct_answer": "2/4",
+        "explanation": "1/2 = 2/4 = 3/6 = 4/8. They all represent the same amount."
+      },
+      {
+        "question": "What is 1/4 + 2/4?",
+        "options": ["1/4", "2/4", "3/4", "1"],
+        "correct_answer": "3/4",
+        "explanation": "Add numerators: 1 + 2 = 3. Keep denominator: 4. So 3/4."
+      },
+      {
+        "question": "True or False: 3/4 is less than 1/4.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "3/4 means 3 parts out of 4; 1/4 means 1 part out of 4. 3/4 is bigger."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Decimals",
+    "language": "en",
+    "content": "Decimals are another way to write fractions. A decimal point separates whole numbers from parts of a whole. Tenths: 0.1 = 1/10, 0.2 = 2/10, 0.9 = 9/10. Hundredths: 0.01 = 1/100, 0.25 = 25/100 = 1/4. Money is a good example: 0.5 naira = 50 kobo (half a naira). To compare decimals, look at the tenths place first, then hundredths: 0.3 > 0.25 because 3 tenths is more than 2 tenths. To add decimals, line up the decimal points: 1.5 + 2.3 = 3.8. Decimals are used for money, measurements, and many everyday situations.",
+    "summary": "Decimals show parts of a whole. Tenths: 0.1 = 1/10. Hundredths: 0.01 = 1/100. Line up decimal points to add or subtract. Used for money and measurements.",
+    "learning_objectives": [
+      "Understand decimal place values (tenths, hundredths)",
+      "Compare decimals",
+      "Add and subtract decimals"
+    ],
+    "nigerian_examples": [
+      "0.5 naira = 50 kobo (half a naira)",
+      "A pencil costs 1.50 naira = 1 naira and 50 kobo",
+      "A distance of 2.5 kilometers"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is 0.1 as a fraction?",
+        "options": ["1/100", "1/10", "1/5", "1/2"],
+        "correct_answer": "1/10",
+        "explanation": "0.1 means one tenth, which is 1/10."
+      },
+      {
+        "question": "What is 0.25 as a fraction?",
+        "options": ["1/4", "1/2", "3/4", "1/5"],
+        "correct_answer": "1/4",
+        "explanation": "0.25 = 25/100 = 1/4."
+      },
+      {
+        "question": "Which decimal is larger: 0.3 or 0.25?",
+        "options": ["0.3", "0.25", "They are equal", "Cannot compare"],
+        "correct_answer": "0.3",
+        "explanation": "0.3 is 3 tenths (0.30), which is more than 2.5 tenths (0.25)."
+      },
+      {
+        "question": "What is 1.5 + 2.3?",
+        "options": ["3.7", "3.8", "3.9", "4.0"],
+        "correct_answer": "3.8",
+        "explanation": "Line up decimal points: 1.5 + 2.3 = 3.8."
+      },
+      {
+        "question": "True or False: 0.5 naira is the same as 50 kobo.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "0.5 naira equals 50 kobo (half of 100 kobo)."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Geometry Basics",
+    "language": "en",
+    "content": "Geometry is the study of shapes, sizes, and positions of figures. Points are exact locations (represented by a dot). Lines are straight paths going in two directions forever. Line segments are parts of lines with two endpoints. Rays have one endpoint and go forever in one direction. Angles are formed by two rays meeting at a point. Types of angles: acute (less than 90 degrees), right (exactly 90 degrees), obtuse (more than 90 degrees). Shapes include triangles (3 sides), squares (4 equal sides), rectangles (4 sides, opposite sides equal), circles (round), and polygons (many sides). Geometry helps you understand the world around you.",
+    "summary": "Geometry studies shapes and angles. Points, lines, line segments, rays. Angles: acute (<90°), right (90°), obtuse (>90°). Shapes: triangles, squares, rectangles, circles.",
+    "learning_objectives": [
+      "Identify basic geometric terms",
+      "Classify angles",
+      "Recognize common shapes"
+    ],
+    "nigerian_examples": [
+      "A square plot of land",
+      "The right angle corners of a classroom",
+      "Circular pots in the kitchen"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a line segment?",
+        "options": ["A line that goes forever", "Part of a line with two endpoints", "A single point", "A curve"],
+        "correct_answer": "Part of a line with two endpoints",
+        "explanation": "A line segment has a definite start and end."
+      },
+      {
+        "question": "What is a right angle?",
+        "options": ["Less than 90 degrees", "Exactly 90 degrees", "More than 90 degrees", "180 degrees"],
+        "correct_answer": "Exactly 90 degrees",
+        "explanation": "A right angle is exactly 90 degrees, like a corner of a square."
+      },
+      {
+        "question": "Which shape has 4 equal sides?",
+        "options": ["Rectangle", "Triangle", "Square", "Circle"],
+        "correct_answer": "Square",
+        "explanation": "A square has four sides that are all the same length."
+      },
+      {
+        "question": "What is an acute angle?",
+        "options": ["Less than 90 degrees", "Exactly 90 degrees", "More than 90 degrees", "180 degrees"],
+        "correct_answer": "Less than 90 degrees",
+        "explanation": "Acute angles are sharp, smaller than a right angle."
+      },
+      {
+        "question": "True or False: A rectangle has 4 equal sides.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "A rectangle has opposite sides equal, but not all four sides are equal (that's a square)."
+      }
+    ]
+  }
+]

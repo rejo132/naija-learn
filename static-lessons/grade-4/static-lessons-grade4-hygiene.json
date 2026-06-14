@@ -1,0 +1,62 @@
+[
+  {
+    "grade": 4,
+    "subject": "Hygiene Development",
+    "topic": "Advanced Hand Hygiene",
+    "content": "Advanced hand hygiene means washing hands correctly at critical times. Critical times: before eating, after toilet, after coughing/sneezing, after touching animals, after touching rubbish, before and after caring for sick person. Proper technique: wet hands, apply soap, scrub all surfaces for 20 seconds, rinse, dry with clean towel. Hand hygiene prevents diarrhoea and respiratory infections.",
+    "summary": "Wash hands 20 seconds at critical times. Scrub all surfaces. Prevents infections.",
+    "learning_objectives": ["Identify critical handwashing times", "Demonstrate proper 20-second technique"],
+    "nigerian_examples": ["Handwashing stations at school entrances", "Global Handwashing Day celebrations"],
+    "quiz_questions": [
+      {"question": "How long should you wash hands?", "options": ["5 sec", "10 sec", "20 sec", "1 min"], "correct_answer": "20 sec", "explanation": "20 seconds removes most germs."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Hygiene Development",
+    "topic": "Menstrual Hygiene",
+    "content": "Menstrual hygiene means managing periods safely. Periods start between ages 9-14. Change pads every 4-6 hours. Wash hands before and after changing. Dispose pads in trash (not toilet). Track periods on calendar.",
+    "summary": "Change pads every 4-6 hours, wash hands, dispose properly. Periods are normal.",
+    "learning_objectives": ["Understand menstrual cycle basics", "Learn proper pad use"],
+    "nigerian_examples": ["Free sanitary pad distribution in Lagos schools", "Menstrual hygiene clubs"],
+    "quiz_questions": [
+      {"question": "How often change pad?", "options": ["Once daily", "Every 4-6 hours", "Weekly", "Hourly"], "correct_answer": "Every 4-6 hours", "explanation": "Regular changes prevent infection."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Hygiene Development",
+    "topic": "Food Safety",
+    "content": "Food safety prevents foodborne illness. Five keys: Keep clean, separate raw and cooked food, cook thoroughly, keep food at safe temperatures, use safe water. Refrigerate leftovers within 2 hours.",
+    "summary": "Clean, separate, cook, chill, use safe water. Refrigerate leftovers within 2 hours.",
+    "learning_objectives": ["Learn five keys to food safety", "Prevent foodborne illness"],
+    "nigerian_examples": ["Keeping leftover jollof rice in refrigerator", "Checking expiration dates"],
+    "quiz_questions": [
+      {"question": "When refrigerate leftovers?", "options": ["Within 2 hours", "Next day", "After 5 hours", "Never"], "correct_answer": "Within 2 hours", "explanation": "Bacteria grow rapidly at room temperature."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Hygiene Development",
+    "topic": "Sanitation Systems",
+    "content": "Sanitation systems manage human waste safely. Types: flush toilets, pit latrines, VIP latrines. Never practice open defecation - it spreads diseases like cholera. Always use toilet, flush or cover hole, wash hands after.",
+    "summary": "Use proper toilets. Open defecation spreads disease. Wash hands after toilet.",
+    "learning_objectives": ["Identify sanitation types", "Understand open defecation risks"],
+    "nigerian_examples": ["UNICEF Nigeria sanitation programs", "Clean Nigeria campaign"],
+    "quiz_questions": [
+      {"question": "Open defecation spreads which disease?", "options": ["Malaria", "Cholera", "COVID-19", "Flu"], "correct_answer": "Cholera", "explanation": "Cholera spreads through contaminated water."}
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Hygiene Development",
+    "topic": "Pandemic Prevention",
+    "content": "Pandemic prevention stops disease spread. COVID-19 taught us: wash hands, wear masks, maintain distance, stay home when sick, get vaccinated. Cough into elbow, not hands. Follow health guidelines.",
+    "summary": "Hand hygiene, masks, distancing, vaccination. Cough into elbow. Protect communities.",
+    "learning_objectives": ["Learn pandemic prevention measures", "Understand respiratory etiquette"],
+    "nigerian_examples": ["COVID-19 vaccination campaigns", "NCDC situation reports"],
+    "quiz_questions": [
+      {"question": "Where should you cough?", "options": ["Into hands", "Into elbow", "Into air", "On others"], "correct_answer": "Into elbow", "explanation": "Elbow catches droplets without spreading to hands."}
+    ]
+  }
+]

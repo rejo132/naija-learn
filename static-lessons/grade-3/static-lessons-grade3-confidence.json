@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Public Speaking",
+    "language": "en",
+    "content": "Public speaking is talking to a group of people. It can feel scary at first, but practice makes it easier. Prepare by knowing your topic well. Practice speaking out loud at home. Stand up straight, take a deep breath, and speak clearly. Look at your audience, not at the floor. Start with a smile. If you forget something, it's okay - pause, breathe, and continue. Remember that everyone gets nervous sometimes. Even famous speakers practice many times. The more you speak in front of others, the more confident you become. Start with short talks to family, then to classmates.",
+    "summary": "Public speaking: prepare, practice, stand straight, breathe, speak clearly, look at audience. Everyone gets nervous. Practice makes you confident. Start with small audiences.",
+    "learning_objectives": [
+      "Understand public speaking basics",
+      "Learn techniques to reduce nervousness",
+      "Build confidence in speaking"
+    ],
+    "nigerian_examples": [
+      "Speaking at school assembly",
+      "Presenting a class project",
+      "Reciting a poem at cultural day"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What should you do before speaking in public?",
+        "options": ["Wing it", "Prepare and practice", "Hide", "Run away"],
+        "correct_answer": "Prepare and practice",
+        "explanation": "Preparation and practice build confidence."
+      },
+      {
+        "question": "Where should you look when speaking to a group?",
+        "options": ["At the floor", "At the ceiling", "At your audience", "Out the window"],
+        "correct_answer": "At your audience",
+        "explanation": "Eye contact connects you with your listeners."
+      },
+      {
+        "question": "What should you do if you forget what to say?",
+        "options": ["Cry", "Run off stage", "Pause, breathe, and continue", "Give up"],
+        "correct_answer": "Pause, breathe, and continue",
+        "explanation": "Pausing gives you time to remember. The audience won't mind."
+      },
+      {
+        "question": "Is it normal to feel nervous before public speaking?",
+        "options": ["No, only weak people", "Yes, everyone feels nervous sometimes", "Only children feel nervous", "Only adults feel nervous"],
+        "correct_answer": "Yes, everyone feels nervous sometimes",
+        "explanation": "Even professional speakers feel nervous before speaking."
+      },
+      {
+        "question": "True or False: You should start with a smile when public speaking.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "A smile helps you feel calmer and makes your audience comfortable."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Self Awareness",
+    "language": "en",
+    "content": "Self-awareness means knowing yourself - your strengths, weaknesses, feelings, and values. Ask yourself: What am I good at? What do I need to improve? How do I feel right now? What is important to me? Knowing your strengths helps you feel confident. Knowing your weaknesses helps you know what to work on. When you understand your feelings, you can handle them better. Self-awareness also means knowing how your actions affect others. You can build self-awareness by journaling, asking trusted friends for feedback, and reflecting on your day. Self-aware people make better decisions and have stronger relationships.",
+    "summary": "Self-awareness = knowing your strengths, weaknesses, feelings, values. Helps you feel confident, improve, handle emotions, and make good decisions. Journal and reflect daily.",
+    "learning_objectives": [
+      "Understand what self-awareness means",
+      "Identify personal strengths and weaknesses",
+      "Practice self-reflection"
+    ],
+    "nigerian_examples": [
+      "Knowing you are good at math but need help with spelling",
+      "Understanding why you feel angry and calming down",
+      "Aspecting how your actions affect friends"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is self-awareness?",
+        "options": ["Only knowing your name", "Knowing your strengths, weaknesses, feelings, and values", "Knowing what others think", "Only knowing your age"],
+        "correct_answer": "Knowing your strengths, weaknesses, feelings, and values",
+        "explanation": "Self-awareness is understanding yourself deeply."
+      },
+      {
+        "question": "Why is knowing your weaknesses helpful?",
+        "options": ["It makes you sad", "It tells you what to work on", "It doesn't help", "It shows you're bad"],
+        "correct_answer": "It tells you what to work on",
+        "explanation": "Knowing what you need to improve helps you grow."
+      },
+      {
+        "question": "How can you build self-awareness?",
+        "options": ["Only by asking others", "Journaling and reflecting on your day", "Watching TV", "Playing games all day"],
+        "correct_answer": "Journaling and reflecting on your day",
+        "explanation": "Writing down your thoughts and feelings helps you understand yourself better."
+      },
+      {
+        "question": "Does self-awareness help with decision-making?",
+        "options": ["No", "Yes, knowing yourself helps you make better choices", "Only for adults", "Only at school"],
+        "correct_answer": "Yes, knowing yourself helps you make better choices",
+        "explanation": "When you know your values and feelings, you can choose what's right for you."
+      },
+      {
+        "question": "True or False: Self-aware people don't care how their actions affect others.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Self-awareness includes understanding how your behavior impacts people around you."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Overcoming Stage Fright",
+    "language": "en",
+    "content": "Stage fright is feeling nervous or scared before performing in front of people. Almost everyone experiences it. Physical signs: sweaty palms, fast heartbeat, shaky voice. You can overcome stage fright. Practice your performance many times. Breathe deeply before going on stage. Imagine the audience cheering for you. Start with a smile. Remember that the audience wants you to succeed. Focus on your message, not on yourself. If you make a mistake, keep going - most people won't notice. Each time you perform, it gets easier. Stage fright shows you care about doing well - that's a good thing!",
+    "summary": "Stage fright = nervousness before performing. Signs: sweaty palms, fast heartbeat. Overcome by: practicing, deep breathing, smiling, focusing on message. Gets easier each time.",
+    "learning_objectives": [
+      "Recognize symptoms of stage fright",
+      "Learn coping strategies",
+      "Build performance confidence"
+    ],
+    "nigerian_examples": [
+      "Performing at school cultural day",
+      "Playing in a school band concert",
+      "Acting in a class drama"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is stage fright?",
+        "options": ["Fear of stages", "Nervousness before performing in front of people", "Fear of the dark", "Fear of heights"],
+        "correct_answer": "Nervousness before performing in front of people",
+        "explanation": "Stage fright is the anxiety people feel when they have to perform publicly."
+      },
+      {
+        "question": "Which is a physical sign of stage fright?",
+        "options": ["Hunger", "Sweaty palms", "Happiness", "Sleepiness"],
+        "correct_answer": "Sweaty palms",
+        "explanation": "Stage fright can cause physical symptoms like sweating, shaking, and racing heartbeat."
+      },
+      {
+        "question": "What should you do if you make a mistake during a performance?",
+        "options": ["Stop and cry", "Run off stage", "Keep going", "Blame someone"],
+        "correct_answer": "Keep going",
+        "explanation": "The audience probably didn't notice. Just continue with your performance."
+      },
+      {
+        "question": "Does stage fright mean you are weak?",
+        "options": ["Yes", "No, it's normal and shows you care", "Only if you cry", "Only for beginners"],
+        "correct_answer": "No, it's normal and shows you care",
+        "explanation": "Stage fright means you want to do well. Even famous performers feel it."
+      },
+      {
+        "question": "True or False: Stage fright never goes away, no matter how much you practice.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Each time you perform, stage fright often becomes less intense. Practice and experience help."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Goal Setting",
+    "language": "en",
+    "content": "Goal setting means deciding what you want to achieve and making a plan to get there. SMART goals are: Specific (clear, not vague), Measurable (you can track progress), Achievable (realistic for you), Relevant (important to you), Time-bound (has a deadline). Example: 'I will read 10 books by the end of the term' instead of 'I will read more.' Break big goals into small steps. Write your goals down. Tell someone about your goal for accountability. Celebrate when you reach your goal. Setting and achieving goals builds confidence and shows you what you're capable of accomplishing.",
+    "summary": "Goal setting = decide what to achieve and plan how. SMART goals: Specific, Measurable, Achievable, Relevant, Time-bound. Write goals down. Celebrate achievements.",
+    "learning_objectives": [
+      "Learn SMART goal framework",
+      "Set personal academic and behavior goals",
+      "Track progress and celebrate success"
+    ],
+    "nigerian_examples": [
+      "Goal: Improve math grade from C to B by end of term",
+      "Goal: Learn 5 new English words each week",
+      "Goal: Help with chores every day for one month"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does the S in SMART goals stand for?",
+        "options": ["Simple", "Specific", "Slow", "Same"],
+        "correct_answer": "Specific",
+        "explanation": "Specific means clear and detailed, not vague."
+      },
+      {
+        "question": "What does the M in SMART goals stand for?",
+        "options": ["Measurable", "Many", "Mean", "Morning"],
+        "correct_answer": "Measurable",
+        "explanation": "Measurable means you can track your progress."
+      },
+      {
+        "question": "What does the T in SMART goals stand for?",
+        "options": ["Tall", "Time-bound", "Tiny", "Tired"],
+        "correct_answer": "Time-bound",
+        "explanation": "Time-bound means you have a deadline to finish."
+      },
+      {
+        "question": "Why should you write down your goals?",
+        "options": ["To forget them", "To remember them and stay committed", "To show off", "To waste paper"],
+        "correct_answer": "To remember them and stay committed",
+        "explanation": "Written goals are easier to remember and track."
+      },
+      {
+        "question": "True or False: You should only celebrate big goals, not small steps.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Celebrating small victories keeps you motivated toward bigger goals."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Positive Mindset",
+    "language": "en",
+    "content": "A positive mindset means focusing on good possibilities and believing you can improve. People with a growth mindset believe they can get smarter and better through effort. Instead of saying 'I can't do this,' say 'I can't do this yet.' Instead of 'I made a mistake,' say 'Mistakes help me learn.' Positive self-talk uses encouraging words. Surround yourself with positive people who support you. When something bad happens, look for the lesson or the good part. A positive mindset doesn't mean ignoring problems - it means facing them with hope and determination. Your attitude shapes your success.",
+    "summary": "Positive mindset = believing you can improve. Growth mindset: 'I can't do this yet.' Use positive self-talk. Surround yourself with supportive people. Face problems with hope.",
+    "learning_objectives": [
+      "Understand growth vs fixed mindset",
+      "Practice positive self-talk",
+      "Develop resilience and optimism"
+    ],
+    "nigerian_examples": [
+      "Instead of 'I hate math', say 'Math is challenging but I can learn'",
+      "After losing a race: 'I will train harder for next time'",
+      "When homework is hard: 'This is tough, but I can figure it out'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a growth mindset?",
+        "options": ["Believing you cannot change", "Believing you can get smarter through effort", "Believing talent is all that matters", "Believing school is useless"],
+        "correct_answer": "Believing you can get smarter through effort",
+        "explanation": "Growth mindset believes ability grows with practice and learning."
+      },
+      {
+        "question": "How can you reframe 'I can't do this'?",
+        "options": ["I give up", "I can't do this yet", "This is impossible", "I'm stupid"],
+        "correct_answer": "I can't do this yet",
+        "explanation": "Adding 'yet' reminds you that you can learn with time and effort."
+      },
+      {
+        "question": "What should you say when you make a mistake?",
+        "options": ["I'm so dumb", "Mistakes help me learn", "I quit", "Why me"],
+        "correct_answer": "Mistakes help me learn",
+        "explanation": "Mistakes show you what to improve and help you grow."
+      },
+      {
+        "question": "How do positive people affect you?",
+        "options": ["They bring you down", "They support and encourage you", "They ignore you", "They compete with you"],
+        "correct_answer": "They support and encourage you",
+        "explanation": "Positive people lift you up and help you stay motivated."
+      },
+      {
+        "question": "True or False: A positive mindset means pretending problems don't exist.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Positive mindset faces problems with hope and determination, not denial."
+      }
+    ]
+  }
+]

@@ -1,0 +1,127 @@
+[
+  {
+    "grade": 6,
+    "subject": "Basic Digital Literacy",
+    "topic": "Advanced Computer Skills",
+    "language": "en",
+    "content": "Advanced computer skills prepare you for secondary school. File organization: create folders, name files clearly, move files between folders. System settings: change background/wallpaper, adjust volume and brightness, set date and time. Using external devices: USB drives (save and open files), printers (print documents), scanners (copy pictures to computer). Keyboard shortcuts: Ctrl+C (copy), Ctrl+X (cut), Ctrl+V (paste), Ctrl+Z (undo), Ctrl+Y (redo), Ctrl+A (select all), Ctrl+F (find in document). Troubleshooting basics: restart computer for minor issues, check cables if something doesn't work, ask teacher for help. These skills help you succeed in secondary school computer classes.",
+    "summary": "Advanced skills: file organization, system settings, external devices, keyboard shortcuts (Ctrl+C, Ctrl+V, Ctrl+Z), basic troubleshooting.",
+    "learning_objectives": [
+      "Organize files and folders",
+      "Use keyboard shortcuts effectively",
+      "Connect and use external devices"
+    ],
+    "nigerian_examples": [
+      "Saving secondary school application forms to USB drive",
+      "Printing assignment in school computer lab",
+      "Organizing files by subject folders"
+    ],
+    "quiz_questions": [
+      {"question": "What does Ctrl+C do?", "options": ["Paste", "Copy", "Cut", "Undo"], "correct_answer": "Copy", "explanation": "Ctrl+C copies selected items to clipboard."},
+      {"question": "What does Ctrl+V do?", "options": ["Copy", "Cut", "Paste", "Save"], "correct_answer": "Paste", "explanation": "Ctrl+V pastes items from clipboard."},
+      {"question": "What does Ctrl+Z do?", "options": ["Redo", "Copy", "Undo", "Cut"], "correct_answer": "Undo", "explanation": "Ctrl+Z undoes your last action."},
+      {"question": "What should you do if your computer is frozen?", "options": ["Hit it", "Unplug it", "Restart it properly", "Ignore it"], "correct_answer": "Restart it properly", "explanation": "Restarting often fixes minor computer issues."},
+      {"question": "True or False: You should name files with clear, descriptive names.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Clear names help you find files later."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Digital Literacy",
+    "topic": "Spreadsheets for Beginners",
+    "language": "en",
+    "content": "A spreadsheet organizes data in rows and columns. Cells are individual boxes where you enter information. Rows are numbered (1,2,3). Columns have letters (A,B,C). Cell address combines column and row (A1, B2). Enter data: text, numbers, dates. Basic formulas start with = sign: =A1+B1 adds two cells, =SUM(A1:A10) adds a range. Simple formatting: bold headers, borders, colors. Creating a chart: select data, click Chart, choose bar or line chart. Spreadsheets help with budgets, grades, and lists. Nigerian students use spreadsheets for tracking expenses, project data, and simple calculations.",
+    "summary": "Spreadsheets organize data in rows and columns. Cells have addresses (A1). Formulas start with = ( =A1+B1 ). Create charts from data.",
+    "learning_objectives": [
+      "Navigate spreadsheet cells",
+      "Enter data and basic formulas",
+      "Create simple charts"
+    ],
+    "nigerian_examples": [
+      "Tracking pocket money expenses",
+      "Recording exam scores for multiple subjects",
+      "Creating a class attendance list"
+    ],
+    "quiz_questions": [
+      {"question": "What is a cell address?", "options": ["Row number only", "Column letter only", "Column letter + row number (A1)", "Cell content"], "correct_answer": "Column letter + row number (A1)", "explanation": "Cell address identifies a specific cell."},
+      {"question": "What symbol starts a formula?", "options": ["+", "-", "=", "*"], "correct_answer": "=", "explanation": "All formulas begin with = sign."},
+      {"question": "What does =SUM(A1:A5) do?", "options": ["Finds average", "Adds values in A1 through A5", "Finds maximum", "Finds minimum"], "correct_answer": "Adds values in A1 through A5", "explanation": "SUM adds all numbers in the range."},
+      {"question": "What is a row?", "options": ["Vertical line", "Horizontal line", "Single cell", "Entire sheet"], "correct_answer": "Horizontal line", "explanation": "Rows go across and are numbered."},
+      {"question": "True or False: Spreadsheets can only store numbers, not text.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Spreadsheets can store text, numbers, dates, and formulas."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Digital Literacy",
+    "topic": "Presentations and Slideshows",
+    "language": "en",
+    "content": "Presentation software (PowerPoint, Google Slides) creates slideshows for reports and speeches. Slide layout: title slide (topic and name), content slides (information), conclusion slide (summary). Design tips: use clear fonts (Arial, Calibri), limit text per slide (6 lines max), use bullet points not paragraphs, add relevant pictures. Transitions: effects between slides (use sparingly). Animations: effects on individual items (don't overdo). Presenting tips: practice before, speak clearly, look at audience not screen, don't read slides word-for-word. Nigerian students use presentations for class projects, cultural day reports, and school competitions.",
+    "summary": "Presentation software creates slideshows. Design tips: clear fonts, limit text, use pictures. Practice before presenting, speak clearly, look at audience.",
+    "learning_objectives": [
+      "Create a slide presentation",
+      "Apply good design principles",
+      "Deliver an effective presentation"
+    ],
+    "nigerian_examples": [
+      "Presenting a report on Nigerian independence",
+      "Showing family photos in class",
+      "Creating a presentation about Nigerian culture"
+    ],
+    "quiz_questions": [
+      {"question": "How many lines of text per slide is recommended?", "options": ["10 lines", "2 lines", "6 lines", "No limit"], "correct_answer": "6 lines", "explanation": "6 lines or less keeps slides readable."},
+      {"question": "What should you do during a presentation?", "options": ["Read slides word-for-word", "Look at the audience", "Face the screen", "Speak very fast"], "correct_answer": "Look at the audience", "explanation": "Eye contact connects you with listeners."},
+      {"question": "What is a transition?", "options": ["Effect between slides", "Font style", "Picture addition", "Spell check"], "correct_answer": "Effect between slides", "explanation": "Transitions are animations when moving from one slide to the next."},
+      {"question": "What should the first slide show?", "options": ["All content", "Title and presenter name", "Only pictures", "Conclusion"], "correct_answer": "Title and presenter name", "explanation": "The title slide introduces your topic and yourself."},
+      {"question": "True or False: More animations and transitions make presentations better.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Too many effects are distracting. Use sparingly."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Digital Literacy",
+    "topic": "Email Communication",
+    "language": "en",
+    "content": "Email is electronic mail used to send messages online. Parts of an email: To (recipient's address), Cc (carbon copy - sends copies to others), Subject (topic of message), Body (your message), Attachments (files like pictures or documents). Email etiquette: use a clear subject line, start with a greeting (Dear Mr. Ade), write clearly and politely, end with closing (Sincerely, Best regards). Never type in ALL CAPS (it looks like shouting). Check spelling before sending. Do not share private information. Reply to messages within a reasonable time. Nigerian students use email to contact teachers, submit assignments, and communicate with family abroad.",
+    "summary": "Email parts: To, Subject, Body, Attachments. Etiquette: clear subject, greeting, polite language, closing, check spelling. No ALL CAPS.",
+    "learning_objectives": [
+      "Compose a proper email",
+      "Use attachments correctly",
+      "Practice email etiquette"
+    ],
+    "nigerian_examples": [
+      "Sending homework to teacher",
+      "Emailing a relative in another country",
+      "Applying for a school program"
+    ],
+    "quiz_questions": [
+      {"question": "What should you write in the Subject line?", "options": ["Your name only", "The main topic of your message", "Full message", "Leave blank"], "correct_answer": "The main topic of your message", "explanation": "Subject helps recipients understand email purpose."},
+      {"question": "What is a proper email greeting?", "options": ["Hey", "Hello", "Dear Mr. Ade", "What's up"], "correct_answer": "Dear Mr. Ade", "explanation": "Formal greetings show respect."},
+      {"question": "Why avoid ALL CAPS in emails?", "options": ["Hard to read", "Looks like shouting", "Seems aggressive", "All of these"], "correct_answer": "All of these", "explanation": "All caps is considered rude in digital communication."},
+      {"question": "What are attachments?", "options": ["Images in email body", "Files sent along with email", "Email addresses", "Subject lines"], "correct_answer": "Files sent along with email", "explanation": "Attachments let you share documents and pictures."},
+      {"question": "True or False: You should check spelling before sending an email.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Proofreading shows professionalism and respect."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Digital Literacy",
+    "topic": "Digital Citizenship",
+    "language": "en",
+    "content": "Digital citizenship means being responsible and safe online. Nine elements: digital access (everyone should have internet), digital commerce (buying/selling online legally), digital communication (respectful messaging), digital literacy (understanding technology), digital etiquette (manners online), digital law (no stealing, hacking, piracy), digital rights and responsibilities (privacy, free speech), digital health and wellness (balance screen time, posture), digital security (protecting information). Nigerian digital citizens: respect others online, don't share passwords, don't cyberbully, give credit for others' work, limit gaming/social media time, use strong passwords. Your online actions have real-world consequences.",
+    "summary": "Digital citizenship = responsible online behavior. Nine elements: access, commerce, communication, literacy, etiquette, law, rights, health, security.",
+    "learning_objectives": [
+      "Understand digital citizenship",
+      "Practice online safety and respect",
+      "Balance screen time"
+    ],
+    "nigerian_examples": [
+      "Respecting others in WhatsApp groups",
+      "Not downloading movies illegally",
+      "Limiting gaming time to focus on studies"
+    ],
+    "quiz_questions": [
+      {"question": "What is digital citizenship?", "options": ["Using computers only", "Responsible and safe online behavior", "Playing games online", "Browsing websites"], "correct_answer": "Responsible and safe online behavior", "explanation": "Digital citizenship covers rights, responsibilities, and safety."},
+      {"question": "Should you share your password with friends?", "options": ["Yes always", "Never share except with parents", "Only best friends", "Only classmates"], "correct_answer": "Never share except with parents", "explanation": "Passwords protect your accounts from unauthorized access."},
+      {"question": "What is cyberbullying?", "options": ["Online gaming", "Harassing others online", "Watching videos", "Sending emails"], "correct_answer": "Harassing others online", "explanation": "Cyberbullying includes mean messages, spreading rumors, or excluding others online."},
+      {"question": "What is digital etiquette?", "options": ["Manners online", "Computer speed", "Internet connection", "Software installation"], "correct_answer": "Manners online", "explanation": "Digital etiquette means being polite and respectful online."},
+      {"question": "True or False: What you post online stays online forever.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Posts can be screenshotted and shared even after deletion."}
+    ]
+  }
+]

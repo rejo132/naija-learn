@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Keyboard Skills",
+    "language": "en",
+    "content": "The keyboard is how you type letters, numbers, and symbols into a computer. The middle row of letters is called the home row: A, S, D, F, G, H, J, K, L. Your fingers should rest on these keys. Your left hand goes on A, S, D, F. Your right hand goes on J, K, L. Your thumbs rest on the spacebar. Practice typing with all fingers, not just one or two. The shift key makes capital letters. The enter key starts a new line. The more you practice, the faster you will type!",
+    "summary": "Keyboard has home row keys: A,S,D,F (left hand) and J,K,L (right hand). Thumbs on spacebar. Shift key for capitals. Enter key for new line.",
+    "learning_objectives": [
+      "Learn proper finger placement on home row",
+      "Identify important keyboard keys",
+      "Practice basic typing skills"
+    ],
+    "nigerian_examples": [
+      "Nigerian students typing on computers in school labs",
+      "Learning to type your name and address",
+      "Practicing typing on a laptop at home"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is the home row on a keyboard?",
+        "options": ["The top row of numbers", "The middle row: A,S,D,F,G,H,J,K,L", "The bottom row", "The spacebar only"],
+        "correct_answer": "The middle row: A,S,D,F,G,H,J,K,L",
+        "explanation": "The home row is the middle row where your fingers should rest."
+      },
+      {
+        "question": "Which finger should rest on the J key?",
+        "options": ["Left index finger", "Right index finger", "Left thumb", "Right thumb"],
+        "correct_answer": "Right index finger",
+        "explanation": "Your right index finger rests on the J key, which has a small bump to help you find it."
+      },
+      {
+        "question": "What does the shift key do?",
+        "options": ["Makes letters lowercase", "Makes capital letters", "Deletes letters", "Adds spaces"],
+        "correct_answer": "Makes capital letters",
+        "explanation": "Hold shift while pressing a letter to type a capital letter."
+      },
+      {
+        "question": "What does the enter key do?",
+        "options": ["Adds a space", "Deletes a letter", "Starts a new line", "Makes capital letters"],
+        "correct_answer": "Starts a new line",
+        "explanation": "Press enter to move to the next line when typing."
+      },
+      {
+        "question": "True or False: You should only use one finger to type.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Using all fingers makes typing faster and more efficient."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Drawing on Computer",
+    "language": "en",
+    "content": "Computers have programs that let you draw and paint. A common drawing program is Paint (on Windows computers). You can use the mouse to draw lines, shapes, and pictures. Tools include: pencil (draws thin lines), brush (draws thick lines), eraser (removes mistakes), fill bucket (fills areas with color), and shape tools (draw circles, squares, triangles). You can also use a drawing tablet if available. Drawing on computer is different from drawing on paper because you can undo mistakes and try again without wasting paper. Have fun creating digital art!",
+    "summary": "Computer drawing programs have tools: pencil, brush, eraser, fill bucket, shapes. You can undo mistakes. Drawing on computer saves paper.",
+    "learning_objectives": [
+      "Learn basic computer drawing tools",
+      "Understand how digital drawing differs from paper",
+      "Create simple digital artwork"
+    ],
+    "nigerian_examples": [
+      "Nigerian children drawing the Nigerian flag on a computer",
+      "Creating birthday cards using Paint",
+      "Drawing animals and sharing with classmates"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What tool removes mistakes in a drawing program?",
+        "options": ["Pencil", "Brush", "Eraser", "Fill bucket"],
+        "correct_answer": "Eraser",
+        "explanation": "The eraser tool removes unwanted parts of your drawing."
+      },
+      {
+        "question": "What does the fill bucket tool do?",
+        "options": ["Draws lines", "Fills an area with color", "Erases mistakes", "Draws circles"],
+        "correct_answer": "Fills an area with color",
+        "explanation": "Click the fill bucket on an area to fill it completely with a color."
+      },
+      {
+        "question": "What is one advantage of drawing on a computer?",
+        "options": ["You cannot fix mistakes", "You can undo mistakes without wasting paper", "It is harder than paper", "You need expensive supplies"],
+        "correct_answer": "You can undo mistakes without wasting paper",
+        "explanation": "Digital drawing lets you undo mistakes easily, saving paper."
+      },
+      {
+        "question": "Which tool would you use to draw a perfect circle?",
+        "options": ["Pencil", "Brush", "Shape tool (circle)", "Eraser"],
+        "correct_answer": "Shape tool (circle)",
+        "explanation": "The shape tool lets you draw perfect circles, squares, and triangles."
+      },
+      {
+        "question": "True or False: You can only use a mouse for computer drawing.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "You can use a mouse, touch screen, or drawing tablet for computer art."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Internet Basics",
+    "language": "en",
+    "content": "The internet is a network that connects computers all over the world. It lets you find information, watch videos, play games, and talk to people far away. To use the internet, you need a device (computer, tablet, phone) and an internet connection (Wi-Fi or mobile data). A browser is a program that lets you visit websites. Examples: Chrome, Firefox, Safari. To go to a website, type its address in the bar at the top. The internet is a wonderful tool, but always use it with an adult's permission and supervision.",
+    "summary": "The internet connects computers worldwide. You need a device and connection. Browsers like Chrome let you visit websites. Always use with adult supervision.",
+    "learning_objectives": [
+      "Understand what the internet is",
+      "Learn about web browsers",
+      "Practice safe internet use with adults"
+    ],
+    "nigerian_examples": [
+      "Using the internet to learn about Nigerian history",
+      "Watching educational videos on YouTube with parent supervision",
+      "Accessing online learning platforms from home"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is the internet?",
+        "options": ["A single computer", "A network connecting computers worldwide", "A type of software", "A video game"],
+        "correct_answer": "A network connecting computers worldwide",
+        "explanation": "The internet connects millions of computers around the world."
+      },
+      {
+        "question": "What do you need to use the internet?",
+        "options": ["Only a phone", "A device and internet connection", "Only a cable", "Only electricity"],
+        "correct_answer": "A device and internet connection",
+        "explanation": "You need a computer, tablet, or phone plus Wi-Fi or mobile data."
+      },
+      {
+        "question": "What is a web browser?",
+        "options": ["A type of internet connection", "A program to visit websites like Chrome", "A website", "A computer part"],
+        "correct_answer": "A program to visit websites like Chrome",
+        "explanation": "Browsers like Chrome, Firefox, and Safari let you access websites."
+      },
+      {
+        "question": "Who should supervise you when using the internet?",
+        "options": ["No one", "Only friends", "A trusted adult", "Strangers"],
+        "correct_answer": "A trusted adult",
+        "explanation": "Always use the internet with a parent, teacher, or trusted adult watching."
+      },
+      {
+        "question": "True or False: You can use the internet without any device.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "You need a device like a computer, tablet, or phone to access the internet."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Password Safety",
+    "language": "en",
+    "content": "A password is a secret word or number that keeps your account safe. Never share your password with anyone except your parents. A good password is hard to guess. Do not use your name, birthday, or simple words like 'password' or '12345'. Use a mix of letters, numbers, and symbols. For example, 'Blue2Fish!' is a strong password. Change your password sometimes to keep it secure. If you think someone knows your password, tell a parent right away so they can help you change it.",
+    "summary": "Passwords keep accounts safe. Never share passwords except with parents. Use strong passwords with letters, numbers, symbols. Change passwords sometimes.",
+    "learning_objectives": [
+      "Understand what passwords are for",
+      "Learn how to create strong passwords",
+      "Practice password safety rules"
+    ],
+    "nigerian_examples": [
+      "Using a password to protect your tablet at home",
+      "Creating a password for educational apps",
+      "Asking parent before sharing any password"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a password?",
+        "options": ["A public word everyone knows", "A secret word that keeps your account safe", "A type of game", "A school subject"],
+        "correct_answer": "A secret word that keeps your account safe",
+        "explanation": "A password is like a key that only you and your parents should know."
+      },
+      {
+        "question": "Which is a strong password?",
+        "options": ["password", "12345", "Blue2Fish!", "yourname"],
+        "correct_answer": "Blue2Fish!",
+        "explanation": "A strong password uses letters, numbers, and symbols, not simple words."
+      },
+      {
+        "question": "Who should you share your password with?",
+        "options": ["All your friends", "Anyone who asks", "Only your parents", "Strangers online"],
+        "correct_answer": "Only your parents",
+        "explanation": "Only share passwords with your parents. No one else needs to know them."
+      },
+      {
+        "question": "What should you do if someone learns your password?",
+        "options": ["Ignore it", "Tell a parent right away", "Share it with more people", "Keep using it"],
+        "correct_answer": "Tell a parent right away",
+        "explanation": "Tell a parent immediately so they can help you change the password."
+      },
+      {
+        "question": "True or False: '12345' is a good password.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Simple number sequences like '12345' are very easy to guess and not secure."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Educational Games",
+    "language": "en",
+    "content": "Educational games are computer or tablet games that help you learn while having fun. They can teach math, reading, spelling, science, and other subjects. Examples include math games where you solve problems to earn points, spelling games where you type missing letters, and puzzle games that build thinking skills. Educational games are different from regular games because learning is the main goal. Ask your teacher or parents to recommend good educational games. Set a time limit so you balance playing with other activities like reading and outdoor play.",
+    "summary": "Educational games help you learn math, reading, spelling, and more while having fun. Ask adults for recommendations. Balance game time with other activities.",
+    "learning_objectives": [
+      "Understand what educational games are",
+      "Identify good learning games",
+      "Practice balanced screen time"
+    ],
+    "nigerian_examples": [
+      "Math games used in Nigerian computer labs",
+      "Spelling apps recommended by teachers",
+      "Educational games on tablets during breaks"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are educational games?",
+        "options": ["Games only for fun with no learning", "Games that help you learn while having fun", "Games that are boring", "Games only for adults"],
+        "correct_answer": "Games that help you learn while having fun",
+        "explanation": "Educational games teach you subjects like math and reading while you play."
+      },
+      {
+        "question": "What can educational games teach?",
+        "options": ["Only dancing", "Math, reading, spelling, and science", "Only cooking", "Only sports"],
+        "correct_answer": "Math, reading, spelling, and science",
+        "explanation": "There are educational games for many different school subjects."
+      },
+      {
+        "question": "Who should you ask for game recommendations?",
+        "options": ["Strangers online", "Your teacher or parents", "No one", "Younger children only"],
+        "correct_answer": "Your teacher or parents",
+        "explanation": "Teachers and parents know which games are good for learning and safe to use."
+      },
+      {
+        "question": "Should you play educational games all day?",
+        "options": ["Yes, as much as possible", "No, balance with other activities", "Only if you don't eat", "Only at night"],
+        "correct_answer": "No, balance with other activities",
+        "explanation": "Balance game time with reading, outdoor play, and other activities."
+      },
+      {
+        "question": "True or False: All computer games are educational.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Some games are just for entertainment. Educational games specifically teach skills."
+      }
+    ]
+  }
+]

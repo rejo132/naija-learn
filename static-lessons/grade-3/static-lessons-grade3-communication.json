@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Active Listening",
+    "language": "en",
+    "content": "Active listening means fully focusing on the speaker, understanding their message, and responding thoughtfully. It's different from hearing (just receiving sound). Steps: stop what you're doing, face the speaker, make eye contact, don't interrupt, nod to show you're following, think about what they're saying, ask questions if unclear, and summarize what you heard. Active listening shows respect and helps you learn better. In Nigerian culture, listening carefully to elders is a sign of respect. Good listeners are valued in school, at home, and in future jobs.",
+    "summary": "Active listening: focus completely, face speaker, eye contact, don't interrupt, nod, think, ask questions, summarize. Shows respect. Different from just hearing.",
+    "learning_objectives": [
+      "Understand active listening vs passive hearing",
+      "Learn active listening techniques",
+      "Practice listening respectfully"
+    ],
+    "nigerian_examples": [
+      "Listening carefully to elders' advice",
+      "Paying attention during moonlight tales",
+      "Following teacher instructions without interrupting"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is active listening?",
+        "options": ["Hearing sounds", "Fully focusing and understanding the speaker", "Pretending to listen", "Thinking about something else"],
+        "correct_answer": "Fully focusing and understanding the speaker",
+        "explanation": "Active listening requires your full attention and effort to understand."
+      },
+      {
+        "question": "What should you do while someone is speaking?",
+        "options": ["Interrupt with your own story", "Look at your phone", "Make eye contact and nod", "Walk away"],
+        "correct_answer": "Make eye contact and nod",
+        "explanation": "Eye contact shows attention; nodding shows you're following."
+      },
+      {
+        "question": "What should you do if you don't understand something?",
+        "options": ["Pretend you understand", "Ask a polite question", "Ignore it", "Change the subject"],
+        "correct_answer": "Ask a polite question",
+        "explanation": "Asking questions shows you want to understand correctly."
+      },
+      {
+        "question": "Why is active listening important in Nigerian culture?",
+        "options": ["It's not important", "It shows respect, especially to elders", "Only teachers need it", "Only for adults"],
+        "correct_answer": "It shows respect, especially to elders",
+        "explanation": "Listening carefully to elders is a sign of respect in Nigerian culture."
+      },
+      {
+        "question": "True or False: Hearing and listening are the same thing.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Hearing is automatic; listening requires active effort and attention."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Clear Speaking",
+    "language": "en",
+    "content": "Clear speaking means expressing your thoughts so others understand easily. Speak at a steady pace - not too fast, not too slow. Use appropriate volume - loud enough to hear, not shouting. Pronounce words correctly. Organize your thoughts before speaking. Use pauses to let listeners absorb information. Look at your audience. Avoid fillers like 'um', 'uh', 'like', 'you know'. Practice speaking clearly by reading aloud, recording yourself, and asking for feedback. Clear speaking helps you in class presentations, answering questions, and conversations. It shows confidence and respect for your listeners.",
+    "summary": "Clear speaking: steady pace, right volume, correct pronunciation, organize thoughts, use pauses, look at audience, avoid fillers. Practice by reading aloud.",
+    "learning_objectives": [
+      "Learn clear speaking techniques",
+      "Eliminate verbal fillers",
+      "Build speaking confidence"
+    ],
+    "nigerian_examples": [
+      "Speaking clearly during class presentations",
+      "Announcing scores at sports day",
+      "Leading morning assembly announcements"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a good speaking pace?",
+        "options": ["Very fast", "Very slow", "Steady - not too fast or too slow", "Stopping between every word"],
+        "correct_answer": "Steady - not too fast or too slow",
+        "explanation": "A steady pace gives listeners time to understand without getting bored."
+      },
+      {
+        "question": "What are filler words?",
+        "options": ["Important vocabulary", "Um, uh, like, you know", "Big words", "Nigerian words"],
+        "correct_answer": "Um, uh, like, you know",
+        "explanation": "Fillers are unnecessary words that distract from your message."
+      },
+      {
+        "question": "Where should you look when speaking to a group?",
+        "options": ["At the floor", "At the ceiling", "At your audience", "Out the window"],
+        "correct_answer": "At your audience",
+        "explanation": "Eye contact connects you with listeners and shows confidence."
+      },
+      {
+        "question": "How can you practice clear speaking?",
+        "options": ["Never speak", "Only think about speaking", "Read aloud and record yourself", "Whisper always"],
+        "correct_answer": "Read aloud and record yourself",
+        "explanation": "Recording lets you hear yourself and identify areas to improve."
+      },
+      {
+        "question": "True or False: Speaking very quietly shows confidence.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Confident speakers use appropriate volume so everyone can hear."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Non Verbal Communication",
+    "language": "en",
+    "content": "Non-verbal communication is sending messages without words, using body language, facial expressions, gestures, posture, and eye contact. Examples: smiling shows happiness; frowning shows sadness or confusion; crossed arms may show defensiveness; open posture shows openness; nodding shows agreement; looking away may show disinterest. In Nigerian culture, prostrating (boys) or kneeling (girls) shows deep respect to elders. Using the right hand to give or receive is polite. Your body speaks even when your mouth is quiet. Match your body language to your words for honest communication.",
+    "summary": "Non-verbal communication: body language, facial expressions, gestures, posture, eye contact. Smiling = happy, nodding = agreement. Nigerian respect gestures: prostrating, kneeling, right hand.",
+    "learning_objectives": [
+      "Identify non-verbal cues",
+      "Understand Nigerian cultural gestures",
+      "Align body language with words"
+    ],
+    "nigerian_examples": [
+      "Prostrating to greet Yoruba elders",
+      "Kneeling to greet Igbo elders",
+      "Using right hand to give money or gifts"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is non-verbal communication?",
+        "options": ["Talking on phone", "Sending messages without words using body language", "Writing letters", "Singing"],
+        "correct_answer": "Sending messages without words using body language",
+        "explanation": "Your body, face, and gestures send messages even without speaking."
+      },
+      {
+        "question": "What does smiling usually communicate?",
+        "options": ["Sadness", "Happiness or friendliness", "Anger", "Confusion"],
+        "correct_answer": "Happiness or friendliness",
+        "explanation": "A smile is a universal sign of friendliness and happiness."
+      },
+      {
+        "question": "How do Yoruba boys show respect to elders?",
+        "options": ["Shake hands", "Wave", "Prostrate (lie down briefly)", "Hug"],
+        "correct_answer": "Prostrate (lie down briefly)",
+        "explanation": "Prostrating is a traditional Yoruba gesture of deep respect."
+      },
+      {
+        "question": "Which hand is polite to use when giving something?",
+        "options": ["Left hand", "Right hand", "Both hands", "Either hand"],
+        "correct_answer": "Right hand",
+        "explanation": "Using the right hand to give or receive shows respect in Nigerian culture."
+      },
+      {
+        "question": "True or False: Your body language can contradict your words.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "If you say 'I'm fine' but look sad, people trust your body more than your words."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Giving Feedback",
+    "language": "en",
+    "content": "Feedback is telling someone what you think about their work or behavior. Good feedback is specific, kind, and helpful. The 'feedback sandwich' method: start with something positive, give the constructive criticism (what to improve), end with encouragement. Example: 'Your drawing has beautiful colors. Next time, try making the people bigger. I can't wait to see your next drawing!' When receiving feedback, listen without interrupting, say thank you, and think about how to improve. Don't get defensive. Feedback helps us grow. Both giving and receiving feedback are skills that improve with practice.",
+    "summary": "Feedback: specific, kind, helpful. Feedback sandwich: positive, constructive, encouragement. Receiving feedback: listen, say thank you, think how to improve. Don't get defensive.",
+    "learning_objectives": [
+      "Learn to give constructive feedback",
+      "Practice feedback sandwich method",
+      "Receive feedback graciously"
+    ],
+    "nigerian_examples": [
+      "Telling a friend 'Your handwriting is neat; try writing a bit larger so it's easier to read'",
+      "Teacher feedback on homework",
+      "Coach feedback after sports practice"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is the feedback sandwich method?",
+        "options": ["Bread, meat, bread", "Positive, constructive, encouragement", "Criticism only", "Praise only"],
+        "correct_answer": "Positive, constructive, encouragement",
+        "explanation": "Starting and ending with positive comments makes criticism easier to accept."
+      },
+      {
+        "question": "How should you respond when receiving feedback?",
+        "options": ["Get angry", "Interrupt", "Listen, say thank you, think about improving", "Ignore it"],
+        "correct_answer": "Listen, say thank you, think about improving",
+        "explanation": "Thanking shows you value the person's effort to help you."
+      },
+      {
+        "question": "What makes feedback helpful?",
+        "options": ["Being vague", "Being specific and kind", "Being mean", "Being silent"],
+        "correct_answer": "Being specific and kind",
+        "explanation": "Specific feedback tells exactly what to improve; kindness makes it easier to hear."
+      },
+      {
+        "question": "Should you get defensive when receiving feedback?",
+        "options": ["Yes, always", "No, listen and consider it", "Only if it's negative", "Only from teachers"],
+        "correct_answer": "No, listen and consider it",
+        "explanation": "Getting defensive shuts down learning. Openness helps you grow."
+      },
+      {
+        "question": "True or False: Feedback is only for correcting mistakes, not praising good work.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Good feedback includes praise for what's working well too."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Conflict Resolution",
+    "language": "en",
+    "content": "Conflict resolution is solving disagreements peacefully. Steps: calm down (take deep breaths), use 'I feel' statements ('I feel upset when you take my pencil without asking'), listen to the other person's side, find a solution together, apologize if needed, and forgive. Never shout, hit, or insult. If you can't resolve it, ask an adult for help. In Nigerian culture, community elders often help resolve conflicts. Learning conflict resolution now helps you handle disagreements with friends, siblings, and classmates throughout life.",
+    "summary": "Conflict resolution: calm down, use 'I feel' statements, listen, find solution together, apologize, forgive. Don't shout or hit. Ask adult if needed.",
+    "learning_objectives": [
+      "Learn peaceful conflict resolution steps",
+      "Practice 'I feel' statements",
+      "Understand when to ask for help"
+    ],
+    "nigerian_examples": [
+      "Resolving dispute over whose turn to play",
+      "Community elders settling village disagreements",
+      "Teachers mediating between classmates"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is the first step in conflict resolution?",
+        "options": ["Yell", "Hit", "Calm down (take deep breaths)", "Blame the other person"],
+        "correct_answer": "Calm down (take deep breaths)",
+        "explanation": "You can't solve problems when angry. Calm down first."
+      },
+      {
+        "question": "What is an 'I feel' statement?",
+        "options": ["You are mean", "I feel upset when you take my pencil", "Everyone is wrong", "It's your fault"],
+        "correct_answer": "I feel upset when you take my pencil",
+        "explanation": "I feel statements express your feelings without blaming."
+      },
+      {
+        "question": "What should you do if you cannot resolve a conflict?",
+        "options": ["Fight", "Ignore it forever", "Ask an adult for help", "Spread rumors"],
+        "correct_answer": "Ask an adult for help",
+        "explanation": "Adults like parents and teachers can help mediate."
+      },
+      {
+        "question": "Should you apologize when you've done something wrong?",
+        "options": ["No, never", "Only if caught", "Yes, apologize sincerely", "Blame someone else"],
+        "correct_answer": "Yes, apologize sincerely",
+        "explanation": "A sincere apology shows responsibility and helps heal relationships."
+      },
+      {
+        "question": "True or False: Conflict resolution means one person always wins.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Good resolution finds a solution that works for everyone, not just one winner."
+      }
+    ]
+  }
+]

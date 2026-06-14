@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "The Human Senses",
+    "language": "en",
+    "content": "Your body has five special senses that help you understand the world around you. Sight (eyes) lets you see colors, shapes, and movements. Hearing (ears) lets you listen to sounds like music, voices, and birds. Touch (skin) lets you feel if something is hot, cold, soft, or hard. Taste (tongue) lets you enjoy sweet, sour, salty, and bitter foods. Smell (nose) lets you enjoy nice smells like food and flowers, and avoid bad smells. Your senses work together to keep you safe and happy every day!",
+    "summary": "Five senses: sight (eyes), hearing (ears), touch (skin), taste (tongue), smell (nose). Senses help you understand and stay safe in the world.",
+    "learning_objectives": [
+      "Identify the five senses and their body parts",
+      "Understand what each sense does",
+      "Explain how senses keep us safe"
+    ],
+    "nigerian_examples": [
+      "Using sight to read Nigerian road signs",
+      "Using smell to enjoy jollof rice cooking",
+      "Using touch to feel the texture of ankara fabric"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which sense uses your eyes?",
+        "options": ["Hearing", "Sight", "Smell", "Touch"],
+        "correct_answer": "Sight",
+        "explanation": "Your eyes give you the sense of sight to see things."
+      },
+      {
+        "question": "Which sense uses your ears?",
+        "options": ["Sight", "Taste", "Hearing", "Smell"],
+        "correct_answer": "Hearing",
+        "explanation": "Your ears give you the sense of hearing to listen to sounds."
+      },
+      {
+        "question": "Which sense helps you know if food is sweet or sour?",
+        "options": ["Smell", "Touch", "Sight", "Taste"],
+        "correct_answer": "Taste",
+        "explanation": "Your tongue gives you the sense of taste to enjoy different flavors."
+      },
+      {
+        "question": "Which sense warns you that something is too hot to touch?",
+        "options": ["Sight", "Hearing", "Touch", "Smell"],
+        "correct_answer": "Touch",
+        "explanation": "Your skin's sense of touch tells you if something is hot, cold, sharp, or soft."
+      },
+      {
+        "question": "True or False: Your senses help keep you safe from danger.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Yes! Your senses warn you about dangers like fire, bad food, or loud noises."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "Weather and Seasons",
+    "language": "en",
+    "content": "Weather is what the air outside is like each day. In Nigeria, we have two main seasons: the dry season and the rainy season. The dry season has hot sun, little rain, and dusty winds called harmattan. The rainy season has lots of rain, cooler temperatures, and thunderstorms. Each season affects what we wear, what we eat, and what we do. During the rainy season, we wear raincoats and carry umbrellas. During the dry season, we drink more water and wear lighter clothes.",
+    "summary": "Nigeria has two seasons: dry season (hot, little rain) and rainy season (lots of rain). Weather affects our clothes, food, and activities.",
+    "learning_objectives": [
+      "Identify Nigeria's two main seasons",
+      "Describe weather in each season",
+      "Understand how seasons affect daily life"
+    ],
+    "nigerian_examples": [
+      "Harmattan dust from the Sahara during dry season",
+      "Heavy rains that fill rivers in Lagos and Port Harcourt",
+      "Farmers planting crops at the start of rainy season"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are the two main seasons in Nigeria?",
+        "options": ["Summer and winter", "Dry season and rainy season", "Spring and autumn", "Hot and cold"],
+        "correct_answer": "Dry season and rainy season",
+        "explanation": "Nigeria has dry season (little rain) and rainy season (lots of rain)."
+      },
+      {
+        "question": "Which season has the harmattan wind?",
+        "options": ["Rainy season", "Dry season", "Winter", "Spring"],
+        "correct_answer": "Dry season",
+        "explanation": "Harmattan is a dusty wind from the Sahara that blows during the dry season."
+      },
+      {
+        "question": "What should you carry during the rainy season?",
+        "options": ["Sunglasses", "Umbrella or raincoat", "Heavy blanket", "Fan"],
+        "correct_answer": "Umbrella or raincoat",
+        "explanation": "Rainy season has lots of rain, so carry an umbrella or wear a raincoat."
+      },
+      {
+        "question": "During dry season, you should drink more...",
+        "options": ["Juice only", "Water", "Soup", "Tea"],
+        "correct_answer": "Water",
+        "explanation": "Dry season is very hot, so drink plenty of water to stay hydrated."
+      },
+      {
+        "question": "True or False: Nigeria experiences snowfall.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Nigeria is a tropical country with hot weather and no snowfall."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "Soil and Its Uses",
+    "language": "en",
+    "content": "Soil is the loose top layer of the earth where plants grow. Soil is made of tiny pieces of rock, dead leaves, and animal remains. There are different types of soil: sandy soil (feels rough, drains water fast), clay soil (feels sticky, holds water), and loamy soil (best for farming). Farmers need good soil to grow crops like yam, cassava, maize, and vegetables. Soil also provides homes for animals like earthworms, ants, and beetles.",
+    "summary": "Soil is where plants grow. Types: sandy (rough), clay (sticky), loamy (best for farming). Soil gives us food and homes for animals.",
+    "learning_objectives": [
+      "Identify what soil is made of",
+      "Describe different soil types",
+      "Understand why soil is important for farming"
+    ],
+    "nigerian_examples": [
+      "Yam farming in loamy soil in Benue State",
+      "Clay soil used for pottery in Abuja",
+      "Earthworms found in Nigerian garden soil"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is soil made of?",
+        "options": ["Only sand", "Tiny rocks, dead leaves, and animal remains", "Plastic", "Only water"],
+        "correct_answer": "Tiny rocks, dead leaves, and animal remains",
+        "explanation": "Soil is formed from broken rocks and decayed plants and animals."
+      },
+      {
+        "question": "Which soil type is best for farming?",
+        "options": ["Sandy soil", "Clay soil", "Loamy soil", "Rocky soil"],
+        "correct_answer": "Loamy soil",
+        "explanation": "Loamy soil has the right mix of sand, clay, and nutrients for growing crops."
+      },
+      {
+        "question": "Which soil feels sticky when wet?",
+        "options": ["Sandy soil", "Clay soil", "Loamy soil", "Gravel"],
+        "correct_answer": "Clay soil",
+        "explanation": "Clay soil feels sticky because it holds water very well."
+      },
+      {
+        "question": "What lives in soil?",
+        "options": ["Only plants", "Earthworms, ants, and beetles", "Only stones", "Fish"],
+        "correct_answer": "Earthworms, ants, and beetles",
+        "explanation": "Many small animals make their homes in soil."
+      },
+      {
+        "question": "True or False: All soil is exactly the same.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Soil types differ in texture, color, and how well they hold water."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "Air and Wind",
+    "language": "en",
+    "content": "Air is all around us even though we cannot see it. We breathe air to live. Wind is moving air. When air moves slowly, it feels like a gentle breeze. When air moves fast, it feels like strong wind. Wind can be helpful: it dries clothes, blows seeds to grow new plants, and cools us on hot days. Wind can also be powerful: strong winds can blow down trees or roofs during storms. You can feel air when you wave your hand or blow on your skin.",
+    "summary": "Air is invisible but all around us. Wind is moving air. Gentle wind is a breeze. Strong wind can be powerful. We breathe air to live.",
+    "learning_objectives": [
+      "Understand that air exists even though invisible",
+      "Explain what wind is",
+      "Describe helpful and powerful effects of wind"
+    ],
+    "nigerian_examples": [
+      "Flying kites during harmattan winds",
+      "Wind drying laundry in Nigerian compounds",
+      "Wind turbines in some Nigerian states producing electricity"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is wind?",
+        "options": ["Still air", "Moving air", "Hot air", "Cold air"],
+        "correct_answer": "Moving air",
+        "explanation": "Wind is air that moves from one place to another."
+      },
+      {
+        "question": "Why do we need air?",
+        "options": ["To play", "To breathe and live", "To sleep", "To eat"],
+        "correct_answer": "To breathe and live",
+        "explanation": "All living things need air to breathe and survive."
+      },
+      {
+        "question": "Which is a helpful use of wind?",
+        "options": ["Blowing down houses", "Drying clothes", "Causing floods", "Making darkness"],
+        "correct_answer": "Drying clothes",
+        "explanation": "Wind helps dry clothes and cool us on hot days."
+      },
+      {
+        "question": "How can you feel air even when you can't see it?",
+        "options": ["By tasting it", "By waving your hand", "By closing your eyes", "By staying still"],
+        "correct_answer": "By waving your hand",
+        "explanation": "When you wave your hand, you can feel air moving against your skin."
+      },
+      {
+        "question": "True or False: Air takes up space even though we can't see it.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Air is matter and takes up space. When you blow up a balloon, air fills it!"
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "Simple Machines",
+    "language": "en",
+    "content": "Simple machines are tools that make work easier. They help us lift, move, or cut things with less effort. Some simple machines are: lever (see-saw, bottle opener), pulley (flag pole, well bucket), wheel and axle (bicycle, car), inclined plane (ramp, slide), wedge (knife, axe), and screw (lid on a bottle). Simple machines are everywhere around us. When you use a see-saw at the playground, you are using a lever. When you ride a bicycle, you use wheels and axles.",
+    "summary": "Simple machines make work easier: lever, pulley, wheel and axle, inclined plane, wedge, screw. They help us lift, move, and cut things.",
+    "learning_objectives": [
+      "Identify common simple machines",
+      "Understand how simple machines help us",
+      "Find examples of simple machines in daily life"
+    ],
+    "nigerian_examples": [
+      "Using a bottle opener (lever) to open soft drinks",
+      "Pulling water from a well using a pulley",
+      "Riding a bicycle (wheel and axle) in the neighborhood"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What do simple machines do?",
+        "options": ["Make work harder", "Make work easier", "Break things", "Make noise"],
+        "correct_answer": "Make work easier",
+        "explanation": "Simple machines help us do work with less effort."
+      },
+      {
+        "question": "A see-saw at the playground is an example of which simple machine?",
+        "options": ["Pulley", "Wedge", "Lever", "Screw"],
+        "correct_answer": "Lever",
+        "explanation": "A see-saw is a lever that balances on a pivot point."
+      },
+      {
+        "question": "A ramp that helps you roll a heavy box into a truck is called...",
+        "options": ["Lever", "Pulley", "Inclined plane", "Wedge"],
+        "correct_answer": "Inclined plane",
+        "explanation": "An inclined plane is a slanted surface that makes lifting easier."
+      },
+      {
+        "question": "A knife blade is an example of which simple machine?",
+        "options": ["Lever", "Wedge", "Screw", "Pulley"],
+        "correct_answer": "Wedge",
+        "explanation": "A wedge is a sharp edge that cuts or splits objects."
+      },
+      {
+        "question": "True or False: A bicycle uses wheels and axles.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Bicycle wheels spin around axles, making it easy to ride."
+      }
+    ]
+  }
+]

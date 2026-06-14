@@ -1,0 +1,127 @@
+[
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Advanced Arithmetic",
+    "language": "en",
+    "content": "Advanced arithmetic reviews and extends primary math skills. Fractions: addition and subtraction of fractions with different denominators (find LCM first). Example: 1/2 + 1/3 = 3/6 + 2/6 = 5/6. Multiplication of fractions: multiply numerators and denominators (2/3 × 4/5 = 8/15). Division of fractions: multiply by reciprocal (2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = 5/6). Decimals: converting fractions to decimals (1/4 = 0.25), adding and subtracting decimals, multiplying decimals (0.5 × 0.5 = 0.25). Percentages: converting fractions to percentages (3/4 = 75%), percentage of a quantity (25% of 80 = 20). Word problems combine all these skills. These are essential for secondary school entrance exams.",
+    "summary": "Advanced arithmetic: fraction operations, decimals, percentages. Find LCM for unlike denominators. Multiply and divide fractions. Essential for secondary entrance exams.",
+    "learning_objectives": [
+      "Add and subtract fractions with different denominators",
+      "Multiply and divide fractions",
+      "Calculate percentages of quantities"
+    ],
+    "nigerian_examples": [
+      "Adding 1/2 cup of rice to 1/3 cup of beans",
+      "Calculating 20% discount on school supplies",
+      "Dividing 3/4 of a watermelon among 2 people"
+    ],
+    "quiz_questions": [
+      {"question": "What is 1/2 + 1/4?", "options": ["1/6", "2/6", "3/4", "1/2"], "correct_answer": "3/4", "explanation": "1/2 = 2/4, plus 1/4 = 3/4."},
+      {"question": "What is 2/3 × 3/4?", "options": ["5/12", "6/12", "1/2", "5/7"], "correct_answer": "1/2", "explanation": "2×3=6, 3×4=12, simplify to 1/2."},
+      {"question": "What is 1/2 ÷ 1/4?", "options": ["1/8", "1/2", "2", "4"], "correct_answer": "2", "explanation": "1/2 × 4/1 = 4/2 = 2."},
+      {"question": "What is 25% of 120?", "options": ["20", "25", "30", "40"], "correct_answer": "30", "explanation": "25% = 1/4, 120 ÷ 4 = 30."},
+      {"question": "True or False: 3/4 is equal to 75%.", "options": ["True", "False"], "correct_answer": "True", "explanation": "3/4 = 0.75 = 75%."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Simple Equations",
+    "language": "en",
+    "content": "Simple equations have a variable representing an unknown number. The goal is to find the value of the variable. Basic equation: x + 5 = 12. Subtract 5 from both sides: x = 7. Multiplication equation: 3x = 15. Divide both sides by 3: x = 5. Two-step equation: 2x + 3 = 11. First subtract 3: 2x = 8, then divide by 2: x = 4. Word problems: 'A number plus 7 equals 15' becomes x + 7 = 15, so x = 8. 'Twice a number minus 4 equals 10' becomes 2x - 4 = 10, so 2x = 14, x = 7. Always check your answer by substituting back into the original equation. Simple equations are the foundation of algebra.",
+    "summary": "Simple equations: find unknown variable. Add/subtract same number from both sides. Multiply/divide both sides. Check answer by substituting back.",
+    "learning_objectives": [
+      "Solve one-step equations",
+      "Solve two-step equations",
+      "Translate word problems into equations"
+    ],
+    "nigerian_examples": [
+      "If 5 mangoes cost 200 naira, cost of one mango: 5x = 200, x = 40 naira",
+      "If a number plus 8 equals 20: x + 8 = 20, x = 12",
+      "If twice your age minus 5 equals 21: 2x - 5 = 21, 2x = 26, x = 13 years old"
+    ],
+    "quiz_questions": [
+      {"question": "Solve: x + 7 = 15", "options": ["6", "7", "8", "22"], "correct_answer": "8", "explanation": "Subtract 7 from both sides: x = 8."},
+      {"question": "Solve: 4x = 24", "options": ["4", "5", "6", "7"], "correct_answer": "6", "explanation": "Divide both sides by 4: x = 6."},
+      {"question": "Solve: 3x + 2 = 14", "options": ["3", "4", "5", "6"], "correct_answer": "4", "explanation": "Subtract 2: 3x = 12, divide by 3: x = 4."},
+      {"question": "A number minus 5 equals 12. Find the number.", "options": ["7", "12", "17", "19"], "correct_answer": "17", "explanation": "x - 5 = 12, add 5: x = 17."},
+      {"question": "True or False: The equation 2x = 10 has solution x = 5.", "options": ["True", "False"], "correct_answer": "True", "explanation": "2 × 5 = 10, correct."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Geometry: Angles and Shapes",
+    "language": "en",
+    "content": "Geometry studies shapes and their properties. Types of angles: acute (less than 90°), right (exactly 90°), obtuse (greater than 90° but less than 180°), straight (180°). Complementary angles: two angles that sum to 90°. Supplementary angles: two angles that sum to 180°. Triangles: equilateral (all sides equal, all angles 60°), isosceles (two sides equal, base angles equal), scalene (no sides equal). Quadrilaterals: square (4 equal sides, 4 right angles), rectangle (opposite sides equal, 4 right angles), parallelogram (opposite sides parallel), rhombus (all sides equal), trapezoid (one pair of parallel sides). Calculate area: square (side × side), rectangle (length × width), triangle (1/2 × base × height). Calculate perimeter: sum of all sides.",
+    "summary": "Angle types: acute (<90°), right (90°), obtuse (>90°). Triangle types: equilateral, isosceles, scalene. Quadrilaterals: square, rectangle, parallelogram. Area and perimeter formulas.",
+    "learning_objectives": [
+      "Identify angle types",
+      "Classify triangles and quadrilaterals",
+      "Calculate area and perimeter"
+    ],
+    "nigerian_examples": [
+      "Right angles in classroom corners",
+      "Isosceles triangles in roof designs",
+      "Calculating area of a rectangular plot of land"
+    ],
+    "quiz_questions": [
+      {"question": "What is a right angle?", "options": ["45°", "90°", "180°", "360°"], "correct_answer": "90°", "explanation": "A right angle is exactly 90 degrees."},
+      {"question": "What type of triangle has all sides equal?", "options": ["Isosceles", "Scalene", "Equilateral", "Right"], "correct_answer": "Equilateral", "explanation": "Equilateral triangles have three equal sides."},
+      {"question": "What is the area of a rectangle with length 8cm and width 5cm?", "options": ["13 cm²", "26 cm²", "40 cm²", "80 cm²"], "correct_answer": "40 cm²", "explanation": "Area = length × width = 8 × 5 = 40 cm²."},
+      {"question": "What is the perimeter of a square with side 6m?", "options": ["12 m", "24 m", "36 m", "48 m"], "correct_answer": "24 m", "explanation": "Perimeter = 4 × side = 4 × 6 = 24 m."},
+      {"question": "True or False: Supplementary angles sum to 90°.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Supplementary angles sum to 180°. Complementary sum to 90°."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Statistics: Mean, Median, Mode",
+    "language": "en",
+    "content": "Statistics helps us understand data. Mean (average) = sum of all values divided by number of values. Example: test scores 70, 80, 80, 90, 100. Sum = 420, divided by 5 = 84. Median = middle value when data is arranged in order. For 70,80,80,90,100, the median is 80. For even number of values (70,80,90,100), median is average of two middle numbers (80+90=170, ÷2=85). Mode = most frequent value. In 70,80,80,90,100, the mode is 80 (appears twice). Range = highest value - lowest value. Here: 100-70=30. Statistics helps compare data, like test scores across classes or monthly rainfall in Nigerian cities.",
+    "summary": "Mean = average (sum ÷ count). Median = middle value in order. Mode = most frequent value. Range = highest - lowest. Essential for data analysis.",
+    "learning_objectives": [
+      "Calculate mean, median, mode, range",
+      "Interpret data sets",
+      "Compare different data sets"
+    ],
+    "nigerian_examples": [
+      "Average score on common entrance exam",
+      "Most common shoe size in class",
+      "Range of temperatures in Lagos over a week"
+    ],
+    "quiz_questions": [
+      {"question": "What is the mean of 5, 10, 15?", "options": ["5", "10", "15", "30"], "correct_answer": "10", "explanation": "Sum = 30, divided by 3 = 10."},
+      {"question": "What is the median of 2, 4, 6, 8, 10?", "options": ["2", "4", "6", "8"], "correct_answer": "6", "explanation": "The middle value in order is 6."},
+      {"question": "What is the mode of 1, 2, 2, 3, 4?", "options": ["1", "2", "3", "4"], "correct_answer": "2", "explanation": "2 appears twice, more than any other number."},
+      {"question": "What is the range of 10, 20, 30, 40, 50?", "options": ["10", "20", "40", "50"], "correct_answer": "40", "explanation": "Highest(50) - Lowest(10) = 40."},
+      {"question": "True or False: The median of an even set is the average of two middle numbers.", "options": ["True", "False"], "correct_answer": "True", "explanation": "For even count, take average of the two middle values."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Financial Math",
+    "language": "en",
+    "content": "Financial math applies arithmetic to money. Simple Interest: Interest = Principal × Rate × Time (I = PRT). Total amount = Principal + Interest. Example: N100,000 at 5% for 2 years: I = 100,000 × 0.05 × 2 = N10,000. Total = N110,000. Profit = Selling Price - Cost Price. Profit Percentage = (Profit ÷ Cost Price) × 100%. Loss = Cost Price - Selling Price. Discount = Marked Price × Rate. Selling Price = Marked Price - Discount. Value Added Tax (VAT) = Price × Rate. Nigeria's VAT is 7.5%. Example: N10,000 item with 7.5% VAT: VAT = N750, total = N10,750. Thesey school.",
+    "summary": "Simple Interest = PRT. Profit/Loss calculations. Discount = Marked Price × Rate. VAT = Price × Rate (Nigeria 7.5%). Essential for financial literacy.",
+    "learning_objectives": [
+      "Calculate simple interest",
+      "Compute profit and loss percentages",
+      "Apply discount and VAT"
+    ],
+    "nigerian_examples": [
+      "N100,000 in bank at 5% interest for 2 years",
+      "Buying and selling goods at market",
+      "Calculating VAT on school supplies"
+    ],
+    "quiz_questions": [
+      {"question": "What is simple interest on N200,000 at 4% for 2 years?", "options": ["N8,000", "N16,000", "N20,000", "N40,000"], "correct_answer": "N16,000", "explanation": "I = 200,000 × 0.04 × 2 = N16,000."},
+      {"question": "If cost price is N5,000 and selling price is N6,000, what is profit percentage?", "options": ["10%", "15%", "20%", "25%"], "correct_answer": "20%", "explanation": "Profit = N1,000; (1,000/5,000) × 100% = 20%."},
+      {"question": "What is N10,000 with 20% discount?", "options": ["N2,000", "N8,000", "N10,000", "N12,000"], "correct_answer": "N8,000", "explanation": "Discount = N10,000 × 0.20 = N2,000, selling price = N8,000."},
+      {"question": "What is Nigeria's VAT rate?", "options": ["5%", "7.5%", "10%", "12.5%"], "correct_answer": "7.5%", "explanation": "VAT (Value Added Tax) in Nigeria is 7.5%."},
+      {"question": "True or False: Simple interest is calculated only on the original principal.", "options": ["True", "False"], "correct_answer": "True", "explanation": "Unlike compound interest, simple interest does not earn interest on interest."}
+    ]
+  }
+]

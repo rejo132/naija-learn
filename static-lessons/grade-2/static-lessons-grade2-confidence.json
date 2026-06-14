@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Setting Small Goals",
+    "language": "en",
+    "content": "Setting small goals helps you build confidence. A goal is something you want to achieve. Small goals are easy to reach, like reading one book, learning five new words, or tying your shoes by yourself. When you reach a small goal, you feel proud and want to try bigger goals. Write down your goals or tell them to a parent. Celebrate when you finish a goal. Every time you reach a goal, your confidence grows. Start with easy goals first, then try harder ones as you get better.",
+    "summary": "Small goals build confidence. Examples: read a book, learn five words, tie shoes. Reach goals, feel proud, then try bigger goals.",
+    "learning_objectives": [
+      "Understand what goals are",
+      "Learn to set achievable small goals",
+      "Experience success and build confidence"
+    ],
+    "nigerian_examples": [
+      "Goal: Learn to spell your full name correctly",
+      "Goal: Finish homework before dinner for one week",
+      "Goal: Help with one chore at home every day"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a goal?",
+        "options": ["A type of game", "Something you want to achieve", "A school subject", "A food"],
+        "correct_answer": "Something you want to achieve",
+        "explanation": "A goal is something you work toward and want to accomplish."
+      },
+      {
+        "question": "Why are small goals good for beginners?",
+        "options": ["They are impossible", "They are easy to reach and build confidence", "They take many years", "They are boring"],
+        "correct_answer": "They are easy to reach and build confidence",
+        "explanation": "Small goals are achievable, so you feel successful and want to try more."
+      },
+      {
+        "question": "What should you do when you reach a goal?",
+        "options": ["Ignore it", "Celebrate and feel proud", "Be sad", "Hide it"],
+        "correct_answer": "Celebrate and feel proud",
+        "explanation": "Celebrating your success makes you feel good and builds more confidence."
+      },
+      {
+        "question": "Which is a good small goal for Grade 2?",
+        "options": ["Become president", "Read one book this week", "Build a house", "Travel to the moon"],
+        "correct_answer": "Read one book this week",
+        "explanation": "Reading one book is a small, achievable goal for a Grade 2 student."
+      },
+      {
+        "question": "True or False: Only big goals matter. Small goals are not important.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Small goals are very important because they build the confidence to tackle bigger goals."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Facing Fears",
+    "language": "en",
+    "content": "Everyone feels afraid sometimes. Fear is normal. But you can learn to face your fears and become braver. First, name your fear. Say, 'I am afraid of speaking in class.' Next, take small steps. If you fear speaking, practice at home first. Then speak in front of one friend. Then try in class. Remember that mistakes are okay — everyone makes them. Breathe deeply when you feel scared. Tell yourself, 'I can do this.' Every time you face a fear, you get braver and more confident.",
+    "summary": "Facing fears builds bravery. Name your fear, take small steps, practice. Breathe deeply, say 'I can do this.' Mistakes are okay.",
+    "learning_objectives": [
+      "Understand that fear is normal",
+      "Learn strategies to face fears",
+      "Build courage through small steps"
+    ],
+    "nigerian_examples": [
+      "Afraid of speaking in class? Practice answering at home first",
+      "Afraid of making friends? Smile and say hello to one person",
+      "Afraid of swimming? Start by putting your feet in the water"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Is it normal to feel afraid sometimes?",
+        "options": ["No, only weak people feel fear", "Yes, everyone feels afraid sometimes", "Only children feel fear", "Only adults feel fear"],
+        "correct_answer": "Yes, everyone feels afraid sometimes",
+        "explanation": "Fear is a normal emotion that everyone experiences."
+      },
+      {
+        "question": "What should you do first when facing a fear?",
+        "options": ["Run away", "Name the fear", "Ignore it", "Yell loudly"],
+        "correct_answer": "Name the fear",
+        "explanation": "Naming your fear helps you understand what you are dealing with."
+      },
+      {
+        "question": "What can you say to yourself when feeling scared?",
+        "options": ["I am weak", "I cannot do this", "I can do this", "Why me"],
+        "correct_answer": "I can do this",
+        "explanation": "Positive self-talk like 'I can do this' helps build courage."
+      },
+      {
+        "question": "What should you do if you make a mistake while trying something new?",
+        "options": ["Give up forever", "Remember mistakes are okay and try again", "Get angry", "Blame someone"],
+        "correct_answer": "Remember mistakes are okay and try again",
+        "explanation": "Everyone makes mistakes. Learning from them helps you improve."
+      },
+      {
+        "question": "True or False: Facing a fear makes you less brave.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Facing fears actually makes you braver and more confident each time."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Positive Self Talk",
+    "language": "en",
+    "content": "Self-talk is what you say to yourself in your head. Positive self-talk means saying kind, encouraging things to yourself. Instead of thinking 'I can't do this,' say 'I will try my best.' Instead of 'I'm not good at math,' say 'I am getting better at math every day.' Positive self-talk makes you feel strong and confident. Negative self-talk makes you feel sad and weak. Listen to the words in your head. If they are mean, change them to kind words. You are your own best cheerleader!",
+    "summary": "Positive self-talk means saying kind words to yourself. Instead of 'I can't,' say 'I will try.' You are your own best cheerleader.",
+    "learning_objectives": [
+      "Understand what self-talk is",
+      "Learn to replace negative thoughts with positive ones",
+      "Practice encouraging yourself"
+    ],
+    "nigerian_examples": [
+      "Before a test, say 'I studied hard and I will do well'",
+      "Before a sports game, say 'I am strong and ready'",
+      "When something is hard, say 'I can learn this step by step'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is self-talk?",
+        "options": ["Talking to friends", "What you say to yourself in your head", "Talking to teachers", "Reading aloud"],
+        "correct_answer": "What you say to yourself in your head",
+        "explanation": "Self-talk is the inner voice that comments on everything you do."
+      },
+      {
+        "question": "Which is an example of positive self-talk?",
+        "options": ["I am stupid", "I cannot do anything right", "I will try my best", "Everyone is better than me"],
+        "correct_answer": "I will try my best",
+        "explanation": "Positive self-talk encourages you and focuses on effort."
+      },
+      {
+        "question": "What should you do if you notice negative self-talk?",
+        "options": ["Keep thinking it", "Ignore it", "Change it to kind words", "Say it louder"],
+        "correct_answer": "Change it to kind words",
+        "explanation": "Replace negative thoughts with positive, encouraging ones."
+      },
+      {
+        "question": "Who is your own best cheerleader?",
+        "options": ["Your teacher", "Your parents", "You", "Your friends"],
+        "correct_answer": "You",
+        "explanation": "You can encourage yourself through positive self-talk every day."
+      },
+      {
+        "question": "True or False: Negative self-talk helps you do better.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Negative self-talk makes you feel bad and less confident. Positive self-talk helps you succeed."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Asking for Help",
+    "language": "en",
+    "content": "Asking for help is a sign of strength, not weakness. Everyone needs help sometimes — even teachers and parents! When you are stuck on a problem, don't know what to do, or feel confused, ask for help. You can ask a parent, teacher, older sibling, or friend. Say politely, 'Can you help me, please?' Tell them what you need help with. After they help, say 'Thank you.' Asking for help shows that you want to learn and get better. Confident people know when to ask for help.",
+    "summary": "Asking for help is strength, not weakness. Ask parents, teachers, or friends politely. Say what you need. Say thank you. Confident people ask for help.",
+    "learning_objectives": [
+      "Understand that asking for help is good",
+      "Learn how to ask for help politely",
+      "Build confidence through seeking support"
+    ],
+    "nigerian_examples": [
+      "Asking a teacher to explain a math problem again",
+      "Asking a friend to help find a lost item",
+      "Asking a parent for help with homework"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Is asking for help a sign of weakness?",
+        "options": ["Yes, only weak people ask for help", "No, it is a sign of strength", "Sometimes", "Only for children"],
+        "correct_answer": "No, it is a sign of strength",
+        "explanation": "Confident people know when they need help and are not afraid to ask."
+      },
+      {
+        "question": "Who can you ask for help?",
+        "options": ["Only teachers", "Only parents", "Parents, teachers, older siblings, and friends", "Strangers only"],
+        "correct_answer": "Parents, teachers, older siblings, and friends",
+        "explanation": "Many people in your life are ready to help you."
+      },
+      {
+        "question": "What should you say when asking for help?",
+        "options": ["Help me now!", "Can you help me, please?", "You must help me", "I need help, no please"],
+        "correct_answer": "Can you help me, please?",
+        "explanation": "Using polite words like 'please' shows respect."
+      },
+      {
+        "question": "What should you say after someone helps you?",
+        "options": ["Nothing", "Goodbye", "Thank you", "See you later"],
+        "correct_answer": "Thank you",
+        "explanation": "Always thank people who take time to help you."
+      },
+      {
+        "question": "True or False: You should never ask for help because you should know everything.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "No one knows everything. Asking for help is how we learn and grow."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Praising Effort",
+    "language": "en",
+    "content": "Praising effort means celebrating how hard someone tried, not just the result. When you try your best, be proud of yourself even if you didn't win. Say to yourself, 'I worked really hard on this.' Praise your friends when they try hard, even if they make mistakes. Praising effort teaches that trying is what matters most. When you focus on effort, you are not afraid of making mistakes. You keep trying until you succeed. Every time you try hard, you are growing your brain and your confidence.",
+"summary": "Praise effort, not just results. Be proud when you try hard. Praise friends for trying. Effort helps you learn and grow. Trying matters most.",
+    "learning_objectives": [
+      "Understand the importance of effort",
+      "Learn to praise yourself and others for trying",
+      "Build growth mindset through effort focus"
+    ],
+    "nigerian_examples": [
+      "Praising a friend who tried their best in a spelling bee, even if they didn't win",
+      "Being proud of yourself for studying hard, even with a fair grade",
+      "Encouraging a sibling who is learning a new skill"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does praising effort mean?",
+        "options": ["Only praising winning", "Celebrating how hard someone tried", "Ignoring hard work", "Only praising perfect work"],
+        "correct_answer": "Celebrating how hard someone tried",
+        "explanation": "Effort praise focuses on trying hard, not just the final result."
+      },
+      {
+        "question": "Should you praise yourself even if you didn't win?",
+        "options": ["No, only winners deserve praise", "Yes, if you tried your best", "Only if others praise you first", "Never"],
+        "correct_answer": "Yes, if you tried your best",
+        "explanation": "Being proud of your effort is important, win or lose."
+      },
+      {
+        "question": "What happens when you focus on effort?",
+        "options": ["You become afraid of mistakes", "You keep trying and learn from mistakes", "You give up easily", "You only care about winning"],
+        "correct_answer": "You keep trying and learn from mistakes",
+        "explanation": "Effort focus helps you persist and grow, even when things are hard."
+      },
+      {
+        "question": "How does praising effort help friends?",
+        "options": ["It makes them feel bad", "It encourages them to keep trying", "It makes them want to quit", "It doesn't help"],
+        "correct_answer": "It encourages them to keep trying",
+        "explanation": "When you praise a friend's effort, they feel supported and motivated."
+      },
+      {
+        "question": "True or False: Only winning deserves praise.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Winning is great, but trying hard and showing effort also deserve praise."
+      }
+    ]
+  }
+]

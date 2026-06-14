@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 4,
+    "subject": "Communication",
+    "topic": "Persuasive Speaking",
+    "language": "en",
+    "content": "Persuasive speaking aims to convince others to agree with you or take action. Structure: attention-getter (hook), need (problem statement), satisfaction (your solution), visualization (benefits of solution), action (what audience should do). Techniques: use facts and evidence, appeal to emotions, address counterarguments, use strong confident voice, repeat key phrases. Examples: convincing classmates to recycle, persuading parents to get a pet, speech for school elections. In Nigeria, persuasive speaking is used in debates, sales, politics, and advocacy campaigns.",
+    "summary": "Persuasive speaking convinces others. Structure: attention, need, satisfaction, visualization, action. Use facts, emotions, strong voice.",
+    "learning_objectives": [
+      "Structure a persuasive speech",
+      "Use rhetorical techniques",
+      "Practice persuasion respectfully"
+    ],
+    "nigerian_examples": [
+      "Campaign speech for class prefect",
+      "Persuading parents to attend school events",
+      "Advocacy for environmental cleanup"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is persuasive speaking?",
+        "options": ["Telling a story", "Convincing others to agree or act", "Giving instructions", "Describing something"],
+        "correct_answer": "Convincing others to agree or act",
+        "explanation": "The goal is to change minds or motivate action."
+      },
+      {
+        "question": "What is the 'attention-getter' in a persuasive speech?",
+        "options": ["The conclusion", "The hook that grabs audience interest", "The evidence", "The action step"],
+        "correct_answer": "The hook that grabs audience interest",
+        "explanation": "Start with a question, shocking fact, or story to engage listeners."
+      },
+      {
+        "question": "What should you include to support your argument?",
+        "options": ["Only opinions", "Facts and evidence", "Rumors", "Feelings only"],
+        "correct_answer": "Facts and evidence",
+        "explanation": "Facts make your argument more credible and convincing."
+      },
+      {
+        "question": "What does the 'action' step ask the audience to do?",
+        "options": ["Clap", "Take specific action", "Leave", "Forget everything"],
+        "correct_answer": "Take specific action",
+        "explanation": "Tell listeners exactly what you want them to do."
+      },
+      {
+        "question": "True or False: Persuasive speaking is only for adults and politicians.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Children can persuade classmates, parents, and teachers respectfully."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Communication",
+    "topic": "Debate Skills",
+    "language": "en",
+    "content": "Debate is structured argument where two sides oppose each other. Proposition (affirmative) argues FOR the motion. Opposition (negative) argues AGAINST. Parts: constructive speech (first speaker builds case), rebuttal (respond to opponent's points), summary (final overview). Rules: speak respectfully, no personal attacks, support claims with evidence, listen carefully, stay on topic, follow time limits. Debate topics: 'Should homework be banned?' 'Should school uniforms be required?' In Nigerian schools, debate clubs improve critical thinking, research skills, and public speaking.",
+    "summary": "Debate: proposition (FOR) vs opposition (AGAINST). Parts: constructive, rebuttal, summary. Rules: respectful, evidence-based. Improves critical thinking.",
+    "learning_objectives": [
+      "Understand debate structure",
+      "Research and present arguments",
+      "Rebuttal opponent's points"
+    ],
+    "nigerian_examples": [
+      "National Secondary Schools Debate Championship",
+      "Inter-house debate competitions",
+      "Classroom debates on current issues"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are the two sides in a debate called?",
+        "options": ["Yes and No", "Proposition (FOR) and Opposition (AGAINST)", "Left and Right", "Positive and Negative"],
+        "correct_answer": "Proposition (FOR) and Opposition (AGAINST)",
+        "explanation": "Proposition argues for the motion; Opposition argues against."
+      },
+      {
+        "question": "What is a rebuttal?",
+        "options": ["The first speech", "Responding to opponent's points", "The conclusion", "The introduction"],
+        "correct_answer": "Responding to opponent's points",
+        "explanation": "Rebuttal attacks weaknesses in the other side's arguments."
+      },
+      {
+        "question": "What should you avoid in debate?",
+        "options": ["Evidence", "Personal attacks", "Logic", "Listening"],
+        "correct_answer": "Personal attacks",
+        "explanation": "Attack arguments, not people."
+      },
+      {
+        "question": "What determines debate winners?",
+        "options": ["Who shouts loudest", "Logic, evidence, delivery", "Who speaks longest", "Audience vote only"],
+        "correct_answer": "Logic, evidence, delivery",
+        "explanation": "Judges evaluate reasoning, supporting evidence, and speaking skill."
+      },
+      {
+        "question": "True or False: Research is important for debate preparation.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Strong debaters know their topic through reading and research."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Communication",
+    "topic": "Non-Verbal Cues",
+    "language": "en",
+    "content": "Non-verbal cues are messages sent without words: facial expressions, gestures, posture, eye contact, tone, personal space. Examples: smiling (friendliness), crossed arms (defensive), leaning forward (interest), looking away (distracted), nodding (agreement). In Nigerian culture: right hand for giving, prostrating/kneeling for elders, avoiding prolonged eye contact with elders can show respect. Match non-verbal cues with words for honest communication. Mismatch (saying 'I'm fine' while crying) confuses others.",
+    "summary": "Non-verbal cues: facial expressions, gestures, posture, eye contact, tone. Nigerian cues: right hand, prostrating, respectful eye contact.",
+    "learning_objectives": [
+      "Identify non-verbal cues",
+      "Understand cultural differences",
+      "Align words with body language"
+    ],
+    "nigerian_examples": [
+      "Using right hand to give money",
+      "Prostrating to greet Yoruba elders",
+      "Nodding to show listening during conversation"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does crossing your arms usually communicate?",
+        "options": ["Openness", "Defensiveness or closed-off", "Happiness", "Excitement"],
+        "correct_answer": "Defensiveness or closed-off",
+        "explanation": "Crossed arms can signal that you are not open to ideas."
+      },
+      {
+        "question": "What does smiling usually communicate?",
+        "options": ["Anger", "Friendliness and happiness", "Sadness", "Confusion"],
+        "correct_answer": "Friendliness and happiness",
+        "explanation": "Smiling is a universal sign of friendliness."
+      },
+      {
+        "question": "Why should you match words with non-verbal cues?",
+        "options": ["To confuse people", "To be honest and clear", "To hide feelings", "To sound smarter"],
+        "correct_answer": "To be honest and clear",
+        "explanation": "Mismatched cues seem dishonest and confuse listeners."
+      },
+      {
+        "question": "In Nigerian culture, what does using the right hand to give something show?",
+        "options": ["Disrespect", "Respect", "No meaning", "Rudeness"],
+        "correct_answer": "Respect",
+        "explanation": "Using the right hand is considered polite and respectful."
+      },
+      {
+        "question": "True or False: Non-verbal communication is the same in all cultures.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Gestures and cues can have different meanings across cultures."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Communication",
+    "topic": "Active Listening Advanced",
+    "language": "en",
+    "content": "Advanced active listening goes beyond basic listening: paraphrase what speaker said ('So you're saying that...'), ask clarifying questions ('What did you mean when...'), reflect feelings ('You sound frustrated about...'), summarize key points, avoid interrupting, maintain eye contact, put away distractions. Benefits: builds trust, prevents misunderstandings, shows respect, improves relationships. In Nigerian workplaces and schools, good listeners are valued leaders. Practice paraphrasing: after someone speaks, repeat in your own words.",
+    "summary": "Advanced active listening: paraphrase, clarify, reflect feelings, summarize, no interruptions. Builds trust and prevents misunderstandings.",
+    "learning_objectives": [
+      "Paraphrase speaker's message",
+      "Ask clarifying questions",
+      "Reflect feelings accurately"
+    ],
+    "nigerian_examples": [
+      "Paraphrasing teacher instructions before starting work",
+      "Reflecting a friend's frustration during disagreement",
+      "Summarizing discussion points in group projects"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does paraphrasing mean?",
+        "options": ["Repeating exactly", "Restating in your own words", "Ignoring the speaker", "Changing the subject"],
+        "correct_answer": "Restating in your own words",
+        "explanation": "Paraphrasing shows you understood the message."
+      },
+      {
+        "question": "What is a clarifying question?",
+        "options": ["Why are you telling me this?", "Can you explain what you meant by...", "When will you finish?", "Who cares?"],
+        "correct_answer": "Can you explain what you meant by...",
+        "explanation": "Clarifying questions seek to understand better."
+      },
+      {
+        "question": "What should you avoid during active listening?",
+        "options": ["Eye contact", "Nodding", "Interrupting", "Paraphrasing"],
+        "correct_answer": "Interrupting",
+        "explanation": "Let the speaker finish their thought before responding."
+      },
+      {
+        "question": "How can you reflect feelings?",
+        "options": ["You sound frustrated about...", "You're wrong", "I don't care", "Be quiet"],
+        "correct_answer": "You sound frustrated about...",
+        "explanation": "Naming emotions shows empathy and understanding."
+      },
+      {
+        "question": "True or False: Active listening only matters in formal settings like school.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Active listening helps in all relationships: family, friends, school, and future jobs."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Communication",
+    "topic": "Cross-Cultural Communication",
+    "language": "en",
+    "content": "Cross-cultural communication is exchanging information between people from different cultures. Nigeria has over 250 ethnic groups (Yoruba, Igbo, Hausa, Efik, Tiv, Ijaw, etc.) plus different religions and international visitors. Tips: be respectful of differences, learn basic greetings in other languages, avoid assumptions, ask politely about customs, be patient with accents, use simple clear language, avoid sensitive topics initially, show curiosity not judgment. In Nigerian unity schools, students from different ethnic groups learn together. Cross-cultural skills are essential in our globalized world.",
+    "summary": "Cross-cultural communication = between different cultures. Nigeria has 250+ ethnic groups. Tips: respect differences, learn greetings, avoid assumptions.",
+    "learning_objectives": [
+      "Understand cultural diversity",
+      "Learn basic greetings",
+      "Communicate respectfully across cultures"
+    ],
+    "nigerian_examples": [
+      "Federal unity schools mixing students from all states",
+      "Learning 'Sannu' (Hausa), 'Kedu' (Igbo), 'Bawo ni' (Yoruba)",
+      "Respecting different religious practices"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How many ethnic groups does Nigeria have?",
+        "options": ["50", "100", "Over 250", "500"],
+        "correct_answer": "Over 250",
+        "explanation": "Nigeria has more than 250 distinct ethnic groups."
+      },
+      {
+        "question": "What is 'Kedu' in Igbo?",
+        "options": ["Hello/How are you?", "Goodbye", "Thank you", "Please"],
+        "correct_answer": "Hello/How are you?",
+        "explanation": "'Kedu' is a common Igbo greeting."
+      },
+      {
+        "question": "What should you avoid in cross-cultural communication?",
+        "options": ["Curiosity", "Assumptions", "Respect", "Learning greetings"],
+        "correct_answer": "Assumptions",
+        "explanation": "Don't assume everyone shares your customs or beliefs."
+      },
+      {
+        "question": "What is a federal unity school in Nigeria?",
+        "options": ["School for one tribe", "School mixing students from all states/ethnicities", "Only northern school", "Only southern school"],
+        "correct_answer": "School mixing students from all states/ethnicities",
+        "explanation": "Unity schools promote national integration by mixing students from across Nigeria."
+      },
+      {
+        "question": "True or False: You should judge other cultures by your own standards.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Respect cultural differences without judgment. Different isn't wrong."
+      }
+    ]
+  }
+]

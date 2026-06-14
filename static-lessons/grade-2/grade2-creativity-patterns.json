@@ -1,0 +1,52 @@
+[
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Drawing Patterns",
+    "language": "en",
+    "content": "Patterns are designs that repeat. You can create patterns with shapes, lines, and colors. Examples: stripes (straight lines repeated), zigzags (up and down lines), dots (repeated circles), and checkerboards (squares of two colors). Nigerian fabrics like Ankara have beautiful patterns. You can draw patterns on paper, in your notebook, or on cards. Patterns help you practice drawing carefully and spotting repetition. Start with simple patterns, then try more complex ones. Pattern drawing is relaxing and creative.",
+    "summary": "Patterns repeat: stripes, zigzags, dots, checkerboards. Nigerian fabrics have beautiful patterns. Start simple, then try complex.",
+    "learning_objectives": [
+      "Understand what patterns are",
+      "Create repeating designs",
+      "Appreciate patterns in Nigerian fabrics"
+    ],
+    "nigerian_examples": [
+      "Drawing patterns inspired by Ankara fabric",
+      "Creating stripe patterns on a card",
+      "Making a checkerboard pattern with two colors"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are patterns?",
+        "options": ["Random scribbles", "Designs that repeat", "A single color", "A blank page"],
+        "correct_answer": "Designs that repeat",
+        "explanation": "Patterns have elements that repeat in a predictable way."
+      },
+      {
+        "question": "Which is an example of a pattern?",
+        "options": ["A single dot", "Stripes (repeating lines)", "A blank page", "Random marks"],
+        "correct_answer": "Stripes (repeating lines)",
+        "explanation": "Stripes repeat the same line shape over and over."
+      },
+      {
+        "question": "What Nigerian fabric is known for patterns?",
+        "options": ["Plain white fabric", "Ankara", "Burlap", "Denim"],
+        "correct_answer": "Ankara",
+        "explanation": "Ankara fabric has many colorful repeating patterns."
+      },
+      {
+        "question": "What is a checkerboard pattern?",
+        "options": ["Dots only", "Squares of two colors repeating", "Zigzag lines", "Stripes"],
+        "correct_answer": "Squares of two colors repeating",
+        "explanation": "Checkerboard alternates two colors in a grid of squares."
+      },
+      {
+        "question": "True or False: Patterns are only made with colors, not shapes.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Patterns can use shapes, lines, or colors."
+      }
+    ]
+  }
+]

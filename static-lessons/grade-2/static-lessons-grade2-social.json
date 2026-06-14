@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Types of Families",
+    "language": "en",
+    "content": "A family is a group of people who love and care for each other. There are different types of families. A nuclear family has parents and their children living together. An extended family includes grandparents, aunts, uncles, and cousins living nearby or together. A single-parent family has one parent raising the children. Some children live with grandparents or other relatives. All families are special, no matter how many people are in them. Families help each other, share meals, celebrate festivals, and take care of one another.",
+    "summary": "Family types: nuclear (parents and children), extended (includes grandparents, aunts, uncles), single-parent (one parent). All families are special and loving.",
+    "learning_objectives": [
+      "Identify different family types",
+      "Understand that all families are valuable",
+      "Appreciate how families care for each other"
+    ],
+    "nigerian_examples": [
+      "Nigerian extended families often living in the same compound",
+      "Children spending holidays with grandparents in the village",
+      "Aunts and uncles helping raise nieces and nephews"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a nuclear family?",
+        "options": ["Parents and children living together", "Grandparents only", "Aunts and uncles only", "Cousins only"],
+        "correct_answer": "Parents and children living together",
+        "explanation": "A nuclear family has parents and their children living in one home."
+      },
+      {
+        "question": "What is an extended family?",
+        "options": ["Only parents", "Only children", "Parents, children, grandparents, aunts, uncles, and cousins", "Only one parent"],
+        "correct_answer": "Parents, children, grandparents, aunts, uncles, and cousins",
+        "explanation": "An extended family includes many relatives living nearby or together."
+      },
+      {
+        "question": "What is a single-parent family?",
+        "options": ["Two parents", "One parent raising children", "No parents", "Only grandparents"],
+        "correct_answer": "One parent raising children",
+        "explanation": "A single-parent family has one parent taking care of the children."
+      },
+      {
+        "question": "How do families help each other?",
+        "options": ["By ignoring each other", "By sharing meals and celebrating together", "By fighting", "By living far apart"],
+        "correct_answer": "By sharing meals and celebrating together",
+        "explanation": "Families show love by helping, sharing meals, and celebrating festivals together."
+      },
+      {
+        "question": "True or False: Only nuclear families are real families.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "All types of families — nuclear, extended, single-parent — are real and special."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Our Government",
+    "language": "en",
+    "content": "Government is a group of people who make rules and decisions for the country. In Nigeria, we have three levels of government: federal (national), state, and local. The President is the leader of the federal government. Governors lead each state. Local government chairmen lead local areas. Government provides services like roads, schools, hospitals, and clean water. Government also makes laws to keep people safe. Voting is how citizens choose their leaders. When you grow up, you can vote too!",
+    "summary": "Government makes rules and provides services. Nigeria has three levels: federal (President), state (Governor), local (Chairman). Citizens vote for leaders.",
+    "learning_objectives": [
+      "Understand what government does",
+      "Identify three levels of Nigerian government",
+      "Learn about voting"
+    ],
+    "nigerian_examples": [
+      "The President lives and works in Abuja",
+      "Governors work in state capitals like Ikeja (Lagos) or Enugu",
+      "Local government chairmen help with local roads and markets"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is government?",
+        "options": ["A sports team", "People who make rules and decisions for the country", "A school subject", "A type of food"],
+        "correct_answer": "People who make rules and decisions for the country",
+        "explanation": "Government is the group of people who lead and make decisions for a country."
+      },
+      {
+        "question": "How many levels of government does Nigeria have?",
+        "options": ["One", "Two", "Three", "Four"],
+        "correct_answer": "Three",
+        "explanation": "Nigeria has federal, state, and local government levels."
+      },
+      {
+        "question": "Who is the leader of the federal government?",
+        "options": ["Governor", "Chairman", "President", "King"],
+        "correct_answer": "President",
+        "explanation": "The President is the leader of Nigeria's federal government."
+      },
+      {
+        "question": "What is one thing government provides?",
+        "options": ["Toys", "Candy", "Schools and hospitals", "Video games"],
+        "correct_answer": "Schools and hospitals",
+        "explanation": "Government builds schools, hospitals, roads, and provides clean water."
+      },
+      {
+        "question": "True or False: Children can vote in Nigerian elections.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Only citizens who are 18 years or older can vote. Children will vote when they grow up."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Transportation",
+    "language": "en",
+    "content": "Transportation is how people and goods move from one place to another. In Nigeria, there are many types of transportation. On land, people use cars, buses, motorcycles (okadas), tricycles (keke napep), and trains. On water, people use boats and ferries on rivers and lagoons. In the air, airplanes fly between cities and countries. Transportation helps people go to school, work, market, and visit family. Different types of transportation are used for different distances and purposes. Always follow safety rules when using transportation.",
+    "summary": "Transportation moves people and goods. Land: cars, buses, okadas, keke, trains. Water: boats, ferries. Air: airplanes. Different types for different needs.",
+    "learning_objectives": [
+      "Identify different types of transportation",
+      "Understand how transportation helps people",
+      "Learn transportation safety"
+    ],
+    "nigerian_examples": [
+      "Okadas and keke napep common in Lagos and other cities",
+      "Ferries crossing the Lagos Lagoon",
+      "Trains running between Abuja and Kaduna"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is transportation?",
+        "options": ["A type of food", "How people and goods move from place to place", "A school subject", "A type of clothing"],
+        "correct_answer": "How people and goods move from place to place",
+        "explanation": "Transportation includes all ways people and goods travel from one place to another."
+      },
+      {
+        "question": "What is a common motorcycle taxi in Nigeria called?",
+        "options": ["Keke napep", "Okada", "Bus", "Train"],
+        "correct_answer": "Okada",
+        "explanation": "Okada is the common name for motorcycle taxis in Nigeria."
+      },
+      {
+        "question": "What is a three-wheeled taxi called in Nigeria?",
+        "options": ["Okada", "Bus", "Keke napep", "Ferry"],
+        "correct_answer": "Keke napep",
+        "explanation": "Keke napep is a three-wheeled tricycle taxi common in Nigeria."
+      },
+      {
+        "question": "Which transportation is used for traveling between cities far apart?",
+        "options": ["Bicycle", "Airplane", "Okada", "Keke napep"],
+        "correct_answer": "Airplane",
+        "explanation": "Airplanes are used for long-distance travel between cities or countries."
+      },
+      {
+        "question": "True or False: Water transportation is not used in Nigeria.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Nigeria has rivers and lagoons where boats and ferries transport people and goods."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Nigerian Culture",
+    "language": "en",
+    "content": "Culture includes the food, language, music, dance, clothing, and traditions of a group of people. Nigeria has over 250 ethnic groups, each with its own culture. The three largest groups are Yoruba, Igbo, and Hausa. Yoruba culture includes amala and ewedu soup, talking drums, and the Gelede festival. Igbo culture includes pounded yam and egusi soup, the omu (a symbol of authority), and the Mmanwu festival. Hausa culture includes tuwo shinkafa and miyan kuka, the durbar festival, and embroidered caps called hula. Nigerian culture is rich and beautiful!",
+    "summary": "Culture includes food, language, music, dance, clothing. Nigeria has over 250 ethnic groups. Three largest: Yoruba, Igbo, Hausa. Each has unique food, music, and festivals.",
+    "learning_objectives": [
+      "Understand what culture means",
+      "Learn about Yoruba, Igbo, and Hausa cultures",
+      "Appreciate Nigeria's cultural diversity"
+    ],
+    "nigerian_examples": [
+      "Yoruba talking drums used for communication",
+      "Igbo masqueradesanwu) during festivals",
+      "Hausa embroidered caps (hula) worn by men"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does culture include?",
+        "options": ["Only food", "Food, language, music, dance, clothing, and traditions", "Only language", "Only music"],
+        "correct_answer": "Food, language, music, dance, clothing, and traditions",
+        "explanation": "Culture includes many things: food, language, music, dance, clothing, and traditions."
+      },
+      {
+        "question": "How many ethnic groups does Nigeria have?",
+        "options": ["50", "100", "Over 250", "500"],
+        "correct_answer": "Over 250",
+        "explanation": "Nigeria has over 250 different ethnic groups with unique cultures."
+      },
+      {
+        "question": "Which food is associated with Yoruba culture?",
+        "options": ["Tuwo shinkafa", "Pounded yam and egusi", "Amala and ewedu", "Suya"],
+        "correct_answer": "Amala and ewedu",
+        "explanation": "Amala and ewedu soup are traditional Yoruba foods."
+      },
+      {
+        "question": "What is a talking drum?",
+        "options": ["A drum that cannot make sound", "A Yoruba drum that can mimic speech tones", "A Hausa drum", "An Igbo drum"],
+        "correct_answer": "A Yoruba drum that can mimic speech tones",
+        "explanation": "Talking drums in Yoruba culture can be played to mimic the tones of speech."
+      },
+      {
+        "question": "True or False: All Nigerian ethnic groups have the same culture.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Different ethnic groups have different foods, languages, music, and traditions."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Festivals and Celebrations",
+    "language": "en",
+    "content": "Festivals are special celebrations that happen every year. Nigeria has many festivals. Religious festivals include Christmas (Christian), Easter (Christian), Eid al-Fitr (Muslim), and Eid al-Adha (Muslim). Cultural festivals include the Eyo Festival in Lagos, Durbar in Kano, Calabar Carnival in Cross River, and New Yam Festival among the Igbo. During festivals, people wear special clothes, eat special foods, sing, dance, and spend time with family and friends. Festivals bring communities together and help preserve culture.",
+    "summary": "Festivals are yearly celebrations. Religious: Christmas, Easter, Eid. Cultural: Eyo, Durbar, Calabar Carnival, New Yam Festival. Festivals bring people together.",
+    "learning_objectives": [
+      "Identify major Nigerian festivals",
+      "Distinguish between religious and cultural festivals",
+      "Understand why festivals are important"
+    ],
+    "nigerian_examples": [
+      "Eyo Festival with white-clad masquerades in Lagos",
+      "Calabar Carnival called 'Africa's Biggest Street Party'",
+      "Eid prayers at the Lagos Central Mosque"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which festival is known as 'Africa's Biggest Street Party'?",
+        "options": ["Eyo Festival", "Durbar", "Calabar Carnival", "New Yam Festival"],
+        "correct_answer": "Calabar Carnival",
+        "explanation": "The Calabar Carnival in Cross River State is called 'Africa's Biggest Street Party'."
+      },
+      {
+        "question": "Which festival features white-clad masquerades in Lagos?",
+        "options": ["Durbar", "Eyo Festival", "Eid", "Christmas"],
+        "correct_answer": "Eyo Festival",
+        "explanation": "The Eyo Festival in Lagos features masquerades dressed in white."
+      },
+      {
+        "question": "Which is a Muslim religious festival?",
+        "options": ["Christmas", "Eid al-Fitr", "Eyo Festival", "Calabar Carnival"],
+        "correct_answer": "Eid al-Fitr",
+        "explanation": "Eid al-Fitr is a Muslim festival celebrating the end of Ramadan."
+      },
+      {
+        "question": "Which festival involves horse riding and parades in northern Nigeria?",
+        "options": ["Eyo Festival", "Calabar Carnival", "Durbar", "New Yam Festival"],
+        "correct_answer": "Durbar",
+        "explanation": "Durbar is a colorful festival with horse riding, held in Kano and other northern cities."
+      },
+      {
+        "question": "True or False: Festivals are only for eating food.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Festivals include eating, but also music, dance, parades, prayers, and spending time with family."
+      }
+    ]
+  }
+]

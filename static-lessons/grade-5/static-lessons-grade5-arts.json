@@ -1,0 +1,129 @@
+[
+  {
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Mixed Media Art",
+    "language": "en",
+    "content": "Mixed media art combines different materials and techniques in one artwork. Examples: collage (paper, fabric, photos glued to surface), assemblage (found objects like bottle caps, buttons, sticks attached together), digital mixed media (drawing + photography + digital editing). Nigerian mixed media artists use traditional materials (adire, beads, wood) with modern elements (paint, plastic, metal). Mixed media allows unlimited creativity - no rules! Try: magazine collage self-portrait, nature assemblage using leaves and twigs, painting with coffee or tea. Mixed media teaches resourcefulness and creative problem-solving. The only limit is your imagination.",
+    "summary": "Mixed media art combines different materials and techniques. Collage, assemblage, digital mixed media. Nigerian artists mix traditional and modern materials. No rules!",
+    "learning_objectives": [
+      "Understand mixed media concepts",
+      "Create collages and assemblages",
+      "Experiment with unconventional materials"
+    ],
+    "nigerian_examples": [
+      "Nike Art Gallery mixed media pieces",
+      "Recycled material sculptures in Lagos",
+      "Adire fabric in modern paintings"
+    ],
+    "quiz_questions": [
+      {"question": "What is mixed media?", "options": ["One material only", "Combining different materials and techniques", "Only digital art", "Only traditional art"], "correct_answer": "Combining different materials and techniques", "explanation": "Mixed media blends various artistic methods."},
+      {"question": "What is a collage?", "options": ["A painting", "A sculpture", "Gluing different materials to a surface", "A photograph"], "correct_answer": "Gluing different materials to a surface", "explanation": "Collage uses paper, fabric, photos, and other flat materials."},
+      {"question": "What is assemblage?", "options": ["2D artwork", "3D artwork using found objects", "Digital art", "Drawing only"], "correct_answer": "3D artwork using found objects", "explanation": "Assemblage attaches three-dimensional objects together."},
+      {"question": "What materials can be used in mixed media?", "options": ["Only paint", "Only paper", "Anything - paint, fabric, wood, plastic, found objects", "Only digital tools"], "correct_answer": "Anything - paint, fabric, wood, plastic, found objects", "explanation": "Mixed media has no material limits."},
+      {"question": "True or False: Mixed media follows strict rules.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Mixed media encourages experimentation and breaking rules."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Digital Art",
+    "language": "en",
+    "content": "Digital art uses computer technology to create artwork. Types: digital painting (drawing with tablet and stylus), vector art (math-based shapes - resizes without losing quality), pixel art (blocky style like old video games), 3D modeling, photo manipulation (editing photos in software), and AI-generated art (using artificial intelligence). Tools: Procreate (iPad), Adobe Photoshop, Krita (free), GIMP (free), Canva. Nigerian digital artists create illustrations, animations, NFTs (digital art sold as cryptocurrency), and graphic novels. Digital art careers: game design, animation, web design, advertising. You can start with free apps on phone or tablet.",
+    "summary": "Digital art uses computer technology. Types: digital painting, vector art, pixel art, 3D modeling, photo manipulation. Tools: Procreate, Photoshop, GIMP, Canva.",
+    "learning_objectives": [
+      "Identify digital art types",
+      "Explore digital art tools",
+      "Create simple digital artwork"
+    ],
+    "nigerian_examples": [
+      "Nigerian digital illustrators on Instagram",
+      "Nollywood poster design",
+      "Nigerian NFT artists",
+      "Animated logos for businesses"
+    ],
+    "quiz_questions": [
+      {"question": "What is digital art?", "options": ["Art on paper", "Art using computer technology", "Art using only pencils", "Art using only paint"], "correct_answer": "Art using computer technology", "explanation": "Digital art created with computers, tablets, or phones."},
+      {"question": "Which app is popular for iPad drawing?", "options": ["Photoshop", "Procreate", "GIMP", "Word"], "correct_answer": "Procreate", "explanation": "Procreate is widely used by digital artists on iPad."},
+      {"question": "What is vector art?", "options": ["Art made of pixels", "Art made of math-based shapes that resize without losing quality", "3D art", "Photo manipulation"], "correct_answer": "Art made of math-based shapes that resize without losing quality", "explanation": "Vector graphics can scale infinitely without blurring."},
+      {"question": "What does NFT stand for?", "options": ["New File Type", "Non-Fungible Token", "National Fine Art", "No Fixed Type"], "correct_answer": "Non-Fungible Token", "explanation": "NFTs are digital artworks verified on blockchain."},
+      {"question": "True or False: You need expensive equipment for digital art.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Free apps on phones or tablets are great for beginners."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Sculpture Techniques",
+    "language": "en",
+    "content": "Sculpture is 3D art created by carving, modeling, or assembling materials. Carving: subtractive (removing material from wood, stone, or ice). Nigerian wood carvers make masks, figures, doors. Modeling: additive (adding material like clay, paper mache, or wax). Clay is shaped then fired in kiln. Casting: pouring liquid material (bronze, plaster, resin) into mold. Benin bronze casters used lost-wax method for detailed plaques. Assembling: joining found objects. Contemporary Nigerian sculptors use recycled materials: scrap metal, plastic bottles, car parts. Safety: use protective gear for carving; adult supervision for sharp tools.",
+    "summary": "Sculpture techniques: carving (remove), modeling (add), casting (pour into mold), assembling (join). Lost-wax method for bronze. Recycled materials.",
+    "learning_objectives": [
+      "Identify sculpture techniques",
+      "Understand lost-wax casting",
+      "Create simple sculptures"
+    ],
+    "nigerian_examples": [
+      "Benin bronze plaques",
+      "Nok terracotta sculptures",
+      "Recycled metal sculptures in Lagos",
+      "Wooden masks for festivals"
+    ],
+    "quiz_questions": [
+      {"question": "What is carving?", "options": ["Adding material", "Removing material from a block", "Pouring liquid", "Joining objects"], "correct_answer": "Removing material from a block", "explanation": "Carving subtracts material from wood, stone, or other blocks."},
+      {"question": "What is modeling?", "options": ["Removing material", "Adding material like clay", "Pouring liquid", "Joining objects"], "correct_answer": "Adding material like clay", "explanation": "Modeling builds up shape by adding soft material."},
+      {"question": "What method did Benin artists use for bronze?", "options": ["Carving", "Modeling", "Lost-wax casting", "Assembling"], "correct_answer": "Lost-wax casting", "explanation": "Lost-wax casting creates detailed metal sculptures."},
+      {"question": "What materials do contemporary Nigerian sculptors use?", "options": ["Only stone", "Only wood", "Recycled materials like scrap metal and plastic", "Only clay"], "correct_answer": "Recycled materials like scrap metal and plastic", "explanation": "Many artists turn waste into art."},
+      {"question": "True or False: Sculpture is only made from stone or wood.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Sculpture can be made from clay, metal, plastic, recycled items, and many other materials."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Performance Art",
+    "language": "en",
+    "content": "Performance art is live art where the artist's actions, body, and presence are the medium. Combines theater, dance, music, visual art. Different from traditional theater - no script, may not tell linear story. Examples: living sculptures (artist poses as statue), durational performances (artist performs same action for hours), site-specific (performance responds to location), interactive (audience participates). Nigerian performance artists address social issues: corruption, women's rights, environmental pollution. Famous Nigerian performance artists include Otobong Nkanga, Jelili Atiku. Performance art challenges viewers to think differently. Videos document ephemeral (temporary) performances.",
+    "summary": "Performance art = live art using artist's actions/body. No script, non-linear. Types: living sculptures, durational, site-specific, interactive. Nigerian artists address social issues.",
+    "learning_objectives": [
+      "Understand performance art",
+      "Distinguish from theater",
+      "Analyze performance art meaning"
+    ],
+    "nigerian_examples": [
+      "Jelili Atiku's social justice performances",
+      "Durbar festival as traditional performance",
+      "Living statues at Lagos Carnival"
+    ],
+    "quiz_questions": [
+      {"question": "What is performance art?", "options": ["Theater with script", "Live art using artist's body/actions", "Painting", "Sculpture"], "correct_answer": "Live art using artist's body/actions", "explanation": "Performance art uses the artist's physical presence as medium."},
+      {"question": "How is performance art different from traditional theater?", "options": ["Has script", "May have no script or linear story", "Uses costumes", "Has audience"], "correct_answer": "May have no script or linear story", "explanation": "Performance art often breaks theatrical conventions."},
+      {"question": "What is a durational performance?", "options": ["Short performance", "Artist performs same action for hours or days", "Performance with music", "Silent performance"], "correct_answer": "Artist performs same action for hours or days", "explanation": "Duration challenges physical and mental limits."},
+      {"question": "What issues do Nigerian performance artists address?", "options": ["Only entertainment", "Social issues like corruption and pollution", "Only history", "Only religion"], "correct_answer": "Social issues like corruption and pollution", "explanation": "Performance art can be political and thought-provoking."},
+      {"question": "True or False: Performance art is always recorded on video.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Some performances are ephemeral (temporary) but often documented for posterity."}
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Art Criticism",
+    "language": "en",
+    "content": "Art criticism is evaluating and interpreting art using four steps: Description (what do you see? subject, colors, shapes, materials), Analysis (how is it organized? balance, contrast, proportion, rhythm), Interpretation (what does it mean? message, feeling, symbolism), Judgment (is it successful? personal evaluation based on criteria). Art criticism helps you appreciate art more deeply. Nigerian art critics write reviews for newspapers and magazines. Practice: look at a painting or sculpture, describe objectively, analyze composition, interpret meaning, then judge. No single right answer - different people may interpret differently. Art criticism develops visual literacy.",
+    "summary": "Art criticism four steps: Description (what you see), Analysis (composition), Interpretation (meaning), Judgment (evaluation). Develops visual literacy. No single right answer.",
+    "learning_objectives": [
+      "Learn art criticism steps",
+      "Analyze artwork objectively",
+      "Formulate interpretations"
+    ],
+    "nigerian_examples": [
+      "Reviewing Ben Enwonwu paintings",
+      "Critiquing Nollywood posters",
+      "Evaluating public art in Lagos"
+    ],
+    "quiz_questions": [
+      {"question": "What are four steps of art criticism?", "options": ["Description, Analysis, Interpretation, Judgment", "Drawing, Painting, Sculpture, Printmaking", "Color, Shape, Line, Texture", "Museum, Gallery, Studio, Online"], "correct_answer": "Description, Analysis, Interpretation, Judgment", "explanation": "These four steps create a systematic critique."},
+      {"question": "What happens in the description step?", "options": ["Judge quality", "Interpret meaning", "List what you see objectively", "Analyze composition"], "correct_answer": "List what you see objectively", "explanation": "Description lists subject, colors, shapes, materials without opinion."},
+      {"question": "What does interpretation ask?", "options": ["What colors?", "What does it mean?", "Is it balanced?", "Who made it?"], "correct_answer": "What does it mean?", "explanation": "Interpretation seeks the message or feeling of the artwork."},
+      {"question": "Is there one correct interpretation of art?", "options": ["Yes", "No, different people may interpret differently", "Only the artist knows", "Only critics know"], "correct_answer": "No, different people may interpret differently", "explanation": "Art is subjective; multiple interpretations are valid."},
+      {"question": "True or False: Art criticism is only for experts.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Anyone can practice art criticism; it builds observation and thinking skills."}
+    ]
+  }
+]

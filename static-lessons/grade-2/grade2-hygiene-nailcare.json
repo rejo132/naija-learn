@@ -1,0 +1,52 @@
+[
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Nail Care",
+    "language": "en",
+    "content": "Nail care means keeping your fingernails and toenails clean and healthy. Dirt and germs can hide under long nails and make you sick. Use nail clippers to cut your nails straight across. Cut them every 1-2 weeks. Wash under your nails when you wash your hands. Do not bite your nails. Keep a nail brush by the sink to clean under nails. Healthy nails are smooth and pink. If your nails change color or hurt, tell a parent.",
+    "summary": "Nail care: cut nails every 1-2 weeks with clippers. Don't bite nails. Wash under nails. Healthy nails are smooth and pink.",
+    "learning_objectives": [
+      "Learn proper nail care techniques",
+      "Understand why nail hygiene matters",
+      "Avoid bad habits like nail biting"
+    ],
+    "nigerian_examples": [
+      "Using nail clippers bought from the market",
+      "Keeping a nail brush near the bathroom sink",
+      "Asking parents to help cut nails safely"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How often should you cut your nails?",
+        "options": ["Once a year", "Every 1-2 weeks", "Every day", "Never"],
+        "correct_answer": "Every 1-2 weeks",
+        "explanation": "Nails grow continuously, so cut them every week or two to keep them clean."
+      },
+      {
+        "question": "What tool is used to cut nails?",
+        "options": ["Scissors", "Nail clippers", "Knife", "Pencil"],
+        "correct_answer": "Nail clippers",
+        "explanation": "Nail clippers are the safe, proper tool for cutting fingernails and toenails."
+      },
+      {
+        "question": "Why is nail biting bad?",
+        "options": ["It makes nails grow faster", "It hurts fingers and puts germs in your mouth", "It makes nails stronger", "It cleans nails"],
+        "correct_answer": "It hurts fingers and puts germs in your mouth",
+        "explanation": "Nail biting can damage your fingers and transfer germs from under your nails into your mouth."
+      },
+      {
+        "question": "What color are healthy nails?",
+        "options": ["Yellow", "Blue", "Pink", "Black"],
+        "correct_answer": "Pink",
+        "explanation": "Healthy nails are smooth and pink. Changes in color may mean a problem."
+      },
+      {
+        "question": "True or False: You never need to clean under your nails.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Dirt and germs hide under nails. You should clean under them when washing your hands."
+      }
+    ]
+  }
+]

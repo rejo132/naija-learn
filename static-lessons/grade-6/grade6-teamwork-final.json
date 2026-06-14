@@ -1,0 +1,28 @@
+[
+  {
+    "grade": 6,
+    "subject": "Teamwork",
+    "topic": "Team Innovation",
+    "language": "en",
+    "content": "Team innovation is creating new ideas, products, or processes through collaboration. Innovation types: incremental (small improvements to existing products), breakthrough (radical new solutions), disruptive (new technology that replaces old). Innovation process: generate ideas (brainstorming, customer feedback), screen ideas (feasibility, potential), develop concept (prototype, test), implement (launch, scale), learn (feedback, iterate). Team conditions for innovation: psychological safety (safe to share unusual ideas), diversity (different perspectives), autonomy (freedom to explore), resources (time, tools, budget), support (leadership encouragement), reward (recognition for ideas, even failed ones). Nigerian team innovations: Paga (mobile payments), Flutterwave (payment processing), Andela (remote tech talent), BudgIT (government budget transparency), FarmCrowdy (agriculture tech). Student team innovation: project improvements, new club activities, event planning, problem-solving for school issues. Innovation requires persistence; most ideas fail before success.",
+    "summary": "Team innovation = creating new ideas, products, processes. Types: incremental, breakthrough, disruptive. Process: generate, screen, develop, implement, learn. Conditions: safety, diversity, autonomy, resources, support.",
+    "learning_objectives": [
+      "Understand innovation types",
+      "Apply innovation process",
+      "Create team innovation conditions"
+    ],
+    "nigerian_examples": [
+      "Paga mobile payments",
+      "Flutterwave fintech",
+      "Andela tech talent platform",
+      "BudgIT transparency platform"
+    ],
+    "quiz_questions": [
+      {"question": "What is incremental innovation?", "options": ["Brand new product", "Small improvements to existing products", "Disruptive technology", "Failed idea"], "correct_answer": "Small improvements to existing products", "explanation": "Incremental innovation improves what already exists."},
+      {"question": "Why is psychological safety important for innovation?", "options": ["No reason", "People need to feel safe sharing unusual ideas without fear", "Only for safety", "Reduces ideas"], "correct_answer": "People need to feel safe sharing unusual ideas without fear", "explanation": "Fear of judgment kills creativity."},
+      {"question": "What is a Nigerian fintech innovation?", "options": ["Nollywood", "Paga or Flutterwave", "Super Eagles", "Aso Rock"], "correct_answer": "Paga or Flutterwave", "explanation": "These companies revolutionized digital payments."},
+      {"question": "What should you do when an idea fails?", "options": ["Give up", "Learn and iterate", "Blame others", "Hide it"], "correct_answer": "Learn and iterate", "explanation": "Failure provides learning for future success."},
+      {"question": "True or False: Innovation only happens in technology companies.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Innovation happens in education, healthcare, agriculture, arts, and all fields."}
+    ]
+  }
+]

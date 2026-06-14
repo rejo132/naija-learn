@@ -1,0 +1,1502 @@
+[
+  {
+    "id": "452a8862-3911-49bf-817a-a9ca6a9ea8cb",
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "Digital Communication",
+    "language": "en",
+    "content": "Digital communication is sending messages electronically. Types: email (like electronic letters), instant messaging (quick chats), video calls (see and talk to people far away), and social media (sharing posts). When communicating online, always be polite and respectful - this is called 'netiquette' (internet etiquette). Don't type in ALL CAPS (it looks like yelling). Think before you post - once something is online, it can be hard to remove. Never share other people's photos or secrets without permission. For email, use a clear subject line and a polite greeting like 'Dear...' and closing like 'Sincerely.' Digital communication helps you stay connected, but use it responsibly.",
+    "summary": "Digital communication: email, instant messaging, video calls. Netiquette = polite online behavior. Don't use ALL CAPS. Think before posting. Get permission before sharing others' photos.",
+    "learning_objectives": [
+      "Identify types of digital communication",
+      "Learn netiquette rules",
+      "Practice responsible online communication"
+    ],
+    "nigerian_examples": [
+      "Emailing teachers about homework",
+      "Video calls with relatives in other countries",
+      "Using messaging apps respectfully with friends"
+    ],
+    "created_at": "2026-06-13T21:53:27.541296+00:00"
+  },
+  {
+    "id": "cd151b3f-b89b-45cc-ba46-f1ee05ba1258",
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "File Management",
+    "language": "en",
+    "content": "File management is organizing and storing files on a computer. A file is a document, picture, video, or program. Files are stored in folders (like digital file cabinets). You can create folders, name them, and move files into them. Good file management means: giving files clear names like 'Math_Homework.pdf' not 'Document1', creating folders for each subject, deleting files you don't need, and backing up important files to a USB drive or cloud. On most computers, you can right-click to create new folders, copy, paste, delete, or rename files. Organized files are easy to find when you need them.",
+    "summary": "File management = organizing files on computer. Files stored in folders. Name files clearly (Math_Homework.pdf). Create folders by subject. Delete unused files. Back up important files.",
+    "learning_objectives": [
+      "Understand what files and folders are",
+      "Learn to organize files clearly",
+      "Practice basic file operations"
+    ],
+    "nigerian_examples": [
+      "Creating folders for each school subject",
+      "Naming files with dates and topics",
+      "Saving homework to a USB drive"
+    ],
+    "created_at": "2026-06-13T21:51:16.077733+00:00"
+  },
+  {
+    "id": "bb53ca0b-7a72-47a2-b88b-d28837ab0efa",
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "Introduction to Coding",
+    "language": "en",
+    "content": "Coding is giving instructions to a computer using a programming language. Computers follow these instructions exactly. Scratch is a beginner-friendly coding platform where you drag and drop blocks like puzzle pieces to create animations, games, and stories. Concepts include: sequence (steps in order), loops (repeat actions), conditionals (if-then decisions), and variables (store information). Example: 'When green flag clicked, move 10 steps, play sound, say Hello.' Coding teaches problem-solving, logic, and creativity. Many Nigerian schools now teach coding. You can start with Scratch online or apps like Lightbot and Kodable. Anyone can learn to code!",
+    "summary": "Coding = giving instructions to computers. Scratch: drag-and-drop block coding. Concepts: sequence, loops, conditionals, variables. Coding teaches problem-solving and logic.",
+    "learning_objectives": [
+      "Understand what coding is",
+      "Learn basic coding concepts",
+      "Explore Scratch platform"
+    ],
+    "nigerian_examples": [
+      "Nigerian students learning Scratch in computer labs",
+      "Coding clubs in Lagos and Abuja schools",
+      "Creating simple animations about Nigerian culture"
+    ],
+    "created_at": "2026-06-13T21:54:11.058616+00:00"
+  },
+  {
+    "id": "32233a84-52b4-421a-9319-e6a2df71526f",
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "Safe Internet Use",
+    "language": "en",
+    "content": "The internet is a powerful tool, but you must stay safe. Never share personal information online: full name, address, phone number, school name, or passwords. Only talk to people you know in real life. If a stranger messages you, tell a parent immediately. Don't click on pop-ups or ads - they might be scams. Use strong passwords (mix of letters, numbers, symbols). Remember that not everything online is true - learn to check facts with trusted adults. Before downloading anything, ask a parent. If something online makes you uncomfortable, tell an adult right away. Stay safe, think before you click!",
+    "summary": "Safe internet use: never share personal info, only talk to people you know, don't click pop-ups, use strong passwords, fact-check with adults, tell adults if uncomfortable.",
+    "learning_objectives": [
+      "Identify internet safety rules",
+      "Recognize online dangers",
+      "Know when to ask for help"
+    ],
+    "nigerian_examples": [
+      "Not sharing your home address in Lagos or Abuja online",
+      "Asking parents before using educational websites",
+      "Reporting suspicious messages to adults"
+    ],
+    "created_at": "2026-06-13T21:52:44.937456+00:00"
+  },
+  {
+    "id": "f99413e4-4b76-49ea-88a2-ba8a8923206b",
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "Word Processing Basics",
+    "language": "en",
+    "content": "Word processing is using a computer to write and edit text. Popular word processors include Microsoft Word, Google Docs, and LibreOffice Writer. Basic features: typing text, changing font (style of letters), font size, bold (darkens text), italic (slants text), underline, changing text color, aligning text (left, center, right), bullet points, and numbering. You can also insert pictures, tables, and shapes. Save your work often (Ctrl+S). Use spell check to find errors. Word processing makes writing easier because you can edit mistakes without starting over. You can print your document when finished.",
+    "summary": "Word processing = writing/editing on computer. Features: font, size, bold, italic, underline, color, alignment, bullets, numbering. Save often (Ctrl+S). Use spell check.",
+    "learning_objectives": [
+      "Learn basic word processing features",
+      "Practice formatting text",
+      "Save and retrieve documents"
+    ],
+    "nigerian_examples": [
+      "Typing school essays in Microsoft Word",
+      "Using Google Docs for group projects",
+      "Formatting homework with headings and bullet points"
+    ],
+    "created_at": "2026-06-13T21:52:01.405886+00:00"
+  },
+  {
+    "id": "11f002dc-a545-4870-9cc7-16e930076118",
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Ecosystems",
+    "language": "en",
+    "content": "An ecosystem is a community of living things and their environment. All parts of an ecosystem work together. Living parts (biotic) include plants, animals, and tiny organisms. Non-living parts (abiotic) include water, soil, air, sunlight, and temperature. Examples of ecosystems: forest, grassland, desert, river, ocean, and pond. In a pond ecosystem, fish eat insects, frogs eat fish, birds eat frogs, and when they die, bacteria break them down into nutrients for plants. If one part of an ecosystem changes, it affects everything else. Protecting ecosystems means protecting all the living and non-living parts together.",
+    "summary": "Ecosystems = living things + environment. Biotic: plants, animals. Abiotic: water, soil, sun. Forest, grassland, desert, pond, ocean are examples. Everything is connected.",
+    "learning_objectives": [
+      "Define ecosystem",
+      "Distinguish between biotic and abiotic factors",
+      "Identify different Nigerian ecosystems"
+    ],
+    "nigerian_examples": [
+      "Niger Delta mangrove forest ecosystem",
+      "Savanna grassland ecosystem in northern Nigeria",
+      "Yankari National Park ecosystem with wildlife"
+    ],
+    "created_at": "2026-06-13T21:14:37.616511+00:00"
+  },
+  {
+    "id": "8264b473-a837-4a91-9ec3-35b74a2ff057",
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Food Chains",
+    "language": "en",
+    "content": "A food chain shows how energy moves from one living thing to another. Plants are producers - they make their own food using sunlight. Animals that eat plants are called herbivores (primary consumers). Animals that eat other animals are called carnivores (secondary consumers). Some animals eat both plants and animals - they are omnivores. A simple food chain: Grass (producer) → Grasshopper (herbivore) → Frog (carnivore) → Snake (carnivore) → Eagle (carnivore). The arrow means 'is eaten by'. All food chains start with the sun, which gives energy to plants. Understanding food chains helps us see how all living things are connected.",
+    "summary": "Food chains show energy flow: Sun → Plants (producers) → Herbivores → Carnivores. Arrows mean 'is eaten by'. All living things are connected in food chains.",
+    "learning_objectives": [
+      "Understand what a food chain is",
+      "Identify producers, herbivores, and carnivores",
+      "Create simple food chains"
+    ],
+    "nigerian_examples": [
+      "Grass → Goat → Human (in Nigerian villages)",
+      "Plankton → Fish → Human (in Nigerian rivers)",
+      "Leaves → Caterpillar → Chicken → Human (on Nigerian farms)"
+    ],
+    "created_at": "2026-06-13T21:13:53.470215+00:00"
+  },
+  {
+    "id": "301a081d-545a-45d2-8dea-1c5a95c46895",
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Forces and Motion",
+    "language": "en",
+    "content": "A force is a push or a pull that can make things move, stop, or change direction. Gravity is a force that pulls objects toward the Earth - that's why things fall down, not up. Friction is a force that slows things down when they rub against each other - that's why your shoes grip the ground. Magnetism is a force that pulls certain metals (like iron) toward a magnet. Pushing a door open, pulling a wagon, kicking a ball - all use forces. Understanding forces helps us know why things move the way they do.",
+    "summary": "Forces are pushes or pulls. Gravity pulls things down. Friction slows things down. Magnetism pulls certain metals. Forces make things move, stop, or change direction.",
+    "learning_objectives": [
+      "Define force as push or pull",
+      "Explain gravity and friction",
+      "Identify forces in everyday life"
+    ],
+    "nigerian_examples": [
+      "Gravity pulling a mango down from a tree",
+      "Friction helping you walk on a dusty road",
+      "Magnetismriments"
+    ],
+    "created_at": "2026-06-13T21:16:09.14503+00:00"
+  },
+  {
+    "id": "d014d08f-351f-4b37-9010-25ab158add2b",
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Rocks and Soil",
+    "language": "en",
+    "content": "Rocks are natural solid materials made of minerals. There are three types of rocks: igneous (formed from cooled lava/magma), sedimentary (formed from pressed layers of sand and shells), and metamorphic (changed by heat and pressure). Soil is made from broken-down rocks mixed with dead plants and animals. Different soil types: sandy (loose, drains fast), clay (sticky, holds water), loamy (best for farming). Nigeria has valuable rocks: granite, limestone, coal, and even gold. Rocks and soil are important for building, farming, and making things we use every day.",
+    "summary": "Three rock types: igneous (cooled lava), sedimentary (pressed layers), metamorphic (changed by heat/pressure). Soil types: sandy, clay, loamy. Nigeria has granite, limestone, coal.",
+    "learning_objectives": [
+      "Identify three types of rocks",
+      "Describe different soil types",
+      "Recognize Nigerian rocks and minerals"
+    ],
+    "nigerian_examples": [
+      "Granite rocks in Abuja for building",
+      "Limestone used for cement in Ewekoro",
+      "Coal found in Enugu (formerly called Coal City)"
+    ],
+    "created_at": "2026-06-13T21:15:26.757556+00:00"
+  },
+  {
+    "id": "6059f122-9ac0-4f85-837d-37d759b9420c",
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Simple Machines",
+    "language": "en",
+    "content": "Simple machines are tools that make work easier. The six simple machines are: lever (see-saw, bottle opener), pulley (flagpole, well bucket), wheel and axle (bicycle, car wheels), inclined plane (ramp, slide), wedge (knife, axe), and screw (lid on a jar). Simple machines help us lift heavy things, cut, or move objects with less force. For example, a lever helps lift a heavy rock using a long stick and a pivot point. A ramp (inclined plane) lets you roll a heavy box up instead of lifting it straight up. Simple machines are everywhere around us.",
+    "summary": "Six simple machines: lever, pulley, wheel and axle, inclined plane, wedge, screw. They make work easier by changing force or direction. Examples: see-saw, flagpole, ramp, knife.",
+    "learning_objectives": [
+      "Identify the six simple machines",
+      "Explain how each makes work easier",
+      "Find examples of simple machines"
+    ],
+    "nigerian_examples": [
+      "Using a lever to open a bottle of soft drink",
+      "Pulley system to lift water from a well",
+      "Wedge (knife) to cut yam"
+    ],
+    "created_at": "2026-06-13T21:16:52.983093+00:00"
+  },
+  {
+    "id": "2087dbbd-c7fc-4d18-949a-5baccc8908a6",
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Active Listening",
+    "language": "en",
+    "content": "Active listening means fully focusing on the speaker, understanding their message, and responding thoughtfully. It's different from hearing (just receiving sound). Steps: stop what you're doing, face the speaker, make eye contact, don't interrupt, nod to show you're following, think about what they're saying, ask questions if unclear, and summarize what you heard. Active listening shows respect and helps you learn better. In Nigerian culture, listening carefully to elders is a sign of respect. Good listeners are valued in school, at home, and in future jobs.",
+    "summary": "Active listening: focus completely, face speaker, eye contact, don't interrupt, nod, think, ask questions, summarize. Shows respect. Different from just hearing.",
+    "learning_objectives": [
+      "Understand active listening vs passive hearing",
+      "Learn active listening techniques",
+      "Practice listening respectfully"
+    ],
+    "nigerian_examples": [
+      "Listening carefully to elders' advice",
+      "Paying attention during moonlight tales",
+      "Following teacher instructions without interrupting"
+    ],
+    "created_at": "2026-06-13T22:06:47.291332+00:00"
+  },
+  {
+    "id": "0c37184f-fd63-4699-88d4-46104faafb96",
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Clear Speaking",
+    "language": "en",
+    "content": "Clear speaking means expressing your thoughts so others understand easily. Speak at a steady pace - not too fast, not too slow. Use appropriate volume - loud enough to hear, not shouting. Pronounce words correctly. Organize your thoughts before speaking. Use pauses to let listeners absorb information. Look at your audience. Avoid fillers like 'um', 'uh', 'like', 'you know'. Practice speaking clearly by reading aloud, recording yourself, and asking for feedback. Clear speaking helps you in class presentations, answering questions, and conversations. It shows confidence and respect for your listeners.",
+    "summary": "Clear speaking: steady pace, right volume, correct pronunciation, organize thoughts, use pauses, look at audience, avoid fillers. Practice by reading aloud.",
+    "learning_objectives": [
+      "Learn clear speaking techniques",
+      "Eliminate verbal fillers",
+      "Build speaking confidence"
+    ],
+    "nigerian_examples": [
+      "Speaking clearly during class presentations",
+      "Announcing scores at sports day",
+      "Leading morning assembly announcements"
+    ],
+    "created_at": "2026-06-13T22:07:30.83863+00:00"
+  },
+  {
+    "id": "d97d1c5e-734b-492b-9d64-d316bd9cf835",
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Conflict Resolution",
+    "language": "en",
+    "content": "Conflict resolution is solving disagreements peacefully. Steps: calm down (take deep breaths), use 'I feel' statements ('I feel upset when you take my pencil without asking'), listen to the other person's side, find a solution together, apologize if needed, and forgive. Never shout, hit, or insult. If you can't resolve it, ask an adult for help. In Nigerian culture, community elders often help resolve conflicts. Learning conflict resolution now helps you handle disagreements with friends, siblings, and classmates throughout life.",
+    "summary": "Conflict resolution: calm down, use 'I feel' statements, listen, find solution together, apologize, forgive. Don't shout or hit. Ask adult if needed.",
+    "learning_objectives": [
+      "Learn peaceful conflict resolution steps",
+      "Practice 'I feel' statements",
+      "Understand when to ask for help"
+    ],
+    "nigerian_examples": [
+      "Resolving dispute over whose turn to play",
+      "Community elders settling village disagreements",
+      "Teachers mediating between classmates"
+    ],
+    "created_at": "2026-06-13T22:09:40.261144+00:00"
+  },
+  {
+    "id": "d0e22a8a-5c0a-400b-89d8-f1c2e5beec38",
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Giving Feedback",
+    "language": "en",
+    "content": "Feedback is telling someone what you think about their work or behavior. Good feedback is specific, kind, and helpful. The 'feedback sandwich' method: start with something positive, give the constructive criticism (what to improve), end with encouragement. Example: 'Your drawing has beautiful colors. Next time, try making the people bigger. I can't wait to see your next drawing!' When receiving feedback, listen without interrupting, say thank you, and think about how to improve. Don't get defensive. Feedback helps us grow. Both giving and receiving feedback are skills that improve with practice.",
+    "summary": "Feedback: specific, kind, helpful. Feedback sandwich: positive, constructive, encouragement. Receiving feedback: listen, say thank you, think how to improve. Don't get defensive.",
+    "learning_objectives": [
+      "Learn to give constructive feedback",
+      "Practice feedback sandwich method",
+      "Receive feedback graciously"
+    ],
+    "nigerian_examples": [
+      "Telling a friend 'Your handwriting is neat; try writing a bit larger so it's easier to read'",
+      "Teacher feedback on homework",
+      "Coach feedback after sports practice"
+    ],
+    "created_at": "2026-06-13T22:08:57.676771+00:00"
+  },
+  {
+    "id": "4ee42649-774b-475e-b10a-4ac6d6762c48",
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Non Verbal Communication",
+    "language": "en",
+    "content": "Non-verbal communication is sending messages without words, using body language, facial expressions, gestures, posture, and eye contact. Examples: smiling shows happiness; frowning shows sadness or confusion; crossed arms may show defensiveness; open posture shows openness; nodding shows agreement; looking away may show disinterest. In Nigerian culture, prostrating (boys) or kneeling (girls) shows deep respect to elders. Using the right hand to give or receive is polite. Your body speaks even when your mouth is quiet. Match your body language to your words for honest communication.",
+    "summary": "Non-verbal communication: body language, facial expressions, gestures, posture, eye contact. Smiling = happy, nodding = agreement. Nigerian respect gestures: prostrating, kneeling, right hand.",
+    "learning_objectives": [
+      "Identify non-verbal cues",
+      "Understand Nigerian cultural gestures",
+      "Align body language with words"
+    ],
+    "nigerian_examples": [
+      "Prostrating to greet Yoruba elders",
+      "Kneeling to greet Igbo elders",
+      "Using right hand to give money or gifts"
+    ],
+    "created_at": "2026-06-13T22:08:14.023262+00:00"
+  },
+  {
+    "id": "6d5d6f77-0df4-46fa-85a9-0c2ef282e753",
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Goal Setting",
+    "language": "en",
+    "content": "Goal setting means deciding what you want to achieve and making a plan to get there. SMART goals are: Specific (clear, not vague), Measurable (you can track progress), Achievable (realistic for you), Relevant (important to you), Time-bound (has a deadline). Example: 'I will read 10 books by the end of the term' instead of 'I will read more.' Break big goals into small steps. Write your goals down. Tell someone about your goal for accountability. Celebrate when you reach your goal. Setting and achieving goals builds confidence and shows you what you're capable of accomplishing.",
+    "summary": "Goal setting = decide what to achieve and plan how. SMART goals: Specific, Measurable, Achievable, Relevant, Time-bound. Write goals down. Celebrate achievements.",
+    "learning_objectives": [
+      "Learn SMART goal framework",
+      "Set personal academic and behavior goals",
+      "Track progress and celebrate success"
+    ],
+    "nigerian_examples": [
+      "Goal: Improve math grade from C to B by end of term",
+      "Goal: Learn 5 new English words each week",
+      "Goal: Help with chores every day for one month"
+    ],
+    "created_at": "2026-06-13T21:59:25.559637+00:00"
+  },
+  {
+    "id": "b70e7b32-eead-49a4-b6ae-53a695dbe2ad",
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Overcoming Stage Fright",
+    "language": "en",
+    "content": "Stage fright is feeling nervous or scared before performing in front of people. Almost everyone experiences it. Physical signs: sweaty palms, fast heartbeat, shaky voice. You can overcome stage fright. Practice your performance many times. Breathe deeply before going on stage. Imagine the audience cheering for you. Start with a smile. Remember that the audience wants you to succeed. Focus on your message, not on yourself. If you make a mistake, keep going - most people won't notice. Each time you perform, it gets easier. Stage fright shows you care about doing well - that's a good thing!",
+    "summary": "Stage fright = nervousness before performing. Signs: sweaty palms, fast heartbeat. Overcome by: practicing, deep breathing, smiling, focusing on message. Gets easier each time.",
+    "learning_objectives": [
+      "Recognize symptoms of stage fright",
+      "Learn coping strategies",
+      "Build performance confidence"
+    ],
+    "nigerian_examples": [
+      "Performing at school cultural day",
+      "Playing in a school band concert",
+      "Acting in a class drama"
+    ],
+    "created_at": "2026-06-13T21:58:42.641146+00:00"
+  },
+  {
+    "id": "1eb21fc7-ffb3-45f7-82c0-ca10f0a9746d",
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Positive Mindset",
+    "language": "en",
+    "content": "A positive mindset means focusing on good possibilities and believing you can improve. People with a growth mindset believe they can get smarter and better through effort. Instead of saying 'I can't do this,' say 'I can't do this yet.' Instead of 'I made a mistake,' say 'Mistakes help me learn.' Positive self-talk uses encouraging words. Surround yourself with positive people who support you. When something bad happens, look for the lesson or the good part. A positive mindset doesn't mean ignoring problems - it means facing them with hope and determination. Your attitude shapes your success.",
+    "summary": "Positive mindset = believing you can improve. Growth mindset: 'I can't do this yet.' Use positive self-talk. Surround yourself with supportive people. Face problems with hope.",
+    "learning_objectives": [
+      "Understand growth vs fixed mindset",
+      "Practice positive self-talk",
+      "Develop resilience and optimism"
+    ],
+    "nigerian_examples": [
+      "Instead of 'I hate math', say 'Math is challenging but I can learn'",
+      "After losing a race: 'I will train harder for next time'",
+      "When homework is hard: 'This is tough, but I can figure it out'"
+    ],
+    "created_at": "2026-06-13T22:00:13.379817+00:00"
+  },
+  {
+    "id": "52928d97-97c8-4973-b489-f83383f6c96d",
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Public Speaking",
+    "language": "en",
+    "content": "Public speaking is talking to a group of people. It can feel scary at first, but practice makes it easier. Prepare by knowing your topic well. Practice speaking out loud at home. Stand up straight, take a deep breath, and speak clearly. Look at your audience, not at the floor. Start with a smile. If you forget something, it's okay - pause, breathe, and continue. Remember that everyone gets nervous sometimes. Even famous speakers practice many times. The more you speak in front of others, the more confident you become. Start with short talks to family, then to classmates.",
+    "summary": "Public speaking: prepare, practice, stand straight, breathe, speak clearly, look at audience. Everyone gets nervous. Practice makes you confident. Start with small audiences.",
+    "learning_objectives": [
+      "Understand public speaking basics",
+      "Learn techniques to reduce nervousness",
+      "Build confidence in speaking"
+    ],
+    "nigerian_examples": [
+      "Speaking at school assembly",
+      "Presenting a class project",
+      "Reciting a poem at cultural day"
+    ],
+    "created_at": "2026-06-13T21:57:16.191057+00:00"
+  },
+  {
+    "id": "d2a91e95-801f-4b17-81a0-7ab2d6fbf6a5",
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Self Awareness",
+    "language": "en",
+    "content": "Self-awareness means knowing yourself - your strengths, weaknesses, feelings, and values. Ask yourself: What am I good at? What do I need to improve? How do I feel right now? What is important to me? Knowing your strengths helps you feel confident. Knowing your weaknesses helps you know what to work on. When you understand your feelings, you can handle them better. Self-awareness also means knowing how your actions affect others. You can build self-awareness by journaling, asking trusted friends for feedback, and reflecting on your day. Self-aware people make better decisions and have stronger relationships.",
+    "summary": "Self-awareness = knowing your strengths, weaknesses, feelings, values. Helps you feel confident, improve, handle emotions, and make good decisions. Journal and reflect daily.",
+    "learning_objectives": [
+      "Understand what self-awareness means",
+      "Identify personal strengths and weaknesses",
+      "Practice self-reflection"
+    ],
+    "nigerian_examples": [
+      "Knowing you are good at math but need help with spelling",
+      "Understanding why you feel angry and calming down",
+      "Aspecting how your actions affect friends"
+    ],
+    "created_at": "2026-06-13T21:57:59.76062+00:00"
+  },
+  {
+    "id": "bb287b37-7176-4b40-9718-8a36531807ee",
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Alternative Solutions",
+    "language": "en",
+    "content": "Alternative solutions means finding different ways to solve a problem instead of just one way. Creative thinkers generate multiple options before choosing. Example: If you forgot your lunch, solutions could be: ask a friend to share, buy from school cafeteria, call parents, or eat later. Generate at least 3-5 options. Evaluate each: Is it possible? Is it allowed? Will it work? Choose the best. Looking for alternative solutions helps you become a better problem-solver.",
+    "summary": "Alternative solutions = different ways to solve problems. Generate 3-5 options, evaluate each, choose best.",
+    "learning_objectives": [
+      "Learn to generate multiple solutions",
+      "Evaluate options critically",
+      "Apply creative problem-solving"
+    ],
+    "nigerian_examples": [
+      "Finding different routes when a road is blocked",
+      "Substituting ingredients when cooking",
+      "Creative study methods when power is out"
+    ],
+    "created_at": "2026-06-13T22:22:36.267175+00:00"
+  },
+  {
+    "id": "a8fc2361-3d89-45a3-837c-aec0b89d2c5e",
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Breaking Down Problems",
+    "language": "en",
+    "content": "Breaking down problems means dividing a big problem into smaller, manageable parts. This makes difficult tasks less overwhelming. Steps: identify the big problem, list all the parts, prioritize the parts, solve each part one by one, combine solutions. Example: Writing a book report - break into: read book, take notes, outline, write introduction, write body paragraphs, write conclusion, revise.",
+    "summary": "Breaking down problems = divide big problem into smaller parts. Makes hard tasks manageable.",
+    "learning_objectives": [
+      "Learn problem decomposition",
+      "Break complex tasks into steps",
+      "Reduce overwhelm"
+    ],
+    "nigerian_examples": [
+      "Breaking down a long exam into sections",
+      "Planning a school event step by step",
+      "Dividing a big cleaning task among team members"
+    ],
+    "created_at": "2026-06-13T22:23:22.045492+00:00"
+  },
+  {
+    "id": "d4926065-01d5-46fc-b948-7fc9117a4d82",
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Creative Writing",
+    "language": "en",
+    "content": "Creative writing is expressing imagination through stories, poems, or plays. Unlike school essays, creative writing has no wrong answers. Use your five senses: describe how things look, sound, smell, feel, taste. Create interesting characters with names, personalities, and quirks. Build suspense. Use dialogue to show what characters are like. Read your work aloud. Keep a journal of ideas.",
+    "summary": "Creative writing: imagination through stories, poems, plays. Use senses, create characters, build suspense, use dialogue. Keep idea journal.",
+    "learning_objectives": [
+      "Learn creative writing techniques",
+      "Develop characters and plots",
+      "Express imagination freely"
+    ],
+    "nigerian_examples": [
+      "Writing a story about a clever tortoise",
+      "Creating a poem about Nigerian seasons",
+      "Writing a play about school life"
+    ],
+    "created_at": "2026-06-13T22:25:45.905068+00:00"
+  },
+  {
+    "id": "e016311c-468e-4723-9a76-213f8c148863",
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Designing Prototypes",
+    "language": "en",
+    "content": "A prototype is a simple first version of an idea or product used to test and improve. Designing prototypes means creating something simple to see if your idea works. Use cheap materials: paper, cardboard, clay, or digital tools. Don't worry about perfection - the goal is learning. Test your prototype, find problems, improve it, test again.",
+    "summary": "Prototype = simple first version to test ideas. Use cheap materials. Test, find problems, improve, repeat.",
+    "learning_objectives": [
+      "Understand what prototypes are",
+      "Create simple prototypes",
+      "Test and improve designs"
+    ],
+    "nigerian_examples": [
+      "Designing a new farming tool prototype",
+      "Creating a model of a school project",
+      "Building a simple machine prototype from cardboard"
+    ],
+    "created_at": "2026-06-13T22:24:06.461919+00:00"
+  },
+  {
+    "id": "2258128b-ce12-4ade-a21a-9d49f7338cd0",
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Innovative Drawing",
+    "language": "en",
+    "content": "Innovative drawing means creating art in new and unusual ways beyond pencil and paper. Try: drawing with your non-dominant hand, drawing without looking at the paper, combining unexpected materials (coffee, tea, flowers), drawing on unusual surfaces (cardboard, fabric, leaves), making 3D drawings, or creating optical illusions.",
+    "summary": "Innovative drawing: new ways beyond pencil/paper. Try non-dominant hand, unusual materials, odd surfaces. Experiment and have fun.",
+    "learning_objectives": [
+      "Explore innovative art techniques",
+      "Experiment with unusual materials",
+      "Develop unique artistic voice"
+    ],
+    "nigerian_examples": [
+      "Drawing with charcoal from burnt wood",
+      "Painting with crushed leaves for natural colors",
+      "Creating art on recycled cardboard"
+    ],
+    "created_at": "2026-06-13T22:24:50.685456+00:00"
+  },
+  {
+    "id": "38295002-daa8-46b2-8707-c86cb1910aea",
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Charity and Giving",
+    "language": "en",
+    "content": "Charity means giving to help others in need. In Christianity, giving is called 'tithing' (giving 10% of what you earn) or offerings. Jesus taught 'It is more blessed to give than to receive.' In Islam, charity includes Zakat (obligatory 2.5% of savings given yearly) and Sadaqah (voluntary giving). Both religions teach that helping the poor, feeding the hungry, caring for orphans, and visiting the sick are important acts of worship. You don't need to be rich to give - you can give time, kindness, a smile, or help with small tasks. Every act of giving pleases God.",
+    "summary": "Charity is giving to help others. Christianity: tithing (10%). Islam: Zakat (2.5%), Sadaqah (voluntary). Giving time, kindness, and help also counts. Giving pleases God.",
+    "learning_objectives": [
+      "Understand charity in Christianity and Islam",
+      "Learn forms of giving beyond money",
+      "Practice generosity daily"
+    ],
+    "nigerian_examples": [
+      "Churches collecting offerings to help community members",
+      "Mosques distributing Zakat during Ramadan",
+      "Sharing food with neighbors during holidays"
+    ],
+    "created_at": "2026-06-13T21:27:18.239199+00:00"
+  },
+  {
+    "id": "4385ce29-cd5d-4dad-af79-79813b582b0f",
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Fasting and Sacrifice",
+    "language": "en",
+    "content": "Fasting means not eating or drinking for a period of time. In Christianity, some people fast during Lent (40 days before Easter) to remember Jesus's sacrifice. In Islam, fasting during Ramadan (one lunar month) is obligatory for adult Muslims. Muslims wake early to eat (suhoor), fast from dawn to sunset, then break fast (iftar). Fasting teaches self-control, empathy for the hungry, and gratitude. Sacrifice means giving up something valuable. Muslims celebrate Eid al-Adha by sacrificing an animal (like a sheep or goat) to remember Prophet Abraham's willingness to sacrifice his son for God. The meat is shared with family, friends, and the poor.",
+    "summary": "Fasting: Christianity (Lent), Islam (Ramadan). Teaches self-control and empathy. Sacrifice: Eid al-Adha remembers Abraham's willingness to sacrifice for God.",
+    "learning_objectives": [
+      "Understand fasting in Christianity and Islam",
+      "Learn about Eid al-Adha",
+      "Appreciate self-control and sharing"
+    ],
+    "nigerian_examples": [
+      "Nigerian Christians fasting during Lent",
+      "Muslims fasting from dawn to sunset during Ramadan",
+      "Eid al-Adha celebrations with meat shared among family and poor"
+    ],
+    "created_at": "2026-06-13T21:28:01.648473+00:00"
+  },
+  {
+    "id": "5677ef45-7e44-4bd2-985a-03cdc327eb7a",
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Prophets and Heroes",
+    "language": "en",
+    "content": "Prophets are special messengers sent by God to teach people how to live righteously. In Christianity, important prophets include Moses, Elijah, Isaiah, and John the Baptist. Jesus is considered the Son of God and Savior. In Islam, important prophets include Adam, Noah, Abraham, Moses, Jesus, and Muhammad (peace be upon them all). Muslims believe Muhammad is the last prophet. Heroes of faith are people who showed great courage and trust in God. Examples: David who defeated Goliath, Daniel in the lion's den, and Esther who saved her people. These prophets and heroes inspire us to be brave and faithful.",
+    "summary": "Prophets are God's messengers. Christian prophets: Moses, Elijah, Isaiah. Islamic prophets: Adam, Noah, Abraham, Moses, Jesus, Muhammad. Heroes show courage and faith.",
+    "learning_objectives": [
+      "Identify important prophets in Christianity and Islam",
+      "Learn stories of faith heroes",
+      "Apply lessons of courage and faith"
+    ],
+    "nigerian_examples": [
+      "Children learning prophet stories in Sunday school",
+      "Islamic school teaching about the prophets",
+      "Stories of faith heroes told during religious classes"
+    ],
+    "created_at": "2026-06-13T21:26:34.59111+00:00"
+  },
+  {
+    "id": "9b8e4c49-1e3f-41e6-b817-0468c357b5c4",
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "The Ten Commandments",
+    "language": "en",
+    "content": "The Ten Commandments are rules given by God to Moses for people to live good lives. They include: worship only one God, don't worship idols, respect God's name, keep the Sabbath day holy, honor your parents, do not murder, do not commit adultery, do not steal, do not lie, and do not be jealous of others. These rules teach respect for God and respect for other people. Many of these rules are found in other religions too, like not stealing and not lying. Following these commandments helps create peace and fairness in families and communities.",
+    "summary": "The Ten Commandments are rules from God: worship one God, honor parents, don't steal, don't lie, don't murder, don't be jealous. They teach respect for God and others.",
+    "learning_objectives": [
+      "Learn the Ten Commandments",
+      "Understand why rules matter",
+      "Apply commandments to daily life"
+    ],
+    "nigerian_examples": [
+      "Honoring parents by helping at home",
+      "Not stealing from classmates",
+      "Telling the truth to teachers and parents"
+    ],
+    "created_at": "2026-06-13T21:25:05.637142+00:00"
+  },
+  {
+    "id": "e43eedcd-03e0-4423-a21b-a4f159fb6b9a",
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Wudhu and Cleanliness",
+    "language": "en",
+    "content": "Wudhu is the Islamic ritual of washing before prayer (Salah). Muslims perform wudhu before each of the five daily prayers. The steps are: wash hands three times, rinse mouth three times, rinse nose three times, wash face three times, wash arms to elbows three times (right then left), wipe head once, wipe ears once, wash feet to ankles three times (right then left). Wudhu teaches cleanliness and prepares the heart for prayer. Being clean is important in Islam - 'Cleanliness is half of faith.' Muslims also keep their bodies, clothes, and homes clean at all times.",
+    "summary": "Wudhu is washing before Islamic prayer. Steps: wash hands, mouth, nose, face, arms, wipe head/ears, wash feet. Cleanliness is half of faith.",
+    "learning_objectives": [
+      "Learn the steps of wudhu",
+      "Understand the importance of cleanliness in Islam",
+      "Practice proper washing order"
+    ],
+    "nigerian_examples": [
+      "Muslim children learning wudhu at home",
+      "Washing areas near mosques for wudhu",
+      "Performing wudhu before Friday prayers"
+    ],
+    "created_at": "2026-06-13T21:25:51.496241+00:00"
+  },
+  {
+    "id": "694bb2ae-3484-44a6-b9cd-76c48a1d8086",
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Batik and Tie Dye",
+    "language": "en",
+    "content": "Batik and tie dye are methods of decorating fabric with patterns and colors. Batik uses wax to resist dye. Hot wax is painted on fabric in patterns, then the fabric is dipped in dye. The wax resists the dye, leaving the pattern. In tie dye, fabric is tied, twisted, or folded before dyeing. The tied parts resist the dye, creating patterns. Nigerian tie dye is called 'Adire' (Yoruba for 'tie and dye'). Adire Eleko uses starch painted through a stencil. Adire Alabere uses raffia tied around fabric. Adire is used for clothing, wall hangings, and accessories. These techniques create beautiful, unique patterns.",
+    "summary": "Batik uses wax to resist dye. Tie dye uses tying/folding to resist dye. Nigerian Adire (tie dye) has types: Eleko (starch stencil), Alabere (raffia tie). Unique patterns.",
+    "learning_objectives": [
+      "Understand batik and tie dye techniques",
+      "Learn about Nigerian Adire",
+      "Identify different Adire methods"
+    ],
+    "nigerian_examples": [
+      "Adire Eleko fabric from Abeokuta",
+      "Tie-dye shirts popular everywhere",
+      "Adire workshops in Lagos and Ogun States"
+    ],
+    "created_at": "2026-06-13T21:47:40.589875+00:00"
+  },
+  {
+    "id": "c6e7dd70-9adf-4b57-bc1f-fbc01c104754",
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Graphic Design Intro",
+    "language": "en",
+    "content": "Graphic design is creating visual content for communication. It combines images, words, and colors to send a message. Examples: logos (company symbols), posters, book covers, websites, packaging, and signs. Graphic designers use elements like color, shape, line, texture, space, and typography (the style of letters). Popular graphic design software includes Adobe Photoshop, Canva, and Illustrator. Nigerian graphic designers create logos for businesses, posters for Nollywood movies, labels for products, and social media graphics. You can practice graphic design by making birthday cards, posters for school events, or designing your own logo.",
+    "summary": "Graphic design combines images, words, colors for communication. Examples: logos, posters, book covers. Elements: color, shape, line, typography. Practice making cards and posters.",
+    "learning_objectives": [
+      "Understand what graphic design is",
+      "Identify graphic design examples",
+      "Create simple designs"
+    ],
+    "nigerian_examples": [
+      "Nollywood movie posters",
+      "Naija logo design contest winners",
+      "Product labels in Nigerian markets"
+    ],
+    "created_at": "2026-06-13T21:49:08.12461+00:00"
+  },
+  {
+    "id": "5bca09aa-e642-4594-87f3-379b2a651c8f",
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Nigerian Art",
+    "language": "en",
+    "content": "Nigerian art is famous worldwide. Traditional art includes sculpture, mask making, pottery, weaving, and beadwork. The Nok culture (500 BC - 200 AD) made terracotta sculptures, the oldest known in West Africa. The Benin Kingdom is famous for bronze plaques and ivory carvings. The Yoruba make carved wooden masks and statues of gods and ancestors. The Igbo make elaborate masks for festivals like Mmanwu. The Hausa make colorful embroidery and leather crafts. Modern Nigerian artists include Ben Enwonwu (painter and sculptor), Bruce Onobrakpeya (printmaker), and Nike Okundaye (textile artist). Nigerian art expresses culture, history, and spirituality.",
+    "summary": "Nigerian art: Nok terracotta (oldest), Benin bronze, Yoruba wood carvings, Igbo masks, Hausa embroidery. Modern artists: Ben Enwonwu, Bruce Onobrakpeya, Nike Okundaye.",
+    "learning_objectives": [
+      "Identify traditional Nigerian art forms",
+      "Learn about famous Nigerian artists",
+      "Appreciate Nigeria's artistic heritage"
+    ],
+    "nigerian_examples": [
+      "Benin bronze plaques in the British Museum",
+      "Nok terracotta sculptures in Nigerian museums",
+      "Nike Art Gallery in Lagos"
+    ],
+    "created_at": "2026-06-13T21:46:12.528427+00:00"
+  },
+  {
+    "id": "3c07ca6c-d067-43d9-b13d-ba4bde068709",
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Printmaking",
+    "language": "en",
+    "content": "Printmaking is making multiple copies of an artwork. The artist creates a master design on a surface (wood, rubber, linoleum), inks it, then presses paper onto it to make prints. Types of printmaking: woodcut (carving into wood), linocut (carving into linoleum), screen printing (using a mesh screen), and collagraph (gluing textures onto a surface). Nigerian printmakers include Bruce Onobrakpeya, who invented a new method called 'plastocast.' Printmaking allows artists to make many copies of their work, making art more affordable. You can try simple printmaking at home using potatoes or sponges cut into shapes and dipped in paint.",
+    "summary": "Printmaking creates multiple copies of artwork. Types: woodcut, linocut, screen printing. Nigerian artist Bruce Onobrakpeya invented 'plastocast.' Try potato or sponge prints at home.",
+    "learning_objectives": [
+      "Understand what printmaking is",
+      "Identify printmaking methods",
+      "Learn about Nigerian printmakers"
+    ],
+    "nigerian_examples": [
+      "Bruce Onobrakpeya's plastocast prints",
+      "School art classes making potato prints",
+      "Printed fabrics using screen printing"
+    ],
+    "created_at": "2026-06-13T21:48:23.011971+00:00"
+  },
+  {
+    "id": "50a8aab0-3e20-4daf-9889-c58387ed871b",
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Sculpture and Crafts",
+    "language": "en",
+    "content": "Sculpture is art made by carving, modeling, or casting materials like wood, stone, clay, or metal. Nigerian sculpture is famous worldwide. Wood carving: Yoruba sculptors carve masks, figures, and doors. Stone carving: ancient sculptures from the Nok and Ife cultures. Bronze casting: Benin artists used the 'lost-wax' method to create detailed plaques and heads. Modern sculptors use new materials like metal scraps and cement. Crafts include pottery (making pots from clay), beadwork (stringing beads for jewelry and crowns), weaving (making cloth on looms), and leather work (bags, shoes, caps). Crafts are often passed down through families.",
+    "summary": "Sculpture: carving wood, stone, or casting bronze. Lost-wax method for bronze. Crafts: pottery, beadwork, weaving, leather work. Skills passed through generations.",
+    "learning_objectives": [
+      "Understand sculpture techniques",
+      "Learn traditional crafts",
+      "Appreciate handmade art"
+    ],
+    "nigerian_examples": [
+      "Ife bronze heads",
+      "Yoruba carved doors",
+      "Hausa leather sandals"
+    ],
+    "created_at": "2026-06-13T21:46:57.538574+00:00"
+  },
+  {
+    "id": "cd9af0c1-85fa-4bce-a26c-424f19a448f6",
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Comprehension Passages",
+    "language": "en",
+    "content": "Reading comprehension means understanding what you read. When you read a passage, ask yourself: What is the main idea? Who are the characters? Where does the story happen? What happened first, next, and last? Why did characters act that way? After reading, try to summarize in your own words. Good readers think about what they read, not just say the words. Practice with short passages, then answer questions about them. The more you practice comprehension, the better you understand everything you read — from stories to textbooks to news.",
+    "summary": "Comprehension means understanding what you read. Ask: main idea, characters, setting, sequence, reasons. Summarize in your own words. Think while reading.",
+    "learning_objectives": [
+      "Identify main ideas in passages",
+      "Answer comprehension questions",
+      "Summarize what was read"
+    ],
+    "nigerian_examples": [
+      "Reading a passage about Lagos and answering questions",
+      "Understanding a story about Nigerian independence",
+      "Comprehending instructions for a school project"
+    ],
+    "created_at": "2026-06-13T21:01:15.846817+00:00"
+  },
+  {
+    "id": "06e5c0f5-68e1-4108-9b06-bc0fe8c57af8",
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Letter Writing",
+    "language": "en",
+    "content": "Letter writing is a way to communicate with people who are far away. A friendly letter has five parts: heading (your address and date), greeting (Dear ____,), body (your message), closing (Sincerely, Your friend, etc.), and signature (your name). Write clearly and use complete sentences. Friendly letters can thank someone, invite someone, share news, or just say hello. Address the envelope with the recipient's name and address in the center, your return address in the top left, and a stamp in the top right. Letter writing helps you practice organizing thoughts and expressing feelings.",
+    "summary": "Letter parts: heading (address/date), greeting (Dear ___), body (message), closing (Sincerely), signature (name). Write clearly. Use for thanks, invitations, or sharing news.",
+    "learning_objectives": [
+      "Learn the five parts of a friendly letter",
+      "Write a complete letter",
+      "Address an envelope correctly"
+    ],
+    "nigerian_examples": [
+      "Writing a thank-you letter to a grandparent in another state",
+      "Sending a letter to a friend who moved away",
+      "Inviting a cousin to visit during holidays"
+    ],
+    "created_at": "2026-06-13T21:04:12.044992+00:00"
+  },
+  {
+    "id": "8085a31e-c71f-4c0e-963d-e73beeb3102d",
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Parts of Speech",
+    "language": "en",
+    "content": "Parts of speech are the categories of words based on how they work in sentences. The main parts are: nouns (person, place, thing: 'teacher', 'school', 'book'), verbs (action words: 'run', 'jump', 'think'), adjectives (describe nouns: 'big', 'red', 'happy'), adverbs (describe verbs: 'quickly', 'loudly', 'well'), pronouns (replace nouns: 'I', 'you', 'he', 'she', 'it', 'we', 'they'), prepositions (show position: 'in', 'on', 'under', 'between'), conjunctions (connect words: 'and', 'but', 'or'), and interjections (express emotion: 'Wow!', 'Oh!', 'Oops!'). Knowing parts of speech helps you write better sentences.",
+    "summary": "Parts of speech: nouns (person/place/thing), verbs (actions), adjectives (describe nouns), adverbs (describe verbs), pronouns (replace nouns). Knowing them improves writing.",
+    "learning_objectives": [
+      "Identify the eight parts of speech",
+      "Understand how each part functions",
+      "Use parts of speech to improve writing"
+    ],
+    "nigerian_examples": [
+      "Noun: 'Lagos', Verb: 'grows', Adjective: 'busy', Adverb: 'rapidly'",
+      "Pronoun: 'She' replaces 'Amina'",
+      "Preposition: 'in' as in 'in Kano State'"
+    ],
+    "created_at": "2026-06-13T21:01:57.676859+00:00"
+  },
+  {
+    "id": "a2703cc1-9f0b-4b11-96f0-e08010ec8052",
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Phoneme Identification",
+    "language": "en",
+    "content": "Phonemes are the smallest sounds in words. English has about 44 phonemes. Learning to identify phonemes helps you spell and read better. For example, the word 'cat' has three phonemes: /c/ /a/ /t/. The word 'ship' has three phonemes: /sh/ /i/ /p/. Some phonemes are made by one letter (b, d, f), others by two letters (sh, ch, th), and some by three letters (igh, air). Practice by saying words slowly and counting the sounds. Try: 'fish' (f-i-sh = 3), 'train' (t-r-ai-n = 4), 'laugh' (l-ah-f = 3). Phoneme awareness is the foundation of good reading and spelling!",
+    "summary": "Phonemes are smallest sounds in words. 'cat' has 3 phonemes: /c/ /a/ /t/. Some phonemes use 2-3 letters (sh, ch, igh). Count sounds to identify phonemes.",
+    "learning_objectives": [
+      "Identify phonemes in words",
+      "Count how many sounds are in a word",
+      "Recognize common phoneme patterns"
+    ],
+    "nigerian_examples": [
+      "Breaking down 'Abuja' into phonemes: /A/ /b/ /u/ /j/ /a/",
+      "Counting sounds in 'Lagos': /L/ /a/ /g/ /o/ /s/",
+      "Identifying phonemes in 'Niger': /N/ /i/ /g/ /er/"
+    ],
+    "created_at": "2026-06-13T21:00:25.972951+00:00"
+  },
+  {
+    "id": "61b7c1e0-df39-40f2-a67e-df65cbb458b2",
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Punctuation",
+    "language": "en",
+    "content": "Punctuation marks are symbols that make writing clear and easy to read. Period (.) ends a sentence. Question mark (?) ends a question. Exclamation point (!) shows strong feeling or excitement. Comma (,) shows a pause or separates items in a list: 'I bought yams, rice, and beans.' Apostrophe (') shows possession ('Amina's book') or missing letters ('don't' for 'do not'). Quotation marks (' ') show someone's exact words. Capital letters start sentences and proper nouns (names of people, places, days, months). Good punctuation makes your writing professional and clear.",
+    "summary": "Punctuation: period (.), question mark (?), exclamation point (!), comma (,), apostrophe ('), quotation marks (' '). Capital letters start sentences and proper nouns.",
+    "learning_objectives": [
+      "Identify common punctuation marks",
+      "Use punctuation correctly in sentences",
+      "Understand why punctuation matters"
+    ],
+    "nigerian_examples": [
+      "Question mark: 'Where is Abuja?'",
+      "Apostrophe: 'Chidi's backpack'",
+      "Comma: 'Lagos, Kano, and Port Harcourt are big cities'"
+    ],
+    "created_at": "2026-06-13T21:02:39.96972+00:00"
+  },
+  {
+    "id": "56f85ad4-224e-42db-8616-c6b18def6ac2",
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Dental Hygiene",
+    "language": "en",
+    "content": "Dental hygiene means keeping your teeth and gums healthy. Brush your teeth twice a day for two minutes each time. Use fluoride toothpaste and a soft-bristled brush. Hold the brush at a 45-degree angle and use small circles. Brush all surfaces: front, back, and chewing surfaces. Don't forget to brush your tongue. Floss once a day to clean between teeth where brushes can't reach. Limit sugary foods and drinks like sweets, soda, and candy. Visit a dentist every six months. Healthy teeth help you eat, speak, and smile with confidence. Cavities are preventable with good habits.",
+    "summary": "Dental hygiene: brush twice daily for 2 minutes, use fluoride toothpaste, brush all tooth surfaces, floss daily, limit sugar, visit dentist every 6 months.",
+    "learning_objectives": [
+      "Learn proper toothbrushing technique",
+      "Understand importance of flossing",
+      "Identify foods that harm teeth"
+    ],
+    "nigerian_examples": [
+      "Brushing after breakfast before school",
+      "Using chewing stick (orin/miswak) as traditional alternative",
+      "Dental checkups during school health programs"
+    ],
+    "created_at": "2026-06-13T22:02:16.130991+00:00"
+  },
+  {
+    "id": "9db1c027-cdfe-48ba-9478-2229216190d3",
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Disease Prevention",
+    "language": "en",
+    "content": "Disease prevention means taking action to avoid getting sick. Wash hands frequently with soap and water, especially before eating, after toilet, after coughing/sneezing. Get all recommended vaccines (immunizations) - they protect you from serious diseases like measles, polio, and tetanus. Cover your mouth with your elbow when coughing or sneezing (not your hand). Stay home when you are sick to avoid spreading germs to others. Eat a balanced diet with fruits and vegetables. Drink clean, boiled or filtered water. Keep your environment clean - no stagnant water where mosquitoes breed. Small actions prevent big illnesses.",
+    "summary": "Disease prevention: wash hands, get vaccines, cover coughs/sneezes (elbow), stay home when sick, eat healthy, drink clean water, no stagnant water for mosquitoes.",
+    "learning_objectives": [
+      "Identify disease prevention methods",
+      "Understand importance of vaccines",
+      "Practice healthy habits daily"
+    ],
+    "nigerian_examples": [
+      "Getting polio vaccine during National Immunization Days",
+      "Sleeping under insecticide-treated mosquito nets",
+      "Boiling drinking water before use"
+    ],
+    "created_at": "2026-06-13T22:05:12.93355+00:00"
+  },
+  {
+    "id": "98497d14-55db-4ecf-a3a8-a2c01ce423fc",
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Skin Care",
+    "language": "en",
+    "content": "Skin care means keeping your skin clean and healthy. Your skin is your body's largest organ - it protects you from germs. Bathe daily with soap and water to remove sweat, dirt, and bacteria. Pay attention to areas like armpits, feet, and groin where sweat collects. Dry your skin completely with a clean towel. Use lotion if your skin gets dry. Protect your skin from the sun by wearing hats and clothes. Avoid touching your face with dirty hands. If you get a cut or scrape, clean it with water, apply antiseptic, and cover with a bandage. Healthy skin looks smooth and clear.",
+    "summary": "Skin care: bathe daily, wash all body parts, dry completely, use lotion for dry skin, protect from sun, clean cuts with antiseptic and bandage.",
+    "learning_objectives": [
+      "Learn daily skin care habits",
+      "Understand how to care for cuts and scrapes",
+      "Recognize signs of healthy skin"
+    ],
+    "nigerian_examples": [
+      "Using African black soap (ose dudu) for bathing",
+      "Applying shea butter for dry skin",
+      "Wearing hats to protect from Nigerian sun"
+    ],
+    "created_at": "2026-06-13T22:03:00.9096+00:00"
+  },
+  {
+    "id": "67d27a95-6efc-46e7-aa26-a352cffa6fbc",
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Study Space Cleanliness",
+    "language": "en",
+    "content": "A clean study space helps you focus and learn better. Keep your desk organized - pencils, books, and supplies in their places. Wipe your desk surface regularly to remove dust and germs. Don't eat at your desk - crumbs attract pests and make mess. Put away materials after each study session. Keep your room or study area well-ventilated (open window for fresh air). Good lighting prevents eye strain. A clean, organized space reduces stress and helps you find what you need quickly. Take 5 minutes at the end of each day to tidy up. Your study space affects your learning!",
+    "summary": "Clean study space improves focus: organize desk, wipe surfaces, no eating, put away materials, good lighting, tidy 5 minutes daily. Less stress, better learning.",
+    "learning_objectives": [
+      "Learn to organize study space",
+      "Understand why cleanliness helps learning",
+      "Develop daily tidying habit"
+    ],
+    "nigerian_examples": [
+      "Arranging textbooks and notebooks by subject",
+      "Cleaning desk before homework time",
+      "Using natural light from window during daytime"
+    ],
+    "created_at": "2026-06-13T22:04:28.899596+00:00"
+  },
+  {
+    "id": "bd51ec8d-2a4c-4cbd-b46a-d6472f8f3f6f",
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Waste Management",
+    "language": "en",
+    "content": "Waste management means handling rubbish properly to keep the environment clean. Types of waste: organic (food scraps, leaves - can compost), recyclable (paper, plastic bottles, glass, metal), and non-recyclable (things that can't be reused). At home, separate waste into different bins. Recycle items like plastic bottles, cans, and paper. Compost food scraps to make fertilizer for plants. Never burn rubbish - it pollutes the air. Don't dump waste in drains or gutters - it causes flooding. Proper waste management prevents disease, keeps neighborhoods clean, and protects the environment. Reduce, reuse, recycle!",
+    "summary": "Waste management: separate organic, recyclable, non-recyclable. Recycle plastic, paper, metal. Compost food scraps. Don't burn rubbish or dump in drains. Reduce, reuse, recycle.",
+    "learning_objectives": [
+      "Identify different types of waste",
+      "Learn recycling and composting",
+      "Understand proper waste disposal"
+    ],
+    "nigerian_examples": [
+      "Separating plastic bottles for recycling",
+      "Using food scraps to compost for gardens",
+      "Participating in community cleanup days"
+    ],
+    "created_at": "2026-06-13T22:03:44.845341+00:00"
+  },
+  {
+    "id": "e2809c6d-6640-403a-978d-581cafa4df9a",
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Accountability",
+    "language": "en",
+    "content": "Accountability means taking responsibility for your actions and decisions. Good leaders hold themselves accountable - they admit mistakes, learn from them, and make things right. If you promised to do something, do it. If you can't, communicate early. When you make a mistake, say 'I was wrong' and 'What can I do to fix it?' Don't blame others or make excuses. Accountable leaders earn trust because people know they can rely on them. In Nigerian culture, keeping promises and owning your actions is a sign of good character and integrity.",
+    "summary": "Accountability = taking responsibility for actions. Admit mistakes, learn, fix problems. Don't blame others. Keep promises. Accountable leaders earn trust.",
+    "learning_objectives": [
+      "Understand what accountability means",
+      "Learn to admit mistakes gracefully",
+      "Build trust through reliability"
+    ],
+    "nigerian_examples": [
+      "Admitting you forgot to do your chore and doing it immediately",
+      "Owning up to breaking a classmate's pencil and replacing it",
+      "Apologizing when you say something hurtful"
+    ],
+    "created_at": "2026-06-13T22:14:10.862821+00:00"
+  },
+  {
+    "id": "8bd195d1-4847-4557-9c52-857311e62a66",
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Conflict Mediation",
+    "language": "en",
+    "content": "Conflict mediation is helping others resolve disagreements peacefully. As a leader, you may need to mediate between teammates. Steps: listen to each person without interrupting, stay neutral (don't take sides), help them express feelings using 'I feel' statements, find common ground, brainstorm solutions together, agree on a solution, and follow up. Never yell or blame. In Nigerian culture, community leaders and elders often mediate family and village disputes. Mediation builds peace and strengthens relationships. Good mediators are trusted and respected.",
+    "summary": "Mediation = helping others resolve conflicts. Listen to all sides, stay neutral, find common ground, brainstorm solutions, agree, follow up. Builds peace and trust.",
+    "learning_objectives": [
+      "Learn mediation steps",
+      "Practice neutral listening",
+      "Build peacemaking skills"
+    ],
+    "nigerian_examples": [
+      "Classroom prefect mediating between arguing students",
+      "Elders settling village disputes",
+      "Sports captain resolving team conflicts"
+    ],
+    "created_at": "2026-06-13T22:13:27.446468+00:00"
+  },
+  {
+    "id": "fb197d69-bd9f-4367-a50b-32a69be177a5",
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Delegating Tasks",
+    "language": "en",
+    "content": "Delegating means assigning tasks to team members instead of doing everything yourself. Good leaders delegate because they trust their team. Steps: know what needs to be done, match tasks to people's strengths, explain clearly what to do, provide needed resources, check progress without micromanaging, and thank them afterward. Delegating helps you focus on important tasks and helps team members develop new skills. In Nigerian schools, class monitors delegate cleaning duties. Leaders who delegate get more done and build stronger teams.",
+    "summary": "Delegating = assigning tasks to others. Match tasks to strengths, explain clearly, check progress, thank team. Helps everyone grow and get more done.",
+    "learning_objectives": [
+      "Understand what delegating means",
+      "Learn to assign tasks effectively",
+      "Build trust in team members"
+    ],
+    "nigerian_examples": [
+      "Class monitor assigning cleaning duties",
+      "Group project leader dividing research topics",
+      "Sports captain assigning positions"
+    ],
+    "created_at": "2026-06-13T22:11:48.298715+00:00"
+  },
+  {
+    "id": "3691fbf9-b22e-48e0-8cd1-7ada6075fa05",
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Inspiring Others",
+    "language": "en",
+    "content": "Inspiring others means motivating them to do their best. Leaders inspire by example - working hard, staying positive, and treating others with respect. Share your vision: 'We can do this together!' Recognize effort: 'Great job, keep going!' Show enthusiasm and belief in your team. Tell stories of success and persistence. In Nigerian history, leaders like Nnamdi Azikiwe and Funmilayo Ransome-Kuti inspired people to fight for independence and women's rights. You can inspire classmates by encouraging them, helping when they struggle, and celebrating their successes.",
+    "summary": "Inspire others: lead by example, share vision, recognize effort, show enthusiasm, tell success stories. Inspired teams achieve more together.",
+    "learning_objectives": [
+      "Learn to motivate teammates",
+      "Lead by positive example",
+      "Share encouraging words"
+    ],
+    "nigerian_examples": [
+      "MKO Abiola's inspiring speeches",
+      "Teachers motivating students to excel",
+      "Sports captains rallying the team"
+    ],
+    "created_at": "2026-06-13T22:14:53.074143+00:00"
+  },
+  {
+    "id": "867ad0f4-1239-4d55-ba3a-7caa6291bfaf",
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Managing Resources",
+    "language": "en",
+    "content": "Resource management means using time, money, materials, and people wisely. Good leaders plan ahead. For time: make to-do lists, prioritize important tasks, avoid wasting time. For materials: use supplies carefully, don't waste, share with others. For money: budget, save for important things, avoid unnecessary spending. For people: respect everyone's time, don't overload teammates. In Nigerian schools, leaders manage classroom supplies like books and chalk. Good resource management helps teams succeed without waste or stress.",
+    "summary": "Resource management: use time, money, materials, people wisely. Plan ahead, prioritize, avoid waste, respect others' time. Success without waste or stress.",
+    "learning_objectives": [
+      "Identify different types of resources",
+      "Learn to manage time effectively",
+      "Practice responsible resource use"
+    ],
+    "nigerian_examples": [
+      "Managing textbook distribution in class",
+      "Budgeting pocket money for the week",
+      "Using art supplies without waste"
+    ],
+    "created_at": "2026-06-13T22:12:39.085806+00:00"
+  },
+  {
+    "id": "b4058b25-dab8-4339-95a4-a0dba19dabb1",
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Decimals",
+    "language": "en",
+    "content": "Decimals are another way to write fractions. A decimal point separates whole numbers from parts of a whole. Tenths: 0.1 = 1/10, 0.2 = 2/10, 0.9 = 9/10. Hundredths: 0.01 = 1/100, 0.25 = 25/100 = 1/4. Money is a good example: 0.5 naira = 50 kobo (half a naira). To compare decimals, look at the tenths place first, then hundredths: 0.3 > 0.25 because 3 tenths is more than 2 tenths. To add decimals, line up the decimal points: 1.5 + 2.3 = 3.8. Decimals are used for money, measurements, and many everyday situations.",
+    "summary": "Decimals show parts of a whole. Tenths: 0.1 = 1/10. Hundredths: 0.01 = 1/100. Line up decimal points to add or subtract. Used for money and measurements.",
+    "learning_objectives": [
+      "Understand decimal place values (tenths, hundredths)",
+      "Compare decimals",
+      "Add and subtract decimals"
+    ],
+    "nigerian_examples": [
+      "0.5 naira = 50 kobo (half a naira)",
+      "A pencil costs 1.50 naira = 1 naira and 50 kobo",
+      "A distance of 2.5 kilometers"
+    ],
+    "created_at": "2026-06-13T21:09:10.892047+00:00"
+  },
+  {
+    "id": "18aff7b8-9088-4af8-9546-4f6276c1fa03",
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Fractions",
+    "language": "en",
+    "content": "Fractions represent parts of a whole. The top number is the numerator (how many parts you have). The bottom number is the denominator (how many equal parts make a whole). Examples: 1/2 (half), 1/4 (quarter), 3/4 (three quarters). Equivalent fractions are different fractions that mean the same amount: 1/2 = 2/4 = 3/6 = 4/8. To compare fractions with the same denominator, look at the numerator: 3/4 > 1/4. To add fractions with the same denominator, add the numerators: 1/4 + 2/4 = 3/4. Fractions help you measure, cook, and share things fairly.",
+    "summary": "Fractions show parts of a whole. Numerator/denominator. Equivalent fractions: 1/2 = 2/4 = 3/6. Add same denominators by adding numerators.",
+    "learning_objectives": [
+      "Understand numerator and denominator",
+      "Identify equivalent fractions",
+      "Add and compare fractions"
+    ],
+    "nigerian_examples": [
+      "Cutting a watermelon into 8 slices, eating 3 slices = 3/8",
+      "1/2 of an hour = 30 minutes before school",
+      "3/4 of a cake after sharing"
+    ],
+    "created_at": "2026-06-13T21:08:21.628824+00:00"
+  },
+  {
+    "id": "839daedf-668c-4a91-93ac-da2216a1a7dc",
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Geometry Basics",
+    "language": "en",
+    "content": "Geometry is the study of shapes, sizes, and positions of figures. Points are exact locations (represented by a dot). Lines are straight paths going in two directions forever. Line segments are parts of lines with two endpoints. Rays have one endpoint and go forever in one direction. Angles are formed by two rays meeting at a point. Types of angles: acute (less than 90 degrees), right (exactly 90 degrees), obtuse (more than 90 degrees). Shapes include triangles (3 sides), squares (4 equal sides), rectangles (4 sides, opposite sides equal), circles (round), and polygons (many sides). Geometry helps you understand the world around you.",
+    "summary": "Geometry studies shapes and angles. Points, lines, line segments, rays. Angles: acute (<90°), right (90°), obtuse (>90°). Shapes: triangles, squares, rectangles, circles.",
+    "learning_objectives": [
+      "Identify basic geometric terms",
+      "Classify angles",
+      "Recognize common shapes"
+    ],
+    "nigerian_examples": [
+      "A square plot of land",
+      "The right angle corners of a classroom",
+      "Circular pots in the kitchen"
+    ],
+    "created_at": "2026-06-13T21:09:53.539411+00:00"
+  },
+  {
+    "id": "2b800fe7-4cf9-4945-8452-3eb03b15c6ca",
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Long Division",
+    "language": "en",
+    "content": "Long division helps you divide larger numbers. Remember the steps: Divide, Multiply, Subtract, Bring down. Example: 84 ÷ 3. Step 1: Divide 8 by 3 = 2 (write 2 above). Step 2: Multiply 2 × 3 = 6 (write under 8). Step 3: Subtract 8 - 6 = 2. Step 4: Bring down the 4 to make 24. Then repeat: Divide 24 by 3 = 8, Multiply 8 × 3 = 24, Subtract 24 - 24 = 0. Answer: 28. Practice with numbers that divide evenly first, then try harder problems.",
+    "summary": "Long division steps: Divide, Multiply, Subtract, Bring down. Example: 84÷3 = 28. Practice with even division first.",
+    "learning_objectives": [
+      "Learn the four steps of long division",
+      "Divide three-digit numbers by one-digit numbers",
+      "Check division by multiplying"
+    ],
+    "nigerian_examples": [
+      "Dividing 96 mangoes among 4 children = 24 each",
+      "96 ÷ 4 = 24",
+      "75 naira divided by 5 people = 15 naira each"
+    ],
+    "created_at": "2026-06-13T21:07:36.070909+00:00"
+  },
+  {
+    "id": "a144d359-c8b5-45c2-ae9f-c008952d9ce4",
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Multiplication Tables",
+    "language": "en",
+    "content": "Multiplication tables help you multiply numbers quickly. You should memorize tables from 1 to 10. The 1 times table is easy: any number times 1 equals itself. The 2 times table doubles the number. The 5 times table ends with 0 or 5. The 10 times table adds a zero. Practice each table until you know it by heart. For example: 3 × 4 = 12, 6 × 7 = 42, 8 × 9 = 72. Use tricks to remember: 9 × 6 = 54 (the tens digit is one less than 6, and 5+4=9). Learning multiplication tables makes math much faster and easier.",
+    "summary": "Memorize multiplication tables 1-10. 1×n=n, 2×n doubles, 5×n ends in 0/5, 10×n adds zero. Use tricks like 9×6=54 (tens digit one less than 6, digits sum to 9).",
+    "learning_objectives": [
+      "Memorize multiplication tables 1-10",
+      "Use tricks to remember facts",
+      "Apply multiplication to solve problems"
+    ],
+    "nigerian_examples": [
+      "4 packs of biscuits with 6 each = 4 × 6 = 24 biscuits",
+      "7 rows of 8 chairs = 56 chairs in a hall",
+      "5 students each bringing 9 books = 45 books total"
+    ],
+    "created_at": "2026-06-13T21:06:53.130479+00:00"
+  },
+  {
+    "id": "a522f16c-2ec1-4e45-b210-6c9377ccc280",
+    "grade": 3,
+    "subject": "Nigerian History",
+    "topic": "Colonial History",
+    "language": "en",
+    "content": "Colonial history is the period when European countries ruled Nigeria. British colonization began in the late 1800s. The Royal Niger Company controlled trade, then Britain declared Nigeria a colony in 1900. In 1914, the British merged the Northern and Southern protectorates to form one Nigeria. This was called the Amalgamation of 1914. The British ruled through indirect rule - they governed through local traditional leaders. Colonization brought changes: English language, Western education, Christianity, new laws, and railways. However, Nigerians were not allowed to govern themselves. Many Nigerians resisted colonial rule through protests and movements.",
+    "summary": "British colonized Nigeria late 1800s. 1914: Amalgamation united north and south. Indirect rule used traditional leaders. Colonization brought English, schools, railways, but no self-rule.",
+    "learning_objectives": [
+      "Understand what colonization was",
+      "Learn about the 1914 Amalgamation",
+      "Know how British ruled Nigeria"
+    ],
+    "nigerian_examples": [
+      "English language still used in schools today",
+      "Railways built during colonial times still exist",
+      "Traditional rulers still respected in communities"
+    ],
+    "created_at": "2026-06-13T21:33:55.043294+00:00"
+  },
+  {
+    "id": "fced6f1c-352c-4148-840a-ce8ed7a70697",
+    "grade": 3,
+    "subject": "Nigerian History",
+    "topic": "National Heroes",
+    "language": "en",
+    "content": "National heroes are people who made great contributions to Nigeria. Herbert Macaulay fought for Nigeria's independence and is called the 'Father of Nigerian Nationalism.' Nnamdi Azikiwe was the first President and a leading independence fighter. Obafemi Awolowo introduced free primary education in western Nigeria and modernized agriculture. Ahmadu Bello was the Premier of northern Nigeria and worked for regional development. Funmilayo Ransome-Kuti fought for women's rights and against colonial rule. Tafawa Balewa was the first Prime Minister. Queen Amina of Zazzau was a warrior queen who expanded her territory in the 1500s. These heroes inspire us to work for Nigeria.",
+    "summary": "National heroes: Herbert Macaulay (nationalism), Nnamdi Azikiwe (first President), Obafemi Awolowo (free education), Ahmadu Bello, Funmilayo Ransome-Kuti (women's rights).",
+    "learning_objectives": [
+      "Identify Nigerian national heroes",
+      "Understand their contributions",
+      "Learn from their examples"
+    ],
+    "nigerian_examples": [
+      "Herbert Macaulay's statue in Lagos",
+      "Nnamdi Azikiwe on the 500 naira note",
+      "Queen Amina's legacy in Zaria"
+    ],
+    "created_at": "2026-06-13T21:35:33.7559+00:00"
+  },
+  {
+    "id": "2310194c-ee0d-4717-9d10-d4c037cc05b1",
+    "grade": 3,
+    "subject": "Nigerian History",
+    "topic": "Nigerian Kingdoms",
+    "language": "en",
+    "content": "Before Nigeria became one country, there were powerful kingdoms. The Nri Kingdom in Igboland (900 AD) was known for peace and justice. The Benin Kingdom (1100 AD) was famous for its bronze artwork and strong army. The Oyo Empire (1300 AD) was one of the largest empires in West Africa, known for its cavalry and trade. The Hausa Kingdoms (including Kano, Katsina, Zaria) were important trading centers connected to the trans-Saharan trade route. These kingdoms had kings, councils, and systems of government long before Europeans arrived. Their art, culture, and traditions continue to influence Nigeria today.",
+    "summary": "Powerful kingdoms before Nigeria: Nri (peace, justice), Benin (bronze art), Oyo Empire (cavalry, trade), Hausa Kingdoms (trade centers). Each had advanced government.",
+    "learning_objectives": [
+      "Identify major pre-colonial Nigerian kingdoms",
+      "Understand their achievements",
+      "Appreciate Nigeria's rich history"
+    ],
+    "nigerian_examples": [
+      "Benin bronze plaques in museums",
+      "Ancient walls of Kano",
+      "Oyo Empire's traditional titles still used today"
+    ],
+    "created_at": "2026-06-13T21:33:11.251762+00:00"
+  },
+  {
+    "id": "cd3d7094-3903-4c0d-8c08-dd91f6606cc1",
+    "grade": 3,
+    "subject": "Nigerian History",
+    "topic": "Post Colonial Nigeria",
+    "language": "en",
+    "content": "After independence in 1960, Nigeria faced many challenges. There was a military coup in 1966, followed by the Nigerian Civil War (1967-1970), also called the Biafran War. The war was fought between Nigeria and the secessionist state of Biafra. Millions of people died, mostly from hunger. After the war, Nigeria worked to rebuild. Nigeria became a republic again in 1979, then had more military rule, then returned to democracy in 1999 with the election of President Olusegun Obasanjo. Since 1999, Nigeria has had democratic elections every four years. Today, Nigeria continues to grow and develop, despite challenges.",
+    "summary": "After independence: 1966 coup, Nigerian Civil War (1967-1970) with Biafra. Millions died. Returned to democracy 1999 with Obasanjo. Democratic elections since.",
+    "learning_objectives": [
+      "Understand the Nigerian Civil War",
+      "Know about military rule periods",
+      "Learn about return to democracy"
+    ],
+    "nigerian_examples": [
+      "Peacekeeping efforts after the civil war",
+      "Democratic elections since 1999",
+      "Nigeria's growing economy today"
+    ],
+    "created_at": "2026-06-13T21:36:17.201107+00:00"
+  },
+  {
+    "id": "72d26c34-d85f-48a5-b933-b97d8254cbcc",
+    "grade": 3,
+    "subject": "Nigerian History",
+    "topic": "Road to Independence",
+    "language": "en",
+    "content": "Nigeria's journey to independence took many years. After World War II, Nigerians demanded more freedom. Political parties formed: NCNC (Nnamdi Azikiwe), Action Group (Obafemi Awolowo), NPC (Ahmadu Bello). In the 1950s, Nigeria got more self-government. On October 1, 1960, Nigeria became independent. The British flag was lowered, and the Nigerian green-white-green flag was raised. Nnamdi Azikiwe became Governor-General (later President). Tafawa Balewa became Prime Minister. Independence meant Nigerians could now make their own laws and choose their own leaders. October 1 is celebrated every year as Independence Day.",
+    "summary": "Independence: October 1, 1960. Political parties formed. British flag lowered, Nigerian flag raised. Nnamdi Azikiwe (President), Tafawa Balewa (Prime Minister).",
+    "learning_objectives": [
+      "Know when Nigeria gained independence",
+      "Identify key independence leaders",
+      "Understand what independence means"
+    ],
+    "nigerian_examples": [
+      "Independence Day celebrations every October 1",
+      "Nnamdi Azikiwe on the 500 naira note",
+      "Green-white-green flag flying everywhere on Independence Day"
+    ],
+    "created_at": "2026-06-13T21:34:43.776624+00:00"
+  },
+  {
+    "id": "3dcfdcad-c6bd-47c6-b999-398a1cea6977",
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "Athletics",
+    "language": "en",
+    "content": "Athletics includes running, jumping, and throwing events. Track events include sprints (short fast runs), middle distance, long distance, and relays (team races passing a baton). Field events include long jump (run and jump into sand pit), high jump (jump over a bar), shot put (push a heavy ball), and javelin (throw a spear-like object). Always warm up before athletics with stretching and light jogging. Wear proper sports shoes and clothing. Athletics builds speed, strength, endurance, and discipline. It's fun to compete and try to beat your personal best!",
+    "summary": "Athletics: track events (running, relays) and field events (jumping, throwing). Warm up before events. Builds speed, strength, endurance. Try to beat personal bests.",
+    "learning_objectives": [
+      "Identify track and field events",
+      "Learn proper warm-up techniques",
+      "Understand athletic competition"
+    ],
+    "nigerian_examples": [
+      "Nigerian athletes competing at the National Sports Festival",
+      "Inter-house sports competitions in schools",
+      "Famous Nigerian athletes like Blessing Okagbare"
+    ],
+    "created_at": "2026-06-13T21:19:02.317254+00:00"
+  },
+  {
+    "id": "ebe7a947-6aba-405e-9f54-43becb4af4cc",
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "Disease Prevention",
+    "language": "en",
+    "content": "Disease prevention means taking steps to avoid getting sick. Wash hands regularly with soap and water, especially before eating and after using the toilet. Get vaccinated - vaccines protect you from serious diseases like measles, polio, and tetanus. Cover your mouth when coughing or sneezing (use your elbow, not your hand). Don't share personal items like toothbrushes or combs. Eat healthy foods, drink clean water, get enough sleep, and exercise regularly. Stay home when you are sick to avoid spreading germs to others. Small daily habits prevent big illnesses.",
+    "summary": "Disease prevention: wash hands, get vaccines, cover coughs/sneezes, don't share personal items, eat healthy, sleep enough, stay home when sick.",
+    "learning_objectives": [
+      "Learn daily habits that prevent disease",
+      "Understand why vaccines are important",
+      "Know how to avoid spreading germs"
+    ],
+    "nigerian_examples": [
+      "Polio vaccination campaigns in Nigeria",
+      "Handwashing stations at school",
+      "National Immunization Days"
+    ],
+    "created_at": "2026-06-13T21:21:22.851763+00:00"
+  },
+  {
+    "id": "21fedbc8-5864-4f9f-9016-5a9ce602e77d",
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "First Aid Basics",
+    "language": "en",
+    "content": "First aid is the immediate help given to an injured person before professional medical help arrives. For cuts and scrapes: clean with water, apply antiseptic, cover with bandage. For burns: run cool water over the burn for 10-15 minutes, don't apply ice or cream. For nosebleeds: lean forward slightly, pinch nostrils for 10 minutes. For sprains: rest the injured part, apply ice wrapped in cloth, compress with bandage, elevate above heart. Always tell an adult about any injury. Never move someone who is seriously injured. Keep a first aid kit at home and school.",
+    "summary": "First aid: immediate help for injuries. Cuts: clean, antiseptic, bandage. Burns: cool water 10-15 min. Nosebleeds: lean forward, pinch. Always tell an adult.",
+    "learning_objectives": [
+      "Learn basic first aid for common injuries",
+      "Know when to get an adult",
+      "Understand what's in a first aid kit"
+    ],
+    "nigerian_examples": [
+      "School first aid kits in the principal's office",
+      "Nigerian Red Cross teaching first aid",
+      "Keeping a first aid box at home"
+    ],
+    "created_at": "2026-06-13T21:20:31.371197+00:00"
+  },
+  {
+    "id": "0d5fb2e0-c27f-41d1-9b1d-5448f6e3ce55",
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "Growth and Development",
+    "language": "en",
+    "content": "Growth and development is how your body changes as you get older. From birth to adulthood, your body grows taller and stronger. Your bones grow, your muscles develop, and your brain learns new things every day. To grow well, you need: nutritious food (proteins, fruits, vegetables, grains), regular exercise (running, playing, sports), enough sleep (9-11 hours for children), and plenty of water. Growth happens at different speeds for different people - some grow faster, some grow slower, and that's normal. Taking care of your body now helps you become a strong, healthy adult.",
+    "summary": "Growth and development = body changes as you age. Need: good food, exercise, sleep (9-11 hours), water. Everyone grows at their own pace. That's normal.",
+    "learning_objectives": [
+      "Understand how bodies grow and develop",
+      "Learn what helps healthy growth",
+      "Accept that everyone grows at different rates"
+    ],
+    "nigerian_examples": [
+      "Measuring height at school each term",
+      "Eating balanced Nigerian meals for growth",
+      "Playing sports to develop muscles"
+    ],
+    "created_at": "2026-06-13T21:22:12.942427+00:00"
+  },
+  {
+    "id": "49b13e6e-b529-405c-b269-4fe864246519",
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "Team Sports",
+    "language": "en",
+    "content": "Team sports involve groups working together to achieve a goal. Popular team sports include football (soccer), basketball, volleyball, and handball. In football, 11 players per team try to score goals by kicking the ball into the net. In basketball, 5 players per team score by throwing the ball through a hoop. In volleyball, 6 players per team hit a ball over a net without letting it touch the ground. Team sports teach cooperation, communication, sportsmanship, and strategy. Every player has a position and important role. The best teams work together, not just rely on one star player.",
+    "summary": "Team sports: football (11 players), basketball (5), volleyball (6). Players work together, communicate, show sportsmanship. Every position matters. Teams win together.",
+    "learning_objectives": [
+      "Identify popular team sports",
+      "Understand basic rules",
+      "Learn teamwork and cooperation"
+    ],
+    "nigerian_examples": [
+      "Football is the most popular sport in Nigeria",
+      "Nigerian Basketball League (NBBF)",
+      "School volleyball teams competing"
+    ],
+    "created_at": "2026-06-13T21:19:46.345542+00:00"
+  },
+  {
+    "id": "f572794d-b925-4f0c-a2db-3d5f79f71f2d",
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Agriculture in Nigeria",
+    "language": "en",
+    "content": "Agriculture is farming and growing food. It is very important in Nigeria. Many Nigerians are farmers. Major crops include: yam (grown in the east and middle belt), cassava (grown everywhere, made into garri and fufu), cocoa (grown in the southwest for chocolate), oil palm (grown in the south for palm oil), groundnuts (grown in the north for oil and snacks), and rice (grown in many states). Farmers also raise animals: goats, sheep, chickens, cows, and fish. Agriculture provides food for families and jobs for millions of Nigerians. It also earns money when crops are exported to other countries.",
+    "summary": "Agriculture is farming. Nigerian crops: yam, cassava, cocoa, oil palm, groundnuts, rice. Animals: goats, sheep, chickens, cows, fish. Provides food and jobs.",
+    "learning_objectives": [
+      "Identify major Nigerian crops",
+      "Understand agriculture's importance",
+      "Know where different crops are grown"
+    ],
+    "nigerian_examples": [
+      "Yam festivals in the east",
+      "Cocoa farms in Ondo and Oyo States",
+      "Groundnut pyramids in Kano"
+    ],
+    "created_at": "2026-06-13T21:41:19.966316+00:00"
+  },
+  {
+    "id": "c9b944d1-ca74-4f6c-8da2-2eeb52004abd",
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "National Symbols",
+    "language": "en",
+    "content": "National symbols represent Nigeria's identity and values. The flag: green-white-green stripes - green represents agriculture and forests, white represents peace. The coat of arms: a black shield (fertile soil) with a white Y-shaped band (Niger and Benue rivers), two horses (dignity), eagle (strength), and the motto 'Unity and Faith, Peace and Progress.' The national anthem: 'Arise, O Compatriots' - we stand to sing it. The national pledge: 'I pledge to Nigeria my country...' - we recite it at school. Other symbols: the black-crowned crane (national bird), the drum (national instrument), and the national flower (Costus spectabilis). These symbols unite Nigerians.",
+    "summary": "National symbols: flag (green-white-green), coat of arms (shield, horses, eagle), anthem (Arise O Compatriots), pledge, national bird (crane). Symbols unite Nigeria.",
+    "learning_objectives": [
+      "Identify major national symbols",
+      "Understand what each symbol means",
+      "Learn the national anthem and pledge"
+    ],
+    "nigerian_examples": [
+      "Standing for the national anthem at school assembly",
+      "The coat of arms on official documents",
+      "The green-white-green flag flown everywhere"
+    ],
+    "created_at": "2026-06-13T21:43:30.672603+00:00"
+  },
+  {
+    "id": "884ef89d-49c8-4d5f-8898-c2c378367f85",
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Nigerian Geography",
+    "language": "en",
+    "content": "Nigeria is located in West Africa. It has 36 states and the Federal Capital Territory (Abuja). Nigeria has diverse geographical features. In the north, there are savanna grasslands and the Sahel region near the Sahara Desert. In the south, there are rainforests, mangroves, and the Atlantic Ocean coastline. Major rivers include the Niger River (West Africa's longest) and the Benue River. They meet at Lokoja (Kogi State). Nigeria also has plateaus (like Jos Plateau), hills, and mountains. This diversity affects the climate, plants, animals, and how people live in different regions.",
+    "summary": "Nigeria in West Africa: 36 states + Abuja. North: savanna, Sahel. South: rainforest, mangroves, ocean. Rivers: Niger and Benue meet at Lokoja. Diverse geography.",
+    "learning_objectives": [
+      "Locate Nigeria on a map of Africa",
+      "Describe Nigeria's geographical regions",
+      "Identify major rivers"
+    ],
+    "nigerian_examples": [
+      "Niger River flowing through Lokoja",
+      "Jos Plateau's cool climate",
+      "Mangrove forests in the Niger Delta"
+    ],
+    "created_at": "2026-06-13T21:40:34.642614+00:00"
+  },
+  {
+    "id": "7c784a06-e928-4c6c-8742-b8330db84d5b",
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Trade and Markets",
+    "language": "en",
+    "content": "Trade is buying and selling goods. Markets are places where trade happens. In Nigeria, markets are very important. There are daily markets, weekly markets (different days in different villages), and large city markets. Famous markets include: Onitsha Main Market (largest in West Africa), Alaba International Market (Lagos, for electronics), Kano Kurmi Market (ancient market, over 500 years old), and Ariaria Market (Aba, for shoes and clothes). People sell food, clothes, electronics, building materials, and traditional crafts. Markets are lively places with bargaining (negotiating prices). Trade connects farmers to city people and Nigeria to other countries through exports.",
+    "summary": "Trade = buying/selling. Markets: Onitsha (largest), Alaba (electronics), Kurmi (ancient), Ariaria (shoes/clothes). Bargaining happens. Trade connects Nigeria to the world.",
+    "learning_objectives": [
+      "Understand what trade is",
+      "Identify major Nigerian markets",
+      "Learn about bargaining"
+    ],
+    "nigerian_examples": [
+      "Onitsha Main Market in Anambra State",
+      "Kurmi Market in Kano operating since the 1500s",
+      "Ariaria Market in Aba known for shoes"
+    ],
+    "created_at": "2026-06-13T21:42:03.612272+00:00"
+  },
+  {
+    "id": "b21f1d14-c22a-4a1a-a9d0-eb1f4adce90d",
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Transport Systems",
+    "language": "en",
+    "content": "Transportation moves people and goods. In Nigeria, there are several transport systems: roads (cars, buses, lorries, okadas, keke napep), railways (passenger and cargo trains), waterways (boats and ferries on rivers and lagoons), and air (airplanes at airports). Major roads connect cities: Lagos-Ibadan Expressway, Abuja-Kaduna Road. Rail lines: Lagos to Kano (standard gauge) and Abuja to Kaduna (modern train). Water transport: ferries on Lagos Lagoon, boats on Niger River. Airports: Murtala Muhammed (Lagos), Nnamdi Azikiwe (Abuja), Mallam Aminu Kano (Kano). Transport helps people travel to work, school, markets, and visit family.",
+    "summary": "Transport systems: roads (cars, buses, okadas), railways (trains), waterways (boats, ferries), air (airplanes). Connects cities: Lagos-Ibadan expressway, Lagos-Kano railway.",
+    "learning_objectives": [
+      "Identify four transport systems",
+      "Learn major transport routes",
+      "Understand how transport helps people"
+    ],
+    "nigerian_examples": [
+      "Lagos-Ibadan Expressway carrying thousands daily",
+      "Abuja-Kaduna train service",
+      "Ferries crossing Lagos Lagoon"
+    ],
+    "created_at": "2026-06-13T21:42:47.111037+00:00"
+  },
+  {
+    "id": "1e3ad64c-1621-42d2-a0eb-98bcec58971d",
+    "grade": 3,
+    "subject": "Teamwork",
+    "topic": "Brainstorming",
+    "language": "en",
+    "content": "Brainstorming is generating many ideas as a team without judging them. Rules: no criticism during brainstorming, encourage wild ideas, build on others' ideas, aim for quantity (many ideas), write all ideas down. After brainstorming, review ideas and pick the best ones. Brainstorming helps teams find creative solutions. In Nigerian schools, teachers use brainstorming for problem-solving, project planning, and creative writing. Everyone's ideas matter. The best idea might come from the quietest person. Make sure everyone participates.",
+    "summary": "Brainstorming = generating many ideas without judgment. Rules: no criticism, encourage wild ideas, build on others, aim for quantity, write all down.",
+    "learning_objectives": [
+      "Learn brainstorming rules",
+      "Generate creative ideas as a team",
+      "Build on others' thoughts"
+    ],
+    "nigerian_examples": [
+      "Brainstorming ideas for Children's Day celebration",
+      "Generating solutions for school cleanup",
+      "Creative writing story ideas as a group"
+    ],
+    "created_at": "2026-06-13T22:18:37.905025+00:00"
+  },
+  {
+    "id": "0d0b40aa-4559-4ea1-9c30-244e4e037cb5",
+    "grade": 3,
+    "subject": "Teamwork",
+    "topic": "Collaborative Success",
+    "language": "en",
+    "content": "Collaborative success means achieving goals together as a team. When the team succeeds, everyone shares the credit. Celebrate as a team - high-fives, cheering, or special treats. Reflect on what worked well and what could improve next time. Thank each person for their contribution. Collaborative success feels better than winning alone because everyone contributed. In Nigerian culture, community achievements like successful harvests, festivals, or building projects are celebrated together. Remember: 'If you want to go fast, go alone. If you want to go far, go together.'",
+    "summary": "Collaborative success = achieving goals together. Share credit, celebrate as team, reflect, thank everyone. Team success feels better than winning alone.",
+    "learning_objectives": [
+      "Understand collaborative success",
+      "Practice team celebration",
+      "Reflect on team performance"
+    ],
+    "nigerian_examples": [
+      "Celebrating after winning inter-house sports",
+      "Whole class passing an exam together",
+      "Community celebrating festival preparations"
+    ],
+    "created_at": "2026-06-13T22:19:22.967292+00:00"
+  },
+  {
+    "id": "58a9f7d9-c6c2-4beb-8bdc-d983458f5f2e",
+    "grade": 3,
+    "subject": "Teamwork",
+    "topic": "Defining Roles",
+    "language": "en",
+    "content": "Defining roles means clearly assigning who does what in a team. Each person has specific responsibilities. Common roles: leader (coordinates), researcher (finds information), writer (writes report), artist (creates visuals), presenter (speaks to audience), timekeeper (tracks deadlines). Clear roles prevent confusion and ensure nothing is forgotten. Roles can rotate so everyone learns different skills. When everyone knows their job, the team works smoothly. In Nigerian schools, group projects work best when roles are assigned from the start.",
+    "summary": "Defining roles = assigning specific responsibilities. Roles: leader, researcher, writer, artist, presenter, timekeeper. Prevents confusion, ensures nothing forgotten.",
+    "learning_objectives": [
+      "Learn common team roles",
+      "Assign roles based on strengths",
+      "Understand why roles matter"
+    ],
+    "nigerian_examples": [
+      "Group project with assigned roles: writer, researcher, artist",
+      "Football team positions: goalkeeper, defender, forward",
+      "Drama group roles: director, actor, costume manager"
+    ],
+    "created_at": "2026-06-13T22:17:10.851224+00:00"
+  },
+  {
+    "id": "6f09f172-d429-40b6-84ca-fcfdd7363a89",
+    "grade": 3,
+    "subject": "Teamwork",
+    "topic": "Group Research",
+    "language": "en",
+    "content": "Group research means team members working together to find information on a topic. Steps: assign topics or questions to each person, each researches their part, then everyone shares findings, combine information, and create final presentation. Use multiple sources like books, internet (with supervision), and asking experts. Take notes in your own words. Respect different opinions. Group research teaches you to divide work, trust teammates, and learn more because many people contribute. In Nigerian schools, students research Nigerian culture, history, or science topics as teams.",
+    "summary": "Group research: divide topics, each researches, share findings, combine. Use books, internet, experts. Respect opinions. Learn more as a team.",
+    "learning_objectives": [
+      "Learn group research process",
+      "Practice dividing work",
+      "Combine information from multiple sources"
+    ],
+    "nigerian_examples": [
+      "Researching Nigerian independence as a group",
+      "Team project on local wildlife",
+      "Group investigation of community water sources"
+    ],
+    "created_at": "2026-06-13T22:16:26.474717+00:00"
+  },
+  {
+    "id": "d6cf0c71-55e2-4627-9f7b-4d4ce07bc96b",
+    "grade": 3,
+    "subject": "Teamwork",
+    "topic": "Supporting Peers",
+    "language": "en",
+    "content": "Supporting peers means helping and encouraging teammates. Ways to support: offer help when someone struggles ('Can I help with that?'), listen when they need to talk, celebrate their successes, encourage them when they're down, share materials, and cover for them if needed (within reason). Never put down or ignore teammates. In Nigerian culture, community support is valued - neighbors help neighbors, teammates help teammates. Supported teams perform better, have more fun, and build lasting friendships. Be the teammate everyone wants on their team.",
+    "summary": "Support peers: offer help, listen, celebrate successes, encourage, share materials. Never put down teammates. Supported teams perform better and build friendships.",
+    "learning_objectives": [
+      "Learn ways to support teammates",
+      "Practice encouragement",
+      "Build team spirit"
+    ],
+    "nigerian_examples": [
+      "Helping a classmate who missed a lesson",
+      "Sharing notes with a sick friend",
+      "Encouraging a teammate who made a mistake"
+    ],
+    "created_at": "2026-06-13T22:17:54.320846+00:00"
+  }
+]

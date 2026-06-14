@@ -1,0 +1,106 @@
+[
+  {
+    "grade": 6,
+    "subject": "Nigerian History",
+    "topic": "Economic History",
+    "language": "en",
+    "content": "Nigeria's economic history spans pre-colonial trade, colonial exploitation, and post-independence development. Pre-colonial: trans-Saharan trade (gold, salt, slaves, kola nuts), groundnut pyramids in Kano, palm oil trade in the east, cocoa in west. Colonial period (1900-1960): British extraction of resources (palm oil, tin, groundnuts, cocoa, hides); introduction of cash crops and taxes; infrastructure (railways, ports) built for export. Post-independence (1960-1970s): import substitution industrialization, first national development plans. Oil era (1970s-present): oil discovery in Oloibiri (1956), 1970s oil boom, over-reliance on oil, neglect of agriculture and manufacturing. Current challenges: oil price volatility, unemployment, inflation, infrastructure deficits. Current opportunities: diversification to agriculture, technology, manufacturing, creative industries. Understanding economic history explains today's strengths and weaknesses.",
+    "summary": "Economic history: pre-colonial trade, colonial extraction (resources, taxes, infrastructure), oil era (1970s boom, over-reliance). Current: diversify away from oil to agriculture, tech, creative industries.",
+    "learning_objectives": [
+      "Trace Nigerian economic evolution",
+      "Understand colonial economic impact",
+      "Analyze oil economy challenges"
+    ],
+    "nigerian_examples": [
+      "Groundnut pyramids in Kano",
+      "Oloibiri oil discovery (1956)",
+      "Railways built for export",
+      "Current tech hubs in Lagos"
+    ],
+    "quiz_questions": [
+      {"question": "When was oil discovered in Nigeria?", "options": ["1946", "1956", "1966", "1976"], "correct_answer": "1956", "explanation": "Oil was discovered at Oloibiri in Bayelsa State in 1956."},
+      {"question": "What was the trans-Saharan trade?", "options": ["Trade across Sahara desert", "Trade by sea", "Local market trade", "Modern air trade"], "correct_answer": "Trade across Sahara desert", "explanation": "Caravans carried gold, salt, slaves, and goods across the desert."},
+      {"question": "What did the British build to export resources?", "options": ["Schools only", "Railways and ports", "Hospitals only", "Churches only"], "correct_answer": "Railways and ports", "explanation": "Infrastructure served colonial extraction."},
+      {"question": "What is Nigeria trying to diversify away from?", "options": ["Agriculture", "Oil", "Manufacturing", "Services"], "correct_answer": "Oil", "explanation": "Oil price volatility hurts the economy; diversification reduces risk."},
+      {"question": "True or False: Nigeria's economy was always oil-dependent.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Before 1970s, agriculture (cocoa, palm oil, groundnuts) dominated."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Nigerian History",
+    "topic": "Social Movements",
+    "language": "en",
+    "content": "Social movements are collective efforts for social change. Nigerian social movements: Women's War (1929) - Igbo women protested warrant chiefs and taxes; over 50 women killed. Nationalist movement (1940s-1960) - fought for independence; leaders: Macaulay, Azikiwe, Awolowo. Anti-corruption movement (1990s-2000s) - advocated for good governance; NADECO, civil society. #EndSARS (2020) - protested police brutality, particularly Special Anti-Robbery Squad; youth-led, global solidarity, resulted in SARS disbandment. Other movements: environmental justice (Niger Delta oil pollution), education access (out-of-school children), gender equality (women's rights). Social movements use protests, petitions, boycotts, social media, strikes, civil disobedience. They succeed with clear demands, organization, public support, and persistence. Social movements have forced government accountability and policy changes.",
+    "summary": "Social movements: Women's War (1929), nationalist movement (independence), #EndSARS (2020 anti-police brutality). Use protests, social media, civil disobedience. Force accountability.",
+    "learning_objectives": [
+      "Identify major Nigerian social movements",
+      "Understand their goals and methods",
+      "Evaluate their impacts"
+    ],
+    "nigerian_examples": [
+      "#EndSARS protests 2020",
+      "Women's War of 1929",
+      "Niger Delta environmental activism",
+      "Nationalist movement for independence"
+    ],
+    "quiz_questions": [
+      {"question": "What was the #EndSARS movement about?", "options": ["End education", "End police brutality (SARS)", "End corruption", "End poverty"], "correct_answer": "End police brutality (SARS)", "explanation": "Youth protested against Special Anti-Robbery Squad abuses."},
+      {"question": "What year was the Women's War?", "options": ["1919", "1929", "1939", "1949"], "correct_answer": "1929", "explanation": "Thousands of Igbo women protested against warrant chiefs and taxes."},
+      {"question": "What method do social movements use?", "options": ["Only violence", "Protests, petitions, social media, civil disobedience", "Only courts", "Only elections"], "correct_answer": "Protests, petitions, social media, civil disobedience", "explanation": "Multiple tactics pressure those in power."},
+      {"question": "What did nationalist movements fight for?", "options": ["Taxes", "Independence from Britain", "More chiefs", "Land"], "correct_answer": "Independence from Britain", "explanation": "Nationalists wanted self-rule for Nigeria."},
+      {"question": "True or False: Social movements have no impact on government policies.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Movements like #EndSARS forced police reform and accountability."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Nigerian History",
+    "topic": "Cultural Renaissance",
+    "language": "en",
+    "content": "Cultural renaissance means revival and celebration of Nigerian culture. After independence, Nigerians rediscovered and promoted indigenous traditions suppressed during colonial rule. Aspects: Language (revitalizing Yoruba, Igbo, Hausa through education, media, literature), Arts (Nigerian artists gaining global recognition: Ben Enwonwu, Bruce Onobrakpeya, El Anatsui), Music (Afrobeats global: Fela Kuti to Burna Boy, Wizkid, Davido; traditional genres: highlife, juju, fuji, gospel), Fashion (Ankara, adire, Aso Oke, agbada, gele on global runways; Lagos Fashion Week), Film (Nollywood tells Nigerian stories; second largest film industry), Literature (Chinua Achebe, Wole Soyinka (Nobel Prize), Chimamanda Adichie, Ben Okri), Food (jollof rice, egusi soup, suya celebrated globally), Festivals (Durbar, Eyo, Osun-Osogbo, Calabar Carnival). Cultural renaissance builds pride, identity, and economic opportunities. You can participate: learn traditional dance, wear traditional clothes, speak indigenous language, celebrate festivals, support Nigerian arts.",
+    "summary": "Cultural renaissance: revival of Nigerian culture. Music (Afrobeats global), film (Nollywood), literature (Soyinka, Adichie), fashion (Ankara, Aso Oke), festivals (Eyo, Durbar, Calabar Carnival).",
+    "learning_objectives": [
+      "Understand cultural renaissance",
+      "Identify cultural achievements",
+      "Participate in cultural celebration"
+    ],
+    "nigerian_examples": [
+      "Afrobeats global stars: Burna Boy, Wizkid, Davido",
+      "Nollywood second largest film industry",
+      "Wole Soyinka's Nobel Prize",
+      "Lagos Fashion Week"
+    ],
+    "quiz_questions": [
+      {"question": "Which Nigerian writer won the Nobel Prize?", "options": ["Chinua Achebe", "Wole Soyinka", "Chimamanda Adichie", "Ben Okri"], "correct_answer": "Wole Soyinka", "explanation": "Soyinka won the Nobel Prize in Literature in 1986."},
+      {"question": "What is Nollywood?", "options": ["Nigerian music", "Nigerian film industry", "Nigerian fashion", "Nigerian food"], "correct_answer": "Nigerian film industry", "explanation": "Nollywood is the second largest film industry by number of films."},
+      {"question": "Which Afrobeats artist won a Grammy?", "options": ["Wizkid", "Davido", "Burna Boy", "All of these"], "correct_answer": "All of these", "explanation": "Burna Boy, Wizkid, and Davido have all won Grammy awards."},
+      {"question": "What is Ankara?", "options": ["Nigerian city", "Colorful printed fabric", "Traditional dance", "Soup"], "correct_answer": "Colorful printed fabric", "explanation": "Ankara fabric is popular for clothing across Nigeria and Africa."},
+      {"question": "True or False: Nigerian culture is only traditional, not modern.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Nigerian culture includes contemporary music, film, fashion, and art."}
+    ]
+  },
+  {
+    "grade": 6,
+    "subject": "Nigerian History",
+    "topic": "Nigeria's Global Role",
+    "language": "en",
+    "content": "Nigeria plays significant roles in Africa and globally. African leadership: founder of African Union (AU) (formerly OAU), ECOWAS (Economic Community of West African States) headquartered in Abuja, peacekeeping missions (Liberia, Sierra Leone, Sudan, Mali), mediation of regional conflicts, African Development Bank (AfDB) presidency (Akinwumi Adesina). Global institutions: UN Security Council (non-permanent member multiple times), WTO leadership (Ngozi Okonjo-Iweala as Director-General), Commonwealth, OPEC (oil). Nigerian diaspora: millions of Nigerians abroad contribute through remittances (over $20 billion annually), professional expertise (doctors, engineers, academics worldwide), cultural influence (music, film, literature). Nigerian contributions: UN peacekeeping (one of largest troop contributors), anti-apartheid struggle, climate action (reducing gas flaring), COVID-19 response (Africa CDC). Nigeria's global influence continues to grow.",
+    "summary": "Nigeria's global role: African Union, ECOWAS (headquarters Abuja), UN Security Council, WTO leadership (Okonjo-Iweala), peacekeeping, diaspora ($20B+ remittances annually).",
+    "learning_objectives": [
+      "Identify Nigeria's international roles",
+      "Understand diaspora contributions",
+      "Appreciate Nigeria's global influence"
+    ],
+    "nigerian_examples": [
+      "ECOWAS headquarters in Abuja",
+      "Nigerian peacekeepers in Africa",
+      "WTO Director-General Ngozi Okonjo-Iweala",
+      "Diaspora remittances"
+    ],
+    "quiz_questions": [
+      {"question": "Where is ECOWAS headquarters?", "options": ["Lagos", "Abuja", "Accra", "Dakar"], "correct_answer": "Abuja", "explanation": "Economic Community of West African States is headquartered in Abuja, Nigeria."},
+      {"question": "How much do Nigerians abroad send home annually?", "options": ["$5 billion", "$10 billion", "$20+ billion", "$50 billion"], "correct_answer": "$20+ billion", "explanation": "Remittances are a major source of foreign exchange."},
+      {"question": "What role has Nigeria played in UN peacekeeping?", "options": ["No role", "One of largest troop contributors", "Only financial", "Only observers"], "correct_answer": "One of largest troop contributors", "explanation": "Nigeria has contributed troops to numerous UN missions."},
+      {"question": "Who leads the World Trade Organization?", "options": ["Akinwumi Adesina", "Ngozi Okonjo-Iweala", "Muhammadu Buhari", "Aliko Dangote"], "correct_answer": "Ngozi Okonjo-Iweala", "explanation": "She is the first African and first woman WTO Director-General."},
+      {"question": "True or False: Nigeria has no influence in Africa.", "options": ["True", "False"], "correct_answer": "False", "explanation": "Nigeria is a leading power in Africa economically, politically, and militarily."}
+    ]
+  }
+]

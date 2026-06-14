@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Vowels and Consonants",
+    "language": "en",
+    "content": "The English alphabet has 26 letters. These letters are divided into two groups: vowels and consonants. Vowels are the letters A, E, I, O, U (and sometimes Y). Consonants are all the other letters like B, C, D, F, and so on. Every word in English must have at least one vowel sound. Try saying the vowels: A (ah), E (eh), I (ee), O (oh), U (oo). Vowels let your breath flow freely from your mouth. Consonants block the air in different ways using your lips, tongue, or teeth. Understanding vowels and consonants helps you spell and pronounce words correctly!",
+    "summary": "Vowels: A, E, I, O, U. Consonants: all other 21 letters. Every word needs at least one vowel. Vowels let air flow freely; consonants block the air.",
+    "learning_objectives": [
+      "Identify the 5 vowel letters in English",
+      "Distinguish between vowels and consonants",
+      "Understand that every word needs a vowel"
+    ],
+    "nigerian_examples": [
+      "The word 'LAGOS' has vowels A and O, consonants L, G, S",
+      "The word 'ABUJA' has vowels A, U, A and consonants B, J",
+      "In Nigerian classrooms, students sing vowel songs to remember A, E, I, O, U"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How many vowel letters are in the English alphabet?",
+        "options": ["21", "26", "5", "10"],
+        "correct_answer": "5",
+        "explanation": "The 5 vowels are A, E, I, O, U."
+      },
+      {
+        "question": "Which of these is a vowel?",
+        "options": ["B", "C", "D", "E"],
+        "correct_answer": "E",
+        "explanation": "E is a vowel. B, C, and D are consonants."
+      },
+      {
+        "question": "Which of these is a consonant?",
+        "options": ["A", "M", "E", "O"],
+        "correct_answer": "M",
+        "explanation": "M is a consonant. A, E, and O are vowels."
+      },
+      {
+        "question": "What do vowels allow to flow freely from your mouth?",
+        "options": ["Food", "Air", "Water", "Sound"],
+        "correct_answer": "Air",
+        "explanation": "Vowels let your breath flow freely from your mouth without blockage."
+      },
+      {
+        "question": "True or False: The word 'fly' has no vowels.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "The word 'fly' has the letter Y, which can act as a vowel in some words. But even in 'fly', Y makes a vowel sound."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Reading Short Stories",
+    "language": "en",
+    "content": "Reading short stories helps you learn new words and understand how sentences work. When you read a story, look at the pictures, sound out new words, and think about what is happening. After reading, ask yourself: Who was in the story? Where did it happen? What happened first, next, and last? Reading a little bit every day makes you a better reader. Start with stories that have big letters and colorful pictures. As you get better, you can read longer stories!",
+    "summary": "Reading short stories builds vocabulary. Look at pictures, sound out new words. Ask: Who? Where? What happened? Read a little every day to improve.",
+    "learning_objectives": [
+      "Practice reading short stories with comprehension",
+      "Learn to identify characters, setting, and plot",
+      "Build daily reading habits"
+    ],
+    "nigerian_examples": [
+      "Nigerian children's books like 'Chidi's New Home' are great for Grade 2 readers",
+      "School libraries in Lagos and Abuja have short story collections for young readers",
+      "Teachers read Nigerian folk tales aloud while students follow along"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What should you do when you see a new word while reading?",
+        "options": ["Skip it", "Sound it out", "Ignore it", "Close the book"],
+        "correct_answer": "Sound it out",
+        "explanation": "Try to sound out new words by saying each letter sound. This helps you learn new words."
+      },
+      {
+        "question": "What question should you ask yourself after reading a story?",
+        "options": ["What's for dinner?", "Who was in the story?", "What time is it?", "Where's my bag?"],
+        "correct_answer": "Who was in the story?",
+        "explanation": "Asking about characters, setting, and what happened helps you understand and remember the story."
+      },
+      {
+        "question": "How often should you read to become a better reader?",
+        "options": ["Once a month", "Once a year", "A little bit every day", "Only on weekends"],
+        "correct_answer": "A little bit every day",
+        "explanation": "Reading a small amount every day builds your skills faster than reading a lot once in a while."
+      },
+      {
+        "question": "What kind of stories are best for Grade 2 readers?",
+        "options": ["Very long novels", "Stories with small print", "Stories with big letters and colorful pictures", "Stories with no pictures"],
+        "correct_answer": "Stories with big letters and colorful pictures",
+        "explanation": "Big letters are easier to read, and pictures help you understand the story better."
+      },
+      {
+        "question": "True or False: You should skip the pictures in a story book.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Pictures help you understand the story and give clues about what words mean. Always look at the pictures!"
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Nouns and Verbs",
+    "language": "en",
+    "content": "Nouns and verbs are two important types of words. A noun is a person, place, animal, or thing. Examples of nouns: teacher (person), school (place), dog (animal), book (thing). A verb is an action word — it tells what someone or something does. Examples of verbs: run, jump, eat, sleep, read, write. Every complete sentence needs at least one noun and one verb. For example: 'The cat (noun) sleeps (verb).' 'My mother (noun) cooks (verb).' Learning nouns and verbs helps you build good sentences!",
+    "summary": "Nouns are people, places, animals, or things. Verbs are action words (run, jump, eat). Every sentence needs at least one noun and one verb.",
+    "learning_objectives": [
+      "Identify nouns in sentences",
+      "Identify verbs in sentences",
+      "Understand that sentences need both nouns and verbs"
+    ],
+    "nigerian_examples": [
+      "The word 'Lagos' is a noun (place). 'Olu' is a noun (person).",
+      "In 'Children play football,' 'children' is a noun and 'play' is a verb.",
+      "In 'The trader sells yams,' 'trader' and 'yams' are nouns, 'sells' is a verb."
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a noun?",
+        "options": ["An action word", "A person, place, animal, or thing", "A describing word", "A connecting word"],
+        "correct_answer": "A person, place, animal, or thing",
+        "explanation": "Nouns name people, places, animals, or things. Examples: doctor, market, goat, table."
+      },
+      {
+        "question": "What is a verb?",
+        "options": ["A person, place, or thing", "An action word", "A describing word", "A vowel"],
+        "correct_answer": "An action word",
+        "explanation": "Verbs show action. Examples: run, jump, eat, sleep, read, write."
+      },
+      {
+        "question": "In the sentence 'The boy runs fast,' which word is the verb?",
+        "options": ["The", "boy", "runs", "fast"],
+        "correct_answer": "runs",
+        "explanation": "'Runs' is the action word, so it is the verb. 'Boy' is the noun."
+      },
+      {
+        "question": "In the sentence 'Mama cooks delicious food,' which word is the noun?",
+        "options": ["cooks", "delicious", "Mama", "the"],
+        "correct_answer": "Mama",
+        "explanation": "'Mama' is a person, so it is a noun. 'Cooks' is the verb."
+      },
+      {
+        "question": "True or False: The word 'happiness' is a noun.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "'Happiness' is a thing you can feel but not touch — it is still a noun (an idea or feeling)."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Simple Sentences",
+    "language": "en",
+    "content": "A simple sentence is a group of words that tells a complete thought. Every sentence starts with a capital letter and ends with a period (.), question mark (?), or exclamation point (!). A simple sentence has one noun and one verb. Examples: 'The bird sings.' 'I like rice.' 'She runs fast.' 'We play together.' You can make a sentence longer by adding describing words: 'The big bird sings loudly.' But even a short sentence like 'Go!' can be a sentence if it has a verb and a complete thought.",
+    "summary": "A simple sentence is a complete thought. It starts with a capital letter and ends with . ? or ! Every sentence needs at least one verb and usually a noun.",
+    "learning_objectives": [
+      "Identify what makes a complete sentence",
+      "Write simple sentences with capital letters and correct punctuation",
+      "Distinguish between complete sentences and sentence fragments"
+    ],
+    "nigerian_examples": [
+      "I love jollof rice. (complete sentence)",
+      "The bus to Abuja leaves at 7am. (complete sentence)",
+      "Playing football after school. (not a complete sentence — missing who plays)"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How does every sentence start?",
+        "options": ["With a small letter", "With a capital letter", "With a number", "With a picture"],
+        "correct_answer": "With a capital letter",
+        "explanation": "Every sentence must begin with a capital letter. This helps readers know where the sentence starts."
+      },
+      {
+        "question": "What punctuation mark ends a question sentence?",
+        "options": ["Period (.)", "Exclamation point (!)", "Question mark (?)", "Comma (,)"],
+        "correct_answer": "Question mark (?)",
+        "explanation": "Question sentences ask something and end with a question mark: 'What is your name?'"
+      },
+      {
+        "question": "Which of these is a complete sentence?",
+        "options": ["The dog", "Running home", "The cat sleeps", "Under the table"],
+        "correct_answer": "The cat sleeps",
+        "explanation": "'The cat sleeps' has a noun (cat) and a verb (sleeps) and tells a complete thought."
+      },
+      {
+        "question": "What does a simple sentence need?",
+        "options": ["At least 10 words", "At least one noun and one verb", "Only a verb", "Only a noun"],
+        "correct_answer": "At least one noun and one verb",
+        "explanation": "A complete sentence usually needs a noun (who or what) and a verb (what they do)."
+      },
+      {
+        "question": "True or False: 'Run!' is a complete sentence.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "'Run!' is an imperative sentence where the noun 'you' is understood. It has a verb and expresses a complete thought."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Spelling Common Words",
+    "language": "en",
+    "content": "Spelling means writing words correctly using the right letters in the right order. Some common words you use every day are: 'the', 'and', 'to', 'of', 'for', 'with', 'you', 'are', 'have', 'said'. A good way to learn spelling is to say the word slowly, write it down, check it, and try again. Practilling words like 'friend' (f-r-i-e-n-d), 'because' (b-e-c-a-u-s-e), and 'beautiful' (b-e-a-u-t-i-f-u-l). The more you read and write, the better your spelling becomes!",
+    "summary": "Spelling means writing words with the right letters in the right order. Learn common words: the, and, to, for, you, are, have, said. Practice makes perfect.",
+    "learning_objectives": [
+      "Learn to spell common Grade 2 words",
+      "Practice spelling strategies (say it, write it, check it)",
+      "Build spelling confidence through regular practice"
+    ],
+    "nigerian_examples": [
+      "Nigerian spelling bees help children practice common words",
+      "Teachers give weekly spelling tests in Nigerian primary schools",
+      "Writing words like 'Lagos', 'Benin', and 'Kano' helps with geography and spelling"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does spelling mean?",
+        "options": ["Reading words aloud", "Writing words with the right letters in order", "Drawing pictures of words", "Finding words in a dictionary"],
+        "correct_answer": "Writing words with the right letters in order",
+        "explanation": "Spelling is about putting letters in the correct sequence to form a word correctly."
+      },
+      {
+        "question": "How do you spell the word 'friend'?",
+        "options": ["f-r-e-n-d", "f-r-i-e-n-d", "f-r-a-n-d", "f-r-i-n-d"],
+        "correct_answer": "f-r-i-e-n-d",
+        "explanation": "Friend is spelled F-R-I-E-N-D. Remember the 'i before e' pattern."
+      },
+      {
+        "question": "How do you spell the word 'because'?",
+        "options": ["b-e-c-u-s-e", "b-e-c-a-u-s-e", "b-i-c-a-u-s-e", "b-e-c-o-s-e"],
+        "correct_answer": "b-e-c-a-u-s-e",
+        "explanation": "Because is spelled B-E-C-A-U-S-E. A common trick: 'Big Elephants Can Always Understand Small Elephants'"
+      },
+      {
+        "question": "What is a good strategy to learn spelling?",
+        "options": ["Say it, write it, check it", "Close your eyes and guess", "Copy from a friend", "Skip hard words"],
+        "correct_answer": "Say it, write it, check it",
+        "explanation": "Say the word slowly, write it down, then check if you got it right. Try again if needed."
+      },
+      {
+        "question": "True or False: Reading more helps you become a better speller.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "When you read, you see words spelled correctly. Your brain remembers how they look, which helps you spell them later."
+      }
+    ]
+  }
+]

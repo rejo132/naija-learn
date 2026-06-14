@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 4,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of Jesus Christ",
+    "language": "en",
+    "content": "Jesus Christ is the central figure of Christianity, believed to be the Son of God and Savior. He was born in Bethlehem to Mary, a virgin. Jesus grew up in Nazareth and began his ministry at age 30. He taught about God's love, forgiveness, and the Kingdom of Heaven. He performed miracles: healing the sick, giving sight to the blind, feeding 5,000 people with five loaves and two fish, and raising Lazarus from the dead. Jesus had 12 disciples (close followers) including Peter, James, and John. He was crucified (killed on a cross) in Jerusalem, died, and was buried. Christians believe he rose from the dead three days later (the Resurrection). Jesus' teachings of love, compassion, and forgiveness influence millions worldwide, including many Nigerian Christians.",
+    "summary": "Jesus is central to Christianity. Born in Bethlehem, performed miracles, taught love and forgiveness. Crucified, died, rose after 3 days (Resurrection). His teachings guide Nigerian Christians.",
+    "learning_objectives": [
+      "Understand who Jesus is in Christianity",
+      "Learn about Jesus' teachings and miracles",
+      "Appreciate Jesus' influence on Nigerian Christians"
+    ],
+    "nigerian_examples": [
+      "Easter celebrations in Nigerian churches commemorate Jesus' resurrection",
+      "Christmas celebrations in Lagos, Abuja, and across Nigeria",
+      "Nigerian Christian hymns about Jesus' love and sacrifice"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Where was Jesus born?",
+        "options": ["Jerusalem", "Nazareth", "Bethlehem", "Cairo"],
+        "correct_answer": "Bethlehem",
+        "explanation": "Jesus was born in Bethlehem, a town in ancient Israel."
+      },
+      {
+        "question": "How many disciples did Jesus have?",
+        "options": ["10", "12", "14", "16"],
+        "correct_answer": "12",
+        "explanation": "Jesus chose 12 disciples to learn from him and spread his teachings."
+      },
+      {
+        "question": "What miracle did Jesus perform to feed many people?",
+        "options": ["Turned water to wine", "Healed a blind man", "Fed 5,000 with 5 loaves and 2 fish", "Walked on water"],
+        "correct_answer": "Fed 5,000 with 5 loaves and 2 fish",
+        "explanation": "With only 5 loaves and 2 fish, Jesus fed 5,000 people."
+      },
+      {
+        "question": "What do Christians celebrate at Easter?",
+        "options": ["Jesus' birth", "Jesus' resurrection", "Jesus' miracles", "The Last Supper"],
+        "correct_answer": "Jesus' resurrection",
+        "explanation": "Easter celebrates Jesus rising from the dead three days after his crucifixion."
+      },
+      {
+        "question": "True or False: Jesus taught about revenge and hatred.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Jesus taught love, forgiveness, and compassion for all people."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of Prophet Muhammad",
+    "language": "en",
+    "content": "Prophet Muhammad (peace be upon him) is the last and greatest prophet in Islam. He was born in Mecca (now in Saudi Arabia) in 570 AD. Orphaned as a child, he grew up to be known as 'Al-Amin' (the trustworthy). At age 40, while meditating in a cave called Hira, he received the first revelation from Allah through the angel Jibril (Gabriel). These revelations became the Quran, Islam's holy book. He taught that there is only one God (Allah) and that people should worship Him alone, be just, give charity, and treat all people with kindness. He faced persecution in Mecca and migrated (Hijrah) to Medina in 622 AD. He died in 632 AD. His teachings and example (Sunnah) guide 1.8 billion Muslims worldwide, including millions in Nigeria.",
+    "summary": "Muhammad is final prophet of Islam. Received first revelation at 40 (Quran). Taught worship one God (Allah), justice, charity, kindness. Hijrah to Medina. Muslims follow his example.",
+    "learning_objectives": [
+      "Understand who Prophet Muhammad is in Islam",
+      "Learn about the first revelation and the Quran",
+      "Appreciate Muhammad's teachings and example"
+    ],
+    "nigerian_examples": [
+      "Nigerian Muslims celebrating Eid al-Mawlid (Prophet's birthday)",
+      "Mosques across Nigeria teaching the Seerah (Prophet's biography)",
+      "Following the Prophet's example of honesty in business"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Where was Prophet Muhammad born?",
+        "options": ["Medina", "Jerusalem", "Mecca", "Cairo"],
+        "correct_answer": "Mecca",
+        "explanation": "Prophet Muhammad was born in Mecca around 570 AD."
+      },
+      {
+        "question": "What is the holy book of Islam?",
+        "options": ["Bible", "Torah", "Quran", "Hadith"],
+        "correct_answer": "Quran",
+        "explanation": "The Quran is the holy book of Islam, revealed to Prophet Muhammad."
+      },
+      {
+        "question": "What was Muhammad's nickname before becoming a prophet?",
+        "options": ["Al-Rasul", "Al-Sadiq", "Al-Amin", "Al-Hafiz"],
+        "correct_answer": "Al-Amin",
+        "explanation": "Muhammad was called 'Al-Amin' meaning 'the trustworthy' because of his honesty."
+      },
+      {
+        "question": "What is the Hijrah?",
+        "options": ["A prayer", "The migration from Mecca to Medina", "A type of fasting", "The pilgrimage to Mecca"],
+        "correct_answer": "The migration from Mecca to Medina",
+        "explanation": "Hijrah in 622 AD marks the start of the Islamic calendar."
+      },
+      {
+        "question": "True or False: Prophet Muhammad taught that Allah has many partners.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Muhammad taught that Allah is one and has no partners (Tawhid)."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Ethics and Justice",
+    "language": "en",
+    "content": "Ethics are moral principles that guide right and wrong behavior. Justice means treating people fairly and giving everyone what they deserve. Both Christianity and Islam teach strong ethics and justice. In Christianity: 'Do to others what you would have them do to you' (Golden Rule). 'Love your neighbor as yourself.' Do not lie, steal, cheat, or harm others. In Islam: 'None of you truly believes until he loves for his brother what he loves for himself.' 'Stand out firmly for justice, even against yourselves or your parents.' Both religions teach honesty, fairness, compassion, forgiveness, and helping the poor. Ethical behavior includes: telling the truth, keeping promises, sharing with others, admitting mistakes, and standing up for those who are treated unfairly.",
+    "summary": "Ethics = right vs wrong. Justice = fairness. Both Christianity and Islam teach: honesty, fairness, compassion, helping poor. Golden Rule: treat others as you want to be treated.",
+    "learning_objectives": [
+      "Understand ethics and justice",
+      "Learn ethical teachings in Christianity and Islam",
+      "Apply ethical behavior daily"
+    ],
+    "nigerian_examples": [
+      "Nigerian religious leaders preaching fairness and justice",
+      "Helping neighbors during difficult times (community support)",
+      "Standing up against bullying in schools"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is the Golden Rule in Christianity?",
+        "options": ["An eye for an eye", "Do to others what you want them to do to you", "Love only your friends", "Never forgive anyone"],
+        "correct_answer": "Do to others what you want them to do to you",
+        "explanation": "This teaches treating others the way you wish to be treated."
+      },
+      {
+        "question": "What does justice mean?",
+        "options": ["Being unfair to some people", "Treating people fairly and giving what's due", "Ignoring problems", "Only helping yourself"],
+        "correct_answer": "Treating people fairly and giving what's due",
+        "explanation": "Justice ensures everyone receives fair treatment."
+      },
+      {
+        "question": "What is an example of ethical behavior?",
+        "options": ["Lying to avoid trouble", "Cheating on a test", "Admitting a mistake honestly", "Stealing from a store"],
+        "correct_answer": "Admitting a mistake honestly",
+        "explanation": "Honesty and accountability are ethical behaviors."
+      },
+      {
+        "question": "What does Islam teach about justice?",
+        "options": ["Only for Muslims", "Stand firmly for justice, even against yourself", "Justice is optional", "Only for rich people"],
+        "correct_answer": "Stand firmly for justice, even against yourself",
+        "explanation": "The Quran commands Muslims to be just even when it's difficult."
+      },
+      {
+        "question": "True or False: Ethics only matter in religious settings, not everyday life.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Ethics apply to all areas of life: school, home, friendships, and community."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Tolerance and Peace",
+    "language": "en",
+    "content": "Tolerance means accepting and respecting people who are different from you - different religion, ethnicity, language, or opinions. Peace means living together without conflict or violence. Christianity teaches: 'Blessed are the peacemakers.' 'Love your enemies and pray for those who persecute you.' Islam teaches: 'O mankind, We created you from a single pair of male and female and made you into nations and tribes that you may know one another.' 'If they incline to peace, incline to it as well.' Nigeria has over 250 ethnic groups and two major religions (Christianity and Islam). Tolerance and peace are essential for Nigeria's unity. You can practice tolerance by: making friends with different people, not mocking others' beliefs, resolving conflicts peacefully, and treating everyone with respect.",
+    "summary": "Tolerance = respecting differences. Peace = living without conflict. Both religions teach peace and tolerance. Nigeria needs tolerance among 250+ ethnic groups and two religions.",
+    "learning_objectives": [
+      "Understand tolerance and peace",
+      "Learn religious teachings about peace",
+      "Practice tolerance with classmates"
+    ],
+    "nigerian_examples": [
+      "Muslims and Christians celebrating each other's holidays (Eid and Christmas)",
+      "Interfaith dialogue in Nigerian schools and communities",
+      "National Unity Day celebrations across Nigeria"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is tolerance?",
+        "options": ["Fighting with those who disagree", "Ignoring everyone who is different", "Accepting and respecting people who are different", "Forcing others to believe like you"],
+        "correct_answer": "Accepting and respecting people who are different",
+        "explanation": "Tolerance means respecting others even when they are not the same as you."
+      },
+      {
+        "question": "What did Jesus say about peacemakers?",
+        "options": ["They are weak", "Blessed are the peacemakers", "Peacemakers start wars", "Ignore peacemakers"],
+        "correct_answer": "Blessed are the peacemakers",
+        "explanation": "Jesus taught that peacemakers are blessed and valuable."
+      },
+      {
+        "question": "How many ethnic groups does Nigeria have?",
+        "options": ["50", "100", "Over 250", "500"],
+        "correct_answer": "Over 250",
+        "explanation": "Nigeria has more than 250 ethnic groups with different languages and cultures."
+      },
+      {
+        "question": "What does the Quran say about different tribes and nations?",
+        "options": ["One tribe is better", "They should fight", "Created so you may know one another", "Ignore each other"],
+        "correct_answer": "Created so you may know one another",
+        "explanation": "The Quran teaches that diversity is for learning, not for conflict."
+      },
+      {
+        "question": "True or False: Tolerance means you must agree with everyone on everything.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Tolerance means respecting others even when you disagree, not agreeing with everything."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Community Service",
+    "language": "en",
+    "content": "Community service is helping others without expecting payment. It includes: cleaning the neighborhood, visiting the sick, helping elderly neighbors, tutoring younger children, donating food or clothes to the poor, planting trees, and participating in community events. Both Christianity and Islam emphasize serving others. Jesus said: 'Whatever you did for one of the least of these brothers of mine, you did for me.' In Islam, acts of service (Sadaqah) are highly rewarded, including helping others, feeding the hungry, and visiting the sick. Community service builds stronger neighborhoods, teaches compassion, and develops leadership skills. In Nigeria, many churches and mosques organize community service activities like free medical checkups, feeding programs, and school repairs.",
+    "summary": "Community service = helping others without pay. Examples: cleaning, visiting sick, donating, tutoring. Christianity and Islam value service. Builds stronger communities.",
+    "learning_objectives": [
+      "Understand what community service is",
+      "Learn religious teachings about service",
+      "Identify ways to serve in your community"
+    ],
+    "nigerian_examples": [
+      "Church groups cleaning Lagos beaches",
+      "Mosque committees distributing food during Ramadan",
+      "Students volunteering to paint a local school"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is community service?",
+        "options": ["Working for money", "Helping others without payment", "A type of school subject", "Watching TV"],
+        "correct_answer": "Helping others without payment",
+        "explanation": "Community service is volunteer work that benefits others."
+      },
+      {
+        "question": "Which is an example of community service?",
+        "options": ["Playing video games", "Tutoring younger children for free", "Sleeping all day", "Ignoring a problem"],
+        "correct_answer": "Tutoring younger children for free",
+        "explanation": "Helping others learn without pay is community service."
+      },
+      {
+        "question": "What did Jesus say about helping others?",
+        "options": ["Only help family", "Helping the least of these is helping me", "Only help rich people", "Never help anyone"],
+        "correct_answer": "Helping the least of these is helping me",
+        "explanation": "Jesus taught that serving those in need is serving him."
+      },
+      {
+        "question": "What is Sadaqah in Islam?",
+        "options": ["A type of prayer", "Voluntary acts of charity and service", "A pilgrimage", "A fast"],
+        "correct_answer": "Voluntary acts of charity and service",
+        "explanation": "Sadaqah includes any act of kindness or help given to others."
+      },
+      {
+        "question": "True or False: Community service only benefits the people receiving help.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Volunteers also benefit by developing skills, making friends, and feeling good about helping."
+      }
+    ]
+  }
+]

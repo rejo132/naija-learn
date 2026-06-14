@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Asking Questions",
+    "language": "en",
+    "content": "Asking questions is how you learn new things. When you do not understand something, ask! Good questions start with words like who, what, where, when, why, and how. For example: 'Who wrote this book?' 'What time is lunch?' 'Why is the sky blue?' Raise your hand in class before asking. Be polite: say 'Excuse me' or 'May I ask a question?' There is no such thing as a silly question — if you are wondering, others probably are too. Asking questions shows you are curious and want to learn.",
+    "summary": "Asking questions helps you learn. Use who, what, where, when, why, how. Raise your hand. Say 'Excuse me.' No question is silly.",
+    "learning_objectives": [
+      "Learn how to ask good questions",
+      "Understand question words (who, what, where, when, why, how)",
+      "Build curiosity and learning skills"
+    ],
+    "nigerian_examples": [
+      "Asking a teacher 'Please can you explain that again?'",
+      "Asking a parent 'What is for dinner tonight?'",
+      "Asking a friend 'Where did you buy that book?'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What words help start good questions?",
+        "options": ["And, or, but", "Who, what, where, when, why, how", "Yes, no, maybe", "Hello, goodbye"],
+        "correct_answer": "Who, what, where, when, why, how",
+        "explanation": "These question words help you ask for specific information."
+      },
+      {
+        "question": "What should you do before asking a question in class?",
+        "options": ["Shout out", "Stand on your chair", "Raise your hand", "Leave the room"],
+        "correct_answer": "Raise your hand",
+        "explanation": "Raising your hand shows respect and gives the teacher time to call on you."
+      },
+      {
+        "question": "Is there such a thing as a silly question?",
+        "options": ["Yes, some questions are silly", "No, if you are wondering, ask", "Only for adults", "Only in math class"],
+        "correct_answer": "No, if you are wondering, ask",
+        "explanation": "If you have a question, others probably have it too. Asking helps everyone learn."
+      },
+      {
+        "question": "What polite words can you use before asking a question?",
+        "options": ["Excuse me", "Shut up", "Move", "Hurry up"],
+        "correct_answer": "Excuse me",
+        "explanation": "Saying 'Excuse me' or 'May I ask?' shows respect before asking."
+      },
+      {
+        "question": "True or False: Only teachers should ask questions.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Everyone asks questions to learn — teachers, parents, and students."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Telling Stories",
+    "language": "en",
+    "content": "Telling stories is a wonderful way to share experiences and ideas. A good story has a beginning, middle, and end. The beginning introduces the characters and setting. The middle tells what happened (the problem or adventure). The end tells how things turned out. Use words like 'first,' 'next,' 'then,' and 'finally' to help your listener follow along. Speak clearly and use expression in your voice. You can tell stories about things that happened to you, stories you made up, or folk tales you heard. Practice telling stories to family and friends!",
+    "summary": "Good stories have beginning, middle, end. Use first, next, then, finally. Speak clearly with expression. Tell real or made-up stories.",
+    "learning_objectives": [
+      "Learn story structure (beginning, middle, end)",
+      "Practice using transition words",
+      "Build oral storytelling skills"
+    ],
+    "nigerian_examples": [
+      "Telling a story about your trip to visit grandparents",
+      "Sharing what happened at school during dinner",
+      "Retelling a Nigerian folk tale you heard"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are the three parts of a good story?",
+        "options": ["First, second, third", "Beginning, middle, end", "Morning, afternoon, evening", "Left, right, center"],
+        "correct_answer": "Beginning, middle, end",
+        "explanation": "Every good story has a beginning that starts it, a middle with action, and an end that finishes it."
+      },
+      {
+        "question": "Which words help connect parts of a story?",
+        "options": ["Big, small, tall", "First, next, then, finally", "Red, blue, green", "Fast, slow, quick"],
+        "correct_answer": "First, next, then, finally",
+        "explanation": "Transition words help listeners follow the order of events in your story."
+      },
+      {
+        "question": "What does the beginning of a story introduce?",
+        "options": ["The end", "Characters and setting", "The problem only", "The solution"],
+        "correct_answer": "Characters and setting",
+        "explanation": "The beginning tells who the story is about and where it happens."
+      },
+      {
+        "question": "How should you speak when telling a story?",
+        "options": ["In a monotone voice", "Very quietly", "Clearly with expression", "As fast as possible"],
+        "correct_answer": "Clearly with expression",
+        "explanation": "Using expression in your voice makes the story more interesting and exciting."
+      },
+      {
+        "question": "True or False: You can only tell stories that really happened.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "You can tell real stories or made-up stories from your imagination."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Expressing Feelings",
+    "language": "en",
+    "content": "Expressing feelings means telling others how you feel inside. You might feel happy, sad, angry, scared, excited, worried, or loved. Use words to describe your feelings. Say 'I feel happy because...' or 'I feel sad when...' It is okay to have all kinds of feelings. When you are angry, take a deep breath before speaking. Say 'I feel angry because...' instead of shouting. Sharing your feelings helps others understand you. It also helps you feel better when you are upset. Your feelings are important and valid.",
+    "summary": "Express feelings with words: 'I feel happy/sad/angry/excited because...' Take a breath before speaking when angry. Sharing feelings helps others understand you.",
+    "learning_objectives": [
+      "Learn feeling vocabulary words",
+      "Practice expressing emotions appropriately",
+      "Understand that all feelings are valid"
+    ],
+    "nigerian_examples": [
+      "Telling a parent 'I feel sad that my friend moved away'",
+      "Saying 'I feel excited about the school trip'",
+      "Sharing 'I feel proud that I passed my test'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does expressing feelings mean?",
+        "options": ["Hiding how you feel", "Telling others how you feel inside", "Only smiling", "Never talking"],
+        "correct_answer": "Telling others how you feel inside",
+        "explanation": "Expressing feelings means sharing your emotions with words."
+      },
+      {
+        "question": "What should you do before speaking when you feel angry?",
+        "options": ["Shout loudly", "Take a deep breath", "Run away", "Throw something"],
+        "correct_answer": "Take a deep breath",
+        "explanation": "Taking a breath helps you calm down so you can speak more calmly."
+      },
+      {
+        "question": "Is it okay to feel angry sometimes?",
+        "options": ["No, never", "Yes, all feelings are okay", "Only adults can feel angry", "Only children feel angry"],
+        "correct_answer": "Yes, all feelings are okay",
+        "explanation": "All feelings are normal and okay. What matters is how you express them."
+      },
+      {
+        "question": "How can you start a sentence about your feelings?",
+        "options": ["You always...", "I feel... because...", "They never...", "We should..."],
+        "correct_answer": "I feel... because...",
+        "explanation": "Using 'I feel' statements helps you share your emotions clearly."
+      },
+      {
+        "question": "True or False: Sharing feelings makes it harder for others to understand you.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Sharing feelings helps others understand what you are experiencing."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Polite Words",
+    "language": "en",
+    "content": "Polite words show respect and kindness to others. Always use 'please' when asking for something. Say 'thank you' when someone helps you or gives you something. Say 'sorry' or 'I apologize' when you make a mistake. Say 'excuse me' when you need to get past someone or interrupt politely. Say 'you're welcome' when someone thanks you. Using polite words makes people feel good. It also makes them want to help you again. Polite words cost nothing but mean everything. Make them a habit every day!",
+    "summary": "Polite words: please, thank you, sorry, excuse me, you're welcome. They show respect and kindness. Use them every day. They cost nothing but mean everything.",
+    "learning_objectives": [
+      "Learn key polite words and phrases",
+      "Know when to use each polite word",
+      "Practice politeness in daily interactions"
+    ],
+    "nigerian_examples": [
+      "Saying 'please may I have water?' at home",
+      "Saying 'thank you' to the school cleaner",
+      "Saying 's' when you accidentally bump someone"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What polite word do you use when asking for something?",
+        "options": ["Sorry", "Thank you", "Please", "Goodbye"],
+        "correct_answer": "Please",
+        "explanation": "Adding 'please' to a request makes it polite instead of demanding."
+      },
+      {
+        "question": "What do you say when someone helps you?",
+        "options": ["Please", "Excuse me", "Thank you", "Sorry"],
+        "correct_answer": "Thank you",
+        "explanation": "Say 'thank you' to show appreciation for someone's help."
+      },
+      {
+        "question": "What do you say when you make a mistake?",
+        "options": ["Thank you", "Please", "Sorry", "Excuse me"],
+        "correct_answer": "Sorry",
+        "explanation": "Apologizing shows you recognize your mistake and care about others' feelings."
+      },
+      {
+        "question": "What do you say when you need to get past someone?",
+        "options": ["Move!", "Sorry", "Thank you", "Excuse me"],
+        "correct_answer": "Excuse me",
+        "explanation": "Saying 'excuse me' politely alerts someone that you need to pass."
+      },
+      {
+        "question": "True or False: Polite words are only for grown-ups.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Everyone — children and adults — should use polite words every day."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Group Discussions",
+    "language": "en",
+    "content": "Group discussions are when a few people talk together about a topic. In a discussion, everyone gets a turn to speak. Listen when others talk. Do not interrupt. When it is your turn, share your idea clearly. You can agree with someone by saying 'I agree because...' You can disagree politely by saying 'I see it differently because...' Ask questions to understand others better. Group discussions help you learn from different perspectives. They also help you practice speaking and listening with others.",
+    "summary": "In group discussions: take turns, don't interrupt, listen to others. Agree politely: 'I agree because...' Disagree politely: 'I see it differently...'",
+    "learning_objectives": [
+      "Learn group discussion rules",
+      "Practice taking turns speaking",
+      "Learn to agree and disagree politely"
+    ],
+    "nigerian_examples": [
+      "Discussing a class project in small groups",
+      "Talking about what to do for Children's Day celebration",
+      "Sharing ideas about a story the class read together"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What should you do when others are speaking in a discussion?",
+        "options": ["Shout over them", "Listen", "Play with your phone", "Walk away"],
+        "correct_answer": "Listen",
+        "explanation": "Listening shows respect and helps you understand others' ideas."
+      },
+      {
+        "question": "How should you disagree with someone in a discussion?",
+        "options": ["Yell 'You're wrong!'", "Ignore them", "Say 'I see it differently because...'", "Laugh at them"],
+        "correct_answer": "Say 'I see it differently because...'",
+        "explanation": "Politely disagreeing keeps the discussion respectful and productive."
+      },
+      {
+        "question": "Why is it important not to interrupt?",
+        "options": ["Interrupting is faster", "It shows respect and lets everyone finish their thoughts", "Interrupting is fun", "No reason"],
+        "correct_answer": "It shows respect and lets everyone finish their thoughts",
+        "explanation": "Waiting for your turn shows respect and ensures everyone's ideas are heard."
+      },
+      {
+        "question": "What can you say to show you agree with someone?",
+        "options": ["You are wrong", "I agree because...", "That's stupid", "I don't care"],
+        "correct_answer": "I agree because...",
+        "explanation": "Saying 'I agree because...' shows support and explains your reasoning."
+      },
+      {
+        "question": "True or False: Only one person should talk in a group discussion.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Everyone in the group should have a chance to share their ideas."
+      }
+    ]
+  }
+]

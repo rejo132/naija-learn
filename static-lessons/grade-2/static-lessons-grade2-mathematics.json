@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Counting 1 to 500",
+    "language": "en",
+    "content": "Counting is the foundation of mathematics. In Grade 2, you will learn to count from 1 all the way to 500. You already know numbers 1 to 100. Now you will learn numbers 101 to 500. When counting, remember the pattern: after 199 comes 200, after 299 comes 300, after 399 comes 400, after 499 comes 500. You can count by ones, by tens, or by hundreds. Practice counting objects around you.",
+    "summary": "Count from 1 to 500. Numbers follow patterns: after 199 is 200, after 299 is 300.",
+    "learning_objectives": [
+      "Count from 1 to 500 fluently",
+      "Recognize number patterns",
+      "Count by ones, tens, and hundreds"
+    ],
+    "nigerian_examples": [
+      "Counting naira notes from 1 to 500 naira",
+      "Counting eggs in a market basket",
+      "Counting students in school assembly"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What number comes after 199?",
+        "options": ["100", "200", "300", "190"],
+        "correct_answer": "200",
+        "explanation": "After 199 comes 200."
+      },
+      {
+        "question": "What number comes after 399?",
+        "options": ["400", "300", "500", "390"],
+        "correct_answer": "400",
+        "explanation": "After 399 comes 400."
+      },
+      {
+        "question": "If you count by tens, what comes after 70?",
+        "options": ["71", "80", "75", "60"],
+        "correct_answer": "80",
+        "explanation": "Counting by tens: 70, 80, 90, 100."
+      },
+      {
+        "question": "What number comes after 249?",
+        "options": ["240", "250", "300", "260"],
+        "correct_answer": "250",
+        "explanation": "After 249 comes 250."
+      },
+      {
+        "question": "True or False: You count up to 500 in Grade 2.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Yes, Grade 2 students learn to count up to 500."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Multiplication Intro",
+    "language": "en",
+    "content": "Multiplication is a faster way to add the same number many times. For example, 3+3+3+3 = 12. Instead of adding 3 four times, you can multiply: 4 x 3 = 12. The x sign means times. If you have 5 bags with 2 oranges each, instead of 2+2+2+2+2=10, you can do 5 x 2 = 10. Start with tables for 1, 2, 5, and 10.",
+    "summary": "Multiplication is repeated addition. Example: 3+3+3+3 = 4x3 = 12. Learn tables for 1, 2, 5, and 10.",
+    "learning_objectives": [
+      "Understand multiplication as repeated addition",
+      "Learn multiplication tables for 1, 2, 5, and 10",
+      "Solve simple multiplication problems"
+    ],
+    "nigerian_examples": [
+      "4 packs of biscuits with 5 biscuits each = 4 x 5 = 20",
+      "3 rows of 10 chairs = 3 x 10 = 30 chairs",
+      "6 baskets with 2 yams each = 6 x 2 = 12 yams"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is 4 x 3?",
+        "options": ["7", "12", "10", "15"],
+        "correct_answer": "12",
+        "explanation": "4 x 3 means 3+3+3+3 = 12."
+      },
+      {
+        "question": "What is 5 x 2?",
+        "options": ["7", "10", "12", "8"],
+        "correct_answer": "10",
+        "explanation": "5 x 2 means 2+2+2+2+2 = 10."
+      },
+      {
+        "question": "What is 10 x 4?",
+        "options": ["14", "40", "104", "400"],
+        "correct_answer": "40",
+        "explanation": "10 x 4 = 40. Multiplying by 10 adds a zero."
+      },
+      {
+        "question": "What multiplication fact equals 2+2+2?",
+        "options": ["2 x 2", "3 x 2", "2 x 4", "3 x 3"],
+        "correct_answer": "3 x 2",
+        "explanation": "2+2+2 = 6, and 3 x 2 = 6."
+      },
+      {
+        "question": "True or False: 1 x 100 = 100",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "1 times any number equals that number."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Division Intro",
+    "language": "en",
+    "content": "Division is sharing equally. It is the opposite of multiplication. The division sign means divided by. If you have 12 sweets to share among 3 friends, each gets 4 sweets: 12 divided by 3 = 4. Division tells how many in each group when sharing equally. Start with dividing by 1, 2, 5, and 10. Any number divided by 1 equals itself.",
+    "summary": "Division is equal sharing. 12 sweets divided by 3 friends = 4 each. Division is the opposite of multiplication.",
+    "learning_objectives": [
+      "Understand division as equal sharing",
+      "Solve division problems with 1, 2, 5, 10",
+      "Recognize division as opposite of multiplication"
+    ],
+    "nigerian_examples": [
+      "20 oranges divided by 5 children = 4 oranges each",
+      "100 naira divided by 2 people = 50 naira each",
+      "15 buns divided by 3 friends = 5 buns each"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is 12 divided by 3?",
+        "options": ["3", "4", "5", "6"],
+        "correct_answer": "4",
+        "explanation": "12 sweets shared by 3 friends = 4 each."
+      },
+      {
+        "question": "What is 20 divided by 5?",
+        "options": ["2", "3", "4", "5"],
+        "correct_answer": "4",
+        "explanation": "20 divided into 5 groups = 4 in each group."
+      },
+      {
+        "question": "What is 10 divided by 2?",
+        "options": ["2", "3", "5", "10"],
+        "correct_answer": "5",
+        "explanation": "10 divided into 2 groups = 5 in each group."
+      },
+      {
+        "question": "Any number divided by 1 equals...",
+        "options": ["0", "1", "The number itself", "10"],
+        "correct_answer": "The number itself",
+        "explanation": "25 divided by 1 = 25. Any number divided by 1 stays the same."
+      },
+      {
+        "question": "True or False: Division is the opposite of multiplication.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "If 3 x 4 = 12, then 12 divided by 3 = 4 and 12 divided by 4 = 3."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Fractions Half and Quarter",
+    "language": "en",
+    "content": "Fractions are parts of a whole. A half means one out of two equal parts. Cut an orange into 2 equal pieces, each is a half. A quarter means one out of four equal parts. Cut a cake into 4 equal slices, each is a quarter. Two quarters make a half. Four quarters make a whole.",
+    "summary": "Half = 1 of 2 equal parts. Quarter = 1 of 4 equal parts. Two quarters = one half.",
+    "learning_objectives": [
+      "Understand halves and quarters",
+      "Identify half and quarter of shapes",
+      "Relate fractions to real-life sharing"
+    ],
+    "nigerian_examples": [
+      "Cutting puff-puff into 2 halves to share",
+      "A quarter of a watermelon",
+      "Half an hour before school"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What fraction means 1 of 2 equal parts?",
+        "options": ["Quarter", "Half", "Third", "Whole"],
+        "correct_answer": "Half",
+        "explanation": "Half means one out of two equal parts."
+      },
+      {
+        "question": "How many quarters make a half?",
+        "options": ["1", "2", "3", "4"],
+        "correct_answer": "2",
+        "explanation": "Two quarters = one half."
+      },
+      {
+        "question": "A cake cut into 4 equal pieces gives what fraction per piece?",
+        "options": ["Half", "Third", "Quarter", "Whole"],
+        "correct_answer": "Quarter",
+        "explanation": "One piece of 4 equal pieces = one quarter."
+      },
+      {
+        "question": "How many quarters make a whole?",
+        "options": ["2", "3", "4", "1"],
+        "correct_answer": "4",
+        "explanation": "Four quarters = one whole."
+      },
+      {
+        "question": "True or False: A half is larger than a quarter.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Half is bigger than quarter."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Money and Prices",
+    "language": "en",
+    "content": "Nigeria's currency is the naira. Notes: 5, 10, 20, 50, 100, 200, 500, 1000 naira. Learning to count money helps you buy things. If an orange costs 50 naira and you have 200 naira, you can buy 4 oranges because 200 divided by 50 = 4. Practice adding prices and finding change.",
+    "summary": "Nigerian currency is naira. Learn to add prices and calculate change.",
+    "learning_objectives": [
+      "Identify Nigerian naira notes",
+      "Add prices of items",
+      "Calculate change after payment"
+    ],
+    "nigerian_examples": [
+      "3 biscuits at 100 naira each = 300 naira total",
+      "Pay 500 naira for 250 naira snack = 250 naira change",
+      "Save 50 naira daily for 10 days = 500 naira"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Bread 300 naira + milk 200 naira = ?",
+        "options": ["400 naira", "500 naira", "600 naira", "300 naira"],
+        "correct_answer": "500 naira",
+        "explanation": "300 + 200 = 500 naira."
+      },
+      {
+        "question": "Pay 200 naira for 150 naira biscuit. Change?",
+        "options": ["50 naira", "100 naira", "150 naira", "200 naira"],
+        "correct_answer": "50 naira",
+        "explanation": "200 - 150 = 50 naira change."
+      },
+      {
+        "question": "Highest value Nigerian note?",
+        "options": ["500 naira", "200 naira", "1000 naira", "50 naira"],
+        "correct_answer": "1000 naira",
+        "explanation": "1000 naira is the highest value note."
+      },
+      {
+        "question": "4 oranges at 50 naira each = ?",
+        "options": ["100 naira", "150 naira", "200 naira", "250 naira"],
+        "correct_answer": "200 naira",
+        "explanation": "4 x 50 = 200 naira."
+      },
+      {
+        "question": "True or False: Nigeria uses both paper notes and metal coins.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Yes, Nigeria has both paper notes and metal coins."
+      }
+    ]
+  }
+]

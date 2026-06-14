@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 4,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Structure of Government",
+    "language": "en",
+    "content": "Nigeria has three levels of government: Federal (national), State, and Local. The Federal Government is in Abuja, led by the President. It handles national issues: defense, foreign affairs, currency, and major infrastructure. The State Government is in each state capital, led by the Governor. It handles state roads, education, health, and agriculture. The Local Government is in each local government area (LGA), led by a Chairman. It handles local markets, primary health centers, and waste collection. Each level has three branches: Executive (implements laws), Legislative (makes laws), and Judicial (interprets laws). This structure ensures power is shared and decisions are made close to the people.",
+    "summary": "Three government levels: Federal (President), State (Governor), Local (Chairman). Each has Executive, Legislative, Judicial branches. Power sharing ensures local control.",
+    "learning_objectives": [
+      "Identify the three levels of government",
+      "Understand each level's responsibilities",
+      "Know the three branches of government"
+    ],
+    "nigerian_examples": [
+      "President lives in Aso Rock, Abuja",
+      "Governor lives in state capital like Ikeja (Lagos) or Enugu",
+      "Local government chairman handles local primary schools"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How many levels of government does Nigeria have?",
+        "options": ["1", "2", "3", "4"],
+        "correct_answer": "3",
+        "explanation": "Nigeria has Federal, State, and Local government levels."
+      },
+      {
+        "question": "Who leads the State Government?",
+        "options": ["President", "Governor", "Chairman", "Senator"],
+        "correct_answer": "Governor",
+        "explanation": "Each state has a Governor elected by the people of that state."
+      },
+      {
+        "question": "What does the Executive branch do?",
+        "options": ["Makes laws", "Implements laws", "Interprets laws", "Changes the constitution"],
+        "correct_answer": "Implements laws",
+        "explanation": "The Executive (President, Governors) carries out and enforces laws."
+      },
+      {
+        "question": "What does the Legislative branch do?",
+        "options": ["Makes laws", "Implements laws", "Enforces laws", "Judges criminals"],
+        "correct_answer": "Makes laws",
+        "explanation": "The Legislature (National Assembly, State Assemblies) creates laws."
+      },
+      {
+        "question": "True or False: Local governments handle national defense.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "National defense is handled by the Federal Government, not Local Governments."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Rights and Duties",
+    "language": "en",
+    "content": "Rights are freedoms guaranteed to citizens. Duties are responsibilities citizens must fulfill. Nigerian citizens have rights: right to life, right to education, right to vote, right to free speech (with limits), right to religion, right to fair trial, right to own property. Citizens have duties: obey laws, pay taxes, vote in elections, respect national symbols, protect public property, defend the nation if needed, and help maintain order. Children have rights too: right to education, right to healthcare, right to protection from abuse, right to express opinions. Rights and duties are balanced - you have rights, but you also have duties to others and to Nigeria.",
+    "summary": "Rights = freedoms (life, education, vote, speech). Duties = responsibilities (obey laws, pay taxes, vote, respect symbols). Rights and duties are balanced.",
+    "learning_objectives": [
+      "Identify citizens' rights",
+      "Identify citizens' duties",
+      "Understand children's rights"
+    ],
+    "nigerian_examples": [
+      "Right to education - all Nigerian children can attend school",
+      "Duty to vote - eligible citizens should vote in elections",
+      "Children's rights protected by Child Rights Act"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a right?",
+        "options": ["A responsibility", "A freedom guaranteed to citizens", "A punishment", "A tax"],
+        "correct_answer": "A freedom guaranteed to citizens",
+        "explanation": "Rights are protected freedoms that citizens have."
+      },
+      {
+        "question": "What is a duty?",
+        "options": ["A freedom", "A responsibility citizens must fulfill", "A holiday", "A celebration"],
+        "correct_answer": "A responsibility citizens must fulfill",
+        "explanation": "Duties are obligations citizens have to their country and community."
+      },
+      {
+        "question": "Which is a right of Nigerian children?",
+        "options": ["Right to vote", "Right to drive", "Right to education", "Right to marry"],
+        "correct_answer": "Right to education",
+        "explanation": "The Child Rights Act guarantees children the right to free education."
+      },
+      {
+        "question": "Which is a duty of Nigerian citizens?",
+        "options": ["Ignore laws", "Not vote", "Pay taxes", "Destroy public property"],
+        "correct_answer": "Pay taxes",
+        "explanation": "Citizens must pay taxes to fund government services."
+      },
+      {
+        "question": "True or False: Rights come with no responsibilities.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Rights are balanced with duties to others and to society."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Leadership and Accountability",
+    "language": "en",
+    "content": "Leadership is guiding people toward a goal. Accountability is taking responsibility for actions and decisions. Good leaders are accountable: they admit mistakes, keep promises, and answer to the people. In Nigeria, elected leaders are accountable to citizens. If a leader fails, citizens can vote them out, protest peacefully, or take legal action. Leaders should use public money wisely (no corruption), listen to the people, make fair decisions, and put the country first. Traditional leaders (Obas, Emirs, Igwes) are accountable to their communities. You can practice accountability: admit when you're wrong, do what you promised, take responsibility for your actions.",
+    "summary": "Leadership = guiding people. Accountability = taking responsibility. Elected leaders accountable to citizens. Traditional leaders accountable to communities.",
+    "learning_objectives": [
+      "Understand leadership and accountability",
+      "Know how leaders are held accountable",
+      "Practice personal accountability"
+    ],
+    "nigerian_examples": [
+      "Elections every 4 years to choose leaders",
+      "EFCC prosecuting corrupt officials",
+      "Traditional councils holding Obas accountable"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is accountability?",
+        "options": ["Blaming others", "Taking responsibility for actions", "Ignoring mistakes", "Never admitting wrong"],
+        "correct_answer": "Taking responsibility for actions",
+        "explanation": "Accountable people own their decisions and their outcomes."
+      },
+      {
+        "question": "How can citizens hold leaders accountable?",
+        "options": ["By voting", "By peaceful protest", "By legal action", "All of these"],
+        "correct_answer": "All of these",
+        "explanation": "Citizens have multiple ways to demand accountability from leaders."
+      },
+      {
+        "question": "What is corruption?",
+        "options": ["Using public money for personal benefit", "Honest leadership", "Paying taxes", "Voting"],
+        "correct_answer": "Using public money for personal benefit",
+        "explanation": "Corruption is when leaders misuse public resources for themselves."
+      },
+      {
+        "question": "What agency fights corruption in Nigeria?",
+        "options": ["NIA", "EFCC", "NPA", "NIMC"],
+        "correct_answer": "EFCC",
+        "explanation": "The Economic and Financial Crimes Commission (EFCC) fights corruption."
+      },
+      {
+        "question": "True or False: Good leaders keep their promises.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Keeping promises is a key sign of accountable leadership."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Social & Citizenship Studies",
+    "topic": "National Symbols",
+    "language": "en",
+    "content": "National symbols represent Nigeria's identity and values. The flag: green-white-green stripes - green for agriculture, white for peace. The coat of arms: black shield (fertile soil), white Y (Niger and Benue rivers), two horses (dignity), eagle (strength), and the motto 'Unity and Faith, Peace and Progress.' The national anthem: 'Arise, O Compatriots' - sung at ceremonies. The national pledge: 'I pledge to Nigeria my country...' - recited at schools. Other symbols: the black-crowned crane (national bird), the drum (national instrument), the national flower (Costus spectabilis). These symbols unite Nigerians and remind us of our shared identity.",
+    "summary": "National symbols: flag (green-white-green), coat of arms (shield, horses, eagle), anthem, pledge, bird (black-crowned crane). Symbols unite Nigerians.",
+    "learning_objectives": [
+      "Identify national symbols",
+      "Understand what each symbol represents",
+      "Show respect for national symbols"
+    ],
+    "nigerian_examples": [
+      "Flag flown on Independence Day",
+      "Coat of arms on Nigerian currency and passports",
+      "Standing for the anthem at school assembly"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What do the green stripes on the flag represent?",
+        "options": ["Peace", "Agriculture and forests", "Rivers", "Unity"],
+        "correct_answer": "Agriculture and forests",
+        "explanation": "Green represents Nigeria's rich agricultural land."
+      },
+      {
+        "question": "What does the white stripe on the flag represent?",
+        "options": ["Agriculture", "Peace", "Strength", "Unity"],
+        "correct_answer": "Peace",
+        "explanation": "White represents peace and unity."
+      },
+      {
+        "question": "What is the national bird of Nigeria?",
+        "options": ["Eagle", "Black-crowned crane", "Parrot", "Peacock"],
+        "correct_answer": "Black-crowned crane",
+        "explanation": "The black-crowned crane is Nigeria's official national bird."
+      },
+      {
+        "question": "What is the national motto on the coat of arms?",
+        "options": ["One Nigeria", "Unity and Faith, Peace and Progress", "Freedom and Justice", "God and Country"],
+        "correct_answer": "Unity and Faith, Peace and Progress",
+        "explanation": "This motto appears on the coat of arms."
+      },
+      {
+        "question": "True or False: The national pledge is recited at school assemblies.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Nigerian students recite the national pledge every morning at school."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Drug and Substance Abuse",
+    "language": "en",
+    "content": "Drug abuse is using illegal drugs or misusing legal drugs (alcohol, cigarettes, prescription medicine). Drugs change how your brain works. Effects of drug abuse: addiction (can't stop), health problems (lung disease, liver damage, brain damage), poor school performance, money problems, family conflict, accidents, crime, and legal trouble. Gateway drugs (lead to harder drugs): alcohol, cigarettes, marijuana. Signs of drug abuse: changing friends, dropping grades, lying, stealing, mood swings. Prevention: say NO to peer pressure, choose healthy friends, stay busy with sports or hobbies, talk to adults about problems. In Nigeria, NDLEA arrests drug dealers; NAFDAC regulates medicines.",
+    "summary": "Drug abuse = using illegal drugs or misusing legal ones. Effects: addiction, health problems, poor grades, legal trouble. Say NO to peer pressure. Choose healthy activities.",
+    "learning_objectives": [
+      "Understand drug abuse consequences",
+      "Recognize peer pressure",
+      "Learn refusal skills"
+    ],
+    "nigerian_examples": [
+      "NDLEA drug busts at Lagos airport",
+      "NAFDAC removing fake drugs from markets",
+      "School anti-drug campaigns"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is a gateway drug?",
+        "options": ["Medicine prescribed by doctor", "A drug that may lead to harder drugs", "A healthy vitamin", "A type of food"],
+        "correct_answer": "A drug that may lead to harder drugs",
+        "explanation": "Gateway drugs like alcohol and cigarettes can lead to harder drug use."
+      },
+      {
+        "question": "Which agency fights drug trafficking in Nigeria?",
+        "options": ["NAFDAC", "NDLEA", "NIA", "NPA"],
+        "correct_answer": "NDLEA",
+        "explanation": "The National Drug Law Enforcement Agency (NDLEA) fights drug abuse and trafficking."
+      },
+      {
+        "question": "What is addiction?",
+        "options": ["Being able to stop easily", "Not being able to stop using a drug", "Never using drugs", "Taking medicine as prescribed"],
+        "correct_answer": "Not being able to stop using a drug",
+        "explanation": "Addiction is a brain disease that makes quitting extremely difficult."
+      },
+      {
+        "question": "How can you say NO to drugs?",
+        "options": ["'No, thank you'", "'I'm not interested'", "Walk away", "All of these"],
+        "correct_answer": "All of these",
+        "explanation": "These are all effective refusal strategies."
+      },
+      {
+        "question": "True or False: Alcohol is safe for children to drink.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Alcohol damages children's developing brains and is illegal for minors."
+      }
+    ]
+  }
+]

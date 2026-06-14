@@ -1,0 +1,57 @@
+[
+  {
+    "grade": 4,
+    "subject": "Creativity",
+    "topic": "Inventive Problem Solving",
+    "language": "en",
+    "content": "Inventive problem solving means finding new solutions to problems. Use SCAMPER technique: Substitute (what can replace?), Combine (combine with something else?), Adapt (change for new use?), Modify (change size, shape, color?), Put to other use (new application?), Eliminate (remove something?), Reverse (opposite direction?). Example: problem - carrying heavy water. Solutions: combine wheel with bucket (wheelbarrow), adapt jerrycan with tap, modify shape for rolling. Nigerian inventors use SCAMPER: converting abandoned oil drums into stoves, turning plastic bottles into building materials. Be curious. Ask 'What if?'",
+    "summary": "Inventive problem solving = new solutions. SCAMPER: Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse. Ask 'What if?'",
+    "learning_objectives": [
+      "Use SCAMPER technique",
+      "Generate inventive solutions",
+      "Apply to everyday problems"
+    ],
+    "nigerian_examples": [
+      "Oil drums converted to stoves",
+      "Plastic bottles as building bricks",
+      "Old tires turned into sandals"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What does SCAMPER stand for?",
+        "options": [
+          "Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse",
+          "Stop, Create, Ask, Make, Plan, Execute, Review",
+          "Simple, Creative, Artistic, Musical, Playful, Expressive, Rhythmic",
+          "Start, Change, Adjust, Move, Process, End, Repeat"
+        ],
+        "correct_answer": "Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse",
+        "explanation": "SCAMPER is a creativity tool for generating new ideas."
+      },
+      {
+        "question": "What question does 'Substitute' ask?",
+        "options": ["What can I add?", "What can replace this?", "What can I remove?", "What can I reverse?"],
+        "correct_answer": "What can replace this?",
+        "explanation": "Substitution finds alternative materials or processes."
+      },
+      {
+        "question": "What Nigerian invention uses 'Put to other use'?",
+        "options": ["Oil drums as stoves", "Regular pot", "New car", "Factory machine"],
+        "correct_answer": "Oil drums as stoves",
+        "explanation": "Waste oil drums found new life as cooking stoves."
+      },
+      {
+        "question": "What does 'Combine' mean in SCAMPER?",
+        "options": ["Take apart", "Put together with something else", "Make smaller", "Change color"],
+        "correct_answer": "Put together with something else",
+        "explanation": "Combining features can create better solutions."
+      },
+      {
+        "question": "True or False: Inventive problem solving requires expensive tools.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Creativity and curiosity matter more than tools or money."
+      }
+    ]
+  }
+]

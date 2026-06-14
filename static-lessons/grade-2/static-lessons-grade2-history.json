@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Nigerian States",
+    "language": "en",
+    "content": "Nigeria is a big country made up of 36 states and one Federal Capital Territory called Abuja. Each state has its own capital city. Some states you may know: Lagos State (capital: Ikeja), Kano State (capital: Kano), Rivers State (capital: Port Harcourt), and Oyo State (capital: Ibadan). States are grouped into six geopolitical zones: North-West, North-East, North-Central, South-West, South-East, and South-South. Each state has different languages, foods, and cultures. Learning the states helps you understand how Nigeria is organized.",
+    "summary": "Nigeria has 36 states and Abuja (FCT). States have different capitals, languages, and cultures. States are grouped into six geopolitical zones.",
+    "learning_objectives": [
+      "Learn that Nigeria has 36 states plus Abuja",
+      "Identify some states and their capitals",
+      "Understand that states have different cultures"
+    ],
+    "nigerian_examples": [
+      "Lagos State is famous for business and entertainment",
+      "Kano State is known for traditional dye pits",
+      "Rivers State has oil and beautiful rivers"
+    ],
+    "quiz_questions": [
+      {
+        "question": "How many states does Nigeria have?",
+        "options": ["20 states", "30 states", "36 states", "40 states"],
+        "correct_answer": "36 states",
+        "explanation": "Nigeria has 36 states plus the Federal Capital Territory, Abuja."
+      },
+      {
+        "question": "What is the capital of Lagos State?",
+        "options": ["Lagos", "Ikeja", "Badagry", "Epe"],
+        "correct_answer": "Ikeja",
+        "explanation": "Ikeja is the capital city of Lagos State."
+      },
+      {
+        "question": "What is the capital of Rivers State?",
+        "options": ["Calabar", "Uyo", "Port Harcourt", "Yenagoa"],
+        "correct_answer": "Port Harcourt",
+        "explanation": "Port Harcourt is the capital city of Rivers State."
+      },
+      {
+        "question": "What is the name of Nigeria's Federal Capital Territory?",
+        "options": ["Lagos", "Kano", "Abuja", "Ibadan"],
+        "correct_answer": "Abuja",
+        "explanation": "Abuja is the Federal Capital Territory of Nigeria."
+      },
+      {
+        "question": "True or False: All Nigerian states have the same language and culture.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Different states have different languages, foods, traditions, and cultures."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Pre-Colonial Nigeria",
+    "language": "en",
+    "content": "Before European colonizers came, Nigeria had many powerful kingdoms and empires. The Hausa Kingdoms were in the north, with cities like Kano and Zaria. The Benin Kingdom in the south was famous for its beautiful bronze artwork. The Oyo Empire in the southwest was one of the largest empires in West Africa. The Igbo people in the southeast had communities with their own systems of government. These kingdoms traded with each other and with other parts of Africa. They had kings, queens, warriors, and rich cultures long before Nigeria became one country.",
+    "summary": "Before colonization, Nigeria had powerful kingdoms: Hausa Kingdoms (north), Benin Kingdom (south), Oyo Empire (southwest), Igbo communities (southeast). They had rich cultures and traded widely.",
+    "learning_objectives": [
+      "Learn about Nigerian kingdoms before colonization",
+      "Understand that Nigeria had advanced civilizations",
+      "Appreciate Nigerian cultural heritage"
+    ],
+    "nigerian_examples": [
+      "Benin bronze plaques displayed in museums",
+      "The ancient city walls of Kano",
+      "Oyo Empire's powerful cavalry warriors"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which kingdom was famous for beautiful bronze artwork?",
+        "options": ["Oyo Empire", "Benin Kingdom", "Hausa Kingdoms", "Igbo communities"],
+        "correct_answer": "Benin Kingdom",
+        "explanation": "The Benin Kingdom was famous for its bronze plaques and sculptures."
+      },
+      {
+        "question": "Where were the Hausa Kingdoms located?",
+        "options": ["Southeast Nigeria", "Southwest Nigeria", "Northern Nigeria", "Niger Delta"],
+        "correct_answer": "Northern Nigeria",
+        "explanation": "The Hausa Kingdoms were in what is now northern Nigeria, with cities like Kano and Zaria."
+      },
+      {
+        "question": "Which empire was one of the largest in West Africa?",
+        "options": ["Benin Kingdom", "Igbo communities", "Oyo Empire", "Nri Kingdom"],
+        "correct_answer": "Oyo Empire",
+        "explanation": "The Oyo Empire was one of the largest and most powerful empires in West African history."
+      },
+      {
+        "question": "Did Nigerian kingdoms exist before European colonization?",
+        "options": ["Yes", "No", "Only a few", "Only after 1900"],
+        "correct_answer": "Yes",
+        "explanation": "Nigeria had many powerful kingdoms and empires long before Europeans arrived."
+      },
+      {
+        "question": "True or False: Pre-colonial Nigerian kingdoms did not trade with each other.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Pre-colonial kingdoms traded goods like salt, cloth, and metals with each other."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Trade Routes",
+    "language": "en",
+    "content": "Trade routes were paths that traders used to carry goods from one place to another. The trans-Saharan trade route connected northern Nigeria to North Africa. Caravans of camels carried salt, cloth, and books from the north and brought gold, ivory, and slaves from the south. Important trading cities in Nigeria included Kano, Katsina, and Timbuktu (now in Mali). In the south, the Niger River was a major water route for trading. Canoes carried palm oil, yams, and fish. Trade brought different cultures together and made some cities very rich.",
+    "summary": "Trade routes connected Nigerian kingdoms. Trans-Saharan route used camels. Niger River route used canoes. Trading cities like Kano became rich from trade.",
+    "learning_objectives": [
+      "Understand what trade routes were",
+      "Identify major Nigerian trade routes",
+      "Learn what goods were traded"
+    ],
+    "nigerian_examples": [
+      "Kano's ancient city walls and market",
+      "Salt caravan arriving from the Sahara",
+      "Canoes trading on the Niger River"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What animal was used for transport on the trans-Saharan trade route?",
+        "options": ["Horses", "Donkeys", "Camels", "Elephants"],
+        "correct_answer": "Camels",
+        "explanation": "Camels were used because they could travel long distances without much water."
+      },
+      {
+        "question": "What was a major water trading route in southern Nigeria?",
+        "options": ["Niger River", "Lake Chad", "Benue River", "Cross River"],
+        "correct_answer": "Niger River",
+        "explanation": "The Niger River was a major water route where canoes carried goods."
+      },
+      {
+        "question": "Which Nigerian city was an important trading center?",
+        "options": ["Abuja", "Kano", "Lagos", "Benin City"],
+        "correct_answer": "Kano",
+        "explanation": "Kano was a major trading city on the trans-Saharan trade route."
+      },
+      {
+        "question": "What goods were brought from North Africa to Nigeria?",
+        "options": ["Salt, cloth, and books", "Yams only", "Palm oil only", "Fish only"],
+        "correct_answer": "Salt, cloth, and books",
+        "explanation": "Caravans brought salt, cloth, and books from North Africa to Nigeria."
+      },
+      {
+        "question": "True or False: Only land routes were used for trade in old Nigeria.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Both land routes (camels) and water routes (canoes on rivers) were used for trade."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Cultural Heritage",
+    "language": "en",
+    "content": "Cultural heritage means the traditions, customs, and art passed down from our ancestors. Nigeria has many cultural heritages because of its many ethnic groups. The Yoruba have beautiful beadwork, drumming, and the Gelede festival. The Igbo have masquerade festivals like the Mmanwu and the New Yam Festival. The Hausa have colorful embroidery, the Durbar festival with horses, and traditional architecture. Other groups like the Efik, Tiv, Nupe, and Ijaw have their own unique cultures. Protecting our cultural heritage means we keep these traditions alive for future generations.",
+    "summary": "Cultural heritage includes traditions and art from ancestors. Yoruba: drumming and beadwork. Igbo: Mmanwu and New Yam Festival. Hausa: Durbar festival and embroidery.",
+    "learning_objectives": [
+      "Understand what cultural heritage means",
+      "Learn about traditions of major ethnic groups",
+      "Appreciate the value of preserving culture"
+    ],
+    "nigerian_examples": [
+      "Yoruba Gelede festival celebrated in southwestern Nigeria",
+      "Igbo New Yam Festival (Iri Ji) at harvest time",
+      "Hausa Durbar festival with horse riding"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is cultural heritage?",
+        "options": ["Only food", "Traditions, customs, and art from ancestors", "Only modern inventions", "Only money"],
+        "correct_answer": "Traditions, customs, and art from ancestors",
+        "explanation": "Cultural heritage includes all the traditions and art passed down from our ancestors."
+      },
+      {
+        "question": "Which festival is celebrated by the Igbo people?",
+        "options": ["Durbar", "Gelede", "New Yam Festival", "Eyo Festival"],
+        "correct_answer": "New Yam Festival",
+        "explanation": "The Igbo celebrate the New Yam Festival (Iri Ji) at harvest time."
+      },
+      {
+        "question": "What is the Durbar festival associated with?",
+        "options": ["Yoruba people", "Igbo people", "Hausa people", "Efik people"],
+        "correct_answer": "Hausa people",
+        "explanation": "The Durbar festival with horse riding is celebrated by the Hausa people."
+      },
+      {
+        "question": "What is the Yoruba Gelede festival known for?",
+        "options": ["Boat racing", "Drumming and dancing", "Horse riding", "Swimming"],
+        "correct_answer": "Drumming and dancing",
+        "explanation": "The Gelede festival features drumming, dancing, and colorful masks."
+      },
+      {
+        "question": "True or False: Nigeria has only one cultural heritage because it has one main ethnic group.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Nigeria has many ethnic groups, each with its own unique cultural heritage."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Famous Leaders",
+    "language": "en",
+    "content": "Nigeria has had many famous leaders who helped shape the country. Herbert Macaulay fought for Nigeria's independence from British rule. Nnamdi Azikiwe became Nigeria's first President. Obafemi Awolowo introduced free education in western Nigeria. Ahmadu Bello was a leader in northern Nigeria. Funmilayo Ransome-Kuti fought for women's rights. Other important leaders include Murtala Mohammed, Yakubu Gowon, and Goodluck Jonathan. Learning about these leaders teaches us about courage, service, and working for the good of the nation.",
+    "summary": "Famous Nigerian leaders: Herbert Macaulay (independence), Nnamdi Azikiwe (first President), Obafemi Awolowo (free education), Ahmadu Bello, Funmilayo Ransome-Kuti (women's rights).",
+    "learning_objectives": [
+      "Learn about important Nigerian leaders",
+      "Understand their contributions to Nigeria",
+      "Appreciate leadership qualities"
+    ],
+    "nigerian_examples": [
+      "Nnamdi Azikiwe's picture on the 500 naira note",
+      "Obafemi Awolowo's free education program still remembered",
+      "Funmilayo Ransome-Kuti's fight for women's voting rights"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Who was Nigeria's first President?",
+        "options": ["Obafemi Awolowo", "Herbert Macaulay", "Nnamdi Azikiwe", "Ahmadu Bello"],
+        "correct_answer": "Nnamdi Azikiwe",
+        "explanation": "Nnamdi Azikiwe became Nigeria's first President in 1963."
+      },
+      {
+        "question": "What did Obafemi Awolowo introduce in western Nigeria?",
+        "options": ["Roads", "Free education", "Hospitals", "Markets"],
+        "correct_answer": "Free education",
+        "explanation": "Obafemi Awolowo introduced free primary education in western Nigeria."
+      },
+      {
+        "question": "Who fought for Nigeria's independence from British rule?",
+        "options": ["Goodluck Jonathan", "Herbert Macaulay", "Yakubu Gowon", "Murtala Mohammed"],
+        "correct_answer": "Herbert Macaulay",
+        "explanation": "Herbert Macaulay was a key leader in Nigeria's struggle for independence."
+      },
+      {
+        "question": "Who fought for women's rights in Nigeria?",
+        "options": ["Ahmadu Bello", "Funmilayo Ransome-Kuti", "Nnamdi Azikiwe", "Obafemi Awolowo"],
+        "correct_answer": "Funmilayo Ransome-Kuti",
+        "explanation": "Funmilayo Ransome-Kuti fought for women's voting rights and equality."
+      },
+      {
+        "question": "True or False: Nigerian leaders only helped themselves, not the people.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Many Nigerian leaders worked hard to improve education, independence, and rights for the people."
+      }
+    ]
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "grade": 5,
+    "subject": "Basic Science & Technology",
+    "topic": "Circulatory System",
+    "language": "en",
+    "content": "The circulatory system transports blood, oxygen, and nutrients throughout the body. Main parts: heart (pump), blood vessels (arteries carry blood away from heart, veins carry blood back to heart, capillaries connect them), blood (carries oxygen, fights infection). The heart has four chambers: right atrium, right ventricle, left atrium, left ventricle. Blood flows: body → right atrium → right ventricle → lungs (get oxygen) → left atrium → left ventricle → body. Pulse rate is heartbeats per minute - normal for children 70-100 bpm. Exercise increases pulse. Healthy habits: eat less fat, exercise regularly, avoid smoking. Nigerian heart health organizations promote prevention of hypertension (high blood pressure).",
+    "summary": "Circulatory system: heart pumps blood through arteries, veins, capillaries. Blood carries oxygen and nutrients. Heart has 4 chambers. Pulse = heartbeats per minute.",
+    "learning_objectives": [
+      "Trace blood flow through the heart",
+      "Measure pulse rate",
+      "Identify heart-healthy habits"
+    ],
+    "nigerian_examples": [
+      "Nigerian Heart Foundation promotes heart health awareness",
+      "Walking for 30 minutes daily reduces heart disease risk",
+      "Reducing salt in jollof rice helps control blood pressure"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What organ pumps blood throughout the body?",
+        "options": ["Brain", "Heart", "Lungs", "Liver"],
+        "correct_answer": "Heart",
+        "explanation": "The heart is a muscular pump that pushes blood through blood vessels."
+      },
+      {
+        "question": "Which blood vessels carry blood away from the heart?",
+        "options": ["Veins", "Capillaries", "Arteries", "Ventricles"],
+        "correct_answer": "Arteries",
+        "explanation": "Arteries carry oxygen-rich blood away from the heart to the body."
+      },
+      {
+        "question": "What is a normal resting pulse rate for children?",
+        "options": ["40-50 bpm", "70-100 bpm", "120-150 bpm", "200+ bpm"],
+        "correct_answer": "70-100 bpm",
+        "explanation": "Children's hearts beat faster than adults, typically 70-100 times per minute at rest."
+      },
+      {
+        "question": "What does blood carry to body cells?",
+        "options": ["Only waste", "Oxygen and nutrients", "Only carbon dioxide", "Only water"],
+        "correct_answer": "Oxygen and nutrients",
+        "explanation": "Blood delivers oxygen from lungs and nutrients from digestion to all body cells."
+      },
+      {
+        "question": "True or False: Exercise strengthens the heart muscle.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Regular physical activity makes the heart stronger and more efficient."
+      }
+    ]
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Science & Technology",
+    "topic": "Respiratory System",
+    "language": "en",
+    "content": "The respiratory system brings oxygen into the body and removes carbon dioxide. Main parts: nose/mouth (air enters), trachea (windpipe), bronchi (tubes to lungs), bronchioles (smaller tubes), alveoli (tiny air sacs where gas exchange happens), diaphragm (muscle that helps breathing). Inhalation: diaphragm contracts (moves down), ribcage expands, air rushes in. Exhalation: diaphragm relaxes (moves up), ribcage contracts, air pushed out. Smoking damages alveoli and causes lung disease. In Nigeria, air pollution from generators and bush burning harms lungs. Healthy lungs need exercise, clean air, and no smoking.",
+    "summary": "Respiratory system brings in oxygen, removes CO2. Air path: nose/mouth → trachea → bronchi → bronchioles → alveoli. Diaphragm controls breathing. Avoid smoking and pollution.",
+    "learning_objectives": [
+      "Trace the path of air through the respiratory system",
+      "Understand how the diaphragm works",
+      "Identify lung-healthy habits"
+    ],
+    "nigerian_examples": [
+      "Fumes from generators can damage lungs - use in open areas",
+      "Bush burning during dry season creates smoke pollution",
+      "Regular exercise improves lung capacity"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Where does gas exchange occur in the lungs?",
+        "options": ["Trachea", "Bronchi", "Alveoli", "Diaphragm"],
+        "correct_answer": "Alveoli",
+        "explanation": "Alveoli are tiny air sacs surrounded by capillaries where oxygen enters blood and CO2 leaves."
+      },
+      {
+        "question": "What muscle helps you breathe?",
+        "options": ["Heart", "Diaphragm", "Liver", "Stomach"],
+        "correct_answer": "Diaphragm",
+        "explanation": "The diaphragm is a dome-shaped muscle below lungs that contracts and relaxes to change lung volume."
+      },
+      {
+        "question": "What happens when you inhale?",
+        "options": ["Diaphragm relaxes, ribcage contracts", "Diaphragm contracts, ribcage expands", "Diaphragm stays still", "Ribcage contracts only"],
+        "correct_answer": "Diaphragm contracts, ribcage expands",
+        "explanation": "Inhalation: diaphragm moves down, ribs move up/out, chest volume increases, air rushes in."
+      },
+      {
+        "question": "What damages the respiratory system?",
+        "options": ["Exercise", "Clean air", "Smoking and air pollution", "Drinking water"],
+        "correct_answer": "Smoking and air pollution",
+        "explanation": "Toxins in smoke and polluted air destroy alveoli and cause lung diseases."
+      },
+      {
+        "question": "True or False: The respiratory system removes carbon dioxide waste from the body.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Exhalation removes carbon dioxide, a waste product of cellular respiration."
+      }
+    ]
+  }
+]

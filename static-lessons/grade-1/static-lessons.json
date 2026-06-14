@@ -1,0 +1,247 @@
+[
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Counting 1 to 500",
+    "language": "en",
+    "content": "Counting is the foundation of mathematics. In Grade 2, you will learn to count from 1 all the way to 500! You already know numbers 1 to 100. Now you will learn numbers 101 to 500. When counting, remember the pattern: after 199 comes 200, after 299 comes 300, after 399 comes 400, after 499 comes 500. You can count by ones (1,2,3...), by tens (10,20,30...), or by hundreds (100,200,300...). Practice counting objects around you — books, pencils, stones, or even steps as you walk!",
+    "summary": "Count from 1 to 500. Numbers follow patterns: after 199 is 200, after 299 is 300. Count by ones, tens, or hundreds.",
+    "learning_objectives": [
+      "Count from 1 to 500 fluently",
+      "Recognize number patterns",
+      "Count by ones, tens, and hundreds"
+    ],
+    "nigerian_examples": [
+      "Counting naira notes: 1 naira, 2 naira, up to 500 naira",
+      "Counting eggs in a market basket",
+      "Counting students in a Nigerian primary school assembly"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What number comes after 199?",
+        "options": ["100", "200", "300", "190"],
+        "correct_answer": "200",
+        "explanation": "After 199 comes 200. The hundreds digit increases by 1."
+      },
+      {
+        "question": "What number comes after 399?",
+        "options": ["400", "300", "500", "390"],
+        "correct_answer": "400",
+        "explanation": "After 399 comes 400. The hundreds digit changes from 3 to 4."
+      },
+      {
+        "question": "If you count by tens, what comes after 70?",
+        "options": ["71", "80", "75", "60"],
+        "correct_answer": "80",
+        "explanation": "Counting by tens: 10,20,30,40,50,60,70,80,90,100."
+      },
+      {
+        "question": "What is the number after 249?",
+        "options": ["240", "250", "300", "249"],
+        "correct_answer": "250",
+        "explanation": "After 249 comes 250. The tens digit increases from 4 to 5."
+      },
+      {
+        "question": "True or False: 500 is the largest number you learn to count in Grade 2.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Yes! In Grade 2, you learn to count up to 500."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Multiplication Intro",
+    "language": "en",
+    "content": "Multiplication is a faster way to add the same number many times. For example, 3 + 3 + 3 + 3 = 12. Instead of adding 3 four times, you can multiply: 4 × 3 = 12. The '×' sign means 'times'. Multiplication helps you count things in groups. If you have 5 bags with 2 oranges each, instead of counting 2+2+2+2+2=10, you can do 5 × 2 = 10. Start by learning the multiplication tables for 1, 2, 5, and 10. 1 times any number is that number. 10 times any number adds a zero.",
+    "summary": "Multiplication is repeated addition. Example: 3+3+3+3 = 4×3 = 12. Learn tables for 1, 2, 5, and 10 first.",
+    "learning_objectives": [
+      "Understand multiplication as repeated addition",
+      "Learn multiplication tables for 1, 2, 5, and 10",
+      "Solve simple multiplication problems"
+    ],
+    "nigerian_examples": [
+      "4 packs of biscuits with 5 biscuits each = 4 × 5 = 20 biscuits",
+      "3 rows of chairs with 10 chairs in each row = 3 × 10 = 30 chairs",
+      "6 baskets with 2 yams each = 6 × 2 = 12 yams"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is 4 × 3?",
+        "options": ["7", "12", "10", "15"],
+        "correct_answer": "12",
+        "explanation": "4 × 3 means 3+3+3+3 = 12. Four groups of three equals twelve."
+      },
+      {
+        "question": "What is 5 × 2?",
+        "options": ["7", "10", "12", "8"],
+        "correct_answer": "10",
+        "explanation": "5 × 2 means 2+2+2+2+2 = 10. Five groups of two equals ten."
+      },
+      {
+        "question": "What is 10 × 4?",
+        "options": ["14", "40", "104", "400"],
+        "correct_answer": "40",
+        "explanation": "10 × 4 = 40. Multiplying by 10 adds a zero to the other number."
+      },
+      {
+        "question": "What multiplication fact is the same as 2+2+2?",
+        "options": ["2 × 2", "3 × 2", "2 × 4", "3 × 3"],
+        "correct_answer": "3 × 2",
+        "explanation": "2+2+2 is 2 added three times, which equals 3 × 2 = 6."
+      },
+      {
+        "question": "True or False: 1 × 100 = 100",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "1 times any number equals that number. So 1 × 100 = 100."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Division Intro",
+    "language": "en",
+    "content": "Division is sharing things equally. It is the opposite of multiplication. The '÷' sign means 'divided by'. For example, if you have 12 sweets and want to share equally among 3 friends, each friend gets 4 sweets. You write 12 ÷ 3 = 4. Division tells you how many in each group when you share equally. Start by learning to divide by 1, 2, 5, and 10. Any number divided by 1 equals itself. Any number divided by itself equals 1. Practice sharing real things like biscuits, fruits, or pencils to understand division better!",
+    "summary": "Division is sharing equally. 12 sweets shared by 3 friends = 12 ÷ 3 = 4 each. Division is the opposite of multiplication.",
+    "learning_objectives": [
+      "Understand division as equal sharing",
+      "Solve simple division problems with 1, 2, 5, 10",
+      "Recognize division as the opposite of multiplication"
+    ],
+    "nigerian_examples": [
+      "Sharing 20 oranges among 5 children: 20 ÷ 5 = 4 oranges each",
+      "Dividing 100 naira equally between 2 people: 100 ÷ 2 = 50 naira each",
+      "Sharing 15 buns among 3 friends: 15 ÷ 3 = 5 buns each"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is 12 ÷ 3?",
+        "options": ["3", "4", "5", "6"],
+        "correct_answer": "4",
+        "explanation": "12 sweets shared by 3 friends means each gets 4 sweets. 12 ÷ 3 = 4."
+      },
+      {
+        "question": "What is 20 ÷ 5?",
+        "options": ["2", "3", "4", "5"],
+        "correct_answer": "4",
+        "explanation": "20 divided into 5 groups equals 4 in each group."
+      },
+      {
+        "question": "What is 10 ÷ 2?",
+        "options": ["2", "3", "5", "10"],
+        "correct_answer": "5",
+        "explanation": "10 divided into 2 equal groups gives 5 in each group."
+      },
+      {
+        "question": "Any number divided by 1 equals...",
+        "options": ["0", "1", "The number itself", "10"],
+        "correct_answer": "The number itself",
+        "explanation": "Any number divided by 1 equals the same number. Example: 25 ÷ 1 = 25."
+      },
+      {
+        "question": "True or False: Division is the opposite of multiplication.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "If 3 × 4 = 12, then 12 ÷ 3 = 4 and 12 ÷ 4 = 3. Division undoes multiplication."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Fractions Half and Quarter",
+    "language": "en",
+    "content": "Fractions are parts of a whole. When you cut something into equal pieces, you get fractions. A 'half' (½) means one out of two equal parts. If you cut an orange into 2 equal pieces, each piece is a half. A 'quarter' (¼) means one out of four equal parts. If you cut a cake into 4 equal slices, each slice is a quarter. Two quarters make a half. Four quarters make a whole. Learning fractions helps you share food, tell time, and measure things. Practice with real food like bread, oranges, or chapati!",
+    "summary": "Fractions are parts of a whole. Half (½) = 1 of 2 equal parts. Quarter (¼) = 1 of 4 equal parts. Two quarters = one half.",
+    "learning_objectives": [
+      "Understand what halves and quarters mean",
+      "Identify half and quarter of shapes and objects",
+      "Relate fractions to real-life sharing"
+    ],
+    "nigerian_examples": [
+      "Cutting a large puff-puff into 2 halves to share with a friend",
+      "A quarter of a watermelon during family gatherings",
+      "Half of an hour (30 minutes) before school starts"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What fraction means one out of two equal parts?",
+        "options": ["Quarter (¼)", "Half (½)", "Third (⅓)", "Whole (1)"],
+        "correct_answer": "Half (½)",
+        "explanation": "A half (½) means one piece when you cut something into 2 equal parts."
+      },
+      {
+        "question": "How many quarters make a half?",
+        "options": ["1", "2", "3", "4"],
+        "correct_answer": "2",
+        "explanation": "Two quarters = one half. Because ¼ + ¼ = ½."
+      },
+      {
+        "question": "If you cut a cake into 4 equal pieces, what is one piece called?",
+        "options": ["Half", "Third", "Quarter", "Whole"],
+        "correct_answer": "Quarter",
+        "explanation": "One piece of a cake cut into 4 equal pieces is called a quarter (¼)."
+      },
+      {
+        "question": "How many quarters make a whole?",
+        "options": ["2", "3", "4", "1"],
+        "correct_answer": "4",
+        "explanation": "Four quarters make a whole. ¼ + ¼ + ¼ + ¼ = 1 whole."
+      },
+      {
+        "question": "True or False: A half is larger than a quarter.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Yes! A half (½) is larger than a quarter (¼). Half of something is bigger than one quarter of that same thing."
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Money and Prices",
+    "language": "en",
+    "content": "Nigeria's currency is the naira (₦). Coins: 50 kobo, 1 naira, 2 naira. Notes: 5 naira, 10 naira, 20 naira, 50 naira, 100 naira, 200 naira, 500 naira, 1000 naira. Learning to count money helps you buy things at the market. If an orange costs ₦50 and you have ₦200, you can buy 4 oranges (200 ÷ 50 = 4). Practice adding prices: bread ₦300 + milk ₦200 = ₦500. Practice finding change: If you pay ₦500 for something that costs ₦350, your change is ₦150 (500 - 350 = 150).",
+    "summary": "Nigerian currency is naira (₦). Coins: 50k, ₦1, ₦2. Notes: ₦5, ₦10, ₦20, ₦50, ₦100, ₦200, ₦500, ₦1000. Learn to add prices and find change.",
+    "learning_objectives": [
+      "Identify Nigerian coins and notes",
+      "Add prices of items",
+      "Calculate change after payment"
+    ],
+    "nigerian_examples": [
+      "Buying 3 packs of biscuits at ₦100 each = ₦300 total",
+      "Paying for a ₦250 snack with ₦500 = ₦250 change",
+      "Saving ₦50 each day for 10 days = ₦500 saved"
+    ],
+    "quiz_questions": [
+      {
+        "question": "If bread costs ₦300 and milk costs ₦200, how much total?",
+        "options": ["₦400", "₦500", "₦600", "₦300"],
+        "correct_answer": "₦500",
+        "explanation": "₦300 + ₦200 = ₦500."
+      },
+      {
+        "question": "If you buy a ₦150 biscuit and pay with ₦200, how much change?",
+        "options": ["₦50", "₦100", "₦150", "₦200"],
+        "correct_answer": "₦50",
+        "explanation": "₦200 - ₦150 = ₦50 change."
+      },
+      {
+        "question": "Which Nigerian note has the highest value?",
+        "options": ["₦500", "₦200", "₦1000", "₦50"],
+        "correct_answer": "₦1000",
+        "explanation": "The ₦1000 note is currently the highest value Nigerian naira note."
+      },
+      {
+        "question": "If you want to buy 4 oranges at ₦50 each,   {
+        "question": "True or False: Nigeria uses both naira notes and coins.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Yes! Nigeria uses naira notes (paper money) and kobo/naira coins (metal money)."
+      }
+    ]
+  }
+]

@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 4,
+    "subject": "Teamwork",
+    "topic": "Collaborative Problem Solving",
+    "language": "en",
+    "content": "Collaborative problem solving means teams working together to find solutions. Steps: define the problem together, brainstorm ideas without judgment, evaluate options as a team, choose best solution, assign tasks, implement, review results. Benefits: more ideas, shared workload, better decisions. In Nigerian schools, groups solve math problems, plan events, or design projects together. Practice: a team figuring out how to raise funds for a field trip, or how to clean the classroom faster. Everyone contributes. Listen to all ideas before deciding.",
+    "summary": "Collaborative problem solving: define problem, brainstorm, evaluate, choose, assign tasks, implement, review. Teams make better decisions.",
+    "learning_objectives": [
+      "Use collaborative problem-solving steps",
+      "Brainstorm without judgment",
+      "Share workload effectively"
+    ],
+    "nigerian_examples": [
+      "Class group solving a difficult math problem",
+      "Team planning for inter-house sports",
+      "Students organizing a classroom cleanup"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is the first step in collaborative problem solving?",
+        "options": ["Brainstorm", "Define the problem", "Assign tasks", "Implement solution"],
+        "correct_answer": "Define the problem",
+        "explanation": "You must understand the problem before solving it."
+      },
+      {
+        "question": "What is the rule during brainstorming?",
+        "options": ["Criticize ideas", "No judgment, all ideas welcome", "Only one person speaks", "Only good ideas allowed"],
+        "correct_answer": "No judgment, all ideas welcome",
+        "explanation": "Judgment stops idea flow. Save evaluation for later."
+      },
+      {
+        "question": "What happens when teams collaborate?",
+        "options": ["More work", "More ideas and shared workload", "More fights", "Slower progress"],
+        "correct_answer": "More ideas and shared workload",
+        "explanation": "Teams combine strengths and divide tasks."
+      },
+      {
+        "question": "Should everyone contribute ideas?",
+        "options": ["No, only leader", "Yes, every voice matters", "Only smart people", "Only older students"],
+        "correct_answer": "Yes, every voice matters",
+        "explanation": "Different perspectives lead to better solutions."
+      },
+      {
+        "question": "True or False: Collaborative problem solving takes longer but leads to better results.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "More discussion takes time but produces better solutions."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Teamwork",
+    "topic": "Interdependence",
+    "language": "en",
+    "content": "Interdependence means team members rely on each other because each person has a unique role. Unlike independence (doing alone) or dependence (one person does everything), interdependence creates synergy (1+1=3). Examples: football team - forwards can't score without midfielders passing; relay race - each runner must do their part. In Nigerian culture, community farming (owambe) shows interdependence. Identify your team role and trust others to do theirs. No one can succeed alone. Interdependence teaches cooperation and mutual respect.",
+    "summary": "Interdependence = team members rely on each other. Unique roles create synergy (1+1=3). Trust teammates to do their part.",
+    "learning_objectives": [
+      "Understand interdependence vs independence",
+      "Recognize team roles",
+      "Build mutual trust"
+    ],
+    "nigerian_examples": [
+      "Football team positions working together",
+      "Community farming (owambe)",
+      "Group project with different roles"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is interdependence?",
+        "options": ["Doing everything alone", "Relying on each other because of unique roles", "One person doing all work", "Ignoring teammates"],
+        "correct_answer": "Relying on each other because of unique roles",
+        "explanation": "Team members depend on each other's contributions."
+      },
+      {
+        "question": "What does synergy mean?",
+        "options": ["1+1=2", "1+1=3 (team produces more than individuals)", "1+1=1", "Individual work only"],
+        "correct_answer": "1+1=3 (team produces more than individuals)",
+        "explanation": "Teams achieve more than the sum of individual efforts."
+      },
+      {
+        "question": "In a relay race, what happens if one runner fails?",
+        "options": ["Others can still win", "The whole team is affected", "Nothing changes", "Only that runner loses"],
+        "correct_answer": "The whole team is affected",
+        "explanation": "Each runner's performance affects the team's final result."
+      },
+      {
+        "question": "What does interdependence teach?",
+        "options": ["Selfishness", "Cooperation and mutual respect", "Isolation", "Competition only"],
+        "correct_answer": "Cooperation and mutual respect",
+        "explanation": "Teams learn to value each member's contribution."
+      },
+      {
+        "question": "True or False: One person can succeed without any help.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Everyone needs help sometimes. Teams make success possible."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Teamwork",
+    "topic": "Conflict Transformation",
+    "language": "en",
+    "content": "Conflict transformation means turning disagreements into opportunities for growth. Steps: listen to all sides, identify needs not just positions, brainstorm solutions together, agree on fair resolution, rebuild trust. Avoid: blaming, name-calling, interrupting, holding grudges. In Nigerian families and communities, elders help transform conflicts into peace. Practice: two students want the same role in a play - instead of fighting, they could take turns or create two roles. Conflict is normal. How you handle it matters.",
+    "summary": "Conflict transformation = turn disagreements into growth. Listen, identify needs, brainstorm solutions, agree, rebuild trust. Conflict is normal.",
+    "learning_objectives": [
+      "Transform conflict positively",
+      "Identify needs behind positions",
+      "Rebuild trust after disagreements"
+    ],
+    "nigerian_examples": [
+      "Elders mediating village disputes",
+      "Classmates resolving whose turn to use computer",
+      "Siblings sharing limited resources"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is conflict transformation?",
+        "options": ["Ignoring problems", "Turning disagreements into growth opportunities", "Winning at all costs", "Avoiding people"],
+        "correct_answer": "Turning disagreements into growth opportunities",
+        "explanation": "Good conflict leads to better understanding and solutions."
+      },
+      {
+        "question": "What should you avoid during conflict?",
+        "options": ["Listening", "Blaming and name-calling", "Brainstorming", "Finding needs"],
+        "correct_answer": "Blaming and name-calling",
+        "explanation": "Attacks make resolution harder. Focus on problems, not people."
+      },
+      {
+        "question": "What does 'identify needs' mean?",
+        "options": ["What people really want underneath positions", "What people say they want", "Ignoring everyone", "Only your needs"],
+        "correct_answer": "What people really want underneath positions",
+        "explanation": "Positions are stated demands; needs are underlying interests."
+      },
+      {
+        "question": "Who helps transform conflicts in Nigerian communities?",
+        "options": ["Children", "Elders and leaders", "Strangers", "Police only"],
+        "correct_answer": "Elders and leaders",
+        "explanation": "Respected community members often mediate disputes."
+      },
+      {
+        "question": "True or False: Conflict is always bad and should be avoided.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Conflict is normal. Handled well, it leads to better solutions."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Teamwork",
+    "topic": "Team Evaluation",
+    "language": "en",
+    "content": "Team evaluation means reflecting on team performance after a project. Questions: Did we achieve our goal? What worked well? What could improve? Did everyone participate? How was communication? Did we meet deadlines? Evaluation can be anonymous (write comments) or group discussion. Be honest but kind. Praise specific strengths: 'Chidi's research was excellent.' Suggest improvements: 'Next time, we could start earlier.' Use feedback to improve next project. In Nigerian schools, teachers often ask students to evaluate group work. Regular evaluation builds better teams.",
+    "summary": "Team evaluation = reflect on performance. What worked? What to improve? Honest, kind feedback. Praise strengths, suggest improvements. Learn for next time.",
+    "learning_objectives": [
+      "Conduct team evaluations",
+      "Give constructive feedback",
+      "Use feedback to improve"
+    ],
+    "nigerian_examples": [
+      "Group project reflection after presentation",
+      "Sports team reviewing game performance",
+      "End-of-term group work evaluation"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is team evaluation?",
+        "options": ["Punishing poor performers", "Reflecting on team performance after a project", "Only praising success", "Ignoring mistakes"],
+        "correct_answer": "Reflecting on team performance after a project",
+        "explanation": "Evaluation helps teams learn and improve."
+      },
+      {
+        "question": "What should you do during team evaluation?",
+        "options": ["Only criticize", "Only praise", "Praise strengths and suggest improvements kindly", "Blame others"],
+        "correct_answer": "Praise strengths and suggest improvements kindly",
+        "explanation": "Balanced feedback is most helpful."
+      },
+      {
+        "question": "Why evaluate teams?",
+        "options": ["To make people feel bad", "To learn and improve next time", "To assign blame", "To end the project"],
+        "correct_answer": "To learn and improve next time",
+        "explanation": "Reflection turns experience into learning."
+      },
+      {
+        "question": "What is constructive feedback?",
+        "options": ["Mean comments", "Helpful criticism focused on improvement", "Only positive comments", "Only negative comments"],
+        "correct_answer": "Helpful criticism focused on improvement",
+        "explanation": "Constructive feedback helps people grow."
+      },
+      {
+        "question": "True or False: Team evaluation should be honest but kind.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Honesty without kindness hurts; kindness without honesty doesn't help."
+      }
+    ]
+  },
+  {
+    "grade": 4,
+    "subject": "Teamwork",
+    "topic": "Collective Leadership",
+    "language": "en",
+    "content": "Collective leadership means leadership is shared among team members, not just one person. Everyone leads at different times based on their strengths. In a group project, one person leads research, another leads writing, another leads presentation. Benefits: more engagement, less burnout, better decisions, everyone develops leadership skills. Traditional Nigerian systems like village councils use collective leadership - elders make decisions together. Practice: in your next group task, rotate the leader role. Collective leadership builds stronger, more resilient teams.",
+    "summary": "Collective leadership = shared leadership. Everyone leads based on strengths. Rotate leader roles. Builds engagement and skills.",
+    "learning_objectives": [
+      "Understand collective leadership",
+      "Rotate leadership roles",
+      "Develop team-wide leadership"
+    ],
+    "nigerian_examples": [
+      "Village council of elders making decisions",
+      "Group project with rotating leader",
+      "Sports team with multiple captains"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is collective leadership?",
+        "options": ["One person always leads", "Shared leadership where everyone leads sometimes", "No leader at all", "Only adults lead"],
+        "correct_answer": "Shared leadership where everyone leads sometimes",
+        "explanation": "Leadership rotates based on who has relevant strengths."
+      },
+      {
+        "question": "What are benefits of collective leadership?",
+        "options": ["Less burnout, more engagement, better decisions", "Confusion, slower decisions", "One person overworked", "No accountability"],
+        "correct_answer": "Less burnout, more engagement, better decisions",
+        "explanation": "Shared responsibility leads to better outcomes."
+      },
+      {
+        "question": "How can you practice collective leadership?",
+        "options": ["One person does everything", "Rotate leader role in group tasks", "No one leads", "Fight for leadership"],
+        "correct_answer": "Rotate leader role in group tasks",
+        "explanation": "Rotation gives everyone leadership experience."
+      },
+      {
+        "question": "What Nigerian system uses collective leadership?",
+        "options": ["Kingship", "Village council of elders", "Military rule", "One-party system"],
+        "correct_answer": "Village council of elders",
+        "explanation": "Many traditional Nigerian systems use shared decision-making."
+      },
+      {
+        "question": "True or False: Collective leadership only works for adults, not children.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Children can practice collective leadership in group projects and teams."
+      }
+    ]
+  }
+]

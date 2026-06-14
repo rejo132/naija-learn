@@ -1,0 +1,252 @@
+[
+  {
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Phoneme Identification",
+    "language": "en",
+    "content": "Phonemes are the smallest sounds in words. English has about 44 phonemes. Learning to identify phonemes helps you spell and read better. For example, the word 'cat' has three phonemes: /c/ /a/ /t/. The word 'ship' has three phonemes: /sh/ /i/ /p/. Some phonemes are made by one letter (b, d, f), others by two letters (sh, ch, th), and some by three letters (igh, air). Practice by saying words slowly and counting the sounds. Try: 'fish' (f-i-sh = 3), 'train' (t-r-ai-n = 4), 'laugh' (l-ah-f = 3). Phoneme awareness is the foundation of good reading and spelling!",
+    "summary": "Phonemes are smallest sounds in words. 'cat' has 3 phonemes: /c/ /a/ /t/. Some phonemes use 2-3 letters (sh, ch, igh). Count sounds to identify phonemes.",
+    "learning_objectives": [
+      "Identify phonemes in words",
+      "Count how many sounds are in a word",
+      "Recognize common phoneme patterns"
+    ],
+    "nigerian_examples": [
+      "Breaking down 'Abuja' into phonemes: /A/ /b/ /u/ /j/ /a/",
+      "Counting sounds in 'Lagos': /L/ /a/ /g/ /o/ /s/",
+      "Identifying phonemes in 'Niger': /N/ /i/ /g/ /er/"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are phonemes?",
+        "options": ["Whole words", "Smallest sounds in words", "Sentences", "Paragraphs"],
+        "correct_answer": "Smallest sounds in words",
+        "explanation": "Phonemes are the tiny sound units that make up words."
+      },
+      {
+        "question": "How many phonemes are in the word 'cat'?",
+        "options": ["1", "2", "3", "4"],
+        "correct_answer": "3",
+        "explanation": "c-a-t = three separate sounds."
+      },
+      {
+        "question": "How many phonemes are in the word 'ship'?",
+        "options": ["2", "3", "4", "5"],
+        "correct_answer": "3",
+        "explanation": "sh-i-p = three sounds (sh is one sound, i is one, p is one)."
+      },
+      {
+        "question": "Which phoneme uses two letters to make one sound?",
+        "options": ["b", "sh", "t", "m"],
+        "correct_answer": "sh",
+        "explanation": "sh uses two letters but makes one sound /sh/."
+      },
+      {
+        "question": "True or False: The word 'through' has 3 phonemes.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "through has 3 phonemes: /th/ /r/ /oo/. Even though it has 7 letters, it has only 3 sounds."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Comprehension Passages",
+    "language": "en",
+    "content": "Reading comprehension means understanding what you read. When you read a passage, ask yourself: What is the main idea? Who are the characters? Where does the story happen? What happened first, next, and last? Why did characters act that way? After reading, try to summarize in your own words. Good readers think about what they read, not just say the words. Practice with short passages, then answer questions about them. The more you practice comprehension, the better you understand everything you read — from stories to textbooks to news.",
+    "summary": "Comprehension means understanding what you read. Ask: main idea, characters, setting, sequence, reasons. Summarize in your own words. Think while reading.",
+    "learning_objectives": [
+      "Identify main ideas in passages",
+      "Answer comprehension questions",
+      "Summarize what was read"
+    ],
+    "nigerian_examples": [
+      "Reading a passage about Lagos and answering questions",
+      "Understanding a story about Nigerian independence",
+      "Comprehending instructions for a school project"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What is reading comprehension?",
+        "options": ["Reading very fast", "Understanding what you read", "Memorizing words", "Reading out loud"],
+        "correct_answer": "Understanding what you read",
+        "explanation": "Comprehension is about meaning, not just saying words."
+      },
+      {
+        "question": "What question should you ask about the story's location?",
+        "options": ["Who?", "What?", "Where?", "Why?"],
+        "correct_answer": "Where?",
+        "explanation": "Where? helps you identify the setting or location."
+      },
+      {
+        "question": "What should you do after reading a passage?",
+        "options": ["Forget it", "Summarize in your own words", "Only read it again", "Skip questions"],
+        "correct_answer": "Summarize in your own words",
+        "explanation": "Summarizing shows you truly understood the passage."
+      },
+      {
+        "question": "What helps you understand why characters act a certain way?",
+        "options": ["Main idea", "Setting", "Sequence", "Character motivation"],
+        "correct_answer": "Character motivation",
+        "explanation": "Asking 'why' helps you understand characters' reasons."
+      },
+      {
+        "question": "True or False: Comprehension is only important for stories, not textbooks.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Comprehension is important for everything you read, including textbooks and instructions."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Parts of Speech",
+    "language": "en",
+    "content": "Parts of speech are the categories of words based on how they work in sentences. The main parts are: nouns (person, place, thing: 'teacher', 'school', 'book'), verbs (action words: 'run', 'jump', 'think'), adjectives (describe nouns: 'big', 'red', 'happy'), adverbs (describe verbs: 'quickly', 'loudly', 'well'), pronouns (replace nouns: 'I', 'you', 'he', 'she', 'it', 'we', 'they'), prepositions (show position: 'in', 'on', 'under', 'between'), conjunctions (connect words: 'and', 'but', 'or'), and interjections (express emotion: 'Wow!', 'Oh!', 'Oops!'). Knowing parts of speech helps you write better sentences.",
+    "summary": "Parts of speech: nouns (person/place/thing), verbs (actions), adjectives (describe nouns), adverbs (describe verbs), pronouns (replace nouns). Knowing them improves writing.",
+    "learning_objectives": [
+      "Identify the eight parts of speech",
+      "Understand how each part functions",
+      "Use parts of speech to improve writing"
+    ],
+    "nigerian_examples": [
+      "Noun: 'Lagos', Verb: 'grows', Adjective: 'busy', Adverb: 'rapidly'",
+      "Pronoun: 'She' replaces 'Amina'",
+      "Preposition: 'in' as in 'in Kano State'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which part of speech names a person, place, or thing?",
+        "options": ["Verb", "Adjective", "Noun", "Adverb"],
+        "correct_answer": "Noun",
+        "explanation": "Nouns name people (doctor), places (market), or things (table)."
+      },
+      {
+        "question": "Which part of speech shows action?",
+        "options": ["Noun", "Adjective", "Adverb", "Verb"],
+        "correct_answer": "Verb",
+        "explanation": "Verbs show actions like run, eat, sleep, or think."
+      },
+      {
+        "question": "Which part of speech describes a noun?",
+        "options": ["Verb", "Adverb", "Adjective", "Preposition"],
+        "correct_answer": "Adjective",
+        "explanation": "Adjectives tell you more about nouns: 'hot' sun, 'green' grass."
+      },
+      {
+        "question": "Which part of speech describes a verb?",
+        "options": ["Adjective", "Adverb", "Noun", "Pronoun"],
+        "correct_answer": "Adverb",
+        "explanation": "Adverbs describe how actions happen: runs 'quickly', speaks 'softly'."
+      },
+      {
+        "question": "True or False: 'Wow!' is an example of an interjection.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Interjections like 'Wow!', 'Oh!', and 'Oops!' express strong emotions."
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Punctuation",
+    "language": "en",
+    "content": "Punctuation marks are symbols that make writing clear and easy to read. Period (.) ends a sentence. Question mark (?) ends a question. Exclamation point (!) shows strong feeling or excitement. Comma (,) shows a pause or separates items in a list: 'I bought yams, rice, and beans.' Apostrophe (') shows possession ('Amina's book') or missing letters ('don't' for 'do not'). Quotation marks (' ') show someone's exact words. Capital letters start sentences and proper nouns (names of people, places, days, months). Good punctuation makes your writing professional and clear.",
+    "summary": "Punctuation: period (.), question mark (?), exclamation point (!), comma (,), apostrophe ('), quotation marks (' '). Capital letters start sentences and proper nouns.",
+    "learning_objectives": [
+      "Identify common punctuation marks",
+      "Use punctuation correctly in sentences",
+      "Understand why punctuation matters"
+    ],
+    "nigerian_examples": [
+      "Question mark: 'Where is Abuja?'",
+      "Apostrophe: 'Chidi's backpack'",
+      "Comma: 'Lagos, Kano, and Port Harcourt are big cities'"
+    ],
+    "quiz_questions": [
+      {
+        "question": "Which punctuation mark ends a statement sentence?",
+        "options": ["Question mark", "Exclamation point", "Period", "Comma"],
+        "correct_answer": "Period",
+        "explanation": "A period (.) is used at the end of a sentence that makes a statement."
+      },
+      {
+        "question": "Which punctuation mark shows strong emotion or excitement?",
+        "options": ["Period", "Question mark", "Exclamation point", "Comma"],
+        "correct_answer": "Exclamation point",
+        "explanation": "Exclamation points show excitement, surprise, or strong feelings."
+      },
+      {
+        "question": "What does an apostrophe show in 'Amina's book'?",
+        "options": ["Missing letters", "Ownership (possession)", "A question", "Excitement"],
+        "correct_answer": "Ownership (possession)",
+        "explanation": "The apostrophe shows that the book belongs to Amina."
+      },
+      {
+        "question": "When do you use a capital letter?",
+        "options": ["Only at the end of sentences", "To start sentences and for proper nouns", "Never", "Only for names of animals"],
+        "correct_answer": "To start sentences and for proper nouns",
+        "explanation": "Capitalize the first word of every sentence and proper nouns like names and places."
+      },
+      {
+        "question": "True or False: Commas are used to separate items in a list.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Commas separate items: 'I like rice, beans, and yams.'"
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Letter Writing",
+    "language": "en",
+    "content": "Letter writing is a way to communicate with people who are far away. A friendly letter has five parts: heading (your address and date), greeting (Dear ____,), body (your message), closing (Sincerely, Your friend, etc.), and signature (your name). Write clearly and use complete sentences. Friendly letters can thank someone, invite someone, share news, or just say hello. Address the envelope with the recipient's name and address in the center, your return address in the top left, and a stamp in the top right. Letter writing helps you practice organizing thoughts and expressing feelings.",
+    "summary": "Letter parts: heading (address/date), greeting (Dear ___), body (message), closing (Sincerely), signature (name). Write clearly. Use for thanks, invitations, or sharing news.",
+    "learning_objecves": [
+      "Learn the five parts of a friendly letter",
+      "Write a complete letter",
+      "Address an envelope correctly"
+    ],
+    "nigerian_examples": [
+      "Writing a thank-you letter to a grandparent in another state",
+      "Sending a letter to a friend who moved away",
+      "Inviting a cousin to visit during holidays"
+    ],
+    "quiz_questions": [
+      {
+        "question": "What are the five parts of a friendly letter?",
+        "options": ["Title, chapter, page, word, letter", "Heading, greeting, body, closing, signature", "First, second, third, fourth, fifth", "Start, middle, end, post, note"],
+        "correct_answer": "Heading, greeting, body, closing, signature",
+        "explanation": "These five parts make a complete friendly letter."
+      },
+      {
+        "question": "What information goes in the heading?",
+        "options": ["Your signature", "Your address and the date", "The recipient's name", "The greeting"],
+        "correct_answer": "Your address and the date",
+        "explanation": "The heading tells the recipient where and when you wrote the letter."
+      },
+      {
+        "question": "Which is a correct greeting for a friendly letter?",
+        "options": ["To whom it may concern", "Dear Uncle Emeka,", "Hello person", "Greetings and salutations"],
+        "correct_answer": "Dear Uncle Emeka,",
+        "explanation": "Friendly letters use 'Dear' followed by the person's name and a comma."
+      },
+      {
+        "question": "What is a good closing for a letter to a friend?",
+        "options": ["Yours truly", "Your friend,", "Respectfully", "To you"],
+        "correct_answer": "Your friend,",
+        "explanation": "Friendly closings like 'Your friend' or 'Sincerely' work well for personal letters."
+      },
+      {
+        "question": "True or False: You should always sign your name at the end of a letter.",
+        "options": ["True", "False"],
+        "correct_answer": "True",
+        "explanation": "Your signature tells the recipient who wrote the letter."
+      }
+    ]
+  }
+]
