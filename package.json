@@ -16,7 +16,15 @@
     "type-check": "tsc --noEmit",
     "generate-lessons": "node scripts/generate-lessons.js",
     "insert-static": "node scripts/insert-static-lessons.js",
-    "insert-quiz": "node scripts/insert-quiz-only.js"
+    "insert-quiz": "node scripts/insert-quiz-only.js",
+    "fill-missing": ".venv/bin/python3 scripts/scrape-lessons.py",
+    "fill-missing-fast": ".venv/bin/python3 scripts/scrape-lessons.py --fallback-only",
+    "fill-missing-grade": ".venv/bin/python3 scripts/scrape-lessons.py --grade",
+    "delete-wrong": "node scripts/delete-wrong-lessons.js",
+    "upgrade-content": "node scripts/upgrade-content.js",
+    "upgrade-wikipedia": ".venv/bin/python3 scripts/wikipedia-lessons.py",
+    "upgrade-wikipedia-grade": ".venv/bin/python3 scripts/wikipedia-lessons.py --grade",
+    "fix-bad-matches": ".venv/bin/python3 scripts/wikipedia-lessons.py --fix-bad"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.100.1",

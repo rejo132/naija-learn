@@ -1,0 +1,2457 @@
+[
+  {
+    "grade": 1,
+    "subject": "Basic Digital Literacy",
+    "topic": "What is a Computer"
+  },
+  {
+    "grade": 1,
+    "subject": "Basic Digital Literacy",
+    "topic": "Parts of a Computer"
+  },
+  {
+    "grade": 1,
+    "subject": "Basic Digital Literacy",
+    "topic": "Using a Mouse"
+  },
+  {
+    "grade": 1,
+    "subject": "Basic Digital Literacy",
+    "topic": "Typing Basics"
+  },
+  {
+    "grade": 1,
+    "subject": "Basic Digital Literacy",
+    "topic": "Staying Safe Online"
+  },
+  {
+    "grade": 1,
+    "subject": "Basic Science & Technology",
+    "topic": "Parts of the Human Body"
+  },
+  {
+    "grade": 1,
+    "subject": "Basic Science & Technology",
+    "topic": "Living and Non-Living Things"
+  },
+  {
+    "grade": 1,
+    "subject": "Basic Science & Technology",
+    "topic": "Plants and Animals"
+  },
+  {
+    "grade": 1,
+    "subject": "Basic Science & Technology",
+    "topic": "Water and Its Uses"
+  },
+  {
+    "grade": 1,
+    "subject": "Basic Science & Technology",
+    "topic": "Simple Tools"
+  },
+  {
+    "grade": 1,
+    "subject": "Communication",
+    "topic": "Listening Skills"
+  },
+  {
+    "grade": 1,
+    "subject": "Communication",
+    "topic": "Speaking Clearly"
+  },
+  {
+    "grade": 1,
+    "subject": "Communication",
+    "topic": "Polite Words"
+  },
+  {
+    "grade": 1,
+    "subject": "Communication",
+    "topic": "Body Language"
+  },
+  {
+    "grade": 1,
+    "subject": "Communication",
+    "topic": "Sharing Ideas"
+  },
+  {
+    "grade": 1,
+    "subject": "Confidence Building",
+    "topic": "Believing in Yourself"
+  },
+  {
+    "grade": 1,
+    "subject": "Confidence Building",
+    "topic": "Speaking Up"
+  },
+  {
+    "grade": 1,
+    "subject": "Confidence Building",
+    "topic": "Trying New Things"
+  },
+  {
+    "grade": 1,
+    "subject": "Confidence Building",
+    "topic": "Learning from Mistakes"
+  },
+  {
+    "grade": 1,
+    "subject": "Confidence Building",
+    "topic": "Celebrating Success"
+  },
+  {
+    "grade": 1,
+    "subject": "Creativity",
+    "topic": "What is Creativity?"
+  },
+  {
+    "grade": 1,
+    "subject": "Creativity",
+    "topic": "Using Your Imagination"
+  },
+  {
+    "grade": 1,
+    "subject": "Creativity",
+    "topic": "Creative Problem Solving"
+  },
+  {
+    "grade": 1,
+    "subject": "Creativity",
+    "topic": "Art and Crafts"
+  },
+  {
+    "grade": 1,
+    "subject": "Creativity",
+    "topic": "Storytelling and Music"
+  },
+  {
+    "grade": 1,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Creation Story"
+  },
+  {
+    "grade": 1,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Early Prophets"
+  },
+  {
+    "grade": 1,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Prayer and Worship"
+  },
+  {
+    "grade": 1,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Kindness and Respect"
+  },
+  {
+    "grade": 1,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Honesty"
+  },
+  {
+    "grade": 1,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Primary Colors"
+  },
+  {
+    "grade": 1,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Drawing and Colouring"
+  },
+  {
+    "grade": 1,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Nigerian Songs"
+  },
+  {
+    "grade": 1,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Simple Paper Crafts"
+  },
+  {
+    "grade": 1,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Drama and Roleplay"
+  },
+  {
+    "grade": 1,
+    "subject": "English Studies",
+    "topic": "Letter Sounds and Phonics"
+  },
+  {
+    "grade": 1,
+    "subject": "English Studies",
+    "topic": "Sight Words and Reading"
+  },
+  {
+    "grade": 1,
+    "subject": "English Studies",
+    "topic": "Nouns and Action Words"
+  },
+  {
+    "grade": 1,
+    "subject": "English Studies",
+    "topic": "Simple Sentences"
+  },
+  {
+    "grade": 1,
+    "subject": "English Studies",
+    "topic": "Tracing and Copying"
+  },
+  {
+    "grade": 1,
+    "subject": "Hygiene Development",
+    "topic": "Hand Washing"
+  },
+  {
+    "grade": 1,
+    "subject": "Hygiene Development",
+    "topic": "Brushing Teeth"
+  },
+  {
+    "grade": 1,
+    "subject": "Hygiene Development",
+    "topic": "Bathing"
+  },
+  {
+    "grade": 1,
+    "subject": "Hygiene Development",
+    "topic": "Clean Clothes"
+  },
+  {
+    "grade": 1,
+    "subject": "Hygiene Development",
+    "topic": "Clean Environment"
+  },
+  {
+    "grade": 1,
+    "subject": "Leadership",
+    "topic": "What is a Leader?"
+  },
+  {
+    "grade": 1,
+    "subject": "Leadership",
+    "topic": "Being Responsible"
+  },
+  {
+    "grade": 1,
+    "subject": "Leadership",
+    "topic": "Helping Others"
+  },
+  {
+    "grade": 1,
+    "subject": "Leadership",
+    "topic": "Listening Well"
+  },
+  {
+    "grade": 1,
+    "subject": "Leadership",
+    "topic": "Making Good Choices"
+  },
+  {
+    "grade": 1,
+    "subject": "Mathematics",
+    "topic": "Counting 1 to 100"
+  },
+  {
+    "grade": 1,
+    "subject": "Mathematics",
+    "topic": "Addition"
+  },
+  {
+    "grade": 1,
+    "subject": "Mathematics",
+    "topic": "Subtraction"
+  },
+  {
+    "grade": 1,
+    "subject": "Mathematics",
+    "topic": "Shapes"
+  },
+  {
+    "grade": 1,
+    "subject": "Mathematics",
+    "topic": "Telling Time"
+  },
+  {
+    "grade": 1,
+    "subject": "Nigerian History",
+    "topic": "Independence Day"
+  },
+  {
+    "grade": 1,
+    "subject": "Nigerian History",
+    "topic": "My Family and Community"
+  },
+  {
+    "grade": 1,
+    "subject": "Nigerian History",
+    "topic": "Nigerian Flag and Anthem"
+  },
+  {
+    "grade": 1,
+    "subject": "Nigerian History",
+    "topic": "Famous Nigerians"
+  },
+  {
+    "grade": 1,
+    "subject": "Nigerian History",
+    "topic": "Our Local Heroes"
+  },
+  {
+    "grade": 1,
+    "subject": "Physical & Health Education",
+    "topic": "Running and Jumping"
+  },
+  {
+    "grade": 1,
+    "subject": "Physical & Health Education",
+    "topic": "Hand Washing"
+  },
+  {
+    "grade": 1,
+    "subject": "Physical & Health Education",
+    "topic": "Playground Safety"
+  },
+  {
+    "grade": 1,
+    "subject": "Physical & Health Education",
+    "topic": "Healthy Foods"
+  },
+  {
+    "grade": 1,
+    "subject": "Physical & Health Education",
+    "topic": "Cleaning Teeth"
+  },
+  {
+    "grade": 1,
+    "subject": "Social & Citizenship Studies",
+    "topic": "My Family"
+  },
+  {
+    "grade": 1,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Community Helpers"
+  },
+  {
+    "grade": 1,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Road Safety"
+  },
+  {
+    "grade": 1,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Our Culture"
+  },
+  {
+    "grade": 1,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Being a Good Citizen"
+  },
+  {
+    "grade": 1,
+    "subject": "Teamwork",
+    "topic": "Sharing in a Team"
+  },
+  {
+    "grade": 1,
+    "subject": "Teamwork",
+    "topic": "What is Teamwork?"
+  },
+  {
+    "grade": 1,
+    "subject": "Teamwork",
+    "topic": "Listening to Teammates"
+  },
+  {
+    "grade": 1,
+    "subject": "Teamwork",
+    "topic": "Doing Your Part"
+  },
+  {
+    "grade": 1,
+    "subject": "Teamwork",
+    "topic": "Celebrating Together"
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Keyboard Skills"
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Drawing on Computer"
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Internet Basics"
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Password Safety"
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Digital Literacy",
+    "topic": "Educational Games"
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "The Human Senses"
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "Weather and Seasons"
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "Soil and Its Uses"
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "Simple Machines"
+  },
+  {
+    "grade": 2,
+    "subject": "Basic Science & Technology",
+    "topic": "Air and Wind"
+  },
+  {
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Asking Questions"
+  },
+  {
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Telling Stories"
+  },
+  {
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Expressing Feelings"
+  },
+  {
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Polite Words"
+  },
+  {
+    "grade": 2,
+    "subject": "Communication",
+    "topic": "Group Discussions"
+  },
+  {
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Setting Small Goals"
+  },
+  {
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Facing Fears"
+  },
+  {
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Positive Self Talk"
+  },
+  {
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Asking for Help"
+  },
+  {
+    "grade": 2,
+    "subject": "Confidence Building",
+    "topic": "Praising Effort"
+  },
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Craft Making"
+  },
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Storytelling"
+  },
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Drawing Patterns"
+  },
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Singing and Dancing"
+  },
+  {
+    "grade": 2,
+    "subject": "Creativity",
+    "topic": "Inventing Games"
+  },
+  {
+    "grade": 2,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of Abraham"
+  },
+  {
+    "grade": 2,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Five Pillars of Islam"
+  },
+  {
+    "grade": 2,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Honesty and Forgiveness"
+  },
+  {
+    "grade": 2,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Worship and Prayer"
+  },
+  {
+    "grade": 2,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Love and Service"
+  },
+  {
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Nigerian Music"
+  },
+  {
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Folk Tales"
+  },
+  {
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Drama and Acting"
+  },
+  {
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Weaving and Crafts"
+  },
+  {
+    "grade": 2,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Pottery"
+  },
+  {
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Vowels and Consonants"
+  },
+  {
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Reading Short Stories"
+  },
+  {
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Simple Sentences"
+  },
+  {
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Nouns and Verbs"
+  },
+  {
+    "grade": 2,
+    "subject": "English Studies",
+    "topic": "Spelling Common Words"
+  },
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Personal Grooming"
+  },
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Nail Care"
+  },
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Hair Care"
+  },
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "Healthy Habits"
+  },
+  {
+    "grade": 2,
+    "subject": "Hygiene Development",
+    "topic": "School Cleanliness"
+  },
+  {
+    "grade": 2,
+    "subject": "Leadership",
+    "topic": "Class Monitor Duties"
+  },
+  {
+    "grade": 2,
+    "subject": "Leadership",
+    "topic": "Encouraging Friends"
+  },
+  {
+    "grade": 2,
+    "subject": "Leadership",
+    "topic": "Fairness"
+  },
+  {
+    "grade": 2,
+    "subject": "Leadership",
+    "topic": "Following Rules"
+  },
+  {
+    "grade": 2,
+    "subject": "Leadership",
+    "topic": "Leading Activities"
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Fractions Half and Quarter"
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Division Intro"
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Counting 1 to 500"
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Multiplication Intro"
+  },
+  {
+    "grade": 2,
+    "subject": "Mathematics",
+    "topic": "Money and Prices"
+  },
+  {
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Nigerian States"
+  },
+  {
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Pre-Colonial Nigeria"
+  },
+  {
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Cultural Heritage"
+  },
+  {
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Trade Routes"
+  },
+  {
+    "grade": 2,
+    "subject": "Nigerian History",
+    "topic": "Famous Leaders"
+  },
+  {
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Running and Relay"
+  },
+  {
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Jumping and Skipping"
+  },
+  {
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Nutrition Basics"
+  },
+  {
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Personal Hygiene"
+  },
+  {
+    "grade": 2,
+    "subject": "Physical & Health Education",
+    "topic": "Team Games"
+  },
+  {
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Types of Families"
+  },
+  {
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Our Government"
+  },
+  {
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Transportation"
+  },
+  {
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Nigerian Culture"
+  },
+  {
+    "grade": 2,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Festivals and Celebrations"
+  },
+  {
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Group Projects"
+  },
+  {
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Supporting Teammates"
+  },
+  {
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Sharing Ideas"
+  },
+  {
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Cooperating in Games"
+  },
+  {
+    "grade": 2,
+    "subject": "Teamwork",
+    "topic": "Celebrating Together"
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "File Management"
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "Word Processing Basics"
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "Safe Internet Use"
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "Digital Communication"
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Digital Literacy",
+    "topic": "Introduction to Coding"
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Food Chains"
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Ecosystems"
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Rocks and Soil"
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Forces and Motion"
+  },
+  {
+    "grade": 3,
+    "subject": "Basic Science & Technology",
+    "topic": "Simple Machines"
+  },
+  {
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Active Listening"
+  },
+  {
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Clear Speaking"
+  },
+  {
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Non Verbal Communication"
+  },
+  {
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Giving Feedback"
+  },
+  {
+    "grade": 3,
+    "subject": "Communication",
+    "topic": "Conflict Resolution"
+  },
+  {
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Public Speaking"
+  },
+  {
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Self Awareness"
+  },
+  {
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Overcoming Stage Fright"
+  },
+  {
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Goal Setting"
+  },
+  {
+    "grade": 3,
+    "subject": "Confidence Building",
+    "topic": "Positive Mindset"
+  },
+  {
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Breaking Down Problems"
+  },
+  {
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Designing Prototypes"
+  },
+  {
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Innovative Drawing"
+  },
+  {
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Alternative Solutions"
+  },
+  {
+    "grade": 3,
+    "subject": "Creativity",
+    "topic": "Creative Writing"
+  },
+  {
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "The Ten Commandments"
+  },
+  {
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Wudhu and Cleanliness"
+  },
+  {
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Prophets and Heroes"
+  },
+  {
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Charity and Giving"
+  },
+  {
+    "grade": 3,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Fasting and Sacrifice"
+  },
+  {
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Nigerian Art"
+  },
+  {
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Sculpture and Crafts"
+  },
+  {
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Batik and Tie Dye"
+  },
+  {
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Printmaking"
+  },
+  {
+    "grade": 3,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Graphic Design Intro"
+  },
+  {
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Phoneme Identification"
+  },
+  {
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Comprehension Passages"
+  },
+  {
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Parts of Speech"
+  },
+  {
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Punctuation"
+  },
+  {
+    "grade": 3,
+    "subject": "English Studies",
+    "topic": "Letter Writing"
+  },
+  {
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Dental Hygiene"
+  },
+  {
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Skin Care"
+  },
+  {
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Waste Management"
+  },
+  {
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Study Space Cleanliness"
+  },
+  {
+    "grade": 3,
+    "subject": "Hygiene Development",
+    "topic": "Disease Prevention"
+  },
+  {
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Delegating Tasks"
+  },
+  {
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Managing Resources"
+  },
+  {
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Conflict Mediation"
+  },
+  {
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Accountability"
+  },
+  {
+    "grade": 3,
+    "subject": "Leadership",
+    "topic": "Inspiring Others"
+  },
+  {
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Multiplication Tables"
+  },
+  {
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Long Division"
+  },
+  {
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Fractions"
+  },
+  {
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Decimals"
+  },
+  {
+    "grade": 3,
+    "subject": "Mathematics",
+    "topic": "Geometry Basics"
+  },
+  {
+    "grade": 3,
+    "subject": "Nigerian History",
+    "topic": "Nigerian Kingdoms"
+  },
+  {
+    "grade": 3,
+    "subject": "Nigerian History",
+    "topic": "Colonial History"
+  },
+  {
+    "grade": 3,
+    "subject": "Nigerian History",
+    "topic": "Road to Independence"
+  },
+  {
+    "grade": 3,
+    "subject": "Nigerian History",
+    "topic": "National Heroes"
+  },
+  {
+    "grade": 3,
+    "subject": "Nigerian History",
+    "topic": "Post Colonial Nigeria"
+  },
+  {
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "Athletics"
+  },
+  {
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "Team Sports"
+  },
+  {
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "First Aid Basics"
+  },
+  {
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "Disease Prevention"
+  },
+  {
+    "grade": 3,
+    "subject": "Physical & Health Education",
+    "topic": "Growth and Development"
+  },
+  {
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Nigerian Geography"
+  },
+  {
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Agriculture in Nigeria"
+  },
+  {
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Trade and Markets"
+  },
+  {
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Transport Systems"
+  },
+  {
+    "grade": 3,
+    "subject": "Social & Citizenship Studies",
+    "topic": "National Symbols"
+  },
+  {
+    "grade": 3,
+    "subject": "Teamwork",
+    "topic": "Group Research"
+  },
+  {
+    "grade": 3,
+    "subject": "Teamwork",
+    "topic": "Defining Roles"
+  },
+  {
+    "grade": 3,
+    "subject": "Teamwork",
+    "topic": "Supporting Peers"
+  },
+  {
+    "grade": 3,
+    "subject": "Teamwork",
+    "topic": "Brainstorming"
+  },
+  {
+    "grade": 3,
+    "subject": "Teamwork",
+    "topic": "Collaborative Success"
+  },
+  {
+    "grade": 4,
+    "subject": "Arabic (Optional)",
+    "topic": "Greetings in Arabic"
+  },
+  {
+    "grade": 4,
+    "subject": "Arabic (Optional)",
+    "topic": "Numbers 1-10"
+  },
+  {
+    "grade": 4,
+    "subject": "Arabic (Optional)",
+    "topic": "Arabic Alphabet"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Desktop Operations"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Web Safety"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Constructing Emails"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Scratch Coding Basics"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Introduction to AI"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Computer Parts and Functions"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Introduction to Typing"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Basic Computer Operations"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Word Processing for Beginners"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Digital Literacy",
+    "topic": "Internet Safety"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Science & Technology",
+    "topic": "Human Skeletal System"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Science & Technology",
+    "topic": "Digestive System"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Science & Technology",
+    "topic": "Forms of Energy"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Science & Technology",
+    "topic": "Simple Electrical Circuits"
+  },
+  {
+    "grade": 4,
+    "subject": "Basic Science & Technology",
+    "topic": "Engineering Materials"
+  },
+  {
+    "grade": 4,
+    "subject": "Communication",
+    "topic": "Persuasive Speaking"
+  },
+  {
+    "grade": 4,
+    "subject": "Communication",
+    "topic": "Debate Skills"
+  },
+  {
+    "grade": 4,
+    "subject": "Communication",
+    "topic": "Active Listening Advanced"
+  },
+  {
+    "grade": 4,
+    "subject": "Communication",
+    "topic": "Non-Verbal Cues"
+  },
+  {
+    "grade": 4,
+    "subject": "Communication",
+    "topic": "Cross-Cultural Communication"
+  },
+  {
+    "grade": 4,
+    "subject": "Confidence Building",
+    "topic": "Vocal Projection"
+  },
+  {
+    "grade": 4,
+    "subject": "Confidence Building",
+    "topic": "Eye Contact"
+  },
+  {
+    "grade": 4,
+    "subject": "Confidence Building",
+    "topic": "Strengths Identification"
+  },
+  {
+    "grade": 4,
+    "subject": "Confidence Building",
+    "topic": "Emotion Management"
+  },
+  {
+    "grade": 4,
+    "subject": "Confidence Building",
+    "topic": "Public Speaking Techniques"
+  },
+  {
+    "grade": 4,
+    "subject": "Creativity",
+    "topic": "Innovation Process"
+  },
+  {
+    "grade": 4,
+    "subject": "Creativity",
+    "topic": "Design Thinking"
+  },
+  {
+    "grade": 4,
+    "subject": "Creativity",
+    "topic": "Creative Risk Taking"
+  },
+  {
+    "grade": 4,
+    "subject": "Creativity",
+    "topic": "Artistic Expression"
+  },
+  {
+    "grade": 4,
+    "subject": "Creativity",
+    "topic": "Inventive Problem Solving"
+  },
+  {
+    "grade": 4,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of Jesus Christ"
+  },
+  {
+    "grade": 4,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of Prophet Muhammad"
+  },
+  {
+    "grade": 4,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Ethics and Justice"
+  },
+  {
+    "grade": 4,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Tolerance and Peace"
+  },
+  {
+    "grade": 4,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Community Service"
+  },
+  {
+    "grade": 4,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Secondary Color Mixing"
+  },
+  {
+    "grade": 4,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Traditional Motifs"
+  },
+  {
+    "grade": 4,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Tie and Dye"
+  },
+  {
+    "grade": 4,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Printmaking"
+  },
+  {
+    "grade": 4,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Graphic Design Intro"
+  },
+  {
+    "grade": 4,
+    "subject": "English Studies",
+    "topic": "Word Stress and Intonation"
+  },
+  {
+    "grade": 4,
+    "subject": "English Studies",
+    "topic": "Eight Parts of Speech"
+  },
+  {
+    "grade": 4,
+    "subject": "English Studies",
+    "topic": "Subject Verb Agreement"
+  },
+  {
+    "grade": 4,
+    "subject": "English Studies",
+    "topic": "Narrative Essay Writing"
+  },
+  {
+    "grade": 4,
+    "subject": "English Studies",
+    "topic": "Formal and Informal Letters"
+  },
+  {
+    "grade": 4,
+    "subject": "French (Optional)",
+    "topic": "Greetings and Introductions"
+  },
+  {
+    "grade": 4,
+    "subject": "French (Optional)",
+    "topic": "Numbers 1-20"
+  },
+  {
+    "grade": 4,
+    "subject": "French (Optional)",
+    "topic": "Colors and Shapes"
+  },
+  {
+    "grade": 4,
+    "subject": "French (Optional)",
+    "topic": "Days and Months"
+  },
+  {
+    "grade": 4,
+    "subject": "French (Optional)",
+    "topic": "Family Members"
+  },
+  {
+    "grade": 4,
+    "subject": "Hygiene Development",
+    "topic": "Pandemic Prevention"
+  },
+  {
+    "grade": 4,
+    "subject": "Hygiene Development",
+    "topic": "Advanced Hand Hygiene"
+  },
+  {
+    "grade": 4,
+    "subject": "Hygiene Development",
+    "topic": "Menstrual Hygiene"
+  },
+  {
+    "grade": 4,
+    "subject": "Hygiene Development",
+    "topic": "Food Safety"
+  },
+  {
+    "grade": 4,
+    "subject": "Hygiene Development",
+    "topic": "Sanitation Systems"
+  },
+  {
+    "grade": 4,
+    "subject": "Leadership",
+    "topic": "Decision Making"
+  },
+  {
+    "grade": 4,
+    "subject": "Leadership",
+    "topic": "Ethical Leadership"
+  },
+  {
+    "grade": 4,
+    "subject": "Leadership",
+    "topic": "Strategic Planning"
+  },
+  {
+    "grade": 4,
+    "subject": "Leadership",
+    "topic": "Team Motivation"
+  },
+  {
+    "grade": 4,
+    "subject": "Leadership",
+    "topic": "Crisis Management"
+  },
+  {
+    "grade": 4,
+    "subject": "Mathematics",
+    "topic": "LCM and HCF"
+  },
+  {
+    "grade": 4,
+    "subject": "Mathematics",
+    "topic": "Percentages"
+  },
+  {
+    "grade": 4,
+    "subject": "Mathematics",
+    "topic": "Ratios"
+  },
+  {
+    "grade": 4,
+    "subject": "Mathematics",
+    "topic": "Area and Perimeter"
+  },
+  {
+    "grade": 4,
+    "subject": "Mathematics",
+    "topic": "Data and Graphs"
+  },
+  {
+    "grade": 4,
+    "subject": "Nigerian History",
+    "topic": "Oyo Empire"
+  },
+  {
+    "grade": 4,
+    "subject": "Nigerian History",
+    "topic": "Benin Kingdom"
+  },
+  {
+    "grade": 4,
+    "subject": "Nigerian History",
+    "topic": "Sokoto Caliphate"
+  },
+  {
+    "grade": 4,
+    "subject": "Nigerian History",
+    "topic": "Amalgamation of 1914"
+  },
+  {
+    "grade": 4,
+    "subject": "Nigerian History",
+    "topic": "Nigerian Independence 1960"
+  },
+  {
+    "grade": 4,
+    "subject": "Physical & Health Education",
+    "topic": "Track and Field"
+  },
+  {
+    "grade": 4,
+    "subject": "Physical & Health Education",
+    "topic": "Ball Games Rules"
+  },
+  {
+    "grade": 4,
+    "subject": "Physical & Health Education",
+    "topic": "Puberty and Body Changes"
+  },
+  {
+    "grade": 4,
+    "subject": "Physical & Health Education",
+    "topic": "Reproductive Health"
+  },
+  {
+    "grade": 4,
+    "subject": "Physical & Health Education",
+    "topic": "Drug Awareness"
+  },
+  {
+    "grade": 4,
+    "subject": "Pre-vocational Studies",
+    "topic": "Introduction to Agriculture"
+  },
+  {
+    "grade": 4,
+    "subject": "Pre-vocational Studies",
+    "topic": "Simple Cooking Skills"
+  },
+  {
+    "grade": 4,
+    "subject": "Pre-vocational Studies",
+    "topic": "Money Management"
+  },
+  {
+    "grade": 4,
+    "subject": "Pre-vocational Studies",
+    "topic": "Simple Repairs"
+  },
+  {
+    "grade": 4,
+    "subject": "Pre-vocational Studies",
+    "topic": "Basic Sewing Skills"
+  },
+  {
+    "grade": 4,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Drug and Substance Abuse"
+  },
+  {
+    "grade": 4,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Leadership and Accountability"
+  },
+  {
+    "grade": 4,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Structure of Government"
+  },
+  {
+    "grade": 4,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Rights and Duties"
+  },
+  {
+    "grade": 4,
+    "subject": "Social & Citizenship Studies",
+    "topic": "National Symbols"
+  },
+  {
+    "grade": 4,
+    "subject": "Teamwork",
+    "topic": "Collaborative Problem Solving"
+  },
+  {
+    "grade": 4,
+    "subject": "Teamwork",
+    "topic": "Interdependence"
+  },
+  {
+    "grade": 4,
+    "subject": "Teamwork",
+    "topic": "Conflict Transformation"
+  },
+  {
+    "grade": 4,
+    "subject": "Teamwork",
+    "topic": "Team Evaluation"
+  },
+  {
+    "grade": 4,
+    "subject": "Teamwork",
+    "topic": "Collective Leadership"
+  },
+  {
+    "grade": 5,
+    "subject": "Arabic (Optional)",
+    "topic": "Family Members"
+  },
+  {
+    "grade": 5,
+    "subject": "Arabic (Optional)",
+    "topic": "Colors in Arabic"
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "Presentation Software"
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "Spreadsheet Basics"
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "HTML Introduction"
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "Digital Citizenship"
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Digital Literacy",
+    "topic": "Cybersecurity"
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Science & Technology",
+    "topic": "Circulatory System"
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Science & Technology",
+    "topic": "Respiratory System"
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Science & Technology",
+    "topic": "Genetics"
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Science & Technology",
+    "topic": "Chemistry Basics"
+  },
+  {
+    "grade": 5,
+    "subject": "Basic Science & Technology",
+    "topic": "Physics Laws"
+  },
+  {
+    "grade": 5,
+    "subject": "Communication",
+    "topic": "Public Relations"
+  },
+  {
+    "grade": 5,
+    "subject": "Communication",
+    "topic": "Digital Communication"
+  },
+  {
+    "grade": 5,
+    "subject": "Communication",
+    "topic": "Executive Communication"
+  },
+  {
+    "grade": 5,
+    "subject": "Communication",
+    "topic": "Crisis Communication"
+  },
+  {
+    "grade": 5,
+    "subject": "Communication",
+    "topic": "Persuasion Science"
+  },
+  {
+    "grade": 5,
+    "subject": "Confidence Building",
+    "topic": "Impromptu Speaking"
+  },
+  {
+    "grade": 5,
+    "subject": "Confidence Building",
+    "topic": "Leadership Presence"
+  },
+  {
+    "grade": 5,
+    "subject": "Confidence Building",
+    "topic": "Resilience Building"
+  },
+  {
+    "grade": 5,
+    "subject": "Confidence Building",
+    "topic": "Handling Criticism"
+  },
+  {
+    "grade": 5,
+    "subject": "Confidence Building",
+    "topic": "Personal Branding"
+  },
+  {
+    "grade": 5,
+    "subject": "Creativity",
+    "topic": "Creative Strategy"
+  },
+  {
+    "grade": 5,
+    "subject": "Creativity",
+    "topic": "Innovation Management"
+  },
+  {
+    "grade": 5,
+    "subject": "Creativity",
+    "topic": "Creative Confidence"
+  },
+  {
+    "grade": 5,
+    "subject": "Creativity",
+    "topic": "Divergent Thinking"
+  },
+  {
+    "grade": 5,
+    "subject": "Creativity",
+    "topic": "Creative Leadership"
+  },
+  {
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Social Justice"
+  },
+  {
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Parables of Jesus"
+  },
+  {
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Hadith Studies"
+  },
+  {
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Moral Philosophy"
+  },
+  {
+    "grade": 5,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Interfaith Dialogue"
+  },
+  {
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Mixed Media Art"
+  },
+  {
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Digital Art"
+  },
+  {
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Sculpture Techniques"
+  },
+  {
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Performance Art"
+  },
+  {
+    "grade": 5,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Art Criticism"
+  },
+  {
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Complex Sentences"
+  },
+  {
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Punctuation Mastery"
+  },
+  {
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Essay Structure"
+  },
+  {
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Literary Devices"
+  },
+  {
+    "grade": 5,
+    "subject": "English Studies",
+    "topic": "Summary Writing"
+  },
+  {
+    "grade": 5,
+    "subject": "French (Optional)",
+    "topic": "School and Classroom"
+  },
+  {
+    "grade": 5,
+    "subject": "French (Optional)",
+    "topic": "Common Verbs and Conjugation"
+  },
+  {
+    "grade": 5,
+    "subject": "French (Optional)",
+    "topic": "Food and Drinks"
+  },
+  {
+    "grade": 5,
+    "subject": "Hygiene Development",
+    "topic": "Community Hygiene"
+  },
+  {
+    "grade": 5,
+    "subject": "Hygiene Development",
+    "topic": "Mental Hygiene"
+  },
+  {
+    "grade": 5,
+    "subject": "Hygiene Development",
+    "topic": "Environmental Health"
+  },
+  {
+    "grade": 5,
+    "subject": "Hygiene Development",
+    "topic": "Global Health Issues"
+  },
+  {
+    "grade": 5,
+    "subject": "Hygiene Development",
+    "topic": "Hygiene Advocacy"
+  },
+  {
+    "grade": 5,
+    "subject": "Leadership",
+    "topic": "Servant Leadership"
+  },
+  {
+    "grade": 5,
+    "subject": "Leadership",
+    "topic": "Transformational Leadership"
+  },
+  {
+    "grade": 5,
+    "subject": "Leadership",
+    "topic": "Change Management"
+  },
+  {
+    "grade": 5,
+    "subject": "Leadership",
+    "topic": "Mentorship"
+  },
+  {
+    "grade": 5,
+    "subject": "Leadership",
+    "topic": "Legacy Building"
+  },
+  {
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Algebra Basics"
+  },
+  {
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Simple Equations"
+  },
+  {
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Statistics"
+  },
+  {
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Probability"
+  },
+  {
+    "grade": 5,
+    "subject": "Mathematics",
+    "topic": "Advanced Geometry"
+  },
+  {
+    "grade": 5,
+    "subject": "Nigerian History",
+    "topic": "Civil War Analysis"
+  },
+  {
+    "grade": 5,
+    "subject": "Nigerian History",
+    "topic": "Democratic Transitions"
+  },
+  {
+    "grade": 5,
+    "subject": "Nigerian History",
+    "topic": "Colonial Resistance"
+  },
+  {
+    "grade": 5,
+    "subject": "Nigerian History",
+    "topic": "Independence Movements"
+  },
+  {
+    "grade": 5,
+    "subject": "Nigerian History",
+    "topic": "First Republic"
+  },
+  {
+    "grade": 5,
+    "subject": "Physical & Health Education",
+    "topic": "Sports Psychology"
+  },
+  {
+    "grade": 5,
+    "subject": "Physical & Health Education",
+    "topic": "Injury Prevention"
+  },
+  {
+    "grade": 5,
+    "subject": "Physical & Health Education",
+    "topic": "Sports Medicine"
+  },
+  {
+    "grade": 5,
+    "subject": "Physical & Health Education",
+    "topic": "Fitness Planning"
+  },
+  {
+    "grade": 5,
+    "subject": "Physical & Health Education",
+    "topic": "Mental Health"
+  },
+  {
+    "grade": 5,
+    "subject": "Pre-vocational Studies",
+    "topic": "Crop Farming"
+  },
+  {
+    "grade": 5,
+    "subject": "Pre-vocational Studies",
+    "topic": "Home Economics"
+  },
+  {
+    "grade": 5,
+    "subject": "Pre-vocational Studies",
+    "topic": "Entrepreneurship Basics"
+  },
+  {
+    "grade": 5,
+    "subject": "Pre-vocational Studies",
+    "topic": "Vocational Skills"
+  },
+  {
+    "grade": 5,
+    "subject": "Pre-vocational Studies",
+    "topic": "Animal Rearing"
+  },
+  {
+    "grade": 5,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Constitutional Democracy"
+  },
+  {
+    "grade": 5,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Human Rights"
+  },
+  {
+    "grade": 5,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Economic Systems"
+  },
+  {
+    "grade": 5,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Foreign Policy"
+  },
+  {
+    "grade": 5,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Sustainable Development"
+  },
+  {
+    "grade": 5,
+    "subject": "Teamwork",
+    "topic": "Virtual Teams"
+  },
+  {
+    "grade": 5,
+    "subject": "Teamwork",
+    "topic": "Cross-Functional Teams"
+  },
+  {
+    "grade": 5,
+    "subject": "Teamwork",
+    "topic": "Performance Metrics"
+  },
+  {
+    "grade": 5,
+    "subject": "Teamwork",
+    "topic": "Team Culture"
+  },
+  {
+    "grade": 5,
+    "subject": "Teamwork",
+    "topic": "Team Learning"
+  },
+  {
+    "grade": 6,
+    "subject": "Arabic (Optional)",
+    "topic": "Days of the Week"
+  },
+  {
+    "grade": 6,
+    "subject": "Arabic (Optional)",
+    "topic": "Common Phrases"
+  },
+  {
+    "grade": 6,
+    "subject": "Arabic (Optional)",
+    "topic": "Daily Prayers"
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Digital Literacy",
+    "topic": "Advanced Computer Skills"
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Digital Literacy",
+    "topic": "Spreadsheets for Beginners"
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Digital Literacy",
+    "topic": "Presentations and Slideshows"
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Digital Literacy",
+    "topic": "Email Communication"
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Digital Literacy",
+    "topic": "Digital Citizenship"
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Science & Technology",
+    "topic": "Nervous System"
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Science & Technology",
+    "topic": "Reproductive System"
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Science & Technology",
+    "topic": "Ecology and Ecosystems"
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Science & Technology",
+    "topic": "Environmental Conservation"
+  },
+  {
+    "grade": 6,
+    "subject": "Basic Science & Technology",
+    "topic": "Disease Transmission"
+  },
+  {
+    "grade": 6,
+    "subject": "Communication",
+    "topic": "Strategic Communication"
+  },
+  {
+    "grade": 6,
+    "subject": "Communication",
+    "topic": "Public Speaking Mastery"
+  },
+  {
+    "grade": 6,
+    "subject": "Communication",
+    "topic": "Listening Comprehension"
+  },
+  {
+    "grade": 6,
+    "subject": "Communication",
+    "topic": "Negotiation Skills"
+  },
+  {
+    "grade": 6,
+    "subject": "Communication",
+    "topic": "Media Literacy"
+  },
+  {
+    "grade": 6,
+    "subject": "Confidence Building",
+    "topic": "Executive Presence"
+  },
+  {
+    "grade": 6,
+    "subject": "Confidence Building",
+    "topic": "Legacy Thinking"
+  },
+  {
+    "grade": 6,
+    "subject": "Confidence Building",
+    "topic": "Authentic Leadership"
+  },
+  {
+    "grade": 6,
+    "subject": "Confidence Building",
+    "topic": "Influencing Skills"
+  },
+  {
+    "grade": 6,
+    "subject": "Confidence Building",
+    "topic": "Personal Mastery"
+  },
+  {
+    "grade": 6,
+    "subject": "Creativity",
+    "topic": "Creative Future"
+  },
+  {
+    "grade": 6,
+    "subject": "Creativity",
+    "topic": "Design for Change"
+  },
+  {
+    "grade": 6,
+    "subject": "Creativity",
+    "topic": "Creative Problem Solving"
+  },
+  {
+    "grade": 6,
+    "subject": "Creativity",
+    "topic": "Innovation Ecosystems"
+  },
+  {
+    "grade": 6,
+    "subject": "Creativity",
+    "topic": "Creative Leadership"
+  },
+  {
+    "grade": 6,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Theological Concepts"
+  },
+  {
+    "grade": 6,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of Moses"
+  },
+  {
+    "grade": 6,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of David"
+  },
+  {
+    "grade": 6,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of Solomon"
+  },
+  {
+    "grade": 6,
+    "subject": "CRS / Islamic Studies",
+    "topic": "Life of Joseph"
+  },
+  {
+    "grade": 6,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Art History"
+  },
+  {
+    "grade": 6,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Contemporary Nigerian Art"
+  },
+  {
+    "grade": 6,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Curatorial Practice"
+  },
+  {
+    "grade": 6,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Creative Economy"
+  },
+  {
+    "grade": 6,
+    "subject": "Cultural & Creative Arts",
+    "topic": "Multimedia Art"
+  },
+  {
+    "grade": 6,
+    "subject": "English Studies",
+    "topic": "Advanced Grammar"
+  },
+  {
+    "grade": 6,
+    "subject": "English Studies",
+    "topic": "Critical Reading"
+  },
+  {
+    "grade": 6,
+    "subject": "English Studies",
+    "topic": "Research Papers"
+  },
+  {
+    "grade": 6,
+    "subject": "English Studies",
+    "topic": "Poetry Analysis"
+  },
+  {
+    "grade": 6,
+    "subject": "English Studies",
+    "topic": "Drama and Playwriting"
+  },
+  {
+    "grade": 6,
+    "subject": "French (Optional)",
+    "topic": "Francophone Africa"
+  },
+  {
+    "grade": 6,
+    "subject": "French (Optional)",
+    "topic": "Daily Routine"
+  },
+  {
+    "grade": 6,
+    "subject": "French (Optional)",
+    "topic": "Travel and Directions"
+  },
+  {
+    "grade": 6,
+    "subject": "French (Optional)",
+    "topic": "Future Tense"
+  },
+  {
+    "grade": 6,
+    "subject": "French (Optional)",
+    "topic": "Shopping and Prices"
+  },
+  {
+    "grade": 6,
+    "subject": "Hygiene Development",
+    "topic": "Public Health Systems"
+  },
+  {
+    "grade": 6,
+    "subject": "Hygiene Development",
+    "topic": "Infection Control"
+  },
+  {
+    "grade": 6,
+    "subject": "Hygiene Development",
+    "topic": "Water, Sanitation and Hygiene (WASH)"
+  },
+  {
+    "grade": 6,
+    "subject": "Hygiene Development",
+    "topic": "Vector Control"
+  },
+  {
+    "grade": 6,
+    "subject": "Hygiene Development",
+    "topic": "Food Safety and Hygiene"
+  },
+  {
+    "grade": 6,
+    "subject": "Leadership",
+    "topic": "Visionary Leadership"
+  },
+  {
+    "grade": 6,
+    "subject": "Leadership",
+    "topic": "Global Leadership"
+  },
+  {
+    "grade": 6,
+    "subject": "Leadership",
+    "topic": "Organizational Culture"
+  },
+  {
+    "grade": 6,
+    "subject": "Leadership",
+    "topic": "Leadership Ethics"
+  },
+  {
+    "grade": 6,
+    "subject": "Leadership",
+    "topic": "Future of Leadership"
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Fractions, Decimals and Percentages"
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Simple Equations"
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Geometry and Mensuration"
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Data Handling and Probability"
+  },
+  {
+    "grade": 6,
+    "subject": "Mathematics",
+    "topic": "Everyday Arithmetic"
+  },
+  {
+    "grade": 6,
+    "subject": "Nigerian History",
+    "topic": "Political Evolution"
+  },
+  {
+    "grade": 6,
+    "subject": "Nigerian History",
+    "topic": "Economic History"
+  },
+  {
+    "grade": 6,
+    "subject": "Nigerian History",
+    "topic": "Social Movements"
+  },
+  {
+    "grade": 6,
+    "subject": "Nigerian History",
+    "topic": "Cultural Renaissance"
+  },
+  {
+    "grade": 6,
+    "subject": "Nigerian History",
+    "topic": "Nigeria's Global Role"
+  },
+  {
+    "grade": 6,
+    "subject": "Physical & Health Education",
+    "topic": "Substance Abuse Prevention"
+  },
+  {
+    "grade": 6,
+    "subject": "Physical & Health Education",
+    "topic": "Sports Medicine"
+  },
+  {
+    "grade": 6,
+    "subject": "Physical & Health Education",
+    "topic": "Fitness Planning"
+  },
+  {
+    "grade": 6,
+    "subject": "Physical & Health Education",
+    "topic": "Mental Health"
+  },
+  {
+    "grade": 6,
+    "subject": "Physical & Health Education",
+    "topic": "Health Policy and Advocacy"
+  },
+  {
+    "grade": 6,
+    "subject": "Pre-vocational Studies",
+    "topic": "Sustainable Agriculture"
+  },
+  {
+    "grade": 6,
+    "subject": "Pre-vocational Studies",
+    "topic": "Food Processing and Preservation"
+  },
+  {
+    "grade": 6,
+    "subject": "Pre-vocational Studies",
+    "topic": "Career Exploration"
+  },
+  {
+    "grade": 6,
+    "subject": "Pre-vocational Studies",
+    "topic": "Small Business Management"
+  },
+  {
+    "grade": 6,
+    "subject": "Pre-vocational Studies",
+    "topic": "Vocational Training Pathways"
+  },
+  {
+    "grade": 6,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Governance Models"
+  },
+  {
+    "grade": 6,
+    "subject": "Social & Citizenship Studies",
+    "topic": "International Relations"
+  },
+  {
+    "grade": 6,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Development Economics"
+  },
+  {
+    "grade": 6,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Environmental Policy"
+  },
+  {
+    "grade": 6,
+    "subject": "Social & Citizenship Studies",
+    "topic": "Civic Engagement"
+  },
+  {
+    "grade": 6,
+    "subject": "Teamwork",
+    "topic": "High-Performance Teams"
+  },
+  {
+    "grade": 6,
+    "subject": "Teamwork",
+    "topic": "Team Dynamics"
+  },
+  {
+    "grade": 6,
+    "subject": "Teamwork",
+    "topic": "Conflict Mastery"
+  },
+  {
+    "grade": 6,
+    "subject": "Teamwork",
+    "topic": "Global Teams"
+  },
+  {
+    "grade": 6,
+    "subject": "Teamwork",
+    "topic": "Team Innovation"
+  }
+]
